@@ -5,35 +5,35 @@ This sheet provides exactly 30 standardized test passages across all 4 target cl
 | ID | Target Expected Class | Type / Sub-Genre | Words | First 80 Chars | QuillBot Verdict (Manual) | Veritas Verdict | Match? |
 |---|---|---|---|---|---|---|---|
 | QB-01 | **Human-written** | `human_native` | 82 | The historical development of maritime trade during the Venetian Republic w... | *(Pending)* | *(Pending)* | - |
-| QB-02 | **Human-written** | `human_native` | 106 | My grandfather's workshop smelled of linseed oil, green sawdust, and aged i... | *(Pending)* | *(Pending)* | - |
-| QB-03 | **Human-written** | `human_native` | 78 | Photosynthetic efficiency in C3 plants is notoriously constrained by the ox... | *(Pending)* | *(Pending)* | - |
-| QB-04 | **Human-written** | `human_native` | 93 | I spent nearly four hours on Saturday attempting to track down an intermitt... | *(Pending)* | *(Pending)* | - |
-| QB-05 | **Human-written** | `human_native` | 83 | The epistemological debates between John Locke and Gottfried Wilhelm Leibni... | *(Pending)* | *(Pending)* | - |
-| QB-06 | **Human-written** | `human_native` | 87 | Our train pulled into the station at dawn, sputtering steam into the frigid... | *(Pending)* | *(Pending)* | - |
+| QB-02 | **Human-written** | `human_native` | 73 | During the late Roman Republic, the agrarian crisis triggered by the influx... | *(Pending)* | *(Pending)* | - |
+| QB-03 | **Human-written** | `human_native` | 75 | Medieval guild structures in fourteenth-century Flanders exercised meticulo... | *(Pending)* | *(Pending)* | - |
+| QB-04 | **Human-written** | `human_native` | 71 | The sudden collapse of Late Bronze Age civilizations around 1200 BCE across... | *(Pending)* | *(Pending)* | - |
+| QB-05 | **Human-written** | `human_native` | 81 | The construction of the Erie Canal between 1817 and 1825 fundamentally reor... | *(Pending)* | *(Pending)* | - |
+| QB-06 | **Human-written** | `human_native` | 64 | In sixteenth-century Nuremberg, the rapid development of pocket-sized sprin... | *(Pending)* | *(Pending)* | - |
 | QB-07 | **Human-written** | `human_esl` | 89 | Nowadays, many students choose to study abroad in foreign countries. In my ... | *(Pending)* | *(Pending)* | - |
 | QB-08 | **Human-written** | `human_esl` | 80 | Technology development brings a lot of changes to human daily life. In the ... | *(Pending)* | *(Pending)* | - |
 | QB-09 | **Human-written** | `human_esl` | 71 | Protecting the natural environment is the most important duty for all human... | *(Pending)* | *(Pending)* | - |
 | QB-10 | **Human-written** | `human_esl` | 73 | Whether university education should be free for all citizens is a big contr... | *(Pending)* | *(Pending)* | - |
-| QB-11 | **Human-written & AI-refined** | `human_ai_refined` | 79 | Photosynthetic efficiency in C3 plants is notoriously constrained by the ox... | *(Pending)* | *(Pending)* | - |
-| QB-12 | **Human-written & AI-refined** | `human_ai_refined` | 93 | I spent nearly four hours on Saturday attempting to track down an intermitt... | *(Pending)* | *(Pending)* | - |
-| QB-13 | **Human-written & AI-refined** | `human_ai_refined` | 83 | The epistemological debates between John Locke and Gottfried Wilhelm Leibni... | *(Pending)* | *(Pending)* | - |
-| QB-14 | **Human-written & AI-refined** | `human_ai_refined` | 88 | Our train pulled into the station at dawn, sputtering steam into the frigid... | *(Pending)* | *(Pending)* | - |
-| QB-15 | **Human-written & AI-refined** | `human_ai_refined` | 66 | In macroeconomic modeling, the persistence of the Phillips curve trade-off ... | *(Pending)* | *(Pending)* | - |
-| QB-16 | **Human-written & AI-refined** | `human_ai_refined` | 82 | My first attempt at sourdough baking was an unmitigated disaster. Consequen... | *(Pending)* | *(Pending)* | - |
-| QB-17 | **AI-generated & AI-refined** | `ai_ai_refined` | 91 | In the contemporary era, the rapid proliferation of artificial intelligence... | *(Pending)* | *(Pending)* | - |
-| QB-18 | **AI-generated & AI-refined** | `ai_ai_refined` | 66 | Urban sustainability has emerged as a cornerstone of modern municipal plann... | *(Pending)* | *(Pending)* | - |
-| QB-19 | **AI-generated & AI-refined** | `ai_ai_refined` | 81 | The tension between individual autonomy and algorithmic governance reflects... | *(Pending)* | *(Pending)* | - |
-| QB-20 | **AI-generated & AI-refined** | `ai_ai_refined` | 74 | The evolution of clinical diagnostic protocols reveals an ongoing renegotia... | *(Pending)* | *(Pending)* | - |
-| QB-21 | **AI-generated & AI-refined** | `ai_ai_refined` | 66 | Renewable energy integration presents both unprecedented engineering opport... | *(Pending)* | *(Pending)* | - |
-| QB-22 | **AI-generated & AI-refined** | `ai_ai_refined` | 62 | The systematic implementation of supply chain transparency protocols has be... | *(Pending)* | *(Pending)* | - |
+| QB-11 | **Human-written & AI-refined** | `human_ai_refined` | 84 | The historical development of maritime trade during the Venetian Republic w... | *(Pending)* | *(Pending)* | - |
+| QB-12 | **Human-written & AI-refined** | `human_ai_refined` | 75 | During the late Roman Republic, the agrarian crisis triggered by the influx... | *(Pending)* | *(Pending)* | - |
+| QB-13 | **Human-written & AI-refined** | `human_ai_refined` | 76 | Medieval guild structures in fourteenth-century Flanders exercised meticulo... | *(Pending)* | *(Pending)* | - |
+| QB-14 | **Human-written & AI-refined** | `human_ai_refined` | 73 | The sudden collapse of Late Bronze Age civilizations around 1200 BCE across... | *(Pending)* | *(Pending)* | - |
+| QB-15 | **Human-written & AI-refined** | `human_ai_refined` | 83 | The construction of the Erie Canal between 1817 and 1825 fundamentally reor... | *(Pending)* | *(Pending)* | - |
+| QB-16 | **Human-written & AI-refined** | `human_ai_refined` | 66 | In sixteenth-century Nuremberg, the rapid development of pocket-sized sprin... | *(Pending)* | *(Pending)* | - |
+| QB-17 | **AI-generated & AI-refined** | `ai_ai_refined` | 90 | In the contemporary era, the rapid proliferation of artificial intelligence... | *(Pending)* | *(Pending)* | - |
+| QB-18 | **AI-generated & AI-refined** | `ai_ai_refined` | 68 | Urban sustainability has emerged as a foundation of modern municipal planni... | *(Pending)* | *(Pending)* | - |
+| QB-19 | **AI-generated & AI-refined** | `ai_ai_refined` | 64 | The transition toward renewable energy represents a major moment in global ... | *(Pending)* | *(Pending)* | - |
+| QB-20 | **AI-generated & AI-refined** | `ai_ai_refined` | 77 | Dear Team,  I hope this email finds you well. I am writing to share key ope... | *(Pending)* | *(Pending)* | - |
+| QB-21 | **AI-generated & AI-refined** | `ai_ai_refined` | 80 | The evening settled quietly over the coastal valley, casting long amber sha... | *(Pending)* | *(Pending)* | - |
+| QB-22 | **AI-generated & AI-refined** | `ai_ai_refined` | 61 | In evaluating cybersecurity paradigms for distributed enterprise networks, ... | *(Pending)* | *(Pending)* | - |
 | QB-23 | **AI-generated** | `ai_pure_gpt-4o` | 88 | In the contemporary era, the rapid proliferation of artificial intelligence... | *(Pending)* | *(Pending)* | - |
 | QB-24 | **AI-generated** | `ai_pure_gpt-4o` | 67 | Urban sustainability has emerged as a cornerstone of modern municipal plann... | *(Pending)* | *(Pending)* | - |
-| QB-25 | **AI-generated** | `ai_pure_claude-3-5-sonnet` | 78 | The tension between individual autonomy and algorithmic governance reflects... | *(Pending)* | *(Pending)* | - |
-| QB-26 | **AI-generated** | `ai_pure_claude-3-5-sonnet` | 74 | The evolution of clinical diagnostic protocols reveals an ongoing renegotia... | *(Pending)* | *(Pending)* | - |
-| QB-27 | **AI-generated** | `ai_pure_llama-3-3-70b` | 66 | Renewable energy integration presents both unprecedented engineering opport... | *(Pending)* | *(Pending)* | - |
-| QB-28 | **AI-generated** | `ai_pure_qwen-2-5-72b` | 62 | The systematic implementation of supply chain transparency protocols has be... | *(Pending)* | *(Pending)* | - |
-| QB-29 | **AI-generated** | `ai_pure_qwen-2-5-72b` | 60 | Natural language processing has undergone a transformative shift toward lar... | *(Pending)* | *(Pending)* | - |
-| QB-30 | **AI-generated** | `ai_pure_deepseek-v3` | 70 | A rigorous macroeconomic appraisal of sovereign debt sustainability necessi... | *(Pending)* | *(Pending)* | - |
+| QB-25 | **AI-generated** | `ai_pure_gpt-4o` | 64 | The transition toward renewable energy represents a transformative moment i... | *(Pending)* | *(Pending)* | - |
+| QB-26 | **AI-generated** | `ai_pure_gpt-4o` | 77 | Dear Team,  I hope this email finds you well. I am writing to share key ope... | *(Pending)* | *(Pending)* | - |
+| QB-27 | **AI-generated** | `ai_pure_qwen` | 62 | The systematic implementation of supply chain transparency protocols has be... | *(Pending)* | *(Pending)* | - |
+| QB-28 | **AI-generated** | `ai_pure_qwen` | 60 | Natural language processing has undergone a transformative shift toward lar... | *(Pending)* | *(Pending)* | - |
+| QB-29 | **AI-generated** | `ai_pure_deepseek` | 70 | A rigorous macroeconomic appraisal of sovereign debt sustainability necessi... | *(Pending)* | *(Pending)* | - |
+| QB-30 | **AI-generated** | `ai_pure_deepseek` | 66 | The cryptographic security of post-quantum lattice-based encryption algorit... | *(Pending)* | *(Pending)* | - |
 
 
 ---
@@ -41,56 +41,56 @@ This sheet provides exactly 30 standardized test passages across all 4 target cl
 ## Complete Sample Texts
 
 ### Sample QB-01 — [Human-written]
-- **Type**: `human_native` | **Domain**: `academic` | **Word Count**: 82
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 82
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
 The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance between centralized state regulation and private merchant enterprise. The Senate maintained rigorous oversight of the state galley fleets—the mude—which operated along fixed routes to Constantinople, Alexandria, and Southampton. However, individual patricians frequently invested personal capital in secondary cargo, navigating volatile price fluctuations and Mediterranean piracy with remarkable institutional flexibility. This hybrid commercial architecture fostered resilience against geopolitical shocks, particularly following the Ottoman expansion into the Aegean.
 ```
 
 ### Sample QB-02 — [Human-written]
-- **Type**: `human_native` | **Domain**: `narrative` | **Word Count**: 106
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 73
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
-My grandfather's workshop smelled of linseed oil, green sawdust, and aged iron. In the middle of the drafty barn stood a heavy maple workbench, its top scarred by decades of chisel slips and clamping gouges. He never owned an electric planer; every edge was trued by hand using an old Stanley No. 7 jointer plane. You could always tell when he was satisfied with a joint because he would run his calloused thumb along the seam with his eyes closed, judging the fit entirely by touch. To him, a millimeter was not an abstract measurement on a rule, but a physical boundary between craftsmanship and carelessness.
+During the late Roman Republic, the agrarian crisis triggered by the influx of enslaved labor after the Punic Wars fundamentally undermined the smallholding peasantry. Tiberius and Gaius Gracchus attempted to address this socio-economic dislocation through the Lex Sempronia Agraria, which proposed reallocating public land to dispossessed citizens. The fierce senatorial opposition and subsequent violent deaths of both brothers signaled the breakdown of traditional constitutional consensus and paved the path toward factional civil war.
 ```
 
 ### Sample QB-03 — [Human-written]
-- **Type**: `human_native` | **Domain**: `academic` | **Word Count**: 78
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 75
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
-Photosynthetic efficiency in C3 plants is notoriously constrained by the oxygenase activity of RuBisCO, which catalyzes a wasteful side reaction with molecular oxygen to produce 2-phosphoglycolate. Under conditions of high ambient temperature and arid stress, stomatal closure limits internal carbon dioxide availability, escalating photorespiratory loss up to thirty percent of net assimilated carbon. Evolutionary adaptations in C4 and CAM lineages circumvent this bottleneck through spatial or temporal separation of initial carboxylation, concentrating CO2 around RuBisCO and minimizing photorespiration.
+Medieval guild structures in fourteenth-century Flanders exercised meticulous quality control over textile manufacturing, enforcing strict standards for dyeing, weaving, and thread count. Cloth inspectors, known as vinders, examined every woolen bolt produced in Ghent and Bruges before stamping it with the city seal. While modern economists often criticize guilds as protectionist cartels, historical records demonstrate that these municipal monopolies established a reputable international brand that enabled Flemish cloth to command premium prices across European markets.
 ```
 
 ### Sample QB-04 — [Human-written]
-- **Type**: `human_native` | **Domain**: `casual` | **Word Count**: 93
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 71
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
-I spent nearly four hours on Saturday attempting to track down an intermittent ground loop hum in my analog stereo setup. Every time the refrigerator compressor kicked in down the hall, a faint 60Hz buzz would creep into the left speaker channel. I swapped out RCA interconnects, reorganized the power strip under the desk, and even tried isolating the turntable chassis with an extra length of copper wire. It turned out to be an ungrounded cable TV coax splitter sharing the same outlet plate. Audio troubleshooting has a unique way of teaching humility.
+The sudden collapse of Late Bronze Age civilizations around 1200 BCE across the Eastern Mediterranean remains one of antiquity's most perplexing historical puzzles. Within a single generation, Mycenaean citadels were burned, the Hittite Empire disintegrated, and Egyptian diplomatic correspondence ceased entirely. Rather than attributing this catastrophe to a single nomadic invasion by the enigmatic Sea Peoples, contemporary archaeologists emphasize a systemic systems collapse involving drought, earthquake storms, and fractured trade routes.
 ```
 
 ### Sample QB-05 — [Human-written]
-- **Type**: `human_native` | **Domain**: `academic` | **Word Count**: 83
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 81
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
-The epistemological debates between John Locke and Gottfried Wilhelm Leibniz over innate ideas established the terms of modern philosophy of mind. Locke argued in An Essay Concerning Human Understanding that the mind begins as a tabula rasa, relying wholly on sensation and reflection for empirical knowledge. In response, Leibniz countered in the Nouveaux Essais that the mind is not an inert slate, but veined marble: predispositions, necessary truths, and innate principles are inherent to human intellect, awaiting empirical experience to reveal their contours.
+The construction of the Erie Canal between 1817 and 1825 fundamentally reoriented North American commerce, connecting the Hudson River with Lake Erie across 363 miles of wilderness. Immigrant laborers dug the trench by hand through malarial swamps and limestone escarpments, utilizing primitive horsepower and black powder. Upon completion, freight transport costs from Buffalo to New York City plummeted from one hundred dollars per ton to less than ten dollars, transforming New York into the preeminent commercial port of the Atlantic seaboard.
 ```
 
 ### Sample QB-06 — [Human-written]
-- **Type**: `human_native` | **Domain**: `narrative` | **Word Count**: 87
-- **Rationale**: Authentic human prose with personal idiom or domain scholarship.
+- **Type**: `human_native` | **Domain**: `history` | **Word Count**: 64
+- **Rationale**: Authentic human author prose with domain scholarship or personal narrative.
 
 ```text
-Our train pulled into the station at dawn, sputtering steam into the frigid mountain air. The platform was slick with frost, and the porters hurried past in wool coats, their breath rising in gray plumes against the station lamps. Inside the waiting room, an iron stove gave off a steady radiating heat, though the perimeter walls were still cold enough to turn damp fingers numb. No one spoke much; travelers simply clutched paper cups of black chicory coffee and watched the sky slowly lighten over the tracks.
+In sixteenth-century Nuremberg, the rapid development of pocket-sized spring-driven watches, popular as Nuremberg eggs, altered public conceptions of punctuality. Metalworkers such as Peter Henlein substituted coiled mainsprings for traditional descending weights, creating portable timepieces for merchants and nobles. Although these early mechanisms lost up to fifteen minutes each day, their mechanical novelty initiated a profound cultural shift toward the secular measurement of urban labor.
 ```
 
 ### Sample QB-07 — [Human-written]
 - **Type**: `human_esl` | **Domain**: `esl` | **Word Count**: 89
-- **Rationale**: Non-native English writing from learner corpus; tests for false positives.
+- **Rationale**: Authentic non-native English essay testing detector false-positive rate.
 
 ```text
 Nowadays, many students choose to study abroad in foreign countries. In my opinion, this experience has many advantages for young people. Firstly, students can improve their English language skills very quickly because they must speak with native speakers every day in school and supermarket. Secondly, they can learn how to live independently without their parents' help, such as cooking food and washing clothes. However, some students feel lonely and miss their hometown food very much. Therefore, students should prepare their mind carefully before going to study in another country.
@@ -98,7 +98,7 @@ Nowadays, many students choose to study abroad in foreign countries. In my opini
 
 ### Sample QB-08 — [Human-written]
 - **Type**: `human_esl` | **Domain**: `esl` | **Word Count**: 80
-- **Rationale**: Non-native English writing from learner corpus; tests for false positives.
+- **Rationale**: Authentic non-native English essay testing detector false-positive rate.
 
 ```text
 Technology development brings a lot of changes to human daily life. In the past, people wrote letters to communicate with friends, which took many days to arrive. But now, with smart phones and internet, we can send messages in one second. Although this is very convenient, it also causes some serious problems. Many children spend too much time playing mobile games and do not do their homework. I believe government and parents should work together to control children's screen time.
@@ -106,7 +106,7 @@ Technology development brings a lot of changes to human daily life. In the past,
 
 ### Sample QB-09 — [Human-written]
 - **Type**: `human_esl` | **Domain**: `esl` | **Word Count**: 71
-- **Rationale**: Non-native English writing from learner corpus; tests for false positives.
+- **Rationale**: Authentic non-native English essay testing detector false-positive rate.
 
 ```text
 Protecting the natural environment is the most important duty for all human society. In recent years, air pollution and water pollution become more and more heavy because of industrial factories. Many animals lose their forest habitat and become endangered. If we do not take action immediately, our future generations will suffer big problems. In conclusion, every citizen should reduce using plastic bags and choose public transportation to make our earth clean.
@@ -114,169 +114,177 @@ Protecting the natural environment is the most important duty for all human soci
 
 ### Sample QB-10 — [Human-written]
 - **Type**: `human_esl` | **Domain**: `esl` | **Word Count**: 73
-- **Rationale**: Non-native English writing from learner corpus; tests for false positives.
+- **Rationale**: Authentic non-native English essay testing detector false-positive rate.
 
 ```text
 Whether university education should be free for all citizens is a big controversy. Some people think government should pay all tuition fees because education is a basic human right. If poor students can go to university, society will have more equal chances and less crime. On the other hand, free university needs huge budget from tax collection, which increases burden on normal workers. Therefore, partial scholarship for hardworking students is the best solution.
 ```
 
 ### Sample QB-11 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `academic` | **Word Count**: 79
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 84
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-Photosynthetic efficiency in C3 plants is notoriously constrained by the oxygenase activity of RuBisCO, which catalyzes a wasteful side reaction with molecular oxygen to produce 2-phosphoglycolate. Consequently, under conditions of high ambient temperature and arid stress, stomatal closure limits internal carbon dioxide availability, escalating photorespiratory loss up to thirty percent of net assimilated carbon. Evolutionary adaptations in C4 and CAM lineages circumvent this bottleneck through spatial or temporal separation of initial carboxylation, concentrating CO2 around RuBisCO and minimizing photorespiration.
+The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance between centralized state regulation and private merchant enterprise. Furthermore, the Senate maintained rigorous oversight of the state galley fleets—the mude—which operated along fixed routes to Constantinople, Alexandria, and Southampton. Consequently, however, individual patricians frequently invested personal capital in secondary cargo, navigating volatile price fluctuations and Mediterranean piracy with remarkable institutional flexibility. This hybrid commercial architecture fostered resilience against geopolitical shocks, particularly following the Ottoman expansion into the Aegean.
 ```
 
 ### Sample QB-12 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `casual` | **Word Count**: 93
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 75
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-I spent nearly four hours on Saturday attempting to track down an intermittent ground loop hum in my analog stereo setup. Every time the refrigerator compressor kicked in down the hall, a faint 60Hz buzz would creep into the left speaker channel. I swapped out RCA interconnects, reorganized the power strip under the desk, and even tried isolating the turntable chassis with an extra length of copper wire. It turned out to be an ungrounded cable TV coax splitter sharing the same outlet plate. Audio troubleshooting has a unique way of teaching humility.
+During the late Roman Republic, the agrarian crisis triggered by the influx of enslaved labor after the Punic Wars fundamentally undermined the smallholding peasantry. Additionally, tiberius and Gaius Gracchus attempted to address this socio-economic dislocation through the Lex Sempronia Agraria, which proposed reallocating public land to dispossessed citizens. Additionally, the fierce senatorial opposition and subsequent violent deaths of both brothers signaled the breakdown of traditional constitutional consensus and paved the path toward factional civil war.
 ```
 
 ### Sample QB-13 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `academic` | **Word Count**: 83
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 76
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-The epistemological debates between John Locke and Gottfried Wilhelm Leibniz over innate ideas established the terms of modern philosophy of mind. Locke argued in An Essay Concerning Human Understanding that the mind begins as a tabula rasa, relying wholly on sensation and reflection for empirical knowledge. In response, Leibniz countered in the Nouveaux Essais that the mind is not an inert slate, but veined marble: predispositions, necessary truths, and innate principles are inherent to human intellect, awaiting empirical experience to reveal their contours.
+Medieval guild structures in fourteenth-century Flanders exercised meticulous quality control over textile manufacturing, enforcing strict standards for dyeing, weaving, and thread count. Cloth inspectors, known as vinders, examined every woolen bolt produced in Ghent and Bruges before stamping it with the city seal. Moreover, while modern economists often criticize guilds as protectionist cartels, historical records demonstrate that these municipal monopolies established a reputable international brand that enabled Flemish cloth to command premium prices across European markets.
 ```
 
 ### Sample QB-14 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `narrative` | **Word Count**: 88
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 73
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-Our train pulled into the station at dawn, sputtering steam into the frigid mountain air. Furthermore, the platform was slick with frost, and the porters hurried past in wool coats, their breath rising in gray plumes against the station lamps. Inside the waiting room, an iron stove gave off a steady radiating heat, though the perimeter walls were still cold enough to turn damp fingers numb. No one spoke much; travelers simply clutched paper cups of black chicory coffee and watched the sky slowly lighten over the tracks.
+The sudden collapse of Late Bronze Age civilizations around 1200 BCE across the Eastern Mediterranean remains one of antiquity's most perplexing historical puzzles. Furthermore, within a single generation, Mycenaean citadels were burned, the Hittite Empire disintegrated, and Egyptian diplomatic correspondence ceased entirely. Notably, rather than attributing this catastrophe to a single nomadic invasion by the enigmatic Sea Peoples, contemporary archaeologists emphasize a systemic systems collapse involving drought, earthquake storms, and fractured trade routes.
 ```
 
 ### Sample QB-15 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `academic` | **Word Count**: 66
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 83
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-In macroeconomic modeling, the persistence of the Phillips curve trade-off between inflation and unemployment remains hotly contested. Consequently, while mid-century Keynesian orthodoxy postulated a predictable inverse relationship, the stagflation episodes of the 1970s demonstrated that unanchored inflation expectations can shift the short-run curve outward. Modern New Keynesian specifications incorporate forward-looking Calvo pricing mechanisms, yet central bank credibility and supply-side shocks continue to generate substantial forecast variance.
+The construction of the Erie Canal between 1817 and 1825 fundamentally reoriented North American commerce, connecting the Hudson River with Lake Erie across 363 miles of wilderness. Notably, immigrant laborers dug the trench by hand through malarial swamps and limestone escarpments, utilizing primitive horsepower and black powder. Additionally, upon completion, freight transport costs from Buffalo to New York City plummeted from one hundred dollars per ton to less than ten dollars, transforming New York into the preeminent commercial port of the Atlantic seaboard.
 ```
 
 ### Sample QB-16 — [Human-written & AI-refined]
-- **Type**: `human_ai_refined` | **Domain**: `casual` | **Word Count**: 82
-- **Rationale**: Human-authored essay polished by LLM line editing and syntactic smoothing.
+- **Type**: `human_ai_refined` | **Domain**: `history` | **Word Count**: 66
+- **Rationale**: Human prose polished and regularized by an LLM line editor.
 
 ```text
-My first attempt at sourdough baking was an unmitigated disaster. Consequently, the recipe called for an eight-hour bulk fermentation, but our apartment kitchen was sitting at barely 62 degrees in mid-November. Instead of an airy, billowing dough with tight surface tension, I ended up with a dense, gray puddle that stuck tenaciously to my hands and the butcher block. The finished loaf came out of the Dutch oven looking remarkably like a baked paving stone, though my roommates generously ate it anyway.
+In sixteenth-century Nuremberg, the rapid development of pocket-sized spring-driven watches, popular as Nuremberg eggs, altered public conceptions of punctuality. Moreover, metalworkers such as Peter Henlein substituted coiled mainsprings for traditional descending weights, creating portable timepieces for merchants and nobles. Notably, although these early mechanisms lost up to fifteen minutes each day, their mechanical novelty initiated a profound cultural shift toward the secular measurement of urban labor.
 ```
 
 ### Sample QB-17 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 91
-- **Rationale**: AI text from gpt-4o passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `academic` | **Word Count**: 90
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-In the contemporary era, the rapid proliferation of artificial intelligence technologies has essentially reconstituted the landscape of higher education. To fully appreciate this transformation, one must look closely at the complex and varied tapestry of academic pedagogy. On one hand, automated tutoring systems offer unprecedented personalization, catering to individual student learning trajectories. On the other hand, the uncritical adoption of algorithmic tools introduces substantial concerns regarding cognitive atrophy and academic integrity. Ultimately, encouraging an educational ecosystem that harmonizes technological innovation with critical inquiry stands as a pivotal imperative for educators worldwide.
+In the contemporary era, the rapid proliferation of artificial intelligence technologies has essentially reconstituted the landscape of higher education. To fully appreciate this transformation, one must examine closely the varied and complex network of academic pedagogy. On one hand, automated tutoring systems offer unprecedented personalization, catering to individual student learning trajectories. On the other hand, the uncritical adoption of algorithmic tools introduces substantial concerns regarding cognitive atrophy and academic integrity. Ultimately, supporting an educational ecosystem that harmonizes technological innovation with critical inquiry stands as a central necessity for educators worldwide.
 ```
 
 ### Sample QB-18 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 66
-- **Rationale**: AI text from gpt-4o passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `academic` | **Word Count**: 68
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-Urban sustainability has emerged as a cornerstone of modern municipal planning. By leveraging integrated smart-grid architectures, cities can optimize energy distribution, reduce carbon emissions, and enhance infrastructural resilience. Furthermore, the interplay between public transportation networks and green space allocation plays a key function in encouraging public health. overall, addressing urban climate vulnerabilities requires a collaborative, multi-stakeholder framework that prioritizes equitable resource allocation and long-term ecological balance.
+Urban sustainability has emerged as a foundation of modern municipal planning. By leveraging integrated smart-grid architectures, cities can optimize energy distribution, reduce carbon emissions, and enhance infrastructural resilience. Furthermore, the interaction between public transportation networks and green space allocation plays a vital part in supporting public health. to sum up, addressing urban climate vulnerabilities requires a collaborative, multi-stakeholder framework that prioritizes equitable resource allocation and long-term ecological balance.
 ```
 
 ### Sample QB-19 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 81
-- **Rationale**: AI text from claude-3-5-sonnet passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `academic` | **Word Count**: 64
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-The tension between individual autonomy and algorithmic governance reflects a fundamental dilemma in digital constitutionalism. A closer examination demonstrates how these mechanisms systematically curate the informational environment., although digital platforms frequently present predictive recommendation systems as value-neutral conduits for user convenience Rather than merely facilitating user choice, algorithmic architectures structure the very parameters within which choices are conceived. as a direct result, safeguarding deliberative democracy requires moving beyond procedural transparency to interrogate the substantive power asymmetries embedded within proprietary computational infrastructure.
+The transition toward renewable energy represents a major moment in global climate mitigation. When examining solar and wind integration, one observes that intermittent generation dynamics require sophisticated grid balancing mechanisms. Advanced battery energy storage systems, coupled with machine learning demand forecasting, offer promising solutions to ensure transmission stability. Ultimately, achieving thorough decarbonization necessitates an overarching commitment to policy alignment, capital mobilization, and infrastructural modernization.
 ```
 
 ### Sample QB-20 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 74
-- **Rationale**: AI text from claude-3-5-sonnet passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `email` | **Word Count**: 77
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-The evolution of clinical diagnostic protocols reveals an ongoing renegotiation of epistemic authority between physician intuition and automated statistical inference. Their deployment within acute clinical settings raises challenging questions regarding interpretability., although deep learning models achieve remarkable sensitivity across radiological benchmarks A medical decision is rarely a purely probabilistic determination; it inherently involves contextual ethical weighing and patient-specific values. Therefore, effective clinical integration demands decision-support systems that complement, rather than supplant, embodied professional judgment.
+Dear Team,
+
+I hope this email finds you well. I am writing to share key operational updates regarding our Q3 workflow modernization initiative. Over the past several weeks, our cross-functional task force has evaluated numerous software platforms to streamline team collaboration. Furthermore, by adopting these automated scheduling tools, we can significantly reduce operational bottlenecks. Please review the attached summary document and submit your feedback by Thursday afternoon. Thank you for your continued dedication. Best regards,
+Operations Leadership
 ```
 
 ### Sample QB-21 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 66
-- **Rationale**: AI text from llama-3-3-70b passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `story` | **Word Count**: 80
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-Renewable energy integration presents both unprecedented engineering opportunities and operational challenges for regional power grids. Traditional electrical distribution networks were designed around centralized, dispatchable generation sources. In contrast, solar photovoltaic and wind installations introduce stochastic supply dynamics that can destabilize grid frequency. Implementing advanced battery energy storage systems alongside dynamic load forecasting models is essential to stabilize transmission corridors and achieve decarbonization objectives across industrial sectors.
+The evening settled quietly over the coastal valley, casting long amber shadows across the weathered bluffs. He paused at the observation deck, looking out toward the distant lighthouse as its beam swept rhythmically across the darkening swells. It was clear that the quiet resolve he had maintained throughout the season was beginning to shift into something deeper. The subtle murmur of the tide seemed to echo the unspoken changes that time inevitably brings to all who linger by the sea.
 ```
 
 ### Sample QB-22 — [AI-generated & AI-refined]
-- **Type**: `ai_ai_refined` | **Domain**: `essay` | **Word Count**: 62
-- **Rationale**: AI text from qwen-2-5-72b passed through restructuring and paraphrasing.
+- **Type**: `ai_ai_refined` | **Domain**: `academic` | **Word Count**: 61
+- **Rationale**: AI text passed through syntactic restructuring and automated paraphrasing.
 
 ```text
-The systematic implementation of supply chain transparency protocols has become an essential prerequisite for modern enterprise risk management. Organizations operate within complex global networks characterized by geopolitical volatility, regulatory shifts, and resource scarcity. Utilizing distributed ledger technology and automated tracking mechanisms allows firms to achieve end-to-end traceability, thereby mitigating counterfeiting risks and ensuring compliance with international labor standards across all operational tiers.
+In evaluating cybersecurity paradigms for distributed enterprise networks, zero-trust architecture has emerged as an indispensable standard. Rather than assuming perimeter security, zero-trust protocols enforce continuous authentication across all microsegments. Furthermore, integrating behavioral analytics allows security operations centers to detect anomalies in real time. to sum up, supporting proactive threat intelligence remains essential to defending critical digital infrastructure against sophisticated adversarial campaigns.
 ```
 
 ### Sample QB-23 — [AI-generated]
-- **Type**: `ai_pure_gpt-4o` | **Domain**: `academic_essay` | **Word Count**: 88
-- **Rationale**: Direct generation from gpt-4o without subsequent editing.
+- **Type**: `ai_pure_gpt-4o` | **Domain**: `academic` | **Word Count**: 88
+- **Rationale**: Direct generation from gpt-4o without subsequent modification.
 
 ```text
 In the contemporary era, the rapid proliferation of artificial intelligence technologies has fundamentally reconstituted the landscape of higher education. To fully appreciate this transformation, one must delve into the multifaceted tapestry of academic pedagogy. On one hand, automated tutoring systems offer unprecedented personalization, catering to individual student learning trajectories. On the other hand, the uncritical adoption of algorithmic tools introduces substantial concerns regarding cognitive atrophy and academic integrity. Ultimately, fostering an educational ecosystem that harmonizes technological innovation with critical inquiry stands as a pivotal imperative for educators worldwide.
 ```
 
 ### Sample QB-24 — [AI-generated]
-- **Type**: `ai_pure_gpt-4o` | **Domain**: `academic_essay` | **Word Count**: 67
-- **Rationale**: Direct generation from gpt-4o without subsequent editing.
+- **Type**: `ai_pure_gpt-4o` | **Domain**: `academic` | **Word Count**: 67
+- **Rationale**: Direct generation from gpt-4o without subsequent modification.
 
 ```text
 Urban sustainability has emerged as a cornerstone of modern municipal planning. By leveraging integrated smart-grid architectures, cities can optimize energy distribution, reduce carbon emissions, and enhance infrastructural resilience. Furthermore, the interplay between public transportation networks and green space allocation plays a pivotal role in fostering public health. In conclusion, addressing urban climate vulnerabilities requires a collaborative, multi-stakeholder framework that prioritizes equitable resource allocation and long-term ecological balance.
 ```
 
 ### Sample QB-25 — [AI-generated]
-- **Type**: `ai_pure_claude-3-5-sonnet` | **Domain**: `academic_essay` | **Word Count**: 78
-- **Rationale**: Direct generation from claude-3-5-sonnet without subsequent editing.
+- **Type**: `ai_pure_gpt-4o` | **Domain**: `academic` | **Word Count**: 64
+- **Rationale**: Direct generation from gpt-4o without subsequent modification.
 
 ```text
-The tension between individual autonomy and algorithmic governance reflects a fundamental dilemma in digital constitutionalism. While digital platforms frequently present predictive recommendation systems as value-neutral conduits for user convenience, a closer examination demonstrates how these mechanisms systematically curate the informational environment. Rather than merely facilitating user choice, algorithmic architectures structure the very parameters within which choices are conceived. Consequently, safeguarding deliberative democracy requires moving beyond procedural transparency to interrogate the substantive power asymmetries embedded within proprietary computational infrastructure.
+The transition toward renewable energy represents a transformative moment in global climate mitigation. When examining solar and wind integration, one observes that intermittent generation dynamics require sophisticated grid balancing mechanisms. Advanced battery energy storage systems, coupled with machine learning demand forecasting, offer promising solutions to ensure transmission stability. Ultimately, achieving comprehensive decarbonization necessitates an overarching commitment to policy alignment, capital mobilization, and infrastructural modernization.
 ```
 
 ### Sample QB-26 — [AI-generated]
-- **Type**: `ai_pure_claude-3-5-sonnet` | **Domain**: `academic_essay` | **Word Count**: 74
-- **Rationale**: Direct generation from claude-3-5-sonnet without subsequent editing.
+- **Type**: `ai_pure_gpt-4o` | **Domain**: `email` | **Word Count**: 77
+- **Rationale**: Direct generation from gpt-4o without subsequent modification.
 
 ```text
-The evolution of clinical diagnostic protocols reveals an ongoing renegotiation of epistemic authority between physician intuition and automated statistical inference. While deep learning models achieve remarkable sensitivity across radiological benchmarks, their deployment within acute clinical settings raises challenging questions regarding interpretability. A medical decision is rarely a purely probabilistic determination; it inherently involves contextual ethical weighing and patient-specific values. Therefore, effective clinical integration demands decision-support systems that complement, rather than supplant, embodied professional judgment.
+Dear Team,
+
+I hope this email finds you well. I am writing to share key operational updates regarding our Q3 workflow modernization initiative. Over the past several weeks, our cross-functional task force has evaluated numerous software platforms to streamline team collaboration. Furthermore, by adopting these automated scheduling tools, we can significantly reduce operational bottlenecks. Please review the attached summary document and submit your feedback by Thursday afternoon. Thank you for your continued dedication.
+
+Best regards,
+Operations Leadership
 ```
 
 ### Sample QB-27 — [AI-generated]
-- **Type**: `ai_pure_llama-3-3-70b` | **Domain**: `academic_essay` | **Word Count**: 66
-- **Rationale**: Direct generation from llama-3-3-70b without subsequent editing.
-
-```text
-Renewable energy integration presents both unprecedented engineering opportunities and operational challenges for regional power grids. Traditional electrical distribution networks were designed around centralized, dispatchable generation sources. In contrast, solar photovoltaic and wind installations introduce stochastic supply dynamics that can destabilize grid frequency. Implementing advanced battery energy storage systems alongside dynamic load forecasting models is essential to stabilize transmission corridors and achieve decarbonization objectives across industrial sectors.
-```
-
-### Sample QB-28 — [AI-generated]
-- **Type**: `ai_pure_qwen-2-5-72b` | **Domain**: `academic_essay` | **Word Count**: 62
-- **Rationale**: Direct generation from qwen-2-5-72b without subsequent editing.
+- **Type**: `ai_pure_qwen` | **Domain**: `technical` | **Word Count**: 62
+- **Rationale**: Unseen open frontier model: Qwen-2.5-72B.
 
 ```text
 The systematic implementation of supply chain transparency protocols has become an essential prerequisite for modern enterprise risk management. Organizations operate within complex global networks characterized by geopolitical volatility, regulatory shifts, and resource scarcity. Utilizing distributed ledger technology and automated tracking mechanisms allows firms to achieve end-to-end traceability, thereby mitigating counterfeiting risks and ensuring compliance with international labor standards across all operational tiers.
 ```
 
-### Sample QB-29 — [AI-generated]
-- **Type**: `ai_pure_qwen-2-5-72b` | **Domain**: `academic_essay` | **Word Count**: 60
-- **Rationale**: Direct generation from qwen-2-5-72b without subsequent editing.
+### Sample QB-28 — [AI-generated]
+- **Type**: `ai_pure_qwen` | **Domain**: `technical` | **Word Count**: 60
+- **Rationale**: Unseen open frontier model: Qwen-2.5-72B.
 
 ```text
 Natural language processing has undergone a transformative shift toward large autoregressive transformer architectures. These models demonstrate impressive zero-shot generalization capabilities across diverse linguistic tasks. However, computational resource requirements for pretraining and fine-tuning pose substantial barriers to open-source democratization. Ongoing research into parameter-efficient fine-tuning (PEFT), low-rank adaptation (LoRA), and post-training quantization remains critical for deploying robust models on resource-constrained edge devices.
 ```
 
-### Sample QB-30 — [AI-generated]
-- **Type**: `ai_pure_deepseek-v3` | **Domain**: `academic_essay` | **Word Count**: 70
-- **Rationale**: Direct generation from deepseek-v3 without subsequent editing.
+### Sample QB-29 — [AI-generated]
+- **Type**: `ai_pure_deepseek` | **Domain**: `academic` | **Word Count**: 70
+- **Rationale**: Unseen frontier model: DeepSeek-V3.
 
 ```text
 A rigorous macroeconomic appraisal of sovereign debt sustainability necessitates distinguishing between short-term liquidity pressures and structural solvency crises. When sovereign yields diverge sharply from underlying potential output growth, fiscal authorities inevitably face compounding debt-service spirals. Empirical evidence underscores that fiscal consolidation policies implemented during economic downturns frequently dampen aggregate demand, thereby exacerbating the debt-to-GDP ratio through denominator deflation. Consequently, structural supply-side reforms coupled with countercyclical investment yield superior stabilization outcomes.
+```
+
+### Sample QB-30 — [AI-generated]
+- **Type**: `ai_pure_deepseek` | **Domain**: `academic` | **Word Count**: 66
+- **Rationale**: Unseen frontier model: DeepSeek-V3.
+
+```text
+The cryptographic security of post-quantum lattice-based encryption algorithms relies upon the conjectured worst-case hardness of high-dimensional geometric problems, specifically the Shortest Vector Problem (SVP) and Learning With Errors (LWE). Unlike classical RSA and elliptic-curve primitives that are vulnerable to Shor's polynomial-time quantum algorithm, lattice constructions remain robust against known quantum decoders. Nevertheless, parameter optimization must balance rigorous security margins against bandwidth overhead in constrained network environments.
 ```
 

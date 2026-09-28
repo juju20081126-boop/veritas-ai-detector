@@ -25,7 +25,7 @@ import onnxruntime as ort
 from tokenizers import Tokenizer
 
 from backend.document_parser import split_sentences
-from backend.stylometrics import analyze_stylometrics
+from backend.stylometrics import analyze_stylometrics, extract_stylometrics_feature_vector
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models")
 ONNX_MODEL_PATH = os.path.join(MODELS_DIR, "student_model_int8.onnx")
@@ -136,23 +136,8 @@ class QuillBotDetectorEngine:
         return cls._instance
 
     def _extract_stylometrics_vec(self, text: str, sentences: List[str]) -> Tuple[np.ndarray, Dict[str, Any]]:
-        """Extracts 12-dimensional stylometric feature vector."""
-        metrics = analyze_stylometrics(text, sentences)
-        vec = [
-            metrics["syntax_variance"]["mean_length"],
-            metrics["syntax_variance"]["std_length"],
-            metrics["syntax_variance"]["cv_length"],
-            metrics["lexical_diversity"]["ttr"],
-            metrics["lexical_diversity"]["root_ttr"],
-            metrics["lexical_diversity"]["hapax_ratio"],
-            metrics["lexical_diversity"]["yule_k"],
-            metrics["syllable_dispersion"]["dispersion_cv"],
-            metrics["hyphenation"]["hyphen_rate_per_100w"],
-            metrics["entropy"]["shannon_entropy"],
-            metrics["readability"]["flesch_reading_ease"],
-            float(metrics.get("total_ai_markers", 0.0))
-        ]
-        return np.array(vec, dtype=np.float32), metrics
+        """Extracts 20-dimensional forensic and information-theoretic feature vector."""
+        return extract_stylometrics_feature_vector(text, sentences)
 
     def _run_onnx_inference(self, texts: List[str], max_length: int = 512, batch_size: int = 16) -> np.ndarray:
         """Batch inference using ONNX Runtime CPU with dynamic sequence padding and micro-batching."""

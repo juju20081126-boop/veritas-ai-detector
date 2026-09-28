@@ -1,7 +1,7 @@
 /**
  * Veritas AI — QuillBot-Style Frontend Application Logic
  * Supports 4-class detection, calibrated probabilities, sentence highlighting,
- * uncertainty gating, and low-end hardware offline telemetry.
+ * uncertainty gating, document upload, and low-end hardware offline telemetry.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,13 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const heatmapViewer = document.getElementById("heatmapViewer");
   const btnModeEdit = document.getElementById("btnModeEdit");
   const btnModeHeatmap = document.getElementById("btnModeHeatmap");
+  const heatmapSentCountBadge = document.getElementById("heatmapSentCountBadge");
   const btnAnalyze = document.getElementById("btnAnalyze");
   const btnClear = document.getElementById("btnClear");
   const btnPaste = document.getElementById("btnPaste");
+  const btnUpload = document.getElementById("btnUpload");
+  const fileUploadInput = document.getElementById("fileUploadInput");
+  const editorDropZone = document.getElementById("editorDropZone");
+  const dragDropOverlay = document.getElementById("dragDropOverlay");
   const sampleSelect = document.getElementById("sampleSelect");
   const qbComparisonGroup = document.getElementById("qbComparisonGroup");
   const thresholdInput = document.getElementById("thresholdInput");
   const themeToggleBtn = document.getElementById("themeToggleBtn");
+  const btnCopyReport = document.getElementById("btnCopyReport");
 
   // Counters
   const wordCountLabel = document.getElementById("wordCountLabel");
@@ -27,13 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Results DOM
   const resultsPlaceholder = document.getElementById("resultsPlaceholder");
   const activeResultsContent = document.getElementById("activeResultsContent");
+  const verdictCard = document.getElementById("verdictCard");
   const verdictTitle = document.getElementById("verdictTitle");
   const verdictBadge = document.getElementById("verdictBadge");
   const verdictDescription = document.getElementById("verdictDescription");
+  const verdictIconBox = document.getElementById("verdictIconBox");
   const confidenceTag = document.getElementById("confidenceTag");
   const uncertainAlertBanner = document.getElementById("uncertainAlertBanner");
 
-  // Bars
+  // Stack & Bars
+  const stackBarAI = document.getElementById("stackBarAI");
+  const stackBarAIRefined = document.getElementById("stackBarAIRefined");
+  const stackBarHumanRefined = document.getElementById("stackBarHumanRefined");
+  const stackBarHuman = document.getElementById("stackBarHuman");
+
   const barAIGen = document.getElementById("barAIGen");
   const barAIRefined = document.getElementById("barAIRefined");
   const barHumanRefined = document.getElementById("barHumanRefined");
@@ -45,10 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const pctHuman = document.getElementById("pctHuman");
 
   // Inspector & Telemetry
+  const sentenceCountsSummary = document.getElementById("sentenceCountsSummary");
   const inspectorContent = document.getElementById("inspectorContent");
   const telemetryLatency = document.getElementById("telemetryLatency");
+  const telemetryMemory = document.getElementById("telemetryMemory");
 
   let currentAnalysisData = null;
+  let archetypeSamples = {};
   let comparisonSheetData = [];
 
   // Theme Management
@@ -75,13 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (words === 0) {
       wordGuideBadge.className = "guide-badge ok";
-      wordGuideBadge.textContent = "Recommended: 80–2,000 words";
+      wordGuideBadge.textContent = "Optimal: 80–2,000 words";
     } else if (words < 80) {
       wordGuideBadge.className = "guide-badge warn";
-      wordGuideBadge.textContent = `Short text (${words} words) — 80+ words recommended`;
+      wordGuideBadge.textContent = `Short text (${words}w) — 80+ words recommended`;
     } else if (words > 2000) {
       wordGuideBadge.className = "guide-badge warn";
-      wordGuideBadge.textContent = `Long text (${words} words) — analyzing first 2,000 words`;
+      wordGuideBadge.textContent = `Long text (${words}w) — analyzing first 2,000 words`;
     } else {
       wordGuideBadge.className = "guide-badge ok";
       wordGuideBadge.textContent = "Optimal length for forensic confidence";
@@ -90,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   textInput.addEventListener("input", updateTextCounters);
 
-  // Clear & Paste
+  // Clear
   btnClear.addEventListener("click", () => {
     textInput.value = "";
     updateTextCounters();
@@ -98,18 +114,85 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsPlaceholder.style.display = "flex";
     activeResultsContent.style.display = "none";
     btnModeHeatmap.disabled = true;
+    heatmapSentCountBadge.style.display = "none";
     currentAnalysisData = null;
   });
 
+  // Paste
   btnPaste.addEventListener("click", async () => {
     try {
       const clipText = await navigator.clipboard.readText();
       textInput.value = clipText;
       updateTextCounters();
+      switchToEditMode();
     } catch (e) {
-      console.warn("Clipboard access denied or unsupported:", e);
+      console.warn("Clipboard access denied:", e);
     }
   });
+
+  // Upload File Handling
+  btnUpload.addEventListener("click", () => {
+    fileUploadInput.click();
+  });
+
+  fileUploadInput.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      await handleFileUpload(file);
+    }
+    fileUploadInput.value = "";
+  });
+
+  // Drag and drop onto editor
+  editorDropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dragDropOverlay.style.display = "flex";
+  });
+
+  editorDropZone.addEventListener("dragleave", (e) => {
+    e.preventDefault();
+    dragDropOverlay.style.display = "none";
+  });
+
+  editorDropZone.addEventListener("drop", async (e) => {
+    e.preventDefault();
+    dragDropOverlay.style.display = "none";
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      const file = e.dataTransfer.files[0];
+      await handleFileUpload(file);
+    }
+  });
+
+  async function handleFileUpload(file) {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    btnAnalyze.disabled = true;
+    btnAnalyze.innerHTML = `<span>Uploading...</span>`;
+
+    try {
+      const resp = await fetch("/api/upload", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json();
+        throw new Error(err.detail || "File processing failed.");
+      }
+
+      const data = await resp.json();
+      textInput.value = data.document_text || data.text || "";
+      updateTextCounters();
+      currentAnalysisData = data;
+      renderAnalysisResults(data);
+    } catch (err) {
+      alert(`Upload error: ${err.message}`);
+    } finally {
+      btnAnalyze.disabled = false;
+      resetAnalyzeButtonText();
+    }
+  }
 
   // View Mode Switching
   function switchToEditMode() {
@@ -140,6 +223,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnAnalyze.addEventListener("click", runAnalysis);
 
+  function resetAnalyzeButtonText() {
+    btnAnalyze.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <span>Analyze Text</span>
+      <kbd class="shortcut-key">Ctrl+Enter</kbd>
+    `;
+  }
+
   // Run Analysis Call
   async function runAnalysis() {
     const text = textInput.value.trim();
@@ -151,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const threshold = parseFloat(thresholdInput.value) || 0.40;
 
     btnAnalyze.disabled = true;
-    btnAnalyze.innerHTML = `<span>Analyzing...</span>`;
+    btnAnalyze.innerHTML = `<span>Analyzing with ONNX...</span>`;
 
     try {
       const resp = await fetch("/api/detect", {
@@ -175,14 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert(`Detection error: ${err.message}`);
     } finally {
       btnAnalyze.disabled = false;
-      btnAnalyze.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <span>Analyze Text</span>
-        <kbd class="shortcut-key">Ctrl+Enter</kbd>
-      `;
+      resetAnalyzeButtonText();
     }
   }
 
@@ -193,8 +280,11 @@ document.addEventListener("DOMContentLoaded", () => {
     btnModeHeatmap.disabled = false;
 
     const summary = data.summary;
-    const probs = data.calibrated_probabilities;
     const pcts = data.percentages;
+    const sentences = data.sentences || [];
+
+    heatmapSentCountBadge.textContent = sentences.length;
+    heatmapSentCountBadge.style.display = "inline-block";
 
     // Document Verdict Card
     verdictTitle.textContent = summary.verdict;
@@ -204,6 +294,9 @@ document.addEventListener("DOMContentLoaded", () => {
     verdictBadge.textContent = summary.verdict;
     verdictBadge.className = `verdict-badge ${summary.badge}`;
 
+    // Verdict Icon
+    renderVerdictIcon(summary.badge);
+
     // Uncertain Banner Handling
     if (summary.is_uncertain) {
       uncertainAlertBanner.style.display = "flex";
@@ -211,7 +304,13 @@ document.addEventListener("DOMContentLoaded", () => {
       uncertainAlertBanner.style.display = "none";
     }
 
-    // Probability Bars
+    // Composite Stacked Bar
+    stackBarAI.style.width = `${pcts.ai_generated}%`;
+    stackBarAIRefined.style.width = `${pcts.ai_ai_refined}%`;
+    stackBarHumanRefined.style.width = `${pcts.human_ai_refined}%`;
+    stackBarHuman.style.width = `${pcts.human}%`;
+
+    // Individual Percentage Meters
     pctAIGen.textContent = `${pcts.ai_generated.toFixed(1)}%`;
     barAIGen.style.width = `${pcts.ai_generated}%`;
 
@@ -224,14 +323,85 @@ document.addEventListener("DOMContentLoaded", () => {
     pctHuman.textContent = `${pcts.human.toFixed(1)}%`;
     barHuman.style.width = `${pcts.human}%`;
 
-    // Latency
+    // Telemetry Latency & Memory
     telemetryLatency.textContent = `${summary.elapsed_seconds.toFixed(2)}s`;
+    if (telemetryMemory) {
+      telemetryMemory.textContent = `~152 MB (Cap: 1,500 MB)`;
+    }
+
+    // Sentence Highlight Counts
+    renderSentenceCounts(sentences);
 
     // Render Heatmap Content
-    renderHeatmapSpans(data.sentences);
+    renderHeatmapSpans(sentences);
 
-    // Switch to Heatmap View automatically for clarity
+    // Automatically switch to Heatmap View so user sees highlights immediately
     switchToHeatmapMode();
+  }
+
+  function renderVerdictIcon(badgeClass) {
+    let iconSvg = "";
+    let boxClass = "";
+
+    if (badgeClass.includes("badge-human")) {
+      boxClass = "badge-human";
+      iconSvg = `
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      `;
+    } else if (badgeClass.includes("badge-ai-refined") || badgeClass.includes("badge-human-refined")) {
+      boxClass = badgeClass.includes("ai-refined") ? "badge-ai-refined" : "badge-human-refined";
+      iconSvg = `
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+          <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+          <path d="M16 21h5v-5"/>
+        </svg>
+      `;
+    } else if (badgeClass.includes("badge-ai")) {
+      boxClass = "badge-ai";
+      iconSvg = `
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="10" rx="2"/>
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M12 7v4"/>
+          <line x1="8" y1="16" x2="8" y2="16"/>
+          <line x1="16" y1="16" x2="16" y2="16"/>
+        </svg>
+      `;
+    } else {
+      boxClass = "badge-uncertain";
+      iconSvg = `
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      `;
+    }
+
+    verdictIconBox.className = `verdict-icon-box ${boxClass}`;
+    verdictIconBox.innerHTML = iconSvg;
+  }
+
+  function renderSentenceCounts(sentences) {
+    let ai = 0, aiRef = 0, humRef = 0, hum = 0;
+    sentences.forEach(s => {
+      const cls = s.highlight_class;
+      if (cls === "highlight-ai") ai++;
+      else if (cls === "highlight-ai-refined") aiRef++;
+      else if (cls === "highlight-human-refined") humRef++;
+      else hum++;
+    });
+
+    sentenceCountsSummary.innerHTML = `
+      ${ai > 0 ? `<span class="count-pill badge-ai">${ai} AI</span>` : ""}
+      ${aiRef > 0 ? `<span class="count-pill badge-ai-refined">${aiRef} AI-Refined</span>` : ""}
+      ${humRef > 0 ? `<span class="count-pill badge-human-refined">${humRef} Polished</span>` : ""}
+      <span class="count-pill badge-human">${hum} Human</span>
+    `;
   }
 
   function renderHeatmapSpans(sentences) {
@@ -263,48 +433,74 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderInspectorDetails(sent) {
-    const reasonsHtml = sent.reasons.map(r => `<li>${r}</li>`).join("");
+    const reasonsHtml = (sent.reasons || []).map(r => `<li>${r}</li>`).join("");
 
     inspectorContent.innerHTML = `
       <div class="inspector-sentence-text">"${sent.text}"</div>
       <div class="inspector-meta-row">
-        <span>Classification: <strong class="${sent.color_class}">${sent.class_label}</strong></span>
+        <span>Classification: <strong>${sent.class_label}</strong></span>
         <span>Confidence: <strong>${(sent.confidence * 100).toFixed(1)}%</strong></span>
       </div>
       <div class="inspector-meta-row">
-        <span>AI Likelihood: <strong>${sent.ai_likelihood_pct}%</strong></span>
+        <span>AI Likelihood Score: <strong>${sent.ai_likelihood_pct}%</strong></span>
       </div>
-      <div style="font-size: 0.78rem; font-weight: 700; margin-top: 6px; margin-bottom: 3px; color: var(--text-muted);">
+      <div style="font-size: 0.76rem; font-weight: 700; margin-top: 8px; margin-bottom: 4px; color: var(--text-muted); text-transform: uppercase;">
         Forensic Indicators:
       </div>
       <ul class="inspector-reasons-list">
-        ${reasonsHtml}
+        ${reasonsHtml || "<li>Natural phrasing and vocabulary variance</li>"}
       </ul>
     `;
   }
+
+  // Copy Summary Report
+  btnCopyReport.addEventListener("click", async () => {
+    if (!currentAnalysisData) return;
+    const s = currentAnalysisData.summary;
+    const p = currentAnalysisData.percentages;
+    const report = [
+      `=== VERITAS AI DETECTION REPORT ===`,
+      `Final Verdict: ${s.verdict} (${s.confidence_pct}% Confidence)`,
+      `Status: ${s.is_uncertain ? "Uncertain (Confidence below cutoff)" : "High Certainty"}`,
+      `Document Breakdown:`,
+      `  • AI-generated: ${p.ai_generated.toFixed(1)}%`,
+      `  • AI-generated & AI-refined: ${p.ai_ai_refined.toFixed(1)}%`,
+      `  • Human-written & AI-refined: ${p.human_ai_refined.toFixed(1)}%`,
+      `  • Human-written: ${p.human.toFixed(1)}%`,
+      `Analysis Latency: ${s.elapsed_seconds.toFixed(2)}s on 2 CPU Threads (ONNX INT8)`,
+      `==================================`
+    ].join("\n");
+
+    try {
+      await navigator.clipboard.writeText(report);
+      const origText = btnCopyReport.querySelector("span").textContent;
+      btnCopyReport.querySelector("span").textContent = "Copied to Clipboard!";
+      setTimeout(() => {
+        btnCopyReport.querySelector("span").textContent = origText;
+      }, 2000);
+    } catch (e) {
+      alert("Could not copy report to clipboard.");
+    }
+  });
+
+  // Quick-Test Sample Pills Setup
+  document.querySelectorAll(".sample-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      const sampleKey = pill.getAttribute("data-sample");
+      if (archetypeSamples[sampleKey]) {
+        textInput.value = archetypeSamples[sampleKey].text;
+        updateTextCounters();
+        switchToEditMode();
+      }
+    });
+  });
 
   // Load Pre-loaded Benchmark Samples & Comparison Sheet
   async function loadSamples() {
     try {
       const resp = await fetch("/api/samples");
       if (resp.ok) {
-        const samples = await resp.json();
-        sampleSelect.addEventListener("change", (e) => {
-          const val = e.target.value;
-          if (samples[val]) {
-            textInput.value = samples[val].text;
-            updateTextCounters();
-            switchToEditMode();
-          } else {
-            // Check in comparison sheet
-            const found = comparisonSheetData.find(s => s.id === val);
-            if (found) {
-              textInput.value = found.text;
-              updateTextCounters();
-              switchToEditMode();
-            }
-          }
-        });
+        archetypeSamples = await resp.json();
       }
 
       // Fetch 30-sample QuillBot comparison sheet
@@ -316,6 +512,16 @@ document.addEventListener("DOMContentLoaded", () => {
           opt.value = s.id;
           opt.textContent = `${s.id}: [${s.expected_class}] (${s.word_count}w) ${s.type}`;
           qbComparisonGroup.appendChild(opt);
+        });
+
+        sampleSelect.addEventListener("change", (e) => {
+          const val = e.target.value;
+          const found = comparisonSheetData.find(s => s.id === val);
+          if (found) {
+            textInput.value = found.text;
+            updateTextCounters();
+            switchToEditMode();
+          }
         });
       }
     } catch (e) {

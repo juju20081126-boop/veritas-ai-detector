@@ -17,42 +17,20 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from backend.stylometrics import analyze_stylometrics
+from backend.stylometrics import FEATURE_NAMES, extract_stylometrics_feature_vector
 from backend.document_parser import split_sentences
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "processed")
 
-FEATURE_NAMES = [
-    "mean_length", "std_length", "cv_length",
-    "ttr", "root_ttr", "hapax_ratio", "yule_k",
-    "syllable_cv", "hyphen_rate", "entropy",
-    "flesch_reading_ease", "hallmark_markers"
-]
-
 
 def extract_features_vector(text: str) -> np.ndarray:
-    """Extracts 12-dimensional stylometric feature vector."""
+    """Extracts 20-dimensional forensic & information-theoretic stylometric feature vector."""
     sents = split_sentences(text)
     if not sents:
         sents = [text]
-    metrics = analyze_stylometrics(text, sents)
-    
-    vec = [
-        metrics["syntax_variance"]["mean_length"],
-        metrics["syntax_variance"]["std_length"],
-        metrics["syntax_variance"]["cv_length"],
-        metrics["lexical_diversity"]["ttr"],
-        metrics["lexical_diversity"]["root_ttr"],
-        metrics["lexical_diversity"]["hapax_ratio"],
-        metrics["lexical_diversity"]["yule_k"],
-        metrics["syllable_dispersion"]["dispersion_cv"],
-        metrics["hyphenation"]["hyphen_rate_per_100w"],
-        metrics["entropy"]["shannon_entropy"],
-        metrics["readability"]["flesch_reading_ease"],
-        metrics.get("total_ai_markers", 0.0)
-    ]
-    return np.array(vec, dtype=np.float32)
+    vec, _ = extract_stylometrics_feature_vector(text, sents)
+    return vec
 
 
 class DistillationDataset(Dataset):
@@ -142,7 +120,11 @@ def train_student_model(epochs: int = 4, batch_size: int = 8, lr: float = 3e-5, 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
+    # Differential learning rates: 3e-5 for pretrained transformer trunk, 1e-3 for freshly initialized classifier head
+    optimizer = torch.optim.AdamW([
+        {"params": model.bert.parameters(), "lr": lr},
+        {"params": model.classifier.parameters(), "lr": 1e-3}
+    ], weight_decay=0.01)
     ce_loss_fn = nn.CrossEntropyLoss()
     kl_loss_fn = nn.KLDivLoss(reduction="batchmean")
 
@@ -233,7 +215,7 @@ def train_student_model(epochs: int = 4, batch_size: int = 8, lr: float = 3e-5, 
     norm_train_feats = (train_feats - np.array(feat_mean)) / np.array(feat_std)
     train_combined = np.concatenate([train_logits, norm_train_feats], axis=1)
 
-    meta_clf = LogisticRegression(C=0.5, max_iter=1000, random_state=42)
+    meta_clf = LogisticRegression(C=1.0, max_iter=2000, class_weight="balanced", random_state=42)
     meta_clf.fit(train_combined, train_labels)
 
     # 3. Post-quantization probability calibration via Temperature Scaling on held-out validation set
@@ -241,16 +223,19 @@ def train_student_model(epochs: int = 4, batch_size: int = 8, lr: float = 3e-5, 
     val_combined = np.concatenate([val_logits, norm_val_feats], axis=1)
     val_fused_raw = np.dot(val_combined, meta_clf.coef_.T) + meta_clf.intercept_
 
-    from scipy.optimize import minimize
-    def nll_func(T):
-        scaled = val_fused_raw / max(0.1, T[0])
+    # Optimize temperature directly to minimize Expected Calibration Error (ECE)
+    best_T = 1.0
+    best_ece = 1.0
+    for T_cand in np.linspace(0.8, 5.0, 211):
+        scaled = val_fused_raw / T_cand
         exp_s = np.exp(scaled - np.max(scaled, axis=1, keepdims=True))
         p = exp_s / np.sum(exp_s, axis=1, keepdims=True)
-        return -float(np.mean(np.log(np.clip(p[np.arange(len(val_labels)), val_labels], 1e-12, 1.0))))
+        e = compute_ece(p, val_labels)
+        if e < best_ece:
+            best_ece = e
+            best_T = float(T_cand)
 
-    res = minimize(nll_func, [1.0], bounds=[(0.2, 5.0)])
-    cal_temp = float(res.x[0])
-
+    cal_temp = best_T
     scaled = val_fused_raw / cal_temp
     exp_s = np.exp(scaled - np.max(scaled, axis=1, keepdims=True))
     cal_probs = exp_s / np.sum(exp_s, axis=1, keepdims=True)

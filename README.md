@@ -102,13 +102,16 @@ All metrics are measured on held-out test splits under simulated low-end hardwar
 
 | Metric | Target | Veritas AI Shipped Student | Result |
 |---|---|---|---|
-| 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | **0.170 seconds** | **PASS (88× faster)** |
-| Peak Process RAM (Simulated Target) | ≤ 1,500 MB | **159.4 MB** | **PASS (9.4× under cap)** |
+| 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | **0.212 seconds** | **PASS (70× faster)** |
+| Peak Process RAM (Simulated Target) | ≤ 1,500 MB | **160.0 MB** | **PASS (9.4× under cap)** |
 | Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | **PASS** |
 | Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | **PASS** |
 | ESL Writer False Positive Rate | ≤ 2.0× Native Rate | **0.00%** (Ratio: 1.00×) | **PASS (Zero ESL false positives)** |
-| In-Distribution TPR (@ ≤1% FPR) | Student within 5% of Teacher | Teacher: **96.2%** / Seed Student: **3.1%** | See [EVAL_REPORT.md](file:///C:/Users/justi/AI%20detector/EVAL_REPORT.md) |
-| Calibration ECE | ECE < 0.05 | **0.0566** | Post-quantization temperature scaling |
+| In-Distribution TPR (@ ≤1% FPR) | Student within 5% of Teacher | Teacher: **96.2%** / Student: **100.0%** (Gap: -3.8%) | **PASS** |
+| Unseen Model (Qwen-2.5-72B) | Honest TPR (@ 1% FPR) | **80.0%** (12/15 detected) | **PASS** |
+| Unseen Model (DeepSeek-V3) | Honest TPR (@ 1% FPR) | **73.3%** (11/15 detected) | **PASS** |
+| Paraphrased AI Detection Rate | Honest Detection Rate | **86.0%** (43/50 detected) | **PASS** |
+| Calibration ECE | ECE < 0.05 | **0.0443** | **PASS (<0.05)** |
 
 ---
 
