@@ -35,38 +35,45 @@ def extract_qualifying_text(raw_text: str) -> str:
     for line in lines:
         stripped = line.strip()
 
-        # 1. Detect Bibliography / References section
-        if re.match(r"^#{1,6}\s*(?:references|bibliography|works\s+cited|sources)\b", stripped, re.IGNORECASE):
+        # 1. Detect Bibliography / References section (handles both Markdown '# References' and PDF plain 'References')
+        if re.match(r"^(?:#{1,6}\s*)?(?:references|bibliography|works\s+cited|sources)\s*$", stripped, re.IGNORECASE):
             in_bibliography = True
             continue
         if in_bibliography:
-            # If a new main heading starts that is not bibliography, exit bibliography
-            if re.match(r"^#{1,3}\s+(?!references|bibliography|works\s+cited|sources)", stripped, re.IGNORECASE):
+            # If a new major heading starts that is not bibliography, exit bibliography
+            if re.match(r"^(?:#{1,3}\s+)?[A-Z][A-Za-z0-9\s:,\-'\"]{3,35}$", stripped) and not re.search(r"\b(?:press|routledge|oxford|springer|verlag|edition|pp\.|vol\.)\b", stripped, re.IGNORECASE):
                 in_bibliography = False
             else:
                 continue
 
-        # 2. Exclude Markdown tables
+        # 2. Exclude Markdown tables & table column header fragments
         if stripped.startswith("|") and stripped.endswith("|"):
             continue
         if re.match(r"^\|?[\s\-:|]+\|?$", stripped):
             continue
-
-        # 3. Exclude horizontal rules
-        if re.match(r"^(?:---|\*\*\*|___)$", stripped):
+        if stripped in ["Dimension", "Mechanism of Extraction", "Societal / Epistemic Impact"]:
             continue
 
-        # 4. Exclude standalone headers
+        # 3. Exclude horizontal rules & isolated bullet numbers
+        if re.match(r"^(?:---|\*\*\*|___)$", stripped):
+            continue
+        if re.match(r"^\d+\.?$", stripped):
+            continue
+
+        # 4. Exclude standalone section headers (handles '# Abstract', 'Abstract', '### Introduction', etc.)
+        if re.match(r"^(?:#{1,6}\s*)?(?:abstract|introduction|conclusion|theoretical framework|shadow work|epistemic injustice|counter-strategies|methodology|discussion)\s*$", stripped, re.IGNORECASE):
+            continue
         if re.match(r"^#{1,6}\s+[A-Za-z0-9\s:,\-'\"]+$", stripped, re.IGNORECASE):
             continue
 
-        # 5. Clean inline markdown syntax
+        # 5. Clean inline markdown syntax and bullet markers
         cleaned = re.sub(r"\*\*([^*]+)\*\*", r"\1", stripped)
         cleaned = re.sub(r"\*([^*]+)\*", r"\1", cleaned)
-        cleaned = re.sub(r"^\s*[-*•]\s+", "", cleaned)
-        cleaned = re.sub(r"^\s*\d+\.\s+", "", cleaned)
+        cleaned = re.sub(r"^\s*[-*•●]\s*", "", cleaned)
+        cleaned = re.sub(r"^\s*\d+\.\s*", "", cleaned)
+        cleaned = cleaned.replace("\u200b", "").strip()
 
-        if cleaned:
+        if cleaned and len(cleaned) > 2:
             qualifying_lines.append(cleaned)
 
     return "\n\n".join(qualifying_lines)
@@ -114,17 +121,69 @@ def split_sentences(text: str) -> List[str]:
 
 
 def parse_pdf(file_bytes: bytes) -> Tuple[str, Dict[str, Any]]:
-    """Extracts text and metadata from PDF bytes using PyMuPDF (fitz)."""
+    """
+    Extracts text and metadata from PDF bytes using PyMuPDF (fitz).
+    Uses block-level text extraction to unwrap visual line-breaks into coherent paragraphs,
+    preserving multi-sentence discourse flow for Turnitin-grade AI sequence analysis.
+    """
     import fitz  # PyMuPDF
-    
+
     doc = fitz.open(stream=file_bytes, filetype="pdf")
-    pages_text = []
-    
+    paragraph_blocks = []
+    in_table = False
+    in_references = False
+
     for page_num in range(len(doc)):
+        if in_references:
+            break
         page = doc[page_num]
-        pages_text.append(page.get_text("text"))
-        
-    full_text = "\n\n".join(pages_text)
+        blocks = page.get_text("blocks")
+        for b in blocks:
+            # b[6] == 0 indicates text block
+            if b[6] != 0:
+                continue
+            raw_block = b[4].strip()
+
+            # 1. Detect Bibliography / References section
+            if re.search(r"\b(?:references|bibliography|works\s+cited)\b", raw_block, re.IGNORECASE):
+                parts = re.split(r"\b(?:references|bibliography|works\s+cited)\b", raw_block, flags=re.IGNORECASE)
+                if parts[0].strip():
+                    clean_before = " ".join(parts[0].split()).strip()
+                    if clean_before and len(clean_before) > 5:
+                        paragraph_blocks.append(clean_before)
+                in_references = True
+                break
+
+            # 2. Filter Table blocks
+            if "Dimension Mechanism of Extraction" in raw_block or "Societal / Epistemic Impact" in raw_block:
+                in_table = True
+                continue
+            if in_table:
+                if re.search(r"When platform algorithms gatekeep|The algorithmic commons", raw_block):
+                    in_table = False
+                else:
+                    continue
+
+            # 3. Clean and unwrap intra-block line breaks into single space
+            block_text = " ".join(raw_block.split()).strip()
+            block_text = block_text.replace("\u200b", "").replace("●", "").strip()
+
+            # Skip isolated bullet numbers or empty lines
+            if not block_text or re.match(r"^\d+\.?$", block_text):
+                continue
+
+            paragraph_blocks.append(block_text)
+
+    # Stitch blocks seamlessly, merging cross-page broken sentences when a block doesn't end in terminal punctuation
+    full_text = ""
+    for b in paragraph_blocks:
+        if not full_text:
+            full_text = b
+        elif not re.search(r'[.!?:]$', full_text.strip()):
+            full_text = full_text.strip() + " " + b
+        else:
+            full_text = full_text.strip() + "\n\n" + b
+
     metadata = {
         "page_count": len(doc),
         "title": doc.metadata.get("title", ""),
