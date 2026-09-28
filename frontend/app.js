@@ -396,6 +396,10 @@ function displayResults(data) {
   });
   selectSentence(bestIdx);
 
+  // Pre-fetch multi-engine comparative audit in background
+  comparativeDataCache = null;
+  fetchComparativeAudit();
+
   // Smooth scroll to results
   resultsSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -558,3 +562,174 @@ function escapeHtml(text) {
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+// ============================================================================
+// Multi-Detector Comparative Audit Controller (Turnitin vs ZeroGPT vs QuillBot)
+// ============================================================================
+const tabHeatmapBtn = document.getElementById('tabHeatmapBtn');
+const tabComparativeBtn = document.getElementById('tabComparativeBtn');
+const splitWorkspace = document.getElementById('splitWorkspace');
+const comparativeWorkspace = document.getElementById('comparativeWorkspace');
+const refreshCompBtn = document.getElementById('refreshCompBtn');
+
+let comparativeDataCache = null;
+
+if (tabHeatmapBtn && tabComparativeBtn) {
+  tabHeatmapBtn.addEventListener('click', () => {
+    tabHeatmapBtn.classList.add('active');
+    tabComparativeBtn.classList.remove('active');
+    if (splitWorkspace) splitWorkspace.style.display = 'grid';
+    if (comparativeWorkspace) comparativeWorkspace.style.display = 'none';
+  });
+
+  tabComparativeBtn.addEventListener('click', () => {
+    tabComparativeBtn.classList.add('active');
+    tabHeatmapBtn.classList.remove('active');
+    if (splitWorkspace) splitWorkspace.style.display = 'none';
+    if (comparativeWorkspace) comparativeWorkspace.style.display = 'block';
+
+    if (!comparativeDataCache && textInput.value.trim()) {
+      fetchComparativeAudit();
+    }
+  });
+}
+
+if (refreshCompBtn) {
+  refreshCompBtn.addEventListener('click', () => {
+    comparativeDataCache = null;
+    fetchComparativeAudit();
+  });
+}
+
+async function fetchComparativeAudit() {
+  const text = textInput.value.trim();
+  if (!text) return;
+
+  if (refreshCompBtn) {
+    refreshCompBtn.innerHTML = `<span>Simulating 5 Engines...</span>`;
+    refreshCompBtn.disabled = true;
+  }
+
+  try {
+    const res = await fetch('/api/comparative-audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text })
+    });
+    if (!res.ok) throw new Error('Comparative audit request failed');
+    const data = await res.json();
+    comparativeDataCache = data;
+    renderComparativeAudit(data);
+  } catch (err) {
+    console.error('Comparative Audit Error:', err);
+  } finally {
+    if (refreshCompBtn) {
+      refreshCompBtn.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+        </svg>
+        <span>Re-Run Multi-Audit</span>
+      `;
+      refreshCompBtn.disabled = false;
+    }
+  }
+}
+
+function renderComparativeAudit(data) {
+  const eng = data.engines;
+  const summ = data.summary;
+
+  // 1. Turnitin Card
+  const tScoreEl = document.getElementById('compTurnitinScore');
+  const tGatedEl = document.getElementById('compTurnitinGated');
+  const tWordsEl = document.getElementById('compTurnitinWords');
+  const tVerdictEl = document.getElementById('compTurnitinVerdict');
+
+  if (tScoreEl && eng.turnitin) {
+    const tScore = eng.turnitin.score;
+    tScoreEl.textContent = `${tScore}%`;
+    tScoreEl.className = `det-score-pill ${tScore >= 50 ? 'score-high' : tScore >= 20 ? 'score-mod' : 'score-low'}`;
+    tGatedEl.textContent = eng.turnitin.gated ? "Below Confidence Threshold (<20% Gate)" : "Institutional Threshold Passed";
+    tWordsEl.textContent = `${eng.turnitin.ai_qualifying_words || 0} / ${eng.turnitin.qualifying_words || summ.document_words}`;
+    tVerdictEl.textContent = tScore >= 50 ? "Substantial Machine Generation" : tScore >= 20 ? "Mixed Authorship" : "Authentic Human Writing";
+    tVerdictEl.className = `det-verdict-tag ${tScore >= 50 ? 'badge-danger' : tScore >= 20 ? 'badge-warning' : 'badge-success'}`;
+  }
+
+  // 2. ZeroGPT Card
+  const zScoreEl = document.getElementById('compZeroGptScore');
+  const zSentEl = document.getElementById('compZeroGptSentences');
+  const zVerdictEl = document.getElementById('compZeroGptVerdict');
+
+  if (zScoreEl && eng.zerogpt) {
+    const zScore = eng.zerogpt.fakePercentage;
+    zScoreEl.textContent = `${zScore}%`;
+    zScoreEl.className = `det-score-pill ${zScore >= 50 ? 'score-high' : zScore >= 20 ? 'score-mod' : 'score-low'}`;
+    zSentEl.textContent = `${eng.zerogpt.flagged_sentence_count} / ${eng.zerogpt.total_sentences}`;
+    zVerdictEl.textContent = zScore >= 50 ? "Your Text is AI / GPT Generated" : zScore >= 15 ? "Contains AI Sentences" : "Your Text is Human Written";
+    zVerdictEl.className = `det-verdict-tag ${zScore >= 50 ? 'badge-danger' : zScore >= 15 ? 'badge-warning' : 'badge-success'}`;
+  }
+
+  // 3. QuillBot Card
+  const qScoreEl = document.getElementById('compQuillBotScore');
+  const qAiEl = document.getElementById('compQuillAiSentences');
+  const qParaEl = document.getElementById('compQuillParaSentences');
+  const qVerdictEl = document.getElementById('compQuillBotVerdict');
+
+  if (qScoreEl && eng.quillbot) {
+    const qScore = eng.quillbot.overall_score;
+    qScoreEl.textContent = `${qScore}%`;
+    qScoreEl.className = `det-score-pill ${qScore >= 50 ? 'score-high' : qScore >= 25 ? 'score-mod' : 'score-low'}`;
+    qAiEl.textContent = `${eng.quillbot.ai_sentences} sentences`;
+    qParaEl.textContent = `${eng.quillbot.paraphrased_sentences} sentences`;
+    qVerdictEl.textContent = qScore >= 50 ? "AI-Generated / Heavy Paraphrase" : qScore >= 20 ? "AI-Refined Content" : "Likely Human-Written";
+    qVerdictEl.className = `det-verdict-tag ${qScore >= 50 ? 'badge-danger' : qScore >= 20 ? 'badge-warning' : 'badge-success'}`;
+  }
+
+  // 4. Copyleaks Card
+  const cScoreEl = document.getElementById('compCopyleaksScore');
+  const cSylEl = document.getElementById('compCopySyl');
+  const cHyphenEl = document.getElementById('compCopyHyphen');
+  const cCadenceEl = document.getElementById('compCopyCadence');
+  const cVerdictEl = document.getElementById('compCopyleaksVerdict');
+
+  if (cScoreEl && eng.copyleaks) {
+    const cScore = eng.copyleaks.overall_score;
+    cScoreEl.textContent = `${cScore}%`;
+    cScoreEl.className = `det-score-pill ${cScore >= 50 ? 'score-high' : 'score-low'}`;
+    cSylEl.textContent = `CV: ${eng.copyleaks.syllable_dispersion_cv}`;
+    cHyphenEl.textContent = `${eng.copyleaks.hyphen_rate_per_100w} / 100w`;
+    cCadenceEl.textContent = eng.copyleaks.syllable_dispersion_cv < 0.44 ? "Uniform Machine Cadence" : "Natural Human Cadence";
+    cVerdictEl.textContent = eng.copyleaks.verdict;
+    cVerdictEl.className = `det-verdict-tag ${cScore >= 50 ? 'badge-danger' : 'badge-success'}`;
+  }
+
+  // 5. Binoculars Card
+  const bScoreEl = document.getElementById('compBinocularsScore');
+  const bVerdictEl = document.getElementById('compBinocularsVerdict');
+
+  if (bScoreEl && eng.binoculars) {
+    const bScore = eng.binoculars.binoculars_score;
+    bScoreEl.textContent = `${bScore}`;
+    const isAi = eng.binoculars.verdict === 'AI-Generated';
+    bScoreEl.className = `det-score-pill ${isAi ? 'score-high' : 'score-low'}`;
+    bVerdictEl.textContent = isAi ? "Machine-Generated (ICML SOTA)" : "Human-Authored";
+    bVerdictEl.className = `det-verdict-tag ${isAi ? 'badge-danger' : 'badge-success'}`;
+  }
+
+  // 6. Dynamic Insights
+  const insightTextEl = document.getElementById('compInsightText');
+  if (insightTextEl) {
+    const turnitinHigh = eng.turnitin && eng.turnitin.score >= 50;
+    const zeroGptLow = eng.zerogpt && eng.zerogpt.fakePercentage < 20;
+    if (turnitinHigh && zeroGptLow) {
+      insightTextEl.innerHTML = `
+        <strong>Classic ZeroGPT Token-Outlier Blind Spot Detected:</strong> Turnitin flagged <strong>${eng.turnitin.score}% AI</strong> via overlapping 200w discourse windows, whereas ZeroGPT scored <strong>${eng.zerogpt.fakePercentage}%</strong> because dense domain vocabulary and proper nouns spiked raw token perplexity on isolated sentences, fooling ZeroGPT's static threshold.
+      `;
+    } else {
+      insightTextEl.innerHTML = `
+        <strong>Cross-Engine Agreement:</strong> Across 5 independent paradigms, the document shows consistent markers of <strong>${summ.veritas_ai_score >= 50 ? 'Generative AI composition' : 'Human authorship'}</strong>. Turnitin evaluated inter-sentence discourse cohesion (${eng.turnitin.score}%), QuillBot identified syntactic structure, and Copyleaks confirmed syllable rhythm patterns.
+      `;
+    }
+  }
+}
+

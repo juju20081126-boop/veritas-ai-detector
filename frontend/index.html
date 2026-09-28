@@ -192,8 +192,28 @@
         </div>
       </div>
 
+      <!-- Workspace View Switcher Tabs -->
+      <div class="workspace-tabs-bar">
+        <button id="tabHeatmapBtn" class="workspace-nav-tab active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+          <span>Turnitin Heatmap &amp; Telemetry</span>
+        </button>
+        <button id="tabComparativeBtn" class="workspace-nav-tab">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/>
+            <circle cx="8" cy="12" r="2"/>
+          </svg>
+          <span>Multi-Detector Audit (Turnitin vs ZeroGPT vs QuillBot vs Copyleaks)</span>
+          <span class="tab-badge-highlight">LIVE SIMULATION</span>
+        </button>
+      </div>
+
       <!-- Split View Workspace (Turnitin Style) -->
-      <div class="split-workspace">
+      <div id="splitWorkspace" class="split-workspace">
         
         <!-- Left Pane: Interactive Document Heatmap -->
         <div class="heatmap-pane">
@@ -363,7 +383,214 @@
 
       </div>
 
-    </section>
+      <!-- Multi-Detector Comparative Audit View -->
+      <div id="comparativeWorkspace" class="comparative-workspace" style="display: none;">
+        <div class="comparative-header">
+          <div class="comp-title">
+            <h3>Reverse-Engineered Multi-Engine Benchmark</h3>
+            <p>How leading institutional and commercial detectors evaluate this exact text based on their reverse-engineered algorithms.</p>
+          </div>
+          <button id="refreshCompBtn" class="btn btn-secondary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+            </svg>
+            <span>Re-Run Multi-Audit</span>
+          </button>
+        </div>
+
+        <!-- 5 Engine Grid -->
+        <div class="detector-cards-grid">
+          
+          <!-- Turnitin Card -->
+          <div class="detector-card turnitin-card">
+            <div class="det-card-top">
+              <div class="det-brand">
+                <span class="det-logo t-logo">T</span>
+                <div>
+                  <h4>Turnitin AIW-2 &amp; AIR-1</h4>
+                  <span class="det-sub">Higher Ed Institutional Benchmark</span>
+                </div>
+              </div>
+              <div id="compTurnitinScore" class="det-score-pill score-high">--%</div>
+            </div>
+            <div class="det-body">
+              <div class="det-feature-row">
+                <span>Architecture:</span>
+                <strong>200-250w Overlapping Windows</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Paraphrase Shield:</span>
+                <strong>AIR-1 Thesaurus Dissonance</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Gated Threshold:</span>
+                <strong id="compTurnitinGated">Active (1-19% rule)</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>AI Qualifying Words:</span>
+                <strong id="compTurnitinWords">-- / --</strong>
+              </div>
+            </div>
+            <div class="det-footer">
+              <span class="det-verdict-tag" id="compTurnitinVerdict">Analyzing...</span>
+            </div>
+          </div>
+
+          <!-- ZeroGPT Card -->
+          <div class="detector-card zerogpt-card">
+            <div class="det-card-top">
+              <div class="det-brand">
+                <span class="det-logo z-logo">0</span>
+                <div>
+                  <h4>ZeroGPT (DeepAnalyse™)</h4>
+                  <span class="det-sub">Statistical Perplexity Engine</span>
+                </div>
+              </div>
+              <div id="compZeroGptScore" class="det-score-pill score-mixed">--%</div>
+            </div>
+            <div class="det-body">
+              <div class="det-feature-row">
+                <span>Architecture:</span>
+                <strong>Isolated Sentence Token PPL</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Aggregation:</span>
+                <strong>fakePercentage = aiWords / textWords</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Flagged Sentences:</span>
+                <strong id="compZeroGptSentences">-- / --</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Vulnerability:</span>
+                <span class="det-warn-text">Proper Noun Spikes / Legal False +</span>
+              </div>
+            </div>
+            <div class="det-footer">
+              <span class="det-verdict-tag" id="compZeroGptVerdict">Analyzing...</span>
+            </div>
+          </div>
+
+          <!-- QuillBot Card -->
+          <div class="detector-card quillbot-card">
+            <div class="det-card-top">
+              <div class="det-brand">
+                <span class="det-logo q-logo">Q</span>
+                <div>
+                  <h4>QuillBot AI Detector</h4>
+                  <span class="det-sub">Linguistic Diagnostic Engine</span>
+                </div>
+              </div>
+              <div id="compQuillBotScore" class="det-score-pill score-mod">--%</div>
+            </div>
+            <div class="det-body">
+              <div class="det-feature-row">
+                <span>Architecture:</span>
+                <strong>Sentence 4-Marker Classifier</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>AI Sentences:</span>
+                <strong id="compQuillAiSentences">--</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Paraphrased Sentences:</span>
+                <strong id="compQuillParaSentences">--</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Diagnostic Markers:</span>
+                <span class="det-pill-mini">Academic Register &bull; Subordination</span>
+              </div>
+            </div>
+            <div class="det-footer">
+              <span class="det-verdict-tag" id="compQuillBotVerdict">Analyzing...</span>
+            </div>
+          </div>
+
+          <!-- Copyleaks Card -->
+          <div class="detector-card copyleaks-card">
+            <div class="det-card-top">
+              <div class="det-brand">
+                <span class="det-logo c-logo">C</span>
+                <div>
+                  <h4>Copyleaks Forensics</h4>
+                  <span class="det-sub">Multilingual Rhythm Analysis</span>
+                </div>
+              </div>
+              <div id="compCopyleaksScore" class="det-score-pill score-mod">--%</div>
+            </div>
+            <div class="det-body">
+              <div class="det-feature-row">
+                <span>Syllable Rhythm:</span>
+                <strong id="compCopySyl">CV: --</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Hyphenation Rate:</span>
+                <strong id="compCopyHyphen">-- / 100w</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Methodology:</span>
+                <strong>Statistical Stylometrics &amp; ML</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Cadence Alert:</span>
+                <span id="compCopyCadence">Evaluating...</span>
+              </div>
+            </div>
+            <div class="det-footer">
+              <span class="det-verdict-tag" id="compCopyleaksVerdict">Analyzing...</span>
+            </div>
+          </div>
+
+          <!-- Binoculars Card -->
+          <div class="detector-card binoculars-card">
+            <div class="det-card-top">
+              <div class="det-brand">
+                <span class="det-logo b-logo">B</span>
+                <div>
+                  <h4>Binoculars (ICML 2024)</h4>
+                  <span class="det-sub">State of the Art Zero-Shot</span>
+                </div>
+              </div>
+              <div id="compBinocularsScore" class="det-score-pill score-neutral">--</div>
+            </div>
+            <div class="det-body">
+              <div class="det-feature-row">
+                <span>Metric Formulation:</span>
+                <strong>log(PPL_M1) / log(X-PPL_M1,M2)</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Decision Cutoff:</span>
+                <strong>Threshold: 0.98</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>Vocabulary Normalization:</span>
+                <strong class="text-success">Cancels domain spikes</strong>
+              </div>
+              <div class="det-feature-row">
+                <span>False-Positive Rate:</span>
+                <strong class="text-success">&lt;0.01% in ICML 2024 tests</strong>
+              </div>
+            </div>
+            <div class="det-footer">
+              <span class="det-verdict-tag" id="compBinocularsVerdict">Evaluating...</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Comparative Insights Bar -->
+        <div class="comparative-insights-card">
+          <div class="insight-icon">💡</div>
+          <div class="insight-content">
+            <h4>Forensic Divergence &amp; Architectural Takeaway:</h4>
+            <p id="compInsightText">
+              Different detectors yield varying scores because of their underlying design: <strong>Turnitin</strong> captures continuous generative sequence flow through overlapping 200w windows; <strong>ZeroGPT</strong> evaluates isolated sentences and can be fooled by foreign citations or legal phrasing; <strong>QuillBot</strong> flags syntactic subordination; and <strong>Copyleaks</strong> measures syllable rhythm variance.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
 
   </main>
 
