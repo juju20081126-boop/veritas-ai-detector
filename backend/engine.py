@@ -414,6 +414,9 @@ class AIDetectorEngine:
             "summary": {
                 "overall_ai_score": round(final_ai_score, 3),
                 "overall_ai_percentage": final_ai_percentage,
+                "turnitin_word_weighted_percentage": round(turnitin_word_pct, 1),
+                "total_qualifying_words": total_qualifying_words,
+                "ai_qualifying_words": ai_qualifying_words,
                 "display_score": display_score,
                 "is_below_institutional_threshold": is_below_institutional_threshold,
                 "human_percentage": round(100.0 - final_ai_percentage, 1),

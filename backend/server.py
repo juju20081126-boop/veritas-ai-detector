@@ -146,6 +146,23 @@ def export_pdf_report(req: ReportRequest):
         raise HTTPException(status_code=500, detail=f"PDF report generation failed: {str(e)}")
 
 
+@app.post("/api/comparative-audit")
+def comparative_audit_endpoint(req: DetectRequest):
+    global engine
+    if not engine:
+        engine = AIDetectorEngine.get_instance()
+    text = req.text.strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Text cannot be empty.")
+    try:
+        from backend.reverse_engineered_detectors import run_full_comparative_audit
+        results = run_full_comparative_audit(text, engine)
+        return JSONResponse(content=results)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Comparative audit failed: {str(e)}")
+
+
+
 # Serve Frontend static assets
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 if os.path.exists(frontend_dir):
