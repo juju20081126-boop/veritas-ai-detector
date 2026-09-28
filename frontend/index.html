@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veritas AI — Institutional AI Writing & Authenticity Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">VERITAS<span class="brand-accent">AI</span></span>
+          <span class="brand-tagline">Turnitin-Grade AI Content & Originality Audit</span>
+        </div>
+      </div>
+
+      <div class="header-status">
+        <div class="status-pill" id="engineStatusPill">
+          <span class="status-dot"></span>
+          <span id="engineStatusText">Neural Engine: Ready</span>
+        </div>
+        <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Wrapper -->
+  <main class="main-container">
+    
+    <!-- Input Section -->
+    <section class="scan-input-card">
+      <div class="section-toolbar">
+        <div class="toolbar-title">
+          <h2>Input Document</h2>
+          <p>Paste text or upload PDF/DOCX to inspect for generative AI patterns.</p>
+        </div>
+
+        <div class="samples-dropdown-wrapper">
+          <label for="sampleSelect" class="sample-label">Try Preloaded Samples:</label>
+          <select id="sampleSelect" class="select-input">
+            <option value="" disabled selected>Select a real-world sample...</option>
+            <option value="chatgpt_academic">ChatGPT 4o: Academic Essay (AI)</option>
+            <option value="claude_technical">Claude 3.5: Quantum Computing (AI)</option>
+            <option value="human_academic">Human Scholar: Mediterranean Trade (Human)</option>
+            <option value="human_narrative">Human Narrative: Night Fishing (Human)</option>
+            <option value="mixed_student">Mixed Submission: Human + AI Expanded (Mixed)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- File Drop & Text Area Area -->
+      <div class="editor-container">
+        <div class="file-upload-strip" id="dropZone">
+          <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.md" style="display: none;" />
+          <div class="drop-content" id="dropTrigger">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span><strong>Upload Document</strong> (PDF, DOCX, TXT) or drag & drop</span>
+          </div>
+          <div id="fileUploadSpinner" class="upload-spinner" style="display: none;">
+            <div class="spinner-small"></div>
+            <span>Ingesting document...</span>
+          </div>
+        </div>
+
+        <textarea 
+          id="textInput" 
+          class="document-textarea" 
+          placeholder="Paste essays, academic papers, student submissions, or articles here (minimum 15 words)..."
+        ></textarea>
+
+        <div class="editor-footer">
+          <div class="live-stats">
+            <span id="charCount">0 characters</span>
+            <span class="stat-sep">•</span>
+            <span id="wordCount">0 words</span>
+            <span class="stat-sep">•</span>
+            <span id="sentenceCount">0 sentences</span>
+          </div>
+          
+          <div class="footer-actions">
+            <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            <button id="scanBtn" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <span>Scan Document</span>
+              <kbd class="shortcut-key">Ctrl+Enter</kbd>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scanning Overlay / Progress Bar -->
+    <div id="scanLoadingOverlay" class="loading-overlay" style="display: none;">
+      <div class="loading-modal">
+        <div class="radar-scan">
+          <div class="radar-beam"></div>
+        </div>
+        <h3 id="loadingStatusText">Analyzing Linguistic Forensics...</h3>
+        <p class="loading-subtext">Executing RoBERTa neural classification, GPT-2 token perplexity, burstiness variation, and cliché markers...</p>
+      </div>
+    </div>
+
+    <!-- Results Section (Visible after scan) -->
+    <section id="resultsSection" class="results-section" style="display: none;">
+      
+      <!-- Top Action Bar -->
+      <div class="results-action-bar">
+        <div class="result-doc-info">
+          <h2 id="resultDocTitle">Document Inspection Audit</h2>
+          <span id="resultDocMeta" class="doc-meta">234 words • 1.2 min reading time • Completed in 1.4s</span>
+        </div>
+        <div class="result-actions">
+          <button id="exportPdfBtn" class="btn btn-export">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <line x1="9" y1="15" x2="12" y2="18"/>
+              <line x1="15" y1="15" x2="12" y2="18"/>
+            </svg>
+            <span>Download Official PDF Report</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Executive Scorecard Banner -->
+      <div class="executive-scorecard" id="executiveScorecard">
+        <div class="score-dial-column">
+          <div class="circular-score-gauge">
+            <svg viewBox="0 0 120 120" class="gauge-svg">
+              <circle class="gauge-bg" cx="60" cy="60" r="52"></circle>
+              <circle id="gaugeProgress" class="gauge-progress" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="gauge-center-text">
+              <span id="scoreValue" class="score-number">0%</span>
+              <span class="score-caption">AI LIKELIHOOD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="score-details-column">
+          <div class="verdict-header">
+            <span id="verdictBadge" class="badge">Checking...</span>
+            <span id="confidenceTag" class="confidence-tag">99.1% Statistical Confidence</span>
+          </div>
+          <h3 id="verdictTitle" class="verdict-title">Authenticity Analysis</h3>
+          <p id="verdictDesc" class="verdict-description">Detailed findings description will render here.</p>
+
+          <!-- Sentence breakdown badges -->
+          <div class="breakdown-counters">
+            <div class="count-pill count-high">
+              <span class="count-badge red" id="cntHighAI">0</span>
+              <span>Highly Likely AI (&ge;75%)</span>
+            </div>
+            <div class="count-pill count-mod">
+              <span class="count-badge orange" id="cntModAI">0</span>
+              <span>Likely AI (55-74%)</span>
+            </div>
+            <div class="count-pill count-mixed">
+              <span class="count-badge yellow" id="cntMixed">0</span>
+              <span>Mixed / Paraphrased (35-54%)</span>
+            </div>
+            <div class="count-pill count-human">
+              <span class="count-badge green" id="cntHuman">0</span>
+              <span>Human Written (&lt;35%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Split View Workspace (Turnitin Style) -->
+      <div class="split-workspace">
+        
+        <!-- Left Pane: Interactive Document Heatmap -->
+        <div class="heatmap-pane">
+          <div class="pane-header">
+            <div class="pane-title">
+              <h3>Document Sentence Heatmap</h3>
+              <span class="subtext">Click any sentence to drill into token-level metrics</span>
+            </div>
+            <div class="view-filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="ai-only">AI Only</button>
+              <button class="filter-btn" data-filter="cliches">Flagged Clichés</button>
+            </div>
+          </div>
+
+          <div class="heatmap-content-box" id="heatmapBox">
+            <!-- Sentences will be populated dynamically -->
+          </div>
+
+          <div class="heatmap-legend">
+            <div class="legend-item"><span class="legend-swatch swatch-high"></span> Highly Likely AI</div>
+            <div class="legend-item"><span class="legend-swatch swatch-mod"></span> Likely AI</div>
+            <div class="legend-item"><span class="legend-swatch swatch-mixed"></span> Mixed / Paraphrased</div>
+            <div class="legend-item"><span class="legend-swatch swatch-human"></span> Human Written</div>
+            <div class="legend-item"><span class="legend-swatch swatch-cliche"></span> AI Buzzword/Cliché</div>
+          </div>
+        </div>
+
+        <!-- Right Pane: Sentence Inspector & Forensic Telemetry -->
+        <div class="analytics-pane">
+          
+          <!-- Sentence Inspector Card (Active selection) -->
+          <div class="inspector-card" id="inspectorCard">
+            <div class="inspector-header">
+              <div class="inspector-tag">
+                <span class="inspector-icon">🔍</span>
+                <span id="inspectSentenceNum">Sentence #1 Selected</span>
+              </div>
+              <span id="inspectAiBadge" class="badge-mini">89% AI</span>
+            </div>
+
+            <div class="inspector-quote-box">
+              <p id="inspectSentenceText">Click on any highlighted sentence on the left to inspect its individual neural probability, perplexity, and token metrics.</p>
+            </div>
+
+            <div class="inspector-stats-grid">
+              <div class="stat-mini-card">
+                <span class="stat-label">Perplexity (PPL)</span>
+                <span id="inspectPpl" class="stat-val">16.4</span>
+                <span class="stat-sub">Lower = AI Predictable</span>
+              </div>
+              <div class="stat-mini-card">
+                <span class="stat-label">Top-10 Token Ratio</span>
+                <span id="inspectTop10" class="stat-val">84.2%</span>
+                <span class="stat-sub">&gt;70% = Algorithmic</span>
+              </div>
+              <div class="stat-mini-card">
+                <span class="stat-label">Neural Confidence</span>
+                <span id="inspectNeural" class="stat-val">94.8%</span>
+                <span class="stat-sub">RoBERTa Discriminator</span>
+              </div>
+            </div>
+
+            <div class="inspector-evidence" id="inspectEvidenceBox">
+              <h4 class="evidence-title">Diagnostic Evidence:</h4>
+              <ul id="inspectEvidenceList" class="evidence-list">
+                <li>Sentence exhibits high machine probability.</li>
+              </ul>
+            </div>
+
+            <div class="inspector-cliches" id="inspectClichesBox" style="display: none;">
+              <h4 class="evidence-title">Flagged AI Signposts & Clichés:</h4>
+              <div id="inspectClicheTags" class="cliche-chip-row"></div>
+            </div>
+          </div>
+
+          <!-- Forensic Telemetry Metrics Card -->
+          <div class="telemetry-card">
+            <div class="card-title-bar">
+              <h4>Forensic Linguistics Telemetry</h4>
+            </div>
+
+            <div class="telemetry-grid">
+              <div class="telemetry-row">
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>Average Perplexity</span>
+                    <strong id="mAvgPpl">21.4</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barPpl" class="t-bar-fill" style="width: 25%;"></div></div>
+                  <span class="t-hint">LLM: 10-25 | Human: 40-100+</span>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>Burstiness Index (CV)</span>
+                    <strong id="mBurstiness">0.18</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barBurst" class="t-bar-fill" style="width: 20%;"></div></div>
+                  <span class="t-hint">Low (&lt;0.25) indicates uniform machine cadence</span>
+                </div>
+              </div>
+
+              <div class="telemetry-row">
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>Type-Token Ratio (TTR)</span>
+                    <strong id="mTtr">0.52</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barTtr" class="t-bar-fill" style="width: 52%;"></div></div>
+                  <span class="t-hint">Lexical diversity / vocabulary richness</span>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>AI Cliché Markers</span>
+                    <strong id="mClicheCount">8 detected</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barCliche" class="t-bar-fill" style="width: 60%;"></div></div>
+                  <span class="t-hint">Hallmark LLM buzzwords and boilerplate phrases</span>
+                </div>
+              </div>
+
+              <div class="telemetry-row">
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>Syntactic Uniformity</span>
+                    <strong id="mUniformity">0.85</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barUniformity" class="t-bar-fill" style="width: 85%;"></div></div>
+                  <span class="t-hint">Sentence length variance coefficient</span>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="t-header">
+                    <span>Flesch-Kincaid Grade</span>
+                    <strong id="mGrade">Grade 12.4</strong>
+                  </div>
+                  <div class="t-bar-bg"><div id="barGrade" class="t-bar-fill" style="width: 62%;"></div></div>
+                  <span class="t-hint">Reading Ease: <span id="mEase">45.2</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <span>Veritas AI Originality Suite &bull; Advanced Neural &amp; Stylometric Forensic Analysis</span>
+      <span class="footer-copy">Institutional Grade Detection Engine</span>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
