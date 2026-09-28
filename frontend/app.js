@@ -70,6 +70,11 @@ const mGrade = document.getElementById('mGrade');
 const mEase = document.getElementById('mEase');
 const barGrade = document.getElementById('barGrade');
 
+const mSubord = document.getElementById('mSubord');
+const barSubord = document.getElementById('barSubord');
+const mSyllableDisp = document.getElementById('mSyllableDisp');
+const barSyllableDisp = document.getElementById('barSyllableDisp');
+
 const themeToggleBtn = document.getElementById('themeToggleBtn');
 
 
@@ -366,6 +371,16 @@ function displayResults(data) {
   mGrade.textContent = `Grade ${met.readability.flesch_kincaid_grade}`;
   mEase.textContent = met.readability.flesch_reading_ease;
   barGrade.style.width = `${Math.min(100, (met.readability.flesch_kincaid_grade / 18) * 100)}%`;
+
+  if (mSubord) {
+    mSubord.textContent = `${met.subordinate_density || 0}%`;
+    if (barSubord) barSubord.style.width = `${Math.min(100, met.subordinate_density || 0)}%`;
+  }
+
+  if (mSyllableDisp && met.syllable_dispersion) {
+    mSyllableDisp.textContent = `${met.syllable_dispersion.dispersion_cv}`;
+    if (barSyllableDisp) barSyllableDisp.style.width = `${Math.min(100, (met.syllable_dispersion.dispersion_cv / 0.8) * 100)}%`;
+  }
 
   // Render Sentence Heatmap
   renderHeatmap();

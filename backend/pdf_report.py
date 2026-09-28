@@ -238,6 +238,18 @@ def generate_ai_pdf_report(analysis_result: Dict[str, Any]) -> bytes:
             Paragraph("Characteristic LLM transitional signposts.", table_cell_style)
         ],
         [
+            Paragraph("Frontier Subordination Rate", table_cell_style),
+            Paragraph(f"{metrics.get('subordinate_density', 0.0)}%", table_cell_style),
+            Paragraph("LLM (Opus/GPT-4o): &gt; 50% | Human: &lt; 10%", table_cell_style),
+            Paragraph("Balanced participial openers & antithetical clauses.", table_cell_style)
+        ],
+        [
+            Paragraph("Syllable Dispersion (CV)", table_cell_style),
+            Paragraph(f"{metrics.get('syllable_dispersion', {}).get('dispersion_cv', 0.0)}", table_cell_style),
+            Paragraph("LLM: &lt; 0.40 | Human: &gt; 0.55", table_cell_style),
+            Paragraph("Copyleaks metric: rhythmic variance of syllables.", table_cell_style)
+        ],
+        [
             Paragraph("Readability Grade", table_cell_style),
             Paragraph(f"Grade {read['flesch_kincaid_grade']} (Ease: {read['flesch_reading_ease']})", table_cell_style),
             Paragraph("Collegiate: 10 - 14", table_cell_style),
