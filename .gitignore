@@ -37,3 +37,10 @@ hf_cache/
 Thumbs.db
 desktop.ini
 *.log
+
+# Scratch & temporary audits
+scratch/
+scratch_*.py
+scratch_*.txt
+audit_*.py
+
