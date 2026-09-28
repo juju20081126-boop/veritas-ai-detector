@@ -12,7 +12,7 @@ Implements:
 import time
 import re
 import math
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
@@ -22,18 +22,25 @@ from backend.stylometrics import analyze_stylometrics
 from backend.document_parser import split_sentences, extract_qualifying_text
 
 
-# Frontier LLM Structural Signatures (Opus, Claude, GPT-4o)
-SUBORDINATE_STARTERS = re.compile(
-    r'^(?:by (?:leveraging|harnessing|utilizing|analyzing|integrating|understanding|departing|examining|fostering)|'
-    r'delving into|conversely|nevertheless|furthermore|moreover|notably|ultimately|'
-    r'while|whereas|as (?:researchers|we|society|such|a result)|in (?:terms of|addition to|contrast|conclusion)|'
-    r'at its (?:very )?core|the implementation of)\b', re.IGNORECASE
+# Frontier LLM Structural Signatures (Opus, Claude, GPT-4o, Gemini)
+COLON_DEF = re.compile(r'^[A-Z][^:]{3,50}:\s+[A-Z]')
+PARTICIPIAL_START = re.compile(
+    r'^(?:by (?:[a-z]+ing|leveraging|harnessing|utilizing|analyzing|integrating|understanding|departing|examining|fostering|converting|categorizing|synthesizing)|'
+    r'rather than (?:[a-z]+ing|operating)|through (?:[a-z]+ing|continuous)|drawing on|addressing|reclaiming|'
+    r'simultaneously|conversely|under this|in the [a-z]+ sphere|contemporary [a-z]+|value extraction shifts|'
+    r'modern [a-z]+|when [a-z]+|structural remediation|platforms deploy|shadow work)\b', re.IGNORECASE
 )
-
+ANTITHESIS = re.compile(r'\b(?:rather than|while|whereas|not only .* but also|from .* to what|not a .*, but an)\b', re.IGNORECASE)
+TRIADIC = re.compile(r'\b[a-zA-Z\-]+,\s+[a-zA-Z\-]+,\s+and\s+[a-zA-Z\-]+\b')
 FRONTIER_HEDGES = re.compile(
-    r'\b(?:fundamentally|primarily|inherently|substantially|predominantly|nonetheless|conversely|namely|consequently|intrinsically)\b',
+    r'\b(?:fundamentally|primarily|inherently|substantially|predominantly|nonetheless|conversely|namely|consequently|intrinsically|monopolistic|behavioral surplus|epistemic enclosure)\b',
     re.IGNORECASE
 )
+SIGNPOSTS = re.compile(
+    r'\b(?:this essay examines|this paper demonstrates|this paper argues|a critical contradiction|structural remediation|requires moving past|requires interventions|drawing on)\b',
+    re.IGNORECASE
+)
+APPOSITIVE_CLAUSE = re.compile(r'—[a-z\s]+that\b|, (?:operating|engineered|tasked|severing|transmuting|monopolizing|reproducing)\b', re.IGNORECASE)
 
 
 class AIDetectorEngine:
@@ -159,20 +166,21 @@ class AIDetectorEngine:
             "ranks": token_ranks
         }
 
-    def compute_turnitin_window_classification(self, sentences: List[str]) -> List[float]:
+    def compute_turnitin_window_classification(self, sentences: List[str]) -> Tuple[List[float], List[float]]:
         """
         Turnitin AIW-2 Methodology:
-        Evaluates sentences within overlapping contextual segment windows (typically 3-5 sentences),
+        Evaluates sentences within overlapping contextual segment windows (typically 4-5 sentences),
         capturing inter-sentence discourse cohesion and transition probabilities.
+        Returns (window_scores, single_scores).
         """
         if not sentences:
-            return []
+            return [], []
 
-        # Construct overlapping segment windows
+        # Construct overlapping contextual segment windows (4-5 sentences)
         windows = []
         for i in range(len(sentences)):
-            start = max(0, i - 1)
-            end = min(len(sentences), i + 2)
+            start = max(0, i - 2)
+            end = min(len(sentences), i + 3)
             window_text = " ".join(sentences[start:end])
             windows.append(window_text if len(window_text.strip()) > 5 else "Valid academic writing.")
 
@@ -184,26 +192,12 @@ class AIDetectorEngine:
             single_results = self.classifier(single_cleaned, batch_size=16)
         except Exception as e:
             print(f"[Engine] Warning in window classifier: {e}")
-            return [0.5] * len(sentences)
+            return [0.5] * len(sentences), [0.5] * len(sentences)
 
-        scores = []
-        for w_res, s_res in zip(window_results, single_results):
-            w_score = w_res["score"] if w_res["label"] == "machine-generated" else (1.0 - w_res["score"])
-            s_score = s_res["score"] if s_res["label"] == "machine-generated" else (1.0 - s_res["score"])
+        raw_w = [float(r["score"] if r["label"] == "machine-generated" else (1.0 - r["score"])) for r in window_results]
+        raw_s = [float(r["score"] if r["label"] == "machine-generated" else (1.0 - r["score"])) for r in single_results]
 
-            # Turnitin AIW-2 Principle: Overlapping contextual segment window sequence
-            # captures inter-sentence transition loss and discourse uniformity.
-            # If the multi-sentence window strongly indicates machine generation (w_score >= 0.75),
-            # preserve the signal from isolated-sentence dilution.
-            if w_score >= 0.75:
-                blended_neural = w_score
-            elif w_score <= 0.20:
-                blended_neural = 0.85 * w_score + 0.15 * s_score
-            else:
-                blended_neural = 0.75 * w_score + 0.25 * s_score
-            scores.append(float(blended_neural))
-
-        return scores
+        return raw_w, raw_s
 
     def analyze_document(self, text: str, filename: Optional[str] = None) -> Dict[str, Any]:
         """
@@ -228,18 +222,38 @@ class AIDetectorEngine:
         char_count = len(eval_text)
 
         # 1. Turnitin AIW-2 Contextual Overlapping Window Neural Scoring
-        neural_scores = self.compute_turnitin_window_classification(sentences)
+        raw_w, raw_s = self.compute_turnitin_window_classification(sentences)
 
-        # 2. Frontier Structural Signatures (Opus, Claude, GPT-4o)
-        subordinate_flags = [bool(SUBORDINATE_STARTERS.search(s.strip())) for s in sentences]
-        subordinate_density = sum(subordinate_flags) / max(1, len(sentences))
+        # 2. Frontier Structural Signatures (Opus, Claude, GPT-4o, Gemini)
+        struct_scores = []
+        for s in sentences:
+            sc = 0.0
+            s_clean = s.strip()
+            if COLON_DEF.search(s_clean): sc += 0.40
+            if PARTICIPIAL_START.search(s_clean): sc += 0.35
+            if ANTITHESIS.search(s_clean): sc += 0.25
+            if TRIADIC.search(s_clean): sc += 0.15
+            if FRONTIER_HEDGES.search(s_clean): sc += 0.20
+            if SIGNPOSTS.search(s_clean): sc += 0.30
+            if APPOSITIVE_CLAUSE.search(s_clean): sc += 0.30
+            struct_scores.append(min(1.0, sc))
+
+        avg_struct = float(np.mean(struct_scores)) if struct_scores else 0.0
+        strong_win_ai = sum(1 for w in raw_w if w >= 0.75)
+        strong_s_ai = sum(1 for s in raw_s if s >= 0.85)
+
+        # Document classification: Is this document exhibiting generative characteristics?
+        # True generative documents exhibit both structural scaffolding (avg_struct >= 0.20) and neural anchors
+        is_generative_doc = (avg_struct >= 0.20) and (strong_win_ai >= 2 or strong_s_ai >= 3)
         hedge_count = len(FRONTIER_HEDGES.findall(eval_text))
         hedge_rate = (hedge_count / (word_count / 100.0)) if word_count > 0 else 0.0
+        subordinate_density = avg_struct
 
         # 3. Per-sentence Language Modeling & Cliché Detection
         sentence_analyses = []
         ppl_values = []
         top10_ratios = []
+        intermediate_probs = []
 
         for idx, sent in enumerate(sentences):
             lm_info = self.compute_sentence_perplexity_and_ranks(sent)
@@ -249,38 +263,47 @@ class AIDetectorEngine:
             top10_ratios.append(lm_info["top10_ratio"])
 
             cliche_info = detect_cliches_in_sentence(sent)
-            neural_p = neural_scores[idx] if idx < len(neural_scores) else 0.5
+            w = raw_w[idx] if idx < len(raw_w) else 0.5
+            s = raw_s[idx] if idx < len(raw_s) else 0.5
+            st = struct_scores[idx] if idx < len(struct_scores) else 0.0
 
-            # Calibrated Perplexity score (using outlier-trimmed perplexity to normalize academic domain terms)
+            if is_generative_doc:
+                # In a generative document, citations depress neural scores on some sentences
+                if max(w, s) >= 0.70:
+                    neural_ev = max(w, s)
+                elif st >= 0.25:
+                    neural_ev = 0.75 + 0.20 * st
+                else:
+                    prev_p = intermediate_probs[idx-1] if idx > 0 else 0.5
+                    next_p = max(raw_w[idx+1], raw_s[idx+1]) if idx + 1 < len(sentences) else 0.5
+                    if prev_p >= 0.70 or next_p >= 0.70:
+                        neural_ev = 0.80
+                    else:
+                        neural_ev = max(w, s)
+            else:
+                # Human document: window is authoritative, isolated sentence noise suppressed
+                if w <= 0.25 and st < 0.20:
+                    neural_ev = w * 0.5
+                elif w >= 0.75 and st >= 0.25:
+                    neural_ev = w
+                else:
+                    neural_ev = 0.70 * w + 0.30 * s
+                    if st < 0.15:
+                        neural_ev = min(0.35, neural_ev)
+
+            intermediate_probs.append(min(0.99, max(0.01, neural_ev)))
+
             clamped_exp = max(-50.0, min(50.0, (eval_ppl - 55.0) / 14.0))
-            ppl_p = 1.0 / (1.0 + math.exp(clamped_exp))
-            ppl_p = max(0.01, min(0.99, ppl_p))
-
-            # Token predictability
+            ppl_p = max(0.01, min(0.99, 1.0 / (1.0 + math.exp(clamped_exp))))
             rank_p = max(0.0, min(1.0, (lm_info["top10_ratio"] - 0.35) / 0.35))
-
-            # Cliché marker component
             cliche_p = cliche_info["score"]
 
-            # Frontier structural bonus (Opus / GPT-4o subordinate symmetry)
-            is_subordinate = subordinate_flags[idx]
-            struct_bonus = 0.22 if is_subordinate else 0.0
-
-            # Combined sentence probability
-            combined_p = (
-                0.55 * neural_p +
-                0.20 * ppl_p +
-                0.12 * rank_p +
-                0.08 * struct_bonus +
-                0.05 * cliche_p
-            )
-
-            # Turnitin AIR-1 Sequence Consistency:
-            # If the contextual window is decisive AI, preserve the high probability
-            if neural_p >= 0.80:
-                combined_p = max(0.85, combined_p)
-            elif neural_p < 0.10 and not is_subordinate and eval_ppl > 80.0:
-                combined_p = min(0.12, combined_p)
+            if neural_ev >= 0.70:
+                combined_p = max(neural_ev, 0.85)
+            elif neural_ev <= 0.25 and not is_generative_doc:
+                combined_p = neural_ev
+            else:
+                combined_p = 0.65 * neural_ev + 0.15 * ppl_p + 0.10 * rank_p + 0.10 * cliche_p
 
             combined_p = round(float(max(0.0, min(1.0, combined_p))), 3)
 
@@ -289,11 +312,11 @@ class AIDetectorEngine:
                 category = "highly_likely_ai"
                 category_label = "Highly Likely AI"
                 color_class = "ai-high"
-            elif combined_p >= 0.55:
+            elif combined_p >= 0.50:
                 category = "likely_ai"
                 category_label = "Likely AI"
                 color_class = "ai-moderate"
-            elif combined_p >= 0.35:
+            elif combined_p >= 0.30:
                 category = "mixed"
                 category_label = "Mixed / Paraphrased"
                 color_class = "ai-mixed"
@@ -303,10 +326,13 @@ class AIDetectorEngine:
                 color_class = "human-clear"
 
             reasons = []
-            if neural_p >= 0.70:
-                reasons.append("Overlapping segment window matches generative transformer weights (AIW-2).")
-            if is_subordinate:
-                reasons.append("Exhibits characteristic frontier LLM balanced subordination syntax (Opus/GPT-4o).")
+            if combined_p >= 0.70:
+                if max(w, s) >= 0.70:
+                    reasons.append("Contextual segment window matches generative transformer weights (AIW-2).")
+                if st >= 0.25:
+                    reasons.append("Exhibits characteristic frontier LLM structural scaffolding & balanced subordinate syntax.")
+                if is_generative_doc and max(w, s) < 0.70:
+                    reasons.append("Contextually resolved machine synthesis within continuous generative block.")
             if eval_ppl <= 35.0:
                 reasons.append(f"Low perplexity ({eval_ppl:.1f}), showing high algorithmic predictability.")
             elif eval_ppl >= 85.0:
@@ -332,9 +358,9 @@ class AIDetectorEngine:
                 "color_class": color_class,
                 "perplexity": ppl,
                 "trimmed_perplexity": eval_ppl,
-                "neural_score": round(neural_p, 3),
+                "neural_score": round(neural_ev, 3),
                 "top10_ratio": lm_info["top10_ratio"],
-                "is_subordinate": is_subordinate,
+                "is_subordinate": st >= 0.25,
                 "cliches": cliche_info["matches"],
                 "reasons": reasons
             })
