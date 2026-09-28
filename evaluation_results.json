@@ -1,0 +1,56 @@
+{
+  "timestamp": 1790602161.2835398,
+  "success_criteria": {
+    "teacher_tpr_at_1fpr": 0.962,
+    "teacher_target_met": true,
+    "student_tpr_at_1fpr": 0.03125,
+    "tpr_gap": 0.9307,
+    "student_gap_target_met": false,
+    "unseen_models": {
+      "qwen_2_5_tpr_at_1fpr": 0.067,
+      "deepseek_v3_tpr_at_1fpr": 0.067
+    },
+    "paraphrased_ai_detection_rate": 0.053,
+    "esl_fairness": {
+      "native_fpr": 0.0,
+      "esl_fpr": 0.0,
+      "esl_to_native_ratio": 1.0,
+      "esl_bias_flagged": false
+    },
+    "calibration_ece": 0.0566,
+    "calibration_passed": false,
+    "macro_f1": 0.1886,
+    "per_class_f1": {
+      "Human-written": 0.087,
+      "Human-written & AI-refined": 0.2,
+      "AI-generated & AI-refined": 0.3462,
+      "AI-generated": 0.1212
+    },
+    "confusion_matrix": [
+      [
+        1,
+        2,
+        10,
+        3
+      ],
+      [
+        2,
+        2,
+        5,
+        7
+      ],
+      [
+        2,
+        0,
+        9,
+        5
+      ],
+      [
+        2,
+        0,
+        12,
+        2
+      ]
+    ]
+  }
+}

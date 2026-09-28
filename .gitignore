@@ -44,3 +44,10 @@ scratch_*.py
 scratch_*.txt
 audit_*.py
 
+# Large raw model weights (keep INT8 quantized model and metadata only)
+models/*.pt
+models/student_model.onnx
+*.onnx.tmp*
+benchmark_target_results.json
+
+

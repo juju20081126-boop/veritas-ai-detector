@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veritas AI — Institutional AI Writing & Authenticity Detector</title>
+  <title>Veritas AI — QuillBot-Style Offline AI Detector</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <!-- Top Navigation Header -->
+  <!-- Header -->
   <header class="app-header">
     <div class="header-container">
       <div class="brand">
@@ -22,14 +22,14 @@
         </div>
         <div class="brand-text">
           <span class="brand-name">VERITAS<span class="brand-accent">AI</span></span>
-          <span class="brand-tagline">Turnitin-Grade AI Content & Originality Audit</span>
+          <span class="brand-tagline">QuillBot-Style 4-Class Forensic Detector (Low-End Hardware Optimized)</span>
         </div>
       </div>
 
       <div class="header-status">
         <div class="status-pill" id="engineStatusPill">
           <span class="status-dot"></span>
-          <span id="engineStatusText">Neural Engine: Ready</span>
+          <span id="engineStatusText">ONNX INT8 Offline Engine (2 Threads)</span>
         </div>
         <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -41,565 +41,216 @@
     </div>
   </header>
 
-  <!-- Main Application Wrapper -->
+  <!-- Main Container -->
   <main class="main-container">
     
-    <!-- Input Section -->
-    <section class="scan-input-card">
-      <div class="section-toolbar">
-        <div class="toolbar-title">
-          <h2>Input Document</h2>
-          <p>Paste text or upload PDF/DOCX to inspect for generative AI patterns.</p>
-        </div>
-
-        <div class="samples-dropdown-wrapper">
-          <label for="sampleSelect" class="sample-label">Try Preloaded Samples:</label>
-          <select id="sampleSelect" class="select-input">
-            <option value="" disabled selected>Select a real-world sample...</option>
-            <option value="chatgpt_academic">ChatGPT 4o: Academic Essay (AI)</option>
-            <option value="claude_technical">Claude 3.5: Quantum Computing (AI)</option>
-            <option value="human_academic">Human Scholar: Mediterranean Trade (Human)</option>
-            <option value="human_narrative">Human Narrative: Night Fishing (Human)</option>
-            <option value="mixed_student">Mixed Submission: Human + AI Expanded (Mixed)</option>
-          </select>
-        </div>
+    <!-- Top Configuration & Samples Toolbar -->
+    <div class="top-toolbar">
+      <div class="sample-selector-group">
+        <label for="sampleSelect" class="sample-label">Load Benchmark Sample:</label>
+        <select id="sampleSelect" class="select-input">
+          <option value="" disabled selected>Select a sample...</option>
+          <optgroup label="QuillBot 4-Class Archetypes">
+            <option value="ai_pure">1. Pure AI-generated (GPT-4o Academic Essay)</option>
+            <option value="ai_refined_ai">2. AI-generated & AI-refined (Paraphrased Claude 3.5)</option>
+            <option value="human_refined_ai">3. Human-written & AI-refined (Polished Historical Analysis)</option>
+            <option value="human_pure">4. Human-written (Venetian Maritime Commerce)</option>
+            <option value="human_esl">5. Human Non-Native / ESL (Learner English Essay)</option>
+          </optgroup>
+          <optgroup label="QuillBot 30-Sample Comparison Sheet" id="qbComparisonGroup">
+            <!-- Dynamically populated from /api/comparison-sheet -->
+          </optgroup>
+        </select>
       </div>
 
-      <!-- File Drop & Text Area Area -->
-      <div class="editor-container">
-        <div class="file-upload-strip" id="dropZone">
-          <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.md" style="display: none;" />
-          <div class="drop-content" id="dropTrigger">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="17 8 12 3 7 8"/>
-              <line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-            <span><strong>Upload Document</strong> (PDF, DOCX, TXT) or drag & drop</span>
+      <div class="threshold-group">
+        <label for="thresholdInput" class="threshold-label" title="Confidence below threshold triggers Uncertain verdict">Uncertainty Threshold:</label>
+        <input type="number" id="thresholdInput" min="0.30" max="0.70" step="0.05" value="0.40" class="number-input" />
+      </div>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="detector-workspace">
+      
+      <!-- Left Panel: Text Input & Editor -->
+      <section class="editor-pane">
+        <div class="pane-header">
+          <div class="tab-controls">
+            <button id="btnModeEdit" class="tab-btn active">Edit Text</button>
+            <button id="btnModeHeatmap" class="tab-btn" disabled>Highlighted Heatmap</button>
           </div>
-          <div id="fileUploadSpinner" class="upload-spinner" style="display: none;">
-            <div class="spinner-small"></div>
-            <span>Ingesting document...</span>
-          </div>
+          <button id="btnPaste" class="btn-text">Paste Clipboard</button>
         </div>
 
-        <textarea 
-          id="textInput" 
-          class="document-textarea" 
-          placeholder="Paste essays, academic papers, student submissions, or articles here (minimum 15 words)..."
-        ></textarea>
+        <div class="editor-body">
+          <!-- Textarea for input -->
+          <textarea 
+            id="textInput" 
+            class="document-textarea" 
+            placeholder="Paste or write text here to analyze (80 to 2,000 words recommended)..."
+          ></textarea>
 
+          <!-- Interactive Highlighted Heatmap View -->
+          <div id="heatmapViewer" class="heatmap-viewer" style="display: none;"></div>
+        </div>
+
+        <!-- Editor Footer -->
         <div class="editor-footer">
-          <div class="live-stats">
-            <span id="charCount">0 characters</span>
-            <span class="stat-sep">•</span>
-            <span id="wordCount">0 words</span>
-            <span class="stat-sep">•</span>
-            <span id="sentenceCount">0 sentences</span>
+          <div class="word-counter-box">
+            <span id="wordCountLabel">0 words</span>
+            <span class="bullet-sep">•</span>
+            <span id="charCountLabel">0 chars</span>
+            <span class="bullet-sep">•</span>
+            <span id="sentCountLabel">0 sentences</span>
+            <span id="wordGuideBadge" class="guide-badge ok">Recommended: 80–2,000 words</span>
           </div>
-          
-          <div class="footer-actions">
-            <button id="clearBtn" class="btn btn-secondary">Clear</button>
-            <button id="scanBtn" class="btn btn-primary">
+
+          <div class="editor-actions">
+            <button id="btnClear" class="btn btn-secondary">Clear</button>
+            <button id="btnAnalyze" class="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <circle cx="11" cy="11" r="8"/>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-              <span>Scan Document</span>
+              <span>Analyze Text</span>
               <kbd class="shortcut-key">Ctrl+Enter</kbd>
             </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Scanning Overlay / Progress Bar -->
-    <div id="scanLoadingOverlay" class="loading-overlay" style="display: none;">
-      <div class="loading-modal">
-        <div class="radar-scan">
-          <div class="radar-beam"></div>
-        </div>
-        <h3 id="loadingStatusText">Analyzing Linguistic Forensics...</h3>
-        <p class="loading-subtext">Executing RoBERTa neural classification, GPT-2 token perplexity, burstiness variation, and cliché markers...</p>
-      </div>
-    </div>
-
-    <!-- Results Section (Visible after scan) -->
-    <section id="resultsSection" class="results-section" style="display: none;">
-      
-      <!-- Top Action Bar -->
-      <div class="results-action-bar">
-        <div class="result-doc-info">
-          <h2 id="resultDocTitle">Document Inspection Audit</h2>
-          <span id="resultDocMeta" class="doc-meta">234 words • 1.2 min reading time • Completed in 1.4s</span>
-        </div>
-        <div class="result-actions">
-          <button id="exportPdfBtn" class="btn btn-export">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- Right Panel: QuillBot Verdict & Forensic Breakdown -->
+      <section class="results-pane" id="resultsPane">
+        
+        <!-- Placeholder State when no analysis has run -->
+        <div id="resultsPlaceholder" class="results-placeholder">
+          <div class="placeholder-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
               <polyline points="14 2 14 8 20 8"/>
-              <line x1="12" y1="18" x2="12" y2="12"/>
-              <line x1="9" y1="15" x2="12" y2="18"/>
-              <line x1="15" y1="15" x2="12" y2="18"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
             </svg>
-            <span>Download Official PDF Report</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Executive Scorecard Banner -->
-      <div class="executive-scorecard" id="executiveScorecard">
-        <div class="score-dial-column">
-          <div class="circular-score-gauge">
-            <svg viewBox="0 0 120 120" class="gauge-svg">
-              <circle class="gauge-bg" cx="60" cy="60" r="52"></circle>
-              <circle id="gaugeProgress" class="gauge-progress" cx="60" cy="60" r="52"></circle>
-            </svg>
-            <div class="gauge-center-text">
-              <span id="scoreValue" class="score-number">0%</span>
-              <span class="score-caption">AI LIKELIHOOD</span>
-            </div>
           </div>
+          <h3>Ready for Analysis</h3>
+          <p>Paste or choose a sample to evaluate against QuillBot's 4-class forensic detection model.</p>
         </div>
 
-        <div class="score-details-column">
-          <div class="verdict-header">
-            <span id="verdictBadge" class="badge">Checking...</span>
-            <span id="confidenceTag" class="confidence-tag">99.1% Statistical Confidence</span>
-          </div>
-          <h3 id="verdictTitle" class="verdict-title">Authenticity Analysis</h3>
-          <p id="verdictDesc" class="verdict-description">Detailed findings description will render here.</p>
-
-          <!-- Sentence breakdown badges -->
-          <div class="breakdown-counters">
-            <div class="count-pill count-high">
-              <span class="count-badge red" id="cntHighAI">0</span>
-              <span>Highly Likely AI (&ge;75%)</span>
-            </div>
-            <div class="count-pill count-mod">
-              <span class="count-badge orange" id="cntModAI">0</span>
-              <span>Likely AI (55-74%)</span>
-            </div>
-            <div class="count-pill count-mixed">
-              <span class="count-badge yellow" id="cntMixed">0</span>
-              <span>Mixed / Paraphrased (35-54%)</span>
-            </div>
-            <div class="count-pill count-human">
-              <span class="count-badge green" id="cntHuman">0</span>
-              <span>Human Written (&lt;35%)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Workspace View Switcher Tabs -->
-      <div class="workspace-tabs-bar">
-        <button id="tabHeatmapBtn" class="workspace-nav-tab active">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <path d="M3 9h18M9 21V9"/>
-          </svg>
-          <span>Turnitin Heatmap &amp; Telemetry</span>
-        </button>
-        <button id="tabComparativeBtn" class="workspace-nav-tab">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/>
-            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/>
-            <circle cx="8" cy="12" r="2"/>
-          </svg>
-          <span>Multi-Detector Audit (Turnitin vs ZeroGPT vs QuillBot vs Copyleaks)</span>
-          <span class="tab-badge-highlight">LIVE SIMULATION</span>
-        </button>
-      </div>
-
-      <!-- Split View Workspace (Turnitin Style) -->
-      <div id="splitWorkspace" class="split-workspace">
-        
-        <!-- Left Pane: Interactive Document Heatmap -->
-        <div class="heatmap-pane">
-          <div class="pane-header">
-            <div class="pane-title">
-              <h3>Document Sentence Heatmap</h3>
-              <span class="subtext">Click any sentence to drill into token-level metrics</span>
-            </div>
-            <div class="view-filters">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="ai-only">AI Only</button>
-              <button class="filter-btn" data-filter="cliches">Flagged Clichés</button>
-            </div>
-          </div>
-
-          <div class="heatmap-content-box" id="heatmapBox">
-            <!-- Sentences will be populated dynamically -->
-          </div>
-
-          <div class="heatmap-legend">
-            <div class="legend-item"><span class="legend-swatch swatch-high"></span> Highly Likely AI</div>
-            <div class="legend-item"><span class="legend-swatch swatch-mod"></span> Likely AI</div>
-            <div class="legend-item"><span class="legend-swatch swatch-mixed"></span> Mixed / Paraphrased</div>
-            <div class="legend-item"><span class="legend-swatch swatch-human"></span> Human Written</div>
-            <div class="legend-item"><span class="legend-swatch swatch-cliche"></span> AI Buzzword/Cliché</div>
-          </div>
-        </div>
-
-        <!-- Right Pane: Sentence Inspector & Forensic Telemetry -->
-        <div class="analytics-pane">
+        <!-- Active Results Content -->
+        <div id="activeResultsContent" style="display: none;">
           
-          <!-- Sentence Inspector Card (Active selection) -->
-          <div class="inspector-card" id="inspectorCard">
-            <div class="inspector-header">
-              <div class="inspector-tag">
-                <span class="inspector-icon">🔍</span>
-                <span id="inspectSentenceNum">Sentence #1 Selected</span>
-              </div>
-              <span id="inspectAiBadge" class="badge-mini">89% AI</span>
+          <!-- Master Document Verdict Card -->
+          <div class="verdict-card" id="verdictCard">
+            <div class="verdict-header">
+              <span class="verdict-label-tag">DOCUMENT VERDICT</span>
+              <span id="confidenceTag" class="confidence-tag">98.4% Confidence</span>
+            </div>
+            
+            <div class="verdict-title-row">
+              <h2 id="verdictTitle" class="verdict-title">Human-written</h2>
+              <span id="verdictBadge" class="verdict-badge badge-human">Human-written</span>
             </div>
 
-            <div class="inspector-quote-box">
-              <p id="inspectSentenceText">Click on any highlighted sentence on the left to inspect its individual neural probability, perplexity, and token metrics.</p>
-            </div>
-
-            <div class="inspector-stats-grid">
-              <div class="stat-mini-card">
-                <span class="stat-label">Perplexity (PPL)</span>
-                <span id="inspectPpl" class="stat-val">16.4</span>
-                <span class="stat-sub">Lower = AI Predictable</span>
-              </div>
-              <div class="stat-mini-card">
-                <span class="stat-label">Top-10 Token Ratio</span>
-                <span id="inspectTop10" class="stat-val">84.2%</span>
-                <span class="stat-sub">&gt;70% = Algorithmic</span>
-              </div>
-              <div class="stat-mini-card">
-                <span class="stat-label">Neural Confidence</span>
-                <span id="inspectNeural" class="stat-val">94.8%</span>
-                <span class="stat-sub">RoBERTa Discriminator</span>
-              </div>
-            </div>
-
-            <div class="inspector-evidence" id="inspectEvidenceBox">
-              <h4 class="evidence-title">Diagnostic Evidence:</h4>
-              <ul id="inspectEvidenceList" class="evidence-list">
-                <li>Sentence exhibits high machine probability.</li>
-              </ul>
-            </div>
-
-            <div class="inspector-cliches" id="inspectClichesBox" style="display: none;">
-              <h4 class="evidence-title">Flagged AI Signposts & Clichés:</h4>
-              <div id="inspectClicheTags" class="cliche-chip-row"></div>
-            </div>
-          </div>
-
-          <!-- Forensic Telemetry Metrics Card -->
-          <div class="telemetry-card">
-            <div class="card-title-bar">
-              <h4>Forensic Linguistics Telemetry</h4>
-            </div>
-
-            <div class="telemetry-grid">
-              <div class="telemetry-row">
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Average Perplexity</span>
-                    <strong id="mAvgPpl">21.4</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barPpl" class="t-bar-fill" style="width: 25%;"></div></div>
-                  <span class="t-hint">LLM: 10-25 | Human: 40-100+</span>
-                </div>
-
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Burstiness Index (CV)</span>
-                    <strong id="mBurstiness">0.18</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barBurst" class="t-bar-fill" style="width: 20%;"></div></div>
-                  <span class="t-hint">Low (&lt;0.25) indicates uniform machine cadence</span>
-                </div>
-              </div>
-
-              <div class="telemetry-row">
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Type-Token Ratio (TTR)</span>
-                    <strong id="mTtr">0.52</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barTtr" class="t-bar-fill" style="width: 52%;"></div></div>
-                  <span class="t-hint">Lexical diversity / vocabulary richness</span>
-                </div>
-
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>AI Cliché Markers</span>
-                    <strong id="mClicheCount">8 detected</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barCliche" class="t-bar-fill" style="width: 60%;"></div></div>
-                  <span class="t-hint">Hallmark LLM buzzwords and boilerplate phrases</span>
-                </div>
-              </div>
-
-              <div class="telemetry-row">
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Syntactic Uniformity</span>
-                    <strong id="mUniformity">0.85</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barUniformity" class="t-bar-fill" style="width: 85%;"></div></div>
-                  <span class="t-hint">Sentence length variance coefficient</span>
-                </div>
-
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Flesch-Kincaid Grade</span>
-                    <strong id="mGrade">Grade 12.4</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barGrade" class="t-bar-fill" style="width: 62%;"></div></div>
-                  <span class="t-hint">Reading Ease: <span id="mEase">45.2</span></span>
-                </div>
-              </div>
-
-              <div class="telemetry-row">
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Frontier Subordination</span>
-                    <strong id="mSubord">0.0%</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barSubord" class="t-bar-fill" style="width: 0%;"></div></div>
-                  <span class="t-hint">Opus/GPT-4o balanced clause openings (&gt;50%)</span>
-                </div>
-
-                <div class="telemetry-item">
-                  <div class="t-header">
-                    <span>Syllable Dispersion (CV)</span>
-                    <strong id="mSyllableDisp">0.0</strong>
-                  </div>
-                  <div class="t-bar-bg"><div id="barSyllableDisp" class="t-bar-fill" style="width: 50%;"></div></div>
-                  <span class="t-hint">Copyleaks rhythm metric: LLM &lt;0.40 | Human &gt;0.55</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Multi-Detector Comparative Audit View -->
-      <div id="comparativeWorkspace" class="comparative-workspace" style="display: none;">
-        <div class="comparative-header">
-          <div class="comp-title">
-            <h3>Reverse-Engineered Multi-Engine Benchmark</h3>
-            <p>How leading institutional and commercial detectors evaluate this exact text based on their reverse-engineered algorithms.</p>
-          </div>
-          <button id="refreshCompBtn" class="btn btn-secondary btn-sm">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
-            </svg>
-            <span>Re-Run Multi-Audit</span>
-          </button>
-        </div>
-
-        <!-- 5 Engine Grid -->
-        <div class="detector-cards-grid">
-          
-          <!-- Turnitin Card -->
-          <div class="detector-card turnitin-card">
-            <div class="det-card-top">
-              <div class="det-brand">
-                <span class="det-logo t-logo">T</span>
-                <div>
-                  <h4>Turnitin AIW-2 &amp; AIR-1</h4>
-                  <span class="det-sub">Higher Ed Institutional Benchmark</span>
-                </div>
-              </div>
-              <div id="compTurnitinScore" class="det-score-pill score-high">--%</div>
-            </div>
-            <div class="det-body">
-              <div class="det-feature-row">
-                <span>Architecture:</span>
-                <strong>200-250w Overlapping Windows</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Paraphrase Shield:</span>
-                <strong>AIR-1 Thesaurus Dissonance</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Gated Threshold:</span>
-                <strong id="compTurnitinGated">Active (1-19% rule)</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>AI Qualifying Words:</span>
-                <strong id="compTurnitinWords">-- / --</strong>
-              </div>
-            </div>
-            <div class="det-footer">
-              <span class="det-verdict-tag" id="compTurnitinVerdict">Analyzing...</span>
-            </div>
-          </div>
-
-          <!-- ZeroGPT Card -->
-          <div class="detector-card zerogpt-card">
-            <div class="det-card-top">
-              <div class="det-brand">
-                <span class="det-logo z-logo">0</span>
-                <div>
-                  <h4>ZeroGPT (DeepAnalyse™)</h4>
-                  <span class="det-sub">Statistical Perplexity Engine</span>
-                </div>
-              </div>
-              <div id="compZeroGptScore" class="det-score-pill score-mixed">--%</div>
-            </div>
-            <div class="det-body">
-              <div class="det-feature-row">
-                <span>Architecture:</span>
-                <strong>Isolated Sentence Token PPL</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Aggregation:</span>
-                <strong>fakePercentage = aiWords / textWords</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Flagged Sentences:</span>
-                <strong id="compZeroGptSentences">-- / --</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Vulnerability:</span>
-                <span class="det-warn-text">Proper Noun Spikes / Legal False +</span>
-              </div>
-            </div>
-            <div class="det-footer">
-              <span class="det-verdict-tag" id="compZeroGptVerdict">Analyzing...</span>
-            </div>
-          </div>
-
-          <!-- QuillBot Card -->
-          <div class="detector-card quillbot-card">
-            <div class="det-card-top">
-              <div class="det-brand">
-                <span class="det-logo q-logo">Q</span>
-                <div>
-                  <h4>QuillBot AI Detector</h4>
-                  <span class="det-sub">Linguistic Diagnostic Engine</span>
-                </div>
-              </div>
-              <div id="compQuillBotScore" class="det-score-pill score-mod">--%</div>
-            </div>
-            <div class="det-body">
-              <div class="det-feature-row">
-                <span>Architecture:</span>
-                <strong>Sentence 4-Marker Classifier</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>AI Sentences:</span>
-                <strong id="compQuillAiSentences">--</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Paraphrased Sentences:</span>
-                <strong id="compQuillParaSentences">--</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Diagnostic Markers:</span>
-                <span class="det-pill-mini">Academic Register &bull; Subordination</span>
-              </div>
-            </div>
-            <div class="det-footer">
-              <span class="det-verdict-tag" id="compQuillBotVerdict">Analyzing...</span>
-            </div>
-          </div>
-
-          <!-- Copyleaks Card -->
-          <div class="detector-card copyleaks-card">
-            <div class="det-card-top">
-              <div class="det-brand">
-                <span class="det-logo c-logo">C</span>
-                <div>
-                  <h4>Copyleaks Forensics</h4>
-                  <span class="det-sub">Multilingual Rhythm Analysis</span>
-                </div>
-              </div>
-              <div id="compCopyleaksScore" class="det-score-pill score-mod">--%</div>
-            </div>
-            <div class="det-body">
-              <div class="det-feature-row">
-                <span>Syllable Rhythm:</span>
-                <strong id="compCopySyl">CV: --</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Hyphenation Rate:</span>
-                <strong id="compCopyHyphen">-- / 100w</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Methodology:</span>
-                <strong>Statistical Stylometrics &amp; ML</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Cadence Alert:</span>
-                <span id="compCopyCadence">Evaluating...</span>
-              </div>
-            </div>
-            <div class="det-footer">
-              <span class="det-verdict-tag" id="compCopyleaksVerdict">Analyzing...</span>
-            </div>
-          </div>
-
-          <!-- Binoculars Card -->
-          <div class="detector-card binoculars-card">
-            <div class="det-card-top">
-              <div class="det-brand">
-                <span class="det-logo b-logo">B</span>
-                <div>
-                  <h4>Binoculars (ICML 2024)</h4>
-                  <span class="det-sub">State of the Art Zero-Shot</span>
-                </div>
-              </div>
-              <div id="compBinocularsScore" class="det-score-pill score-neutral">--</div>
-            </div>
-            <div class="det-body">
-              <div class="det-feature-row">
-                <span>Metric Formulation:</span>
-                <strong>log(PPL_M1) / log(X-PPL_M1,M2)</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Decision Cutoff:</span>
-                <strong>Threshold: 0.98</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>Vocabulary Normalization:</span>
-                <strong class="text-success">Cancels domain spikes</strong>
-              </div>
-              <div class="det-feature-row">
-                <span>False-Positive Rate:</span>
-                <strong class="text-success">&lt;0.01% in ICML 2024 tests</strong>
-              </div>
-            </div>
-            <div class="det-footer">
-              <span class="det-verdict-tag" id="compBinocularsVerdict">Evaluating...</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Comparative Insights Bar -->
-        <div class="comparative-insights-card">
-          <div class="insight-icon">💡</div>
-          <div class="insight-content">
-            <h4>Forensic Divergence &amp; Architectural Takeaway:</h4>
-            <p id="compInsightText">
-              Different detectors yield varying scores because of their underlying design: <strong>Turnitin</strong> captures continuous generative sequence flow through overlapping 200w windows; <strong>ZeroGPT</strong> evaluates isolated sentences and can be fooled by foreign citations or legal phrasing; <strong>QuillBot</strong> flags syntactic subordination; and <strong>Copyleaks</strong> measures syllable rhythm variance.
+            <p id="verdictDescription" class="verdict-description">
+              Text displays natural syntactic cadence and human burstiness.
             </p>
+
+            <!-- Uncertain Banner (Rendered when verdict is Uncertain) -->
+            <div id="uncertainAlertBanner" class="uncertain-banner" style="display: none;">
+              <div class="uncertain-icon">⚠️</div>
+              <div class="uncertain-text">
+                <strong>Verdict Withheld (Uncertain):</strong> The forensic signals fall below the confidence threshold. Veritas AI never forces an arbitrary verdict when statistical certainty is borderline.
+              </div>
+            </div>
           </div>
+
+          <!-- QuillBot 4-Class Probability Bars -->
+          <div class="class-distribution-card">
+            <h4 class="card-subtitle">4-Class Calibrated Probabilities</h4>
+            
+            <div class="class-bar-row">
+              <div class="class-bar-header">
+                <span class="class-dot dot-ai"></span>
+                <span class="class-name">AI-generated</span>
+                <span class="class-pct" id="pctAIGen">0.0%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-ai" id="barAIGen" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="class-bar-row">
+              <div class="class-bar-header">
+                <span class="class-dot dot-ai-refined"></span>
+                <span class="class-name">AI-generated & AI-refined</span>
+                <span class="class-pct" id="pctAIRefined">0.0%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-ai-refined" id="barAIRefined" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="class-bar-row">
+              <div class="class-bar-header">
+                <span class="class-dot dot-human-refined"></span>
+                <span class="class-name">Human-written & AI-refined</span>
+                <span class="class-pct" id="pctHumanRefined">0.0%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-human-refined" id="barHumanRefined" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="class-bar-row">
+              <div class="class-bar-header">
+                <span class="class-dot dot-human"></span>
+                <span class="class-name">Human-written</span>
+                <span class="class-pct" id="pctHuman">0.0%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-human" id="barHuman" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentence Inspector Drawer -->
+          <div class="sentence-inspector-card" id="sentenceInspector">
+            <h4 class="card-subtitle">Sentence Forensic Inspector</h4>
+            <p class="inspector-hint">Click any sentence in the heatmap to inspect its token dynamics and forensic reasons.</p>
+            <div id="inspectorContent" class="inspector-content">
+              <div class="empty-inspector-msg">Select a highlighted sentence to inspect.</div>
+            </div>
+          </div>
+
+          <!-- Target Hardware Telemetry -->
+          <div class="telemetry-card">
+            <h4 class="card-subtitle">Target Hardware Telemetry (Simulated Target)</h4>
+            <div class="telemetry-grid">
+              <div class="telemetry-item">
+                <span class="telemetry-label">Engine</span>
+                <span class="telemetry-val">ONNX INT8 CPU</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Intra-Op Threads</span>
+                <span class="telemetry-val">2 Threads</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Analysis Latency</span>
+                <span class="telemetry-val" id="telemetryLatency">0.00s</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Process Memory</span>
+                <span class="telemetry-val">&le;150 MB (Cap: 1.5GB)</span>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-      </div>
-
-
-  </main>
-
-  <footer class="app-footer">
-    <div class="footer-container">
-      <span>Veritas AI Originality Suite &bull; Advanced Neural &amp; Stylometric Forensic Analysis</span>
-      <span class="footer-copy">Institutional Grade Detection Engine</span>
     </div>
-  </footer>
+  </main>
 
   <script src="/static/app.js"></script>
 </body>
