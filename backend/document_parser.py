@@ -16,6 +16,62 @@ ABBREVIATIONS = (
 )
 
 
+def extract_qualifying_text(raw_text: str) -> str:
+    """
+    Standard Institutional Turnitin-Grade Qualifying Text Extraction:
+    1. Excludes Bibliographies, References, and Works Cited sections
+    2. Excludes Markdown Tables and tabular matrices
+    3. Excludes Standalone Structural Section Headers (e.g. ### Header)
+    4. Excludes Horizontal Dividers (---, ***)
+    5. Normalizes inline Markdown formatting (bold, italic, list markers) into continuous prose
+    """
+    if not raw_text or not raw_text.strip():
+        return ""
+
+    lines = raw_text.splitlines()
+    qualifying_lines = []
+    in_bibliography = False
+
+    for line in lines:
+        stripped = line.strip()
+
+        # 1. Detect Bibliography / References section
+        if re.match(r"^#{1,6}\s*(?:references|bibliography|works\s+cited|sources)\b", stripped, re.IGNORECASE):
+            in_bibliography = True
+            continue
+        if in_bibliography:
+            # If a new main heading starts that is not bibliography, exit bibliography
+            if re.match(r"^#{1,3}\s+(?!references|bibliography|works\s+cited|sources)", stripped, re.IGNORECASE):
+                in_bibliography = False
+            else:
+                continue
+
+        # 2. Exclude Markdown tables
+        if stripped.startswith("|") and stripped.endswith("|"):
+            continue
+        if re.match(r"^\|?[\s\-:|]+\|?$", stripped):
+            continue
+
+        # 3. Exclude horizontal rules
+        if re.match(r"^(?:---|\*\*\*|___)$", stripped):
+            continue
+
+        # 4. Exclude standalone headers
+        if re.match(r"^#{1,6}\s+[A-Za-z0-9\s:,\-'\"]+$", stripped, re.IGNORECASE):
+            continue
+
+        # 5. Clean inline markdown syntax
+        cleaned = re.sub(r"\*\*([^*]+)\*\*", r"\1", stripped)
+        cleaned = re.sub(r"\*([^*]+)\*", r"\1", cleaned)
+        cleaned = re.sub(r"^\s*[-*•]\s+", "", cleaned)
+        cleaned = re.sub(r"^\s*\d+\.\s+", "", cleaned)
+
+        if cleaned:
+            qualifying_lines.append(cleaned)
+
+    return "\n\n".join(qualifying_lines)
+
+
 def split_sentences(text: str) -> List[str]:
     """
     Splits text into coherent sentences without incorrectly breaking

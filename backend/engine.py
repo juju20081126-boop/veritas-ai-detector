@@ -19,7 +19,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
 from backend.cliches import detect_cliches_in_sentence, analyze_document_cliches
 from backend.stylometrics import analyze_stylometrics
-from backend.document_parser import split_sentences
+from backend.document_parser import split_sentences, extract_qualifying_text
 
 
 # Frontier LLM Structural Signatures (Opus, Claude, GPT-4o)
@@ -107,6 +107,14 @@ class AIDetectorEngine:
         mean_loss = float(np.mean(token_losses))
         sentence_ppl = float(np.exp(mean_loss))
 
+        # Robust trimmed perplexity: trim top 10% highest loss outlier tokens (academic proper nouns, loanwords)
+        if len(token_losses) >= 5:
+            cutoff = int(np.ceil(len(token_losses) * 0.90))
+            trimmed_loss = float(np.mean(np.sort(token_losses)[:cutoff]))
+            trimmed_ppl = float(np.exp(trimmed_loss))
+        else:
+            trimmed_ppl = sentence_ppl
+
         token_ranks = []
         top10_count = 0
         top100_count = 0
@@ -144,6 +152,7 @@ class AIDetectorEngine:
 
         return {
             "perplexity": round(sentence_ppl, 2),
+            "trimmed_perplexity": round(trimmed_ppl, 2),
             "token_count": num_tokens,
             "top10_ratio": round(top10_ratio, 3),
             "top100_ratio": round(top100_ratio, 3),
@@ -181,9 +190,17 @@ class AIDetectorEngine:
         for w_res, s_res in zip(window_results, single_results):
             w_score = w_res["score"] if w_res["label"] == "machine-generated" else (1.0 - w_res["score"])
             s_score = s_res["score"] if s_res["label"] == "machine-generated" else (1.0 - s_res["score"])
-            
-            # Blend window context (60%) with individual sentence focus (40%)
-            blended_neural = 0.60 * w_score + 0.40 * s_score
+
+            # Turnitin AIW-2 Principle: Overlapping contextual segment window sequence
+            # captures inter-sentence transition loss and discourse uniformity.
+            # If the multi-sentence window strongly indicates machine generation (w_score >= 0.75),
+            # preserve the signal from isolated-sentence dilution.
+            if w_score >= 0.75:
+                blended_neural = w_score
+            elif w_score <= 0.20:
+                blended_neural = 0.85 * w_score + 0.15 * s_score
+            else:
+                blended_neural = 0.75 * w_score + 0.25 * s_score
             scores.append(float(blended_neural))
 
         return scores
@@ -197,13 +214,18 @@ class AIDetectorEngine:
         if not text:
             raise ValueError("Input text is empty. Please provide content to analyze.")
 
-        sentences = split_sentences(text)
-        if not sentences:
-            sentences = [text]
+        # Standard Institutional Turnitin Qualifying Text Extraction:
+        # Excludes bibliographies, markdown tables, horizontal rules, and standalone section titles
+        qualifying_text = extract_qualifying_text(text)
+        eval_text = qualifying_text if len(qualifying_text.split()) >= 30 else text
 
-        words = re.findall(r"\b[a-zA-Z]+(?:'[a-zA-Z]+)?\b", text)
+        sentences = split_sentences(eval_text)
+        if not sentences:
+            sentences = [eval_text]
+
+        words = re.findall(r"\b[a-zA-Z]+(?:'[a-zA-Z]+)?\b", eval_text)
         word_count = len(words)
-        char_count = len(text)
+        char_count = len(eval_text)
 
         # 1. Turnitin AIW-2 Contextual Overlapping Window Neural Scoring
         neural_scores = self.compute_turnitin_window_classification(sentences)
@@ -211,7 +233,7 @@ class AIDetectorEngine:
         # 2. Frontier Structural Signatures (Opus, Claude, GPT-4o)
         subordinate_flags = [bool(SUBORDINATE_STARTERS.search(s.strip())) for s in sentences]
         subordinate_density = sum(subordinate_flags) / max(1, len(sentences))
-        hedge_count = len(FRONTIER_HEDGES.findall(text))
+        hedge_count = len(FRONTIER_HEDGES.findall(eval_text))
         hedge_rate = (hedge_count / (word_count / 100.0)) if word_count > 0 else 0.0
 
         # 3. Per-sentence Language Modeling & Cliché Detection
@@ -222,18 +244,20 @@ class AIDetectorEngine:
         for idx, sent in enumerate(sentences):
             lm_info = self.compute_sentence_perplexity_and_ranks(sent)
             ppl = lm_info["perplexity"]
-            ppl_values.append(ppl)
+            eval_ppl = lm_info.get("trimmed_perplexity", ppl)
+            ppl_values.append(eval_ppl)
             top10_ratios.append(lm_info["top10_ratio"])
 
             cliche_info = detect_cliches_in_sentence(sent)
             neural_p = neural_scores[idx] if idx < len(neural_scores) else 0.5
 
-            # Calibrated Perplexity score
-            ppl_p = 1.0 / (1.0 + math.exp((ppl - 42.0) / 12.0))
+            # Calibrated Perplexity score (using outlier-trimmed perplexity to normalize academic domain terms)
+            clamped_exp = max(-50.0, min(50.0, (eval_ppl - 55.0) / 14.0))
+            ppl_p = 1.0 / (1.0 + math.exp(clamped_exp))
             ppl_p = max(0.01, min(0.99, ppl_p))
 
             # Token predictability
-            rank_p = max(0.0, min(1.0, (lm_info["top10_ratio"] - 0.38) / 0.38))
+            rank_p = max(0.0, min(1.0, (lm_info["top10_ratio"] - 0.35) / 0.35))
 
             # Cliché marker component
             cliche_p = cliche_info["score"]
@@ -244,18 +268,18 @@ class AIDetectorEngine:
 
             # Combined sentence probability
             combined_p = (
-                0.50 * neural_p +
-                0.18 * ppl_p +
+                0.55 * neural_p +
+                0.20 * ppl_p +
                 0.12 * rank_p +
-                0.10 * struct_bonus +
-                0.10 * cliche_p
+                0.08 * struct_bonus +
+                0.05 * cliche_p
             )
 
-            # Turnitin AIR-1 Paraphrase Fingerprint:
-            # If low perplexity tokens are paired with high structural rigidity, reinforce
-            if neural_p > 0.90:
+            # Turnitin AIR-1 Sequence Consistency:
+            # If the contextual window is decisive AI, preserve the high probability
+            if neural_p >= 0.80:
                 combined_p = max(0.85, combined_p)
-            elif neural_p < 0.10 and not is_subordinate and ppl > 55.0:
+            elif neural_p < 0.10 and not is_subordinate and eval_ppl > 80.0:
                 combined_p = min(0.12, combined_p)
 
             combined_p = round(float(max(0.0, min(1.0, combined_p))), 3)
@@ -283,10 +307,12 @@ class AIDetectorEngine:
                 reasons.append("Overlapping segment window matches generative transformer weights (AIW-2).")
             if is_subordinate:
                 reasons.append("Exhibits characteristic frontier LLM balanced subordination syntax (Opus/GPT-4o).")
-            if ppl <= 28.0:
-                reasons.append(f"Low perplexity ({ppl:.1f}), showing high algorithmic predictability.")
-            elif ppl >= 70.0:
-                reasons.append(f"High perplexity ({ppl:.1f}), characteristic of authentic human phrasing.")
+            if eval_ppl <= 35.0:
+                reasons.append(f"Low perplexity ({eval_ppl:.1f}), showing high algorithmic predictability.")
+            elif eval_ppl >= 85.0:
+                reasons.append(f"High perplexity ({eval_ppl:.1f}), characteristic of authentic human phrasing.")
+            elif eval_ppl < ppl and (ppl - eval_ppl) > 25.0:
+                reasons.append(f"Domain-normalized perplexity ({eval_ppl:.1f} vs raw {ppl:.1f}), adjusted for proper nouns / loanwords.")
             if lm_info["top10_ratio"] >= 0.65:
                 reasons.append(f"{int(lm_info['top10_ratio']*100)}% of tokens reside in top-10 next-token probabilities.")
             if cliche_info["matches"]:
@@ -305,6 +331,7 @@ class AIDetectorEngine:
                 "category_label": category_label,
                 "color_class": color_class,
                 "perplexity": ppl,
+                "trimmed_perplexity": eval_ppl,
                 "neural_score": round(neural_p, 3),
                 "top10_ratio": lm_info["top10_ratio"],
                 "is_subordinate": is_subordinate,
@@ -320,58 +347,54 @@ class AIDetectorEngine:
 
         # 5. Stylometrics & Document Clichés
         doc_cliches = analyze_document_cliches(sentences)
-        stylometrics = analyze_stylometrics(text, sentences)
+        stylometrics = analyze_stylometrics(eval_text, sentences)
 
         # 6. Turnitin Document-Level Aggregate Calculation
-        sentence_weights = [max(1, len(s["sentence"].split())) for s in sentence_analyses]
-        total_weight = sum(sentence_weights)
-        weighted_ai_base = sum(s["ai_probability"] * w for s, w in zip(sentence_analyses, sentence_weights)) / total_weight
+        # Turnitin official metric: Proportion of qualifying document words generated by AI (prob >= 0.50)
+        sentence_words = [max(1, len(s["sentence"].split())) for s in sentence_analyses]
+        total_qualifying_words = sum(sentence_words)
+        ai_qualifying_words = sum(w for s, w in zip(sentence_analyses, sentence_words) if s["ai_probability"] >= 0.50)
+        turnitin_word_pct = (ai_qualifying_words / total_qualifying_words * 100.0) if total_qualifying_words > 0 else 0.0
+        weighted_continuous_pct = (sum(s["ai_probability"] * w for s, w in zip(sentence_analyses, sentence_words)) / total_qualifying_words) * 100.0
 
-        # Global modifiers:
-        # High burstiness human discount
-        burstiness_mod = 0.0
-        if burstiness_index > 0.55:
-            burstiness_mod = -0.10
-        elif burstiness_index < 0.28:
-            burstiness_mod = +0.06
+        # Turnitin-Grade Ensemble Synthesis:
+        # If substantial portions of the document are decisively machine-generated,
+        # the document is classified according to the volume of AI-synthesized qualifying text.
+        if turnitin_word_pct >= 40.0:
+            final_ai_percentage = round(max(turnitin_word_pct, weighted_continuous_pct), 1)
+        elif turnitin_word_pct >= 20.0:
+            final_ai_percentage = round(0.60 * turnitin_word_pct + 0.40 * weighted_continuous_pct, 1)
+        else:
+            # Low AI incidence: apply burstiness discount to prevent ESL false positives
+            discount = 4.0 if burstiness_index > 0.65 else 0.0
+            final_ai_percentage = round(max(0.0, weighted_continuous_pct - discount), 1)
 
-        # Frontier subordination modifier: if > 50% sentences are balanced subordinate clauses, boost AI score
-        frontier_mod = 0.0
-        if subordinate_density >= 0.50:
-            frontier_mod = +0.12
-        elif subordinate_density == 0.0:
-            frontier_mod = -0.08  # Human non-subordinate discount
-
-        cliche_mod = min(0.08, doc_cliches["average_density_score"] * 0.15)
-
-        final_ai_score = weighted_ai_base + burstiness_mod + frontier_mod + cliche_mod
-        final_ai_score = max(0.0, min(1.0, final_ai_score))
-        final_ai_percentage = round(final_ai_score * 100, 1)
+        final_ai_score = round(final_ai_percentage / 100.0, 3)
 
         # 7. Turnitin False-Positive Institutional Thresholding (The Asterisk Rule)
         # Turnitin documentation states scores between 1% and 19% have high false positive incidence
         # and are masked with an asterisk (*%) or designated as Below Institutional Threshold.
         is_below_institutional_threshold = False
         display_score = f"{final_ai_percentage}%"
-        if 0.0 < final_ai_percentage < 20.0:
+        if 1.0 <= final_ai_percentage < 20.0:
             is_below_institutional_threshold = True
 
         # Verdict
         if final_ai_percentage >= 75.0:
             verdict = "Highly Likely AI-Generated"
-            verdict_desc = "The document exhibits strong transformer structural patterns (AIW-2), unnaturally uniform sentence progression, and characteristic frontier balanced subordination (Opus/GPT-4o)."
+            verdict_desc = "The document exhibits overwhelming transformer structural patterns (AIW-2), uniform discourse density, and consistent algorithmic sequence coherence."
             verdict_badge = "badge-danger"
-        elif final_ai_percentage >= 50.0:
-            verdict = "Mixed AI and Human Composition"
-            verdict_desc = "The text contains substantial segments characteristic of AI synthesis or automated paraphrasing (AIR-1), interspersed with human-authored passages."
-            verdict_badge = "badge-warning"
+        elif final_ai_percentage >= 40.0:
+            verdict = "Substantial AI Composition Detected"
+            verdict_desc = "The submission contains substantial passages generated by generative AI (AIW-2). Over half of the qualifying prose matches machine-generation signatures."
+            verdict_badge = "badge-danger"
         elif final_ai_percentage >= 20.0:
-            verdict = "Mostly Human with Minor AI Assistance"
-            verdict_desc = "The writing appears predominantly human-authored, with occasional formulaic phrasing or AI-assisted grammatical refinement."
-            verdict_badge = "badge-info"
+            verdict = "Mixed AI and Human Composition"
+            verdict_desc = "The text contains distinct sections of AI synthesis or automated paraphrasing (AIR-1) blended with human-authored passages."
+            verdict_badge = "badge-warning"
         else:
             verdict = "Authentic Human Writing"
-            verdict_desc = "The text demonstrates high natural burstiness, authentic idiosyncratic vocabulary, diverse sentence rhythm, and high perplexity consistent with genuine human scholarship."
+            verdict_desc = "The text demonstrates natural stylistic variance, idiosyncratic vocabulary, diverse sentence rhythm, and high perplexity consistent with genuine human scholarship."
             verdict_badge = "badge-success"
 
         confidence_factor = min(0.99, 0.88 + (min(500, word_count) / 500) * 0.10)
