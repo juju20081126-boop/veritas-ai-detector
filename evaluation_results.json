@@ -1,5 +1,5 @@
 {
-  "timestamp": 1790640194.0426857,
+  "timestamp": 1790641386.3415842,
   "success_criteria": {
     "teacher_tpr_at_1fpr": 0.962,
     "teacher_target_met": true,
@@ -17,7 +17,7 @@
       "esl_to_native_ratio": 1.0,
       "esl_bias_flagged": false
     },
-    "calibration_ece": 0.0306,
+    "calibration_ece": 0.0325,
     "calibration_passed": true,
     "macro_f1": 0.6392,
     "per_class_f1": {

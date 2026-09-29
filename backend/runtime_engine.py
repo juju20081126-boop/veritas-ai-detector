@@ -165,7 +165,9 @@ class QuillBotDetectorEngine:
 
         return np.concatenate(all_logits, axis=0) if len(all_logits) > 1 else all_logits[0]
 
-    def _apply_meta_classifier_and_calibration(self, logits: np.ndarray, feat_vec: np.ndarray) -> np.ndarray:
+    def _apply_meta_classifier_and_calibration(
+        self, logits: np.ndarray, feat_vec: np.ndarray, stylometrics: Optional[Dict[str, Any]] = None
+    ) -> np.ndarray:
         """Fuses neural logits with stylometric features and applies temperature calibration."""
         if self.meta_weights is not None and self.feature_mean is not None and len(self.feature_mean) > 0:
             norm_feats = (feat_vec - self.feature_mean) / self.feature_std
@@ -173,6 +175,28 @@ class QuillBotDetectorEngine:
             raw_scores = np.dot(combined, self.meta_weights.T) + self.meta_intercept
         else:
             raw_scores = logits
+
+        # Forensic Guardrail for Authentic Human Authorial Voice:
+        # Prevents rich authorial vocabulary and complex punctuation (e.g. David Sedaris, literature)
+        # from being falsely penalized as "AI-refined" when genuine human personal markers and burstiness are present.
+        if stylometrics is not None:
+            human_marker_rate = stylometrics.get("discourse_punctuation", {}).get("human_marker_rate", 0.0)
+            ai_marker_rate = stylometrics.get("discourse_punctuation", {}).get("ai_marker_rate", 0.0)
+            rhythm_delta = stylometrics.get("syntax_variance", {}).get("rhythm_delta", 0.0)
+
+            is_human_side = (logits[0][0] > logits[0][2] and logits[0][0] > logits[0][3])
+            is_literary_author = (
+                (human_marker_rate >= 3.0 and rhythm_delta >= 12.0) or
+                (human_marker_rate >= 5.0 and rhythm_delta >= 9.0) or
+                (human_marker_rate >= 6.0)
+            ) and (ai_marker_rate == 0.0) and (logits[0][0] >= logits[0][1] - 0.2)
+
+            if is_human_side and is_literary_author:
+                boost = 0.8 + 0.3 * (human_marker_rate / 2.0)
+                if raw_scores[0][1] > raw_scores[0][0]:
+                    raw_scores[0][0] = raw_scores[0][1] + boost
+                else:
+                    raw_scores[0][0] += boost
 
         # Temperature calibration
         temp = max(0.1, self.calibration_temperature)
@@ -251,7 +275,7 @@ class QuillBotDetectorEngine:
         chunks = self._chunk_text(text, max_chunk_words=100)
         chunk_logits = self._run_onnx_inference(chunks, max_length=256, batch_size=16)
         doc_logits = np.mean(chunk_logits, axis=0, keepdims=True)
-        calibrated_probs = self._apply_meta_classifier_and_calibration(doc_logits, feat_vec)
+        calibrated_probs = self._apply_meta_classifier_and_calibration(doc_logits, feat_vec, stylometrics=stylometrics)
 
         # Form probability dictionary
         prob_dict = {
