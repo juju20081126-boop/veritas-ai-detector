@@ -157,6 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function setBusy(busy, label) {
     btnAnalyze.disabled = busy;
     btnAnalyze.textContent = busy ? label : ANALYZE_LABEL;
+    btnAnalyze.classList.toggle("is-busy", busy);
+    window.dispatchEvent(new CustomEvent("veritas:busy", { detail: { busy } }));
   }
 
   btnAnalyze.addEventListener("click", runAnalysis);

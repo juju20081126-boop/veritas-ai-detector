@@ -1,10 +1,11 @@
 /**
  * Veritas — halftone field.
- * Renders a dithered, photo-like ink mass as diamond dots on a 45° lattice.
- * The mass comes from fractal value noise, so it has clumps and holes rather
- * than smooth bands. After each analysis the field re-seeds and settles, and
- * a higher AI share pushes the ink further across the panel.
- * Listens for "veritas:result" ({ detail: { aiShare: 0..1 } }).
+ * Ordered dither on a 45° diamond lattice, like a newsprint photo: every dot is
+ * the same size, and tone comes from which dots are switched on (Bayer matrix).
+ * The underlying image is fractal noise with a ragged left edge.
+ * Events:
+ *   "veritas:busy"   ({ detail: { busy } })  field drifts while analysis runs
+ *   "veritas:result" ({ detail: { aiShare } }) field re-forms; more AI = more ink
  */
 (function () {
   const canvas = document.getElementById("halftoneCanvas");
@@ -12,8 +13,19 @@
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const CELL = 8;          // lattice spacing in CSS px
-  const SCALE = 1 / 230;   // noise features per px
+  // Square grid of diamonds touching only at their corners: full tone reads
+  // as a black/white checker, never a solid slab.
+  const CELL = 7;
+  const DOT = CELL / 2;
+  const SCALE = 1 / 240;
+
+  // 4x4 Bayer thresholds
+  const BAYER = [
+    [0, 8, 2, 10],
+    [12, 4, 14, 6],
+    [3, 11, 1, 9],
+    [15, 7, 13, 5],
+  ].map((row) => row.map((v) => (v + 0.5) / 16));
 
   let width = 0;
   let height = 0;
@@ -21,8 +33,8 @@
   let offsetX = 0;
   let offsetY = 0;
   let raf = 0;
+  let busy = false;
 
-  // Integer hash -> [0, 1)
   function hash(ix, iy) {
     let h = Math.imul(ix, 374761393) + Math.imul(iy, 668265263);
     h = Math.imul(h ^ (h >>> 13), 1274126177);
@@ -31,26 +43,19 @@
   }
 
   function valueNoise(x, y) {
-    const ix = Math.floor(x);
-    const iy = Math.floor(y);
-    const fx = x - ix;
-    const fy = y - iy;
-    const sx = fx * fx * (3 - 2 * fx);
-    const sy = fy * fy * (3 - 2 * fy);
-    const a = hash(ix, iy);
-    const b = hash(ix + 1, iy);
-    const c = hash(ix, iy + 1);
-    const d = hash(ix + 1, iy + 1);
+    const ix = Math.floor(x), iy = Math.floor(y);
+    const fx = x - ix, fy = y - iy;
+    const sx = fx * fx * (3 - 2 * fx), sy = fy * fy * (3 - 2 * fy);
+    const a = hash(ix, iy), b = hash(ix + 1, iy);
+    const c = hash(ix, iy + 1), d = hash(ix + 1, iy + 1);
     return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
   }
 
   function fbm(x, y) {
-    let sum = 0;
-    let amp = 0.5;
-    let freq = 1;
+    let sum = 0, amp = 0.5, f = 1;
     for (let i = 0; i < 5; i++) {
-      sum += amp * valueNoise(x * freq, y * freq);
-      freq *= 2.03;
+      sum += amp * valueNoise(x * f, y * f);
+      f *= 2.03;
       amp *= 0.5;
     }
     return sum / 0.97;
@@ -75,51 +80,52 @@
   function draw() {
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#0a0a0a";
-    const half = CELL / 2;
-    // Low share keeps the ink to the right edge; high share floods the panel
-    const edgeBase = 0.42 - aiShare * 0.34;
+    ctx.beginPath();
 
-    for (let cy = 0, row = 0; cy < height + CELL; cy += half, row++) {
+    const edgeBase = 0.44 - aiShare * 0.36;
+
+    for (let row = 0, cy = DOT; cy < height + CELL; row++, cy += CELL) {
       const v = cy * SCALE;
-      // Ragged left boundary that wanders down the panel
-      const edge = edgeBase + (fbm(v * 1.4 + 17.3 + offsetY, 4.1) - 0.5) * 0.55;
+      const edge = edgeBase + (fbm(v * 1.5 + 17.3 + offsetY, 4.1) - 0.5) * 0.6;
 
-      for (let cx = (row % 2) * half; cx < width + CELL; cx += CELL) {
+      for (let col = 0, cx = DOT; cx < width + CELL; col++, cx += CELL) {
         const u = cx / width;
-        const mask = smoothstep(edge, edge + 0.2, u);
+        const mask = smoothstep(edge, edge + 0.16, u);
         if (mask <= 0) continue;
 
-        const n = fbm(cx * SCALE + offsetX, v + offsetY);
-        const tone = smoothstep(0.26, 0.76, n) * mask;
-        // Capped just under touching, so the darkest areas stay a crisp checker
-        const r = tone * half * 0.96;
-        if (r < 0.55) continue;
+        let tone = smoothstep(0.36, 0.66, fbm(cx * SCALE + offsetX, v + offsetY)) * mask;
+        // Stray dots along the boundary, like ink breaking up at a photo's edge
+        if (mask < 1) tone *= 0.55 + hash(col + 91, row + 7) * 0.9;
 
-        ctx.beginPath();
+        const threshold = BAYER[row & 3][col & 3];
+        if (tone <= threshold) continue;
+
+        // In the deepest shadows the diamonds swell until only small white holes remain
+        const r = tone > 0.82 ? DOT * (1 + (tone - 0.82) * 1.6) : DOT;
         ctx.moveTo(cx, cy - r);
         ctx.lineTo(cx + r, cy);
         ctx.lineTo(cx, cy + r);
         ctx.lineTo(cx - r, cy);
         ctx.closePath();
-        ctx.fill();
       }
     }
+    ctx.fill();
   }
 
-  function settle(targetShare) {
+  function animateTo(targetShare, dx, dy, duration, onDone) {
     cancelAnimationFrame(raf);
-    const toX = offsetX + 0.9;
-    const toY = offsetY + 0.4;
+    const toX = offsetX + dx;
+    const toY = offsetY + dy;
     if (reduceMotion) {
       aiShare = targetShare;
       offsetX = toX;
       offsetY = toY;
       draw();
+      if (onDone) onDone();
       return;
     }
     const start = performance.now();
     const from = { share: aiShare, x: offsetX, y: offsetY };
-    const duration = 1200;
 
     function step(now) {
       const t = Math.min(1, (now - start) / duration);
@@ -129,13 +135,35 @@
       offsetY = from.y + (toY - from.y) * e;
       draw();
       if (t < 1) raf = requestAnimationFrame(step);
+      else if (onDone) onDone();
     }
     raf = requestAnimationFrame(step);
   }
 
+  // Slow drift while the model runs, so the page shows it is working
+  function drift() {
+    if (!busy || reduceMotion) return;
+    cancelAnimationFrame(raf);
+    let last = performance.now();
+    function step(now) {
+      if (!busy) return;
+      offsetX += (now - last) * 0.0004;
+      last = now;
+      draw();
+      raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+  }
+
+  window.addEventListener("veritas:busy", (e) => {
+    busy = Boolean(e.detail && e.detail.busy);
+    if (busy) drift();
+  });
+
   window.addEventListener("veritas:result", (e) => {
+    busy = false;
     const share = e.detail && typeof e.detail.aiShare === "number" ? e.detail.aiShare : 0.5;
-    settle(Math.max(0, Math.min(1, share)));
+    animateTo(Math.max(0, Math.min(1, share)), 0.9, 0.4, 1300);
   });
 
   if ("ResizeObserver" in window) {

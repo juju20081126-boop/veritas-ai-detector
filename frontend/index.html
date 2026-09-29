@@ -6,10 +6,11 @@
   <title>Veritas — Offline AI Writing Detector</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
+  <canvas id="backdrop" class="backdrop" aria-hidden="true"></canvas>
   <main class="stage">
     <div class="frame">
       <div class="card" id="appCard">
@@ -23,7 +24,7 @@
           </svg>
 
           <h1>Who wrote this?</h1>
-          <p class="sub">Check any text for AI writing, offline</p>
+          <p class="sub">Check any text for AI writing, offline.</p>
 
           <div class="source-buttons">
             <button id="btnUpload" class="pill-btn" type="button">
@@ -76,7 +77,6 @@
           <p id="formError" class="form-error" role="alert" hidden></p>
 
           <button id="btnAnalyze" class="btn-primary" type="button" title="Analyze (Ctrl+Enter)">Analyze</button>
-
           <div class="side-foot">
             <button id="btnClear" class="link-btn" type="button">Clear text</button>
             <label class="cutoff" title="Below this confidence, Veritas gives no verdict instead of guessing">
@@ -149,6 +149,7 @@
     </div>
   </main>
 
+  <script src="/static/backdrop.js"></script>
   <script src="/static/halftone.js"></script>
   <script src="/static/app.js"></script>
 </body>
