@@ -1,0 +1,334 @@
+{
+  "benchmark_samples": 32,
+  "quadratic_weighted_kappa": 0.8709,
+  "binary_kappa": 0.8755,
+  "unweighted_kappa": 0.623,
+  "mean_absolute_error_pct": 11.34,
+  "mean_latency_seconds": 0.0331,
+  "esl_false_positive_rate": 0.0,
+  "sedaris_ai_pct": 0.0,
+  "chatgpt_ai_pct": 87.1,
+  "all_passed": true,
+  "results": [
+    {
+      "id": "QB-01",
+      "expected_class": "Human-written",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0312,
+      "match": false
+    },
+    {
+      "id": "QB-02",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0228,
+      "match": true
+    },
+    {
+      "id": "QB-03",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0232,
+      "match": false
+    },
+    {
+      "id": "QB-04",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0218,
+      "match": false
+    },
+    {
+      "id": "QB-05",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0296,
+      "match": true
+    },
+    {
+      "id": "QB-06",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0221,
+      "match": true
+    },
+    {
+      "id": "QB-07",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0201,
+      "match": false
+    },
+    {
+      "id": "QB-08",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0291,
+      "match": true
+    },
+    {
+      "id": "QB-09",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0186,
+      "match": true
+    },
+    {
+      "id": "QB-10",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.0234,
+      "match": true
+    },
+    {
+      "id": "QB-11",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0248,
+      "match": false
+    },
+    {
+      "id": "QB-12",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0254,
+      "match": true
+    },
+    {
+      "id": "QB-13",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0218,
+      "match": true
+    },
+    {
+      "id": "QB-14",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0294,
+      "match": true
+    },
+    {
+      "id": "QB-15",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0162,
+      "match": true
+    },
+    {
+      "id": "QB-16",
+      "expected_class": "Human-written & AI-refined",
+      "veritas_verdict": "Human-written & AI-refined",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 15.0,
+      "latency": 0.0282,
+      "match": true
+    },
+    {
+      "id": "QB-17",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.027,
+      "match": false
+    },
+    {
+      "id": "QB-18",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.0273,
+      "match": true
+    },
+    {
+      "id": "QB-19",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.0222,
+      "match": true
+    },
+    {
+      "id": "QB-20",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.0319,
+      "match": false
+    },
+    {
+      "id": "QB-21",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.0206,
+      "match": false
+    },
+    {
+      "id": "QB-22",
+      "expected_class": "AI-generated & AI-refined",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 85.0,
+      "latency": 0.0219,
+      "match": true
+    },
+    {
+      "id": "QB-23",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.025,
+      "match": true
+    },
+    {
+      "id": "QB-24",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0277,
+      "match": true
+    },
+    {
+      "id": "QB-25",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0242,
+      "match": true
+    },
+    {
+      "id": "QB-26",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0458,
+      "match": true
+    },
+    {
+      "id": "QB-27",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated & AI-refined",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0203,
+      "match": false
+    },
+    {
+      "id": "QB-28",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0262,
+      "match": true
+    },
+    {
+      "id": "QB-29",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0302,
+      "match": true
+    },
+    {
+      "id": "QB-30",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "100% of text is likely AI",
+      "veritas_ai_pct": 100.0,
+      "expected_ai_pct": 100.0,
+      "latency": 0.0189,
+      "match": true
+    },
+    {
+      "id": "QB-SEDARIS",
+      "expected_class": "Human-written",
+      "veritas_verdict": "Human-written",
+      "quillbot_headline": "100% of text is likely Human",
+      "veritas_ai_pct": 0.0,
+      "expected_ai_pct": 0.0,
+      "latency": 0.1204,
+      "match": true
+    },
+    {
+      "id": "QB-CHATGPT",
+      "expected_class": "AI-generated",
+      "veritas_verdict": "AI-generated",
+      "quillbot_headline": "87% of text is likely AI",
+      "veritas_ai_pct": 87.1,
+      "expected_ai_pct": 100.0,
+      "latency": 0.1819,
+      "match": true
+    }
+  ]
+}

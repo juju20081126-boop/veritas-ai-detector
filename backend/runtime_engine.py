@@ -297,39 +297,98 @@ class QuillBotDetectorEngine:
         }
 
         # 3. Verdict Determination & Uncertainty Gating
-        top_idx = int(np.argmax(calibrated_probs))
-        top_prob = float(calibrated_probs[top_idx])
-        top_class = CLASS_NAMES[top_idx]
+        # 3. Sentence-by-sentence Inference & Highlights (QuillBot Alignment)
+        sent_logits = self._run_onnx_inference(sentences, max_length=128, batch_size=16)
+        S = len(sentences)
 
-        # Check for Uncertainty: if top probability is below confidence threshold or top two are too close
+        # Raw sentence softmax probabilities
+        raw_s_probs = np.zeros((S, 4), dtype=np.float32)
+        for i, s_logit in enumerate(sent_logits):
+            exp_l = np.exp(s_logit - np.max(s_logit))
+            raw_s_probs[i] = exp_l / np.sum(exp_l)
+
+        # Phase 2 Formulation: Context-Aware Markovian Local Pacing Smoothing
+        # \tilde{P}(y_i = k) = \lambda_{self} P(y_i = k) + \frac{1 - \lambda_{self}}{2} [ P(y_{i-1} = k) + P(y_{i+1} = k) ]
+        lambda_self = 0.75
+        smoothed_probs = np.zeros_like(raw_s_probs)
+        for i in range(S):
+            prev_p = raw_s_probs[max(0, i - 1)]
+            next_p = raw_s_probs[min(S - 1, i + 1)]
+            smoothed_probs[i] = lambda_self * raw_s_probs[i] + ((1.0 - lambda_self) / 2.0) * (prev_p + next_p)
+            smoothed_probs[i] /= np.sum(smoothed_probs[i])
+
+        # Bayesian Document Prior Blend
+        # \bar{P}(y_i = k) \propto P_{sent}(k)^{1 - \alpha} \times P_{doc}(k)^\alpha
+        alpha_blend = 0.50
+        doc_prior = np.array(calibrated_probs, dtype=np.float32)
+        blended_probs = np.zeros_like(smoothed_probs)
+        for i in range(S):
+            p_sent = smoothed_probs[i] + 1e-6
+            p_doc = doc_prior + 1e-6
+            log_p = (1.0 - alpha_blend) * np.log(p_sent) + alpha_blend * np.log(p_doc)
+            exp_p = np.exp(log_p - np.max(log_p))
+            blended_probs[i] = exp_p / np.sum(exp_p)
+
+        # Word counts per sentence for weighted aggregation
+        sent_words_counts = [max(1, len(re.findall(r"\b[a-zA-Z0-9'-]+\b", s))) for s in sentences]
+        total_words_sum = sum(sent_words_counts)
+
+        class_word_counts = {k: 0 for k in range(4)}
+        for i in range(S):
+            top_sent_class_idx = int(np.argmax(blended_probs[i]))
+            class_word_counts[top_sent_class_idx] += sent_words_counts[i]
+
+        # QuillBot Segment Breakdown: p_k = (\sum_{i: \hat{y}_i = k} w_i) / W * 100%
+        qb_coverage = {
+            "human": round(class_word_counts[0] / total_words_sum * 100, 1),
+            "human_ai_refined": round(class_word_counts[1] / total_words_sum * 100, 1),
+            "ai_ai_refined": round(class_word_counts[2] / total_words_sum * 100, 1),
+            "ai_generated": round(class_word_counts[3] / total_words_sum * 100, 1),
+        }
+        total_ai_pct = round(qb_coverage["ai_generated"] + qb_coverage["ai_ai_refined"], 1)
+        total_human_pct = round(100.0 - total_ai_pct, 1)
+
+        # QuillBot Headline String & Pill Class
+        if total_ai_pct >= 50.0:
+            qb_headline = f"{int(round(total_ai_pct))}% of text is likely AI"
+            qb_headline_class = "badge-ai"
+        elif total_ai_pct == 0.0:
+            qb_headline = "100% of text is likely Human"
+            qb_headline_class = "badge-human"
+        else:
+            qb_headline = f"{int(round(total_ai_pct))}% of text is likely AI"
+            qb_headline_class = "badge-ai-refined"
+
+        # 4. Final Verdict Determination
+        top_idx = int(np.argmax(calibrated_probs))
         sorted_probs = np.sort(calibrated_probs)[::-1]
         margin = sorted_probs[0] - sorted_probs[1]
+        top_prob = float(calibrated_probs[top_idx])
 
         if top_prob < confidence_threshold or (top_prob < 0.45 and margin < 0.04):
             verdict = "Uncertain"
             is_uncertain = True
+            final_conf = top_prob
         else:
-            verdict = top_class
             is_uncertain = False
+            if total_ai_pct >= 50.0:
+                verdict = "AI-generated" if qb_coverage["ai_generated"] >= qb_coverage["ai_ai_refined"] else "AI-generated & AI-refined"
+                final_conf = max(top_prob, total_ai_pct / 100.0)
+            else:
+                verdict = "Human-written" if qb_coverage["human"] >= qb_coverage["human_ai_refined"] else "Human-written & AI-refined"
+                final_conf = max(top_prob, total_human_pct / 100.0)
 
         verdict_meta = CLASS_METADATA[verdict]
 
-        # 4. Sentence-by-sentence Inference & Highlights
-        sent_logits = self._run_onnx_inference(sentences, max_length=128, batch_size=16)
         sentence_analyses = []
-
-        for idx, (sent, s_logit) in enumerate(zip(sentences, sent_logits)):
-            # Softmax on sentence logits
-            exp_l = np.exp(s_logit - np.max(s_logit))
-            s_probs = exp_l / np.sum(exp_l)
-
+        for idx, sent in enumerate(sentences):
+            s_probs = blended_probs[idx]
             s_top_idx = int(np.argmax(s_probs))
             s_class = CLASS_NAMES[s_top_idx]
             s_prob = float(s_probs[s_top_idx])
             s_meta = CLASS_METADATA[s_class]
 
-            # AI likelihood percentage for sentence
-            ai_presence = float(s_probs[2] + s_probs[3])  # Combined AI + AI-refined AI
+            ai_presence = float(s_probs[2] + s_probs[3])
 
             reasons = []
             s_lower = sent.lower()
@@ -393,8 +452,12 @@ class QuillBotDetectorEngine:
                 "verdict_description": verdict_meta["description"],
                 "badge": verdict_meta["badge"],
                 "is_uncertain": is_uncertain,
-                "confidence": round(top_prob, 4),
-                "confidence_pct": round(top_prob * 100, 1),
+                "confidence": round(final_conf, 4),
+                "confidence_pct": round(final_conf * 100, 1),
+                "quillbot_headline": qb_headline,
+                "quillbot_headline_class": qb_headline_class,
+                "quillbot_ai_pct": total_ai_pct,
+                "quillbot_human_pct": total_human_pct,
                 "word_count": word_count,
                 "character_count": char_count,
                 "sentence_count": len(sentences),
@@ -403,10 +466,17 @@ class QuillBotDetectorEngine:
             },
             "calibrated_probabilities": prob_dict,
             "percentages": {
-                "ai_generated": round(prob_dict["AI-generated"] * 100, 1),
-                "ai_ai_refined": round(prob_dict["AI-generated & AI-refined"] * 100, 1),
-                "human_ai_refined": round(prob_dict["Human-written & AI-refined"] * 100, 1),
-                "human": round(prob_dict["Human-written"] * 100, 1)
+                "ai_generated": qb_coverage["ai_generated"],
+                "ai_ai_refined": qb_coverage["ai_ai_refined"],
+                "human_ai_refined": qb_coverage["human_ai_refined"],
+                "human": qb_coverage["human"]
+            },
+            "quillbot_breakdown": {
+                "headline": qb_headline,
+                "headline_class": qb_headline_class,
+                "ai_percentage": total_ai_pct,
+                "human_percentage": total_human_pct,
+                "segments": qb_coverage
             },
             "sentences": sentence_analyses,
             "stylometrics": stylometrics,

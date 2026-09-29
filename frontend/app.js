@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const verdictIconBox = document.getElementById("verdictIconBox");
   const confidenceTag = document.getElementById("confidenceTag");
   const uncertainAlertBanner = document.getElementById("uncertainAlertBanner");
+  const qbHeadlineBanner = document.getElementById("qbHeadlineBanner");
+  const qbHeadlineText = document.getElementById("qbHeadlineText");
+  const qbHeadlinePulse = document.getElementById("qbHeadlinePulse");
 
   // Stack & Bars
   const stackBarAI = document.getElementById("stackBarAI");
@@ -294,6 +297,21 @@ document.addEventListener("DOMContentLoaded", () => {
     heatmapSentCountBadge.textContent = sentences.length;
     heatmapSentCountBadge.style.display = "inline-block";
 
+    // QuillBot Replica Headline Card
+    if (qbHeadlineText && summary.quillbot_headline) {
+      qbHeadlineText.textContent = summary.quillbot_headline;
+      if (qbHeadlinePulse) {
+        qbHeadlinePulse.className = "qb-headline-pulse";
+        if (summary.quillbot_ai_pct >= 50.0) {
+          qbHeadlinePulse.classList.add("pulse-ai");
+        } else if (summary.quillbot_ai_pct > 0.0) {
+          qbHeadlinePulse.classList.add("pulse-refined");
+        } else {
+          qbHeadlinePulse.classList.add("pulse-human");
+        }
+      }
+    }
+
     // Document Verdict Card
     verdictTitle.textContent = summary.verdict;
     verdictDescription.textContent = summary.verdict_description;
@@ -480,6 +498,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = currentAnalysisData.percentages;
     const report = [
       `=== VERITAS AI DETECTION REPORT ===`,
+      `QuillBot Headline: ${s.quillbot_headline || "N/A"}`,
       `Final Verdict: ${s.verdict} (${s.confidence_pct}% Confidence)`,
       `Status: ${s.is_uncertain ? "Uncertain (Confidence below cutoff)" : "High Certainty"}`,
       `Document Breakdown:`,

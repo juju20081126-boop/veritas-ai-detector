@@ -802,6 +802,69 @@ body {
   padding: 1.25rem;
 }
 
+/* QuillBot Replica Headline Banner */
+.qb-headline-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem 1.2rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card-subtle);
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.qb-headline-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.qb-headline-pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-human);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.qb-headline-pulse.pulse-ai {
+  background-color: var(--color-ai);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+}
+
+.qb-headline-pulse.pulse-refined {
+  background-color: var(--color-ai-refined);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
+}
+
+.qb-headline-pulse.pulse-human {
+  background-color: var(--color-human);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+.qb-headline-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+}
+
+.qb-replica-tag {
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  background-color: var(--track-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
 /* Master Verdict Card */
 .verdict-card {
   background-color: var(--bg-card-subtle);
