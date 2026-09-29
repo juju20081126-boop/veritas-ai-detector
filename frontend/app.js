@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (words === 0) {
       wordGuideBadge.className = "guide-badge ok";
-      wordGuideBadge.textContent = "Optimal: 80–2,000 words";
+      wordGuideBadge.textContent = "Best results: 80 to 2,000 words";
     } else if (words < 80) {
       wordGuideBadge.className = "guide-badge warn";
       wordGuideBadge.textContent = `Short text (${words}w) — 80+ words recommended`;
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       wordGuideBadge.textContent = `Long text (${words}w) — analyzing first 2,000 words`;
     } else {
       wordGuideBadge.className = "guide-badge ok";
-      wordGuideBadge.textContent = "Optimal length for forensic confidence";
+      wordGuideBadge.textContent = "Good length for a confident result";
     }
   }
 
@@ -236,11 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function resetAnalyzeButtonText() {
     btnAnalyze.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <span>Analyze Text</span>
+      <span>Analyze text</span>
       <kbd class="shortcut-key">Ctrl+Enter</kbd>
     `;
   }
@@ -256,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const threshold = parseFloat(thresholdInput.value) || 0.40;
 
     btnAnalyze.disabled = true;
-    btnAnalyze.innerHTML = `<span>Analyzing with ONNX...</span>`;
+    btnAnalyze.innerHTML = `<span>Analyzing...</span>`;
 
     try {
       const resp = await fetch("/api/detect", {
@@ -315,13 +311,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Document Verdict Card
     verdictTitle.textContent = summary.verdict;
     verdictDescription.textContent = summary.verdict_description;
-    confidenceTag.textContent = `${summary.confidence_pct}% Confidence`;
+    confidenceTag.textContent = `${summary.confidence_pct}% confidence`;
+
+    // The API returns generic badge names; map them onto the four-class ramp
+    const badgeMap = {
+      "badge-success": "badge-human",
+      "badge-warning": "badge-human-refined",
+      "badge-orange": "badge-ai-refined",
+      "badge-danger": "badge-ai",
+      "badge-secondary": "badge-uncertain"
+    };
+    const badgeClass = badgeMap[summary.badge] || summary.badge || "badge-uncertain";
 
     verdictBadge.textContent = summary.verdict;
-    verdictBadge.className = `verdict-badge ${summary.badge}`;
+    verdictBadge.className = `verdict-badge ${badgeClass}`;
 
     // Verdict Icon
-    renderVerdictIcon(summary.badge);
+    renderVerdictIcon(badgeClass);
 
     // Uncertain Banner Handling
     if (summary.is_uncertain) {
@@ -364,8 +370,13 @@ document.addEventListener("DOMContentLoaded", () => {
       mathValDiscourse.textContent = phi !== undefined ? (phi > 0 ? "+" : "") + phi.toFixed(4) : "—";
       mathValBinoculars.textContent = mathEqs.binoculars_ratio_r !== undefined ? mathEqs.binoculars_ratio_r.toFixed(3) : "—";
       mathValRichness.textContent = mathEqs.lexical_richness_omega !== undefined ? mathEqs.lexical_richness_omega.toFixed(4) : "—";
-      mathAffinityBadge.textContent = "Λ_auth: " + mathEqs.authorial_affinity_lambda.toFixed(3);
+      mathAffinityBadge.textContent = "Λ_auth " + mathEqs.authorial_affinity_lambda.toFixed(3);
     }
+
+    // Let the halftone field react to the result
+    window.dispatchEvent(new CustomEvent("veritas:result", {
+      detail: { aiShare: (pcts.ai_generated + pcts.ai_ai_refined) / 100 }
+    }));
 
     // Sentence Highlight Counts
     renderSentenceCounts(sentences);
@@ -436,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sentenceCountsSummary.innerHTML = `
       ${ai > 0 ? `<span class="count-pill badge-ai">${ai} AI</span>` : ""}
-      ${aiRef > 0 ? `<span class="count-pill badge-ai-refined">${aiRef} AI-Refined</span>` : ""}
+      ${aiRef > 0 ? `<span class="count-pill badge-ai-refined">${aiRef} AI-edited</span>` : ""}
       ${humRef > 0 ? `<span class="count-pill badge-human-refined">${humRef} Polished</span>` : ""}
       <span class="count-pill badge-human">${hum} Human</span>
     `;
@@ -476,15 +487,13 @@ document.addEventListener("DOMContentLoaded", () => {
     inspectorContent.innerHTML = `
       <div class="inspector-sentence-text">"${sent.text}"</div>
       <div class="inspector-meta-row">
-        <span>Classification: <strong>${sent.class_label}</strong></span>
+        <span>Class: <strong>${sent.class_label}</strong></span>
         <span>Confidence: <strong>${(sent.confidence * 100).toFixed(1)}%</strong></span>
       </div>
       <div class="inspector-meta-row">
-        <span>AI Likelihood Score: <strong>${sent.ai_likelihood_pct}%</strong></span>
+        <span>AI likelihood: <strong>${sent.ai_likelihood_pct}%</strong></span>
       </div>
-      <div style="font-size: 0.76rem; font-weight: 700; margin-top: 8px; margin-bottom: 4px; color: var(--text-muted); text-transform: uppercase;">
-        Forensic Indicators:
-      </div>
+      <div class="inspector-subhead">Why it was scored this way</div>
       <ul class="inspector-reasons-list">
         ${reasonsHtml || "<li>Natural phrasing and vocabulary variance</li>"}
       </ul>
@@ -513,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       await navigator.clipboard.writeText(report);
       const origText = btnCopyReport.querySelector("span").textContent;
-      btnCopyReport.querySelector("span").textContent = "Copied to Clipboard!";
+      btnCopyReport.querySelector("span").textContent = "Copied";
       setTimeout(() => {
         btnCopyReport.querySelector("span").textContent = origText;
       }, 2000);
