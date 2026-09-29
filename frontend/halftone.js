@@ -1,7 +1,9 @@
 /**
- * Veritas AI — halftone field.
- * Draws a diamond-dot dither beside the report column. Dot density follows a smooth noise field,
- * and after each analysis the field re-settles: denser ink means more AI.
+ * Veritas — halftone field.
+ * Renders a dithered, photo-like ink mass as diamond dots on a 45° lattice.
+ * The mass comes from fractal value noise, so it has clumps and holes rather
+ * than smooth bands. After each analysis the field re-seeds and settles, and
+ * a higher AI share pushes the ink further across the panel.
  * Listens for "veritas:result" ({ detail: { aiShare: 0..1 } }).
  */
 (function () {
@@ -10,13 +12,54 @@
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const CELL = 9;
+  const CELL = 8;          // lattice spacing in CSS px
+  const SCALE = 1 / 230;   // noise features per px
+
   let width = 0;
   let height = 0;
-  let aiShare = 0.35;      // current (animated) value
-  let targetShare = 0.35;  // value the field is settling toward
-  let phase = 0;
+  let aiShare = 0.55;
+  let offsetX = 0;
+  let offsetY = 0;
   let raf = 0;
+
+  // Integer hash -> [0, 1)
+  function hash(ix, iy) {
+    let h = Math.imul(ix, 374761393) + Math.imul(iy, 668265263);
+    h = Math.imul(h ^ (h >>> 13), 1274126177);
+    h ^= h >>> 16;
+    return (h >>> 0) / 4294967296;
+  }
+
+  function valueNoise(x, y) {
+    const ix = Math.floor(x);
+    const iy = Math.floor(y);
+    const fx = x - ix;
+    const fy = y - iy;
+    const sx = fx * fx * (3 - 2 * fx);
+    const sy = fy * fy * (3 - 2 * fy);
+    const a = hash(ix, iy);
+    const b = hash(ix + 1, iy);
+    const c = hash(ix, iy + 1);
+    const d = hash(ix + 1, iy + 1);
+    return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
+  }
+
+  function fbm(x, y) {
+    let sum = 0;
+    let amp = 0.5;
+    let freq = 1;
+    for (let i = 0; i < 5; i++) {
+      sum += amp * valueNoise(x * freq, y * freq);
+      freq *= 2.03;
+      amp *= 0.5;
+    }
+    return sum / 0.97;
+  }
+
+  function smoothstep(e0, e1, x) {
+    const t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0)));
+    return t * t * (3 - 2 * t);
+  }
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -29,43 +72,29 @@
     draw();
   }
 
-  // An organic ink mass anchored to the right edge with a ragged left boundary.
-  // More AI pushes the boundary left, so the mass grows across the panel.
-  function field(x, y) {
-    const u = x / width;
-    const v = y / height;
-    const edge =
-      0.34 - aiShare * 0.24 +
-      Math.sin(v * 4.2 + phase * 0.6) * 0.13 +
-      Math.sin(v * 11.0 - phase) * 0.05;
-    const mass = Math.min(1, Math.max(0, (u - edge) / 0.22));
-    const tone =
-      Math.sin(u * 7.0 + v * 3.0 + phase) * 0.5 +
-      Math.sin(v * 9.0 - u * 4.0 - phase * 0.7) * 0.3 +
-      Math.sin((u - v) * 14.0 + phase * 1.2) * 0.2;
-    // High-frequency grain gives the mass holes and clumps, like a dithered photo
-    const grain =
-      Math.sin(u * 26.0 - v * 19.0 + phase * 2.0) * 0.6 +
-      Math.sin(u * 37.0 + v * 29.0) * 0.4;
-    return mass * (0.5 + tone * 0.45 + grain * 0.22);
-  }
-
   function draw() {
     ctx.clearRect(0, 0, width, height);
-    const styles = getComputedStyle(document.documentElement);
-    const rgb = styles.getPropertyValue("--halftone").trim() || "6, 9, 18";
-    const alpha = parseFloat(styles.getPropertyValue("--halftone-alpha")) || 0.9;
-    ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
-
-    const gain = 1.0 + aiShare * 0.5;
+    ctx.fillStyle = "#0a0a0a";
     const half = CELL / 2;
+    // Low share keeps the ink to the right edge; high share floods the panel
+    const edgeBase = 0.42 - aiShare * 0.34;
 
-    for (let cy = 0, row = 0; cy < height + CELL; cy += CELL, row++) {
+    for (let cy = 0, row = 0; cy < height + CELL; cy += half, row++) {
+      const v = cy * SCALE;
+      // Ragged left boundary that wanders down the panel
+      const edge = edgeBase + (fbm(v * 1.4 + 17.3 + offsetY, 4.1) - 0.5) * 0.55;
+
       for (let cx = (row % 2) * half; cx < width + CELL; cx += CELL) {
-        // Contrast curve so the dots read as a bold dither, not a haze
-        const level = Math.min(1, Math.max(0, (field(cx, cy) * gain - 0.12) * 1.45));
-        const r = level * half * 1.05;
-        if (r < 0.45) continue;
+        const u = cx / width;
+        const mask = smoothstep(edge, edge + 0.2, u);
+        if (mask <= 0) continue;
+
+        const n = fbm(cx * SCALE + offsetX, v + offsetY);
+        const tone = smoothstep(0.26, 0.76, n) * mask;
+        // Capped just under touching, so the darkest areas stay a crisp checker
+        const r = tone * half * 0.96;
+        if (r < 0.55) continue;
+
         ctx.beginPath();
         ctx.moveTo(cx, cy - r);
         ctx.lineTo(cx + r, cy);
@@ -77,23 +106,27 @@
     }
   }
 
-  function settle() {
+  function settle(targetShare) {
     cancelAnimationFrame(raf);
+    const toX = offsetX + 0.9;
+    const toY = offsetY + 0.4;
     if (reduceMotion) {
       aiShare = targetShare;
+      offsetX = toX;
+      offsetY = toY;
       draw();
       return;
     }
     const start = performance.now();
-    const fromShare = aiShare;
-    const fromPhase = phase;
-    const duration = 1100;
+    const from = { share: aiShare, x: offsetX, y: offsetY };
+    const duration = 1200;
 
     function step(now) {
       const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      aiShare = fromShare + (targetShare - fromShare) * eased;
-      phase = fromPhase + eased * 1.6;
+      const e = 1 - Math.pow(1 - t, 3);
+      aiShare = from.share + (targetShare - from.share) * e;
+      offsetX = from.x + (toX - from.x) * e;
+      offsetY = from.y + (toY - from.y) * e;
       draw();
       if (t < 1) raf = requestAnimationFrame(step);
     }
@@ -101,18 +134,10 @@
   }
 
   window.addEventListener("veritas:result", (e) => {
-    const share = e.detail && typeof e.detail.aiShare === "number" ? e.detail.aiShare : 0.35;
-    targetShare = Math.max(0, Math.min(1, share));
-    settle();
+    const share = e.detail && typeof e.detail.aiShare === "number" ? e.detail.aiShare : 0.5;
+    settle(Math.max(0, Math.min(1, share)));
   });
 
-  // Theme switch changes the dot color, so repaint.
-  new MutationObserver(draw).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["data-theme"],
-  });
-
-  // The report panel grows when results appear, so track the canvas box itself.
   if ("ResizeObserver" in window) {
     new ResizeObserver(resize).observe(canvas);
   } else {
