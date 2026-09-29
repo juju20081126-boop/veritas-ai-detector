@@ -6,389 +6,275 @@
   <title>Veritas AI — Offline AI Writing Detector</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
   <div class="window">
 
-    <!-- Header -->
-    <header class="app-header">
-      <div class="brand">
-        <svg class="brand-mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-          <path d="M2 2h9l-4 8H2z" fill="currentColor"/>
-          <path d="M11 12h9v8h-9z" fill="currentColor" transform="skewX(-14) translate(3.2 0)"/>
-        </svg>
-        <span class="brand-name">Veritas</span>
-      </div>
-
-      <div class="header-status">
-        <div class="status-pill" id="engineStatusPill" title="Simulated target hardware: 2 CPU threads, up to 1.5 GB RAM, no PyTorch">
-          <span class="status-dot"></span>
-          <span id="engineStatusText">Running offline on 2 threads</span>
-        </div>
-        <button id="themeToggleBtn" class="btn-icon" title="Switch light or dark theme" aria-label="Switch light or dark theme">
-          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="4.5"/>
-            <path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
-          </svg>
-          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- Hero -->
+    <!-- Hero: black window, blue glow, one glass prompt card -->
     <section class="hero">
-      <canvas id="halftoneCanvas" class="halftone" aria-hidden="true"></canvas>
-      <svg class="hero-waves" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 78 C 150 20, 300 20, 450 70 S 750 120, 900 64 S 1120 22, 1200 60"/>
-        <path d="M0 96 C 170 46, 330 40, 480 88 S 780 132, 930 82 S 1130 44, 1200 80"/>
+      <svg class="hero-waves" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 110 C 180 40, 340 40, 520 100 S 860 170, 1020 96 S 1160 50, 1200 70"/>
+        <path d="M0 128 C 200 70, 360 64, 540 120 S 880 176, 1040 116 S 1170 76, 1200 94"/>
+        <path d="M0 92 C 160 130, 380 150, 600 104 S 960 40, 1200 118"/>
       </svg>
+
+      <header class="app-header">
+        <div class="brand">
+          <svg class="brand-mark" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M1 2h8L5 10H1z" fill="currentColor"/>
+            <path d="M11 10h8l-4 8h-4z" fill="currentColor"/>
+          </svg>
+          <span class="brand-name">Veritas</span>
+        </div>
+
+        <div class="header-status">
+          <div class="status-pill" id="engineStatusPill" title="Simulated target hardware: 2 CPU threads, up to 1.5 GB RAM, no PyTorch">
+            <span class="status-dot"></span>
+            <span id="engineStatusText">Offline</span>
+          </div>
+          <button id="themeToggleBtn" class="btn-icon" title="Switch light or dark theme" aria-label="Switch light or dark theme">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4.5"/>
+              <path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
       <div class="hero-copy">
         <h1>Who wrote this?</h1>
-        <p>Paste an essay, article or report. Veritas scores every sentence as AI, AI-edited, polished human or human, and your text never leaves this computer.</p>
+        <p>Paste any essay or article. Veritas checks every sentence for AI writing, right on this computer.</p>
+      </div>
+
+      <!-- Prompt card -->
+      <div class="prompt-card" id="editorPane">
+        <div class="pane-header">
+          <div class="tab-controls">
+            <button id="btnModeEdit" class="tab-btn active"><span>Text</span></button>
+            <button id="btnModeHeatmap" class="tab-btn" disabled>
+              <span>Highlights</span>
+              <span id="heatmapSentCountBadge" class="tab-badge" style="display: none;">0</span>
+            </button>
+          </div>
+
+          <div class="editor-quick-actions">
+            <button id="btnUpload" class="btn-text" title="Upload a PDF, DOCX or TXT file">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span>Upload</span>
+            </button>
+            <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" style="display: none;" />
+            <button id="btnPaste" class="btn-text" title="Paste text from the clipboard">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+              </svg>
+              <span>Paste</span>
+            </button>
+            <button id="btnClear" class="btn-text" title="Clear the text">Clear</button>
+          </div>
+        </div>
+
+        <div class="editor-body" id="editorDropZone">
+          <textarea
+            id="textInput"
+            class="document-textarea"
+            placeholder="Paste or type your text here, or drop in a PDF, Word or text file"
+          ></textarea>
+
+          <div id="heatmapViewer" class="heatmap-viewer" style="display: none;"></div>
+
+          <div id="dragDropOverlay" class="drag-drop-overlay" style="display: none;">
+            <div class="drag-drop-content">
+              <h3>Drop your file here</h3>
+              <p>PDF, DOCX or TXT</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-footer">
+          <div class="sample-pills-list" aria-label="Sample texts">
+            <button class="sample-pill" data-sample="ai_pure" title="Load a pure GPT-4o academic essay">Pure AI</button>
+            <button class="sample-pill" data-sample="ai_refined_ai" title="Load paraphrased Claude 3.5 text">Paraphrased AI</button>
+            <button class="sample-pill" data-sample="human_refined_ai" title="Load a polished human history essay">Polished human</button>
+            <button class="sample-pill" data-sample="human_pure" title="Load authentic human scholarship">Human</button>
+            <button class="sample-pill" data-sample="human_esl" title="Load a non-native English learner essay">ESL student</button>
+          </div>
+
+          <div class="editor-actions">
+            <button id="btnAnalyze" class="btn btn-primary" title="Analyze the text (Ctrl+Enter)">
+              <span>Analyze text</span>
+              <kbd class="shortcut-key">Ctrl+Enter</kbd>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prompt-meta">
+        <div class="word-counter-box">
+          <span id="wordCountLabel" class="counter-val">0 words</span>
+          <span id="charCountLabel" class="counter-val">0 chars</span>
+          <span id="sentCountLabel" class="counter-val">0 sentences</span>
+          <span id="wordGuideBadge" class="guide-badge ok">Best results: 80 to 2,000 words</span>
+        </div>
+
+        <div class="prompt-settings">
+          <select id="sampleSelect" class="select-samples" title="Pick from the 30-sample QuillBot benchmark">
+            <option value="" disabled selected>30-sample benchmark</option>
+            <optgroup label="QuillBot 30-sample comparison sheet" id="qbComparisonGroup"></optgroup>
+          </select>
+          <label class="threshold-control" title="Confidence below this cutoff gives an Uncertain verdict">
+            <span>Cutoff</span>
+            <input type="number" id="thresholdInput" min="0.30" max="0.70" step="0.05" value="0.40" class="number-input" />
+          </label>
+        </div>
       </div>
     </section>
 
-    <!-- Main -->
-    <main class="main-container">
+    <!-- Report: narrow column + halftone field -->
+    <section class="report" id="resultsPane">
+      <div class="report-column">
 
-      <!-- Samples and settings -->
-      <div class="top-toolbar">
-        <div class="quick-samples-container">
-          <span class="toolbar-label">Try a sample</span>
-          <div class="sample-pills-list">
-            <button class="sample-pill" data-sample="ai_pure" title="Load a pure GPT-4o academic essay">
-              <span class="pill-dot dot-ai"></span><span>Pure AI</span>
-            </button>
-            <button class="sample-pill" data-sample="ai_refined_ai" title="Load paraphrased Claude 3.5 text">
-              <span class="pill-dot dot-ai-refined"></span><span>Paraphrased AI</span>
-            </button>
-            <button class="sample-pill" data-sample="human_refined_ai" title="Load a polished human history essay">
-              <span class="pill-dot dot-human-refined"></span><span>Polished human</span>
-            </button>
-            <button class="sample-pill" data-sample="human_pure" title="Load authentic human scholarship">
-              <span class="pill-dot dot-human"></span><span>Human</span>
-            </button>
-            <button class="sample-pill" data-sample="human_esl" title="Load a non-native English learner essay">
-              <span class="pill-dot dot-human"></span><span>ESL student</span>
-            </button>
-
-            <div class="sample-dropdown-wrapper">
-              <select id="sampleSelect" class="select-input select-samples" title="Pick from the 30-sample QuillBot benchmark">
-                <option value="" disabled selected>30-sample benchmark</option>
-                <optgroup label="QuillBot 30-sample comparison sheet" id="qbComparisonGroup">
-                  <!-- Loaded from /api/comparison-sheet -->
-                </optgroup>
-              </select>
-            </div>
-          </div>
+        <div id="resultsPlaceholder" class="results-placeholder">
+          <h2>Your report</h2>
+          <p class="mono-note">Analyze some text and the verdict appears here. The dot field on the right fills in as the share of AI writing goes up.</p>
+          <ul class="legend-list">
+            <li><span class="class-dot dot-ai"></span><span class="legend-name">AI-generated</span><span class="legend-desc">Straight from a language model</span></li>
+            <li><span class="class-dot dot-ai-refined"></span><span class="legend-name">AI-edited</span><span class="legend-desc">AI text reworded by a paraphraser</span></li>
+            <li><span class="class-dot dot-human-refined"></span><span class="legend-name">Polished human</span><span class="legend-desc">Human draft cleaned up by AI</span></li>
+            <li><span class="class-dot dot-human"></span><span class="legend-name">Human</span><span class="legend-desc">Original writing</span></li>
+          </ul>
         </div>
 
-        <div class="toolbar-right-controls">
-          <div class="threshold-control" title="Confidence below this cutoff gives an Uncertain verdict">
-            <label for="thresholdInput">Uncertainty cutoff</label>
-            <input type="number" id="thresholdInput" min="0.30" max="0.70" step="0.05" value="0.40" class="number-input" />
+        <div id="activeResultsContent" class="active-results-container" style="display: none;">
+
+          <div class="qb-headline-banner" id="qbHeadlineBanner">
+            <span class="qb-headline-pulse" id="qbHeadlinePulse"></span>
+            <span class="qb-headline-text" id="qbHeadlineText">100% of text is likely Human</span>
           </div>
+          <p class="mono-note qb-replica-note" title="Sentence-weighted coverage that matches QuillBot online">Sentence-weighted, matches QuillBot</p>
+
+          <div class="verdict-card" id="verdictCard">
+            <div class="verdict-header">
+              <span id="verdictBadge" class="verdict-badge badge-human">Human-written</span>
+              <span id="confidenceTag" class="confidence-tag">98.4% confidence</span>
+            </div>
+            <div class="verdict-body">
+              <div class="verdict-icon-box" id="verdictIconBox"></div>
+              <div class="verdict-text-group">
+                <h2 id="verdictTitle" class="verdict-title">Human-written</h2>
+                <p id="verdictDescription" class="verdict-description mono-note">The text has natural rhythm and varied sentence length.</p>
+              </div>
+            </div>
+            <div id="uncertainAlertBanner" class="uncertain-banner" style="display: none;">
+              <div class="uncertain-text mono-note">
+                <strong>No verdict.</strong> The signals fall below your cutoff, so Veritas won't guess. Try a longer text or lower the cutoff.
+              </div>
+            </div>
+          </div>
+
+          <div class="breakdown-card">
+            <div class="card-header-row">
+              <h4 class="card-subtitle">Breakdown</h4>
+              <span class="card-info-tip">Adds up to 100%</span>
+            </div>
+
+            <div class="composite-progress-track">
+              <div id="stackBarAI" class="stack-segment fill-ai" style="width: 0%;" title="AI-generated"></div>
+              <div id="stackBarAIRefined" class="stack-segment fill-ai-refined" style="width: 0%;" title="AI-edited"></div>
+              <div id="stackBarHumanRefined" class="stack-segment fill-human-refined" style="width: 0%;" title="Polished human"></div>
+              <div id="stackBarHuman" class="stack-segment fill-human" style="width: 0%;" title="Human"></div>
+            </div>
+
+            <div class="class-meters-list">
+              <div class="class-meter-row">
+                <div class="class-info"><span class="class-dot dot-ai"></span><span class="class-name">AI-generated</span></div>
+                <div class="class-metric">
+                  <div class="mini-track"><div class="mini-fill fill-ai" id="barAIGen" style="width: 0%;"></div></div>
+                  <span class="class-pct" id="pctAIGen">0.0%</span>
+                </div>
+              </div>
+              <div class="class-meter-row">
+                <div class="class-info"><span class="class-dot dot-ai-refined"></span><span class="class-name">AI-edited</span></div>
+                <div class="class-metric">
+                  <div class="mini-track"><div class="mini-fill fill-ai-refined" id="barAIRefined" style="width: 0%;"></div></div>
+                  <span class="class-pct" id="pctAIRefined">0.0%</span>
+                </div>
+              </div>
+              <div class="class-meter-row">
+                <div class="class-info"><span class="class-dot dot-human-refined"></span><span class="class-name">Polished human</span></div>
+                <div class="class-metric">
+                  <div class="mini-track"><div class="mini-fill fill-human-refined" id="barHumanRefined" style="width: 0%;"></div></div>
+                  <span class="class-pct" id="pctHumanRefined">0.0%</span>
+                </div>
+              </div>
+              <div class="class-meter-row">
+                <div class="class-info"><span class="class-dot dot-human"></span><span class="class-name">Human</span></div>
+                <div class="class-metric">
+                  <div class="mini-track"><div class="mini-fill fill-human" id="barHuman" style="width: 0%;"></div></div>
+                  <span class="class-pct" id="pctHuman">0.0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sentence-inspector-card" id="sentenceInspector">
+            <div class="card-header-row">
+              <h4 class="card-subtitle">Sentence inspector</h4>
+              <div class="sentence-counts-summary" id="sentenceCountsSummary"></div>
+            </div>
+            <div id="inspectorContent" class="inspector-content">
+              <div class="empty-inspector-msg mono-note">Select a highlighted sentence above to see why it was scored that way.</div>
+            </div>
+          </div>
+
+          <details class="telemetry-accordion" id="mathEquationsAccordion">
+            <summary class="telemetry-summary">
+              <span class="telemetry-summary-left">Forensic signals</span>
+              <span class="telemetry-badge-ok" id="mathAffinityBadge">&Lambda;_auth 0.00</span>
+            </summary>
+            <div class="telemetry-details-grid">
+              <div class="telemetry-item"><span class="telemetry-label">Authorial affinity</span><span class="telemetry-val" id="mathValAffinity">&mdash;</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Syntactic burstiness</span><span class="telemetry-val" id="mathValBurstiness">&mdash;</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Discourse polarity</span><span class="telemetry-val" id="mathValDiscourse">&mdash;</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Binoculars ratio</span><span class="telemetry-val" id="mathValBinoculars">&mdash;</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Lexical richness</span><span class="telemetry-val" id="mathValRichness">&mdash;</span></div>
+            </div>
+          </details>
+
+          <details class="telemetry-accordion" id="telemetryAccordion">
+            <summary class="telemetry-summary">
+              <span class="telemetry-summary-left">Hardware use</span>
+              <span class="telemetry-badge-ok">Within 1.5 GB</span>
+            </summary>
+            <div class="telemetry-details-grid">
+              <div class="telemetry-item"><span class="telemetry-label">Runtime</span><span class="telemetry-val">ONNX INT8 on CPU</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">CPU threads</span><span class="telemetry-val">2</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Analysis time</span><span class="telemetry-val" id="telemetryLatency">0.00s</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Memory</span><span class="telemetry-val" id="telemetryMemory">~150 MB (cap 1,500 MB)</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">Model on disk</span><span class="telemetry-val">22 MB</span></div>
+              <div class="telemetry-item"><span class="telemetry-label">PyTorch at runtime</span><span class="telemetry-val">None</span></div>
+            </div>
+          </details>
+
+          <button id="btnCopyReport" class="btn btn-primary btn-full" title="Copy a text summary of this result">
+            <span>Copy summary</span>
+          </button>
         </div>
       </div>
 
-      <div class="detector-workspace">
-
-        <!-- Editor -->
-        <section class="editor-pane" id="editorPane">
-          <div class="pane-header">
-            <div class="tab-controls">
-              <button id="btnModeEdit" class="tab-btn active">
-                <span>Text</span>
-              </button>
-              <button id="btnModeHeatmap" class="tab-btn" disabled>
-                <span>Highlights</span>
-                <span id="heatmapSentCountBadge" class="tab-badge" style="display: none;">0</span>
-              </button>
-            </div>
-
-            <div class="editor-quick-actions">
-              <button id="btnUpload" class="btn-text" title="Upload a PDF, DOCX or TXT file">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="17 8 12 3 7 8"/>
-                  <line x1="12" y1="3" x2="12" y2="15"/>
-                </svg>
-                <span>Upload file</span>
-              </button>
-              <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" style="display: none;" />
-
-              <button id="btnPaste" class="btn-text" title="Paste text from the clipboard">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-                </svg>
-                <span>Paste</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="editor-body" id="editorDropZone">
-            <textarea
-              id="textInput"
-              class="document-textarea"
-              placeholder="Type or paste your text here. 80 to 2,000 words gives the most reliable result.&#10;&#10;You can also drop a PDF, Word or text file onto this box."
-            ></textarea>
-
-            <div id="heatmapViewer" class="heatmap-viewer" style="display: none;"></div>
-
-            <div id="dragDropOverlay" class="drag-drop-overlay" style="display: none;">
-              <div class="drag-drop-content">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="17 8 12 3 7 8"/>
-                  <line x1="12" y1="3" x2="12" y2="15"/>
-                </svg>
-                <h3>Drop your file here</h3>
-                <p>PDF, DOCX or TXT</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="editor-footer">
-            <div class="word-counter-box">
-              <span id="wordCountLabel" class="counter-val">0 words</span>
-              <span id="charCountLabel" class="counter-val">0 chars</span>
-              <span id="sentCountLabel" class="counter-val">0 sentences</span>
-              <span id="wordGuideBadge" class="guide-badge ok">Best results: 80 to 2,000 words</span>
-            </div>
-
-            <div class="editor-actions">
-              <button id="btnClear" class="btn btn-secondary" title="Clear the text">Clear</button>
-              <button id="btnAnalyze" class="btn btn-primary" title="Analyze the text (Ctrl+Enter)">
-                <span>Analyze text</span>
-                <kbd class="shortcut-key">Ctrl+Enter</kbd>
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Results -->
-        <section class="results-pane" id="resultsPane">
-
-          <!-- Idle state -->
-          <div id="resultsPlaceholder" class="results-placeholder">
-            <h3>Nothing analyzed yet</h3>
-            <p>Paste text or pick a sample, then choose Analyze text. Your verdict and sentence highlights appear here.</p>
-            <ul class="legend-list">
-              <li><span class="class-dot dot-ai"></span><span><strong>AI-generated</strong> Straight from a language model</span></li>
-              <li><span class="class-dot dot-ai-refined"></span><span><strong>AI-edited</strong> AI text reworded by a paraphraser</span></li>
-              <li><span class="class-dot dot-human-refined"></span><span><strong>Polished human</strong> Human draft cleaned up by AI</span></li>
-              <li><span class="class-dot dot-human"></span><span><strong>Human</strong> Original writing</span></li>
-            </ul>
-          </div>
-
-          <!-- Results -->
-          <div id="activeResultsContent" class="active-results-container" style="display: none;">
-
-            <div class="qb-headline-banner" id="qbHeadlineBanner">
-              <div class="qb-headline-inner">
-                <span class="qb-headline-pulse" id="qbHeadlinePulse"></span>
-                <span class="qb-headline-text" id="qbHeadlineText">100% of text is likely Human</span>
-              </div>
-              <span class="qb-replica-tag" title="Sentence-weighted coverage that matches QuillBot online">Matches QuillBot</span>
-            </div>
-
-            <div class="verdict-card" id="verdictCard">
-              <div class="verdict-header">
-                <span id="verdictBadge" class="verdict-badge badge-human">Human-written</span>
-                <span id="confidenceTag" class="confidence-tag">98.4% confidence</span>
-              </div>
-
-              <div class="verdict-body">
-                <div class="verdict-icon-box" id="verdictIconBox"></div>
-                <div class="verdict-text-group">
-                  <h2 id="verdictTitle" class="verdict-title">Human-written</h2>
-                  <p id="verdictDescription" class="verdict-description">
-                    The text has natural rhythm, varied sentence length and personal touches.
-                  </p>
-                </div>
-              </div>
-
-              <div id="uncertainAlertBanner" class="uncertain-banner" style="display: none;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="8" x2="12" y2="12"/>
-                  <line x1="12" y1="16" x2="12.01" y2="16"/>
-                </svg>
-                <div class="uncertain-text">
-                  <strong>No verdict.</strong> The signals fall below your confidence cutoff, so Veritas won't guess. Try a longer text or lower the cutoff.
-                </div>
-              </div>
-            </div>
-
-            <div class="breakdown-card">
-              <div class="card-header-row">
-                <h4 class="card-subtitle">Breakdown</h4>
-                <span class="card-info-tip" title="Calibrated probabilities add up to 100%">Adds up to 100%</span>
-              </div>
-
-              <div class="composite-progress-track">
-                <div id="stackBarAI" class="stack-segment fill-ai" style="width: 0%;" title="AI-generated"></div>
-                <div id="stackBarAIRefined" class="stack-segment fill-ai-refined" style="width: 0%;" title="AI-edited"></div>
-                <div id="stackBarHumanRefined" class="stack-segment fill-human-refined" style="width: 0%;" title="Polished human"></div>
-                <div id="stackBarHuman" class="stack-segment fill-human" style="width: 0%;" title="Human"></div>
-              </div>
-
-              <div class="class-meters-list">
-                <div class="class-meter-row">
-                  <div class="class-info">
-                    <span class="class-dot dot-ai"></span>
-                    <div class="class-text-wrap">
-                      <span class="class-name">AI-generated</span>
-                      <span class="class-desc">Straight from a language model</span>
-                    </div>
-                  </div>
-                  <div class="class-metric">
-                    <span class="class-pct" id="pctAIGen">0.0%</span>
-                    <div class="mini-track"><div class="mini-fill fill-ai" id="barAIGen" style="width: 0%;"></div></div>
-                  </div>
-                </div>
-
-                <div class="class-meter-row">
-                  <div class="class-info">
-                    <span class="class-dot dot-ai-refined"></span>
-                    <div class="class-text-wrap">
-                      <span class="class-name">AI-edited</span>
-                      <span class="class-desc">AI text reworded by a paraphraser</span>
-                    </div>
-                  </div>
-                  <div class="class-metric">
-                    <span class="class-pct" id="pctAIRefined">0.0%</span>
-                    <div class="mini-track"><div class="mini-fill fill-ai-refined" id="barAIRefined" style="width: 0%;"></div></div>
-                  </div>
-                </div>
-
-                <div class="class-meter-row">
-                  <div class="class-info">
-                    <span class="class-dot dot-human-refined"></span>
-                    <div class="class-text-wrap">
-                      <span class="class-name">Polished human</span>
-                      <span class="class-desc">Human draft cleaned up by AI</span>
-                    </div>
-                  </div>
-                  <div class="class-metric">
-                    <span class="class-pct" id="pctHumanRefined">0.0%</span>
-                    <div class="mini-track"><div class="mini-fill fill-human-refined" id="barHumanRefined" style="width: 0%;"></div></div>
-                  </div>
-                </div>
-
-                <div class="class-meter-row">
-                  <div class="class-info">
-                    <span class="class-dot dot-human"></span>
-                    <div class="class-text-wrap">
-                      <span class="class-name">Human</span>
-                      <span class="class-desc">Original writing</span>
-                    </div>
-                  </div>
-                  <div class="class-metric">
-                    <span class="class-pct" id="pctHuman">0.0%</span>
-                    <div class="mini-track"><div class="mini-fill fill-human" id="barHuman" style="width: 0%;"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sentence-inspector-card" id="sentenceInspector">
-              <div class="card-header-row">
-                <h4 class="card-subtitle">Sentence inspector</h4>
-                <div class="sentence-counts-summary" id="sentenceCountsSummary"></div>
-              </div>
-
-              <div id="inspectorContent" class="inspector-content">
-                <div class="empty-inspector-msg">
-                  <span>Select a highlighted sentence to see why it was scored that way.</span>
-                </div>
-              </div>
-            </div>
-
-            <details class="telemetry-accordion" id="mathEquationsAccordion" open>
-              <summary class="telemetry-summary">
-                <span class="telemetry-summary-left">Forensic signals</span>
-                <span class="telemetry-badge-ok" id="mathAffinityBadge">&Lambda;_auth 0.00</span>
-              </summary>
-
-              <div class="telemetry-details-grid cols-2">
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Authorial affinity (&Lambda;_auth)</span>
-                  <span class="telemetry-val" id="mathValAffinity">&mdash;</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Syntactic burstiness (B_syntax)</span>
-                  <span class="telemetry-val" id="mathValBurstiness">&mdash;</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Discourse polarity (&Phi;_disc)</span>
-                  <span class="telemetry-val" id="mathValDiscourse">&mdash;</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Binoculars ratio (R_binoc)</span>
-                  <span class="telemetry-val" id="mathValBinoculars">&mdash;</span>
-                </div>
-                <div class="telemetry-item span-2">
-                  <span class="telemetry-label">Lexical richness (&Omega;_lex)</span>
-                  <span class="telemetry-val" id="mathValRichness">&mdash;</span>
-                </div>
-              </div>
-            </details>
-
-            <details class="telemetry-accordion" id="telemetryAccordion">
-              <summary class="telemetry-summary">
-                <span class="telemetry-summary-left">Hardware use</span>
-                <span class="telemetry-badge-ok">Within 1.5 GB RAM</span>
-              </summary>
-
-              <div class="telemetry-details-grid">
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Runtime</span>
-                  <span class="telemetry-val">ONNX INT8 on CPU</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">CPU threads</span>
-                  <span class="telemetry-val">2</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Analysis time</span>
-                  <span class="telemetry-val" id="telemetryLatency">0.00s</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Memory</span>
-                  <span class="telemetry-val" id="telemetryMemory">~150 MB (cap 1,500 MB)</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">Model on disk</span>
-                  <span class="telemetry-val">22 MB (cap 500 MB)</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">PyTorch at runtime</span>
-                  <span class="telemetry-val">None</span>
-                </div>
-              </div>
-            </details>
-
-            <div class="results-actions-bar">
-              <button id="btnCopyReport" class="btn btn-secondary btn-full" title="Copy a text summary of this result">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                </svg>
-                <span>Copy summary</span>
-              </button>
-            </div>
-
-          </div>
-        </section>
-
+      <div class="report-art" aria-hidden="true">
+        <canvas id="halftoneCanvas" class="halftone"></canvas>
       </div>
-    </main>
+    </section>
   </div>
 
   <script src="/static/halftone.js"></script>

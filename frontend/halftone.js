@@ -1,6 +1,6 @@
 /**
  * Veritas AI — halftone field.
- * Draws a diamond-dot dither in the hero. Dot density follows a smooth noise field,
+ * Draws a diamond-dot dither beside the report column. Dot density follows a smooth noise field,
  * and after each analysis the field re-settles: denser ink means more AI.
  * Listens for "veritas:result" ({ detail: { aiShare: 0..1 } }).
  */
@@ -29,16 +29,25 @@
     draw();
   }
 
-  // Cheap smooth field: layered sines, plus a falloff that hugs the top-right corner.
+  // An organic ink mass anchored to the right edge with a ragged left boundary.
+  // More AI pushes the boundary left, so the mass grows across the panel.
   function field(x, y) {
     const u = x / width;
     const v = y / height;
-    const waves =
-      Math.sin(u * 5.2 + phase) * 0.5 +
-      Math.sin(v * 6.1 - phase * 0.8 + u * 2.4) * 0.35 +
-      Math.sin((u + v) * 9.0 + phase * 1.3) * 0.15;
-    const falloff = Math.pow(u, 0.7) * (1 - v * 0.55);
-    return (waves * 0.5 + 0.5) * falloff;
+    const edge =
+      0.34 - aiShare * 0.24 +
+      Math.sin(v * 4.2 + phase * 0.6) * 0.13 +
+      Math.sin(v * 11.0 - phase) * 0.05;
+    const mass = Math.min(1, Math.max(0, (u - edge) / 0.22));
+    const tone =
+      Math.sin(u * 7.0 + v * 3.0 + phase) * 0.5 +
+      Math.sin(v * 9.0 - u * 4.0 - phase * 0.7) * 0.3 +
+      Math.sin((u - v) * 14.0 + phase * 1.2) * 0.2;
+    // High-frequency grain gives the mass holes and clumps, like a dithered photo
+    const grain =
+      Math.sin(u * 26.0 - v * 19.0 + phase * 2.0) * 0.6 +
+      Math.sin(u * 37.0 + v * 29.0) * 0.4;
+    return mass * (0.5 + tone * 0.45 + grain * 0.22);
   }
 
   function draw() {
@@ -48,13 +57,13 @@
     const alpha = parseFloat(styles.getPropertyValue("--halftone-alpha")) || 0.9;
     ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
 
-    const gain = 1.5 + aiShare * 1.4;
+    const gain = 1.0 + aiShare * 0.5;
     const half = CELL / 2;
 
     for (let cy = 0, row = 0; cy < height + CELL; cy += CELL, row++) {
       for (let cx = (row % 2) * half; cx < width + CELL; cx += CELL) {
         // Contrast curve so the dots read as a bold dither, not a haze
-        const level = Math.min(1, Math.max(0, (field(cx, cy) * gain - 0.28) * 1.5));
+        const level = Math.min(1, Math.max(0, (field(cx, cy) * gain - 0.12) * 1.45));
         const r = level * half * 1.05;
         if (r < 0.45) continue;
         ctx.beginPath();
@@ -103,6 +112,11 @@
     attributeFilter: ["data-theme"],
   });
 
-  window.addEventListener("resize", resize);
+  // The report panel grows when results appear, so track the canvas box itself.
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(resize).observe(canvas);
+  } else {
+    window.addEventListener("resize", resize);
+  }
   resize();
 })();
