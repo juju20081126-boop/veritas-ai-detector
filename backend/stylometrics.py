@@ -40,7 +40,7 @@ FEATURE_NAMES = [
     "dash_rate"
 ]
 
-AI_MARKERS = {
+BASE_AI_MARKERS = {
     "furthermore", "moreover", "delve", "delving", "pivotal", "multifaceted",
     "tapestry", "underscores", "paramount", "testament", "crucial", "robust",
     "foster", "fostering", "intricate", "cornerstone", "interplay", "imperative",
@@ -49,12 +49,55 @@ AI_MARKERS = {
     "in summary", "in conclusion", "it is worth noting", "reconstituted"
 }
 
-HUMAN_MARKERS = {
+BASE_HUMAN_MARKERS = {
     "i", "me", "my", "myself", "we", "us", "our", "ours", "dad", "mom",
     "grandpa", "grandma", "kids", "yesterday", "stuff", "guy", "guys",
     "pretty", "actually", "kinda", "sorta", "honestly", "got", "getting",
     "went", "bought", "built", "fixing", "broke", "fun", "crazy", "tired"
 }
+
+AI_SINGLE_WORDS = {
+    "furthermore", "moreover", "delve", "delving", "delves", "pivotal", "multifaceted",
+    "tapestry", "underscores", "paramount", "testament", "crucial", "robust",
+    "foster", "fostering", "intricate", "cornerstone", "interplay", "imperative",
+    "consequently", "specifically", "indispensable", "nuanced", "transcend",
+    "beacon", "transformative", "comprehensive", "holistic", "reconstituted",
+    "embark", "embarking", "embarks", "realm", "realms", "seamlessly", "harness",
+    "harnessing", "unravel", "unraveling", "quintessential", "plethora", "overarching",
+    "epitome", "revolutionize", "juxtaposition", "ever-evolving", "catalyst",
+    "myriad", "paramountcy", "underpins", "underscoring"
+}
+
+AI_PHRASES = {
+    "in conclusion", "in summary", "it is worth noting", "it is important to note",
+    "plays a crucial role", "plays a vital role", "crucial role", "vital role",
+    "a testament to", "testament to", "serves as a", "serve as a",
+    "shed light on", "sheds light on", "shedding light on",
+    "navigate the complexities", "navigating the complexities",
+    "dynamic landscape", "not only", "in today's world", "at its core",
+    "deep dive", "nuances of", "aligns with", "align with", "broad spectrum",
+    "integral part", "valuable insights", "first and foremost", "rich tapestry",
+    "game changer", "stepping stone"
+}
+
+AI_MARKERS = AI_SINGLE_WORDS | AI_PHRASES
+
+HUMAN_SINGLE_WORDS = {
+    "i", "me", "my", "myself", "we", "us", "our", "ours", "dad", "mom",
+    "grandpa", "grandma", "kids", "yesterday", "stuff", "guy", "guys",
+    "pretty", "actually", "kinda", "sorta", "honestly", "got", "getting",
+    "went", "bought", "built", "fixing", "broke", "fun", "crazy", "tired",
+    "felt", "figured", "dunno", "yep", "nope", "anyway", "gonna", "wanna",
+    "weird", "awkward", "silly", "messy"
+}
+
+HUMAN_PHRASES = {
+    "to be honest", "you know what", "come to think of it", "turned out",
+    "freaked out", "hang out", "mess around", "let's just say",
+    "at the end of the day", "kind of like", "sort of like", "look back on"
+}
+
+HUMAN_MARKERS = HUMAN_SINGLE_WORDS | HUMAN_PHRASES
 
 
 def count_syllables(word: str) -> int:
@@ -161,10 +204,20 @@ def compute_readability(text: str, words: List[str], sentences: List[str]) -> Di
 
 
 def compute_lexical_diversity(words: List[str]) -> Dict[str, float]:
-    """Computes Type-Token Ratio, Hapax Legomena, and Yule's K."""
+    """
+    Computes Type-Token Ratio, Hapax Legomena, Yule's K, Simpson's Diversity D, and Honoré's Statistic R.
+    Simpson's D and Honoré's R provide length-invariant lexical diversity across short and long documents.
+    """
     num_tokens = len(words)
     if num_tokens == 0:
-        return {"ttr": 0.0, "root_ttr": 0.0, "hapax_ratio": 0.0, "yule_k": 0.0}
+        return {
+            "ttr": 0.0,
+            "root_ttr": 0.0,
+            "hapax_ratio": 0.0,
+            "yule_k": 0.0,
+            "simpsons_d": 0.0,
+            "honore_r": 0.0
+        }
 
     lower_words = [w.lower() for w in words]
     vocab = set(lower_words)
@@ -184,11 +237,26 @@ def compute_lexical_diversity(words: List[str]) -> Dict[str, float]:
     m2 = sum(c ** 2 for c in freq_counts.values())
     yule_k = 10000.0 * (m2 - m1) / (m1 ** 2) if m1 > 1 else 0.0
 
+    # Simpson's Diversity Index D (length-invariant probability that two random words belong to different types)
+    if m1 > 1:
+        simpsons_num = sum(c * (c - 1) for c in freq_counts.values())
+        simpsons_d = 1.0 - (simpsons_num / (m1 * (m1 - 1)))
+    else:
+        simpsons_d = 1.0
+
+    # Honoré's Statistic R = 100 * ln(N) / (1 - V_1 / V) (length-invariant hapax legomena distribution)
+    if num_types > 0 and hapax_ratio < 0.999:
+        honore_r = (100.0 * math.log(max(2, m1))) / (1.0 - min(0.99, hapax_ratio))
+    else:
+        honore_r = 100.0 * math.log(max(2, m1))
+
     return {
         "ttr": round(float(ttr), 3),
         "root_ttr": round(float(root_ttr), 2),
         "hapax_ratio": round(float(hapax_ratio), 3),
-        "yule_k": round(float(yule_k), 2)
+        "yule_k": round(float(yule_k), 2),
+        "simpsons_d": round(float(simpsons_d), 4),
+        "honore_r": round(float(honore_r), 1)
     }
 
 
@@ -196,7 +264,8 @@ def compute_syntactic_variance(sentences: List[str]) -> Dict[str, float]:
     """
     Analyzes sentence length distributions and syntactic rhythm/burstiness.
     LLMs exhibit an unnaturally uniform sentence length (low CV and low rhythm delta).
-    Humans mix short clauses with compound sentences.
+    Humans mix short punchy clauses with long compound sentences, exhibiting high rhythm delta
+    and high second-order rhythm curvature (acceleration).
     """
     if not sentences:
         return {
@@ -204,6 +273,7 @@ def compute_syntactic_variance(sentences: List[str]) -> Dict[str, float]:
             "std_length": 0.0,
             "cv_length": 0.0,
             "rhythm_delta": 0.0,
+            "rhythm_curvature": 0.0,
             "uniformity_score": 0.0
         }
 
@@ -215,6 +285,10 @@ def compute_syntactic_variance(sentences: List[str]) -> Dict[str, float]:
     std_len = float(np.std(lengths))
     cv_len = (std_len / mean_len) if mean_len > 0 else 0.0
     rhythm_delta = float(np.mean([abs(lengths[i] - lengths[i - 1]) for i in range(1, len(lengths))])) if len(lengths) > 1 else 0.0
+    
+    # Second-order syntactic rhythm curvature (local acceleration of sentence length shifts)
+    curvatures = [abs(lengths[i] - 2 * lengths[i - 1] + lengths[i - 2]) for i in range(2, len(lengths))]
+    rhythm_curvature = float(np.mean(curvatures)) if curvatures else 0.0
 
     if cv_len < 0.25:
         uniformity_score = 0.90
@@ -230,17 +304,41 @@ def compute_syntactic_variance(sentences: List[str]) -> Dict[str, float]:
         "std_length": round(std_len, 1),
         "cv_length": round(float(cv_len), 3),
         "rhythm_delta": round(float(rhythm_delta), 2),
+        "rhythm_curvature": round(float(rhythm_curvature), 2),
         "uniformity_score": round(float(uniformity_score), 2)
     }
 
 
-def compute_discourse_and_punctuation(text: str, words: List[str]) -> Dict[str, float]:
+def compute_discourse_and_punctuation(text: str, words: List[str]) -> Dict[str, Any]:
     """Extracts signature AI discourse markers, human personal markers, and punctuation rates."""
     num_words = max(1, len(words))
     lower_words = [w.lower() for w in words]
+    lower_text = text.lower()
 
-    ai_count = sum(1 for w in lower_words if w in AI_MARKERS)
-    human_count = sum(1 for w in lower_words if w in HUMAN_MARKERS)
+    detected_ai_markers = []
+    for w in lower_words:
+        if w in AI_SINGLE_WORDS:
+            detected_ai_markers.append(w)
+    for p in AI_PHRASES:
+        if p in lower_text:
+            matches = len(re.findall(r'\b' + re.escape(p) + r'\b', lower_text))
+            detected_ai_markers.extend([p] * matches)
+
+    detected_human_markers = []
+    for w in lower_words:
+        if w in HUMAN_SINGLE_WORDS:
+            detected_human_markers.append(w)
+    for p in HUMAN_PHRASES:
+        if p in lower_text:
+            matches = len(re.findall(r'\b' + re.escape(p) + r'\b', lower_text))
+            detected_human_markers.extend([p] * matches)
+
+    ai_count = len(detected_ai_markers)
+    human_count = len(detected_human_markers)
+
+    # Baseline markers (exact training distribution compatibility for the 20-dim meta-classifier)
+    base_ai_count = sum(1 for w in lower_words if w in BASE_AI_MARKERS)
+    base_human_count = sum(1 for w in lower_words if w in BASE_HUMAN_MARKERS)
 
     contractions = len(re.findall(r"\b[a-zA-Z]+'[a-zA-Z]+\b", text))
     commas = text.count(',')
@@ -248,6 +346,8 @@ def compute_discourse_and_punctuation(text: str, words: List[str]) -> Dict[str, 
     dashes = text.count('--') + text.count('—') + text.count('–')
 
     return {
+        "base_ai_marker_rate": round(float((base_ai_count / num_words) * 100.0), 2),
+        "base_human_marker_rate": round(float((base_human_count / num_words) * 100.0), 2),
         "ai_marker_rate": round(float((ai_count / num_words) * 100.0), 2),
         "human_marker_rate": round(float((human_count / num_words) * 100.0), 2),
         "contraction_rate": round(float((contractions / num_words) * 100.0), 2),
@@ -255,7 +355,60 @@ def compute_discourse_and_punctuation(text: str, words: List[str]) -> Dict[str, 
         "semi_rate": round(float((semis_colons / num_words) * 100.0), 2),
         "dash_rate": round(float((dashes / num_words) * 100.0), 2),
         "ai_count": ai_count,
-        "human_count": human_count
+        "human_count": human_count,
+        "detected_ai_samples": sorted(list(set(detected_ai_markers)))[:8],
+        "detected_human_samples": sorted(list(set(detected_human_markers)))[:8]
+    }
+
+
+def compute_mathematical_equations(
+    lexical: Dict[str, float],
+    syntax: Dict[str, float],
+    disc_punct: Dict[str, Any],
+    entropy: Dict[str, float],
+    compression: float
+) -> Dict[str, float]:
+    """
+    Computes formal mathematical forensic formulations derived from 2024-2026 scholarship:
+    1. Omega_lex: Normalized Length-Invariant Lexical Richness Equation
+    2. B_syntax: Multi-Scale Syntactic Burstiness & Curvature Equation
+    3. Phi_disc: Bounded Discourse Polarity Index Equation
+    4. R_binoc: Binoculars Information-Compression Density Ratio Equation
+    5. Lambda_auth: Forensic Authorial Affinity Index Equation
+    """
+    # 1. Omega_lex: Length-Invariant Lexical Richness
+    simp_d = lexical.get("simpsons_d", 1.0)
+    honore_r = lexical.get("honore_r", 0.0)
+    yule_k = lexical.get("yule_k", 0.0)
+    norm_honore = min(1.0, honore_r / 2500.0)
+    omega_lex = 0.40 * simp_d + 0.40 * norm_honore + 0.20 * max(0.0, 1.0 - (yule_k / 200.0))
+
+    # 2. B_syntax: Multi-Scale Syntactic Burstiness & Acceleration
+    mu_len = max(1.0, syntax.get("mean_length", 1.0))
+    rhythm_delta = syntax.get("rhythm_delta", 0.0)
+    rhythm_curv = syntax.get("rhythm_curvature", 0.0)
+    cv_len = syntax.get("cv_length", 0.0)
+    b_syntax = 0.40 * (rhythm_delta / mu_len) + 0.30 * (rhythm_curv / mu_len) + 0.30 * cv_len
+
+    # 3. Phi_disc: Bounded Discourse Polarity Index [-1, 1]
+    rho_ai = disc_punct.get("ai_marker_rate", 0.0)
+    rho_hum = disc_punct.get("human_marker_rate", 0.0)
+    phi_disc = (rho_ai - rho_hum) / (1.0 + rho_ai + rho_hum)
+
+    # 4. R_binoc: Binoculars Information-Compression Density Ratio
+    h_shannon = entropy.get("shannon_entropy", 0.0)
+    c_deflate = max(0.01, compression)
+    r_binoc = h_shannon / c_deflate
+
+    # 5. Lambda_auth: Forensic Authorial Affinity Index
+    lambda_auth = 0.40 * b_syntax - 0.40 * phi_disc + 0.20 * c_deflate
+
+    return {
+        "lexical_richness_omega": round(float(omega_lex), 4),
+        "syntactic_burstiness_b": round(float(b_syntax), 4),
+        "discourse_polarity_phi": round(float(phi_disc), 4),
+        "binoculars_ratio_r": round(float(r_binoc), 3),
+        "authorial_affinity_lambda": round(float(lambda_auth), 4)
     }
 
 
@@ -274,6 +427,18 @@ def extract_stylometrics_feature_vector(text: str, sentences: List[str]) -> Tupl
     entropy = compute_shannon_entropy(words)
     compression = compute_compression_ratio(text)
     disc_punct = compute_discourse_and_punctuation(text, words)
+
+    # Formal Mathematical Forensic Equations
+    math_equations = compute_mathematical_equations(
+        lexical=lexical,
+        syntax=syntax,
+        disc_punct=disc_punct,
+        entropy=entropy,
+        compression=compression
+    )
+
+    # Binoculars Compressibility Index Proxy: ratio of token entropy to Deflate compression
+    binoculars_proxy = math_equations["binoculars_ratio_r"]
 
     # Composite heuristic stylometric score
     stylometric_ai_score = (
@@ -298,8 +463,8 @@ def extract_stylometrics_feature_vector(text: str, sentences: List[str]) -> Tupl
         readability["flesch_reading_ease"],
         readability["flesch_kincaid_grade"],
         compression,
-        disc_punct["ai_marker_rate"],
-        disc_punct["human_marker_rate"],
+        disc_punct["base_ai_marker_rate"],
+        disc_punct["base_human_marker_rate"],
         disc_punct["contraction_rate"],
         disc_punct["comma_rate"],
         disc_punct["semi_rate"],
@@ -317,7 +482,9 @@ def extract_stylometrics_feature_vector(text: str, sentences: List[str]) -> Tupl
         "hyphenation": hyphenation,
         "entropy": entropy,
         "compression_ratio": compression,
+        "binoculars_proxy": binoculars_proxy,
         "discourse_punctuation": disc_punct,
+        "mathematical_equations": math_equations,
         "stylometric_ai_score": round(float(stylometric_ai_score), 3)
     }
 

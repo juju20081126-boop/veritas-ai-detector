@@ -63,6 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const telemetryLatency = document.getElementById("telemetryLatency");
   const telemetryMemory = document.getElementById("telemetryMemory");
 
+  // Mathematical Forensic Equations
+  const mathValAffinity = document.getElementById("mathValAffinity");
+  const mathValBurstiness = document.getElementById("mathValBurstiness");
+  const mathValDiscourse = document.getElementById("mathValDiscourse");
+  const mathValBinoculars = document.getElementById("mathValBinoculars");
+  const mathValRichness = document.getElementById("mathValRichness");
+  const mathAffinityBadge = document.getElementById("mathAffinityBadge");
+
   let currentAnalysisData = null;
   let archetypeSamples = {};
   let comparisonSheetData = [];
@@ -327,6 +335,18 @@ document.addEventListener("DOMContentLoaded", () => {
     telemetryLatency.textContent = `${summary.elapsed_seconds.toFixed(2)}s`;
     if (telemetryMemory) {
       telemetryMemory.textContent = `~152 MB (Cap: 1,500 MB)`;
+    }
+
+    // Populate Mathematical Forensic Equations
+    const mathEqs = data.mathematical_equations || {};
+    if (mathValAffinity && mathEqs.authorial_affinity_lambda !== undefined) {
+      mathValAffinity.textContent = mathEqs.authorial_affinity_lambda.toFixed(4);
+      mathValBurstiness.textContent = mathEqs.syntactic_burstiness_b !== undefined ? mathEqs.syntactic_burstiness_b.toFixed(4) : "—";
+      const phi = mathEqs.discourse_polarity_phi;
+      mathValDiscourse.textContent = phi !== undefined ? (phi > 0 ? "+" : "") + phi.toFixed(4) : "—";
+      mathValBinoculars.textContent = mathEqs.binoculars_ratio_r !== undefined ? mathEqs.binoculars_ratio_r.toFixed(3) : "—";
+      mathValRichness.textContent = mathEqs.lexical_richness_omega !== undefined ? mathEqs.lexical_richness_omega.toFixed(4) : "—";
+      mathAffinityBadge.textContent = "Λ_auth: " + mathEqs.authorial_affinity_lambda.toFixed(3);
     }
 
     // Sentence Highlight Counts

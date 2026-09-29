@@ -25,7 +25,14 @@ import onnxruntime as ort
 from tokenizers import Tokenizer
 
 from backend.document_parser import split_sentences
-from backend.stylometrics import analyze_stylometrics, extract_stylometrics_feature_vector
+from backend.stylometrics import (
+    analyze_stylometrics,
+    extract_stylometrics_feature_vector,
+    AI_SINGLE_WORDS,
+    AI_PHRASES,
+    HUMAN_SINGLE_WORDS,
+    HUMAN_PHRASES
+)
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models")
 ONNX_MODEL_PATH = os.path.join(MODELS_DIR, "student_model_int8.onnx")
@@ -176,10 +183,13 @@ class QuillBotDetectorEngine:
         else:
             raw_scores = logits
 
-        # Forensic Guardrail for Authentic Human Authorial Voice:
-        # Prevents rich authorial vocabulary and complex punctuation (e.g. David Sedaris, literature)
+        # Forensic Likelihood Guardrail using Formal Mathematical Formulations
+        # Prevents authentic human authorial voice (e.g. David Sedaris, memoirs, creative essays)
         # from being falsely penalized as "AI-refined" when genuine human personal markers and burstiness are present.
         if stylometrics is not None:
+            math_eqs = stylometrics.get("mathematical_equations", {})
+            lambda_auth = math_eqs.get("authorial_affinity_lambda", 0.0)
+            phi_disc = math_eqs.get("discourse_polarity_phi", 0.0)
             human_marker_rate = stylometrics.get("discourse_punctuation", {}).get("human_marker_rate", 0.0)
             ai_marker_rate = stylometrics.get("discourse_punctuation", {}).get("ai_marker_rate", 0.0)
             rhythm_delta = stylometrics.get("syntax_variance", {}).get("rhythm_delta", 0.0)
@@ -188,7 +198,8 @@ class QuillBotDetectorEngine:
             is_literary_author = (
                 (human_marker_rate >= 3.0 and rhythm_delta >= 12.0) or
                 (human_marker_rate >= 5.0 and rhythm_delta >= 9.0) or
-                (human_marker_rate >= 6.0)
+                (human_marker_rate >= 6.0) or
+                (lambda_auth >= 0.70 and phi_disc <= -0.50)
             ) and (ai_marker_rate == 0.0) and (logits[0][0] >= logits[0][1] - 0.2)
 
             if is_human_side and is_literary_author:
@@ -321,6 +332,23 @@ class QuillBotDetectorEngine:
             ai_presence = float(s_probs[2] + s_probs[3])  # Combined AI + AI-refined AI
 
             reasons = []
+            s_lower = sent.lower()
+            s_words = re.findall(r"\b[a-zA-Z]+(?:'[a-zA-Z]+)?\b", sent)
+            s_words_lower = [w.lower() for w in s_words]
+
+            # Detect markers present in this specific sentence
+            sent_ai_markers = [w for w in s_words_lower if w in AI_SINGLE_WORDS]
+            for p in AI_PHRASES:
+                if p in s_lower:
+                    sent_ai_markers.append(p)
+            sent_ai_markers = sorted(list(set(sent_ai_markers)))
+
+            sent_human_markers = [w for w in s_words_lower if w in HUMAN_SINGLE_WORDS]
+            for p in HUMAN_PHRASES:
+                if p in s_lower:
+                    sent_human_markers.append(p)
+            sent_human_markers = sorted(list(set(sent_human_markers)))
+
             if s_class == "AI-generated":
                 reasons.append("High sequence predictability characteristic of autoregressive LLMs.")
             elif s_class == "AI-generated & AI-refined":
@@ -329,6 +357,15 @@ class QuillBotDetectorEngine:
                 reasons.append("Human sentence cadence with AI-assisted lexical smoothing or punctuation standardization.")
             else:
                 reasons.append("Natural stylistic variation and human syntactic burstiness.")
+
+            if sent_ai_markers:
+                reasons.append(f"AI transition / marker detected: {', '.join(repr(m) for m in sent_ai_markers[:3])}")
+            if sent_human_markers:
+                reasons.append(f"Personal voice marker: {', '.join(repr(m) for m in sent_human_markers[:3])}")
+            if len(s_words) >= 35:
+                reasons.append(f"Complex clause construction ({len(s_words)} words)")
+            elif 0 < len(s_words) <= 6:
+                reasons.append(f"Punchy rhetorical clause ({len(s_words)} words)")
 
             sentence_analyses.append({
                 "index": idx,
@@ -372,5 +409,6 @@ class QuillBotDetectorEngine:
                 "human": round(prob_dict["Human-written"] * 100, 1)
             },
             "sentences": sentence_analyses,
-            "stylometrics": stylometrics
+            "stylometrics": stylometrics,
+            "mathematical_equations": stylometrics.get("mathematical_equations", {}) if stylometrics else {}
         }

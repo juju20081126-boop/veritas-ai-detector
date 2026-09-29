@@ -1,5 +1,5 @@
 {
-  "timestamp": 1790641386.3415842,
+  "timestamp": 1790642902.3298447,
   "success_criteria": {
     "teacher_tpr_at_1fpr": 0.962,
     "teacher_target_met": true,
@@ -17,12 +17,12 @@
       "esl_to_native_ratio": 1.0,
       "esl_bias_flagged": false
     },
-    "calibration_ece": 0.0325,
+    "calibration_ece": 0.0351,
     "calibration_passed": true,
-    "macro_f1": 0.6392,
+    "macro_f1": 0.6266,
     "per_class_f1": {
-      "Human-written": 0.7027,
-      "Human-written & AI-refined": 0.75,
+      "Human-written": 0.6842,
+      "Human-written & AI-refined": 0.7179,
       "AI-generated & AI-refined": 0.4375,
       "AI-generated": 0.6667
     },
@@ -34,8 +34,8 @@
         1
       ],
       [
-        4,
-        15,
+        5,
+        14,
         1,
         0
       ],
