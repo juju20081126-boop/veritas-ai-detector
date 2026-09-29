@@ -135,6 +135,19 @@ python scripts/refresh_pipeline.py --new_models deepseek-r1 gemma-2-9b --epochs 
 
 ---
 
+## 📚 State-of-the-Art Research & Mathematical Formulations (2024–2026)
+
+For an exhaustive technical compendium covering modern detection equations, zero-shot curvature metrics, 4-class forensic taxonomy, and dataset benchmarks, see **[RESEARCH_COMPENDIUM.md](file:///C:/Users/justi/AI%20detector/RESEARCH_COMPENDIUM.md)**:
+
+- **Binoculars Zero-Shot Cross-Ratio**: $\text{Score}(x) = \frac{\log \text{PPL}_{M_1}(x)}{\log \text{xPPL}_{M_1, M_2}(x)}$ (Hans et al., ICML 2024)
+- **Fast-DetectGPT Conditional Probability Curvature**: $\tilde{d}(x) = \frac{\sum_t (\log p(x_t) + \mathcal{H}(p))}{\sqrt{\sum_t \text{Var}[\log p]}}$ (Bao et al., ICLR 2024)
+- **RADAR Adversarial Paraphrase Invariance**: Minimax game formulation against automated evasion (Hu et al., NeurIPS 2024)
+- **Length-Invariant Forensic Stylometrics**: Yule's Characteristic $K$, Shannon token entropy rate, consecutive syntactic rhythm delta ($\Delta_{\text{rhythm}}$), and DEFLATE compression complexity
+- **14 Premier Benchmark Corpora**: Detailed catalog of RAID (ACL 2024), M4 (EACL 2024), HC3, DetectRL, MAGE, and ESL learner corpora (PELIC, TOEFL11, ICNALE)
+- **Non-Native English (ESL) Fairness Audit**: Algorithmic mitigation techniques to prevent false-positive penalization of simple/clear vocabulary
+
+---
+
 ## 📋 QuillBot Comparison Sheet (30 Hand-Check Samples)
 
 In strict accordance with terms of service (no scraping or automated querying), exactly 30 representative passages across all 4 classes, native human, ESL human, and frontier models are provided for manual side-by-side inspection:
