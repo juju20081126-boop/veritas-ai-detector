@@ -181,6 +181,38 @@ class QuillBotDetectorEngine:
         probs = exp_s / np.sum(exp_s, axis=-1, keepdims=True)
         return probs[0]
 
+    def _chunk_text(self, text: str, max_chunk_words: int = 100) -> List[str]:
+        """
+        Hierarchical chunking: splits long documents into coherent paragraph or sentence chunks
+        (~70-100 words), matching the sequence length distribution the student transformer was distilled on.
+        """
+        raw_paras = [p.strip() for p in re.split(r"\n\s*\n+", text) if p.strip()]
+        if not raw_paras:
+            raw_paras = [text]
+
+        chunks = []
+        for para in raw_paras:
+            para_words = para.split()
+            if len(para_words) <= max_chunk_words:
+                chunks.append(para)
+            else:
+                para_sents = split_sentences(para)
+                curr_chunk = []
+                curr_word_count = 0
+                for sent in para_sents:
+                    sent_words = len(sent.split())
+                    if curr_chunk and (curr_word_count + sent_words > max_chunk_words):
+                        chunks.append(" ".join(curr_chunk))
+                        curr_chunk = [sent]
+                        curr_word_count = sent_words
+                    else:
+                        curr_chunk.append(sent)
+                        curr_word_count += sent_words
+                if curr_chunk:
+                    chunks.append(" ".join(curr_chunk))
+
+        return chunks if chunks else [text]
+
     def analyze_text(self, text: str, confidence_threshold: float = 0.40) -> Dict[str, Any]:
         """
         Main analysis method matching QuillBot's exact UX & Output Spec:
@@ -215,8 +247,10 @@ class QuillBotDetectorEngine:
         # 1. Stylometric feature extraction
         feat_vec, stylometrics = self._extract_stylometrics_vec(text, sentences)
 
-        # 2. Document-level neural inference
-        doc_logits = self._run_onnx_inference([text])
+        # 2. Document-level neural inference (hierarchical chunk pooling)
+        chunks = self._chunk_text(text, max_chunk_words=100)
+        chunk_logits = self._run_onnx_inference(chunks, max_length=256, batch_size=16)
+        doc_logits = np.mean(chunk_logits, axis=0, keepdims=True)
         calibrated_probs = self._apply_meta_classifier_and_calibration(doc_logits, feat_vec)
 
         # Form probability dictionary
