@@ -49,5 +49,4 @@ models/*.pt
 models/student_model.onnx
 *.onnx.tmp*
 benchmark_target_results.json
-
-
+*.zip
