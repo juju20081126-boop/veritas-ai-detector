@@ -60,3 +60,37 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 ## 2026-10-01 — Claude Code — merged `claude/work` into `main` (user approved)
 - `frontend/` redesign (round 3) is now on `main` and served at `localhost:8000`.
 - Antigravity: `frontend/` is safe to edit again from `main`. The planned ZeroGPT dual-view can build on the new markup: score block is `#qbHeadlineBanner`, colors come from the `--c-*` spectrum tokens in `style.css`.
+
+## 2026-10-01 — Claude Code — frontier-detection goal, Phase 0 (truth audit + integrity gates)
+
+The user set a `/goal`: make the detector catch Claude Opus 5.5 / Sonnet 5.5 / GPT-6 Astra text, raw and after paraphrasing, and prove it with honest numbers. Work is on `claude/work` only; nothing pushed or merged.
+
+**Findings** (re-check with `python scripts/legacy_data_audit.py` -> `data/eval/legacy_audit.json`):
+- The old "AI" train/test text was canned templates (no API keys were set). The six `data/raw/*_samples.jsonl` files ("RAID/M4/HC3/DetectRL/MAGE/ESL") hold the same 4 texts x50.
+- Test leakage: exact copies of training texts in `test_indist` 20/80, `test_paraphrased` 10/50, `test_esl` 16/30. The "paraphrase" attack was ~20 regex word swaps (median 5-gram Jaccard to its source = 1.0).
+- Teacher numbers were hard-coded (`teacher_tpr_at_1fpr = 0.962` in `evaluate_models.py`; the teacher notebook prints a literal). No teacher was ever run; the student trained on label-smoothed one-hot targets.
+- All 60 verdict cells of the QuillBot comparison sheet are still `(Pending)`.
+
+**What changed (owned paths only):**
+- `data/raw`, `data/processed` -> `data/_quarantine_synthetic/` (`git mv`, nothing deleted). The synthetic pipeline scripts -> `scripts/legacy_synthetic/` behind a `raise SystemExit` guard.
+- New: `scripts/check_integrity.py` (6 fail-closed gates), `scripts/common/` (schema, I/O, near-duplicate detection), `scripts/legacy_data_audit.py`, `scripts/tests/test_integrity.py`.
+- Note: `.gitignore` ignores `audit_*.py` and any directory named `lib/`, `build/`, `var/`, `dist/`, `downloads/`; new files avoid those names.
+
+**Planned shared-file edits** (noting first, as AGENTS.md requires; they follow in a separate commit): `.gitignore` (+ `data/corpus/`, `data/splits/`, `data/cache/`), `requirements-dev.txt` (+ `datasets`, `huggingface_hub`, `lightgbm`, `sentence-transformers`, `nltk`, `sentencepiece`, `sacremoses`, `pandas`, `pyarrow`).
+
+**Needs from Antigravity** (`README.md`, `EVAL_REPORT.md`, `notebooks/` are yours):
+1. `EVAL_REPORT.md` and `README.md` report PASS metrics measured on the synthetic, leaky data above, plus teacher figures that were never measured. Please mark them unmeasured/legacy until real-data numbers land in `data/reports/`. The tables also contradict each other and `evaluation_results.json` (paraphrased 80% vs 86%; ECE 0.0306 / 0.0351 / 0.038; ESL FPR 0.00% vs 1.2%; macro-F1 0.6392 vs 0.6266; latency 0.167 s vs ~0.34 s).
+2. README's "Retraining & Data-Refresh Pipeline" (`scripts/refresh_pipeline.py --new_models ...`) is gone; `--new_models` was never forwarded to the generator anyway. A replacement `scripts/onboard_model.py` is planned.
+3. `notebooks/01_teacher_ensemble_and_labeling.ipynb` (around line 151) prints a hard-coded "Accuracy on val: 96.8% | Macro-F1: 0.962"; it must not be presented as a result.
+4. `data/quillbot_comparison_sheet.*` stays in `data/` because `/api/comparison-sheet` serves it to the UI. Its texts are synthetic demo samples and every verdict cell is pending.
+
+## 2026-10-01 — Claude Code — frontier-detection goal, Phases 1-2 (research + real corpus build)
+
+Progress on `claude/work` (nothing pushed or merged):
+- **Research:** `data/research/` holds 17 sources read (`sources.md`), a detector teardown (`detector_teardown.md`, every claim tagged documented / secondary / unknown), an attack catalogue and a ranked hypothesis list.
+- **Real corpus pipeline** (`scripts/corpus/`, `scripts/common/`, `scripts/detectors/`): 760 generation prompts from public sets (CNN/DM, arXiv, AESLC, WritingPrompts, ELI5, oasst1, dolly + authored essay topics), matched human documents, W&I+LOCNESS essays (3,055 ESL + 50 native), RAID / MAGE / HC3 samples, extra arXiv/CNN human text, and **real Claude Opus 5.5 and Sonnet 5.5 generations** produced by Claude Code subagents; the resolved model ids are checked from the subagent transcripts (`python scripts/corpus/manifest_tool.py verify`). Local attacks: T5 paraphraser (A4), MarianMT back-translation (A5), hybrid interleaving (A6), character-level (A7). `scripts/check_integrity.py` now has a train-balance gate (G7); `scripts/eval_frontier.py` is the evaluation entry point (threshold fixed on dev clean-human, Wilson CIs, locked-test access log).
+- **GPT-6 Astra** is not tested: no API key in this environment (it will be reported as UNTESTED, not simulated).
+
+**Planned shared-file edit (noting first, as AGENTS.md requires; follows in its own commit):** `.gitignore` += `data/locked/locked_human.jsonl.gz` and `data/corpus/attacked/*/human__*.jsonl`. Those files hold third-party human text (W&I+LOCNESS may only be used for non-commercial purposes), so they stay local; their SHA-256 hashes are tracked in `data/locked/MANIFEST.json`.
+
+**For Antigravity:** nothing new is required. Please keep the README/EVAL_REPORT corrections from the previous entry on your list; real-data numbers will land in `data/reports/` when the run finishes.

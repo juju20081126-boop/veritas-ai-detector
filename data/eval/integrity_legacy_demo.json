@@ -1,0 +1,61 @@
+{
+  "overall_pass": false,
+  "gates": [
+    {
+      "gate": "G1",
+      "name": "PROVENANCE",
+      "pass": false,
+      "summary": "data/corpus/registry.json is missing; 486/486 rows violate the schema/provenance rules",
+      "details": [
+        "268 x access_path # not in allow-list; banned word in access_path: #; bad date #",
+        "218 x access_path # not in allow-list; banned word in access_path: #; bad date #; human row must come from a registered corpus (access_path #)",
+        "[train] f59e6374da0e1b66: access_path 'legacy:train.jsonl' not in allow-list; banned word in access_path: 'legacy:train.jsonl'; bad date ''",
+        "[train] 0baea08d24998308: access_path 'legacy:train.jsonl' not in allow-list; banned word in access_path: 'legacy:train.jsonl'; bad date ''; human row must come from a registered corpus (access_path 'corpus:<name>@<rev>')",
+        "[train] 18333a3dbebdfd1c: access_path 'legacy:train.jsonl' not in allow-list; banned word in access_path: 'legacy:train.jsonl'; bad date ''"
+      ]
+    },
+    {
+      "gate": "G2",
+      "name": "NO-SYNTHETIC",
+      "pass": false,
+      "summary": "486 rows are texts from data/_quarantine_synthetic; 486 rows carry synthetic/template/legacy markers in provenance fields",
+      "details": []
+    },
+    {
+      "gate": "G3",
+      "name": "METRIC-LINT",
+      "pass": true,
+      "summary": "no hard-coded metric literals in scripts/ or backend/",
+      "details": []
+    },
+    {
+      "gate": "G4",
+      "name": "SPLITS",
+      "pass": false,
+      "summary": "6 prompt/source groups shared by dev and locked; 13 exact duplicate texts across dev and locked; 22 exact duplicate texts across dev and train; 16 prompt/source groups shared by locked and train; 29 exact duplicate texts across locked and train; 180 near-duplicate pairs (5-gram Jaccard >= 0.5) across splits",
+      "details": [
+        "e.g. ['esl_cooking_at_home', 'esl_credit_cards', 'esl_music_stress']",
+        "e.g. ['esl_adult_driving', 'esl_city_rural', 'esl_ebike_commute']",
+        "train:f59e6374da0e1b66 ~ dev:f59e6374da0e1b66 J=1.00",
+        "train:f59e6374da0e1b66 ~ dev:f59e6374da0e1b66 J=1.00",
+        "train:0baea08d24998308 ~ locked:0baea08d24998308 J=1.00"
+      ]
+    },
+    {
+      "gate": "G5",
+      "name": "LOCKED",
+      "pass": false,
+      "summary": "data/locked/MANIFEST.json is missing",
+      "details": []
+    },
+    {
+      "gate": "G6",
+      "name": "COUNTS",
+      "pass": false,
+      "summary": "human 70 < 1000; ESL 38 < 300; registry lists no frontier generators",
+      "details": [
+        "locked human=70 (ESL=38)"
+      ]
+    }
+  ]
+}
