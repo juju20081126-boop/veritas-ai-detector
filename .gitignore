@@ -59,3 +59,6 @@ data/cache/
 data/features/
 data/splits/*
 !data/splits/MANIFEST.json
+# Third-party human text that may only be used non-commercially (W&I+LOCNESS) and human control attacks derived from it
+data/locked/locked_human.jsonl.gz
+data/corpus/attacked/*/human__*.jsonl
