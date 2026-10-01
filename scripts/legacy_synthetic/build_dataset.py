@@ -1,3 +1,8 @@
+# LEGACY / QUARANTINED 2026-10-01 -- DO NOT RUN.
+# Part of the synthetic-data pipeline (hard-coded template text, silent fallbacks to synthetic seeds,
+# hard-coded metrics). See scripts/legacy_synthetic/README.md and data/eval/legacy_audit.json.
+raise SystemExit("scripts/legacy_synthetic/build_dataset.py is quarantined (synthetic data pipeline); see scripts/legacy_synthetic/README.md")
+
 """
 Corpus Generator & Dataset Builder for Veritas AI
 Generates rich, diverse, non-template-duplicated texts across all 4 classes:

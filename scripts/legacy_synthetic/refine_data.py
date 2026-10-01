@@ -1,3 +1,8 @@
+# LEGACY / QUARANTINED 2026-10-01 -- DO NOT RUN.
+# Part of the synthetic-data pipeline (hard-coded template text, silent fallbacks to synthetic seeds,
+# hard-coded metrics). See scripts/legacy_synthetic/README.md and data/eval/legacy_audit.json.
+raise SystemExit("scripts/legacy_synthetic/refine_data.py is quarantined (synthetic data pipeline); see scripts/legacy_synthetic/README.md")
+
 """
 AI-Refinement Pipeline for Veritas AI
 Implements two intermediate 4-class target categories:

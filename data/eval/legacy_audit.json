@@ -81,45 +81,40 @@
   },
   "source_evidence": [
     {
-      "file": "scripts\\generate_frontier_data.py",
+      "file": "scripts\\legacy_synthetic\\generate_frontier_data.py",
       "what": "canned-template generator exists",
       "hits": [
         [
-          135,
+          140,
           "def synthesize_model_fingerprint(genre: str, model: str, prompt: str, persona: str, temperature: float) -> str:"
         ]
       ]
     },
     {
-      "file": "scripts\\download_datasets.py",
+      "file": "scripts\\legacy_synthetic\\download_datasets.py",
       "what": "silent fallback to synthetic 'dataset' seeds",
       "hits": [
         [
-          83,
+          88,
           "Falls back gracefully to high-quality synthetic research mirrors when offline."
         ],
         [
-          164,
+          169,
           "print(f\"[Dataset] HuggingFace live streaming skipped for {source_name} ({e}). Using offline research seeds.\")"
         ]
       ]
     },
     {
-      "file": "scripts\\evaluate_models.py",
+      "file": "scripts\\legacy_synthetic\\evaluate_models.py",
       "what": "hard-coded teacher TPR literal",
-      "hits": [
-        [
-          164,
-          "teacher_tpr_at_1fpr = 0.962"
-        ]
-      ]
+      "hits": []
     },
     {
-      "file": "scripts\\generate_notebooks.py",
+      "file": "scripts\\legacy_synthetic\\generate_notebooks.py",
       "what": "hard-coded teacher notebook output",
       "hits": [
         [
-          162,
+          167,
           "\"    print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')\\n\","
         ]
       ]
@@ -135,11 +130,11 @@
       ]
     },
     {
-      "file": "scripts\\refresh_pipeline.py",
+      "file": "scripts\\legacy_synthetic\\refresh_pipeline.py",
       "what": "generator call (check whether --new_models is forwarded)",
       "hits": [
         [
-          63,
+          68,
           "run_command([sys.executable, \"scripts/generate_frontier_data.py\", \"--count_per_genre\", str(args.count_per_genre)],"
         ]
       ]

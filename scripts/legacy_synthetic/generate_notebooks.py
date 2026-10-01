@@ -1,3 +1,8 @@
+# LEGACY / QUARANTINED 2026-10-01 -- DO NOT RUN.
+# Part of the synthetic-data pipeline (hard-coded template text, silent fallbacks to synthetic seeds,
+# hard-coded metrics). See scripts/legacy_synthetic/README.md and data/eval/legacy_audit.json.
+raise SystemExit("scripts/legacy_synthetic/generate_notebooks.py is quarantined (synthetic data pipeline); see scripts/legacy_synthetic/README.md")
+
 """
 Utility script to generate Kaggle/Colab Jupyter Notebooks for:
 1. notebooks/01_teacher_ensemble_and_labeling.ipynb
