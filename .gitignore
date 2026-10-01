@@ -50,3 +50,12 @@ models/student_model.onnx
 *.onnx.tmp*
 benchmark_target_results.json
 *.zip
+
+# Real-data pipeline (2026-10-01): downloads/derived data are rebuilt by scripts; the registry, manifests,
+# frontier generations (not reproducible) and the locked test stay tracked.
+data/corpus/human/
+data/corpus/public_ai/
+data/cache/
+data/features/
+data/splits/*
+!data/splits/MANIFEST.json
