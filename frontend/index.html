@@ -3,476 +3,283 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veritas AI — QuillBot-Style Offline AI Detector</title>
+  <title>Veritas AI Detector</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='1' y='1' width='26' height='26' rx='7' fill='%23172036'/%3E%3Cpath d='M7 9.5h14M7 14h9M7 18.5h11' stroke='white' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M14.5 12.2h8.5v3.6h-8.5z' fill='%23d81b6a'/%3E%3C/svg%3E" />
+  <meta name="description" content="Check writing for AI-generated and AI-refined text, sentence by sentence, fully offline." />
+  <script>
+    // Set the theme before first paint so the page never flashes the wrong colors.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("veritas_theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="app-header">
-    <div class="header-container">
-      <div class="brand">
-        <div class="brand-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <div class="brand-title-row">
-            <span class="brand-name">VERITAS<span class="brand-accent">AI</span></span>
-            <span class="brand-badge">QuillBot-Style 4-Class</span>
-          </div>
-          <span class="brand-tagline">Offline AI Writing Detector • Low-End Hardware Optimized</span>
-        </div>
-      </div>
 
-      <div class="header-status">
-        <div class="status-pill" id="engineStatusPill" title="Simulated target hardware: 2 CPU threads, <= 1.5GB RAM, Zero PyTorch">
-          <span class="status-dot"></span>
-          <span id="engineStatusText">ONNX INT8 Offline Engine (2 Threads)</span>
-        </div>
-        <button id="themeToggleBtn" class="btn-icon" title="Toggle Dark/Light Theme">
-          <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-        </button>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Veritas home">
+      <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x="1" y="1" width="26" height="26" rx="7" fill="currentColor"/>
+        <path d="M7 9.5h14M7 14h9M7 18.5h11" stroke="var(--paper)" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M14.5 12.2h8.5v3.6h-8.5z" fill="var(--c-ai)" opacity=".9"/>
+      </svg>
+      <span class="brand-name">Veritas</span>
+    </a>
+
+    <div class="topbar-right">
+      <div class="engine" id="engineStatus" title="Detection runs on this computer. Nothing is sent online.">
+        <span class="engine-dot" aria-hidden="true"></span>
+        <span id="engineStatusText">Connecting to engine</span>
       </div>
+      <button id="themeToggleBtn" class="icon-btn" type="button" aria-label="Switch to dark theme">
+        <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+      </button>
     </div>
   </header>
 
-  <!-- Main Container -->
-  <main class="main-container">
-    
-    <!-- Quick-Test Sample Pills & Controls Bar -->
-    <div class="top-toolbar">
-      <div class="quick-samples-container">
-        <span class="toolbar-label">Quick Test:</span>
-        <div class="sample-pills-list">
-          <button class="sample-pill" data-sample="ai_pure" title="Load pure GPT-4o academic essay">
-            <span class="pill-dot dot-ai"></span>
-            <span>Pure AI</span>
-          </button>
-          <button class="sample-pill" data-sample="ai_refined_ai" title="Load paraphrased Claude 3.5 text">
-            <span class="pill-dot dot-ai-refined"></span>
-            <span>Paraphrased AI</span>
-          </button>
-          <button class="sample-pill" data-sample="human_refined_ai" title="Load polished human history essay">
-            <span class="pill-dot dot-human-refined"></span>
-            <span>Polished Human</span>
-          </button>
-          <button class="sample-pill" data-sample="human_pure" title="Load authentic human scholarship">
-            <span class="pill-dot dot-human"></span>
-            <span>Human Native</span>
-          </button>
-          <button class="sample-pill" data-sample="human_esl" title="Load non-native English learner essay">
-            <span class="pill-dot dot-human"></span>
-            <span>ESL Student</span>
-          </button>
-          
-          <div class="sample-dropdown-wrapper">
-            <select id="sampleSelect" class="select-input select-samples" title="Select from the 30-sample QuillBot verification benchmark">
-              <option value="" disabled selected>30-Sample Benchmark Sheet ▾</option>
-              <optgroup label="QuillBot 30-Sample Comparison Sheet" id="qbComparisonGroup">
-                <!-- Dynamically loaded via /api/comparison-sheet -->
-              </optgroup>
-            </select>
-          </div>
-        </div>
-      </div>
+  <main class="desk">
 
-      <div class="toolbar-right-controls">
-        <div class="threshold-control" title="Confidence below this threshold triggers an Uncertain verdict">
-          <label for="thresholdInput">Uncertainty Cutoff:</label>
-          <input type="number" id="thresholdInput" min="0.30" max="0.70" step="0.05" value="0.40" class="number-input" />
-        </div>
+    <div class="intro">
+      <h1>Who wrote this?</h1>
+      <p>Paste an essay, article or report. Veritas marks each sentence as human, AI-refined or AI-generated, and never sends your text online.</p>
+    </div>
+
+    <div class="samples" aria-label="Sample texts">
+      <span class="samples-label">Try a sample</span>
+      <div class="samples-list">
+        <button class="chip" type="button" data-sample="ai_pure"><span class="swatch sw-ai"></span>AI essay</button>
+        <button class="chip" type="button" data-sample="ai_refined_ai"><span class="swatch sw-ai-refined"></span>Paraphrased AI</button>
+        <button class="chip" type="button" data-sample="human_refined_ai"><span class="swatch sw-human-refined"></span>Polished human</button>
+        <button class="chip" type="button" data-sample="human_pure"><span class="swatch sw-human"></span>Human</button>
+        <button class="chip" type="button" data-sample="human_esl"><span class="swatch sw-human"></span>ESL student</button>
+        <label class="select-wrap">
+          <span class="sr-only">Load a benchmark sample</span>
+          <select id="sampleSelect" class="select">
+            <option value="" selected>Benchmark set (30)</option>
+            <optgroup label="QuillBot comparison set" id="qbComparisonGroup"></optgroup>
+          </select>
+        </label>
       </div>
     </div>
 
-    <!-- Workspace Grid -->
-    <div class="detector-workspace">
-      
-      <!-- Left Panel: Document Editor & Highlighted Heatmap -->
-      <section class="editor-pane" id="editorPane">
-        <div class="pane-header">
-          <div class="tab-controls">
-            <button id="btnModeEdit" class="tab-btn active">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 20h9"/>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-              </svg>
-              <span>Edit Text</span>
-            </button>
-            <button id="btnModeHeatmap" class="tab-btn" disabled>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              <span>Highlighted Heatmap</span>
-              <span id="heatmapSentCountBadge" class="tab-badge" style="display: none;">0</span>
+    <div class="workspace">
+
+      <!-- The document -->
+      <section class="sheet" aria-label="Document">
+        <div class="sheet-bar">
+          <div class="segmented" role="tablist" aria-label="Document view">
+            <button id="btnModeEdit" class="seg active" type="button" role="tab" aria-selected="true">Write</button>
+            <button id="btnModeHeatmap" class="seg" type="button" role="tab" aria-selected="false" disabled>
+              Highlights <span id="heatmapSentCountBadge" class="seg-count" hidden>0</span>
             </button>
           </div>
-
-          <div class="editor-quick-actions">
-            <button id="btnUpload" class="btn-text" title="Upload a PDF, DOCX, or TXT file">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="17 8 12 3 7 8"/>
-                <line x1="12" y1="3" x2="12" y2="15"/>
-              </svg>
-              <span>Upload Document</span>
+          <div class="sheet-tools">
+            <button id="btnUpload" class="tool-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/></svg>
+              <span>Upload file</span>
             </button>
-            <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" style="display: none;" />
-
-            <button id="btnPaste" class="btn-text" title="Paste text from clipboard">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-              </svg>
+            <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" hidden />
+            <button id="btnPaste" class="tool-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5V3.8A.8.8 0 0 1 9.8 3h4.4a.8.8 0 0 1 .8.8v.7"/></svg>
               <span>Paste</span>
             </button>
           </div>
         </div>
 
-        <div class="editor-body" id="editorDropZone">
-          <!-- Textarea for raw input -->
-          <textarea 
-            id="textInput" 
-            class="document-textarea" 
-            placeholder="Type or paste your text here (80 to 2,000 words recommended)...&#10;&#10;You can also drag and drop a PDF, Word (DOCX), or plain text file directly into this box."
-          ></textarea>
+        <div class="sheet-body" id="editorDropZone">
+          <label for="textInput" class="sr-only">Text to check</label>
+          <textarea id="textInput" class="doc-input" spellcheck="false"
+            placeholder="Paste or type your text here. 80 to 2,000 words gives the most reliable result.&#10;&#10;You can also drop a PDF, Word or text file onto this page."></textarea>
 
-          <!-- Interactive Highlighted Heatmap View -->
-          <div id="heatmapViewer" class="heatmap-viewer" style="display: none;"></div>
+          <div id="heatmapViewer" class="doc-view" hidden></div>
 
-          <!-- Drag and drop overlay -->
-          <div id="dragDropOverlay" class="drag-drop-overlay" style="display: none;">
-            <div class="drag-drop-content">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="17 8 12 3 7 8"/>
-                <line x1="12" y1="3" x2="12" y2="15"/>
-              </svg>
-              <h3>Drop your document here</h3>
-              <p>Supports .PDF, .DOCX, and .TXT files</p>
+          <div id="dragDropOverlay" class="drop" hidden>
+            <div class="drop-inner">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/></svg>
+              <strong>Drop to check this file</strong>
+              <span>PDF, Word (.docx) or plain text</span>
             </div>
           </div>
         </div>
 
-        <!-- Editor Footer: Word Counters & Analyze Trigger -->
-        <div class="editor-footer">
-          <div class="word-counter-box">
-            <span id="wordCountLabel" class="counter-val">0 words</span>
-            <span class="counter-sep">•</span>
-            <span id="charCountLabel" class="counter-val">0 chars</span>
-            <span class="counter-sep">•</span>
-            <span id="sentCountLabel" class="counter-val">0 sentences</span>
-            <span id="wordGuideBadge" class="guide-badge ok">Optimal: 80–2,000 words</span>
+        <div class="sheet-foot">
+          <div class="counts">
+            <span id="wordCountLabel" class="count-main">0 words</span>
+            <span id="sentCountLabel" class="count-sub">0 sentences</span>
+            <span id="wordGuideBadge" class="guide">80–2,000 words recommended</span>
           </div>
-
-          <div class="editor-actions">
-            <button id="btnClear" class="btn btn-secondary" title="Clear document text">Clear</button>
-            <button id="btnAnalyze" class="btn btn-primary" title="Run 4-class forensic detection (Ctrl+Enter)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <circle cx="11" cy="11" r="8"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              <span>Analyze Text</span>
-              <kbd class="shortcut-key">Ctrl+Enter</kbd>
+          <div class="foot-actions">
+            <label class="cutoff" title="Below this confidence, Veritas withholds a verdict instead of guessing">
+              <span>Uncertainty cutoff</span>
+              <input type="number" id="thresholdInput" min="0.30" max="0.70" step="0.05" value="0.40" />
+            </label>
+            <button id="btnClear" class="btn btn-quiet" type="button">Clear</button>
+            <button id="btnAnalyze" class="btn btn-primary" type="button">
+              <span class="btn-label">Check text</span>
+              <kbd>Ctrl Enter</kbd>
             </button>
           </div>
         </div>
+        <p id="formError" class="form-error" role="alert" hidden></p>
       </section>
 
-      <!-- Right Panel: QuillBot Verdict & Forensic Analysis -->
-      <section class="results-pane" id="resultsPane">
-        
-        <!-- Placeholder State when idle -->
-        <div id="resultsPlaceholder" class="results-placeholder">
-          <div class="placeholder-art">
-            <div class="placeholder-icon-circle">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-              </svg>
-            </div>
-          </div>
-          <h3>Ready to Detect</h3>
-          <p>Paste text on the left or select a quick test sample above to inspect 4-class forensic probabilities and sentence highlighting.</p>
-          <div class="feature-checklist">
-            <div class="check-item">
-              <span class="check-bullet">✓</span>
-              <span>4-Class QuillBot Discrimination</span>
-            </div>
-            <div class="check-item">
-              <span class="check-bullet">✓</span>
-              <span>Per-Sentence Highlighted Heatmap</span>
-            </div>
-            <div class="check-item">
-              <span class="check-bullet">✓</span>
-              <span>Uncertain Verdict Gating</span>
-            </div>
-            <div class="check-item">
-              <span class="check-bullet">✓</span>
-              <span>100% Offline (Zero PyTorch)</span>
-            </div>
-          </div>
+      <!-- The report -->
+      <aside class="report" aria-label="Report" aria-live="polite">
+
+        <!-- Empty state: the key to the marks -->
+        <div id="resultsPlaceholder" class="key">
+          <h2>How to read the marks</h2>
+          <p class="key-lead">After you check a text, each sentence in the document is marked in one of four ways.</p>
+          <ul class="key-list">
+            <li>
+              <span class="key-sample mk-human">Plain ink</span>
+              <span class="key-text"><strong>Human-written.</strong> Natural variation in rhythm and word choice.</span>
+            </li>
+            <li>
+              <span class="key-sample mk-human-refined">Teal underline</span>
+              <span class="key-text"><strong>Human, AI-refined.</strong> A human draft polished by an AI tool.</span>
+            </li>
+            <li>
+              <span class="key-sample mk-ai-refined">Amber highlight</span>
+              <span class="key-text"><strong>AI, then paraphrased.</strong> AI text run through a rewriter or humanizer.</span>
+            </li>
+            <li>
+              <span class="key-sample mk-ai">Pink highlight</span>
+              <span class="key-text"><strong>AI-generated.</strong> Reads as direct output from a language model.</span>
+            </li>
+          </ul>
+          <p class="key-note">Detection is a statistical estimate, not proof. When the signals are borderline, Veritas says so instead of guessing.</p>
         </div>
 
-        <!-- Active Results Content -->
-        <div id="activeResultsContent" class="active-results-container" style="display: none;">
-          
-          <!-- QuillBot Replica Headline Card -->
-          <div class="qb-headline-banner" id="qbHeadlineBanner">
-            <div class="qb-headline-inner">
-              <span class="qb-headline-pulse" id="qbHeadlinePulse"></span>
-              <span class="qb-headline-text" id="qbHeadlineText">100% of text is likely Human</span>
-            </div>
-            <span class="qb-replica-tag" title="Sentence-weighted coverage matching QuillBot online">QuillBot Replica</span>
-          </div>
+        <!-- Results -->
+        <div id="activeResultsContent" class="results" hidden>
 
-          <!-- Master Document Verdict Card -->
-          <div class="verdict-card" id="verdictCard">
-            <div class="verdict-header">
-              <div class="verdict-label-group">
-                <span class="verdict-eyebrow">FINAL VERDICT</span>
-                <span id="verdictBadge" class="verdict-badge badge-human">Human-written</span>
-              </div>
-              <span id="confidenceTag" class="confidence-tag">98.4% Confidence</span>
+          <section class="score" id="qbHeadlineBanner">
+            <div class="score-figure">
+              <span class="score-num" id="scoreNumber">0</span><span class="score-pct">%</span>
             </div>
-            
-            <div class="verdict-body">
-              <div class="verdict-icon-box" id="verdictIconBox">
-                <!-- Injected dynamically: checkmark, warning, or AI icon -->
-              </div>
-              <div class="verdict-text-group">
-                <h2 id="verdictTitle" class="verdict-title">Human-written</h2>
-                <p id="verdictDescription" class="verdict-description">
-                  Text displays natural syntactic cadence, human burstiness, and personal markers.
-                </p>
-              </div>
+            <p class="score-caption" id="qbHeadlineText">of the text is likely AI</p>
+
+            <div class="spectrum" role="img" id="spectrumBar" aria-label="Class breakdown">
+              <span id="stackBarAI" class="seg-ai" style="width:0%"></span>
+              <span id="stackBarAIRefined" class="seg-ai-refined" style="width:0%"></span>
+              <span id="stackBarHumanRefined" class="seg-human-refined" style="width:0%"></span>
+              <span id="stackBarHuman" class="seg-human" style="width:0%"></span>
             </div>
 
-            <!-- Uncertain Banner (Shown when confidence is below threshold) -->
-            <div id="uncertainAlertBanner" class="uncertain-banner" style="display: none;">
-              <div class="uncertain-icon">⚠️</div>
-              <div class="uncertain-text">
-                <strong>Verdict Withheld (Uncertain):</strong> The forensic signals fall below the confidence threshold. Veritas AI never forces an arbitrary verdict when statistical certainty is borderline.
+            <dl class="classes">
+              <div class="class-row">
+                <dt><span class="swatch sw-ai"></span>AI-generated</dt>
+                <dd id="pctAIGen">0%</dd>
+              </div>
+              <div class="class-row">
+                <dt><span class="swatch sw-ai-refined"></span>AI-generated, then paraphrased</dt>
+                <dd id="pctAIRefined">0%</dd>
+              </div>
+              <div class="class-row">
+                <dt><span class="swatch sw-human-refined"></span>Human-written, AI-refined</dt>
+                <dd id="pctHumanRefined">0%</dd>
+              </div>
+              <div class="class-row">
+                <dt><span class="swatch sw-human"></span>Human-written</dt>
+                <dd id="pctHuman">0%</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="verdict" id="verdictCard">
+            <div class="verdict-head">
+              <span class="verdict-icon" id="verdictIconBox" aria-hidden="true"></span>
+              <div>
+                <h2 id="verdictTitle" class="verdict-title">—</h2>
+                <p class="verdict-meta"><span id="confidenceTag">—</span><span id="sentenceCountsSummary" class="verdict-counts"></span></p>
               </div>
             </div>
-          </div>
+            <p id="verdictDescription" class="verdict-desc"></p>
+            <p id="lengthWarning" class="note" hidden></p>
+            <p id="uncertainAlertBanner" class="note note-uncertain" hidden>
+              <strong>Verdict withheld.</strong> The signals fall below your uncertainty cutoff, so Veritas won't call this one. Try a longer passage or lower the cutoff.
+            </p>
+          </section>
 
-          <!-- QuillBot 4-Class Probability Stack & Breakdown -->
-          <div class="breakdown-card">
-            <div class="card-header-row">
-              <h4 class="card-subtitle">Calibrated 4-Class Distribution</h4>
-              <span class="card-info-tip" title="Sum of calibrated probabilities equals 100%">Calibrated</span>
-            </div>
-
-            <!-- Composite Stacked Bar -->
-            <div class="composite-progress-track">
-              <div id="stackBarAI" class="stack-segment fill-ai" style="width: 0%;" title="AI-generated"></div>
-              <div id="stackBarAIRefined" class="stack-segment fill-ai-refined" style="width: 0%;" title="AI-generated & AI-refined"></div>
-              <div id="stackBarHumanRefined" class="stack-segment fill-human-refined" style="width: 0%;" title="Human-written & AI-refined"></div>
-              <div id="stackBarHuman" class="stack-segment fill-human" style="width: 0%;" title="Human-written"></div>
-            </div>
-
-            <!-- 4 Class Individual Meters -->
-            <div class="class-meters-list">
-              <!-- AI-generated -->
-              <div class="class-meter-row">
-                <div class="class-info">
-                  <span class="class-dot dot-ai"></span>
-                  <div class="class-text-wrap">
-                    <span class="class-name">AI-generated</span>
-                    <span class="class-desc">Direct output from large language models</span>
-                  </div>
-                </div>
-                <div class="class-metric">
-                  <span class="class-pct" id="pctAIGen">0.0%</span>
-                  <div class="mini-track">
-                    <div class="mini-fill fill-ai" id="barAIGen" style="width: 0%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- AI-generated & AI-refined -->
-              <div class="class-meter-row">
-                <div class="class-info">
-                  <span class="class-dot dot-ai-refined"></span>
-                  <div class="class-text-wrap">
-                    <span class="class-name">AI-generated & AI-refined</span>
-                    <span class="class-desc">AI text modified via paraphrasers or rewriting</span>
-                  </div>
-                </div>
-                <div class="class-metric">
-                  <span class="class-pct" id="pctAIRefined">0.0%</span>
-                  <div class="mini-track">
-                    <div class="mini-fill fill-ai-refined" id="barAIRefined" style="width: 0%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Human-written & AI-refined -->
-              <div class="class-meter-row">
-                <div class="class-info">
-                  <span class="class-dot dot-human-refined"></span>
-                  <div class="class-text-wrap">
-                    <span class="class-name">Human-written & AI-refined</span>
-                    <span class="class-desc">Human draft polished with AI grammar or phrasing</span>
-                  </div>
-                </div>
-                <div class="class-metric">
-                  <span class="class-pct" id="pctHumanRefined">0.0%</span>
-                  <div class="mini-track">
-                    <div class="mini-fill fill-human-refined" id="barHumanRefined" style="width: 0%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Human-written -->
-              <div class="class-meter-row">
-                <div class="class-info">
-                  <span class="class-dot dot-human"></span>
-                  <div class="class-text-wrap">
-                    <span class="class-name">Human-written</span>
-                    <span class="class-desc">Original human writing with organic variation</span>
-                  </div>
-                </div>
-                <div class="class-metric">
-                  <span class="class-pct" id="pctHuman">0.0%</span>
-                  <div class="mini-track">
-                    <div class="mini-fill fill-human" id="barHuman" style="width: 0%;"></div>
-                  </div>
-                </div>
+          <section class="inspector" id="sentenceInspector">
+            <div class="inspector-head">
+              <h3 id="inspectorTitle">Sentence 1</h3>
+              <div class="stepper">
+                <button id="btnPrevSentence" class="icon-btn sm" type="button" aria-label="Previous sentence">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+                </button>
+                <button id="btnNextSentence" class="icon-btn sm" type="button" aria-label="Next sentence">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
               </div>
             </div>
-          </div>
+            <div id="inspectorContent" class="inspector-body"></div>
+          </section>
 
-          <!-- Sentence Forensic Highlights Legend & Inspector -->
-          <div class="sentence-inspector-card" id="sentenceInspector">
-            <div class="card-header-row">
-              <h4 class="card-subtitle">Sentence Forensic Inspector</h4>
-              <div class="sentence-counts-summary" id="sentenceCountsSummary">
-                <!-- Dynamically populated sentence count pills -->
-              </div>
-            </div>
-            
-            <p class="inspector-hint">Click any sentence in the highlighted heatmap view to inspect its linguistic forensic indicators.</p>
-            
-            <div id="inspectorContent" class="inspector-content">
-              <div class="empty-inspector-msg">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="16" x2="12" y2="12"/>
-                  <line x1="12" y1="8" x2="12.01" y2="8"/>
-                </svg>
-                <span>Select any highlighted sentence to view its individual forensic telemetry.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mathematical Forensic Formulations Card -->
-          <details class="telemetry-accordion" id="mathEquationsAccordion" open style="margin-top: 14px;">
-            <summary class="telemetry-summary">
-              <span class="telemetry-summary-left">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                </svg>
-                <span>Mathematical Forensic Equations</span>
-              </span>
-              <span class="telemetry-badge-ok" id="mathAffinityBadge">Λ_auth: 0.00</span>
+          <details class="signals" id="mathEquationsAccordion">
+            <summary>
+              <span>Writing signals</span>
+              <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            
-            <div class="telemetry-details-grid" style="grid-template-columns: repeat(2, 1fr);">
-              <div class="telemetry-item">
-                <span class="telemetry-label">Authorial Affinity (Λ_auth)</span>
-                <span class="telemetry-val" id="mathValAffinity">—</span>
+            <div class="signals-body">
+              <div id="flaggedWords" class="flagged" hidden>
+                <h4>Words often overused by AI</h4>
+                <div id="flaggedWordsList" class="flagged-list"></div>
               </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Syntactic Burstiness (B_syntax)</span>
-                <span class="telemetry-val" id="mathValBurstiness">—</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Discourse Polarity (Φ_disc)</span>
-                <span class="telemetry-val" id="mathValDiscourse">—</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Binoculars Ratio (R_binoc)</span>
-                <span class="telemetry-val" id="mathValBinoculars">—</span>
-              </div>
-              <div class="telemetry-item" style="grid-column: span 2;">
-                <span class="telemetry-label">Lexical Richness Index (Ω_lex)</span>
-                <span class="telemetry-val" id="mathValRichness">—</span>
-              </div>
+              <dl class="metrics">
+                <div><dt>Sentence rhythm <small>burstiness</small></dt><dd id="mathValBurstiness">—</dd></div>
+                <div><dt>Vocabulary range <small>lexical richness</small></dt><dd id="mathValRichness">—</dd></div>
+                <div><dt>Connective tone <small>discourse polarity</small></dt><dd id="mathValDiscourse">—</dd></div>
+                <div><dt>Predictability ratio <small>binoculars</small></dt><dd id="mathValBinoculars">—</dd></div>
+                <div><dt>Authorial affinity <small>combined score</small></dt><dd id="mathValAffinity">—</dd></div>
+                <div><dt>Reading grade <small>Flesch–Kincaid</small></dt><dd id="valGrade">—</dd></div>
+                <div><dt>Words per sentence</dt><dd id="valWps">—</dd></div>
+                <div><dt>Contractions <small>per 100 words</small></dt><dd id="valContractions">—</dd></div>
+              </dl>
             </div>
           </details>
 
-          <!-- Hardware Telemetry Accordion (Target Hardware Proof) -->
-          <details class="telemetry-accordion" id="telemetryAccordion">
-            <summary class="telemetry-summary">
-              <span class="telemetry-summary-left">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                  <line x1="6" y1="6" x2="6.01" y2="6"/>
-                  <line x1="6" y1="18" x2="6.01" y2="18"/>
-                </svg>
-                <span>Low-End Target Hardware Telemetry</span>
-              </span>
-              <span class="telemetry-badge-ok">PASS (&le;1.5GB RAM)</span>
+          <details class="signals" id="telemetryAccordion">
+            <summary>
+              <span>Engine</span>
+              <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            
-            <div class="telemetry-details-grid">
-              <div class="telemetry-item">
-                <span class="telemetry-label">Runtime Engine</span>
-                <span class="telemetry-val">ONNX INT8 CPU</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">CPU Intra-Op Threads</span>
-                <span class="telemetry-val">2 Threads</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Measured Latency</span>
-                <span class="telemetry-val" id="telemetryLatency">0.00s</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Process Memory</span>
-                <span class="telemetry-val" id="telemetryMemory">~150 MB (Cap: 1,500 MB)</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Disk Model Footprint</span>
-                <span class="telemetry-val">22 MB (Cap: 500 MB)</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">PyTorch at Runtime</span>
-                <span class="telemetry-val">None (Zero PyTorch)</span>
-              </div>
+            <div class="signals-body">
+              <dl class="metrics">
+                <div><dt>Time to check</dt><dd id="telemetryLatency">—</dd></div>
+                <div><dt>Memory in use</dt><dd id="telemetryMemory">—</dd></div>
+                <div><dt>Runtime</dt><dd>ONNX, INT8 on CPU</dd></div>
+                <div><dt>CPU threads</dt><dd id="telemetryThreads">2</dd></div>
+                <div><dt>Model size on disk</dt><dd>22 MB</dd></div>
+                <div><dt>Network access</dt><dd>None</dd></div>
+              </dl>
             </div>
           </details>
 
-          <!-- Bottom Action Toolbar -->
-          <div class="results-actions-bar">
-            <button id="btnCopyReport" class="btn btn-secondary btn-full" title="Copy formatted detection summary to clipboard">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-              </svg>
-              <span>Copy Analysis Summary</span>
+          <div class="report-actions">
+            <button id="btnCopyReport" class="btn btn-ghost" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></svg>
+              <span class="btn-label">Copy summary</span>
             </button>
           </div>
-
         </div>
-      </section>
-
+      </aside>
     </div>
   </main>
+
+  <footer class="colophon">
+    <p>Veritas runs entirely on this computer. Results are probabilities, so use them as one input alongside your own judgment.</p>
+  </footer>
 
   <script src="/static/app.js"></script>
 </body>

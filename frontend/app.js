@@ -1,572 +1,676 @@
 /**
- * Veritas AI — QuillBot-Style Frontend Application Logic
- * Supports 4-class detection, calibrated probabilities, sentence highlighting,
- * uncertainty gating, document upload, and low-end hardware offline telemetry.
+ * Veritas — frontend logic.
+ * Sends text to /api/detect (or a file to /api/upload), then fills the report:
+ * score, 4-class breakdown, verdict, marked-up sentences, inspector and signals.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM Elements
-  const textInput = document.getElementById("textInput");
-  const heatmapViewer = document.getElementById("heatmapViewer");
-  const btnModeEdit = document.getElementById("btnModeEdit");
-  const btnModeHeatmap = document.getElementById("btnModeHeatmap");
-  const heatmapSentCountBadge = document.getElementById("heatmapSentCountBadge");
-  const btnAnalyze = document.getElementById("btnAnalyze");
-  const btnClear = document.getElementById("btnClear");
-  const btnPaste = document.getElementById("btnPaste");
-  const btnUpload = document.getElementById("btnUpload");
-  const fileUploadInput = document.getElementById("fileUploadInput");
-  const editorDropZone = document.getElementById("editorDropZone");
-  const dragDropOverlay = document.getElementById("dragDropOverlay");
-  const sampleSelect = document.getElementById("sampleSelect");
-  const qbComparisonGroup = document.getElementById("qbComparisonGroup");
-  const thresholdInput = document.getElementById("thresholdInput");
-  const themeToggleBtn = document.getElementById("themeToggleBtn");
-  const btnCopyReport = document.getElementById("btnCopyReport");
+  const $ = (id) => document.getElementById(id);
 
-  // Counters
-  const wordCountLabel = document.getElementById("wordCountLabel");
-  const charCountLabel = document.getElementById("charCountLabel");
-  const sentCountLabel = document.getElementById("sentCountLabel");
-  const wordGuideBadge = document.getElementById("wordGuideBadge");
+  const textInput = $("textInput");
+  const heatmapViewer = $("heatmapViewer");
+  const btnModeEdit = $("btnModeEdit");
+  const btnModeHeatmap = $("btnModeHeatmap");
+  const heatmapSentCountBadge = $("heatmapSentCountBadge");
+  const btnAnalyze = $("btnAnalyze");
+  const btnClear = $("btnClear");
+  const btnPaste = $("btnPaste");
+  const btnUpload = $("btnUpload");
+  const fileUploadInput = $("fileUploadInput");
+  const editorDropZone = $("editorDropZone");
+  const dragDropOverlay = $("dragDropOverlay");
+  const sampleSelect = $("sampleSelect");
+  const qbComparisonGroup = $("qbComparisonGroup");
+  const thresholdInput = $("thresholdInput");
+  const themeToggleBtn = $("themeToggleBtn");
+  const btnCopyReport = $("btnCopyReport");
+  const formError = $("formError");
 
-  // Results DOM
-  const resultsPlaceholder = document.getElementById("resultsPlaceholder");
-  const activeResultsContent = document.getElementById("activeResultsContent");
-  const verdictCard = document.getElementById("verdictCard");
-  const verdictTitle = document.getElementById("verdictTitle");
-  const verdictBadge = document.getElementById("verdictBadge");
-  const verdictDescription = document.getElementById("verdictDescription");
-  const verdictIconBox = document.getElementById("verdictIconBox");
-  const confidenceTag = document.getElementById("confidenceTag");
-  const uncertainAlertBanner = document.getElementById("uncertainAlertBanner");
-  const qbHeadlineBanner = document.getElementById("qbHeadlineBanner");
-  const qbHeadlineText = document.getElementById("qbHeadlineText");
-  const qbHeadlinePulse = document.getElementById("qbHeadlinePulse");
+  const wordCountLabel = $("wordCountLabel");
+  const sentCountLabel = $("sentCountLabel");
+  const wordGuideBadge = $("wordGuideBadge");
 
-  // Stack & Bars
-  const stackBarAI = document.getElementById("stackBarAI");
-  const stackBarAIRefined = document.getElementById("stackBarAIRefined");
-  const stackBarHumanRefined = document.getElementById("stackBarHumanRefined");
-  const stackBarHuman = document.getElementById("stackBarHuman");
+  const resultsPlaceholder = $("resultsPlaceholder");
+  const activeResultsContent = $("activeResultsContent");
 
-  const barAIGen = document.getElementById("barAIGen");
-  const barAIRefined = document.getElementById("barAIRefined");
-  const barHumanRefined = document.getElementById("barHumanRefined");
-  const barHuman = document.getElementById("barHuman");
+  const inspectorTitle = $("inspectorTitle");
+  const inspectorContent = $("inspectorContent");
+  const btnPrevSentence = $("btnPrevSentence");
+  const btnNextSentence = $("btnNextSentence");
 
-  const pctAIGen = document.getElementById("pctAIGen");
-  const pctAIRefined = document.getElementById("pctAIRefined");
-  const pctHumanRefined = document.getElementById("pctHumanRefined");
-  const pctHuman = document.getElementById("pctHuman");
-
-  // Inspector & Telemetry
-  const sentenceCountsSummary = document.getElementById("sentenceCountsSummary");
-  const inspectorContent = document.getElementById("inspectorContent");
-  const telemetryLatency = document.getElementById("telemetryLatency");
-  const telemetryMemory = document.getElementById("telemetryMemory");
-
-  // Mathematical Forensic Equations
-  const mathValAffinity = document.getElementById("mathValAffinity");
-  const mathValBurstiness = document.getElementById("mathValBurstiness");
-  const mathValDiscourse = document.getElementById("mathValDiscourse");
-  const mathValBinoculars = document.getElementById("mathValBinoculars");
-  const mathValRichness = document.getElementById("mathValRichness");
-  const mathAffinityBadge = document.getElementById("mathAffinityBadge");
+  const engineStatus = $("engineStatus");
+  const engineStatusText = $("engineStatusText");
 
   let currentAnalysisData = null;
+  let currentSentences = [];
+  let activeSentence = -1;
   let archetypeSamples = {};
   let comparisonSheetData = [];
 
-  // Theme Management
-  const savedTheme = localStorage.getItem("veritas_theme") || "light";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+  // The backend's 4 classes, in spectrum order (most AI first).
+  const CLASSES = [
+    { key: "ai_generated", label: "AI-generated", short: "AI", tone: "ai" },
+    { key: "ai_ai_refined", label: "AI-generated, then paraphrased", short: "paraphrased AI", tone: "ai-refined" },
+    { key: "human_ai_refined", label: "Human-written, AI-refined", short: "AI-refined", tone: "human-refined" },
+    { key: "human", label: "Human-written", short: "human", tone: "human" },
+  ];
+  const PROB_KEYS = {
+    "AI-generated": "ai",
+    "AI-generated & AI-refined": "ai-refined",
+    "Human-written & AI-refined": "human-refined",
+    "Human-written": "human",
+  };
+  const TONE_FROM_CLASS_KEY = {
+    ai_generated: "ai", ai_ai_refined: "ai-refined",
+    human_ai_refined: "human-refined", human: "human", uncertain: "uncertain",
+  };
+  const TONE_FROM_BADGE = {
+    "badge-danger": "ai", "badge-ai": "ai",
+    "badge-orange": "ai-refined", "badge-ai-refined": "ai-refined",
+    "badge-warning": "human-refined", "badge-human-refined": "human-refined",
+    "badge-success": "human", "badge-human": "human",
+  };
+  const toneVar = (tone) => `var(--c-${tone})`;
+  // Show the backend's class names in the same words the rest of the page uses.
+  const DISPLAY_LABEL = {
+    "AI-generated & AI-refined": "AI-generated, then paraphrased",
+    "Human-written & AI-refined": "Human-written, AI-refined",
+  };
+  const displayLabel = (label) => DISPLAY_LABEL[label] || label;
+  const SHORT_LABEL = {
+    "AI-generated": "AI",
+    "AI-generated & AI-refined": "Paraphrased AI",
+    "Human-written & AI-refined": "AI-refined human",
+    "Human-written": "Human",
+  };
 
+  // ---------- theme ----------
+
+  function syncThemeButton() {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    themeToggleBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  }
+  syncThemeButton();
   themeToggleBtn.addEventListener("click", () => {
-    const curr = document.documentElement.getAttribute("data-theme");
-    const next = curr === "dark" ? "light" : "dark";
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("veritas_theme", next);
+    try { localStorage.setItem("veritas_theme", next); } catch (e) { /* storage unavailable */ }
+    syncThemeButton();
   });
 
-  // Live Text Metrics
+  // ---------- engine status ----------
+
+  async function checkEngine() {
+    try {
+      const resp = await fetch("/api/health");
+      if (!resp.ok) throw new Error();
+      const h = await resp.json();
+      engineStatus.classList.add("is-online");
+      engineStatusText.textContent = `Offline engine ready, ${h.cpu_threads || 2} CPU threads`;
+      if (h.cpu_threads) $("telemetryThreads").textContent = h.cpu_threads;
+      if (h.process_ram_mb) $("telemetryMemory").textContent = `${Math.round(h.process_ram_mb)} MB of ${Number(h.target_ram_cap_mb || 1500).toLocaleString()} MB`;
+    } catch (e) {
+      engineStatus.classList.add("is-offline");
+      engineStatusText.textContent = "Engine not responding";
+    }
+  }
+
+  // ---------- errors ----------
+
+  function showError(msg) {
+    formError.textContent = msg;
+    formError.hidden = false;
+  }
+  function clearError() {
+    formError.hidden = true;
+    formError.textContent = "";
+  }
+
+  // ---------- counters ----------
+
   function updateTextCounters() {
     const text = textInput.value;
-    const chars = text.length;
     const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-    const sents = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
+    const sents = text.trim() ? text.split(/[.!?]+/).filter((s) => s.trim().length > 0).length : 0;
 
-    wordCountLabel.textContent = `${words} words`;
-    charCountLabel.textContent = `${chars} chars`;
-    sentCountLabel.textContent = `${sents} sentences`;
+    wordCountLabel.textContent = `${words.toLocaleString()} ${words === 1 ? "word" : "words"}`;
+    sentCountLabel.textContent = `${sents.toLocaleString()} ${sents === 1 ? "sentence" : "sentences"}`;
 
     if (words === 0) {
-      wordGuideBadge.className = "guide-badge ok";
-      wordGuideBadge.textContent = "Optimal: 80–2,000 words";
+      wordGuideBadge.className = "guide";
+      wordGuideBadge.textContent = "80–2,000 words recommended";
     } else if (words < 80) {
-      wordGuideBadge.className = "guide-badge warn";
-      wordGuideBadge.textContent = `Short text (${words}w) — 80+ words recommended`;
+      wordGuideBadge.className = "guide warn";
+      wordGuideBadge.textContent = `Add ${80 - words} more for a reliable result`;
     } else if (words > 2000) {
-      wordGuideBadge.className = "guide-badge warn";
-      wordGuideBadge.textContent = `Long text (${words}w) — analyzing first 2,000 words`;
+      wordGuideBadge.className = "guide warn";
+      wordGuideBadge.textContent = "Only the first 2,000 words are checked";
     } else {
-      wordGuideBadge.className = "guide-badge ok";
-      wordGuideBadge.textContent = "Optimal length for forensic confidence";
+      wordGuideBadge.className = "guide ok";
+      wordGuideBadge.textContent = "Good length";
     }
   }
-
-  textInput.addEventListener("input", updateTextCounters);
-
-  // Clear
-  btnClear.addEventListener("click", () => {
-    textInput.value = "";
+  textInput.addEventListener("input", () => {
     updateTextCounters();
-    switchToEditMode();
-    resultsPlaceholder.style.display = "flex";
-    activeResultsContent.style.display = "none";
-    btnModeHeatmap.disabled = true;
-    heatmapSentCountBadge.style.display = "none";
-    currentAnalysisData = null;
+    clearError();
+    markLoadedChip(null);
   });
 
-  // Paste
-  btnPaste.addEventListener("click", async () => {
-    try {
-      const clipText = await navigator.clipboard.readText();
-      textInput.value = clipText;
-      updateTextCounters();
-      switchToEditMode();
-    } catch (e) {
-      console.warn("Clipboard access denied:", e);
-    }
-  });
+  // ---------- view modes ----------
 
-  // Upload File Handling
-  btnUpload.addEventListener("click", () => {
-    fileUploadInput.click();
-  });
-
-  fileUploadInput.addEventListener("change", async (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      await handleFileUpload(file);
-    }
-    fileUploadInput.value = "";
-  });
-
-  // Drag and drop onto editor
-  editorDropZone.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    dragDropOverlay.style.display = "flex";
-  });
-
-  editorDropZone.addEventListener("dragleave", (e) => {
-    e.preventDefault();
-    dragDropOverlay.style.display = "none";
-  });
-
-  editorDropZone.addEventListener("drop", async (e) => {
-    e.preventDefault();
-    dragDropOverlay.style.display = "none";
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const file = e.dataTransfer.files[0];
-      await handleFileUpload(file);
-    }
-  });
-
-  async function handleFileUpload(file) {
-    const formData = new FormData();
-    formData.append("file", file);
-
-    btnAnalyze.disabled = true;
-    btnAnalyze.innerHTML = `<span>Uploading...</span>`;
-
-    try {
-      const resp = await fetch("/api/upload", {
-        method: "POST",
-        body: formData
-      });
-
-      if (!resp.ok) {
-        const err = await resp.json();
-        throw new Error(err.detail || "File processing failed.");
-      }
-
-      const data = await resp.json();
-      textInput.value = data.document_text || data.text || "";
-      updateTextCounters();
-      currentAnalysisData = data;
-      renderAnalysisResults(data);
-    } catch (err) {
-      alert(`Upload error: ${err.message}`);
-    } finally {
-      btnAnalyze.disabled = false;
-      resetAnalyzeButtonText();
-    }
-  }
-
-  // View Mode Switching
   function switchToEditMode() {
     btnModeEdit.classList.add("active");
     btnModeHeatmap.classList.remove("active");
-    textInput.style.display = "block";
-    heatmapViewer.style.display = "none";
+    btnModeEdit.setAttribute("aria-selected", "true");
+    btnModeHeatmap.setAttribute("aria-selected", "false");
+    textInput.hidden = false;
+    heatmapViewer.hidden = true;
   }
 
   function switchToHeatmapMode() {
     if (!currentAnalysisData) return;
     btnModeHeatmap.classList.add("active");
     btnModeEdit.classList.remove("active");
-    textInput.style.display = "none";
-    heatmapViewer.style.display = "block";
+    btnModeHeatmap.setAttribute("aria-selected", "true");
+    btnModeEdit.setAttribute("aria-selected", "false");
+    textInput.hidden = true;
+    heatmapViewer.hidden = false;
   }
 
-  btnModeEdit.addEventListener("click", switchToEditMode);
+  btnModeEdit.addEventListener("click", () => { switchToEditMode(); textInput.focus(); });
   btnModeHeatmap.addEventListener("click", switchToHeatmapMode);
 
-  // Keyboard shortcut Ctrl+Enter
+  function resetResults() {
+    currentAnalysisData = null;
+    currentSentences = [];
+    activeSentence = -1;
+    resultsPlaceholder.hidden = false;
+    activeResultsContent.hidden = true;
+    btnModeHeatmap.disabled = true;
+    heatmapSentCountBadge.hidden = true;
+    heatmapViewer.innerHTML = "";
+    switchToEditMode();
+  }
+
+  // ---------- input actions ----------
+
+  btnClear.addEventListener("click", () => {
+    textInput.value = "";
+    updateTextCounters();
+    clearError();
+    markLoadedChip(null);
+    resetResults();
+    textInput.focus();
+  });
+
+  btnPaste.addEventListener("click", async () => {
+    try {
+      const clipText = await navigator.clipboard.readText();
+      if (!clipText) return;
+      textInput.value = clipText;
+      updateTextCounters();
+      clearError();
+      switchToEditMode();
+    } catch (e) {
+      showError("Your browser blocked clipboard access. Press Ctrl+V in the text box instead.");
+      textInput.focus();
+    }
+  });
+
+  btnUpload.addEventListener("click", () => fileUploadInput.click());
+  fileUploadInput.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (file) await handleFileUpload(file);
+    fileUploadInput.value = "";
+  });
+
+  // Drag a file anywhere onto the sheet.
+  let dragDepth = 0;
+  editorDropZone.addEventListener("dragenter", (e) => {
+    if (!e.dataTransfer || !Array.from(e.dataTransfer.types || []).includes("Files")) return;
+    e.preventDefault();
+    dragDepth++;
+    dragDropOverlay.hidden = false;
+  });
+  editorDropZone.addEventListener("dragover", (e) => {
+    if (!dragDropOverlay.hidden) e.preventDefault();
+  });
+  editorDropZone.addEventListener("dragleave", () => {
+    dragDepth = Math.max(0, dragDepth - 1);
+    if (dragDepth === 0) dragDropOverlay.hidden = true;
+  });
+  editorDropZone.addEventListener("drop", async (e) => {
+    e.preventDefault();
+    dragDepth = 0;
+    dragDropOverlay.hidden = true;
+    const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    if (file) await handleFileUpload(file);
+  });
+
   textInput.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
       runAnalysis();
     }
   });
-
   btnAnalyze.addEventListener("click", runAnalysis);
 
-  function resetAnalyzeButtonText() {
-    btnAnalyze.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <span>Analyze Text</span>
-      <kbd class="shortcut-key">Ctrl+Enter</kbd>
-    `;
+  // ---------- busy state ----------
+
+  const analyzeLabel = btnAnalyze.querySelector(".btn-label");
+  function setBusy(busy, label) {
+    btnAnalyze.disabled = busy;
+    btnUpload.disabled = busy;
+    btnAnalyze.setAttribute("aria-busy", busy ? "true" : "false");
+    const spinner = btnAnalyze.querySelector(".spinner");
+    if (busy && !spinner) {
+      const s = document.createElement("span");
+      s.className = "spinner";
+      s.setAttribute("aria-hidden", "true");
+      btnAnalyze.prepend(s);
+    } else if (!busy && spinner) {
+      spinner.remove();
+    }
+    analyzeLabel.textContent = busy ? label : "Check text";
   }
 
-  // Run Analysis Call
+  async function readError(resp, fallback) {
+    try {
+      const err = await resp.json();
+      return err.detail || fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function getThreshold() {
+    const v = parseFloat(thresholdInput.value);
+    if (Number.isNaN(v)) return 0.40;
+    return Math.min(0.70, Math.max(0.30, v));
+  }
+
   async function runAnalysis() {
     const text = textInput.value.trim();
     if (!text) {
-      alert("Please paste or write some text before analyzing.");
+      showError("Paste or type some text first. 80 words or more gives a reliable result.");
+      switchToEditMode();
+      textInput.focus();
       return;
     }
-
-    const threshold = parseFloat(thresholdInput.value) || 0.40;
-
-    btnAnalyze.disabled = true;
-    btnAnalyze.innerHTML = `<span>Analyzing with ONNX...</span>`;
-
+    clearError();
+    setBusy(true, "Checking");
     try {
       const resp = await fetch("/api/detect", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          text: text,
-          confidence_threshold: threshold
-        })
+        body: JSON.stringify({ text, confidence_threshold: getThreshold() }),
       });
-
-      if (!resp.ok) {
-        const err = await resp.json();
-        throw new Error(err.detail || "Analysis request failed.");
-      }
-
+      if (!resp.ok) throw new Error(await readError(resp, "The engine couldn't check this text."));
       const data = await resp.json();
       currentAnalysisData = data;
       renderAnalysisResults(data);
     } catch (err) {
-      alert(`Detection error: ${err.message}`);
+      showError(err.message === "Failed to fetch"
+        ? "Can't reach the Veritas engine. Make sure run.py is still running, then try again."
+        : err.message);
     } finally {
-      btnAnalyze.disabled = false;
-      resetAnalyzeButtonText();
+      setBusy(false);
     }
   }
 
-  // Render Results
+  async function handleFileUpload(file) {
+    const okType = /\.(pdf|docx|txt)$/i.test(file.name);
+    if (!okType) {
+      showError(`"${file.name}" isn't supported. Upload a PDF, Word (.docx) or .txt file.`);
+      return;
+    }
+    clearError();
+    const formData = new FormData();
+    formData.append("file", file);
+    setBusy(true, "Reading file");
+    try {
+      const resp = await fetch("/api/upload", { method: "POST", body: formData });
+      if (!resp.ok) throw new Error(await readError(resp, "That file couldn't be read."));
+      const data = await resp.json();
+      // The upload endpoint returns sentences rather than the raw text, so rebuild it.
+      const text = data.document_text || data.text || (data.sentences || []).map((s) => s.text).join(" ");
+      textInput.value = text;
+      updateTextCounters();
+      markLoadedChip(null);
+      currentAnalysisData = data;
+      renderAnalysisResults(data);
+    } catch (err) {
+      showError(err.message === "Failed to fetch"
+        ? "Can't reach the Veritas engine. Make sure run.py is still running, then try again."
+        : err.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // ---------- rendering ----------
+
+  function fmtPct(v) {
+    const n = Number(v) || 0;
+    return `${n % 1 === 0 ? n.toFixed(0) : n.toFixed(1)}%`;
+  }
+
+  function verdictTone(summary) {
+    if (summary.is_uncertain) return "uncertain";
+    return TONE_FROM_BADGE[summary.badge] || TONE_FROM_BADGE[summary.quillbot_headline_class] || "uncertain";
+  }
+
+  const ICONS = {
+    human: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    "human-refined": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+    "ai-refined": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-15.7-6L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15.7 6L21 16"/><path d="M16 21h5v-5"/></svg>',
+    ai: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3.5" r=".5"/><path d="M9 13v1.5M15 13v1.5"/></svg>',
+    uncertain: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 9a3 3 0 0 1 5.6 1c0 2-3 2.5-3 4.5"/><path d="M12 18.5h.01"/></svg>',
+  };
+
   function renderAnalysisResults(data) {
-    resultsPlaceholder.style.display = "none";
-    activeResultsContent.style.display = "flex";
-    btnModeHeatmap.disabled = false;
-
-    const summary = data.summary;
-    const pcts = data.percentages;
+    const summary = data.summary || {};
+    const pcts = data.percentages || {};
     const sentences = data.sentences || [];
+    currentSentences = sentences;
 
-    heatmapSentCountBadge.textContent = sentences.length;
-    heatmapSentCountBadge.style.display = "inline-block";
+    resultsPlaceholder.hidden = true;
+    activeResultsContent.hidden = false;
+    btnModeHeatmap.disabled = sentences.length === 0;
 
-    // QuillBot Replica Headline Card
-    if (qbHeadlineText && summary.quillbot_headline) {
-      qbHeadlineText.textContent = summary.quillbot_headline;
-      if (qbHeadlinePulse) {
-        qbHeadlinePulse.className = "qb-headline-pulse";
-        if (summary.quillbot_ai_pct >= 50.0) {
-          qbHeadlinePulse.classList.add("pulse-ai");
-        } else if (summary.quillbot_ai_pct > 0.0) {
-          qbHeadlinePulse.classList.add("pulse-refined");
-        } else {
-          qbHeadlinePulse.classList.add("pulse-human");
-        }
-      }
-    }
+    // Count the sentences that carry a mark.
+    const marked = sentences.filter((s) => s.highlight_class === "highlight-ai" || s.highlight_class === "highlight-ai-refined").length;
+    heatmapSentCountBadge.textContent = marked;
+    heatmapSentCountBadge.hidden = marked === 0;
 
-    // Document Verdict Card
-    verdictTitle.textContent = summary.verdict;
-    verdictDescription.textContent = summary.verdict_description;
-    confidenceTag.textContent = `${summary.confidence_pct}% Confidence`;
+    // Score
+    const aiPct = Number(summary.quillbot_ai_pct ?? ((pcts.ai_generated || 0) + (pcts.ai_ai_refined || 0)));
+    const scoreEl = $("qbHeadlineBanner");
+    // Color the score by whichever AI class dominates; human blue when nothing is flagged.
+    scoreEl.dataset.tone = aiPct <= 0 ? "human"
+      : (Number(pcts.ai_ai_refined) || 0) > (Number(pcts.ai_generated) || 0) ? "ai-refined" : "ai";
+    $("scoreNumber").textContent = aiPct % 1 === 0 ? aiPct.toFixed(0) : aiPct.toFixed(1);
+    $("qbHeadlineText").textContent = "of the text is likely AI";
 
-    verdictBadge.textContent = summary.verdict;
-    verdictBadge.className = `verdict-badge ${summary.badge}`;
+    // Spectrum + rows
+    const barIds = { ai_generated: "stackBarAI", ai_ai_refined: "stackBarAIRefined", human_ai_refined: "stackBarHumanRefined", human: "stackBarHuman" };
+    const pctIds = { ai_generated: "pctAIGen", ai_ai_refined: "pctAIRefined", human_ai_refined: "pctHumanRefined", human: "pctHuman" };
+    const ariaParts = [];
+    CLASSES.forEach((c) => {
+      const v = Number(pcts[c.key]) || 0;
+      $(barIds[c.key]).style.width = `${v}%`;
+      const pctEl = $(pctIds[c.key]);
+      pctEl.textContent = fmtPct(v);
+      pctEl.parentElement.classList.toggle("is-zero", v === 0);
+      ariaParts.push(`${c.label} ${fmtPct(v)}`);
+    });
+    $("spectrumBar").setAttribute("aria-label", ariaParts.join(", "));
 
-    // Verdict Icon
-    renderVerdictIcon(summary.badge);
+    // Verdict
+    const tone = verdictTone(summary);
+    const iconBox = $("verdictIconBox");
+    iconBox.dataset.tone = tone;
+    iconBox.innerHTML = ICONS[tone] || ICONS.uncertain;
+    $("verdictTitle").textContent = summary.is_uncertain ? "Not enough signal to decide" : displayLabel(summary.verdict || "—");
+    $("confidenceTag").textContent = summary.confidence_pct != null ? `${summary.confidence_pct}% confidence` : "";
+    $("verdictDescription").textContent = summary.verdict_description || "";
+    $("uncertainAlertBanner").hidden = !summary.is_uncertain;
+    const lw = $("lengthWarning");
+    lw.hidden = !summary.length_warning;
+    lw.textContent = summary.length_warning || "";
 
-    // Uncertain Banner Handling
-    if (summary.is_uncertain) {
-      uncertainAlertBanner.style.display = "flex";
-    } else {
-      uncertainAlertBanner.style.display = "none";
-    }
+    const counts = { ai: 0, "ai-refined": 0, "human-refined": 0, human: 0 };
+    sentences.forEach((s) => {
+      const t = TONE_FROM_CLASS_KEY[s.class_key];
+      if (t in counts) counts[t]++;
+    });
+    const total = sentences.length;
+    const flaggedCount = counts.ai + counts["ai-refined"];
+    $("sentenceCountsSummary").textContent = total
+      ? `${flaggedCount} of ${total} sentences marked as AI`
+      : "";
 
-    // Composite Stacked Bar
-    stackBarAI.style.width = `${pcts.ai_generated}%`;
-    stackBarAIRefined.style.width = `${pcts.ai_ai_refined}%`;
-    stackBarHumanRefined.style.width = `${pcts.human_ai_refined}%`;
-    stackBarHuman.style.width = `${pcts.human}%`;
+    // Signals
+    const m = data.mathematical_equations || {};
+    const st = data.stylometrics || {};
+    const num = (v, d) => (v == null || Number.isNaN(Number(v)) ? "—" : Number(v).toFixed(d));
+    $("mathValBurstiness").textContent = num(m.syntactic_burstiness_b, 3);
+    $("mathValRichness").textContent = num(m.lexical_richness_omega, 3);
+    $("mathValDiscourse").textContent = m.discourse_polarity_phi == null ? "—" : (m.discourse_polarity_phi > 0 ? "+" : "") + num(m.discourse_polarity_phi, 3);
+    $("mathValBinoculars").textContent = num(m.binoculars_ratio_r, 2);
+    $("mathValAffinity").textContent = m.authorial_affinity_lambda == null ? "—" : (m.authorial_affinity_lambda > 0 ? "+" : "") + num(m.authorial_affinity_lambda, 3);
+    const rd = st.readability || {};
+    $("valGrade").textContent = num(rd.flesch_kincaid_grade, 1);
+    $("valWps").textContent = num(rd.words_per_sentence, 1);
+    const dp = st.discourse_punctuation || {};
+    $("valContractions").textContent = num(dp.contraction_rate, 1);
 
-    // Individual Percentage Meters
-    pctAIGen.textContent = `${pcts.ai_generated.toFixed(1)}%`;
-    barAIGen.style.width = `${pcts.ai_generated}%`;
-
-    pctAIRefined.textContent = `${pcts.ai_ai_refined.toFixed(1)}%`;
-    barAIRefined.style.width = `${pcts.ai_ai_refined}%`;
-
-    pctHumanRefined.textContent = `${pcts.human_ai_refined.toFixed(1)}%`;
-    barHumanRefined.style.width = `${pcts.human_ai_refined}%`;
-
-    pctHuman.textContent = `${pcts.human.toFixed(1)}%`;
-    barHuman.style.width = `${pcts.human}%`;
-
-    // Telemetry Latency & Memory
-    telemetryLatency.textContent = `${summary.elapsed_seconds.toFixed(2)}s`;
-    if (telemetryMemory) {
-      telemetryMemory.textContent = `~152 MB (Cap: 1,500 MB)`;
-    }
-
-    // Populate Mathematical Forensic Equations
-    const mathEqs = data.mathematical_equations || {};
-    if (mathValAffinity && mathEqs.authorial_affinity_lambda !== undefined) {
-      mathValAffinity.textContent = mathEqs.authorial_affinity_lambda.toFixed(4);
-      mathValBurstiness.textContent = mathEqs.syntactic_burstiness_b !== undefined ? mathEqs.syntactic_burstiness_b.toFixed(4) : "—";
-      const phi = mathEqs.discourse_polarity_phi;
-      mathValDiscourse.textContent = phi !== undefined ? (phi > 0 ? "+" : "") + phi.toFixed(4) : "—";
-      mathValBinoculars.textContent = mathEqs.binoculars_ratio_r !== undefined ? mathEqs.binoculars_ratio_r.toFixed(3) : "—";
-      mathValRichness.textContent = mathEqs.lexical_richness_omega !== undefined ? mathEqs.lexical_richness_omega.toFixed(4) : "—";
-      mathAffinityBadge.textContent = "Λ_auth: " + mathEqs.authorial_affinity_lambda.toFixed(3);
-    }
-
-    // Sentence Highlight Counts
-    renderSentenceCounts(sentences);
-
-    // Render Heatmap Content
-    renderHeatmapSpans(sentences);
-
-    // Automatically switch to Heatmap View so user sees highlights immediately
-    switchToHeatmapMode();
-  }
-
-  function renderVerdictIcon(badgeClass) {
-    let iconSvg = "";
-    let boxClass = "";
-
-    if (badgeClass.includes("badge-human")) {
-      boxClass = "badge-human";
-      iconSvg = `
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-      `;
-    } else if (badgeClass.includes("badge-ai-refined") || badgeClass.includes("badge-human-refined")) {
-      boxClass = badgeClass.includes("ai-refined") ? "badge-ai-refined" : "badge-human-refined";
-      iconSvg = `
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-          <path d="M3 3v5h5"/>
-          <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
-          <path d="M16 21h5v-5"/>
-        </svg>
-      `;
-    } else if (badgeClass.includes("badge-ai")) {
-      boxClass = "badge-ai";
-      iconSvg = `
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="10" rx="2"/>
-          <circle cx="12" cy="5" r="2"/>
-          <path d="M12 7v4"/>
-          <line x1="8" y1="16" x2="8" y2="16"/>
-          <line x1="16" y1="16" x2="16" y2="16"/>
-        </svg>
-      `;
-    } else {
-      boxClass = "badge-uncertain";
-      iconSvg = `
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
-      `;
-    }
-
-    verdictIconBox.className = `verdict-icon-box ${boxClass}`;
-    verdictIconBox.innerHTML = iconSvg;
-  }
-
-  function renderSentenceCounts(sentences) {
-    let ai = 0, aiRef = 0, humRef = 0, hum = 0;
-    sentences.forEach(s => {
-      const cls = s.highlight_class;
-      if (cls === "highlight-ai") ai++;
-      else if (cls === "highlight-ai-refined") aiRef++;
-      else if (cls === "highlight-human-refined") humRef++;
-      else hum++;
+    const words = dp.detected_ai_samples || [];
+    $("flaggedWords").hidden = words.length === 0;
+    const list = $("flaggedWordsList");
+    list.innerHTML = "";
+    words.forEach((w) => {
+      const span = document.createElement("span");
+      span.textContent = w;
+      list.appendChild(span);
     });
 
-    sentenceCountsSummary.innerHTML = `
-      ${ai > 0 ? `<span class="count-pill badge-ai">${ai} AI</span>` : ""}
-      ${aiRef > 0 ? `<span class="count-pill badge-ai-refined">${aiRef} AI-Refined</span>` : ""}
-      ${humRef > 0 ? `<span class="count-pill badge-human-refined">${humRef} Polished</span>` : ""}
-      <span class="count-pill badge-human">${hum} Human</span>
-    `;
+    $("telemetryLatency").textContent = summary.elapsed_seconds != null ? `${Number(summary.elapsed_seconds).toFixed(2)} s` : "—";
+
+    // Document
+    renderHeatmapSpans(sentences);
+    switchToHeatmapMode();
+    heatmapViewer.scrollTop = 0;
   }
 
   function renderHeatmapSpans(sentences) {
     heatmapViewer.innerHTML = "";
+    heatmapViewer.classList.remove("is-revealing");
+    const inner = document.createElement("div");
+    inner.className = "doc-inner";
 
     sentences.forEach((s, idx) => {
       const span = document.createElement("span");
-      span.className = `sentence-span ${s.highlight_class}`;
-      span.textContent = s.text + " ";
+      span.className = `sentence-span ${s.highlight_class || "highlight-human"}`;
+      span.textContent = s.text;
       span.dataset.index = idx;
-
-      span.addEventListener("click", () => {
-        document.querySelectorAll(".sentence-span").forEach(el => el.classList.remove("active"));
-        span.classList.add("active");
-        renderInspectorDetails(s);
+      span.tabIndex = 0;
+      span.setAttribute("role", "button");
+      span.setAttribute("aria-label", `Sentence ${idx + 1}: ${displayLabel(s.class_label)}`);
+      span.style.setProperty("--i", Math.min(idx, 30));
+      span.addEventListener("click", () => selectSentence(idx));
+      span.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectSentence(idx);
+        }
       });
-
-      heatmapViewer.appendChild(span);
+      inner.appendChild(span);
+      inner.appendChild(document.createTextNode(" "));
     });
 
-    // Auto-select first sentence
+    heatmapViewer.appendChild(inner);
+    // Restart the sweep animation on each new result.
+    void heatmapViewer.offsetWidth;
+    heatmapViewer.classList.add("is-revealing");
+
     if (sentences.length > 0) {
-      const firstSpan = heatmapViewer.querySelector(".sentence-span");
-      if (firstSpan) {
-        firstSpan.classList.add("active");
-        renderInspectorDetails(sentences[0]);
-      }
+      // Start the inspector on the first marked sentence, if any.
+      const firstMarked = sentences.findIndex((s) => s.highlight_class === "highlight-ai" || s.highlight_class === "highlight-ai-refined");
+      selectSentence(firstMarked >= 0 ? firstMarked : 0, { scroll: false });
+    } else {
+      inspectorTitle.textContent = "No sentences";
+      inspectorContent.textContent = "";
     }
   }
 
-  function renderInspectorDetails(sent) {
-    const reasonsHtml = (sent.reasons || []).map(r => `<li>${r}</li>`).join("");
-
-    inspectorContent.innerHTML = `
-      <div class="inspector-sentence-text">"${sent.text}"</div>
-      <div class="inspector-meta-row">
-        <span>Classification: <strong>${sent.class_label}</strong></span>
-        <span>Confidence: <strong>${(sent.confidence * 100).toFixed(1)}%</strong></span>
-      </div>
-      <div class="inspector-meta-row">
-        <span>AI Likelihood Score: <strong>${sent.ai_likelihood_pct}%</strong></span>
-      </div>
-      <div style="font-size: 0.76rem; font-weight: 700; margin-top: 8px; margin-bottom: 4px; color: var(--text-muted); text-transform: uppercase;">
-        Forensic Indicators:
-      </div>
-      <ul class="inspector-reasons-list">
-        ${reasonsHtml || "<li>Natural phrasing and vocabulary variance</li>"}
-      </ul>
-    `;
+  function selectSentence(idx, opts = {}) {
+    if (idx < 0 || idx >= currentSentences.length) return;
+    activeSentence = idx;
+    heatmapViewer.querySelectorAll(".sentence-span.active").forEach((el) => el.classList.remove("active"));
+    const span = heatmapViewer.querySelector(`.sentence-span[data-index="${idx}"]`);
+    if (span) {
+      span.classList.add("active");
+      if (opts.scroll !== false && !heatmapViewer.hidden) span.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+    renderInspectorDetails(currentSentences[idx], idx);
   }
 
-  // Copy Summary Report
+  btnPrevSentence.addEventListener("click", () => selectSentence(activeSentence - 1));
+  btnNextSentence.addEventListener("click", () => selectSentence(activeSentence + 1));
+
+  function renderInspectorDetails(sent, idx) {
+    const tone = TONE_FROM_CLASS_KEY[sent.class_key] || "uncertain";
+    inspectorTitle.textContent = `Sentence ${idx + 1} of ${currentSentences.length}`;
+    btnPrevSentence.disabled = idx <= 0;
+    btnNextSentence.disabled = idx >= currentSentences.length - 1;
+
+    inspectorContent.innerHTML = "";
+    inspectorContent.style.setProperty("--tone", toneVar(tone));
+
+    const quote = document.createElement("blockquote");
+    quote.className = "insp-quote";
+    quote.textContent = sent.text;
+    inspectorContent.appendChild(quote);
+
+    const cls = document.createElement("div");
+    cls.className = "insp-class";
+    const strong = document.createElement("strong");
+    strong.textContent = displayLabel(sent.class_label);
+    const meta = document.createElement("span");
+    meta.textContent = `${sent.ai_likelihood_pct}% AI likelihood`;
+    cls.append(strong, meta);
+    inspectorContent.appendChild(cls);
+
+    const probs = sent.probabilities || {};
+    const dl = document.createElement("dl");
+    dl.className = "probs";
+    ["AI-generated", "AI-generated & AI-refined", "Human-written & AI-refined", "Human-written"].forEach((k) => {
+      if (!(k in probs)) return;
+      const v = Math.max(0, Math.min(1, Number(probs[k]) || 0));
+      const row = document.createElement("div");
+      row.className = "prob";
+      const dt = document.createElement("dt");
+      dt.textContent = SHORT_LABEL[k];
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      const fill = document.createElement("i");
+      fill.style.width = `${(v * 100).toFixed(1)}%`;
+      fill.style.background = toneVar(PROB_KEYS[k]);
+      bar.appendChild(fill);
+      const dd = document.createElement("dd");
+      dd.textContent = `${Math.round(v * 100)}%`;
+      row.append(dt, bar, dd);
+      dl.appendChild(row);
+    });
+    inspectorContent.appendChild(dl);
+
+    const reasons = sent.reasons && sent.reasons.length ? sent.reasons : ["Natural phrasing and varied vocabulary."];
+    const ul = document.createElement("ul");
+    ul.className = "reasons";
+    reasons.forEach((r) => {
+      const li = document.createElement("li");
+      li.textContent = r;
+      ul.appendChild(li);
+    });
+    inspectorContent.appendChild(ul);
+  }
+
+  // Arrow keys step through sentences while the marked-up view is open.
+  document.addEventListener("keydown", (e) => {
+    if (heatmapViewer.hidden || !currentSentences.length) return;
+    const tag = (e.target.tagName || "").toLowerCase();
+    if (tag === "textarea" || tag === "input" || tag === "select") return;
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      if (activeSentence < currentSentences.length - 1) { e.preventDefault(); selectSentence(activeSentence + 1); }
+    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      if (activeSentence > 0) { e.preventDefault(); selectSentence(activeSentence - 1); }
+    }
+  });
+
+  // ---------- copy summary ----------
+
+  const copyLabel = btnCopyReport.querySelector(".btn-label");
   btnCopyReport.addEventListener("click", async () => {
     if (!currentAnalysisData) return;
-    const s = currentAnalysisData.summary;
-    const p = currentAnalysisData.percentages;
+    const s = currentAnalysisData.summary || {};
+    const p = currentAnalysisData.percentages || {};
     const report = [
-      `=== VERITAS AI DETECTION REPORT ===`,
-      `QuillBot Headline: ${s.quillbot_headline || "N/A"}`,
-      `Final Verdict: ${s.verdict} (${s.confidence_pct}% Confidence)`,
-      `Status: ${s.is_uncertain ? "Uncertain (Confidence below cutoff)" : "High Certainty"}`,
-      `Document Breakdown:`,
-      `  • AI-generated: ${p.ai_generated.toFixed(1)}%`,
-      `  • AI-generated & AI-refined: ${p.ai_ai_refined.toFixed(1)}%`,
-      `  • Human-written & AI-refined: ${p.human_ai_refined.toFixed(1)}%`,
-      `  • Human-written: ${p.human.toFixed(1)}%`,
-      `Analysis Latency: ${s.elapsed_seconds.toFixed(2)}s on 2 CPU Threads (ONNX INT8)`,
-      `==================================`
+      "Veritas AI detection summary",
+      "",
+      `${s.quillbot_headline || ""}`,
+      `Verdict: ${s.is_uncertain ? "Withheld (below uncertainty cutoff)" : s.verdict} (${s.confidence_pct}% confidence)`,
+      "",
+      "Breakdown",
+      ...CLASSES.map((c) => `  ${c.label}: ${fmtPct(p[c.key])}`),
+      "",
+      `Words: ${s.word_count ?? "—"}, sentences: ${s.sentence_count ?? "—"}`,
+      `Checked offline in ${s.elapsed_seconds != null ? Number(s.elapsed_seconds).toFixed(2) : "—"} s`,
     ].join("\n");
-
     try {
       await navigator.clipboard.writeText(report);
-      const origText = btnCopyReport.querySelector("span").textContent;
-      btnCopyReport.querySelector("span").textContent = "Copied to Clipboard!";
-      setTimeout(() => {
-        btnCopyReport.querySelector("span").textContent = origText;
-      }, 2000);
+      copyLabel.textContent = "Copied";
     } catch (e) {
-      alert("Could not copy report to clipboard.");
+      copyLabel.textContent = "Copy blocked by browser";
     }
+    setTimeout(() => { copyLabel.textContent = "Copy summary"; }, 1800);
   });
 
-  // Quick-Test Sample Pills Setup
-  document.querySelectorAll(".sample-pill").forEach(pill => {
-    pill.addEventListener("click", () => {
-      const sampleKey = pill.getAttribute("data-sample");
-      if (archetypeSamples[sampleKey]) {
-        textInput.value = archetypeSamples[sampleKey].text;
-        updateTextCounters();
-        switchToEditMode();
+  // ---------- samples ----------
+
+  function markLoadedChip(chip) {
+    document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("is-loaded", c === chip));
+    if (chip) sampleSelect.value = "";
+  }
+
+  function loadSampleText(text) {
+    textInput.value = text;
+    updateTextCounters();
+    clearError();
+    resetResults();
+  }
+
+  document.querySelectorAll(".chip[data-sample]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const sample = archetypeSamples[chip.dataset.sample];
+      if (!sample) {
+        showError("Samples are still loading. Try again in a moment.");
+        return;
       }
+      loadSampleText(sample.text);
+      markLoadedChip(chip);
     });
   });
 
-  // Load Pre-loaded Benchmark Samples & Comparison Sheet
+  sampleSelect.addEventListener("change", (e) => {
+    const found = comparisonSheetData.find((s) => s.id === e.target.value);
+    if (found) {
+      loadSampleText(found.text);
+      markLoadedChip(null);
+      sampleSelect.value = found.id;
+    }
+  });
+
   async function loadSamples() {
     try {
       const resp = await fetch("/api/samples");
-      if (resp.ok) {
-        archetypeSamples = await resp.json();
-      }
+      if (resp.ok) archetypeSamples = await resp.json();
+    } catch (e) { /* chips will report it on click */ }
 
-      // Fetch 30-sample QuillBot comparison sheet
+    try {
       const compResp = await fetch("/api/comparison-sheet");
-      if (compResp.ok) {
-        comparisonSheetData = await compResp.json();
-        comparisonSheetData.forEach(s => {
-          const opt = document.createElement("option");
-          opt.value = s.id;
-          opt.textContent = `${s.id}: [${s.expected_class}] (${s.word_count}w) ${s.type}`;
-          qbComparisonGroup.appendChild(opt);
-        });
-
-        sampleSelect.addEventListener("change", (e) => {
-          const val = e.target.value;
-          const found = comparisonSheetData.find(s => s.id === val);
-          if (found) {
-            textInput.value = found.text;
-            updateTextCounters();
-            switchToEditMode();
-          }
-        });
-      }
-    } catch (e) {
-      console.warn("Could not load sample benchmarks:", e);
-    }
+      if (!compResp.ok) return;
+      comparisonSheetData = await compResp.json();
+      comparisonSheetData.forEach((s) => {
+        const opt = document.createElement("option");
+        opt.value = s.id;
+        opt.textContent = `${s.id}  ${s.expected_class}, ${s.word_count} words`;
+        qbComparisonGroup.appendChild(opt);
+      });
+    } catch (e) { /* benchmark menu stays empty */ }
   }
 
+  updateTextCounters();
+  checkEngine();
   loadSamples();
 });
