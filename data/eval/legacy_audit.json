@@ -1,0 +1,153 @@
+{
+  "raw": {
+    "detectrl_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "esl_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "hc3_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "m4_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "mage_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "raid_samples.jsonl": {
+      "rows": 50,
+      "unique_texts": 4
+    },
+    "identical_text_sets_across_files": true
+  },
+  "leakage": {
+    "test_indist": {
+      "n": 80,
+      "exact_copies_in_train": 20,
+      "near_dup_in_train": 20
+    },
+    "test_paraphrased": {
+      "n": 50,
+      "exact_copies_in_train": 10,
+      "near_dup_in_train": 10
+    },
+    "test_unseen_qwen": {
+      "n": 15,
+      "exact_copies_in_train": 0,
+      "near_dup_in_train": 0
+    },
+    "test_unseen_deepseek": {
+      "n": 15,
+      "exact_copies_in_train": 0,
+      "near_dup_in_train": 0
+    },
+    "test_esl": {
+      "n": 30,
+      "exact_copies_in_train": 16,
+      "near_dup_in_train": 16
+    }
+  },
+  "train": {
+    "rows": 224,
+    "unique_texts": 175,
+    "has_teacher_soft_probs": false,
+    "median_words": 67.0,
+    "domain_counts_top": [
+      [
+        "academic",
+        96
+      ],
+      [
+        "esl",
+        32
+      ],
+      [
+        "casual",
+        16
+      ]
+    ]
+  },
+  "paraphrase_similarity": {
+    "n": 50,
+    "median_jaccard_to_source": 1.0,
+    "share_ge_0.9": 0.84,
+    "share_ge_0.5": 1.0
+  },
+  "source_evidence": [
+    {
+      "file": "scripts\\generate_frontier_data.py",
+      "what": "canned-template generator exists",
+      "hits": [
+        [
+          135,
+          "def synthesize_model_fingerprint(genre: str, model: str, prompt: str, persona: str, temperature: float) -> str:"
+        ]
+      ]
+    },
+    {
+      "file": "scripts\\download_datasets.py",
+      "what": "silent fallback to synthetic 'dataset' seeds",
+      "hits": [
+        [
+          83,
+          "Falls back gracefully to high-quality synthetic research mirrors when offline."
+        ],
+        [
+          164,
+          "print(f\"[Dataset] HuggingFace live streaming skipped for {source_name} ({e}). Using offline research seeds.\")"
+        ]
+      ]
+    },
+    {
+      "file": "scripts\\evaluate_models.py",
+      "what": "hard-coded teacher TPR literal",
+      "hits": [
+        [
+          164,
+          "teacher_tpr_at_1fpr = 0.962"
+        ]
+      ]
+    },
+    {
+      "file": "scripts\\generate_notebooks.py",
+      "what": "hard-coded teacher notebook output",
+      "hits": [
+        [
+          162,
+          "\"    print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')\\n\","
+        ]
+      ]
+    },
+    {
+      "file": "scripts\\train_student.py",
+      "what": "student trained on label-smoothed one-hot (no teacher soft probs)",
+      "hits": [
+        [
+          59,
+          "# If teacher soft probs exist, use them; otherwise use smoothed one-hot target"
+        ]
+      ]
+    },
+    {
+      "file": "scripts\\refresh_pipeline.py",
+      "what": "generator call (check whether --new_models is forwarded)",
+      "hits": [
+        [
+          63,
+          "run_command([sys.executable, \"scripts/generate_frontier_data.py\", \"--count_per_genre\", str(args.count_per_genre)],"
+        ]
+      ]
+    }
+  ],
+  "new_models_forwarded_to_generator": false,
+  "quillbot_sheet": {
+    "pending_cells": 60,
+    "expected_cells": 60
+  }
+}
