@@ -81,6 +81,26 @@ def cached_scores(det_name, split, rows, detector_factory, max_n=None):
     return cache
 
 
+def thin(rows, neg_cap, public_cap, seed=0):
+    """Seeded thinning of the DEV split for slow detectors: cap clean-human negatives and public-corpus AI rows.
+    New frontier / attacked rows are never thinned. (The locked split is never thinned.)"""
+    import random
+    rng = random.Random(seed)
+    keep, neg, pub = [], [], []
+    for r in rows:
+        if is_clean_neg(r):
+            neg.append(r)
+        elif r["access_path"].startswith("public_dataset") and r["origin"] != "human":
+            pub.append(r)
+        else:
+            keep.append(r)
+    if neg_cap and len(neg) > neg_cap:
+        neg = rng.sample(neg, neg_cap)
+    if public_cap and len(pub) > public_cap:
+        pub = rng.sample(pub, public_cap)
+    return keep + neg + pub
+
+
 def is_pos(r):
     return r["label"] == "ai" and r["origin"] in ("ai_raw", "ai_attacked")
 
@@ -162,6 +182,8 @@ def main():
     ap.add_argument("--out", default=None)
     ap.add_argument("--max-new", type=int, default=None, help="score at most this many NEW texts per detector (speed cap; sampled in file order)")
     ap.add_argument("--threads", type=int, default=6)
+    ap.add_argument("--neg-cap", type=int, default=0, help="DEV only: cap the number of clean-human negatives (slow detectors)")
+    ap.add_argument("--public-cap", type=int, default=0, help="DEV only: cap the number of public-corpus AI rows (slow detectors)")
     ap.add_argument("--model-hash", default=None, help="identifier recorded in the locked access log")
     args = ap.parse_args()
 
@@ -173,8 +195,8 @@ def main():
             f.write(f"- {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')} | model={args.model_hash or ','.join(args.detectors)} | "
                     f"cmd=python scripts/eval_frontier.py {' '.join(sys.argv[1:])}\n")
     from scripts.detectors.baselines import get_detector
-    dev_rows = load_split("dev")
-    rows = load_split(args.split)
+    dev_rows = thin(load_split("dev"), args.neg_cap, args.public_cap)
+    rows = dev_rows if args.split == "dev" else load_split(args.split)
     results = []
     for name in args.detectors:
         fac = lambda n=name: get_detector(n, threads=args.threads)  # noqa: E731
