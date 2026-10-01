@@ -15,6 +15,8 @@ Gates
   G5 LOCKED        locked file SHA-256 matches data/locked/MANIFEST.json; <= 3 locked evaluations in ACCESS_LOG.md
   G6 COUNTS        locked-test minimums: human >= 1000 (>= 300 ESL); per frontier model >= 150 raw and >= 40 per
                    attack family (A1,A2,A3,A4,A5,A7) -- or the model is declared UNTESTED in the manifest
+  G7 BALANCE       train: AI share within 1/3..2/3 in every genre (1/4..3/4 for student_essay and length buckets), so
+                   topic/genre/length cannot act as a label shortcut
 
 Exit code 0 only if every gate passes.
 """
@@ -90,9 +92,10 @@ def load_rows(legacy_demo=False):
         p = _first_existing(os.path.join(SPLITS_DIR, split + ".jsonl.gz"), os.path.join(SPLITS_DIR, split + ".jsonl"))
         if p:
             rows[split] = io_utils.read_jsonl(p)
-    p = os.path.join(LOCKED_DIR, "locked_test.jsonl.gz")
-    if os.path.exists(p):
-        rows["locked"] = io_utils.read_jsonl(p)
+    for n in ("locked_ai.jsonl.gz", "locked_human.jsonl.gz", "locked_test.jsonl.gz"):
+        p = os.path.join(LOCKED_DIR, n)
+        if os.path.exists(p):
+            rows["locked"] += io_utils.read_jsonl(p)
     return rows
 
 
@@ -325,6 +328,32 @@ def gate_counts(rows_by_split, registry):
     return True, "locked-test minimums met", det
 
 
+def gate_balance(rows_by_split):
+    """G7: no genre or length bucket in TRAIN may be dominated by one class (that would be a label shortcut)."""
+    train = rows_by_split.get("train", [])
+    if not train:
+        return False, "no train rows loaded - nothing to verify (fail closed)", []
+    problems, det = [], []
+
+    def check(kind, key):
+        groups = {}
+        for r in train:
+            groups.setdefault(key(r), []).append(r)
+        for k, rs in sorted(groups.items()):
+            if len(rs) < 200:
+                continue
+            share = sum(1 for r in rs if r["label"] == "ai") / len(rs)
+            lo, hi = (0.25, 0.75) if k == "student_essay" or kind == "length" else (1 / 3, 2 / 3)
+            det.append(f"{kind:6s} {str(k):14s} n={len(rs):6d} AI share={share:.2f} (allowed {lo:.2f}-{hi:.2f})")
+            if not lo <= share <= hi:
+                problems.append(f"{kind} '{k}' AI share {share:.2f} outside {lo:.2f}-{hi:.2f}")
+    check("genre", lambda r: schema.genre_of(r["domain"]))
+    check("length", lambda r: io_utils.length_bucket(r["words"]))
+    if problems:
+        return False, "; ".join(problems), det
+    return True, "train classes balanced within every genre and length bucket", det
+
+
 # ----------------------------------------------------------------------------- runner
 def run_all(legacy_demo=False):
     rows = load_rows(legacy_demo)
@@ -341,6 +370,7 @@ def run_all(legacy_demo=False):
     add("G4", "SPLITS", gate_splits(rows))
     add("G5", "LOCKED", gate_locked(rows))
     add("G6", "COUNTS", gate_counts(rows, registry))
+    add("G7", "BALANCE", gate_balance(rows))
     return results
 
 

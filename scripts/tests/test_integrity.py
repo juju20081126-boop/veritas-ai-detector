@@ -90,6 +90,51 @@ def test_near_duplicate_detected_across_groups_only():
     assert all(p[0] != p[2] for p in pairs)  # never pairs inside one group
 
 
+# ---------------------------------------------------------------- metrics
+def test_wilson_and_auroc_and_threshold():
+    from scripts.common import metrics
+    p, lo, hi = metrics.wilson(12, 15)
+    assert abs(p - 0.8) < 1e-9 and 0.5 < lo < 0.6 and 0.9 < hi < 0.96          # 12/15 -> roughly 55-93%
+    assert metrics.wilson(0, 30)[2] > 0.10                                       # 0/30 still allows ~11%
+    assert metrics.auroc([3, 4, 5], [0, 1, 2]) == 1.0
+    assert metrics.auroc([1, 1], [1, 1]) == 0.5
+    neg = list(range(100))                                                        # scores 0..99
+    t = metrics.threshold_at_fpr(neg, 0.01)
+    assert metrics.rate_above(neg, t) == (1, 100)                                 # exactly 1% of negatives above t
+    assert metrics.rate_above(list(range(50)), 100) == (0, 50)
+
+
+def test_paired_bootstrap_detects_a_clear_gain():
+    from scripts.common import metrics
+    a = [0.9] * 80 + [0.1] * 20
+    b = [0.9] * 40 + [0.1] * 60
+    d, lo, hi = metrics.paired_bootstrap_diff(a, b, 0.5, 0.5, n_boot=2000)
+    assert abs(d - 0.4) < 1e-9 and lo > 0.2 and hi <= 0.6
+
+
+# ---------------------------------------------------------------- text normalisation
+def test_normalize_text_removes_attack_characters_and_keeps_style():
+    from scripts.common import textnorm
+    raw = "Thе quіck​ fox “jumps” — over\r\nthe  lazy dоg."
+    out = textnorm.normalize_text(raw)
+    assert "​" not in out and "е" not in out and "і" not in out and "о" not in out
+    assert '"jumps"' in out and "—" in out and "  " not in out
+    assert textnorm.strip_markdown("# Title\n\n**bold** and _it_\n- item") == "Title\n\nbold and it\nitem"
+    assert textnorm.fix_tokenization("It was n't me , she said .") == "It wasn't me, she said."
+
+
+# ---------------------------------------------------------------- balance gate
+def test_balance_gate_flags_dominated_genre():
+    def r(label, dom, words=200, i=[0]):
+        i[0] += 1
+        return _ai(f"text number {i[0]} " * 20, label=label, domain=dom, words=words)
+    bad = {"train": [r("ai", "news") for _ in range(250)] + [r("human", "news") for _ in range(10)]}
+    assert not ci.gate_balance(bad)[0]
+    good = {"train": [r("ai", "news") for _ in range(130)] + [r("human", "news") for _ in range(120)]}
+    assert ci.gate_balance(good)[0]
+    assert not ci.gate_balance({"train": []})[0]
+
+
 # ---------------------------------------------------------------- split gate
 def test_split_gate_fails_on_shared_group_and_passes_when_disjoint():
     t1, t2, t3 = ("alpha " * 30).strip(), ("beta " * 30).strip(), ("gamma " * 30).strip()

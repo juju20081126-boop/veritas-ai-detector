@@ -41,6 +41,7 @@ ATTACK_FAMILIES = {
     "A6": "hybrid / mixed authorship",
     "A7": "character-level (homoglyph/zero-width/typo)",
     "A8": "commercial humanizer (hand-run)",
+    "A9": "lexical/format perturbation (synonym, article deletion, case, spelling, paragraphs)",
 }
 # Families that count toward target T3 (A6 is a mixed-authorship slice, A8 is optional/hand-run).
 T3_FAMILIES = ("A1", "A2", "A3", "A4", "A5", "A7")
@@ -59,6 +60,23 @@ BANNED_WORDS = re.compile(r"synthetic|template|fingerprint|simulat|legacy|quaran
 
 # ChatGPT public release: human corpora must predate it, or be flagged verified_human in the registry.
 HUMAN_CUTOFF = "2022-11-30"
+
+
+# Coarse genre of each raw `domain` tag. Used to keep AI:human balanced within a genre (a domain that only one
+# class has would become a shortcut) and for slicing reports.
+GENRE = {
+    "news": "news", "xsum": "news", "cnn": "news",
+    "abstracts": "academic", "academic": "academic", "pubmed": "academic", "sci": "academic", "wiki_csai": "academic",
+    "wp": "creative", "creative": "creative", "books": "creative", "poetry": "creative", "story": "creative",
+    "imdb": "reviews", "yelp": "reviews",
+    "eli5": "forum_qa", "reddit_eli5": "forum_qa", "tldr": "forum_qa", "cmv": "forum_qa", "open_qa": "forum_qa",
+    "explain": "forum_qa", "finance": "forum_qa", "medicine": "forum_qa", "general": "forum_qa", "dialogsum": "forum_qa",
+    "email": "email", "student_essay": "student_essay",
+}
+
+
+def genre_of(domain):
+    return GENRE.get(str(domain), "other")
 
 
 def attack_family(attack_id):
@@ -106,14 +124,16 @@ def validate_record(rec, registry=None):
     if rec["origin"] == "human" and rec["label"] != "human":
         errs.append("origin=human but label!=human")
     if rec["label"] == "human" and rec["origin"] == "human":
-        if not str(rec["access_path"]).startswith("corpus:"):
+        if fam == "none" and not str(rec["access_path"]).startswith("corpus:"):
             errs.append("human row must come from a registered corpus (access_path 'corpus:<name>@<rev>')")
+        if fam != "none" and not rec["parent_id"]:
+            errs.append("attacked human row without parent_id")
     if registry is not None:
         gens = registry.get("generators", {})
         hum = registry.get("human_corpora", {})
         pub = registry.get("public_ai_corpora", {})
         ap = str(rec["access_path"])
-        if rec["label"] == "human" and rec["origin"] == "human":
+        if rec["label"] == "human" and rec["origin"] == "human" and fam == "none":
             name = ap[len("corpus:"):].split("@")[0] if ap.startswith("corpus:") else None
             c = hum.get(name)
             if c is None:
