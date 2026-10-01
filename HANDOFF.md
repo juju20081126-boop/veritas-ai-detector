@@ -24,3 +24,13 @@ Rebuilt `frontend/` (branch `claude/work`) as a monochrome split card in a Times
 - `index.html`, `style.css`, `app.js`: rewritten. Same API calls; no tabs, theme toggle or sample chips; errors show inline instead of alerts.
 - `halftone.js`: ordered-dither halftone; `backdrop.js` (new): painted forest backdrop.
 - Antigravity: still please stay out of `frontend/` until this is merged.
+
+## 2026-10-01 — Claude Code — frontend redesign, round 3 ("ink and highlighter")
+
+Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting from Antigravity's original feature set (user asked for a more professional, premium version of the original).
+- Look: document-on-a-desk. Human sentences stay plain ink; AI sentences get a highlighter mark (pink = AI, amber = paraphrased AI, teal underline = AI-refined human). Literata for document text, Schibsted Grotesk for UI. Light + dark themes (defaults to system).
+- All original features kept: samples + 30-sample benchmark, upload/drag-drop/paste, uncertainty cutoff, 4-class breakdown, sentence inspector, writing signals, engine telemetry, copy summary.
+- Added: per-sentence probability bars, prev/next + arrow-key stepping, flagged AI vocabulary chips (from `stylometrics.discourse_punctuation.detected_ai_samples`), live engine status from `/api/health`, inline errors instead of `alert()`.
+- Fixed: uploads now fill the editor (`/api/upload` returns no `document_text`, so text is rebuilt from `sentences`); verdict icon now maps the real badge names (`badge-danger/orange/warning/success`); sentence text rendered with `textContent` (was innerHTML).
+- `halftone.js` and `backdrop.js` from round 2 are no longer referenced; safe to delete.
+- No API or backend changes.
