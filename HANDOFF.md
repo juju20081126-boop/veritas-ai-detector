@@ -83,3 +83,14 @@ The user set a `/goal`: make the detector catch Claude Opus 5.5 / Sonnet 5.5 / G
 2. README's "Retraining & Data-Refresh Pipeline" (`scripts/refresh_pipeline.py --new_models ...`) is gone; `--new_models` was never forwarded to the generator anyway. A replacement `scripts/onboard_model.py` is planned.
 3. `notebooks/01_teacher_ensemble_and_labeling.ipynb` (around line 151) prints a hard-coded "Accuracy on val: 96.8% | Macro-F1: 0.962"; it must not be presented as a result.
 4. `data/quillbot_comparison_sheet.*` stays in `data/` because `/api/comparison-sheet` serves it to the UI. Its texts are synthetic demo samples and every verdict cell is pending.
+
+## 2026-10-01 — Claude Code — frontier-detection goal, Phases 1-2 (research + real corpus build)
+
+Progress on `claude/work` (nothing pushed or merged):
+- **Research:** `data/research/` holds 17 sources read (`sources.md`), a detector teardown (`detector_teardown.md`, every claim tagged documented / secondary / unknown), an attack catalogue and a ranked hypothesis list.
+- **Real corpus pipeline** (`scripts/corpus/`, `scripts/common/`, `scripts/detectors/`): 760 generation prompts from public sets (CNN/DM, arXiv, AESLC, WritingPrompts, ELI5, oasst1, dolly + authored essay topics), matched human documents, W&I+LOCNESS essays (3,055 ESL + 50 native), RAID / MAGE / HC3 samples, extra arXiv/CNN human text, and **real Claude Opus 5.5 and Sonnet 5.5 generations** produced by Claude Code subagents; the resolved model ids are checked from the subagent transcripts (`python scripts/corpus/manifest_tool.py verify`). Local attacks: T5 paraphraser (A4), MarianMT back-translation (A5), hybrid interleaving (A6), character-level (A7). `scripts/check_integrity.py` now has a train-balance gate (G7); `scripts/eval_frontier.py` is the evaluation entry point (threshold fixed on dev clean-human, Wilson CIs, locked-test access log).
+- **GPT-6 Astra** is not tested: no API key in this environment (it will be reported as UNTESTED, not simulated).
+
+**Planned shared-file edit (noting first, as AGENTS.md requires; follows in its own commit):** `.gitignore` += `data/locked/locked_human.jsonl.gz` and `data/corpus/attacked/*/human__*.jsonl`. Those files hold third-party human text (W&I+LOCNESS may only be used for non-commercial purposes), so they stay local; their SHA-256 hashes are tracked in `data/locked/MANIFEST.json`.
+
+**For Antigravity:** nothing new is required. Please keep the README/EVAL_REPORT corrections from the previous entry on your list; real-data numbers will land in `data/reports/` when the run finishes.
