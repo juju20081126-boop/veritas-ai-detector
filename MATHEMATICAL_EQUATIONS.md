@@ -93,8 +93,8 @@ Where $\alpha_1 = 0.40, \alpha_2 = 0.30, \alpha_3 = 0.30$, and:
 3. **Sentence Length Coefficient of Variation**:
    $$\text{CV}_{\text{len}} = \frac{\sigma(L)}{\mu(L)} = \frac{\sqrt{\frac{1}{S}\sum_{s=1}^S (L_s - \mu(L))^2}}{\frac{1}{S}\sum_{s=1}^S L_s}$$
 
-- **Human Text**: $\mathcal{B}_{\text{syntax}} \ge 0.65$ (dynamic cadence shifts and high second-order acceleration).
-- **AI Text**: $\mathcal{B}_{\text{syntax}} \le 0.48$ (flat, uniform pacing).
+- **Human Text**: $\mathcal{B}_{\text{syntax}} \ge 0.65$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)* (dynamic cadence shifts and high second-order acceleration).
+- **AI Text**: $\mathcal{B}_{\text{syntax}} \le 0.48$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)* (flat, uniform pacing).
 
 ---
 
@@ -127,7 +127,7 @@ Where:
 $$\mathcal{H}_{\text{Shannon}}(x) = -\sum_{w \in \mathcal{V}} p(w) \log_2 p(w), \quad p(w) = \frac{\text{count}(w)}{N}$$
 $$C_{\text{Deflate}}(x) = \frac{|\text{Deflate}(x)|}{|x_{\text{bytes}}|}$$
 
-Because LLM text exhibits formulaic subword sequences, DEFLATE (LZ77 + Huffman) achieves higher compression (lower $C_{\text{Deflate}} \approx 0.40 - 0.45$), causing $\mathcal{R}_{\text{Binoc}}$ to elevate ($\ge 16.5$). Human writing exhibits irregular collocations ($C_{\text{Deflate}} \ge 0.52$), keeping $\mathcal{R}_{\text{Binoc}} \le 14.0$.
+Because LLM text exhibits formulaic subword sequences, DEFLATE (LZ77 + Huffman) achieves higher compression (lower $C_{\text{Deflate}} \approx 0.40 - 0.45$ *(UNVERIFIED HYPOTHESIS)*), causing $\mathcal{R}_{\text{Binoc}}$ to elevate ($\ge 16.5$ *(UNVERIFIED HYPOTHESIS)*). Human writing exhibits irregular collocations ($C_{\text{Deflate}} \ge 0.52$ *(UNVERIFIED HYPOTHESIS)*), keeping $\mathcal{R}_{\text{Binoc}} \le 14.0$ *(UNVERIFIED HYPOTHESIS)*.
 
 ---
 
@@ -139,7 +139,7 @@ $$\Lambda_{\text{auth}}(x) = \beta_1 \cdot \mathcal{B}_{\text{syntax}}(x) - \bet
 
 With parameter weights $\beta_1 = 0.40, \beta_2 = 0.40, \beta_3 = 0.20$.
 
-#### Decision Boundary:
+#### Decision Boundary *(UNVERIFIED HYPOTHESIS: theoretical cutoffs)*:
 $$\begin{cases} 
 \Lambda_{\text{auth}}(x) \ge 0.65 & \implies \text{High Authorial Humanity (Authentic Human Voice)} \\
 0.35 \le \Lambda_{\text{auth}}(x) < 0.65 & \implies \text{Hybrid / AI-Polished Zone} \\
@@ -169,7 +169,7 @@ The final posterior probability for class $k \in \{0, 1, 2, 3\}$ is evaluated vi
 
 $$P^*(y = k \mid x) = \frac{\exp\left( \frac{s_k + g_k}{T^*} \right)}{\sum_{j=0}^3 \exp\left( \frac{s_j + g_j}{T^*} \right)}$$
 
-Where $T^* = 1.55$ is the temperature parameter optimized to minimize Expected Calibration Error (ECE $< 0.05$).
+Where $T^* = 1.55$ is the temperature parameter optimized to minimize Expected Calibration Error (ECE $< 0.05$) *(UNVERIFIED HYPOTHESIS: calibrated on leaky synthetic data)*.
 
 ---
 
@@ -180,7 +180,7 @@ To safeguard writers against false accusations when a document lies directly on 
 $$\mathcal{U}(x) = 1.0 - \left( P^*(y_{(1)} \mid x) - P^*(y_{(2)} \mid x) \right) \cdot \left( \frac{P^*(y_{(1)} \mid x)}{\tau_{\text{threshold}}} \right)$$
 
 Where $y_{(1)} = \arg\max_k P^*(y = k \mid x)$ and $y_{(2)}$ is the runner-up class.
-If $\mathcal{U}(x) \ge \tau_{\text{uncertain}} = 0.70$ or $P^*(y_{(1)} \mid x) < \tau_{\text{threshold}}$, the verdict is gated:
+If $\mathcal{U}(x) \ge \tau_{\text{uncertain}} = 0.70$ *(UNVERIFIED HYPOTHESIS: theoretical threshold)* or $P^*(y_{(1)} \mid x) < \tau_{\text{threshold}}$, the verdict is gated:
 
 $$\text{Final Verdict} = \begin{cases}
 \text{"Uncertain (Low Margin)"}, & \text{if } \mathcal{U}(x) \ge 0.70 \\
@@ -190,6 +190,9 @@ $$\text{Final Verdict} = \begin{cases}
 ---
 
 ## 3. Empirical Verification: Sedaris vs ChatGPT
+
+> [!NOTE]
+> **Single-Pair Demonstration (UNVERIFIED HYPOTHESIS)**: The table below reflects outputs on an isolated pair of sample texts. These values are illustrative demonstrations rather than statistically verified benchmarks across representative corpora.
 
 Below are the empirical values produced by these mathematical equations when evaluated on real-world benchmark texts:
 
@@ -205,7 +208,7 @@ Below are the empirical values produced by these mathematical equations when eva
 | **Compressibility** | $C_{\text{Deflate}}$ | $0.540$ | $0.433$ | LLM text compresses significantly more |
 | **Binoculars Ratio** | $\mathcal{R}_{\text{Binoc}}$ | $12.99$ | $17.59$ | Divergence between entropy and compressibility |
 | **Lexical Richness** | $\Omega_{\text{lex}}$ | $0.8243$ | $0.8594$ | Length-invariant vocabulary dispersion |
-| **Final Classified Probability** | $P^*(y \mid x)$ | **Human-written: $76.6\%$** | **AI-generated: $91.6\%$** | **Both Success Criteria Achieved** |
+| **Final Classified Probability** | $P^*(y \mid x)$ | **Human-written: $76.6\%$** | **AI-generated: $91.6\%$** | Single pair demo *(UNVERIFIED HYPOTHESIS)* |
 
 ---
 
@@ -226,8 +229,8 @@ Below are the empirical values produced by these mathematical equations when eva
 
 ## 5. Compliance with Project Target Hardware Constraints
 
-1. **Pure ONNX INT8 Execution**: All equations are computed via vectorized NumPy and standard math primitives in $<1.5\text{ms}$ on 2 CPU threads.
+1. **Pure ONNX INT8 Execution**: All equations are computed via vectorized NumPy and standard math primitives in $<1.5\text{ms}$ on 2 CPU threads *(Preliminary estimate)*.
 2. **Zero PyTorch at Runtime**: No neural tensor operations required during inference.
-3. **Total Latency**: Document analysis (500 words) executes in **$0.139\text{s}$** (Target: $\le 15\text{s}$).
-4. **Memory Ceiling**: Peak process RSS is **$178.6\text{MB}$** (Target: $\le 1500\text{MB}$).
-5. **Fairness**: Non-native (ESL) false-positive rate is **$0.00\%$** (0 / 30).
+3. **Total Latency**: Document analysis (500 words) executes in **$0.139\text{s}$** (Target: $\le 15\text{s}$) *(Preliminary single-run measurement)*.
+4. **Memory Ceiling**: Peak process RSS is **$178.6\text{MB}$** (Target: $\le 1500\text{MB}$) *(Preliminary single-run measurement)*.
+5. **Fairness**: Non-native (ESL) false-positive rate is **$0.00\%$** (0 / 30) *(UNVERIFIED HYPOTHESIS: measured on leaky synthetic split; retracted)*.

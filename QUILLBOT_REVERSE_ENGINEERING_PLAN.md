@@ -13,7 +13,7 @@ The primary objective of this project phase is to **reverse engineer the online 
 1. **Four-Class Taxonomy & Terminology**: Perfect semantic alignment with `AI-generated`, `AI-generated & AI-refined`, `Human-written & AI-refined`, and `Human-written`.
 2. **Scoring & Aggregation Equations**: Replicating QuillBot's exact word-count weighted sentence aggregation and headline percentage (`"XX% of text is likely AI"`).
 3. **Sentence Highlighting Semantics**: Matching QuillBot's granular per-sentence classification, thresholding, and default-to-human bias on ambiguous clauses.
-4. **Behavioral Characteristics on Real-World Edge Cases**: Correctly identifying unedited LLM essays as **$\ge 90\%$ AI**, while preserving authentic human authorial memoirs (e.g. David Sedaris) and non-native English (ESL) as **$\ge 75\%$ Human**, with a verified $0.00\%$ ESL false-positive rate.
+4. **Behavioral Characteristics on Real-World Edge Cases**: Correctly identifying unedited LLM essays as **$\ge 90\%$ AI**, while preserving authentic human authorial memoirs (e.g. David Sedaris) and non-native English (ESL) as **$\ge 75\%$ Human**, with a claimed $0.00\%$ ESL false-positive rate *(UNVERIFIED HYPOTHESIS: 0.00% ESL FPR was measured on leaked synthetic data)*.
 5. **Strict Edge Execution**: Maintaining 100% offline local inference on low-end hardware ($\le$ 1.5GB RAM, 2 CPU threads, $< 0.2$s latency, zero PyTorch dependency).
 
 ---
@@ -82,9 +82,9 @@ flowchart TD
 
 #### Key Probing Questions:
 1. **Sentence Boundary Sensitivity**: Does QuillBot split on abbreviations (e.g. *Mr.*, *Dr.*, *U.S.*, *e.g.*)?
-2. **Length Gating**: At what word count does QuillBot transition from "Short Text Warning" to high-certainty scoring? (Established: $\ge 80$ words).
+2. **Length Gating**: At what word count does QuillBot transition from "Short Text Warning" to high-certainty scoring? (Established: $\ge 80$ words *(UNVERIFIED HYPOTHESIS)*).
 3. **Paraphrase Mode Divergence**: How does QuillBot classify its own paraphrasing modes (*Standard*, *Fluency*, *Formal*, *Academic*, *Creative*)?
-4. **Headline Formulation**: When does the headline flip from `"XX% of text is likely AI"` to `"XX% of text is likely Human"`? (Established: at $50.0\%$ threshold).
+4. **Headline Formulation**: When does the headline flip from `"XX% of text is likely AI"` to `"XX% of text is likely Human"`? (Established: at $50.0\%$ threshold *(UNVERIFIED HYPOTHESIS)*).
 
 ---
 
@@ -181,20 +181,20 @@ Replicate QuillBot's exact visual feedback cues in the Veritas web client:
 
 ### Phase 5: Automated Verification & Parity Test Suite
 
-Create `scripts/benchmark_quillbot_parity.py` containing 30 verified ground-truth reference passages with known QuillBot online scores.
+Create `scripts/benchmark_quillbot_parity.py` containing 30 reference passages *(UNVERIFIED HYPOTHESIS: reference passages with claimed known QuillBot online scores — all 60 comparison sheet verdicts remain pending verification)*.
 
-#### Verification Acceptance Criteria:
+#### Verification Acceptance Criteria (Proposed Targets):
 1. **David Sedaris Memoir**:
-   - QuillBot Online: `0% AI` (100% Human)
-   - Veritas Target: **`0.0% - 5.0% AI`** ($\ge 75\%$ Human-written) -> **PASS**
+   - QuillBot Online: `0% AI` (100% Human) *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
+   - Veritas Target: **`0.0% - 5.0% AI`** ($\ge 75\%$ Human-written) -> **PASS** *(UNVERIFIED HYPOTHESIS)*
 2. **ChatGPT Essay (AI in Education)**:
-   - QuillBot Online: `100% AI`
-   - Veritas Target: **`90.0% - 100.0% AI`** -> **PASS**
+   - QuillBot Online: `100% AI` *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
+   - Veritas Target: **`90.0% - 100.0% AI`** -> **PASS** *(UNVERIFIED HYPOTHESIS)*
 3. **ESL Essays (Non-Native English)**:
-   - QuillBot Online: `0% AI`
-   - Veritas Target: **`0.0% False Positive Rate`** (0 / 30 flagged as pure AI) -> **PASS**
-4. **Headline MAE**: Mean absolute error between Veritas AI percentage and QuillBot online percentage $\le 8.5\%$ across the 30-sample benchmark.
-5. **Class Agreement ($\kappa$)**: Cohen's Kappa $\ge 0.80$ on sentence-level classification.
+   - QuillBot Online: `0% AI` *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
+   - Veritas Target: **`0.0% False Positive Rate`** (0 / 30 flagged as pure AI) -> **PASS** *(UNVERIFIED HYPOTHESIS: measured on leaked synthetic data)*
+4. **Headline MAE**: Mean absolute error between Veritas AI percentage and QuillBot online percentage $\le 8.5\%$ across the 30-sample benchmark *(UNVERIFIED HYPOTHESIS: proposed target)*.
+5. **Class Agreement ($\kappa$)**: Cohen's Kappa $\ge 0.80$ on sentence-level classification *(UNVERIFIED HYPOTHESIS: proposed target)*.
 
 ---
 

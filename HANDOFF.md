@@ -72,4 +72,11 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Updated test step from generic `pytest` to `pytest scripts/tests -q`.
 - Evidence: `git diff --stat` shows 3 insertions, 2 deletions in `.github/workflows/python-package.yml`.
 
+## 2026-10-02 — Antigravity CLI — Task 3: Label unverified claims in equations and reverse-engineering plans
+- Added "UNVERIFIED HYPOTHESIS" disclaimers and labels next to all theoretical numeric thresholds, burstiness bands ($B_{\text{syntax}}$), perplexity floor variance ($\sigma_{\text{PPL}}^2 < 0.18$), epistemic hedging density ($\mathcal{E}_{\text{neut}} \ge 18.5$), syntactic curvature ($\mathcal{C}_{\text{syntax}}$), long-tail residual ($\mathcal{Z}_{\text{tail}}$), and authorial affinity boundaries in `ZEROGPT_REVERSE_ENGINEERING_PLAN.md` and `MATHEMATICAL_EQUATIONS.md`.
+- Labeled unverified length gating ("Established: >= 80 words"), headline flip thresholds, and "30 verified ground-truth reference passages" in `QUILLBOT_REVERSE_ENGINEERING_PLAN.md` noting all comparison sheet verdicts remain pending.
+- Labeled single-pair demo results (Sedaris vs ChatGPT) and ESL 0.00% FPR assertions as unverified / synthetic artifacts.
+- Evidence: `git diff --stat` shows 43 insertions, 37 deletions across `MATHEMATICAL_EQUATIONS.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md`, and `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`.
+
+
 

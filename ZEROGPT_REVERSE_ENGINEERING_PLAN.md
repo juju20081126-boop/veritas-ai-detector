@@ -78,7 +78,7 @@ ZeroGPT maps `fakePercentage` to 5 distinct human-facing headline verdicts:
 | Linguistic Dimension | Earlier LLMs (GPT-3.5, Llama-2) | Frontier Models (Claude Opus / Sonnet, GPT-4o, o1) | Human Authors |
 | :--- | :--- | :--- | :--- |
 | **Lexical Richness ($\Omega_{\text{lex}}$)** | Low (frequent reuse of high-probability synonyms: *"crucial"*, *"tapestry"*, *"delve"*) | **High** (dynamic, precise vocabulary matching PhD-level writing) | High, but domain-idiosyncratic with typos/slang |
-| **Sentence Length Burstiness** | Low ($B_{\text{syntax}} < 0.40$, uniform 18-24 word sentences) | **Moderate to High** ($B_{\text{syntax}} \approx 0.55-0.65$, mixes punchy and compound clauses) | **High** ($B_{\text{syntax}} > 0.68$, wild rhythmic leaps) |
+| **Sentence Length Burstiness** | Low ($B_{\text{syntax}} < 0.40$ *(UNVERIFIED HYPOTHESIS)*, uniform 18-24 word sentences) | **Moderate to High** ($B_{\text{syntax}} \approx 0.55-0.65$ *(UNVERIFIED HYPOTHESIS)*, mixes punchy and compound clauses) | **High** ($B_{\text{syntax}} > 0.68$ *(UNVERIFIED HYPOTHESIS)*, wild rhythmic leaps) |
 | **Transition Formulaism** | High (*"In conclusion"*, *"Furthermore"*, *"On one hand / On the other hand"*) | **Low to Moderate** (natural contextual transitions, rhetorical questions) | Asymmetric, sometimes un-signaled transitions |
 | **Grammar & Syntax** | Rigid Subject-Verb-Object standard structures | Complex inversion, fronted adverbials, parenthetical asides | Non-standard syntax, colloquial rhythm, minor errors |
 
@@ -99,6 +99,9 @@ Despite their sophistication, Claude Opus and Sonnet models cannot escape four f
 
 ## 3. Reverse-Engineered DeepAnalyse™ Mathematical Formulations
 
+> [!NOTE]
+> All specific numeric thresholds, decision cutoffs, and signature values specified below are **UNVERIFIED HYPOTHESES**; they are theoretical proposals that have not been empirically fitted or validated on measured corpora.
+
 To detect frontier models without exceeding edge hardware constraints, we formulate four closed-form mathematical equations inspired by ZeroGPT's multi-stage classifier:
 
 ### Equation 1: Inter-Sentence Perplexity Floor Variance ($\sigma_{\text{PPL}}^2$)
@@ -108,8 +111,8 @@ $$\mathcal{L}(s_i) = -\frac{1}{|s_i|} \sum_{t=1}^{|s_i|} \log P(w_t \mid w_{<t})
 Human writing exhibits high inter-sentence variance between common formulaic phrases and idiosyncratic narrative expressions:
 $$\sigma_{\text{PPL}}^2 = \frac{1}{|\mathcal{S}| - 1} \sum_{i=1}^{|\mathcal{S}|} \left( \mathcal{L}(s_i) - \bar{\mathcal{L}} \right)^2$$
 
-- **Frontier LLM Signature**: $\sigma_{\text{PPL}}^2 < 0.18$ (Perplexity remains strictly regulated across all sentences).
-- **Human Signature**: $\sigma_{\text{PPL}}^2 \ge 0.35$ (Large spikes on personal anecdotes, colloquial phrases, or unexpected idioms).
+- **Frontier LLM Signature**: $\sigma_{\text{PPL}}^2 < 0.18$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
+- **Human Signature**: $\sigma_{\text{PPL}}^2 \ge 0.35$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
 
 ### Equation 2: Syntactic Dependency Curvature Regularity ($\mathcal{C}_{\text{syntax}}$)
 Let $d_i$ be the maximum dependency parse depth of sentence $s_i$, and let $\Delta d_i = |d_i - d_{i-1}|$ be the first-order difference in syntactic complexity.
@@ -117,8 +120,8 @@ Let $d_i$ be the maximum dependency parse depth of sentence $s_i$, and let $\Del
 The **Syntactic Acceleration Curvature** is:
 $$\mathcal{C}_{\text{syntax}} = \frac{1}{|\mathcal{S}| - 2} \sum_{i=2}^{|\mathcal{S}| - 1} |\Delta d_{i+1} - \Delta d_i|$$
 
-- **Frontier LLM Signature**: $\mathcal{C}_{\text{syntax}} \to 0$ (Syntactic depth changes smoothly and predictably).
-- **Human Signature**: $\mathcal{C}_{\text{syntax}} \ge 1.42$ (Abrupt alternations between deeply nested subclauses and single-word rhetorical declarations).
+- **Frontier LLM Signature**: $\mathcal{C}_{\text{syntax}} \to 0$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
+- **Human Signature**: $\mathcal{C}_{\text{syntax}} \ge 1.42$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
 
 ### Equation 3: Epistemic Hedging & Neutrality Density ($\mathcal{E}_{\text{neut}}$)
 Constitutional AI (used in Claude) systematically suppresses assertive bias in favor of balanced epistemic hedging:
@@ -126,16 +129,16 @@ $$\mathcal{E}_{\text{neut}} = \frac{N_{\text{hedge}} + N_{\text{balance}}}{W_{\t
 
 Where $N_{\text{hedge}}$ is the count of epistemic modals (*"arguably"*, *"potentially"*, *"tends to"*, *"it is important to consider"*), and $N_{\text{balance}}$ is the count of dialectical pivots (*"while"*, *"nonetheless"*, *"conversely"*, *"on the other hand"*).
 
-- **Claude Opus / Sonnet Signature**: $\mathcal{E}_{\text{neut}} \ge 18.5$ per 1,000 words.
-- **Human Prose Signature**: $\mathcal{E}_{\text{neut}} \le 7.2$ per 1,000 words.
+- **Claude Opus / Sonnet Signature**: $\mathcal{E}_{\text{neut}} \ge 18.5$ per 1,000 words *(UNVERIFIED HYPOTHESIS: unmeasured threshold)*.
+- **Human Prose Signature**: $\mathcal{E}_{\text{neut}} \le 7.2$ per 1,000 words *(UNVERIFIED HYPOTHESIS: unmeasured threshold)*.
 
 ### Equation 4: Moving Window N-Gram Long-Tail Residual ($\mathcal{Z}_{\text{tail}}$)
 By Zipf's law, human language exhibits heavy-tailed rare word occurrences ($f(r) \propto r^{-\gamma}$). RLHF-trained frontier models truncate the extreme tail of the distribution to avoid nonsensical or controversial generation:
 $$\mathcal{Z}_{\text{tail}} = \frac{\sum_{w \in \mathcal{V}_{\text{rare}}} \log_2(1 + f(w))}{W_{\text{total}}}$$
 
 Where $\mathcal{V}_{\text{rare}}$ are words outside the 10,000 most common lemma frequency bank.
-- **Frontier LLM Signature**: $\mathcal{Z}_{\text{tail}} < 0.045$
-- **Human Literature Signature**: $\mathcal{Z}_{\text{tail}} \ge 0.095$
+- **Frontier LLM Signature**: $\mathcal{Z}_{\text{tail}} < 0.045$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
+- **Human Literature Signature**: $\mathcal{Z}_{\text{tail}} \ge 0.095$ *(UNVERIFIED HYPOTHESIS: uncalibrated threshold)*.
 
 ---
 
@@ -177,10 +180,10 @@ To ensure Veritas AI detects newer models like Claude 3.5 Sonnet, Claude Opus, a
 4. **DeepSeek-V3 / R1 (10 samples)**: Open frontier model generations with high reasoning tokens.
 5. **Authentic Human Controls (10 samples)**: Professional journalism (The Atlantic, New Yorker), ESL academic essays, memoirs.
 
-### Success Acceptance Criteria:
-1. **Frontier Model Detection Rate**: $\ge 85\%$ of Claude Opus and Claude 3.5 Sonnet passages flagged as $\ge 70\%$ AI (`fakePercentage`).
-2. **ZeroGPT Concordance**: Mean Absolute Error between Veritas `fakePercentage` and ZeroGPT online $\le 10.0\%$.
-3. **Human False-Positive Rate**: $0.00\%$ on ESL and creative writing controls (David Sedaris $\le 5\%$ AI).
+### Success Acceptance Criteria (Proposed Targets):
+1. **Frontier Model Detection Rate**: $\ge 85\%$ of Claude Opus and Claude 3.5 Sonnet passages flagged as $\ge 70\%$ AI (`fakePercentage`) *(UNVERIFIED HYPOTHESIS: proposed target)*.
+2. **ZeroGPT Concordance**: Mean Absolute Error between Veritas `fakePercentage` and ZeroGPT online $\le 10.0\%$ *(UNVERIFIED HYPOTHESIS: proposed target)*.
+3. **Human False-Positive Rate**: $0.00\%$ on ESL and creative writing controls (David Sedaris $\le 5\%$ AI) *(UNVERIFIED HYPOTHESIS: unmeasured)*.
 4. **Hardware Compliance**: $\le 1.5$GB RAM, $\le 2$ CPU threads, latency $\le 0.35$s per 500 words.
 
 ---
