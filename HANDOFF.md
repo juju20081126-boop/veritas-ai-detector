@@ -98,6 +98,13 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Deleted the hard-coded `print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')` from the fine-tuning cell.
 - Evidence: `git diff --stat` shows 10 insertions, 3 deletions in `notebooks/01_teacher_ensemble_and_labeling.ipynb`.
 
+## 2026-10-02 — Antigravity CLI — Task 7 (Optional): Create unrun GPU fine-tuning notebook
+- Created `notebooks/03_gpu_finetune.ipynb` as an unexecuted template notebook for Kaggle/Colab GPU environments.
+- Marked clearly at the top: "UNRUN NOTEBOOK; NO RESULTS CLAIMED."
+- Provides complete pipeline to load `data/splits/train.jsonl.gz` (fields: `text`, `label`), fine-tune `microsoft/deberta-v3-small` on 4-class taxonomy, evaluate macro-F1, export to FP32 ONNX, and quantize to dynamic INT8 (`onnxruntime.quantization`).
+- Evidence: `git status` shows new untracked file `notebooks/03_gpu_finetune.ipynb` (236 lines).
+
+
 
 
 
