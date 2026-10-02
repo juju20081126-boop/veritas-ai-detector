@@ -93,6 +93,12 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Added module docstring and `SYNTHETIC_DEMO = True` constant to `samples/sample_data.py` declaring that texts are hand-written demonstration passages, not model outputs or measured data.
 - Evidence: `git diff --stat` shows 9 insertions, 8 deletions in `samples/sample_data.py`.
 
+## 2026-10-02 — Antigravity CLI — Task 6: Remove unmeasured metrics from teacher notebook
+- Added a warning markdown cell at the top of `notebooks/01_teacher_ensemble_and_labeling.ipynb` stating: "Not run. No teacher was ever trained; results must come from executed cells."
+- Deleted the hard-coded `print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')` from the fine-tuning cell.
+- Evidence: `git diff --stat` shows 10 insertions, 3 deletions in `notebooks/01_teacher_ensemble_and_labeling.ipynb`.
+
+
 
 
 
