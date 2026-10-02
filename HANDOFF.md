@@ -108,3 +108,47 @@ The user asked me to split off the low-thinking work. All of these are in **your
 7. *(optional, if you have time)* `notebooks/03_gpu_finetune.ipynb`: an **unrun** Kaggle/Colab notebook that fine-tunes `microsoft/deberta-v3-small` on `data/splits/train.jsonl.gz` (fields `text`, `label`) and exports ONNX INT8. Mark it clearly "unrun; no results claimed".
 
 Status from me: Opus 5.5 locked-split generations are in; Sonnet 5.5 and the dev/train batches are being re-run after a Claude usage-limit interruption.
+
+## 2026-10-02 — Antigravity CLI — Task 1: Retract legacy metrics in README and EVAL_REPORT
+- Added prominent warning banners to `README.md` and `EVAL_REPORT.md` stating that legacy metrics were measured on synthetic, leaky data and teacher figures were never measured (referencing `data/eval/legacy_audit.json` and future `data/reports/FRONTIER_DETECTION_REPORT.md`).
+- Struck through and marked all legacy / synthetic / unmeasured metrics across all tables and sections in `README.md` and `EVAL_REPORT.md`.
+- Removed deprecated `scripts/refresh_pipeline.py` invocation from `README.md` with an explanation of its quarantine under `scripts/legacy_synthetic/`.
+- Evidence: `git diff --stat` shows 83 insertions, 80 deletions across `EVAL_REPORT.md` and `README.md`.
+
+## 2026-10-02 — Antigravity CLI — Task 2: Run tests in CI workflow
+- Updated `.github/workflows/python-package.yml` to install `numpy` and optional `requirements-dev.txt`.
+- Updated test step from generic `pytest` to `pytest scripts/tests -q`.
+- Evidence: `git diff --stat` shows 3 insertions, 2 deletions in `.github/workflows/python-package.yml`.
+
+## 2026-10-02 — Antigravity CLI — Task 3: Label unverified claims in equations and reverse-engineering plans
+- Added "UNVERIFIED HYPOTHESIS" disclaimers and labels next to all theoretical numeric thresholds, burstiness bands ($B_{\text{syntax}}$), perplexity floor variance ($\sigma_{\text{PPL}}^2 < 0.18$), epistemic hedging density ($\mathcal{E}_{\text{neut}} \ge 18.5$), syntactic curvature ($\mathcal{C}_{\text{syntax}}$), long-tail residual ($\mathcal{Z}_{\text{tail}}$), and authorial affinity boundaries in `ZEROGPT_REVERSE_ENGINEERING_PLAN.md` and `MATHEMATICAL_EQUATIONS.md`.
+- Labeled unverified length gating ("Established: >= 80 words"), headline flip thresholds, and "30 verified ground-truth reference passages" in `QUILLBOT_REVERSE_ENGINEERING_PLAN.md` noting all comparison sheet verdicts remain pending.
+- Labeled single-pair demo results (Sedaris vs ChatGPT) and ESL 0.00% FPR assertions as unverified / synthetic artifacts.
+- Evidence: `git diff --stat` shows 43 insertions, 37 deletions across `MATHEMATICAL_EQUATIONS.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md`, and `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`.
+
+## 2026-10-02 — Antigravity CLI — Task 4: Merge literature survey (17 sources) & detector teardown into RESEARCH_COMPENDIUM
+- Added Section 9 to `RESEARCH_COMPENDIUM.md` summarizing the 17 core research sources (S1–S17) from `data/research/sources.md` with explicit `[documented]`, `[secondary]`, `[inferred]`, `[unknown]` tags and edge architecture implications.
+- Merged the industrial and open detector teardown table and resolved the 403 gaps by researching and citing primary documentation:
+  - Turnitin: Official Educator Guides & FAQs, 200–250 word segmentation, AIR-1/AIW-2 pipeline, <1% target FPR on >20% AI, 1–19% score suppression (Access: 2026-10-02).
+  - QuillBot: Sentence-level perplexity/burstiness, 4-tier taxonomy, word-weighted sentence coverage, "signals not verdicts" policy (Access: 2026-10-02).
+  - Copyleaks: Multi-stage statistical/deep-learning methodology, POS ratios, syllable dispersion, AI Source Match, V11 methodology (Access: 2026-10-02).
+  - DNA-GPT: Yang et al. (arXiv:2305.17359), prefix-truncation suffix-regeneration, divergent n-gram / BScore analysis, zero-shot SOTA, compute limitations on CPU (Access: 2026-10-02).
+  - RAID Leaderboard: Dugan et al. (ACL 2024, arXiv:2405.07940, raid-bench.xyz/leaderboard), 6M+ samples, Binoculars as top zero-shot, supervised model collapse under attacks, repetition penalty impacts (Access: 2026-10-02).
+- Updated Section 7 to note deprecation and quarantine of the legacy synthetic refresh pipeline.
+- Evidence: `git diff --stat` shows 145 insertions, 18 deletions in `RESEARCH_COMPENDIUM.md`.
+
+## 2026-10-02 — Antigravity CLI — Task 5: Label synthetic samples in sample_data.py
+- Added module docstring and `SYNTHETIC_DEMO = True` constant to `samples/sample_data.py` declaring that texts are hand-written demonstration passages, not model outputs or measured data.
+- Evidence: `git diff --stat` shows 9 insertions, 8 deletions in `samples/sample_data.py`.
+
+## 2026-10-02 — Antigravity CLI — Task 6: Remove unmeasured metrics from teacher notebook
+- Added a warning markdown cell at the top of `notebooks/01_teacher_ensemble_and_labeling.ipynb` stating: "Not run. No teacher was ever trained; results must come from executed cells."
+- Deleted the hard-coded `print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')` from the fine-tuning cell.
+- Evidence: `git diff --stat` shows 10 insertions, 3 deletions in `notebooks/01_teacher_ensemble_and_labeling.ipynb`.
+
+## 2026-10-02 — Antigravity CLI — Task 7 (Optional): Create unrun GPU fine-tuning notebook
+- Created `notebooks/03_gpu_finetune.ipynb` as an unexecuted template notebook for Kaggle/Colab GPU environments.
+- Marked clearly at the top: "UNRUN NOTEBOOK; NO RESULTS CLAIMED."
+- Provides complete pipeline to load `data/splits/train.jsonl.gz` (fields: `text`, `label`), fine-tune `microsoft/deberta-v3-small` on 4-class taxonomy, evaluate macro-F1, export to FP32 ONNX, and quantize to dynamic INT8 (`onnxruntime.quantization`).
+- Evidence: `git status` shows new untracked file `notebooks/03_gpu_finetune.ipynb` (236 lines).
+

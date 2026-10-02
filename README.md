@@ -1,5 +1,8 @@
 # 🛡️ Veritas AI — QuillBot-Style Offline AI Writing Detector
 
+> [!WARNING]
+> **Legacy metrics (measured on synthetic, leaky data; teacher figures never measured) — superseded; see `data/reports/FRONTIER_DETECTION_REPORT.md` when it exists.**
+
 Veritas AI is an offline, production-grade 4-class AI writing detector architected to mirror the UX, forensic methodology, and four-class nuance of **QuillBot's AI Detector**. Engineered specifically for **low-end consumer hardware**, it operates without GPU acceleration or cloud connectivity, utilizing INT8 dynamic quantization and lightweight stylometric meta-classification.
 
 ---
@@ -21,8 +24,8 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
   - **Zero PyTorch at Runtime**: Shipped runtime uses `onnxruntime` CPU and Rust `tokenizers`.
 
 - **Fairness & Non-Native English (ESL) Robustness**:
-  - Validated on international learner corpora (TOEFL/IELTS essays).
-  - ESL false-positive rate is constrained to **1.2%** (&le;1.33&times; native rate, well below the 2&times; disparity limit).
+  - Targeted at international learner corpora (TOEFL/IELTS essays).
+  - *(Legacy unverified claim: ESL FPR constrained to 1.2% / 0.00% on synthetic data; pending real-world validation)*.
 
 - **Multi-Interface Support**:
   - **Local Web UI**: Responsive split dashboard in plain HTML/CSS/JS (no heavy npm/Node dependencies).
@@ -98,39 +101,31 @@ python cli.py --text "This is a brief text." --json
 
 ## 📊 Verification & Empirical Evaluation
 
-All metrics are measured on held-out test splits under simulated low-end hardware constraints (2 CPU threads, memory tracked via `psutil`). Full details in [EVAL_REPORT.md](file:///C:/Users/justi/AI%20detector/EVAL_REPORT.md).
+> [!WARNING]
+> **Legacy Notice**: The metrics below were measured on synthetic, leaky evaluation splits, and teacher numbers were hard-coded / unmeasured (see `data/eval/legacy_audit.json`). They are retracted and superseded. Real-data benchmarks will appear in `data/reports/FRONTIER_DETECTION_REPORT.md`.
 
-| Metric | Target | Veritas AI Shipped Student | Result |
+| Metric | Target | Veritas AI Shipped Student (Legacy) | Status / Retraction |
 |---|---|---|---|
-| 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | **0.167 seconds** | **PASS (89× faster)** |
-| Peak Process RAM (Simulated Target) | ≤ 1,500 MB | **178.5 MB** | **PASS (8.4× under cap)** |
-| Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | **PASS** |
-| Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | **PASS** |
-| ESL Writer False Positive Rate | ≤ 2.0× Native Rate | **0.00%** (Ratio: 1.00×) | **PASS (Zero ESL false positives)** |
-| 4-Class Macro-F1 Score | Balanced 4-Class F1 | **0.6392** | **PASS** (Improved with chunk pooling) |
-| In-Distribution TPR (@ ≤1% FPR) | Student TPR | **85.00%** (Teacher: 96.2%) | **MEASURED** |
-| Unseen Model (Qwen-2.5-72B) | Honest TPR (@ 1% FPR) | **80.0%** (12/15 detected) | **PASS** |
-| Unseen Model (DeepSeek-V3) | Honest TPR (@ 1% FPR) | **73.3%** (11/15 detected) | **PASS** |
-| Paraphrased AI Detection Rate | Honest Detection Rate | **80.0%** (40/50 detected) | **PASS** |
-| Calibration ECE | ECE < 0.05 | **0.0306** | **PASS (<0.05)** |
-
+| 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | ~~0.167 seconds~~ | *Legacy benchmark* |
+| Peak Process RAM (Simulated Target) | ≤ 1,500 MB | ~~178.5 MB~~ | *Legacy benchmark* |
+| Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | PASS |
+| Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | PASS |
+| ESL Writer False Positive Rate | ≤ 2.0× Native Rate | ~~0.00%~~ | *Retracted (Synthetic / Leaked data)* |
+| 4-Class Macro-F1 Score | Balanced 4-Class F1 | ~~0.6392~~ | *Retracted (Synthetic / Leaked data)* |
+| In-Distribution TPR (@ ≤1% FPR) | Student TPR | ~~85.00% (Teacher: 96.2%)~~ | *Retracted (Teacher never trained)* |
+| Unseen Model (Qwen-2.5-72B) | Honest TPR (@ 1% FPR) | ~~80.0% (12/15 detected)~~ | *Retracted (Synthetic test)* |
+| Unseen Model (DeepSeek-V3) | Honest TPR (@ 1% FPR) | ~~73.3% (11/15 detected)~~ | *Retracted (Synthetic test)* |
+| Paraphrased AI Detection Rate | Honest Detection Rate | ~~80.0% (40/50 detected)~~ | *Retracted (Regex word-swaps, not paraphrasing)* |
+| Calibration ECE | ECE < 0.05 | ~~0.0306~~ | *Retracted (Synthetic test)* |
 
 ---
 
 ## 🔄 Retraining & Data-Refresh Pipeline
 
-To ingest newly released LLM generators (e.g. DeepSeek-R1, Gemma-2, Claude 3.7), regenerate data, and re-distill the student:
-
-```bash
-# Developer / training dependencies
-pip install -r requirements-dev.txt
-
-# Run automated end-to-end pipeline
-python scripts/refresh_pipeline.py --new_models deepseek-r1 gemma-2-9b --epochs 4
-```
+*Notice: The legacy synthetic generator script `scripts/refresh_pipeline.py` has been quarantined under `scripts/legacy_synthetic/` because it operated on synthetic templates without API keys and suffered from data leakage. A replacement pipeline (`scripts/onboard_model.py` and `scripts/corpus/`) is in development to support verified frontier generation and evaluation.*
 
 ### Cloud Jupyter Notebooks (Kaggle / Google Colab)
-- [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/01_teacher_ensemble_and_labeling.ipynb): Runs Binoculars (Hans et al., 2024), Fast-DetectGPT, and DeBERTa-v3-large fine-tuning on free GPU.
+- [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
 - [`notebooks/02_student_distillation_and_onnx_export.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/02_student_distillation_and_onnx_export.ipynb): Distills student, fits stylometrics meta-classifier, exports INT8 ONNX, and performs calibration.
 
 ---

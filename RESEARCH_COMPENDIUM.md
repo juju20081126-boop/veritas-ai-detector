@@ -271,25 +271,10 @@ This enables the edge student to process a 2,000-word text in under **0.62 secon
 
 ---
 
-## 7. Retraining & Data-Refresh Pipeline
+## 7. Retraining & Data-Refresh Pipeline (Status & Migration)
 
-To ingest newly released LLM generators (e.g., DeepSeek-R1, Gemini 2.0, Claude 3.7), refresh data, and re-distill the student:
-
-```bash
-# 1. Download/update public and frontier generator corpora
-python scripts/download_datasets.py --sources raid m4 hc3 detectrl --max_samples 1000
-
-# 2. Build balanced 4-class training and validation splits
-python scripts/build_dataset.py
-
-# 3. Retrain and distill student with teacher soft-labels
-python scripts/train_student.py --epochs 4 --batch_size 8 --lr 3e-5
-
-# 4. Quantize to INT8 ONNX and verify target hardware constraints
-python scripts/export_onnx.py
-python scripts/benchmark_target.py
-python scripts/evaluate_models.py
-```
+> [!WARNING]
+> **Pipeline Quarantined**: The legacy synthetic pipeline (`scripts/refresh_pipeline.py`, `scripts/build_dataset.py`, etc.) has been quarantined under `scripts/legacy_synthetic/` following an audit confirming synthetic text leakage. A hardened corpus pipeline (`scripts/corpus/` with strict integrity verification via `scripts/check_integrity.py`) is being developed on the frontier detection branch.
 
 ---
 
@@ -304,3 +289,145 @@ python scripts/evaluate_models.py
 | **Zlib Compression Ratio** | $C(x) = \frac{\text{len}(\text{zlib}(x))}{\text{len}(x)}$ | NCD proxy; measures repetitive syntax and information density. |
 | **Expected Calibration Error** | $\text{ECE} = \sum_{m=1}^M \frac{\|B_m\|}{N} \|\text{acc}(B_m) - \text{conf}(B_m)\|$ | Quantifies reliability of probability predictions against true accuracy. |
 | **Hierarchical Logit Pooling** | $\mathbf{z}_{\text{doc}} = \frac{1}{M} \sum_{m=1}^M \mathbf{z}_m$ | Aggregates paragraph windows; eliminates token truncation on essays. |
+
+---
+
+## 9. Comprehensive Literature Survey (17 Sources) & Industrial Detector Teardown
+
+*(Synthesized from Phase 1 empirical literature review; web sources accessed 2026-10-01 to 2026-10-02)*  
+**Methodological Tags:**  
+- `[documented]`: Explicitly stated and verified in the cited paper or official vendor technical documentation.  
+- `[secondary]`: Reported by third-party evaluations, independent audits, or secondary search syntheses.  
+- `[inferred]`: Our architectural deduction or engineering takeaway.  
+- `[unknown]`: Unstated in public literature / vendor proprietary black-box.
+
+### 9.1 Academic Literature Survey: 17 Key Papers (S1–S17)
+
+#### S1. Pangram 4 Technical Report — arXiv 2607.27183
+- **Citation & URL:** Emi et al., *Pangram 4 Technical Report*, arXiv:2607.27183 (https://arxiv.org/html/2607.27183v1). Access date: 2026-10-01.
+- **Method [documented]:** Open-weight Mixture of Experts (MoE) backbone + LoRA; multi-head architecture: (a) 15-way segment AI-fraction, (b) token-wise 3-way (human / AI-assisted / AI-generated), (c) mixed-authorship binary, (d) humanizer detection probe with stop-gradient. Two-stage training with "Repeat2" causal context feeding, CRF decoding, temperature calibration, and sliding 512-token windows (stride 256).
+- **Data Tactics [documented]:** Synthetic mirroring (extract topics from human documents and prompt frontier LLMs on the same topics); EditLens AI-assisted modeling; active learning hard-negative mining loop (identifying human false positives, mirroring, retraining). Soft N-gram labeling: $f_{\text{AI}} = \frac{0.5 \cdot C_{\text{AA}} + C_{\text{AG}}}{C_{\text{H}} + C_{\text{AA}} + C_{\text{AG}}}$.
+- **Empirical Metrics [documented]:** Evaluated on 520,000 examples from 26 frontier models (Claude Opus/Sonnet/Haiku, GPT-5 series, Gemini 3, Llama 3.3, DeepSeek-V4). FPR 0.0041% (95% CI 0.0032–0.0050%), FNR 0.3396%, AUROC 0.9916. Humanized text detection 97.67%; commercial humanizers 91.52%–99.39%; short text (<50 words) TPR@1% FPR dropped to 73.32% (full length 100%). ESL: 1 false positive out of 24,586 essays across ELLIPSE, PELIC, ICNALE, TOEFL.
+- **Limits [documented]:** Statistical nature; context sensitivity; cannot detect humans who naturally emulate LLM phrasing; severe degradation on short passages.
+- **Engineering Fit [inferred]:** While MoE requires high compute, the data strategy directly transfers: topic-matched synthetic mirrors, hard-negative mining, separate mixed-authorship modeling, and reporting per-length and per-generator family metrics.
+
+#### S2. ARB: Matched Authorship-Rewriting Benchmark — arXiv 2607.29539
+- **Citation & URL:** *ARB: Matched Authorship-Rewriting Benchmark*, arXiv:2607.29539 (https://arxiv.org/pdf/2607.29539). Access date: 2026-10-01.
+- **Claim [documented]:** Detectors fail significantly more on AI-rewritten human text (polish / paraphrase / rewrite) than on pure AI generation. Introduces matched 3-way pairs (human original, LLM rewrite, full AI). Detailed numerical model breakdowns partially extracted `[unknown]`.
+- **Engineering Fit [inferred]:** Proves that the "human + AI-refined" boundary is the primary failure mode; matched pairs must form dedicated evaluation slices rather than being pooled into binary positive/negative buckets.
+
+#### S3. PADBen: Paraphrase Attack Benchmark — arXiv 2511.00416
+- **Citation & URL:** Zhai et al., *PADBen*, arXiv:2511.00416 (https://arxiv.org/pdf/2511.00416). Access date: 2026-10-01.
+- **Taxonomy [documented]:** Evaluates iterative paraphrasing, sentence-level rewriting, commercial humanizers, and LLM-guided paraphrasing (Llama-3.1-8B, GPT-4, Gemini) across DetectGPT, GPTZero, Binoculars, RADAR, and MAGE.
+- **Finding [documented]:** Iterative paraphrasing (2–3 passes) degrades detection most severely. Intermediate paraphrase states break detectors as statistics drift gradually while retaining semantic content.
+- **Engineering Fit [inferred]:** Requires training and evaluating on multi-pass paraphrases (e.g. T5 and back-translation) including intermediate outputs.
+
+#### S4. Paraphrasing Attack Resilience of MGT Detection Methods — arXiv 2605.14240
+- **Citation & URL:** *Paraphrasing Attack Resilience of Various AI-Generated Text Detection Methods*, arXiv:2605.14240 (https://arxiv.org/html/2605.14240). Access date: 2026-10-01.
+- **Setup [documented]:** Evaluated Binoculars, fine-tuned RoBERTa (12k texts), 5-feature stylometrics, and Random Forest ensembles under GPTinf paraphrase attack on 402 matched texts.
+- **Empirical Metrics [documented]:** Pre-attack F1: ensemble 0.8061, text-features+Binoculars 0.8035, Binoculars alone 0.7497. F1 drop post-attack: Binoculars dropped **0.1964** (worst degradation); RoBERTa+Binoculars dropped 0.1879; text-features alone dropped only **0.0526** (highest resilience).
+- **Caveat & Fit [inferred]:** Demonstrates a performance-resilience trade-off: probability-ratio features degrade heavily under paraphrasing, while structural stylometrics exhibit superior invariance.
+
+#### S5. Base Models Look Human To AI Detectors — arXiv 2605.19516
+- **Citation & URL:** *Base Models Look Human To AI Detectors*, arXiv:2605.19516 (https://arxiv.org/pdf/2605.19516). Access date: 2026-10-01.
+- **Claim [documented]:** Detectors trained on instruction-tuned / RLHF models fail to identify text from pre-trained base models (e.g. LLaMA 3 and Qwen base completions).
+- **Engineering Fit [inferred]:** Detectors overfit to RLHF epistemic markers; unaligned base model completions should be included as an adversarial evaluation slice.
+
+#### S6. Binoculars: Zero-Shot Detection via Perplexity Cross-Ratio — ICML 2024
+- **Citation & URL:** Hans et al., *Spotting LLMs with Binoculars*, arXiv:2401.12070 (https://ar5iv.labs.arxiv.org/html/2401.12070). Access date: 2026-10-01.
+- **Method [documented]:** Evaluates the ratio $B = \log \text{PPL}_{M_1}(s) / \log \text{xPPL}_{M_1, M_2}(s)$ using aligned Falcon-7B and Falcon-7B-Instruct models.
+- **Empirical Metrics [documented]:** TPR > 90% at 0.01% FPR on ChatGPT text across news, creative writing, and student essays. Style-modified prompts reduced sensitivity by only ~1%. Non-native English essays achieved 99.67% accuracy with negligible ESL bias. Memorized verbatim texts (e.g. US Constitution) can be falsely flagged.
+- **Limits [documented]:** No evaluation on 30B+ or modern reasoning models; zero deliberate evasion testing; computationally heavy (two 7B models); vulnerable to paraphrasing (S4: -0.1964 F1 under GPTinf).
+
+#### S7. Fast-DetectGPT: Single-Pass Probability Curvature — ICLR 2024
+- **Citation & URL:** Bao et al., *Fast-DetectGPT*, arXiv:2310.05130 (https://ar5iv.labs.arxiv.org/html/2310.05130). Access date: 2026-10-01.
+- **Method [documented]:** Evaluates conditional probability curvature $\tilde{d}(x)$ analytically in a single forward pass without sampling perturbations.
+- **Empirical Metrics [documented]:** AUROC 0.9615 (ChatGPT) and 0.9061 (GPT-4); 340× faster than DetectGPT. Paraphrase attack AUROC dropped from 0.9641 to 0.8715 (smallest relative drop among baselines). Accuracy increases monotonically with sequence length.
+- **Limits [documented]:** Requires token-level logits; surrogate models degrade across model families.
+
+#### S8. RADAR: Adversarial Paraphrase Invariance — NeurIPS 2023
+- **Citation & URL:** Hu et al., *RADAR*, arXiv:2307.03838 (https://ar5iv.labs.arxiv.org/html/2307.03838). Access date: 2026-10-01.
+- **Method [documented]:** Adversarial framework pairing a PPO-trained paraphraser against a detector trained on original and paraphrased machine text vs. human text.
+- **Empirical Metrics [documented]:** AUROC 0.857 under unseen GPT-3.5-Turbo paraphraser (vs 0.651 baseline, +31.64%). However, on raw un-paraphrased text, AUROC was 0.856 (lower than standard log-rank baseline 0.904), and in DAMAGE (S16) TPR dropped to 3.33% on modern models.
+- **Limits [documented]:** Poor out-of-distribution transfer to newer model generations.
+
+#### S9. DIPPER Paraphraser & Retrieval Defense — NeurIPS 2023
+- **Citation & URL:** Krishna et al., *Paraphrasing Evades Detectors*, arXiv:2303.13408 (https://ar5iv.labs.arxiv.org/html/2303.13408). Access date: 2026-10-01.
+- **Attack [documented]:** 11B parameter paraphraser with lexical diversity ($L$) and reordering ($O$) control knobs. At 60L/60O, TPR@1% FPR dropped: DetectGPT 70.3% -> 4.6%; watermark 100% -> 57.2%; OpenAI classifier 21.6% -> 14.8%; GPTZero 13.9% -> 1.2%.
+- **Defense [documented]:** Provider-side retrieval database storing generated embeddings achieved 96%–98% TPR post-paraphrase, requiring ~5TB/month at ChatGPT scale (inapplicable to offline local detectors).
+
+#### S10. Ghostbuster: Weak-LM Probabilities & Feature Search — NAACL 2024
+- **Citation & URL:** Verma et al., *Ghostbuster*, arXiv:2305.15047 (https://ar5iv.labs.arxiv.org/html/2305.15047). Access date: 2026-10-01.
+- **Method [documented]:** Extracts token probabilities from small frozen models (unigram, trigram, Ada/Davinci), searches structured feature combinations, and trains linear classifiers.
+- **Empirical Metrics [documented]:** In-domain F1 99.0, OOD F1 97.0, Claude F1 92.2. Commercial evasion tool dropped recall from 99% to 62%. Short texts ($\le 100$ tokens) and short non-native essays (TOEFL) exhibited F1 of 74.7.
+- **Limits [documented]:** Domain overfitting in supervised components; severe short-text performance drop.
+
+#### S11. Non-Native English Writer Bias Audit — Patterns 2023
+- **Citation & URL:** Liang et al., *GPT detectors are biased against non-native English writers*, Patterns 2023 / arXiv:2304.02819 (https://ar5iv.labs.arxiv.org/html/2304.02819). Access date: 2026-10-01.
+- **Setup & Findings [documented]:** Evaluated 91 TOEFL essays (Chinese non-native) vs. 88 US 8th-grade essays across 7 commercial detectors (GPTZero, ZeroGPT, Crossplag, etc.).
+- **Empirical Metrics [documented]:** Average 61.22% of TOEFL essays misclassified as AI (all 7 flagged 19.78% unanimously), compared to 5.19% native essays. Cause: lower vocabulary variance and perplexity. Simplifying native essays increased false positive rate from 5.19% to 56.65%.
+- **Engineering Fit [inferred]:** Enforces fairness validation on international learner corpora (W&I, TOEFL); detectors must avoid using simple vocabulary as an AI proxy.
+
+#### S12. Theoretical Limits of AI-Generated Text Detection — Sadasivan et al. 2023
+- **Citation & URL:** Sadasivan et al., arXiv:2303.11156 (https://ar5iv.labs.arxiv.org/html/2303.11156). Access date: 2026-10-01.
+- **Theory & Findings [documented]:** Maximum AUROC is bounded by the total-variation distance between human and machine distributions. Recursive paraphrasing dropped watermark TPR@1% FPR from 99.3% to 9.7%, DetectGPT AUROC from 96.5% to 25.2%, and RoBERTa-Large from 100% to 60%.
+
+#### S13. Pangram Hard-Negative Mining Technical Report — arXiv 2402.14873
+- **Citation & URL:** Emi & Spero, arXiv:2402.14873 (https://ar5iv.labs.arxiv.org/html/2402.14873). Access date: 2026-10-01.
+- **Method & Metrics [documented]:** Transformer trained on 28M human documents using iterative synthetic mirror mining. Achieved 99% overall accuracy, 0.02% domain-weighted FPR, and 0% FPR on TOEFL and ELLIPSE (3,907 essays). Demonstrated that active-learning hard-negative loops reduce FPR by 100×–1000×.
+
+#### S14. RAID: Robust Evaluation of Machine-Generated Text Detectors — ACL 2024
+- **Citation & URL:** Dugan et al., *RAID*, arXiv:2405.07940 (https://ar5iv.labs.arxiv.org/html/2405.07940). Access date: 2026-10-01.
+- **Scope & Findings [documented]:** 6.2M generations across 11 LLMs, 8 domains, and 11 adversarial attacks. Standardized evaluation at 5% FPR. Binoculars demonstrated strongest zero-shot robustness across models. Sampling decoding and repetition penalty 1.2 degraded detector accuracy by up to 32 points. Homoglyph and synonym attacks caused 36–41 point drops.
+
+#### S15. TH-Bench: Tri-Axis Attack Benchmark — arXiv 2503.08708
+- **Citation & URL:** *TH-Bench*, arXiv:2503.08708 (https://ar5iv.labs.arxiv.org/html/2503.08708). Access date: 2026-10-01.
+- **Findings [documented]:** Formulates the "impossibility triangle" between evasion success, text quality, and compute. Recursive paraphrasing degrades semantic similarity (cosine < 0.65), whereas prompt-based paraphrasing and RAFT maintain high semantic cosine similarity (>0.95).
+
+#### S16. DAMAGE: Detecting Adversarially Modified AI Generated Text — ACL 2025
+- **Citation & URL:** *DAMAGE*, arXiv:2501.03437 (https://ar5iv.labs.arxiv.org/html/2501.03437). Access date: 2026-10-01.
+- **Findings & Metrics [documented]:** Evaluated 19 commercial humanizer tools using Mistral-NeMo-12B + LoRA. Raw AI TPR@5% FPR: 100.0%; humanized text: 98.26%. By comparison, commercial detectors struggled: GPTZero achieved 99.73% raw / 60.04% humanized; Binoculars achieved 94.15% raw / 28.23% humanized. Oversampling a small quantity of humanized data (0.68% of data oversampled 18×) enabled strong generalization.
+
+#### S17. Stumbling Blocks: Stress-Testing Detectors — arXiv 2402.11638
+- **Citation & URL:** *Stumbling Blocks*, arXiv:2402.11638 (https://ar5iv.labs.arxiv.org/html/2402.11638). Access date: 2026-10-01.
+- **Findings [documented]:** Evaluated 4 attack families on 8 detectors. Inserting 2–6 typos or character perturbations pushed zero-shot metric detectors below random classification. Model-based supervised detectors maintained significantly higher resilience.
+
+---
+
+### 9.2 Public & Commercial AI Detector Forensic Teardown
+
+Below is the verified comparative teardown of existing industrial, commercial, and research detectors, integrating primary vendor specifications and independent research evaluations:
+
+| Detector | Architecture & Methodology | Training Data & Tactics | Granularity | Length Constraints | Paraphrase / Humanizer Handling | Published Accuracy & Known Issues | Primary Source & Access Date |
+|---|---|---|---|---|---|---|---|
+| **Turnitin** | `[documented]` Transformer-based deep learning classifier; breaks submissions into overlapping segments (~200–250 words / 5–10 sentences); evaluates sentence-level perplexity and burstiness; aggregates scores into document %; multi-model pipeline (AIW-1, AIW-2, AIR-1) with specialized AI-paraphrased / bypasser detection. | `[documented]` Curated student academic writing paired with LLM generations (GPT-3, GPT-3.5, GPT-4). | `[documented]` Document % + sentence highlights (AI-generated vs AI-paraphrased). | `[documented]` Min 300 words of qualifying text. | `[documented]` Flags AI-paraphrased and bypasser text via specialized heads; sensitive to heavy edits. | `[documented, vendor claim]` Target document FPR < 1% for documents with >20% AI. Suppresses scores between 1% and 19% due to high false-positive risk. Stated policy: indicator is not proof of misconduct. | Official Educator Guide & FAQs: https://help.turnitin.com/feedback-studio/turnitin-website/instructor/ai-writing-detection/about-the-ai-writing-report.htm (Access: 2026-10-02) |
+| **QuillBot** | `[documented]` Proprietary machine learning model combining binary and fine-grained 4-class categorization (`AI-generated`, `AI-generated & AI-refined`, `Human-written & AI-refined`, `Human-written`); sentence-level perplexity and burstiness analysis; word-count weighted sentence coverage. | `[documented]` Trained on human writing, academic prose, and diverse LLM outputs (ChatGPT, Claude, Gemini); specifically models multi-stage rewriting and paraphrasing. | `[documented]` Headline % ("XX% of text is likely AI/Human") + 4-color highlighted spans + 4-tier segment breakdown. | `[documented]` Free tier up to 1,200 words; recommends >300 words for reliable statistics. | `[documented]` Explicitly models AI-refined human vs AI-refined AI; trained on QuillBot's own paraphrase modes. | `[documented, vendor policy]` Scores described as "signals, not verdicts". `[secondary]` Independent reviews report 70–91% on raw AI with drops to ~58% on heavy humanizers. | Official Documentation & FAQ: https://quillbot.com/ai-content-detector and https://help.quillbot.com/ (Access: 2026-10-02) |
+| **Copyleaks** | `[documented]` Multi-stage statistical and deep-learning pipeline analyzing word/phrase ratios, POS distributions, and syllable dispersion; features "AI Insights" explanation and "AI Source Match" checking similarity to known public LLM generations; separate model pipelines for plagiarism vs AI. | `[documented]` Massive human archive (>trillions of crawled and enterprise pages since 2015) paired with multi-LLM outputs; ongoing updates (e.g. V11 testing methodology). | `[documented]` Sentence and passage-level highlighting with confidence scores; LMS/API integration. | `[documented]` Continuous prose; short passages lack sufficient statistical power. | `[documented]` Targets spun/paraphrased text; notes that AI grammar-enhancement features (e.g. generative Grammarly rewrites) may be flagged. | `[documented, vendor claim]` Claims >99% accuracy, 0.03% FPR. `[secondary]` Independent studies report practical FPR of 6–11% on out-of-domain and non-native English writing. | Official Methodology & FAQ: https://copyleaks.com/ai-content-detector/ai-detector-methodology (Access: 2026-10-02) |
+| **GPTZero** | `[documented]` Multi-stage deep learning pipeline: input normalization -> sentence-level classification -> "Paraphraser Shield" -> document aggregation. | `[documented]` Web, educational, and multi-LLM corpora; ESL bias reduction via parameter tagging and dataset insertions. | `[documented]` Document % + sentence highlighting. | `[unknown]` Vendor states best performance on longer text. | `[documented]` Paraphraser Shield defends against rewriting and homoglyphs; mixed-doc accuracy 96.5%. | `[documented, vendor claim]` Self-reported FPR < 1%, TOEFL FPR 1.1%. `[secondary]` DAMAGE benchmark (S16) measured 99.73% on raw AI but **60.04% on humanized AI**. | https://gptzero.me/technology ; S16 (Access: 2026-10-01) |
+| **Pangram (4)** | `[documented]` Open-weight MoE + LoRA with multi-task heads: 15-way segment fraction, token-wise 3-way, mixed-authorship, humanizer probe; CRF decoding. | `[documented]` Synthetic mirrors, EditLens AI-assisted modeling, active learning hard negatives; 26 frontier models; >1M human texts. | `[documented]` Token-wise + segment + document. | `[documented]` Shorter text is harder: <50 words TPR@1% FPR is 73.32% under humanizer challenge. | `[documented]` Humanized text flagged at 97.67%; commercial humanizers 91.5–99.4%; AI-polished human flagged only 0.01%. | `[documented, self-reported]` FPR 0.0041%, FNR 0.34%, AUROC 0.9916; ESL 1 FP in 24,586. | arXiv:2607.27183 (S1), arXiv:2402.14873 (S13) (Access: 2026-10-01) |
+| **Originality.ai** | `[documented]` Multi-model suite (Lite 1.0.2, Turbo 3.0.2, Multilingual 2.0.0, "AI Allowance" spectrum model). | `[documented]` Internal benchmark V6: 456,872 samples across modern flagship LLMs. | `[documented]` Document score + highlighted text. | `[unknown]` | `[documented, self-reported]` "Up to 97%" detection on latest humanizers (Turbo 3.0.2). | `[documented, self-reported]` Lite 99.3% accuracy; Turbo 98.3% (precision 91.8%); Multilingual FPR 2.4%; states FPR is "still too high for disciplinary action". | https://originality.ai/blog/ai-content-detection-accuracy (Access: 2026-10-01) |
+| **ZeroGPT** | `[documented]` "DeepAnalyse™ Technology" multi-stage statistical classifier; word-count weighted sentence percentage (`fakePercentage = aiWords / textWords`). | `[unknown]` Vendor proprietary dataset. | `[documented]` Percentage gauge + highlighted sentences (`h` array) + 5 decision tiers. | `[documented]` Up to 15,000 characters per submission. | `[unknown]` Unstated by vendor. | `[documented, self-reported]` "98.4% accuracy", "<1% FPR". `[secondary]` Liang et al. (S11) showed severe false positives on non-native English (TOEFL). | https://www.zerogpt.com/ ; S11 (Access: 2026-10-01) |
+| **Sapling** | `[documented]` Transformer model producing per-token AI probabilities and per-sentence perplexity. | `[unknown]` | `[documented]` Overall score + token/sentence highlights. | `[documented]` Free tier 2,000 chars; API/paid up to 100,000 chars. | `[unknown]` | `[documented]` "False positives increase on shorter, generic text"; free tier API available for probing. | https://sapling.ai/ai-content-detector (Access: 2026-10-01) |
+| **Winston AI** | `[documented]` Deep learning model; no architecture published. | `[documented]` "Largest dataset of human-reviewed data" (vendor claim). | `[documented]` 0–100 score + sentence prediction map. | `[unknown]` | `[unknown]` | `[documented, self-reported]` "99.87% accuracy"; no FPR disclosed. | https://gowinston.ai/ (Access: 2026-10-01) |
+| **Binoculars** (Open) | `[documented]` Zero-shot perplexity cross-ratio $B = \log \text{PPL}_{M_1} / \log \text{xPPL}_{M_1, M_2}$ using Falcon-7B pair. | `[documented]` Zero-shot (no training set). | `[documented]` Document-level score. | `[documented]` Monotonically improves with length. | `[documented]` ~1% drop on style prompts, but **drops 0.196 F1 on GPTinf (S4)** and achieves only 28.23% TPR on humanizers (S16). | `[documented]` TPR > 90% at 0.01% FPR on raw ChatGPT; top zero-shot performer on RAID leaderboard. | ICML 2024 / arXiv:2401.12070 (S6) (Access: 2026-10-01) |
+| **Fast-DetectGPT** (Open) | `[documented]` Zero-shot conditional probability curvature $\tilde{d}(x)$ evaluated analytically in one forward pass. | `[documented]` Zero-shot. | `[documented]` Document-level score. | `[documented]` Monotonically improves with length. | `[documented]` Paraphrase AUROC dropped from 0.9641 to 0.8715. | `[documented]` AUROC 0.9615 (ChatGPT), 0.9061 (GPT-4); 340× faster than DetectGPT. | ICLR 2024 / arXiv:2310.05130 (S7) (Access: 2026-10-01) |
+| **RADAR** (Open) | `[documented]` Adversarial minimax game pairing PPO paraphraser against classification head. | `[documented]` 160K WebText documents + generated paraphrases. | `[documented]` Document-level score. | `[unknown]` | `[documented]` AUROC 0.857 under unseen GPT-3.5 paraphraser; fails on modern models (3.33% TPR in DAMAGE, S16). | `[documented]` AUROC 0.856 raw; does not transfer across generator generations. | NeurIPS 2023 / arXiv:2307.03838 (S8) (Access: 2026-10-01) |
+| **Ghostbuster** (Open) | `[documented]` Token probabilities from small frozen models (unigram, trigram, Ada/Davinci) + structured feature search + logistic classifier. | `[documented]` Essays, news, stories paired with ChatGPT text. | `[documented]` Document-level score. | `[documented]` Degrades significantly at $\le 100$ tokens. | `[documented]` Commercial evasion tool lowered recall from 99% to 62%. | `[documented]` F1 99.0 in-domain, 97.0 OOD, 92.2 on Claude text. | NAACL 2024 / arXiv:2305.15047 (S10) (Access: 2026-10-01) |
+| **DNA-GPT** (Open) | `[documented]` Training-free zero-shot detection. Truncates input text at position $k$, feeds prefix $x_{1:k}$ to LLM to regenerate continuation $\hat{x}_{k+1:T}$. Evaluates divergence via N-gram overlap (black-box) or token probability divergence (white-box). | `[documented]` Zero-shot (no training set required). | `[documented]` Document-level score with explainable divergent n-gram tokens. | `[documented]` Requires sufficient sequence length to split into prefix prompt and evaluation continuation ($\ge 100-200$ tokens). | `[documented]` Stable under modification attacks (e.g. 99.09 to 98.48 AUROC on benchmark modification attacks). | `[documented]` State-of-the-art zero-shot detection across English and German corpora (0.9879 AUROC on PubMed GPT-4); outperforms OpenAI's classifier; drawback: requires active LLM generation during inference (incompatible with offline CPU edge constraints). | Yang et al., arXiv:2305.17359 (https://arxiv.org/abs/2305.17359) (Access: 2026-10-02) |
+| **RAID Benchmark & Leaderboard** (Open Benchmark) | `[documented]` Standardized adversarial benchmark and public leaderboard evaluating detectors under fixed FPR budgets (TPR at 5%, 1%, and 0.1% FPR). 6.2M generations across 11 LLMs, 8 domains, 11 attack types, 4 decoding modes. | `[documented]` Open benchmark dataset (CC-BY 4.0). | `[documented]` Document-level evaluation metrics. | `[documented]` Standardized document evaluations across 8 domains. | `[documented]` Comprehensive evaluation across 11 attack strategies (paraphrase, synonym substitution, homoglyphs, zero-width spaces, case swap, etc.). | `[documented]` Benchmark findings: Binoculars is highest-ranked zero-shot detector at low FPR; fine-tuned supervised encoders degrade by 35–41 points under attacks; sampling decoding and repetition penalty (1.2) degrade TPR by up to 32 points across all detectors. | Dugan et al., ACL 2024 (https://arxiv.org/abs/2405.07940); Leaderboard: https://raid-bench.xyz/leaderboard (Access: 2026-10-02) |
+
+---
+
+### 9.3 Architectural Lessons for Edge AI Detection (Inferred)
+
+1. **Paraphrase and Humanizer Robustness Demands Adversarial Training Data**:
+   Zero-shot probability methods (Binoculars, Fast-DetectGPT) degrade substantially under paraphrasing and humanizers (S4: Binoculars loses 0.196 F1; S16: drops to 28.23% TPR). Every robust industrial and research detector (Pangram, GPTZero Paraphraser Shield, DAMAGE) explicitly trains on attacked/humanized text. DAMAGE (S16) shows that oversampling a small fraction of realistic humanizer examples yields strong robustness.
+2. **Hierarchical Sentence/Segment Decomposition is the Industry Standard**:
+   All leading production detectors (QuillBot, Turnitin, Pangram, GPTZero) process text in sentence or chunk windows and aggregate results. This avoids token truncation on essays while enabling explainable highlighting.
+3. **Multi-Class / Mixed-Authorship Nuance is Mandatory**:
+   Treating detection as binary "AI vs. Human" leads to severe failures on AI-edited human text and human-edited AI text (ARB, S2). A 4-class taxonomy (`Human-written`, `Human-written & AI-refined`, `AI-generated & AI-refined`, `AI-generated`) with confidence gating is essential for real-world academic and professional contexts.
+4. **Length Gating and Reporting**:
+   All vendors and research papers agree that short text (<100 tokens / <80 words) lacks sufficient statistical signal for high certainty. Short passages must be gated with an uncertainty warning.
+5. **Fairness on Non-Native English (ESL)**:
+   Perplexity-only metrics severely penalize non-native English writers (S11: up to 61% false positives). Incorporating length-invariant stylometrics (Yule's K, syllable dispersion, syntactic burstiness) and validating on learner corpora (W&I, TOEFL) prevents bias.
+
