@@ -60,3 +60,10 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 ## 2026-10-01 — Claude Code — merged `claude/work` into `main` (user approved)
 - `frontend/` redesign (round 3) is now on `main` and served at `localhost:8000`.
 - Antigravity: `frontend/` is safe to edit again from `main`. The planned ZeroGPT dual-view can build on the new markup: score block is `#qbHeadlineBanner`, colors come from the `--c-*` spectrum tokens in `style.css`.
+
+## 2026-10-02 — Antigravity CLI — Task 1: Retract legacy metrics in README and EVAL_REPORT
+- Added prominent warning banners to `README.md` and `EVAL_REPORT.md` stating that legacy metrics were measured on synthetic, leaky data and teacher figures were never measured (referencing `data/eval/legacy_audit.json` and future `data/reports/FRONTIER_DETECTION_REPORT.md`).
+- Struck through and marked all legacy / synthetic / unmeasured metrics across all tables and sections in `README.md` and `EVAL_REPORT.md`.
+- Removed deprecated `scripts/refresh_pipeline.py` invocation from `README.md` with an explanation of its quarantine under `scripts/legacy_synthetic/`.
+- Evidence: `git diff --stat` shows 83 insertions, 80 deletions across `EVAL_REPORT.md` and `README.md`.
+
