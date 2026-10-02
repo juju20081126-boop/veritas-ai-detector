@@ -122,11 +122,77 @@ python cli.py --text "This is a brief text." --json
 
 ## 🔄 Retraining & Data-Refresh Pipeline
 
-*Notice: The legacy synthetic generator script `scripts/refresh_pipeline.py` has been quarantined under `scripts/legacy_synthetic/` because it operated on synthetic templates without API keys and suffered from data leakage. A replacement pipeline (`scripts/onboard_model.py` and `scripts/corpus/`) is in development to support verified frontier generation and evaluation.*
+*Notice: The legacy synthetic generator script `scripts/refresh_pipeline.py` has been quarantined under `scripts/legacy_synthetic/` because it operated on synthetic templates without API keys and suffered from data leakage. A replacement pipeline (`scripts/corpus/`, `scripts/eval_frontier.py`, `scripts/check_integrity.py`) is active to support verified frontier generation and evaluation.*
+
+### How to Run the Real-Data Pipeline
+
+> [!NOTE]
+> **Status:** in progress; results will be in `data/reports/` when finished.
+
+The commands must be executed in order from the repository root:
+
+#### Step 1: Collect Prompts and Human Datasets
+```bash
+# Build the generation prompt set and the matched human documents (seeded, reproducible)
+python scripts/corpus/build_prompts.py
+
+# Human student essays from W&I+LOCNESS (BEA-2019 shared task): non-native learner and native university essays
+python scripts/corpus/build_esl.py
+
+# Sample REAL public corpora for training/dev breadth (RAID, MAGE, HC3)
+python scripts/corpus/build_public_ai.py [--only raid|mage|hc3]
+
+# Extra HUMAN texts to balance the genres that public AI corpora over-represent (arXiv abstracts and CNN news)
+python scripts/corpus/build_human_extra.py
+```
+
+#### Step 2: Frontier Model Generation Batches & Ingestion
+```bash
+# Split data/corpus/prompts.jsonl into generation batches for real frontier-model generation
+python scripts/corpus/make_generation_batches.py [--batch-size 20] [--round r2]
+
+# Validate and ingest raw generation files written by Claude Code subagents
+python scripts/corpus/ingest_generations.py            # ingest every batch whose raw file exists
+python scripts/corpus/ingest_generations.py --batch opus__train__018
+```
+
+#### Step 3: Adversarial & Paraphrase Attacks
+```bash
+# Apply local/programmatic attack families (A4, A5, A6, A7) to ingested frontier texts and human controls
+python scripts/corpus/make_attacks.py --gen claude-opus-5-5 --split locked --family A7 --n 40
+python scripts/corpus/make_attacks.py --gen human --split locked --family A5 --n 20
+
+# Create subagent task batches for the LLM attack families A1 (paraphrase), A2 (iterative) and A3 (humanizer prompt)
+python scripts/corpus/make_llm_attack_batches.py --split locked --stage 1 --n1 40 --n2 40 --n3 40
+python scripts/corpus/make_llm_attack_batches.py --split locked --stage 2          # A2 second pass (after pass 1 is ingested)
+
+# Validate and ingest the rewrites produced by subagents for the LLM attack families (A1, A2, A3)
+python scripts/corpus/ingest_llm_attacks.py            # every batch whose raw file exists
+```
+
+#### Step 4: Split Assembly & Integrity Verification
+```bash
+# Assemble the final train / dev / locked-test splits from the corpus pieces (deterministic group splits)
+python scripts/corpus/build_splits.py [--lock]
+
+# Integrity gates for the Veritas real-data pipeline (FAIL-CLOSED)
+python scripts/check_integrity.py                  # check data/splits + data/locked
+python scripts/check_integrity.py --legacy-demo    # run the gates on the quarantined synthetic data (expected FAIL)
+python scripts/check_integrity.py --json out.json  # also save the report
+```
+
+#### Step 5: Honest Detector Evaluation
+```bash
+# Honest evaluation of AI-text detectors on the dev or locked split
+python scripts/eval_frontier.py --split dev    --detectors shipped hc3_roberta binoculars [--max-per-cell N]
+python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta ... --out data/eval/results/locked_baselines.json
+```
 
 ### Cloud Jupyter Notebooks (Kaggle / Google Colab)
 - [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
 - [`notebooks/02_student_distillation_and_onnx_export.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/02_student_distillation_and_onnx_export.ipynb): Distills student, fits stylometrics meta-classifier, exports INT8 ONNX, and performs calibration.
+- [`notebooks/03_gpu_finetune.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/03_gpu_finetune.ipynb): Fine-tunes DeBERTa-v3-small on real training data and exports ONNX INT8 (unrun template; no results claimed).
+
 
 ---
 
