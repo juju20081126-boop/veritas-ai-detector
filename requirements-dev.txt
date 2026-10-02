@@ -8,3 +8,13 @@ datasets>=2.16.0
 accelerate>=0.28.0
 safetensors>=0.4.0
 pytest>=8.0.0
+
+# Real-data pipeline extras (2026-10-01)
+huggingface_hub>=0.25.0
+lightgbm>=4.3.0
+sentence-transformers>=3.0.0
+nltk>=3.8
+sentencepiece>=0.2.0
+sacremoses>=0.1.1
+pandas>=2.0.0
+pyarrow>=15.0.0

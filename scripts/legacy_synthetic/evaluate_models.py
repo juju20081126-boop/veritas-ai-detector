@@ -1,3 +1,8 @@
+# LEGACY / QUARANTINED 2026-10-01 -- DO NOT RUN.
+# Part of the synthetic-data pipeline (hard-coded template text, silent fallbacks to synthetic seeds,
+# hard-coded metrics). See scripts/legacy_synthetic/README.md and data/eval/legacy_audit.json.
+raise SystemExit("scripts/legacy_synthetic/evaluate_models.py is quarantined (synthetic data pipeline); see scripts/legacy_synthetic/README.md")
+
 """
 Comprehensive Evaluation & Benchmark Suite for Veritas AI
 Evaluates BOTH Teacher Ensemble and Shipped Student against all success criteria:
@@ -161,7 +166,7 @@ def run_full_evaluation():
     student_tpr_at_1fpr, indist_threshold = compute_roc_tpr_at_fpr(y_bin_true, y_bin_score, target_fpr=0.01)
 
     # Reference Teacher Ensemble In-Distribution Performance (Hans et al. 2024 / DeBERTa-v3-large)
-    teacher_tpr_at_1fpr = 0.962
+    teacher_tpr_at_1fpr = float("nan")  # NOT MEASURED: was a hard-coded 0.962; no teacher was ever run
     tpr_gap = teacher_tpr_at_1fpr - student_tpr_at_1fpr
 
     macro_f1, conf_matrix, per_class_f1 = compute_multiclass_metrics(y_true_arr, np.array(student_preds))
