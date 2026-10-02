@@ -50,8 +50,8 @@ def main():
         for f in glob.glob(os.path.join(FRONTIER, gen, "*.jsonl")):
             done |= {r["prompt_id"] for r in io_utils.read_jsonl(f) if not (set(r.get("quality_flags", [])) &
                      {"too_short", "too_long", "refusal", "meta_words", "duplicate_or_missing"})}
-        for b in keep:   # prompts in a running/written batch are also covered
-            if b["generator_id"] == gen:
+        for b in keep:   # prompts in a running/written batch are also covered (needs_review batches are re-planned)
+            if b["generator_id"] == gen and b["status"] in ("running", "written"):
                 done |= {t["prompt_id"] for t in json.load(open(os.path.join(REPO, b["tasks_path"]), encoding="utf-8"))}
         items = [p for p in prompts if gen in p.get("gen_models", []) and p["prompt_id"] not in done]
         k = 0
