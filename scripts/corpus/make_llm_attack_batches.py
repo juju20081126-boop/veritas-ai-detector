@@ -107,7 +107,9 @@ def main():
             if not os.path.exists(p1):
                 print(f"{gen}/{args.split}: no ingested A1/A2 pass-1 file yet")
                 continue
-            rows = [r for r in io_utils.read_jsonl(p1) if r.get("role") == "a2_pass1"]
+            p2 = os.path.join(ATT, "A2", f"{gen}__{args.split}.jsonl")
+            done_parents = {r["parent_id"] for r in io_utils.read_jsonl(p2)} if os.path.exists(p2) else set()
+            rows = [r for r in io_utils.read_jsonl(p1) if r.get("role") == "a2_pass1" and r["id"] not in done_parents]
             tasks = [{"id": f"{r['id']}.A2p2", "source_id": r["id"], "mode": "rewrite_again", "strength": "n/a", "text": r["text"]} for r in rows]
             add_batches(m, tasks, gen, args.split, "a2p2", "haiku", args.size)
     save_manifest(m)
