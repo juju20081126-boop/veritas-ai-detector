@@ -726,6 +726,13 @@ button:disabled { cursor: not-allowed; }
 .report-actions { display: flex; gap: 10px; }
 .report-actions .btn { flex: 1; }
 
+.results-disclaimer {
+  margin: 14px 2px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
 /* ---------- footer ---------- */
 
 .colophon {
