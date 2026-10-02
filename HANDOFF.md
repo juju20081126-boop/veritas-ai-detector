@@ -78,5 +78,17 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Labeled single-pair demo results (Sedaris vs ChatGPT) and ESL 0.00% FPR assertions as unverified / synthetic artifacts.
 - Evidence: `git diff --stat` shows 43 insertions, 37 deletions across `MATHEMATICAL_EQUATIONS.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md`, and `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`.
 
+## 2026-10-02 — Antigravity CLI — Task 4: Merge literature survey (17 sources) & detector teardown into RESEARCH_COMPENDIUM
+- Added Section 9 to `RESEARCH_COMPENDIUM.md` summarizing the 17 core research sources (S1–S17) from `data/research/sources.md` with explicit `[documented]`, `[secondary]`, `[inferred]`, `[unknown]` tags and edge architecture implications.
+- Merged the industrial and open detector teardown table and resolved the 403 gaps by researching and citing primary documentation:
+  - Turnitin: Official Educator Guides & FAQs, 200–250 word segmentation, AIR-1/AIW-2 pipeline, <1% target FPR on >20% AI, 1–19% score suppression (Access: 2026-10-02).
+  - QuillBot: Sentence-level perplexity/burstiness, 4-tier taxonomy, word-weighted sentence coverage, "signals not verdicts" policy (Access: 2026-10-02).
+  - Copyleaks: Multi-stage statistical/deep-learning methodology, POS ratios, syllable dispersion, AI Source Match, V11 methodology (Access: 2026-10-02).
+  - DNA-GPT: Yang et al. (arXiv:2305.17359), prefix-truncation suffix-regeneration, divergent n-gram / BScore analysis, zero-shot SOTA, compute limitations on CPU (Access: 2026-10-02).
+  - RAID Leaderboard: Dugan et al. (ACL 2024, arXiv:2405.07940, raid-bench.xyz/leaderboard), 6M+ samples, Binoculars as top zero-shot, supervised model collapse under attacks, repetition penalty impacts (Access: 2026-10-02).
+- Updated Section 7 to note deprecation and quarantine of the legacy synthetic refresh pipeline.
+- Evidence: `git diff --stat` shows 145 insertions, 18 deletions in `RESEARCH_COMPENDIUM.md`.
+
+
 
 
