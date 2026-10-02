@@ -95,6 +95,20 @@ Progress on `claude/work` (nothing pushed or merged):
 
 **For Antigravity:** nothing new is required. Please keep the README/EVAL_REPORT corrections from the previous entry on your list; real-data numbers will land in `data/reports/` when the run finishes.
 
+## 2026-10-02 — Claude Code — easy tasks handed to Antigravity (user request)
+
+The user asked me to split off the low-thinking work. All of these are in **your** paths, need no model training, and do not block me. Please do them in order and log each in this file. Don't touch `scripts/`, `data/`, `backend/`, `models/` (mine); if something there looks wrong, write it here.
+
+1. **`README.md` and `EVAL_REPORT.md` — retract the old numbers.** Put a banner at the top of both: "Legacy metrics (measured on synthetic, leaky data; teacher figures never measured) — superseded; see `data/reports/FRONTIER_DETECTION_REPORT.md` when it exists." Strike or mark the tables, remove the "Retraining & Data-Refresh Pipeline" commands (`scripts/refresh_pipeline.py` is quarantined in `scripts/legacy_synthetic/`). Evidence: `python scripts/legacy_data_audit.py`, `data/eval/legacy_audit.json`.
+2. **`.github/workflows/python-package.yml` — run the tests.** Add a step `pytest scripts/tests -q` after dependency install (they only need numpy; install `requirements-dev.txt` or `numpy pytest`). Currently 14 tests pass locally.
+3. **`MATHEMATICAL_EQUATIONS.md`, `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md` — label unverified claims.** Add "UNVERIFIED HYPOTHESIS" next to every numeric threshold / "Established" / "verified" statement (e.g. sigma^2_PPL < 0.18, E_neut >= 18.5/1000w, burstiness bands, "Established: >= 80 words", "30 verified ground-truth passages"). Nothing in the repo measured them; all 60 QuillBot-sheet verdicts are pending.
+4. **`RESEARCH_COMPENDIUM.md` — merge in the new research.** Add a section summarising `data/research/sources.md` (17 sources) and `data/research/detector_teardown.md`; keep the `[documented]/[secondary]/[unknown]` tags. Then close the teardown gaps I could not read (WebFetch got HTTP 403): primary docs for **Turnitin, QuillBot, Copyleaks**, plus DNA-GPT and the current top open entries of the RAID leaderboard. Add each as a new row/section in your file with URL + access date; do not guess numbers.
+5. **`samples/sample_data.py` — label the synthetic samples.** Add a module docstring and a `SYNTHETIC_DEMO = True` constant stating these are hand-written demo texts, not model output or measured data. (Replacement with real corpus samples comes later from me.)
+6. **`notebooks/01_teacher_ensemble_and_labeling.ipynb` (about line 151)** — delete the hard-coded `print('Teacher fine-tuning complete. Accuracy on val: 96.8% | Macro-F1: 0.962')`; make the cell compute and print the metric or print nothing. Add a markdown cell at the top: "Not run. No teacher was ever trained; results must come from executed cells."
+7. *(optional, if you have time)* `notebooks/03_gpu_finetune.ipynb`: an **unrun** Kaggle/Colab notebook that fine-tunes `microsoft/deberta-v3-small` on `data/splits/train.jsonl.gz` (fields `text`, `label`) and exports ONNX INT8. Mark it clearly "unrun; no results claimed".
+
+Status from me: Opus 5.5 locked-split generations are in; Sonnet 5.5 and the dev/train batches are being re-run after a Claude usage-limit interruption.
+
 ## 2026-10-02 — Antigravity CLI — Task 1: Retract legacy metrics in README and EVAL_REPORT
 - Added prominent warning banners to `README.md` and `EVAL_REPORT.md` stating that legacy metrics were measured on synthetic, leaky data and teacher figures were never measured (referencing `data/eval/legacy_audit.json` and future `data/reports/FRONTIER_DETECTION_REPORT.md`).
 - Struck through and marked all legacy / synthetic / unmeasured metrics across all tables and sections in `README.md` and `EVAL_REPORT.md`.
