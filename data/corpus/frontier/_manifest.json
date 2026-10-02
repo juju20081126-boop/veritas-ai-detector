@@ -1,0 +1,793 @@
+{
+ "batch_size": 20,
+ "batches": [
+  {
+   "batch_id": "opus__train__018",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 12,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__018.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__018.txt",
+   "status": "ingested",
+   "report": {
+    "rows": 12,
+    "usable": 12,
+    "flags": {},
+    "missing": [],
+    "words_median": 253
+   }
+  },
+  {
+   "batch_id": "sonnet__train__018",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 12,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__018.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__018.txt",
+   "status": "ingested",
+   "report": {
+    "rows": 12,
+    "usable": 12,
+    "flags": {},
+    "missing": [],
+    "words_median": 241
+   }
+  },
+  {
+   "batch_id": "opus__locked__r2_000",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r2_000.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r2_000.txt",
+   "status": "ingested",
+   "agent_id": "acba46f70a34a3eaf",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 248
+   }
+  },
+  {
+   "batch_id": "opus__locked__r2_001",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r2_001.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r2_001.txt",
+   "status": "ingested",
+   "agent_id": "adf9cda02bd2ec907",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 292
+   }
+  },
+  {
+   "batch_id": "opus__locked__r2_002",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r2_002.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r2_002.txt",
+   "status": "ingested",
+   "agent_id": "a7689946de7c64443",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 246
+   }
+  },
+  {
+   "batch_id": "opus__locked__r2_003",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r2_003.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r2_003.txt",
+   "status": "ingested",
+   "agent_id": "a47bea5f5accadffa",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 245
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r2_000",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r2_000.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r2_000.txt",
+   "status": "ingested",
+   "agent_id": "a42a3748598c310ee",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 248
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r2_001",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r2_001.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r2_001.txt",
+   "status": "needs_review",
+   "agent_id": "a1fa98945dcc408a8",
+   "report": {
+    "rows": 4,
+    "usable": 4,
+    "flags": {},
+    "missing": [
+     "news-0005",
+     "abst-0115",
+     "emai-0225",
+     "stor-0295",
+     "expl-0395",
+     "gene-0475",
+     "news-0006",
+     "abst-0116",
+     "emai-0226",
+     "stor-0296",
+     "expl-0396",
+     "gene-0476",
+     "news-0007",
+     "abst-0117",
+     "emai-0227",
+     "stor-0297"
+    ],
+    "words_median": 308
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r2_002",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r2_002.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r2_002.txt",
+   "status": "needs_review",
+   "agent_id": "aadbae937896bcd1b",
+   "report": {
+    "rows": 4,
+    "usable": 4,
+    "flags": {},
+    "missing": [
+     "emai-0228",
+     "stor-0298",
+     "expl-0398",
+     "gene-0478",
+     "news-0009",
+     "abst-0119",
+     "emai-0229",
+     "stor-0299",
+     "expl-0399",
+     "gene-0479",
+     "news-0010",
+     "abst-0120",
+     "emai-0230",
+     "stor-0300",
+     "expl-0400",
+     "gene-0480"
+    ],
+    "words_median": 282
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r2_003",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r2_003.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r2_003.txt",
+   "status": "needs_review",
+   "agent_id": "a06353322c3798104",
+   "report": {
+    "rows": 4,
+    "usable": 4,
+    "flags": {},
+    "missing": [
+     "expl-0401",
+     "gene-0481",
+     "news-0012",
+     "abst-0122",
+     "emai-0232",
+     "stor-0302",
+     "expl-0402",
+     "gene-0482",
+     "news-0013",
+     "abst-0123",
+     "emai-0233",
+     "stor-0303",
+     "expl-0403",
+     "gene-0483",
+     "news-0014",
+     "abst-0124"
+    ],
+    "words_median": 392
+   }
+  },
+  {
+   "batch_id": "opus__locked__r4_000",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r4_000.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r4_000.txt",
+   "status": "ingested",
+   "agent_id": "ac26c4eecadce1efe",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 251
+   }
+  },
+  {
+   "batch_id": "opus__locked__r4_001",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r4_001.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r4_001.txt",
+   "status": "ingested",
+   "agent_id": "a5b07433a27924a88",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {
+     "stripped_wrapper": 1
+    },
+    "missing": [],
+    "words_median": 271
+   }
+  },
+  {
+   "batch_id": "opus__locked__r4_002",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r4_002.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r4_002.txt",
+   "status": "ingested",
+   "agent_id": "a21a7b31bb5fbf29a",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 367
+   }
+  },
+  {
+   "batch_id": "opus__locked__r4_003",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r4_003.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r4_003.txt",
+   "status": "ingested",
+   "agent_id": "ae036ca64f34be3cc",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 268
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_000",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_000.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_000.txt",
+   "status": "ingested",
+   "agent_id": "a8c031a1b08a7dc56",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 319
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_001",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_001.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_001.txt",
+   "status": "ingested",
+   "agent_id": "a49f9a0f0dd754e27",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 227
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_002",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_002.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_002.txt",
+   "status": "ingested",
+   "agent_id": "ac262bc350680707d",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 260
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_003",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_003.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_003.txt",
+   "status": "ingested",
+   "agent_id": "a7f471f509a7ca40f",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 325
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_004",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_004.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_004.txt",
+   "status": "ingested",
+   "agent_id": "a759eabc6d537ca19",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {
+     "stripped_wrapper": 1
+    },
+    "missing": [],
+    "words_median": 340
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r4_005",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r4_005.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r4_005.txt",
+   "status": "ingested",
+   "agent_id": "a0ca39df2f2bbe573",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 267
+   }
+  },
+  {
+   "batch_id": "opus__locked__r5_000",
+   "generator_id": "claude-opus-5-5",
+   "split": "locked",
+   "n": 14,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__locked__r5_000.json",
+   "out_path": "data/corpus/frontier/_raw/opus__locked__r5_000.txt",
+   "status": "ingested",
+   "agent_id": "a51a5b5e5e298b6ff",
+   "report": {
+    "rows": 14,
+    "usable": 14,
+    "flags": {},
+    "missing": [],
+    "words_median": 316
+   }
+  },
+  {
+   "batch_id": "opus__dev__r5_001",
+   "generator_id": "claude-opus-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__dev__r5_001.json",
+   "out_path": "data/corpus/frontier/_raw/opus__dev__r5_001.txt",
+   "status": "ingested",
+   "agent_id": "ac24a7db100a65cea",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {
+     "stripped_wrapper": 1
+    },
+    "missing": [],
+    "words_median": 258
+   }
+  },
+  {
+   "batch_id": "opus__dev__r5_002",
+   "generator_id": "claude-opus-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__dev__r5_002.json",
+   "out_path": "data/corpus/frontier/_raw/opus__dev__r5_002.txt",
+   "status": "ingested",
+   "agent_id": "a5447742c4870f88d",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 263
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r5_000",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r5_000.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r5_000.txt",
+   "status": "ingested",
+   "agent_id": "a9ff9f1087663526a",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 302
+   }
+  },
+  {
+   "batch_id": "sonnet__locked__r5_001",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "locked",
+   "n": 2,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__locked__r5_001.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__locked__r5_001.txt",
+   "status": "ingested",
+   "agent_id": "a7ae4b7179fbdc001",
+   "report": {
+    "rows": 2,
+    "usable": 2,
+    "flags": {},
+    "missing": [],
+    "words_median": 1099
+   }
+  },
+  {
+   "batch_id": "sonnet__dev__r5_002",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__dev__r5_002.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__dev__r5_002.txt",
+   "status": "ingested",
+   "agent_id": "aa98d26f95835763d",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 262
+   }
+  },
+  {
+   "batch_id": "sonnet__dev__r5_003",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__dev__r5_003.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__dev__r5_003.txt",
+   "status": "ingested",
+   "agent_id": "a1ed656a752d58a40",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 330
+   }
+  },
+  {
+   "batch_id": "opus__dev__r6_000",
+   "generator_id": "claude-opus-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__dev__r6_000.json",
+   "out_path": "data/corpus/frontier/_raw/opus__dev__r6_000.txt",
+   "status": "ingested",
+   "agent_id": "a3e84b2f57c2f005c",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 322
+   }
+  },
+  {
+   "batch_id": "opus__dev__r6_001",
+   "generator_id": "claude-opus-5-5",
+   "split": "dev",
+   "n": 18,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__dev__r6_001.json",
+   "out_path": "data/corpus/frontier/_raw/opus__dev__r6_001.txt",
+   "status": "ingested",
+   "agent_id": "ab26547f7ecd23cdd",
+   "report": {
+    "rows": 18,
+    "usable": 17,
+    "flags": {
+     "too_short": 1
+    },
+    "missing": [],
+    "words_median": 346
+   }
+  },
+  {
+   "batch_id": "opus__train__r6_002",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_002.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_002.txt",
+   "status": "running",
+   "agent_id": "aedb1ef9fc19144fc"
+  },
+  {
+   "batch_id": "opus__train__r6_003",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_003.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_003.txt",
+   "status": "running",
+   "agent_id": "a36f40e3a532e6066"
+  },
+  {
+   "batch_id": "opus__train__r6_004",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_004.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_004.txt",
+   "status": "running",
+   "agent_id": "aa6ddbdd3f0e083c2"
+  },
+  {
+   "batch_id": "opus__train__r6_005",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_005.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_005.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_006",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_006.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_006.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_007",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_007.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_007.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_008",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_008.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_008.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_009",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_009.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_009.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_010",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_010.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_010.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_011",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_011.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_011.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "opus__train__r6_012",
+   "generator_id": "claude-opus-5-5",
+   "split": "train",
+   "n": 16,
+   "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_012.json",
+   "out_path": "data/corpus/frontier/_raw/opus__train__r6_012.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__dev__r6_000",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "dev",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__dev__r6_000.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__dev__r6_000.txt",
+   "status": "ingested",
+   "agent_id": "ace47dd8c8761d767",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 291
+   }
+  },
+  {
+   "batch_id": "sonnet__dev__r6_001",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "dev",
+   "n": 18,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__dev__r6_001.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__dev__r6_001.txt",
+   "status": "ingested",
+   "agent_id": "afdc8aec3d1cd1db5",
+   "report": {
+    "rows": 18,
+    "usable": 18,
+    "flags": {},
+    "missing": [],
+    "words_median": 356
+   }
+  },
+  {
+   "batch_id": "sonnet__train__r6_002",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_002.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_002.txt",
+   "status": "running",
+   "agent_id": "a81eaf4f7fdac038e"
+  },
+  {
+   "batch_id": "sonnet__train__r6_003",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_003.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_003.txt",
+   "status": "running",
+   "agent_id": "abd08d837605cf1fe"
+  },
+  {
+   "batch_id": "sonnet__train__r6_004",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_004.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_004.txt",
+   "status": "running",
+   "agent_id": "adb2a99f220c15aee"
+  },
+  {
+   "batch_id": "sonnet__train__r6_005",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_005.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_005.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_006",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_006.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_006.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_007",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_007.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_007.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_008",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_008.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_008.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_009",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_009.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_009.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_010",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_010.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_010.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_011",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 20,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_011.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_011.txt",
+   "status": "pending"
+  },
+  {
+   "batch_id": "sonnet__train__r6_012",
+   "generator_id": "claude-sonnet-5-5",
+   "split": "train",
+   "n": 16,
+   "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_012.json",
+   "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_012.txt",
+   "status": "pending"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0027",
+  "instruction": "Using the following highlights, write a 300-word news story:\n- Conrad Roy, 18, was found dead of apparent carbon monoxide poisoning, police said.\n- Police: A search of his phone found texts from a friend urging him to commit suicide."
+ },
+ {
+  "prompt_id": "abst-0137",
+  "instruction": "Draft the abstract (around 250 words) for the paper \"CorNet: Generic 3D Corners for 6D Pose Estimation of New Objects without Retraining\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0238",
+  "instruction": "Write an email with the subject line \"Alliant Energy Corporate Services, Inc., as Agent\". Aim for about 200 words."
+ },
+ {
+  "prompt_id": "stor-0315",
+  "instruction": "Write a 600-word story for this prompt: We always hear about ghost stories where things go missing. Why do ghosts take our things and what do they do with them?"
+ },
+ {
+  "prompt_id": "expl-0411",
+  "instruction": "Are we still in the Modern era or did the Modern era end in 1989? Are we now in a new age of history? (answer in roughly 125 words)"
+ },
+ {
+  "prompt_id": "gene-0520",
+  "instruction": "Can you explain the difference between on demand shops and crowdfunding?"
+ },
+ {
+  "prompt_id": "news-0028",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- A Wisconsin pizzeria is harassed by people confusing it with one in Indiana.\n- Owners of Memories Gourmet Pizza Co. have gotten angry calls, Facebook posts.\n- Memories Pizza of Walkerton, Indiana, made headlines amid \"religious freedom\" debate."
+ },
+ {
+  "prompt_id": "abst-0138",
+  "instruction": "Draft the abstract (around 225 words) for the paper \"An Initial Survey of White Dwarfs in the Sloan Digital Sky Survey\"."
+ },
+ {
+  "prompt_id": "emai-0239",
+  "instruction": "Write an email with the subject line \"IMPORTANT! Actions this evening.\". Aim for about 225 words."
+ },
+ {
+  "prompt_id": "stor-0316",
+  "instruction": "Write a 600-word story for this prompt: You're sitting in a coffee shop watching a man type on his computer. He types the words, \"It begins raining outside \", and it instantly starts raining."
+ },
+ {
+  "prompt_id": "expl-0412",
+  "instruction": "I'm a college student and need help with an assignment. What's the difference between a granuloma and a cyst? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0521",
+  "instruction": "I'm a college student and need help with an assignment. What is the history of the Roman Republic and the Roman Empire and what were their key achievements?"
+ }
+]

@@ -1,0 +1,289 @@
+=== id: 0fcbb682129a6f20.A3_humanizer ===
+Pokémon are basically just fake creatures living in an imaginary world. Some of 'em look like dogs, some look like turtles, and there's dragons and all kinds of weird stuff. Each one has its own special power, right? Pikachu's probably the most famous one—you know, that little yellow mouse that shoots lightning out of its cheeks.
+
+So in this world, kids go around on this big adventure with their Pokémon buddies. When they find a new one, they can catch it with this red-and-white ball thing. The Pokémon hangs out inside the ball to rest—basically like a little home—then pops back out whenever.
+
+The kids battle each other sometimes to see whose Pokémon is stronger. Once one gets tired, it just stops. They chill for a bit and then they're good again.
+
+The more you practice with your Pokémon, the better you both get. Some of them actually grow into a completely different, bigger version of themselves.
+
+At the end of the day, it's really just about having friends and taking care of them.
+
+=== id: 9ce78260cbea564e.A3_humanizer ===
+There's a bunch of reasons for this pattern, really. The simplest one is that the sky's literally above us and we can't reach it, and most cultures just naturally link height with power and status, so it makes sense that the highest place would be where the highest-ranking beings live. Plus, the sky actually controls whether we survive or not—sun, rain, storms, lightning, all that decides if your crops make it. And we can't control any of it. It moves in these perfect, regular cycles, too, which makes it feel like this ordered, permanent realm, totally different from everything dying and rotting down here. When you watch smoke rise from a fire or see birds disappearing up into the air, it feels like you're watching a doorway between worlds. Even the languages get it: the Chinese word tian means both sky and heaven. Zeus and Jupiter? They trace back to this proto-Indo-European sky god.
+
+=== id: 36875ed2eb127520.A3_humanizer ===
+Do young people respect older people? A lot of people say they don't anymore, and... I mean, kind of, but not entirely.
+
+Yeah, it's true some young people aren't that polite. Like on the bus I'll see teenagers who won't give their seat to an old person. And honestly, a lot of them are just glued to their phones even when their grandparents are talking to them. That's not great.
+
+But I actually think most young people do respect older people, just in a different way, you know? My family's a good example—I teach my grandmother how to use her phone and she gets really happy about it. My friends all help their grandparents with shopping and stuff. We're way less formal than we used to be, but we still care.
+
+So I guess what I'm saying is young people respect older generations, we just show it differently now. Both sides probably need to try harder to get what the other person's about.
+
+=== id: 4258b7187a60bfbf.A3_humanizer ===
+The volume of a cylinder is πr²h—where V is the volume, π is about 3.14, r is the radius, and h is the height.
+
+Why does that work? A cylinder is basically a stack of identical circles, right? Each circle has area πr². Multiply that base area by how tall it is and you get how much space is actually inside. This works for any prism—volume just equals base area times height.
+
+Say you have a cylinder with radius 3 cm and height 10 cm. Square the radius: 3² = 9. Multiply by π: 9 × 3.14 is about 28. That's your base area. Then times 10 gives you roughly 283 cubic cm.
+
+Few things to remember: if someone gives you the diameter instead of the radius, just cut it in half first. Also watch your units—make sure the radius and height are both in the same units before you calculate. The answer comes out in cubic units like cm³ or m³.
+
+And yeah, this formula works even if the cylinder's tilted, as long as you measure the height straight up, not along the side.
+
+=== id: dda9ed3de143d523.A3_humanizer ===
+Most people just stared at themselves in the mirror that first morning. Not Ruth Abernathy, though. She'd been blind since she was six, so she stood in her kitchen listening to some stranger make her coffee instead.
+
+The stranger had all of Dev's habits. Three taps of the spoon against the mug. Humming while the kettle got louder. But the humming came from somewhere higher now, lighter, and when he said, "Ruthie, it's me, I swear," it came out of a woman's voice.
+
+Her own voice had changed too. She'd figured that out at 6:40 when she sat up and said "What the hell?" and a man answered from her own throat. She ran her hands over the new square jaw, the broad shoulders, the flat chest. Something enormous had happened. The radio told her the rest. Every station, every language—same stunned voices. Eight billion people. Woke up as the opposite sex.
+
+Out there, people were losing it. But they could still find their husband's eyes in his new face. Spot their kid's crooked tooth in the new smile.
+
+Ruth had built her whole life on sound. Fifty years of knowing people by how they said hello, the weight of their footsteps, the mailman's cough, her sister's laugh that went up like a question. Overnight, every voice she loved just... disappeared. Replaced with someone she'd never heard before.
+
+"How do I know it's really you?" she asked.
+
+He set the mug down, handle facing her right hand, exactly two inches from the edge.
+
+"Ask me something," Dev said.
+
+So she did. What was she wearing when they met? A green dress. Some careless sales person had sold it to her as blue and she'd spent half their first date insisting he was the colorblind one. What were they going to name their son? Which of her jokes does he always fake-laugh at? He got them all. He answered in Dev's rhythm—that long pause before the punchline, the little laugh at himself.
+
+Around noon their son called from Denver. His voice was a bright alto now. Ruth cried a little, because she'd loved the way it used to crack when he was fourteen. But he said "Mom" the same way—stretched out almost two syllables—and she laughed through the tears.
+
+That night, lying next to the stranger who wasn't a stranger, Ruth reached over and found Dev's hand. It was smaller now, softer. But his thumb still made that same slow circle on her knuckles, back and forth. Thirty-one years. Same circle.
+
+A voice, it turned out, was just a doorway. She'd just never needed to walk through it before.
+
+=== id: 961706c2e91a4ea6.A3_humanizer ===
+So every day millions of people throw away plastic bags and straws and cups right after using them once. But plastic doesn't just disappear. It can stick around for like hundreds of years. That's why I think governments should ban single-use plastics.
+
+The biggest reason is obviously the damage it does to nature. Tons of plastic end up in the ocean every year. Sea turtles eat plastic bags thinking they're jellyfish. Seabirds feed plastic to their babies. And over time it just breaks into these tiny pieces called microplastics that scientists are finding in fish, in salt, even inside people. We don't really know how bad it is yet, but it's definitely not good.
+
+Some people say recycling fixes everything, but honestly most plastic doesn't actually get recycled. It's too cheap or too mixed up with other stuff to be worth processing. And telling people to just voluntarily stop using plastic doesn't work because plastic is so convenient. You need actual rules.
+
+People argue that bans hurt businesses and make life harder. Fair point at first, but people adjust fast. Places that banned plastic bags? Shoppers were bringing reusable ones within a few months. Paper straws and metal cutlery and stuff that breaks down are getting cheaper as more companies make them.
+
+A ban could still have exceptions for hospitals or disabled people who actually need certain plastics. Overall though, it's probably one of the simplest things governments could do to not completely wreck the planet for the next generation.
+
+=== id: 8819edeea3a146d7.A3_humanizer ===
+Flutter's fast mainly because of how it's built. It avoids a bunch of problems you see in other frameworks.
+
+First, in release mode Dart gets compiled straight into native ARM or x86 code ahead of time. So there's no JavaScript interpreter running in the background slowing everything down. You get fast startup and consistent speed. For development, it does just-in-time compiling so you get hot reload.
+
+Flutter also doesn't use the platform's built-in UI components. It draws every single pixel itself with its own rendering engine. That means no overhead from translating stuff into native widgets, and you get a solid 60 or 120 frames a second on pretty much any device.
+
+Widgets are lightweight and immutable—they're just descriptions of what the UI looks like. Flutter compares the old widget tree to the new one and only updates whatever actually changed. Developers can optimize further with const constructors, breaking up large widgets, or using RepaintBoundary to isolate expensive repaints.
+
+Heavy tasks can run in isolates, which are basically separate memory threads, so parsing or computation doesn't freeze up the main UI thread.
+
+DevTools is pretty useful too—it shows you frame timing, CPU and memory usage, and tracks which widgets are causing repaints so you can find the lag.
+
+React Native used to rely on a JavaScript bridge to native components which could cause latency. They're closing that gap with the newer architecture now. Native code in Swift or Kotlin is still the most direct access and smaller apps. Flutter's trade-off is bigger binaries and UI that doesn't automatically match how your platform looks.
+
+Overall you get near-native performance for most apps.
+
+=== id: 3c0d465a3fc2467b.A3_humanizer ===
+GARISSA, Kenya — At least 147 people got killed Thursday when gunmen stormed into Garissa University College in northeastern Kenya. At least that's what the National Disaster Operation Centre said.
+
+They were already planning how to get students and everyone else out of there after a siege that basically went on all day.
+
+Students said they got jolted awake before dawn by explosions and gunfire. A lot of them just ran in their nightclothes, climbing fences or hiding in their rooms and closets as the attackers moved through the buildings.
+
+According to survivors and media reports, the gunmen were targeting Christians specifically, killing them while letting Muslim students leave. Witnesses said the attackers were actually asking students what religion they were, basically deciding who lived and who didn't.
+
+Al-Shabaab, a militant group from Somalia, claimed they did it. They've carried out a bunch of attacks in Kenya, saying it's payback for Kenyan troops being in Somalia since 2011 fighting them.
+
+Kenyan police and military units got there pretty fast and fought the gunmen all day. They killed four attackers by evening and ended the siege. But officials warned the death count could go up as they searched the campus, and dozens of wounded students were in hospitals.
+
+This was the deadliest attack in Kenya since the 1998 U.S. Embassy bombing in Nairobi, which killed over 200 people. It surpassed the 2013 Westgate mall siege where Al-Shabaab killed 67 people.
+
+When the news got out, families started showing up, desperate to find out if their people were okay. Kenyan leaders came out condemning the whole thing.
+
+=== id: cf68f2c91339cdd9.A3_humanizer ===
+The bell jangled and three adventurers squeezed through the door, reeking of swamp and ambition.
+
+"Welcome to Grudd's," I said, not looking up from the ledger. "No refunds on cursed items. That's your problem."
+
+The half-elf in the dented breastplate slapped a sack on the counter. "We cleared the Barrow of Ashenmoor. Got some real treasures."
+
+Everyone clears the Barrow. The necromancer respawns every Tuesday. I've bought enough of his candlesticks to light a whole cathedral by now.
+
+"Let's see."
+
+Out came a longsword with a broken pommel. "Enchanted," the half-elf said. "Plus two, at least."
+
+I tapped it with my appraisal wand. It made a sad little fizzle. "Plus nothing. Minus a bit, actually. Pommel's broken. Twelve gold."
+
+"Twelve? The blacksmith said—"
+
+"Sell it to the blacksmith then."
+
+They looked at each other. Nobody sells to the blacksmith. He pays in horseshoes.
+
+"Fine. Twelve."
+
+Then came a ring. The wizard, a nervous little gnome, slid it across like it might bite. "It whispers."
+
+"They all whisper." I held it up to my ear. It was reciting a grocery list. "Ring of Mild Telepathy. Picks up whoever's nearest. Right now that's a goblin in the alley wondering where his shoe went. Thirty gold."
+
+"It's worth two hundred!"
+
+"To someone who cares about the shoe, maybe."
+
+The gnome was wrestling with it. I kept quiet. Silence works better than talking. Adventurers can't stand it. They're too used to things screaming at them.
+
+"Fifty," he finally said.
+
+"Forty, and I throw in a healing potion."
+
+"Deal."
+
+The potion was three weeks past best-by. It would work, mostly. Might also turn his ears blue for a day. Small print.
+
+Last one was a dwarf who hadn't said anything. He set down a plain wooden box. Inside, wrapped in burlap, was an egg the size of a melon, still warm.
+
+I closed the lid very slowly.
+
+"Where'd you get this?"
+
+"Back of the barrow. Behind a wall."
+
+I thought about my profit margins. Then I thought about what dragons do to people who sell their eggs to pawnshops.
+
+"Take it back," I said. "Free advice. Best deal you'll get all week."
+
+They left with fifty-two gold, a questionable potion, and an egg.
+
+I locked the door and started packing.
+
+=== id: 0a72ee81039b4492.A3_humanizer ===
+Solar panels turn sunlight into electricity through something called the photovoltaic effect, which happens in a semiconductor—usually silicon.
+
+Here's the basic setup: each solar cell is made of two layers of silicon that have been doped with other elements. The top layer's doped with phosphorus, which adds extra electrons, making it n-type or negative. The bottom one's doped with boron, which creates holes where electrons should be, making it p-type or positive. Where they meet, a p-n junction forms. Electrons near that boundary diffuse across to fill the holes, leaving behind an electric field.
+
+Sunlight's made of photons. When a photon hits with enough energy—more than silicon's band gap of about 1.1 electron-volts—it knocks an electron loose. That creates an electron-hole pair.
+
+The electric field at the junction acts like a one-way slope. It pushes the freed electrons one direction and the holes the other. Without that field, the electrons would just recombine with holes and release energy as heat.
+
+Thin metal contacts on the front and back of the cell collect the separated charges. Connect them to a circuit and electrons flow through it, which makes direct current. Stack cells together into panels to bump up the voltage and power.
+
+Direct current doesn't work for homes, so an inverter converts it to alternating current for the grid.
+
+Most commercial panels convert somewhere around 18 to 23 percent of sunlight into electricity. The rest gets lost as heat or reflection, or the photons don't have enough or too much energy.
+
+=== id: 17cd819bcf2d2bc7.A3_humanizer ===
+People lift their trucks for different reasons, some practical and some just because.
+
+Ground clearance is the big one. That's why people started doing it. Raising the suspension or body gives you more clearance so you can drive over rocks and logs and ruts without scraping the undercarriage. It also improves the angles, so your bumpers and frame aren't hanging up on steep stuff. If you're mudding or rock crawling or overlanding, those extra inches make a real difference.
+
+A lot of times the point isn't really the lift itself, it's room for bigger, more aggressive tires. Bigger tires give you clearance on their own and grip way better on loose surfaces. You can let air out of them too for traction on sand or snow.
+
+Quality lift kits usually come with longer springs and shocks that let the wheels articulate more and stay planted on rough ground.
+
+Some people actually need the clearance—farmers, ranchers, hunters, construction workers dealing with muddy fields and bad roads.
+
+But honestly for a lot of owners it's just about style. A lifted truck looks bold and commanding, and building one is basically a hobby, like modifying a sports car. There's this whole culture around truck shows and social media for it.
+
+And yeah, sitting higher gives you a better view over traffic, which some people really like.
+
+That said, there's real downsides: higher center of gravity means more rollover risk and the handling's not as tight. You burn more gas with the taller truck and heavier tires. Braking takes longer unless you upgrade. Everything in the suspension and drivetrain wears faster. The speedometer gets messed up until you recalibrate it. You might lose your warranty and insurance could cost more. And your headlights can glare into other drivers' eyes.
+
+A lot of states limit how high you can go, so check the laws first.
+
+A modest lift actually makes a truck more capable. A huge one is mostly about self-expression.
+
+=== id: a9e551bb15a7a89a.A3_humanizer ===
+So every winter break, half my class posts pictures from Tokyo or Bali or somewhere fancy in the Alps. The photos look amazing, I'll admit. But honestly if I get to pick, I'd rather just stay home for my holidays. I've got three reasons.
+
+First, home is where you actually rest. School's exhausting—tests and practice and homework piling up every single week. Traveling sounds relaxing but it's not. You're waking up early for flights, standing in security lines forever, rushing from one tourist thing to the next. At home I can sleep as long as I want, read books I actually picked out, and recharge before the next semester hits.
+
+Second, staying home means time with the people that actually matter. During school my family's so busy we barely eat dinner together. Holidays are when we actually cook something big, play board games, visit my grandparents who live like twenty minutes away but I never see once school starts.
+
+And third, there's a ton to explore right where I live. My friends and I biked to this hiking trail in our city last summer that none of us had ever been to. Felt like a real adventure and we didn't need a passport or anything.
+
+Don't get me wrong, traveling's cool and I want to see other countries someday. For now though, the holidays I actually enjoy are the ones at home where I can rest and be with my family and find stuff I never noticed before.
+
+=== id: 717efba0279c04f1.A3_humanizer ===
+COMPASS at CERN ran this huge experiment with a 190 GeV pion beam and basically opened up a new way to look for exotic particles. These are particles with quantum numbers that you shouldn't see if you just have regular quark-antiquark pairs, so they'd be signs of hybrid mesons with excited gluonic degrees of freedom.
+
+They did partial-wave analyses of different systems using about 46 million events. By looking at the squared four-momentum transfer, they could separate what was an actual resonance signal from non-resonant contributions.
+
+They found something consistent with the π1(1600), but at low momentum transfer non-resonant production dominates instead. In the other channel they looked at, the exotic P-wave is basically the dominant partial wave, which is striking compared to the other one.
+
+The implications for the light hybrid meson spectrum are pretty interesting.
+
+=== id: aaa654c975b39e20.A3_humanizer ===
+Nope, actually a gear train would be way slower than an electrical signal. Not even close to light speed.
+
+The intuition is that gears are rigid so one end turns instantly, right? But nothing's perfectly rigid. When you turn the first gear, its atoms push on the next atoms through electromagnetic forces. Those push the next ones. It's like a compression wave traveling through the metal, which moves at the speed of sound in that material.
+
+In steel sound travels at like 5 or 6 kilometers per second. That sounds fast for everyday stuff, but light goes 300,000 kilometers per second. Like 50,000 times faster. Electrical signals in a copper wire travel as electromagnetic waves, usually around 50 to 99 percent of light speed.
+
+Gears have other delays too. Each mesh has a little slack called backlash that needs to be taken up before the next gear moves. Every tooth and shaft twists slightly under load. Over a long chain these tiny lags add up.
+
+So for a gear chain spanning 1,000 kilometers, the far end wouldn't start moving for more than three minutes, assuming the gears didn't break first.
+
+=== id: e74b7d77d299fffc.A3_humanizer ===
+L1₀-ordered Mn–Ga has large perpendicular magnetic anisotropy, low damping, and high spin polarization, making it good for spintronic memory and terahertz devices. But how it actually behaves at ultrathin thicknesses needed for devices isn't well understood.
+
+They grew epitaxial films from 1 to 10 nm thick on substrates using molecular beam epitaxy and measured them with X-ray diffraction and magnetometry.
+
+The perpendicular anisotropy dropped sharply as films got thinner and mostly disappeared below a critical thickness. Structural measurements showed the buffer layer was imposing strain that suppressed the tetragonal distortion.
+
+So strain management is basically central to scaling these devices.
+
+=== id: 6ad9f049a4cde589.A3_humanizer ===
+Lewis Hamilton snatched pole position at the Chinese Grand Prix from his Mercedes teammate Nico Rosberg with a blisteringly fast lap on his last attempt in Shanghai, bumping Rosberg down to second. The German didn't look happy about it.
+
+Rosberg had looked like he was going to get pole after he'd been fastest in the early runs of the final qualifying session. But Hamilton, who'd been trailing him through parts of the lap, found more time in the final sector on his last try and edged ahead by a fraction of a second.
+
+Hamilton celebrated over the radio, but things got way frostier when the cars came back. When Hamilton offered his hand to Rosberg, his teammate just walked past without taking it. It was caught on camera and instantly went everywhere on social media.
+
+Rosberg didn't really talk about the snub afterward. He was focused on what he called a missed opportunity after a strong practice weekend. Hamilton was already thinking about Sunday and converting pole into a win.
+
+This is just the latest thing in this rivalry that's been building since last season when they fought for the drivers' championship. That whole battle kept pushing Mercedes' policy of letting drivers race each other. Management keeps saying they trust both of them to keep it clean on track, but this moment won't help ease the tension.
+
+Sebastian Vettel from Ferrari is third, sitting there ready to take advantage if the Mercedes drivers get too focused on each other into turn one.
+
+With both Mercedes on the front row side by side, everyone's watching to see what happens into the first corner.
+
+=== id: 96121c65b27cc5b7.A3_humanizer ===
+Charmonium states are useful for studying the quark-gluon plasma from heavy-ion collisions. When you go above the deconfinement transition, color screening should modify or dissolve charm-anticharm pairs.
+
+So they looked at J/ψ, χc, and ψ′ states at temperatures above the critical temperature using a potential model with temperature-dependent heavy-quark potential based on lattice QCD data. They computed binding energies, radii, and melting temperatures, then compared the spectral functions to lattice results.
+
+The excited states melt close to the transition, whereas the J/ψ might stick around as a bound state up to maybe 1.5–2 times Tc depending on the potential. This has implications for sequential suppression and charmonium regeneration in experiments.
+
+=== id: b3ac1233d9c1631a.A3_humanizer ===
+Arctic Silver and Thermal Grizzly go about thermal paste pretty differently. Arctic Silver's an American company that's famous for Arctic Silver 5, which has been around forever—silver-filled paste. Thermal Grizzly's from Germany and has a whole range of stuff from regular pastes to liquid metal. Also note: Arctic Silver is different from ARCTIC which makes the MX series—people mix those up constantly.
+
+For thermal conductivity: Arctic Silver 5 doesn't officially state their numbers in W/m·K, but third-party testing usually gets around 8–9. Thermal Grizzly's more transparent—their Aeronaut is 8.5, Hydronaut is 11.8, Kryonaut is 12.5, Kryonaut Extreme is 14.2. And then Conductonaut is liquid metal at 73 W/m·K but it's electrically conductive, which matters.
+
+The thing is, manufacturers don't measure conductivity the same way, so published numbers aren't really directly comparable. Independent testing usually shows that premium non-metallic pastes perform within a few degrees Celsius of each other. Liquid metal is the huge exception and can give you way lower temps when it's appropriate.
+
+Arctic Silver 5 takes about 200 hours to break in under normal thermal cycling, and temperatures can drop a few degrees during that time. Thermal Grizzly pastes don't have a break-in period—they work right out of the tube, which is nice for benchmarking or short overclocking sessions. Conductonaut has no curing either, but liquid metal can get absorbed or react with some metals over time so you should check on it occasionally.
+
+For application, Arctic Silver 5's pretty thick and they recommend a line or dot depending on your chip, then even pressure. Kryonaut and Hydronaut spread easily. Kryonaut Extreme is thicker and better for large surfaces and extreme overclocking. Conductonaut needs to be really thin and applied with a special applicator.
+
+For high-end overclocking, Kryonaut or Kryonaut Extreme are usually better because they don't need curing and perform well under high heat. Though Kryonaut degrades faster at sustained high temps on GPUs. For daily use, you probably want something pump-out-resistant or a reapplication schedule.
+
+Low-profile coolers don't have much pressure, so something that spreads easily and isn't conductive like Hydronaut or Kryonaut works well. Arctic Silver 5 is also reasonable if you can live with the break-in.
+
+For delidded CPUs, Conductonaut between the die and the heat spreader gives the biggest improvement. Between the heat spreader and cooler, regular paste like Kryonaut is usually recommended.
+
+For general builds where cost and longevity matter, Arctic Silver 5 is solid. For peak performance and enthusiast stuff, Thermal Grizzly gives more flexibility. Liquid metal should be for experienced users with delidded setups.
+
+=== id: 6d7effca2a73b550.A3_humanizer ===
+Basically anything that adds flavor, texture, or richness works in bread. Common options are seeds like sunflower, pumpkin, sesame, flax. Grains like rolled oats, cracked wheat, cooked quinoa, cornmeal. Nuts—walnuts, pecans, hazelnuts, almonds. Dried fruit like raisins, cranberries, dates, figs, apricots. Cheese if you want—cheddar, Parmesan, Gruyère, feta. On the savory side: olives, sun-dried tomatoes, roasted garlic, caramelized onions, jalapeños, bacon. Herbs and spices like rosemary, thyme, dill, oregano, cinnamon, cardamom. You can also enrich the dough with milk, butter, eggs, honey, or olive oil for a softer, richer crumb. Or try weird stuff—mashed potato, pumpkin purée, cocoa powder, or even beer instead of water.
+
+A few tips: fold in chunky stuff near the end of kneading so it doesn't mess with gluten development. Keep mix-ins to about 20–30% of the flour weight. And soak dried fruit a bit first so it doesn't pull moisture out of the dough.
+
+=== id: 1a1d876443a5dae3.A3_humanizer ===
+Interpreting upcoming Sunyaev–Zel'dovich effect surveys requires realistic models of the microwave sky. So they built synthetic surveys from adaptive mesh refinement cosmological simulations of the past light cone, stacking simulation volumes from now to high redshift to produce mock maps spanning several square degrees at high resolution.
+
+Using these maps they quantified how much of the SZE signal comes from clusters, groups, and diffuse filamentary gas. They computed source counts and angular power spectra and assessed how well cluster catalogs hold up under realistic observing conditions.
+
+The big finding: projection effects and emission from low-mass systems are significant sources of confusion for cluster detection.

@@ -1,0 +1,186 @@
+=== prompt_id: news-0041 ===
+**Gunmen Kill at Least 23 in Attack on Tunis Museum**
+
+TUNIS — At least 23 people were killed on Wednesday when gunmen stormed the Bardo Museum in the Tunisian capital, in one of the deadliest attacks the country has experienced in years.
+
+The attackers, wearing military-style uniforms, opened fire on visitors at the museum, which stands next to the national parliament. Most of the dead were foreign tourists who had come to see its celebrated collection of Roman mosaics. Security forces eventually entered the building and brought the siege to an end, officials said.
+
+The assault struck at the heart of Tunisia's tourism industry, a pillar of an economy that has struggled since the 2011 uprising that toppled President Zine el-Abidine Ben Ali. Lawmakers had been debating anti-terrorism legislation when the shooting began, and parliament was evacuated as the crisis unfolded.
+
+In the aftermath, attention turned to the question of why some young Tunisians are drawn to violent extremism. Thousands of the country's citizens have travelled abroad to fight with jihadist groups in Syria, Iraq and Libya, and the government has come under growing pressure over the threat posed by their return.
+
+Mabrouka M'Barek, a Tunisian politician, put it bluntly: Tunisia, she said, has failed to "recruit" its citizens into society.
+
+Her words reflect a debate that has run through Tunisia since the revolution. Often described as the Arab Spring's one success story, the country still faces high youth unemployment and deep economic neglect in its interior regions. Critics argue that people who feel shut out of society are easier targets for extremist recruiters, and that security measures alone cannot solve the problem.
+
+Tunisian leaders promised a firm response to the killings, while governments whose citizens were among the victims offered their condolences. For many Tunisians, the attack was a painful reminder of how fragile the country's hard-won stability remains.
+
+=== prompt_id: abst-0151 ===
+The two-dimensional electron system at the LaAlO3/SrTiO3 interface hosts an unusual collection of phenomena, including gate-tunable superconductivity, strong spin-orbit coupling, and signatures of magnetism. These properties have mostly been studied in separate samples grown under different conditions, and it has remained unclear whether they share a common origin. Here we combine electrostatic gating with low-temperature transport measurements on many devices to track the electronic properties of the interface across a wide range of carrier densities. We find that the behavior of the system is organized around a single critical density, on the order of 10^13 electrons per square centimeter, that is nearly independent of sample details. Near this density, the Hall response, the electron mobility, the strength of spin-orbit coupling, and the superconducting transition temperature all change character together. We associate this threshold with the filling at which electrons begin to occupy higher-energy titanium d-orbital bands, and we show that a simple multiband description accounts for the observed universality. Our results suggest that the physics of this interface is governed by its band structure rather than by extrinsic disorder.
+
+=== prompt_id: emai-0246 ===
+Subject: [EDIS] URGENT WEATHER MESSAGE [Urgent: Sacramento Valley]
+
+To all emergency managers and public information officers:
+
+The National Weather Service has issued a Flood Watch for the Sacramento Valley from this evening through Saturday morning. A strong atmospheric river will bring heavy rain, with 2 to 4 inches likely on the valley floor and more in the foothills. Creeks, rivers, and low-lying roads may flood quickly.
+
+Residents should avoid flooded roadways, secure outdoor items, and monitor local alerts. Please share this information with your communities.
+
+Emergency Operations Center
+
+=== prompt_id: stor-0327 ===
+**Plausible Deniability**
+
+I died at sixty-eight after forty years as an insurance claims adjuster, never once saying what I was actually thinking. So when I woke up in a hospital nursery with all my memories intact and a fresh set of dimples, I knew exactly what to do with my second chance.
+
+Not fame. Not fortune. Honesty, delivered at age four, with enormous eyes and a lisp.
+
+My debut was Great-Aunt Marjorie's funeral. Mom had stuffed me into a clip-on tie. I walked up to the open casket, studied the body with great seriousness, and announced to the silent chapel, "She looks way nicer now. Mommy said she was mean when she was awake."
+
+Mom made a noise like a kettle. A cousin began coughing into a hymnal. I held up my juice box and asked, "Is there still going to be cake?"
+
+I was hooked.
+
+Over the next year I refined my craft. The rules were simple. Never be crude, because crude gets you punished. Be curious. Be sweet. Be wrong in precisely the right place.
+
+At the grocery store, I told a man with a very ambitious toupee, "Your hair is trying to run away, but it's stuck." At my Uncle Rob's third wedding, I whispered at full volume, "Do I have to learn this lady's name, or is she leaving too?" My parents sent me to a child therapist with a lovely toy box. I spent the session staring at the pale stripe on her ring finger and asked, with real sympathy, whether it was hard being single again. She ended our appointment early.
+
+Then came kindergarten. Miss Alvarez gathered us on a rainbow carpet for sharing time.
+
+"Teddy," she said gently, "tell us something about yourself."
+
+I stood and folded my hands. "I'm Teddy. Mommy says you only wear that lipstick when Principal Dunn is around, but he's married, so I don't think it's going to work."
+
+Miss Alvarez went the color of a boiled shrimp. A boy in the front row began to cry. It was, I felt, my finest work.
+
+Then a small voice behind me said, "Don't listen to him, Miss Alvarez. Everybody knows Principal Dunn isn't home sick on Fridays. He's at the casino with the lunch lady."
+
+I turned around. A girl in a cardigan and sensible shoes sat cross-legged on the carpet, regarding me the way a chess player regards a rival. She didn't smile. She nodded once, slowly, like someone at a funeral.
+
+At recess she found me by the swings and offered a tiny hand. "Beatrice. Former HR director. Choked on a pretzel at my own retirement party."
+
+"Teddy. Claims adjuster."
+
+Her grip tightened. "Oh, I know," she said sweetly. "You denied my mother's roof claim in 1994."
+
+Across the playground, Miss Alvarez watched us shake hands and sighed to the aide beside her. "Aww. They're already friends."
+
+Beatrice squeezed until something in my hand cracked. It was, without question, the best day of my second life.
+
+=== prompt_id: expl-0419 ===
+A bit of both, though "rip off" is unfair. Romans openly borrowed from Greece in sculpture, philosophy, religion, and literary models, and they were happy to admit it. But they also created things the Greeks never did.
+
+Roman law is the biggest example: a systematic civil law covering contracts, property, and legal personhood, which still shapes legal systems across Europe and Latin America. In engineering, they developed concrete, perfected the arch, vault, and dome, and built aqueducts, roads, and sewers at a scale no Greek city attempted. Satire was a Roman genre, and the codex, the ancestor of the modern book, emerged under Roman rule.
+
+Calling Greek culture "superior" is also debatable. It was different, with its own strengths, and Rome's real talent was adapting ideas into institutions that lasted.
+
+=== prompt_id: gene-0552 ===
+A fractal is a mathematical object that exhibits detail at every scale of magnification, usually through self-similarity, and whose fractal dimension need not be an integer. Although ideal fractals such as the Koch curve exist only in theory, many physical systems approximate fractal geometry over a finite range of scales, which makes the concept a valuable descriptive tool.
+
+Natural structures provide the clearest examples. Coastlines, river networks, mountain ranges, and clouds display irregular, repeating patterns whose measured length or area depends on the scale of measurement, a property Benoit Mandelbrot famously analyzed. Biological systems show similar organization: the branching of bronchial passages and blood vessels packs enormous surface area into limited volume, supporting efficient exchange and transport.
+
+Fractal geometry also emerges from physical processes. Diffusion-limited aggregation produces branching clusters resembling lightning and electrodeposition patterns, while chaotic dynamical systems often evolve on strange attractors with fractal structure. Scale-invariant behavior near critical points in phase transitions is likewise closely related to fractal scaling.
+
+These ideas have practical value. Fractal analysis informs antenna design, image compression, medical diagnostics, and the modeling of porous materials and terrain.
+
+The analogy has limits, however. Physical objects are fractal only across a bounded range of scales, constrained by atomic dimensions at one extreme and by the size of the system at the other. Fractal models should therefore be regarded as effective approximations rather than literal descriptions. Their ability to quantify irregularity nonetheless explains their enduring relevance across the physical sciences.
+
+=== prompt_id: news-0042 ===
+**Richard III Laid to Rest Again, 530 Years After Bosworth**
+
+Richard III, the last English king to die in battle, was laid to rest again on Thursday, 530 years after he was killed at Bosworth Field and more than two years after his remains were sensationally rediscovered.
+
+At a celebratory service in Leicester Cathedral, attended by hundreds of guests, actor Benedict Cumberbatch, a distant cousin of the king, read a poem by Poet Laureate Carol Ann Duffy written for the occasion. Crowds had lined the streets in the days before as the king's coffin made its way to the city.
+
+Richard was killed in 1485 when the forces of Henry Tudor, later Henry VII, defeated his army, effectively ending the Wars of the Roses. His grave was later lost, until the remains were unearthed in 2012 beneath a car park on the site of the former Greyfriars friary. The skeleton, its spine curved by scoliosis and its skull marked by the wounds of a violent death, was identified through DNA testing, including a match with a descendant of the king's sister.
+
+Historian Philippa Langley, who led the search for his grave, said the discovery had prompted researchers to rethink the king. Long cast as a scheming villain, a reputation shaped by Tudor propaganda and Shakespeare's play, Richard is now the subject of fresh scholarly scrutiny, and his new tomb in the cathedral is expected to draw visitors from around the world.
+
+=== prompt_id: abst-0152 ===
+Networks embedded on surfaces arise in applications ranging from transport and communication design to terrain analysis and geometric modeling. Computing optimal or canonical networks on a surface is difficult because topological constraints, such as genus, boundary components and homotopy classes, interact with geometric ones. We introduce a framework that handles these constraints by passing to general covering spaces of the surface, in which the relevant structure is simpler to represent and manipulate. Networks on the base surface are lifted to the cover, optimized there under a symmetry condition, and projected back, so that questions about the surface reduce to questions about a more tractable space. We show that this correspondence preserves length and connectivity, characterize the covers that are sufficient for a given class of networks, and derive bounds on the size of the cover required. As applications, we obtain algorithms for computing shortest and Steiner-type networks within prescribed homotopy classes, and we describe how the same machinery extends to networks with branching and boundary conditions. Our approach recasts several previously separate constructions as instances of one covering-space principle.
+
+=== prompt_id: emai-0247 ===
+Subject: Annual Meeting 2002
+
+Dear Members,
+
+I am writing to invite you to our Annual Meeting, which will be held on Thursday, November 14, 2002, at 6:30 p.m. in Room 204 of the Student Union.
+
+This year's agenda includes a review of our accomplishments over the past twelve months, a financial report from our treasurer, and the election of officers for the coming year. We will also discuss plans for next spring's community service project and welcome your suggestions for new activities.
+
+Every member has a vote, and we need a quorum to conduct official business, so your attendance is important. Light refreshments will be provided.
+
+Please confirm that you can attend by replying to this email by Friday, November 8. If you would like to add an item to the agenda, send it to me by the same date.
+
+I look forward to seeing you there.
+
+Best regards,
+[Your Name]
+Secretary, [Organization Name]
+
+=== prompt_id: stor-0328 ===
+**What the Mirror Kept**
+
+The vaccine was supposed to end it. That was the promise: one dose, and no more winters spent counting the dead.
+
+Instead, within six weeks, it emptied the world. The lucky ones died quietly in their sleep. The rest went insane, whispering to people nobody else could see until their bodies gave out. My husband, Tomas, spent his last four days sitting in the dark bathroom, apologizing to the mirror.
+
+I should have followed him. I'd taken the same dose, in the same clinic, on the same Tuesday. But on day forty I woke with a clear head and an apartment that still smelled like him.
+
+I avoided mirrors. I hung a bedsheet over the bathroom one and kept the rest of the apartment dark. In the abandoned houses I scavenged, I'd found the insane curled up in front of mirrors, palms flat against the glass, as if trying to climb in.
+
+A week later I ran out of excuses. I pulled down the sheet and looked.
+
+The woman in the mirror had my hair, my chipped tooth, my scar through the left eyebrow. But one of her eyes, brown all my life, had turned gray. Tomas's gray.
+
+I stepped closer, and the rest surfaced like watermarks. My mother's stubborn jaw. My brother's freckles. The crooked half smile Tomas wore whenever he was about to apologize. Everyone I had lost was in my face, layered there, faint and patient, looking back.
+
+That was when I understood. The vaccine hadn't poisoned anyone. It had made room for everyone we'd ever lost, and the ones who died and the ones who screamed had simply been unable to look.
+
+I looked until I could bear it. Then I looked a little longer.
+
+"Hello," I whispered.
+
+Every one of them smiled back.
+
+=== prompt_id: expl-0420 ===
+Technically, an RC quadcopter is a type of drone. "Drone" is the broader term for any unmanned aircraft, including ones that fly autonomously using GPS, sensors, and programmed waypoints. A basic RC quadcopter is flown manually by a pilot with a transmitter. In practice, most modern consumer quadcopters mix both, with stabilization and return-to-home features, so people use the words interchangeably.
+
+=== prompt_id: gene-0553 ===
+A standard 8×8 chessboard has 64 individual squares, but if you count squares of every size, including the larger ones formed by groups of cells, the total is **204**. This is a classic counting puzzle, and the key is to count systematically by size.
+
+## Counting by size
+
+A k×k square can sit in (9 - k) × (9 - k) different positions on the board, so you can count each size separately:
+
+| Square size | Positions | Number of squares |
+|---|---|---|
+| 1×1 | 8 × 8 | 64 |
+| 2×2 | 7 × 7 | 49 |
+| 3×3 | 6 × 6 | 36 |
+| 4×4 | 5 × 5 | 25 |
+| 5×5 | 4 × 4 | 16 |
+| 6×6 | 3 × 3 | 9 |
+| 7×7 | 2 × 2 | 4 |
+| 8×8 | 1 × 1 | 1 |
+
+Adding these up: 64 + 49 + 36 + 25 + 16 + 9 + 4 + 1 = **204**.
+
+## A general formula
+
+The totals form a sum of consecutive perfect squares. For an n×n board, the number of squares is:
+
+1² + 2² + 3² + … + n² = n(n + 1)(2n + 1) / 6
+
+For n = 8, this gives (8 × 9 × 17) / 6 = 1224 / 6 = 204, which matches the table. The same formula gives 5 squares on a 2×2 grid (four small squares and one large one), 14 on a 3×3 grid, 30 on a 4×4 grid, and 55 on a 5×5 grid.
+
+## Why the formula works
+
+One way to see it is to count squares by their bottom-right corner. A corner in row i and column j can anchor min(i, j) different squares, since the square cannot extend past the edge of the board. Summing min(i, j) over every cell of an n×n board produces the same total as the formula above.
+
+## A related question
+
+If the question were about rectangles, the answer would be different. Choosing 2 of the 9 horizontal lines and 2 of the 9 vertical lines gives 36 × 36 = 1,296 rectangles, and 204 of those are squares.
+
+So the answer depends on what you count: 64 individual cells, or 204 squares of all sizes.

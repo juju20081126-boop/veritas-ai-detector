@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0015",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 250-word news story:\n- Serena Williams is no longer working with hitting partner Sascha Bajin.\n- Bajin, who worked with Williams for eight years, is now with Victoria Azarenka.\n- Bajin skipped this year's Australian Open as Williams won major No. 19.\n- Azarenka's coach, Wim Fissette, is thrilled to have Bajin in her team."
+ },
+ {
+  "prompt_id": "abst-0125",
+  "instruction": "Draft the abstract (around 150 words) for the paper \"Acoustic Radiation Force and Torque on Small Particles as Measures of the Canonical Momentum and Spin Densities\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0235",
+  "instruction": "Write an email with the subject line \"The Morning Market Call - Thursday September 6th, 2001.\". Aim for about 125 words."
+ },
+ {
+  "prompt_id": "stor-0305",
+  "instruction": "I'm a college student and need help with an assignment. Write a 400-word story for this prompt: An immortal man is sentenced to life in prison."
+ },
+ {
+  "prompt_id": "expl-0405",
+  "instruction": "How many of the French aristocrats who fled to England/Austria/wherever after the Revolution of eventually managed to come back to France? Did Napoleon allow any of them to return? (answer in roughly 150 words)"
+ },
+ {
+  "prompt_id": "gene-0485",
+  "instruction": "Can you please explain to me the problem with three doors and two goats? Why is it better to change the door? (about 500 words)"
+ },
+ {
+  "prompt_id": "news-0016",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 500 words):\n- Arnold Palmer says he understands why Tiger Woods won't play at his tournament.\n- Woods is struggling to be ready for next month's Masters at Augusta."
+ },
+ {
+  "prompt_id": "abst-0126",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"I-vector Transformation Using Conditional Generative Adversarial Networks for Short Utterance Speaker Verification\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0306",
+  "instruction": "You run an RPG pawn shop. You haggle with adventurers who try to sell loot they've acquired.\n\nWrite a short story of about 400 words."
+ },
+ {
+  "prompt_id": "expl-0406",
+  "instruction": "Would a long system of gears transfer power/information faster than light or electricity\n\nExplain it in about 200 words."
+ },
+ {
+  "prompt_id": "gene-0486",
+  "instruction": "Why do gamer groups have clerics in their party, and what might happen if those clerics were not in the party? (about 250 words)"
+ },
+ {
+  "prompt_id": "news-0017",
+  "instruction": "Using the following highlights, write a 500-word news story:\n- Incumbent President Goodluck Jonathan and retired general Muhammedu Buhari faced off in election.\n- It could be the closest elections since a return to democracy in 1999 after decades of military rule.\n- There are fears that results may not be accepted by the losers."
+ }
+]

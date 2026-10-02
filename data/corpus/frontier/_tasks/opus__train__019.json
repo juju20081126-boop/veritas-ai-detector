@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0043",
+  "instruction": "Using the following highlights, write a 300-word news story:\n- Dean Obeidallah: Twitter blew up over \"Saturday Night Live\" skit about girl joining ISIS.\n- He says ridiculing and laughing at terrorists undermines them, diminishes their power. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0153",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"Suppression of maximal linear gluon polarization in angular asymmetries\"."
+ },
+ {
+  "prompt_id": "emai-0248",
+  "instruction": "Write an email with the subject line \"JOBHUNT: risk analyst at Bear-PhD theoretical Physics\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0329",
+  "instruction": "I'm a college student and need help with an assignment. You are testing the effects of cryosleep for NASA's deep space missions, as your chamber closes the last thing you see is the room erupting in panic\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0421",
+  "instruction": "What are tumors made of and how do they form?\n\nExplain it in about 75 words."
+ },
+ {
+  "prompt_id": "gene-0554",
+  "instruction": "Write a fun story that can be told in 3 minutes at the dinner table. We are 3 developers enjoying a pizza. The story must contain these word: zombie, ethernet cable, sudo, dashboard. Answer in about 350 words."
+ },
+ {
+  "prompt_id": "news-0044",
+  "instruction": "Write a news article of about 400 words based on these key points:\n- As a teen, Timothy Winslow fell in love with exploring computer systems around the nation.\n- When the FBI showed up, that exploration caused some trouble."
+ },
+ {
+  "prompt_id": "abst-0154",
+  "instruction": "Write an abstract of about 200 words for a research paper titled \"Kinetic theory models for the distribution of wealth: power law from overlap of exponentials\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0249",
+  "instruction": "Write an email with the subject line \"Kathleen Ann\". Aim for about 175 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0330",
+  "instruction": "I'm a college student and need help with an assignment. A sadistic \"evil \"person receives a donor heart, experiences guilt for the first time, and finally grasps personal redemption.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0422",
+  "instruction": "I'm a college student and need help with an assignment. \"kWh/KW\" What exactly is THIS EXACT figure referring to? (answer in roughly 75 words)"
+ },
+ {
+  "prompt_id": "gene-0555",
+  "instruction": "I'm a college student and need help with an assignment. List top 5 people with most gold medals"
+ }
+]

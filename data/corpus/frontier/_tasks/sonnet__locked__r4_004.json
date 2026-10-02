@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "gene-0487",
+  "instruction": "Can you provide a dockerfile for a Node.js application and explain what it the file is doing?"
+ },
+ {
+  "prompt_id": "essa-17-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is it ethical to use animals in scientific research?"
+ },
+ {
+  "prompt_id": "news-0019",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Lewis Hamilton will start on pole in China.\n- Pushed teammate Rosberg into second on the last lap.\n- Rosberg refused to shake Hamilton's hand afterward."
+ },
+ {
+  "prompt_id": "abst-0129",
+  "instruction": "Draft the abstract (around 200 words) for the paper \"An Upper Bound on the Capacity of non-Binary Deletion Channels\"."
+ },
+ {
+  "prompt_id": "stor-0308",
+  "instruction": "If you stay alive for no other reason, do it for spite.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0408",
+  "instruction": "I'm a college student and need help with an assignment. How do base 2 and base 16 number systems relate to each other?\n\nExplain it in about 75 words."
+ },
+ {
+  "prompt_id": "gene-0488",
+  "instruction": "Think of three different colors that mens suits are often"
+ },
+ {
+  "prompt_id": "essa-20-pla",
+  "instruction": "Write an essay of about 250 words on the following topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "news-0020",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- A U.S. military official tells CNN the fall of Ramadi is \"not imminent\" Official in Ramadi says it's unclear how long government forces can hold out there.\n- He begs the Iraqi government for reinforcements and the U.S.-led coalition for airstrikes."
+ },
+ {
+  "prompt_id": "abst-0130",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"Safe Learning-based Gradient-free Model Predictive Control Based on Cross-entropy Method\"."
+ },
+ {
+  "prompt_id": "stor-0309",
+  "instruction": "Write a 400-word story for this prompt: You're elected president, but you don't want to be president anymore, so you do ridiculous things to get impeached, but they all turn out to be the best decision for the country, making you more popular."
+ },
+ {
+  "prompt_id": "gene-0489",
+  "instruction": "Describe the evaporative water cycle to me as if you were a caveman with limited language capabilities. Answer in about 350 words."
+ },
+ {
+  "prompt_id": "essa-20-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "news-0021",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- Lily's 25-year-old mother, Lynn Jennifer Groesbeck, died in the crash.\n- \"Children are very resilient ... sometimes we don't realize how much they actually can withstand,\" says doctor."
+ },
+ {
+  "prompt_id": "abst-0131",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Strange quark helicity in the proton from chiral effective theory\"."
+ },
+ {
+  "prompt_id": "stor-0310",
+  "instruction": "The devil is about to retire and is looking for a new man to take over the job...\n\nWrite a short story of about 400 words."
+ },
+ {
+  "prompt_id": "gene-0490",
+  "instruction": "I'm a college student and need help with an assignment. Give me a list of some of the most popular song from 70s Japanese Pop singer, Mariya Takeuchi Answer in about 700 words."
+ },
+ {
+  "prompt_id": "essa-20-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "news-0022",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Zayn Malik is leaving One Direction to be a \"normal 22-year old\" Grief-stricken fans express their devastation online.\n- Experts: Great opportunity for parents to teach their children resilience."
+ },
+ {
+  "prompt_id": "abst-0132",
+  "instruction": "Draft the abstract (around 250 words) for the paper \"Stellar winds as a mechanism to tilt the spin axes of Sun-like stars\"."
+ }
+]

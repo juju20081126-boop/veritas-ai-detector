@@ -1,0 +1,102 @@
+{
+ "a1a2p1__sonnet__opus__locked__00": {
+  "agent_id": "adf4834c60a3c9b84",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__locked__01": {
+  "agent_id": "a3a99281440f5912d",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__locked__02": {
+  "agent_id": "af02de81ca14da72b",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__locked__03": {
+  "agent_id": "a234e80d6be3a3325",
+  "alias": "sonnet"
+ },
+ "a3__haiku__opus__locked__00": {
+  "agent_id": "a54b962f80bc76942",
+  "alias": "haiku"
+ },
+ "a3__haiku__opus__locked__01": {
+  "agent_id": "a80e807f1eff38b54",
+  "alias": "haiku"
+ },
+ "a1a2p1__opus__sonnet__locked__00": {
+  "agent_id": "afddfb8fb4362d30f",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__locked__01": {
+  "agent_id": "ab20907d83b214b58",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__locked__02": {
+  "agent_id": "a07cfe658ce4240b6",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__locked__03": {
+  "agent_id": "aff0d23d64de1c131",
+  "alias": "opus"
+ },
+ "a3__haiku__sonnet__locked__00": {
+  "agent_id": "aca2adfb260e11f63",
+  "alias": "haiku"
+ },
+ "a3__haiku__sonnet__locked__01": {
+  "agent_id": "a89cbb33066e84a2d",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__opus__locked__00": {
+  "agent_id": "ae54e29b7a471f390",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__opus__locked__01": {
+  "agent_id": "a4517f51f7c984fc8",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__sonnet__locked__00": {
+  "agent_id": "a3cfb48da16ce2b0e",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__sonnet__locked__01": {
+  "agent_id": "af27f6a4f3b2e3805",
+  "alias": "haiku"
+ },
+ "a1a2p1__sonnet__opus__locked__04": {
+  "agent_id": "a7ae9f07971769219",
+  "alias": "sonnet"
+ },
+ "a1a2p1__opus__sonnet__locked__04": {
+  "agent_id": "a6db605857ec19739",
+  "alias": "opus"
+ },
+ "a3__haiku__opus__locked__02": {
+  "agent_id": "a94d25d85f21afde1",
+  "alias": "haiku"
+ },
+ "a3__haiku__sonnet__locked__02": {
+  "agent_id": "afb1a813f43424488",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__opus__locked__02": {
+  "agent_id": "aed04b428be9a19eb",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__opus__locked__03": {
+  "agent_id": "a7883a034efe2945b",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__sonnet__locked__02": {
+  "agent_id": "ac675c948765a9fa8",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__sonnet__locked__03": {
+  "agent_id": "a8adc6835f93764e1",
+  "alias": "haiku"
+ },
+ "a2p2__haiku__opus__locked__04": {
+  "agent_id": "abb41055dba84a545",
+  "alias": "haiku"
+ }
+}

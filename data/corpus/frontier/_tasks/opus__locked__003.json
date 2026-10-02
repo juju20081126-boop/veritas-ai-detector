@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0007",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 300 words):\n- Kenyan agency: 147 dead, plans underway to evacuate students and others.\n- Garissa University College students wake to explosions and gunfire.\n- Reports: Gunmen storm the Kenyan school, attacking Christians and letting Muslims go."
+ },
+ {
+  "prompt_id": "abst-0117",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 100 words) for the paper \"AMR Simulations of the Cosmological Light Cone: SZE Surveys of the Synthetic Universe\"."
+ },
+ {
+  "prompt_id": "emai-0227",
+  "instruction": "Write an email with the subject line \"Verbal confirmation for direct trades\". Aim for about 250 words."
+ },
+ {
+  "prompt_id": "stor-0297",
+  "instruction": "Write in the POV of a crazy/psychotic ex. Do not end it with murder.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0397",
+  "instruction": "Just say.. We had the technology to lasso Mars and bring it to same position Earth is to the sun, Would Mars eventually be habitable like Earth is today?\n\nExplain it in about 75 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0477",
+  "instruction": "How do I create an HTML page with multiple sections and a table of contents? Answer in about 250 words."
+ },
+ {
+  "prompt_id": "news-0008",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- Bodies of suspected gunmen paraded in front of crowd in Garissa.\n- Kenya's President slams those who finance and support groups like Al-Shabaab.\n- Al-Shabaab threatens \"another bloodbath\" in Kenya."
+ },
+ {
+  "prompt_id": "abst-0118",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 275 words for a research paper titled \"The Partial Entropy Decomposition: Decomposing multivariate entropy and mutual information via pointwise common surprisal\"."
+ },
+ {
+  "prompt_id": "emai-0228",
+  "instruction": "Please draft a work email about: Updated United Way Report (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0298",
+  "instruction": "Monsters under the bed are real and the only protection from them is teddy bears, you are a retired bear telling one of your stories.\n\nWrite a short story of about 400 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0398",
+  "instruction": "Why isn't metastatic cancer contagious if it's technically contagious within the body? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0478",
+  "instruction": "What extra ingredients can you use when baking a bread? Keep it around 150 words."
+ }
+]

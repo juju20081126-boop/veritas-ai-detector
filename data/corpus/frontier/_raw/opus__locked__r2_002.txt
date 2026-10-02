@@ -1,0 +1,370 @@
+=== prompt_id: expl-0397 ===
+Relocating Mars to Earth's orbital distance would not, on its own, make the planet habitable in the way Earth is. The additional sunlight would raise surface temperatures and release carbon dioxide from the polar caps, thickening the atmosphere modestly. However, Mars has only about one-tenth of Earth's mass and no global magnetic field, so it could not retain a dense atmosphere over geological timescales, particularly against the stronger solar wind. Without sustained intervention, it would remain largely inhospitable.
+
+=== prompt_id: gene-0477 ===
+The idea is simple: give each section a unique `id`, then build a list of links at the top that point to those ids with `href="#id"`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gardening Guide</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    nav { background: #f2f2f2; padding: 1rem 1.5rem; }
+    section { margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Gardening Guide</h1>
+
+  <nav>
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#soil">Preparing the Soil</a></li>
+      <li><a href="#planting">Planting</a></li>
+      <li><a href="#watering">Watering</a></li>
+    </ol>
+  </nav>
+
+  <section id="soil">
+    <h2>Preparing the Soil</h2>
+    <p>Your content here.</p>
+  </section>
+
+  <section id="planting">
+    <h2>Planting</h2>
+    <p>Your content here.</p>
+  </section>
+
+  <section id="watering">
+    <h2>Watering</h2>
+    <p>Your content here.</p>
+    <p><a href="#top">Back to top</a></p>
+  </section>
+</body>
+</html>
+```
+
+**How it works**
+
+- **`id` attributes** turn each section into a link target. Keep them unique, lowercase, and free of spaces (`getting-started`, not `Getting Started`).
+- **Fragment links** like `href="#planting"` jump to the element with that id and update the URL, so readers can bookmark or share a specific section.
+- **`<nav>` and `<section>`** are semantic elements that help screen readers and search engines understand the page's structure.
+- **`scroll-behavior: smooth`** animates the jump instead of snapping.
+- **`href="#top"`** is a special case that scrolls back to the top of the page, even without an element named `top`.
+
+**Optional upgrades**
+
+- Put the `nav` in a sidebar with `position: sticky; top: 1rem;` so the contents stay visible as readers scroll.
+- Nest another `<ol>` inside a list item to show subsections.
+- On long pages, a short JavaScript loop over every `h2` can generate the list automatically.
+
+=== prompt_id: news-0008 ===
+**Bodies of Garissa Gunmen Displayed as Kenyatta Targets Terror Financiers**
+
+GARISSA, Kenya — The bodies of four men suspected of carrying out Thursday's massacre at Garissa University College were paraded before a large crowd in this northeastern town on Saturday, as Kenya's president vowed to go after those who fund and shelter militant groups.
+
+Officials said the bodies were put on public display so that residents could help identify the gunmen. Police struggled to hold back onlookers who pushed forward to see the men blamed for one of the deadliest attacks in the country's history.
+
+The assailants stormed the campus before dawn on Thursday, moving from building to building and, according to survivors, singling out Christian students. The siege lasted roughly 15 hours before security forces killed the four attackers. In all, 147 people died, most of them students.
+
+In a televised address Saturday, President Uhuru Kenyatta aimed his anger not only at the gunmen but at the networks that support them. He said those who planned and financed the attack were "deeply embedded in our communities" and warned that radicalization was happening in plain sight rather than in remote hideouts. He called on religious and community leaders to help confront it.
+
+"We will respond in the severest ways possible," Kenyatta said, before declaring three days of national mourning.
+
+Authorities have named Mohamed Mohamud, a Kenyan linked to al-Shabaab, as the suspected mastermind and offered a reward of 20 million shillings, about $215,000, for information leading to his capture. Several suspects have been detained.
+
+Al-Shabaab, the Somalia-based militant group allied with al Qaeda, claimed responsibility for the assault and promised more violence. In a statement, the group threatened "another bloodbath" and warned that Kenyan cities would "run red with blood" for as long as Kenyan troops remain in Somalia.
+
+Kenya sent forces across the border in 2011 to fight al-Shabaab, and its soldiers now serve in the African Union mission there. The militants have since carried out a series of attacks on Kenyan soil, including the 2013 siege of Nairobi's Westgate shopping mall, in which 67 people were killed.
+
+The Garissa attack has renewed questions about security in Kenya's northeast, which borders Somalia, and about whether the government is doing enough to protect students and other civilians. For families still waiting to collect the bodies of their children, the spectacle in Garissa brought little comfort.
+
+=== prompt_id: abst-0118 ===
+Quantifying how information is distributed across the components of a multivariate system remains a central open problem in information theory, with direct consequences for neuroscience, complex systems, and machine learning. The Partial Information Decomposition (PID) addresses part of this problem by splitting the mutual information that a set of predictor variables carries about a target into redundant, unique, and synergistic contributions. However, the PID treats predictors and target asymmetrically, and no measure of redundancy has yet gained general acceptance. In this paper, we apply the lattice formalism of the PID directly to the joint entropy of a set of variables, yielding a Partial Entropy Decomposition (PED) that treats all variables symmetrically. We define redundant entropy through pointwise common surprisal, the positive overlap between the local surprisals of individual variables for each joint outcome, averaged over the distribution; this mirrors the definition of mutual information as expected shared surprisal. We show that the PED distinguishes dyadic from triadic dependency structures in systems whose classical Shannon quantities are identical. The decomposition also reveals that mutual information is not a purely redundant quantity: pointwise misinformation appears as synergistic entropy, so mutual information contains both redundant and synergistic components. Using the relationship between the PED and mutual information for two predictors, we derive two alternative information decompositions and illustrate them on canonical examples. These results show that, in entropy terms, the information carried by a single predictor is not a proper subset of the joint information, which may partly explain why consistent PID measures have proved difficult to construct. Finally, the PED allows mechanistic redundancy to be quantified separately from redundancy arising from dependencies among the inputs.
+
+=== prompt_id: emai-0228 ===
+Subject: Updated United Way Report
+
+Hi all,
+
+Attached is the updated United Way campaign report, which now reflects pledges received through [date]. We're currently at [X]% participation and $[amount] toward our goal of $[goal].
+
+Please review the numbers for your group and let me know by [date] if anything needs to be corrected. If you haven't turned in a pledge card yet, there's still time to participate.
+
+Thanks for your support,
+[Your Name]
+
+=== prompt_id: stor-0298 ===
+I served in the bedroom of Miss Margaret Ellison for eleven years, from the night she came home from the hospital until the autumn she decided she was too old for bears. I was then honorably retired to a cedar chest in the attic, where I have remained ever since. Recruits are sometimes sent up to hear from those of us who served, and I am most often asked about the following engagement, which I shall recount as accurately as an old memory permits.
+
+First, I must correct a common misunderstanding. A bear does not prevail through strength. Our stuffing is cotton, and our claws are embroidered thread. What we possess is presence. No creature from beneath the bed may cross onto a mattress where a child holds a bear in genuine affection. That is the whole of our profession, and it is why the quality of the embrace matters far more than the quality of the bear.
+
+On the night in question, Margaret had quarreled with her brother and gone to sleep angry. Angry children toss. Sometime after midnight she rolled toward the wall, her arm went slack, and I slid from the mattress and landed face-down on the rug. It was precisely the situation every bear is trained to avoid.
+
+The thing beneath the bed had been patient for weeks. I had heard it testing the slats and had noted the damp, cellar-like odor it carried. Now it extended one long gray hand toward the edge of the mattress, where Margaret's foot had slipped from beneath the blanket.
+
+Regulations permit a bear to move only when no human eyes are open. I confirmed that hers were closed. I then did what I had rehearsed through many quiet hours: I raised myself upright, one inch at a time, and placed myself between the hand and the foot.
+
+I do not recall the struggle in detail. I remember the cold of its fingers and the sound of a seam parting at my shoulder. I remember holding my position because there was nothing else to hold. At a quarter to five, gray light reached the curtains, and the hand withdrew.
+
+Margaret's mother discovered me the next morning beneath the bed, one arm nearly detached. She blamed the dog and repaired me that afternoon with blue thread, which did not match.
+
+I have always regarded that seam as my finest decoration. Margaret is a grandmother now, and I am told by the bears on active duty in her house that she still sleeps with her feet tucked in. She has never once wondered why.
+
+=== prompt_id: expl-0398 ===
+Metastasis isn't really contagion; it's your own cells spreading to new sites. Your immune system tends to tolerate them, partly because they carry your own HLA markers, the proteins that tag cells as "self."
+
+In another person, two barriers block them. Cancer cells have no practical route between bodies, since they can't survive long outside one or spread through touch, saliva, or a cough. And if they did get in, the new host's immune system would recognize the foreign HLA markers and destroy them, much as it rejects a mismatched organ.
+
+Rare exceptions, such as transplants from donors with hidden tumors or the transmissible cancers of Tasmanian devils and dogs, involve bypassing exactly these defenses.
+
+=== prompt_id: gene-0478 ===
+Almost anything that adds flavor, texture, or richness can go into bread. Popular options include:
+
+- **Seeds:** sunflower, pumpkin, sesame, flax, poppy, caraway
+- **Grains:** rolled oats, cracked wheat, cooked quinoa, cornmeal
+- **Nuts:** walnuts, pecans, hazelnuts, almonds
+- **Dried fruit:** raisins, cranberries, dates, figs, apricots
+- **Cheese:** cheddar, Parmesan, Gruyère, feta
+- **Savory mix-ins:** olives, sun-dried tomatoes, roasted garlic, caramelized onions, jalapeños, bacon
+- **Herbs and spices:** rosemary, thyme, dill, oregano, cinnamon, cardamom
+- **Enrichments:** milk, butter, eggs, honey, or olive oil for a softer, richer crumb
+- **Surprise additions:** mashed potato, pumpkin purée, cocoa powder, or beer in place of water
+
+A few tips: fold chunky add-ins in near the end of kneading so they don't interfere with gluten development, keep them to roughly 20–30% of the flour weight, and soak dried fruit briefly so it doesn't pull moisture out of the dough.
+
+=== prompt_id: news-0009 ===
+**Police Release Video of Toddler's Rescue From Car Overturned in Utah River**
+
+SPANISH FORK, Utah — Police have released body camera footage showing the moment officers pulled an 18-month-old girl from an overturned car in the Spanish Fork River, where she had been trapped for as long as 14 hours after a crash that killed her mother.
+
+The footage, recorded by a camera worn by one of the responding officers, shows rescuers gathered around the wrecked vehicle before the unresponsive child, identified as Lily, is freed from her seat and carried toward the riverbank. As they work to revive her, one officer can be heard pleading with her: "Come on, sweetie. Come on, sweetie."
+
+Authorities said Lily's mother, Lynn Jennifer Groesbeck, 25, of Springville, was driving the car when it struck a concrete barrier near a bridge on Friday night, left the roadway and came to rest upside down in the river. Investigators believe the crash occurred at about 10:30 p.m. The vehicle, partly submerged and difficult to see from the road, went unnoticed until shortly after noon on Saturday, when a fisherman spotted it and called for help.
+
+Groesbeck was pronounced dead at the scene. Rescuers found Lily still strapped into her car seat in the back of the vehicle, hanging upside down just above the surface of the icy water. She was unconscious when officers reached her.
+
+Several police officers and firefighters waded into the river and worked together to tip the car onto its side so they could reach her. A number of the responders were later treated for hypothermia.
+
+Some of the rescuers have since described an experience they say they cannot explain. Officers told reporters that as they approached the car, they heard what sounded like an adult voice calling for help from inside. Groesbeck, however, appeared to have died well before the rescuers arrived, and authorities have offered no explanation for what the officers say they heard.
+
+Lily was taken to a local hospital in critical condition and later transferred to Primary Children's Hospital in Salt Lake City. Relatives have since reported that her condition is improving and have thanked the officers and firefighters who reached her.
+
+The case has drawn national attention, largely because of how long the child survived in the cold. Medical experts note that low temperatures can slow the body's metabolism and, in rare cases, help protect vital organs during prolonged exposure, though officials have not commented on what may have contributed to Lily's survival.
+
+Rescuers and relatives alike have described Lily's survival as a miracle. In interviews, several of the officers spoke emotionally about the rescue, describing the urgency they felt as they struggled in the frigid current to reach the child and the relief that followed when they learned she was alive.
+
+Police have not said what caused Groesbeck to lose control of the vehicle. No other cars are believed to have been involved, and the crash remains under investigation.
+
+=== prompt_id: abst-0119 ===
+Directed algebraic topology offers a geometric framework for concurrent computation, in which the executions of a system are modeled as directed paths in a space whose orientation encodes the irreversibility of time. Two such models are considered equivalent when one can be deformed into the other without altering their computer-scientific properties, giving rise to the notion of dihomotopy. This paper investigates the algebraic structure underlying dihomotopy types, with the aim of identifying invariants that classify concurrent systems up to such deformations. Working in the setting of flows and globular complexes, we distinguish two kinds of equivalence: spatial deformations, which preserve the underlying computation while changing the geometry of the state space, and temporal refinements, which subdivide execution paths without introducing new behaviors. We examine how these equivalences interact and describe their localization within a model-categorical framework. We then study homological invariants, including branching and merging homology, which detect the non-deterministic splitting and joining of execution paths, and show that they are preserved under both types of dihomotopy. These results clarify which algebraic data survive deformation and suggest directions for a complete classification of dihomotopy types.
+
+=== prompt_id: emai-0229 ===
+Subject: PIRA Presentations on the US and World Economy
+
+Hi everyone,
+
+PIRA Energy Group will be in the office on [date] to give two presentations on the economic outlook, and I'd encourage anyone involved in trading, origination, forecasting, or planning to attend. Both sessions are open to all departments.
+
+**Session 1: US Economy** — [time], [room]
+Growth expectations, inflation and interest rates, industrial production, and what these trends mean for domestic energy demand.
+
+**Session 2: World Economy** — [time], [room]
+Conditions in Europe, Asia, and emerging markets, currency movements, and how global growth is likely to affect oil and gas balances.
+
+Each session will run about an hour, including Q&A. We've asked PIRA's economists to focus on the implications for our markets, so this should be more practical than a typical macro overview.
+
+Please RSVP to me by [date] so we can plan seating and arrange lunch for the midday session. If there are specific questions you'd like the presenters to address, send them my way by [date] and I'll pass them along ahead of time.
+
+Slides will be circulated afterward for those who can't make it, but I'd recommend attending in person if your schedule allows. The discussion is usually the most valuable part.
+
+Thanks,
+[Your Name]
+[Title] | [Extension]
+
+=== prompt_id: stor-0299 ===
+**And That, Kids**
+
+"And that, kids," Ted said, leaning back on the couch, "is how I met your mother."
+
+Penny and Luke stared at him. Outside, snow had been falling for what felt like the entire nine years it had taken him to tell the story.
+
+"Dad," Penny said slowly, "you talked about Aunt Robin for, like, eighty percent of that."
+
+"It wasn't a story about Robin."
+
+"It kind of was."
+
+"No." Ted set down his coffee. "It was a story about everything I had to get wrong before I was ready to get one thing right. Robin, the blue French horn, the pineapple, the girl who left me at the altar. None of that was the point. That was just the road."
+
+Luke frowned. "So what was the point?"
+
+The front door swung open. A gust of cold air swept through the living room, followed by a woman in a red coat shaking snow off a yellow umbrella.
+
+"Are you still telling them that story?"
+
+"He just finished," Penny said. "Finally."
+
+Tracy laughed, leaned the umbrella against the wall, and kissed Ted on the top of his head. "Did he tell you about the train station?"
+
+"He said he saw the umbrella and just knew."
+
+"He didn't just know." She sat down beside him and laced her fingers through his. "He was terrified. He asked if I wanted to get a drink, then immediately apologized for asking. I had to say yes twice."
+
+"That's not how I remember it," Ted said.
+
+"That's exactly how it happened."
+
+The doorbell rang. Marshall and Lily came in carrying a casserole, trailed by three kids. Behind them, Barney held a bottle of scotch, and Robin, who had flown in from Tokyo that morning, still had her press badge clipped to her coat. Barney had met her at the gate with a sign that said WIFE in letters three feet tall.
+
+"Is it over?" Marshall whispered. "Did he actually finish?"
+
+"He finished," Tracy said.
+
+Marshall pumped his fist. "Lily, you owe me twenty bucks. I said 2030."
+
+Later, after dinner, after the kids had gone upstairs and Barney had told a story about a hot-air balloon that nobody believed, Ted found Tracy on the porch watching the snow.
+
+"You left something out," she said.
+
+"What?"
+
+"The ending."
+
+Ted put his arm around her. "That's because it hasn't happened yet."
+
+She smiled and opened the yellow umbrella over both of them, even though they were standing under the roof.
+
+=== prompt_id: expl-0399 ===
+Pokémon are pretend animals that live in a made-up world. Some look like puppies, some look like turtles, and some look like dragons. Each one has a special power. The most famous one is Pikachu, a little yellow mouse who can make lightning come out of his cheeks!
+
+In that world, kids go on a big adventure with their Pokémon buddies. When they find a new Pokémon, they can catch it with a little red-and-white ball. The Pokémon can hop inside the ball to rest, kind of like a cozy little house, and pop back out to play.
+
+Sometimes two kids let their Pokémon have a contest to see whose power is strongest. When a Pokémon gets too tired, it stops and takes a rest, and then it feels all better.
+
+The more they practice together, the stronger they get. Some Pokémon even grow into a brand-new, bigger shape!
+
+Mostly, Pokémon is about making friends and taking care of them.
+
+=== prompt_id: gene-0479 ===
+*The Picture of Dorian Gray* was written by **Oscar Wilde**, the Irish poet, playwright, and wit.
+
+A few details that may help with your assignment:
+
+- **Publication:** The story first appeared in the July 1890 issue of *Lippincott's Monthly Magazine*. Wilde then revised it, expanding it from 13 to 20 chapters and adding his famous preface, and the book edition was published in April 1891 by Ward, Lock and Company. The 1891 version is the one most often read and cited today.
+- **Spelling:** The title character's surname is "Gray," not "Grey," which is worth getting right in your paper.
+- **Significance:** It is Wilde's only novel. Its themes of vanity, moral corruption, and art for art's sake made it controversial, and passages from it were later used against Wilde during his 1895 trials.
+
+=== prompt_id: news-0010 ===
+**'American Pie' Lyrics Fetch $1.2 Million at Auction**
+
+NEW YORK — The original manuscript of Don McLean's "American Pie," one of the most dissected songs in American popular music, sold for $1.2 million at Christie's in New York on Tuesday.
+
+The 16-page manuscript, which includes McLean's handwritten and typed drafts of the lyrics along with his working notes, went to an unidentified buyer.
+
+For more than four decades, fans and critics have debated the meaning of the song's dense, symbol-laden verses, which feature a jester, a king and queen, a marching band and the famous line about "the day the music died." That phrase is widely understood to refer to the 1959 plane crash that killed Buddy Holly, Ritchie Valens and J.P. "The Big Bopper" Richardson.
+
+McLean has generally declined to explain the song line by line, but he has said the lyrics and notes being sold would reveal its meaning to anyone willing to study them. He has described the song in broad terms as a reflection on an America he felt was drifting in the wrong direction as the optimism of the 1950s gave way to the upheaval of the 1960s.
+
+Released in 1971, the eight-and-a-half-minute ballad is McLean's biggest hit. It reached No. 1 on the Billboard Hot 100 in January 1972 and stayed there for four weeks, and it remains a fixture on classic rock radio.
+
+The sale ranks among the highest prices ever paid at auction for song lyrics.
+
+=== prompt_id: abst-0120 ===
+Girard's Geometry of Interaction (GoI) interprets proofs not as static functions but as dynamic systems through which information flows, with cut elimination realized as the computation of a fixed point or execution formula. Categorically, this perspective is captured by traced symmetric monoidal categories and the Int construction of Joyal, Street and Verity, which turns any such category into a compact closed category and thereby yields models of multiplicative linear logic. While this framework has been extended in many directions, its relationship to polarized linear logic, in which formulas are divided into positive and negative classes with distinct structural behavior, has not been systematically studied. Here we develop a Geometry of Interaction for multiplicative polarized linear logic (MLLP). We introduce a polarized variant of the Int construction that, starting from a traced symmetric monoidal category equipped with suitable additional structure, produces a pair of categories of positive and negative objects related by duality, together with the morphisms that interpret polarized proofs. We prove that the resulting structure is sound with respect to polarized cut elimination and therefore yields a categorical model of MLLP. The construction makes explicit how the asymmetry between positive and negative formulas arises from the direction of information flow in the underlying traced category. We further show that the polarized GoI model factors through a continuation-passing-style translation, clarifying the connection between polarization, control operators, and the dynamics of interaction. Concrete instances based on partial injections and on relations illustrate the construction. We conclude by discussing how the approach extends to exponentials using GoI situations and how the results may inform the design of interaction-based abstract machines for languages with control effects.
+
+=== prompt_id: emai-0230 ===
+Subject: Learn Technical Analysis, Early Bird Special for Houston Class
+
+Hi [First Name],
+
+Ever look at a stock chart and wonder what experienced traders see that you don't? Our hands-on Technical Analysis Workshop is coming to Houston, and if you register by [Early Bird Deadline], you'll save $150 on tuition.
+
+**Class details**
+- **Dates:** [Saturday and Sunday, Month Day–Day]
+- **Time:** 9:00 a.m. to 4:00 p.m.
+- **Location:** [Venue], Houston, TX
+- **Early bird price:** $345 (regularly $495)
+
+**What you'll learn**
+- How to read candlestick charts and recognize common patterns
+- Using support and resistance levels to plan entries and exits
+- What moving averages, RSI, and MACD actually tell you
+- How to build a simple, rules-based trading plan and manage risk
+
+The workshop is designed for beginners and intermediate traders alike. No prior experience is required, just a laptop and some curiosity. Class size is capped at 30 so every participant gets personal attention from our instructor, a market analyst with more than 15 years of trading experience.
+
+Lunch, printed course materials, and 30 days of free access to our charting software are all included.
+
+**[Reserve your seat now]**
+
+The early bird rate ends [Early Bird Deadline], and registration closes once the room is full. We'd love to see you there!
+
+Best regards,
+[Your Name]
+[Company Name] | [Phone] | [Website]
+
+*Trading involves risk. This course is for educational purposes only and does not constitute financial advice.*
+
+=== prompt_id: stor-0300 ===
+**The Wall at Okafor's**
+
+Every Sunday morning, the brick wall beside Okafor's Laundromat filled up with stories.
+
+Nobody could say exactly how it started. One week there was a single index card thumbtacked to the corkboard by the door, six lines about a cat who believed she was a lighthouse. The next Sunday there were eleven cards. By the end of that summer the board had spread across the whole side of the building, and people walked over from three neighborhoods just to read it.
+
+The only rule was painted on a strip of plywood at the top: LEAVE A STORY, LEAVE A COMMENT.
+
+Comments went on sticky notes beneath each card. Most were kind. *Loved the ending. Who is the woman in the blue coat? Please write more about the cat.*
+
+Some were not kind, and that was where Mrs. Okafor came in.
+
+She had run the laundromat for thirty-one years. Every Sunday evening she walked the length of the wall with a coffee can, removing the cruel notes, the advertisements, and the cards that were really just phone numbers. She re-pinned whatever the wind had loosened. When rain was forecast, she covered the board with a plastic tarp. She never wrote anything herself.
+
+Theo had been leaving stories since April, always unsigned, always on green cards so he could find them again. He was fifteen and had never told anyone he wrote. He read every comment on his cards twice, once quickly and once slowly.
+
+In October, a new card appeared at the top of the wall in Mrs. Okafor's careful block capitals.
+
+MY KNEES ARE GETTING OLD AND THE WALL IS GETTING BIG. I NEED HELP KEEPING IT. IF YOU LOVE THIS PLACE, COME INSIDE AND ASK.
+
+Within a day, sticky notes crowded beneath it. *We love you, Mrs. O! Thank you for everything. Someone should totally do this.*
+
+Nobody came inside.
+
+Theo stood in front of the card for a long time that Sunday. Then he took a green index card from his pocket, wrote three words, and pinned it beneath hers.
+
+*I'll do it.*
+
+When he pushed open the door, the dryers were humming, and Mrs. Okafor was already holding out a second coffee can.
+
+"How did you know it was me?" he asked.
+
+"Who do you think," she said, "has been keeping the rain off your stories since April?"
+
+=== prompt_id: expl-0400 ===
+Several overlapping reasons explain the pattern. Most basically, the sky is above us and out of reach, and humans across cultures link height with power, status, and purity, so the highest place became the natural home of the highest beings. The sky also governs survival: sun, rain, storms, and lightning decide whether crops grow or fail, yet no human can control them. Its lights move in regular, unending cycles, suggesting a realm of order and permanence that contrasts with decay and death on Earth below. Smoke rising from offerings and birds disappearing upward reinforced the sense of a passage between worlds. Language preserves the link: the Chinese word *tian* means both "sky" and "heaven," and the Proto-Indo-European sky god *Dyēus* gave rise to Zeus and Jupiter.
+
+=== prompt_id: gene-0480 ===
+A drilling engineer plans, designs, and supervises the drilling of wells. Most work in oil and gas, but the same skills are used for geothermal energy, groundwater, mining, and carbon storage projects. The core goal is to reach the target rock formation safely, efficiently, and within budget.
+
+**Key responsibilities**
+
+- **Well design:** Working with geologists and reservoir engineers to plan the well's path (vertical, directional, or horizontal), depth, and target zones.
+- **Casing and cementing:** Specifying the steel pipe and cement that line the hole, keep it stable, and seal off different rock and fluid layers.
+- **Drilling fluids:** Designing the "mud" program that controls underground pressure, cools the drill bit, and carries rock cuttings to the surface.
+- **Equipment selection:** Choosing rigs, drill bits, blowout preventers, and downhole tools suited to the job.
+- **Costs and scheduling:** Estimating expenses, preparing budgets, and tracking actual performance against the plan.
+- **Safety and well control:** Building in safeguards against blowouts and making sure operations meet environmental and regulatory requirements.
+- **Operational support:** Monitoring real-time drilling data and solving problems such as stuck pipe, lost circulation, or equipment failures.
+- **Post-well reviews:** Analyzing what went well and what didn't so the next well goes better.
+
+**Work environment**
+
+The job usually mixes office work with time at the rig site, which can be onshore or offshore. Field rotations, such as two weeks on and two weeks off, are common, especially early in a career.
+
+**Education and skills**
+
+Most drilling engineers have a bachelor's degree in petroleum engineering, though many come from mechanical, chemical, or civil engineering. The role calls for strong math and physics, quick problem-solving under pressure, and good communication, since drilling engineers coordinate closely with rig crews, contractors, and service companies.

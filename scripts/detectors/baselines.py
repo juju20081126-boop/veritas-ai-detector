@@ -151,6 +151,9 @@ class BinocularsSmall:
 
 
 def get_detector(name, threads=6):
+    if name.startswith("cand:"):
+        from scripts.detectors.student import StudentDetector
+        return StudentDetector(name[5:], threads=threads)
     if name == "shipped":
         return ShippedDetector(threads=2)
     if name == "hc3_roberta":

@@ -1,0 +1,66 @@
+[
+ {
+  "prompt_id": "essa-33-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Some people think zoos should be closed. Others say they protect endangered species. Discuss both views."
+ },
+ {
+  "prompt_id": "essa-35-pla",
+  "instruction": "Write an essay of about 250 words on the following topic: Should people be required to retire at a fixed age?"
+ },
+ {
+  "prompt_id": "essa-35-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 400-word essay on this topic: Should people be required to retire at a fixed age?"
+ },
+ {
+  "prompt_id": "essa-35-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should people be required to retire at a fixed age?"
+ },
+ {
+  "prompt_id": "essa-36-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Group projects are common in school. Are they a good way to learn?"
+ },
+ {
+  "prompt_id": "essa-36-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Group projects are common in school. Are they a good way to learn?"
+ },
+ {
+  "prompt_id": "essa-36-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Group projects are common in school. Are they a good way to learn?"
+ },
+ {
+  "prompt_id": "essa-37-pla",
+  "instruction": "Write an essay of about 200 words on the following topic: Is online learning as effective as learning in a classroom?"
+ },
+ {
+  "prompt_id": "essa-37-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Is online learning as effective as learning in a classroom?"
+ },
+ {
+  "prompt_id": "essa-37-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is online learning as effective as learning in a classroom?"
+ },
+ {
+  "prompt_id": "essa-38-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: How can cities reduce traffic congestion and air pollution?"
+ },
+ {
+  "prompt_id": "essa-38-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: How can cities reduce traffic congestion and air pollution?"
+ },
+ {
+  "prompt_id": "essa-38-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: How can cities reduce traffic congestion and air pollution?"
+ },
+ {
+  "prompt_id": "essa-39-pla",
+  "instruction": "Write an essay of about 200 words on the following topic: Should the government control the prices of basic foods such as rice and bread?"
+ },
+ {
+  "prompt_id": "essa-39-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 400-word essay on this topic: Should the government control the prices of basic foods such as rice and bread?"
+ },
+ {
+  "prompt_id": "essa-39-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should the government control the prices of basic foods such as rice and bread?"
+ }
+]

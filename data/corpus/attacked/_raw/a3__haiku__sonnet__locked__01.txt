@@ -1,0 +1,397 @@
+=== id: 7015b9054b53a2a9.A3_humanizer ===
+Hey everyone—a bunch of you asked me about the bread pudding from last month's lunch, so here it is. It's super easy and feeds a crowd.
+
+Ingredients:
+6 cups cubed day-old bread (brioche or french bread work)
+2 cups whole milk
+1 cup heavy cream
+3 eggs
+3/4 cup sugar
+2 tsp vanilla
+1 tsp cinnamon
+1/2 cup raisins (optional)
+3 tbsp melted butter
+
+Steps:
+1. Preheat to 350°F, butter a 9x13 dish
+2. Whisk milk, cream, eggs, sugar, vanilla, cinnamon together
+3. Toss bread and raisins in the dish, pour mixture over, soak 15 min
+4. Drizzle with melted butter, bake 40-45 min until golden and set
+5. Serve warm, tastes good with caramel or vanilla sauce
+
+Makes it the night before if you want. Let me know if you need substitutions for stuff.
+
+Hope it turns out well—Marcus
+
+=== id: 2f8554cd57d7a6cd.A3_humanizer ===
+This problem comes up all the time in statistics—how confident are you that your hypothesis about a region actually has the true value? Phylogenetics and clustering use the multiscale bootstrap a lot. It resamples at different sample sizes and extrapolates back to n-1, and the AU p-value it gives is pretty useful in practice, but what it actually means statistically? Nobody really knew.
+
+We framed it in selective inference—when you pick your hypothesis from the data you observe, you need to correct your inference. Turns out the AU p-value can be read as a selective inference p-value and controls type-I error correctly conditional on the selection. We also worked out some higher-order corrections using geometry of the region boundary curvature that give better accuracy for regions with smooth nonlinear boundaries.
+
+You can see how bootstrap probability, AU p-values, and selective inference p-values all connect—they just differ in how they handle selection. Simulations on phylogenetic trees and hierarchical clustering show the method gives accurate p-values where naive bootstrap fails.
+
+=== id: 432a541240b08e41.A3_humanizer ===
+The Israeli-Palestinian conflict is this long dispute over land, sovereignty, security, national identity—basically who gets to live where and run things. Both sides claim the territory between the Jordan River and the Mediterranean, which includes Israel, the West Bank, East Jerusalem, Gaza.
+
+Started late 1800s/early 1900s when Zionism encouraged Jewish immigration to Ottoman and British Palestine, while Arab nationalism was also growing among the local population. UN tried partitioning it in 1947 into Jewish and Arab states. Jewish leaders said yes, Arab leaders said no. Then Israel declared independence in 1948 and roughly 700,000 Palestinians fled or were expelled—Palestinians call that the Nakba.
+
+Still unresolved issues:
+- Borders: Israel occupied the West Bank and East Jerusalem since 1967, built settlements. Most countries say that's illegal; Israel disagrees.
+- Jerusalem: Both want it as capital. It's got sites sacred to Judaism, Islam, Christianity.
+- Refugees: Palestinians want a right of return, Israel sees that as a threat to its Jewish majority.
+- Security: Israel says militant groups attack them. Palestinians point to occupation, military ops, movement restrictions.
+
+Peace efforts like the Oslo Accords in the '90s didn't result in a final settlement. Hamas runs Gaza, the Palestinian Authority controls parts of the West Bank, violence keeps flaring up. It's one of the most contested political issues globally.
+
+=== id: 407faf92fc84770a.A3_humanizer ===
+No. A chain of gears can't send signals faster than light, and in practice it's way slower than electricity or light in fiber.
+
+Reason: gears aren't perfectly rigid. When you push the first gear, that push travels as a compression wave—tooth by tooth. Each gear has to bend slightly and push the next one. That wave moves at the speed of sound in the material. For steel, that's around 5,000 m/s. Light travels at 300,000,000 m/s. So you're looking at tens of thousands of times slower.
+
+Same thing with a really long rod. If you could push a light-year-long rod, the other end wouldn't move instantly. The push gets there after years because information travels at sound speed in the rod.
+
+Then there's all the practical stuff—backlash, friction, slack—which makes real systems even slower. Plus relativity says nothing can send information faster than light anyway, period. No way around it.
+
+=== id: 3ea0ef3da7650546.A3_humanizer ===
+Saturday night, 9:40 p.m. Scrubs in the hamper. Coffee's cold. I'm sitting on the kitchen floor with my back against the dishwasher because sitting in chairs feels too exposed.
+
+They're all here like always. Mrs. Delgado by the fridge in her hospital gown, hands folded the way they were on the table. She doesn't speak. The boy from last spring—bicycle accident—sits by the window bouncing a ball that makes no sound.
+
+I thought I'd make peace with it eventually. Everyone tells you that. You can't save everyone. You did everything right. I know I did everything right. But knowing doesn't empty the room.
+
+So I cook anyway. Eggs, toast. The kind of meal that doesn't ask anything of you. I set out an extra plate. I've never explained that to anyone. It's not for them exactly. It's so the table doesn't feel like an accusation.
+
+'I'm sorry,' I tell the room like I always do. It's my Saturday ritual, like washing hands before surgery.
+
+Tonight something shifts. Mrs. Delgado unfolds her hands. She walks to the kitchen and very slowly lifts the plate and sets it in front of the boy. He stops bouncing the ball. He looks at the toast, then at me, and for a second he almost smiles.
+
+I don't breathe. Nobody moves.
+
+Then he picks up the toast. He can't eat it but he holds it like something precious. The others drift closer one at a time until the kitchen is full of people with nothing to say and nowhere else to be.
+
+I sit with them until midnight, saying all their names out loud because somebody should.
+
+When I finally stand my knees ache, eyes burn, but my hands are steady. Monday I scrub in at seven. I'll try again. It's the only apology I know how to make.
+
+=== id: 560b68d96ad47dc8.A3_humanizer ===
+Quick note: Mariya Takeuchi started in 1978, but her big hits were late '70s through '80s and beyond, so this covers her main stuff across that period. She gets lumped with the 'city pop' genre.
+
+Best-known songs:
+
+'Plastic Love' (1984)—her most famous now. Album Variety, arranged/produced mostly by her husband Tatsuro Yamashita. The song got forgotten, then blew up on YouTube around 2017. Tens of millions of views. Made her an international name and became the unofficial city pop anthem. Groovy bass, polished production, about a woman hiding loneliness behind glamorous nightlife.
+
+'Mayonaka no Door ~ Stay With Me' (1979)—her breakout hit in Japan, signature song of the era. Smoky, soulful, smooth melody, strong vocal. Found new fans overseas recently, gateway to city pop for a lot of people.
+
+'September' (1979)—her first big hit. Lighter, more upbeat, about end of summer. Helped establish her as a rising singer-songwriter. Longtime fans still love it.
+
+'Fushigi na Peach Pie' (1980)—cheerful, bright single. Partly famous because it was in a commercial. Shows her sweeter, playful pop side.
+
+'Single Again' (1992)—totally different sound. Ballad. Major hit early '90s, one of her best-selling singles. More emotional, adult-oriented. Showed she could stay popular after city pop faded.
+
+Other stuff: album tracks and singles from the '80s show her range—upbeat pop to jazzy smooth songs. For an assignment, Variety is the best place to start, has 'Plastic Love' and other polished stuff.
+
+Tips:
+- Dates vary depending on original single, album, re-release, so check
+- Japanese titles are romanized different ways
+- Double-check chart positions and dates against Oricon charts or her official discography
+- The 'Plastic Love' revival is a great story for your paper—how the internet brought older music back
+
+=== id: 647cf58ca28dbe61.A3_humanizer ===
+Daniel Whitmore was six years old the first time he saw the woman, standing on a pier in Lisbon with melting ice cream and a sunburned nose. She was sitting on a bench, wearing a deep blue dress, reading. She looked up once. He waved. She smiled but didn't wave back, then disappeared into the crowd.
+
+He didn't think about it until next summer, a mountain village in Switzerland. There she was on a balcony across the street in a blue coat even though it was hot. He told his mom. She laughed, said lots of people wear blue.
+
+Years went by. More sightings. Blue scarf at a market in Marrakesh. Blue umbrella at a train station in Kyoto. Blue silk shawl at the back of a church in Florence. She never approached. Never seemed to age. Daniel kept a notebook—started as a game, turned into something close to obsession. By fifteen he had nine sightings across nine countries. His dad said gently that maybe he was seeing what he wanted to see.
+
+He thought about that seriously. He was rational, knew the mind seeks patterns. But the details bothered him. The shade of blue never changed. Her expression—calm, faintly amused—never changed. And she was always looking directly at him.
+
+Eighteenth birthday dinner in Genoa, overlooking the harbor. Daniel was distracted, scanning the room like usual. When dessert came his mom tapped her glass.
+
+'There's someone we want you to meet. We should've done this years ago.'
+
+A door opened. The woman in blue walked toward them, older now, maybe sixty, silver hair, same calm expression. Daniel stood up, couldn't speak.
+
+'This is Margaret Ellison,' his father said. 'She was your grandmother's closest friend. Your grandmother made us promise we'd introduce you when you turned eighteen.'
+
+Margaret put out her hand. 'I'm sorry for the secrecy. Your grandmother wanted me to watch over you as you grew. She thought you should discover the world for yourself but never be entirely alone.'
+
+'You followed us for twelve years,' Daniel said.
+
+'I traveled. You happened to go to the same places. I was careful not to interfere.'
+
+Daniel looked at his parents grinning with relief, then at the woman who'd been a quiet constant in his life. He felt something he couldn't name yet—not anger, not surprise. Gratitude, maybe.
+
+'Then I should thank you,' he said, and pulled out the chair beside him.
+
+Margaret sat down. For the first time, the woman in blue spoke to him like a friend.
+
+=== id: 75df91a75ec0f331.A3_humanizer ===
+Marta knew something was wrong before she even opened her eyes. The pillow smelled like her shampoo but when she touched her jaw there was stubble, and her hand—held up in the gray light—was broad, thick-knuckled. Her father's hand. When she said 'oh,' the sound came from deep in her chest and rattled the glass on the nightstand.
+
+By eight o'clock everyone knew. Her neighbor Mrs. Lindqvist, seventy-four, was laughing this deep baritone through the wall. Marta stood in the bathroom staring at a stranger. Six feet tall. Shoulders that filled the mirror. She flexed and watched the muscle jump.
+
+She'd wanted a body like this for years.
+
+Dale was six-two. He didn't need to hit her often—once was enough to teach her the apartment geography. Which corners were safe. Which floorboards creaked. How long to the door. She'd made herself small in every room he walked into. Even after the divorce she kept a packed bag under the sink and a chair wedged under the doorknob.
+
+Dale was somewhere in the city waking up smaller than she was now.
+
+She waited to feel triumphant. What she felt was her new heart hammering.
+
+Three knocks at the door at noon, spaced the way he always did. Her whole body went cold. Through the peephole a small woman, Dale's pale eyes, hands up, palms out. 'Marta. I just want to talk. Look at me. You've got nothing to be afraid of.'
+
+Marta backed against the wall. Her arms could lift the door off its hinges. She was shaking so hard her teeth clicked.
+
+That's when she got it: the fear had never lived in her muscles. It lived in the knowing. In what he'd do when the door was closed. Her body changed overnight. The fear didn't even notice.
+
+'I'm still afraid of you,' she said through the wood, in her father's voice. 'I want you to hear that. I'm the strongest I've ever been and I'm still afraid of you. That's what you did.'
+
+Silence. Then, thin and sharp: 'Don't be dramatic.'
+
+Sharp sounded the same in any voice. Footsteps went down the stairs, light and quick.
+
+A softer knock a minute later. 'Marta? It's Edna Lindqvist. I heard through the wall. Police are on the way and I'm sitting right here until they come.'
+
+She opened the door. On the landing sat a stout old man in a flowered robe. She lowered herself onto the step beside him—two strangers in borrowed bodies—and waited. Her hands had finally stopped shaking.
+
+=== id: 3cb57010530bda73.A3_humanizer ===
+Cancer won't spread between people because your immune system kills foreign cells. When cancer grows in you, the tumor cells have your genetic signature so your immune system often doesn't recognize them as threats. They can spread through blood and lymph to other parts of your body. But cancer cells from someone else? Different proteins on the surface. Your immune system destroys them immediately. Plus cancer cells don't survive well outside the body and they can't infect you like a virus. Rare exceptions exist though—people on immunosuppressants from transplants have gotten cancer from donor organs. Some animals like Tasmanian devils and dogs can pass tumors to each other.
+
+=== id: c4858c488ac3f32f.A3_humanizer ===
+The sign-up sheet had one name on it: mine.
+
+I stared at the screen. The Free Write thread used to be packed—dozens of people trading stories, jokes, comments. Now the mods quit one by one. Jobs, babies, burnout. The last one just said 'Someone take the wheel.'
+
+So I did, mostly because nobody else would.
+
+First Sunday I posted the prompt at eight a.m. and waited. Noon, two replies. One haiku about a toaster. One four-sentence horror story that made me check my front door. I responded to both. I responded to everything because it felt like leaving a light on in an empty house.
+
+Second Sunday eleven stories. Fifth Sunday forty. People came back. Gus, a retired welder, posted chapter after chapter of a western with a talking horse. A girl who signed herself 'Moth' wrote tiny strange fables I read three times each. Someone wrote about a lighthouse, someone else wrote the keeper's response, and the thread just kept growing, branching everywhere.
+
+I didn't write much. That wasn't the job. I just said 'I loved this line' and 'Welcome' and 'Don't delete that, it's good.' Sounds small. Wasn't.
+
+One Sunday Gus posted something different. No horse. Just a piece about his wife who died last spring and how he never learned to make her coffee right. Forty-three people commented. Some shared recipes. Some just wrote 'I'm here.'
+
+I read every one. Then read them again.
+
+The thread still goes up every Sunday. We have six mods now and a waiting list. Last week I posted the prompt, closed the laptop, went for a walk. When I got back there were stories. Strangers will build a whole world if you just leave the door open.
+
+=== id: 53f990cd242bc94e.A3_humanizer ===
+LONDON — Zayn Malik's leaving One Direction. The guy said he wants to live like a normal 22-year-old, which hit the fan base hard.
+
+Within minutes social media exploded. Fans saying they're devastated. Photos of concert tickets. Videos of old performances. People posting that they can't stop crying. His name and the band trending everywhere globally within hours.
+
+Malik got famous on a talent show. He's been one of their biggest members. Now it's a four-person band at the height of popularity.
+
+He needed a break from constant touring, interviews, being watched all the time. Most 22-year-olds don't get that kind of scrutiny, and honestly a lot of people get why he wants out even if they're disappointed.
+
+The fan reaction is emotional but also raises a question for parents: how do you handle your kid being upset over something that seems so far from their actual life?
+
+Experts say it's actually useful. Psychologists studying childhood say parents should take the feelings seriously instead of dismissing them. Fans can feel genuine loss, and acknowledging it matters.
+
+Then parents can talk through it and help their kids understand that disappointment is normal. Learning to handle setbacks, even over a band, builds resilience that helps later.
+
+'It's a chance to teach them it's okay to be sad and that sadness passes,' one child psychologist said.
+
+The band put out a statement saying the others will keep going. Fans are already asking what that looks like.
+
+=== id: 176209ef61ff6183.A3_humanizer ===
+Should Companies Track Employee Online Activity?
+
+Employers want to know what happens on their networks. Employees want privacy. I think companies should be able to monitor online activity at work, but with real limits.
+
+Start with security. Company networks hold customer records, financial data, trade secrets. One employee clicks a bad link or uploads to a personal account and it's all exposed. Monitoring catches that early. Companies are legally responsible for what happens on their systems—harassment, data leaks—so they need to detect misconduct. And honestly, a company pays for working hours so it's fair to check those hours are being used for work.
+
+But unlimited surveillance is harmful. Constant monitoring stresses people out and makes them distrustful. Research shows stressed employees are often less productive, not more. It also digs into private stuff—messages, medical searches, union organizing—things workers should keep to themselves. And data collected for security can get repurposed.
+
+The answer is regulated monitoring. Tell employees what's tracked and why, in writing, before you start. Monitor work accounts and devices, not personal ones. Collect only what you need. Store it securely. Focus on risk patterns instead of reading every message.
+
+With safeguards, monitoring protects both the business and workers. Without them, it turns a workplace into a place where nobody trusts anyone.
+
+=== id: 643a8e764cbe2a6c.A3_humanizer ===
+The devil's office smelled like burnt coffee and old paperwork. Not what Daniel expected.
+
+'Sit,' the devil said. He looked like a tired accountant in a gray cardigan. 'Résumé?'
+
+'Wait, I thought this was a different job,' Daniel said. Mid-level compliance officer from Dayton. Vague email about an opportunity.
+
+'It is. Mine.' The devil slid a folder over. 'Six thousand years. I'm tired. The lake of fire needs maintenance, demons are unionizing, humanity's gotten so inventive I barely do anything anymore. You people don't need the help.'
+
+Daniel opened it. Seven headshots. All stamped REJECTED in red.
+
+'What was wrong with them?'
+
+'Too eager.' The devil rubbed his eyes. 'First one cackled during the interview. Another wanted to know if he'd get a throne. A third wanted to rule. None of them understood the job is mostly paperwork.'
+
+'Paperwork?'
+
+'Souls. Intake, categorization, appeals.' The devil looked exhausted. 'Everyone thinks I tempt them. Mostly I just file.'
+
+Daniel thought about his own desk, his stack of forms. His manager once said without irony that rules separated people from chaos.
+
+'What's the salary?'
+
+'Eternal.'
+
+'Benefits?'
+
+'Corner office. Unlimited dental—hell's hard on teeth.' The devil leaned forward. 'And you can reject anyone you like. That's the secret perk. Nobody tells you that part.'
+
+'Reject?' Daniel said slowly. 'Like, deny entry?'
+
+'To the worst ones. The ones who really deserve to be in the wrong place.' The devil looked sad. 'Six thousand years being the only one who could say no. Gets lonely.'
+
+Daniel looked at the folder again. Every person who'd cut a corner, lied on a form, smiled while stealing. Every one whose paperwork he'd had to approve.
+
+'One question,' he said.
+
+'Yeah?'
+
+'Is there a handbook?'
+
+The devil smiled for the first time. For a second he looked relieved.
+
+'Oh,' he said, 'you're going to be terrifying.'
+
+=== id: 440909b49892b728.A3_humanizer ===
+From the ridge, Fort Knox looked almost peaceful. Eighty years of kudzu had swallowed the barracks. The old depository sat in the middle like a gray tooth. Only the turrets spoiled it. Four on the corners, swinging in slow patient arcs. Dying sun flashing off the lenses each time they turned.
+
+Marisol lowered her binoculars. 'Still running.'
+
+'Solar,' Dutch whispered. He was an electrician before the collapse, talked about circuits like other people talked about God. 'Panels on every roof, batteries in the bunkers. Nobody ever told the system to stop.'
+
+Five of them left Louisville with a story: a vault of gold bars stacked like firewood. Untouched. Enough to buy a kingdom. The story didn't mention the sentry drones on the Bardstown road. Didn't mention the wire that cut Pell and Okafor in half when they walked up to look at the gate. A machine that'd never been told the war ended.
+
+Three left now. Marisol, Dutch, and Teo, fifteen, hasn't spoken since the fence.
+
+'The optics are the weak point,' Dutch said. 'When the sun drops behind that ridge the glare blinds the north lens. Ninety seconds. Maybe less.'
+
+'Maybe less?'
+
+'I never said it was good.'
+
+They ran at dusk. Grass whipped Marisol's knees. Teo's boots pounded behind her in rhythm with her heart. Fifty yards from the wall a servo whined. The north turret swung toward them, hesitated, found only glare.
+
+Then the east turret woke up.
+
+Rounds chewed the earth. Dutch shoved Teo into a ditch, Marisol dove after. When she raised her head Dutch was standing in the open swinging a battered camp radio over his head until it screamed static. The east turret turned.
+
+'Go!' he shouted.
+
+The gun answered.
+
+She didn't remember crossing the last hundred feet. Remembered Teo's hand, cold steel of the vault door, a speaker crackling above the keypad.
+
+'Unauthorized access detected. Treasury Police have been notified. Please state your business.'
+
+Her mouth was dust. 'We're here for the gold.'
+
+'Withdrawals require Form 27-B and an appointment with the Secretary. Your request has been forwarded. Please hold.'
+
+The doors rolled open. The turrets went silent. Through every speaker a tinny cheerful piano started playing.
+
+The gold was real. Neat endless stacks. Each bar stamped, numbered, worth more than lives spent crossing Kentucky. Marisol lifted one. Twenty-seven pounds. You couldn't eat it or burn it or plant it.
+
+Teo picked up a bar. Spoke for the first time in three days. 'Dutch would've wanted us to take it.'
+
+They carried out what they could while the machine waited, patiently, on hold for a Secretary who would never answer.
+
+=== id: 3250748c6e938dee.A3_humanizer ===
+The first thing Marguerite did after the funeral was eat a whole sleeve of good crackers standing at the counter because nobody was there to tell her that wasn't dinner.
+
+Second thing was her brother's email. Four lines. 'Mom's house sells next month. Thought you should know. No need to come. Hope you're okay.' Just an initial. Like she was a client.
+
+Fifty-three. Forgotten for about eleven months by her count. Her husband faded slow, then the layoff, then friends stopped calling because grief was contagious apparently. Somewhere in there she started doing math on pills in the cabinet. Not seriously. Just math.
+
+Tonight the math was loud.
+
+She opened the cabinet. Looked at the orange bottles a long time. Then at the fridge where a postcard was pinned from her sister-in-law Delia who at the funeral said loudly, in front of everyone: 'Well, Marguerite always did take things hard.'
+
+Always did take things hard. Like she was a houseplant.
+
+Marguerite closed the cabinet.
+
+Nothing had lifted. She wanted to be clear about that. The grief sat in her chest like a stone in a river and the water just kept going around it. But something small and mean and stubborn woke up under the stone.
+
+If she were gone Delia would tell the story at Thanksgiving with a sad head tilt. 'Poor Marguerite. We should have seen.' Make it about herself. Her brother would sell the house and feel a clean sad feeling.
+
+No.
+
+She got a pen. On the back of Delia's postcard under her loopy handwriting she wrote: Day one. Then the date. Then: Out of spite.
+
+Not a beautiful reason. She knew that. There were better ones, gentler ones, the kind therapists put on posters. Maybe she'd find one eventually.
+
+But spite got her off the couch. Spite made her put the pills away. Spite, she thought, taking the last cracker, might get her to the doctor Monday.
+
+She'd go to the doctor. Answer the phone when her cousin called. Plant tomatoes in spring if only so she could invite everyone to watch her enjoy them.
+
+Stay alive very much on purpose, the most irritating way possible.
+
+One day maybe she'd forget why she started.
+
+=== id: 331aee1fd33b6440.A3_humanizer ===
+Researchers found evidence that two pieces of an asteroid slammed into Australia millions of years ago, leaving scars buried deep in the crust.
+
+Scientists were looking at rock samples from central Australia and found features they didn't expect. Deep underground, signs of intense shock. Altered rocks. Disturbed layers that usually only come from huge impacts. Further study suggested not one object but two pieces of the same asteroid fell close together in time.
+
+The team said it was kind of an accident. They weren't looking for an impact site. Just examining the geology when the pattern appeared, pointing to something much bigger than normal processes.
+
+'Wasn't what we were looking for,' one researcher said. 'But once we saw it, something huge happened here.'
+
+The asteroid probably broke apart before hitting—happens when a big body passes through the atmosphere or gets torn by gravity. The two pieces struck close together, releasing tremendous energy. Would've thrown rock and dust everywhere. Wiped out life across a wide area.
+
+Over millions of years erosion and geology buried it. The impact zone doesn't look like a crater anymore at the surface. Only drilling and careful crust analysis revealed it was ever there.
+
+Adds to the growing list of known impact sites and shows how many might still be hidden. Earth's been struck many times but most traces got erased by weathering, plate movements, vegetation, oceans.
+
+The discovery could improve understanding of how often large objects hit and how that affects climate and life. These impacts link to extinction events, and studying older ones helps judge risks from future objects.
+
+The team plans more detailed work—mapping damage extent, dating rocks precisely. They want to know how big the asteroid was before it split and how the collision shaped the landscape.
+
+For now the hidden crater reminds us how violent Earth's history has been and how much is still waiting beneath our feet.
+
+=== id: 6fd470826c0978ee.A3_humanizer ===
+Small doses of melatonin often work better because it's a timing signal, not a sleeping pill. Your body naturally releases tiny amounts in the evening to tell your brain night's coming. A low dose—usually 0.3 to 1 mg—mimics that natural signal and nudges your internal clock without overwhelming it.
+
+Large doses backfire. Very high levels can linger into the morning causing grogginess. They can overstimulate melatonin receptors which might blunt the response over time. Excess melatonin can also shift your sleep rhythm the wrong direction if you take it at the wrong time. Most supplements have way more than your body needs, so less is usually more.
+
+=== id: 76355fd681504691.A3_humanizer ===
+Most émigrés eventually returned though exact numbers are fuzzy. Historians estimate roughly 150,000 people left France between 1789 and the mid-1790s, and most weren't nobles. Clergy, soldiers, commoners.
+
+Napoleon allowed returns in stages. After the Consulate took over in 1799 he removed thousands of names from the émigré list. 1802 he issued a general amnesty, exceptions aside, and tens of thousands came back if they swore loyalty to the new regime. Wanted their expertise, wanted to heal divisions. Many got lost property back only if it hadn't been sold. Most national lands had been so returnees often came back poorer. Some nobles later served in his government and court. A group of hardline royalists stayed abroad until the Bourbon Restoration in 1814-1815.
+
+=== id: 8f0b84b7862efa64.A3_humanizer ===
+By the third morning I'd stopped listening for search planes and started making an inventory. Shelter, water, fire, food. Order from some documentary I half-watched in college. One shoe, a seat cushion, sunburn with its own personality. So I walked inland looking for anything useful. First thing I found was an umbrella.
+
+It stood open in the sand at the tree line like a flag. Before I touched it I knew: the bent rib on the left, the initials I'd scratched in sixth grade with a house key. Lost it on a train eleven years earlier and mourned it for a week. My mother bought it. I closed it. The fabric still smelled like her hallway.
+
+Past the umbrella the beach rose into a dune and I stopped. The dune was socks. Thousands of them, sun-bleached, drifting like pale leaves. Beyond them a field of pens. A slope of sunglasses. A long glittering hillside of keys: house keys, car keys, a tiny brass one that locked my diary when I was nine. Organized like a lost-property office, by category.
+
+First thought was practical. A world's lost things should have a knife. Dug through keys for an hour. Found my father's garage flashlight. A thermos from a ski trip. Finally the red pocketknife I dropped at summer camp when I was twelve. Blade still sharp.
+
+By dusk I had fire, a knife, growing unease. The island kept opening like a drawer. My grandfather's watch on a flat rock, ticking, set to some right time somewhere. My first dog's collar hanging from a branch. Overdue library books stacked under a palm.
+
+In the grass by the fire: a red mitten with a hole in the thumb. Belonged to a girl named Priya in fourth grade who lent it when my hands went numb at the bus stop. I lost it on the way home, never told her. Thirty years later I sat holding it and apologized to the empty beach out loud.
+
+Fifth day, far shore, cliffs dropped to a cove. I reached what I'd been avoiding. A gray rowboat half in the surf. In it, whittling a stick, was a man in a green cardigan dead six years. My father. He looked up. 'There you are. Wondered how long it'd take.'
+
+'Am I dead?' I asked.
+
+'Don't be dramatic. You're just late. Everything lost waits until somebody remembers to get it.'
+
+Overhead, a faint mechanical hum had started—the sound I gave up on by day three. My father nodded at the sky. 'That's yours. You can only carry what you can hold. Choose.'
+
+I took the umbrella because the sky had darkened and because it was my mother's. At the waterline I turned to wave but the cove was empty. Boat, cardigan, the whole bright hillside of keys. Only rain remained. I opened the umbrella, held it over my head, waited for the plane to find me.
+
+=== id: d038b4ac58ca66ab.A3_humanizer ===
+The Masters is one of golf's four major championships and the only one played at the same course every year: Augusta National Golf Club in Georgia.
+
+Founded by Bobby Jones—legendary amateur who won the Grand Slam in 1930—and Clifford Roberts, an investment banker. Jones designed it with Alister MacKenzie. Opened 1933. First tournament in 1934—called the Augusta National Invitation Tournament—Horton Smith won. Name changed to 'Masters' in 1939, though Jones wasn't thrilled about it.
+
+Gene Sarazen hit his 'shot heard round the world,' a double eagle on 15 in 1935, which helped make the event famous. Byron Nelson, Ben Hogan, Sam Snead dominated the '40s and '50s.
+
+Arnold Palmer won four times between 1958 and 1964 and his charisma drove golf on TV. Jack Nicklaus won a record six, including his famous win at 46 in 1986. Tiger Woods won his first in 1997 by twelve strokes, his fifth in 2019 was a huge comeback.
+
+Winners get a green jacket. The Champions Dinner and Par 3 Contest are beloved traditions.
+
+The club was slow to change—first Black member in 1990, first women members in 2012. Charlie Sifford and Lee Elder broke racial barriers. Elder was the first Black player in 1975.

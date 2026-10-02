@@ -1,0 +1,397 @@
+=== id: 61bc9df74ac18a32.A1_light ===
+Skyrmions and merons are topologically nontrivial spin textures whose current-driven motion features a sideways deflection referred to as the skyrmion Hall effect. The corresponding Hall angle is usually taken to depend on the size and internal structure of the texture, which complicates both how experiments are interpreted and how racetrack-type devices are designed. In this work we show that, within the Thiele collective-coordinate approach, the Hall angle of skyrmions and merons does not depend on the length scale of the texture. By examining a general family of axially symmetric profiles, we show that the gyrotropic coupling and the dissipative tensor scale in the same way with the characteristic radius, so that their ratio is set only by the topological charge and the Gilbert damping. We then apply this analysis to merons, whose half-integer topological charge produces a Hall angle that differs from the skyrmion value by a fixed factor, and we discuss how the result changes when spin-orbit torques are present. Micromagnetic simulations covering a broad range of radii, anisotropies, and Dzyaloshinskii-Moriya interaction strengths agree with the analytical prediction within numerical accuracy. Our findings explain the origin of the size dependence reported in previous studies, tracing it to deformations and pinning rather than to intrinsic dynamics, and they offer a simple criterion for engineering controlled transverse motion in topological spintronic devices.
+
+=== id: c88474cca5a3123b.A1_medium ===
+Should Companies Track Employees Online?
+
+A lot of businesses rely on software to monitor their workers' internet activity during working hours. In my view, this should be permitted, but only when companies stick to clear rules.
+
+There are solid reasons for employers to keep an eye on things. Sensitive information such as customer data has to be guarded against both hackers and careless errors. On top of that, companies are paying people to get work done, so it makes sense that they want to be sure that time isn't spent on games or social media.
+
+Still, employees have rights as well. When a company reads every message and records every click, workers can become anxious and lose trust in their manager. Instead of improving performance, that may actually make it worse. Personal information also deserves to remain private.
+
+What works best is balance. Employers should be open with staff about what they monitor and the reasons behind it. Monitoring should be limited to work accounts and work devices. When both sides act honestly and with respect, tracking can protect a company without stripping away people's privacy.
+
+=== id: 1683ccf98cb7a62a.A1_heavy ===
+**Philadelphia Woman Planned Trip to Join ISIS Through Social Media, FBI Says**
+
+PHILADELPHIA -- Federal authorities have arrested a 30-year-old woman, Keonna Thomas, accusing her of trying to go abroad to join ISIS, and they say a trail of social media messages she allegedly posted is what gave her away.
+
+According to the FBI, Thomas posted a string of online messages voicing support for the militant group and saying she wanted to join its fight. The complaint states that the investigation leading to her arrest was built on those messages.
+
+The charge she faces is attempting to provide material support to a foreign terrorist organization. It is a federal crime, and a conviction can bring a long prison term. Prosecutors say the heart of the case is her alleged attempt to leave the country and get to territory the group controls.
+
+Investigators tracked what she did online over a stretch of time, court documents say. In the view of authorities, both her public posts and her private exchanges show more than her opinions; they also show the steps she took toward arranging travel. Because parts of the investigation are still ongoing, officials held back some details.
+
+The arrest is part of a busy week for federal prosecutors: Thomas is among three women hit with federal terror charges, while the other two face charges in a separate case. That cluster of cases shows how actively the government is pursuing people linked to ISIS and groups like it. Officials say social media is now one of the main channels extremist organizations use to recruit, including among U.S. residents.
+
+A Justice Department official said the government is "committed to disrupting these threats before they can cause harm," adding that investigators depend heavily on tips from the public and on watching online platforms.
+
+According to counterterrorism experts, social media recruitment has transformed the threat. In the past, someone hoping to join a group had to make personal contact; today, a single post can open an online conversation that pulls a person in. Spotting that early is harder, experts say, but the same activity leaves behind a digital trail that investigators can use afterward.
+
+At her appearance in federal court, a judge informed Thomas of the charges. She has yet to enter a plea, and a defense lawyer had no immediate comment on the allegations.
+
+A criminal complaint, like those in any criminal case, consists only of allegations, and Thomas is presumed innocent unless and until a court proves her guilty.
+
+=== id: 20638cfd67645e15.A1_light ===
+**Abstract**
+
+Connected vehicle applications, such as cooperative collision avoidance, high-definition map sharing, and remote driving, require high data rates and low latency beyond what current vehicular networks can deliver. Millimeter wave (mmWave) communication in 5G New Radio is a promising way to satisfy these requirements, but how it performs in dynamic vehicular settings is not well understood. This paper introduces an end-to-end evaluation framework that combines detailed channel modeling, protocol stack behavior, and application-level traffic in a single simulation environment. The framework models key mmWave effects including blockage by vehicles and buildings, the overhead of beamforming and beam tracking, and handover between base stations under mobility. We apply it to measure throughput, latency, and packet delivery for several representative connected vehicle use cases in urban and highway scenarios, at different vehicle speeds and traffic densities. The results indicate that mmWave links can provide the data rates needed by bandwidth-intensive applications, but performance depends strongly on blockage and on the beam management strategy, which can produce latency spikes during handover. We also identify the configurations in which latency targets for safety-critical messaging are satisfied. The proposed framework provides a reusable tool for researchers and network designers assessing 5G mmWave deployments for connected and automated vehicles, and the findings point to design priorities for future vehicular networks.
+
+=== id: 8ea531d2b1e83efd.A1_medium ===
+**Appeals Court Backs Trademark Refusal for Asian-American Band The Slants**
+
+The government's decision not to register the name of Asian-American band The Slants has been upheld by a federal appeals court, which found the name disparaging and so ineligible for federal trademark registration.
+
+The band's application had been rejected by the U.S. Patent and Trademark Office under a section of federal law that prohibits registering marks that could disparage people or groups. According to the court, the name was covered by that ban, despite the band's statement that it picked the name as a way of reclaiming a term frequently used as a slur.
+
+Marc Randazza, a First Amendment lawyer, believes the court made the wrong call. Trademarks, he contends, are commercial speech, and the First Amendment protects commercial speech. As he sees it, deciding which names are too offensive to merit legal protection is not the government's business.
+
+Randazza also views the decision as a sign of the times. In his opinion, it mirrors a culture that takes offense easily, one where officials feel pushed to police words that upset some people, even when those using the word are members of the group it is aimed at.
+
+The ruling brings into focus a longstanding conflict within trademark law. Registering a mark comes with valuable advantages, such as nationwide rights to a name and firmer grounds for preventing others from using it. Opponents of the disparagement provision argue that it hands government examiners broad latitude to withhold those advantages based on subjective views of what counts as offensive, and that outcomes can vary from case to case.
+
+The result is a blow to The Slants in a dispute over their name that has gone on for years. Still, Randazza's reasoning suggests where the fight might go from here: toward a bigger constitutional question about the limits of the government's power to decide which words are acceptable for registration as brand names.
+
+=== id: 13cdc10f853f33e8.A1_heavy ===
+**Abstract**
+
+How do charmonium bound states behave once the medium is deconfined, and how do their properties change with temperature above the critical point? To address this, we pair a potential-model approach with finite-temperature lattice input and calculate spectral functions and screening masses for the J/psi and its excitations. We find that the excited states melt near the deconfinement transition, while the ground state survives as a resonance up to substantially higher temperatures before it too dissolves. Testing how these findings depend on the assumed heavy-quark potential, we see that reasonable changes leave the dissociation pattern intact. We close by discussing what this means for quarkonium suppression as an indicator that quark-gluon plasma has formed in heavy-ion collisions.
+
+=== id: f7c95e7bd9ded366.A1_light ===
+What you're describing is very common, and there's a name for it: **bedtime procrastination**. It's the habit of putting off sleep for no practical reason, even though you know you'll pay for it tomorrow. The fact that you know sleep matters and still do it is the important clue. This isn't a knowledge issue. It's a feelings and habits issue.
+
+## Why it happens
+
+**1. Revenge bedtime procrastination.** If your day is crammed with school, work, or obligations, late night might be the only time that feels like your own. Staying up is a way to take back control and free time. Your brain swaps tomorrow's energy for tonight's freedom.
+
+**2. The costs come later, the rewards come now.** Scrolling or watching one more episode feels good in the moment. The grogginess shows up hours later. People are famously bad at weighing future pain against present pleasure.
+
+**3. Your body clock might run late.** Some people are natural night owls, and a later internal clock makes an early bedtime feel physically wrong. Bright screens and late light exposure push it back even further.
+
+**4. Stimulation and avoidance.** Using your phone late at night is stimulating, and it can also be a way of dodging unresolved worries or boredom. Quiet moments in bed can bring up thoughts you'd rather avoid.
+
+**5. Tiredness weakens self-control.** By late evening your willpower is drained, so the part of you that wants to sleep loses out to the part that wants one more video.
+
+## What can help
+
+- **Create a wind-down routine** that marks the end of the day, such as dimming the lights and putting your phone across the room.
+- **Give yourself genuine leisure earlier**, so night isn't your only free time.
+- **Set a "start getting ready for bed" alarm**, not only a wake-up alarm.
+- **Get sunlight in the morning** to move your body clock earlier.
+- **Make the right choice the easy one** by charging your phone outside the bedroom.
+
+If it continues and you also feel anxious, wired, or unable to fall asleep when you do try, it might be worth speaking with a doctor, since insomnia and delayed sleep phase can be treated.
+
+=== id: abd9bad18b6df673.A1_medium ===
+**WHOLE LOTTA LUCK**
+
+*A Comedy in the Tradition of "Ace Ventura," "The Mask" and "Liar Liar"*
+
+Nobody in Tulsa, Oklahoma, has worse luck than Walter "Wally" Pickett. A forty-two-year-old insurance claims adjuster, he has survived two lightning strikes, lost three jobs for sneezing at exactly the wrong time, and earned a lifetime ban from a local Applebee's for reasons no one, Wally included, can really explain. He also happens to be a brilliantly gifted amateur impressionist, though he only performs alone in his car, safely out of anyone's judgment.
+
+His life turns upside down when a runaway ice cream truck slams into him outside a lottery office. Waking up in the hospital, he learns two things. One, he is unhurt. Two, he has become impossibly lucky, in the oddest possible way. Any time he copies someone's voice, mannerisms and body language perfectly, the universe tilts in that person's favor, and in his. Nail an impression of a bank manager, and the vault swings open. Nail Elvis, and every hotel clerk in town bumps him up to the penthouse. Luck, Wally discovers, is a performance, and he's the headliner.
+
+He starts small with his new power: free lunches, perfect parking spots, a flawless round of miniature golf. Before long, though, he gets tangled up with Dolores Fontaine (brought to comic life by a scene-stealing supporting actress), who owns a struggling roadside casino called the Golden Armadillo. She has been fighting to keep it open against Preston Vandermeer, a slick developer who plans to flatten it for a luxury resort. Dolores takes Wally on as her "good luck consultant," kicking off a high-energy run of ever more ridiculous gambles in which he poses as high rollers, a Russian chess grandmaster and a thoroughly bewildered cowboy.
+
+At the film's midpoint comes its biggest comic set piece: Wally has to pass himself off as a state governor at a charity gala. He sinks so far into the role that he begins signing laws, pardons a turkey and gives a booming speech on the importance of nachos. The crowd buys all of it. It's exactly the sort of full-body, rubber-faced, yelling-into-the-void performance that turned Carrey into a star.
+
+There is, naturally, a price. Every impersonation chips away at Wally's memory of who he really is. He responds to names that aren't his. His sister's birthday slips his mind. Gus, his deadpan mechanic best friend, sees Wally gradually vanishing into his own act. Meanwhile, Vandermeer uncovers the secret and schemes to use it, kidnapping Wally and forcing him to fix a high-stakes poker tournament.
+
+In the third act, Wally breaks free armed with only a feather boa, a Southern accent and a rented tuba. He heads back to the casino for a final showdown in which impressions are off the table. Stripped of his borrowed identities, he has to depend on his own voice, clumsy as it is, and he understands that being himself is the one thing he's been too scared to attempt. During a tense, hilarious last hand of poker, he wins by being gloriously, unmistakably Wally. His sincere, goofy bluff succeeds precisely because nobody could have faked it.
+
+The Golden Armadillo is saved, Vandermeer gets trapped in his own revolving door, and Wally at last does an impression in public: a heartfelt, absurd tribute to Dolores that leaves the whole casino in tears and applause. In the final scene, Wally walks into a diner, orders pancakes in his own voice, and the whole room cheers.
+
+**Tone and appeal**
+
+The film mixes slapstick, physical comedy and rapid-fire vocal impressions with a surprisingly warm story about identity. It gives Carrey room to do what he does best: twist his face, roar at the heavens, and then shift into genuine vulnerability, as he did in *The Truman Show*. Backed by a supporting cast of quirky character actors, a jazz-and-swing soundtrack and a PG-13 rating that keeps the comedy broad and family-friendly, *Whole Lotta Luck* is built to hand audiences the loud, goofy, big-hearted comedy they've been craving.
+
+=== id: 93e019ac0119c587.A1_heavy ===
+**Arctic Silver vs. Thermal Grizzly: How Their Thermal Compounds Compare**
+
+**Which one should you pick?**
+
+For most people, the most convenient mix of performance, safety and ease of use comes from one of Thermal Grizzly's non-conductive pastes. Beyond that general advice, the right choice depends on the build:
+
+- **High-end overclocking:** Among non-metallic options, Kryonaut Extreme performs best. If you are prepared to take on more risk, Conductonaut is worth a look, especially with a copper or nickel-plated cold plate.
+- **Low-profile coolers:** These coolers apply limited contact pressure, so thinner pastes like Kryonaut or Hydronaut usually spread better. A thick compound can leave a larger bond line.
+- **Delidded CPUs:** Cooling the die directly concentrates heat, so high-conductivity paste or liquid metal is the best fit. If the compound conducts electricity, the nearby capacitors must be insulated.
+
+**Conductivity figures**
+
+According to the manufacturer, Thermal Grizzly's top non-metallic pastes reach about 12.5 W/mK (Kryonaut) and 14.2 W/mK (Kryonaut Extreme), with Hydronaut at around 11.8 W/mK. Its liquid metal product, Conductonaut, is rated at roughly 73 W/mK. On the Arctic Silver side, the flagship Arctic Silver 5 uses silver particles and claims about 8.7 W/mK, and the ceramic, non-conductive Ceramique line lists lower values. Bear in mind that each company measures these numbers its own way, and in practice, good pastes usually differ by only a few degrees Celsius in CPU temperature.
+
+**Curing**
+
+Here the brands differ most noticeably in day-to-day use. Thermal Grizzly designs Kryonaut and Hydronaut to hit their rated performance right away, with no curing period worth mentioning. Arctic Silver compounds, by contrast, have traditionally needed a burn-in: the manufacturer says reaching full performance can take as long as 200 hours of total operation over several heat cycles. Liquid metal doesn't cure in the usual sense, though heavy use may call for reapplying it from time to time.
+
+**Applying the paste**
+
+Both companies suggest either a pea-sized dot or a thin line, chosen according to the shape of the die. Arctic Silver 5 is quite thick and its silver particles conduct electricity, so any excess near exposed circuitry is a hazard. Thermal Grizzly pastes tend to be smoother and spread more easily, and some packages include an applicator. Conductonaut requires the most care of all: because it conducts electricity and reacts with aluminum, the components around it need to be masked off.
+
+=== id: d523eea7166e637c.A1_light ===
+# Gunmen Attack Kenyan University; Agency Says 147 Killed
+
+GARISSA, Kenya — Gunmen attacked Garissa University College in northeastern Kenya, killing 147 people, a Kenyan agency said, as authorities reported that plans were in progress to evacuate students and others from the campus.
+
+Students were woken by explosions and gunfire as the attackers entered the school in the early hours, witnesses and survivors said. Many recounted scenes of panic, with students hiding in their dormitories and trying to escape the grounds.
+
+According to reports, the attackers singled out Christians and let Muslims go. These accounts, which came from people who got away, could not be independently verified. If true, they would indicate that the gunmen chose victims based on religion.
+
+The Kenyan agency put the death toll at 147, although officials warned that the figure might change as events unfolded and more information was gathered from the scene. It was not immediately known how many people had been wounded or how many were still inside the campus.
+
+Authorities said arrangements were being made to move students and others out of the university. Security forces were sent to the area, and the response concentrated on securing the campus and bringing people to safety.
+
+Garissa lies in a region close to the Somali border that has experienced several attacks in recent years. Kenyan officials have attributed such violence to militants based in Somalia. Initial reports of the assault did not name any group, and officials did not immediately say who was behind it.
+
+The attack caused alarm among students' families, many of whom gathered to wait for word about their relatives. Local hospitals were said to be treating the injured.
+
+Government officials were expected to provide more updates as the operation went on. The attack is likely to reignite debate about security in northeastern Kenya and the government's ability to protect schools and other public spaces.
+
+=== id: fa1874e5cd772bf3.A1_medium ===
+Yes, I believe high schools should require technology and coding, although the way the subject is taught is just as important as making it compulsory.
+
+**Why it should be required**
+
+The strongest argument is that technology now touches almost every profession. Doctors depend on software to interpret scans, reporters use data tools in their investigations, and farmers rely on sensors to look after their crops. A student who leaves school with no idea how software works is like a person who can't read a contract in a world filled with contracts. They can get by, but they need someone else to tell them what is going on.
+
+A second point is that coding develops a style of thinking that transfers to other subjects. To write a program, you have to split a big problem into small steps, try out an idea, figure out why it didn't work, and attempt it again. Debugging in this way strengthens persistence and logical reasoning, much like working through a geometry proof or revising an essay.
+
+Third, a requirement helps tackle an equity issue. At present, the students who learn to code tend to be those with a computer at home, a parent working in the industry, or a school with electives on offer. Making the course universal gives students from less privileged backgrounds equal exposure, and it could draw in people who never saw themselves as "computer people," especially girls and students from underrepresented groups.
+
+**The objections**
+
+Critics have fair worries. Timetables are already packed, so a new requirement means cutting something else. Many schools don't have teachers with genuine technical expertise, because those with such skills can usually make much more money in industry. A badly taught class might leave students bored or persuaded that coding isn't for them, which would undermine the whole point. Some also argue that since not everyone will become a programmer, making everyone take it is a waste.
+
+These points are valid, but they concern how the course is delivered, not whether it should exist. We don't expect every student to turn into a mathematician or a novelist, yet everyone studies math and literature because the fundamentals are valuable. Technology deserves the same reasoning.
+
+**What a good version looks like**
+
+The requirement should be wide-ranging rather than narrow. Instead of focusing on one programming language that might be outdated in ten years, it should include computational thinking, basic programming, data literacy, online privacy, and how the internet and artificial intelligence work. It should be built around projects, letting students create something meaningful to them, such as a simple game or a tool for a school club. It also needs to be backed by teacher training and competitive salaries.
+
+**Conclusion**
+
+Technology is no longer a specialist topic; it belongs to the basic literacy of modern life. A brief, carefully designed required course would give all students a foundation, and those who discover a passion for it could continue through electives. A badly taught course has real costs, but sending a whole generation out unprepared would cost more.
+
+=== id: ddb8e85f40145d79.A1_heavy ===
+I can't confirm the specifics of every organization calling itself the "Oakland Ski Club," since several groups share the name. What I can give is a general sketch of what a club like this usually is, focused on the most probable case.
+
+## The Basics
+
+Most likely, the Oakland Ski Club is a member-run recreational group in the Oakland area of California for skiing and snowboarding enthusiasts. It resembles many other regional clubs around the San Francisco Bay Area, whose purpose is to make winter sports affordable and social for members despite the long drive to the closest big mountains, which sit several hours away in the Sierra Nevada near Lake Tahoe.
+
+## Why People Join
+
+For city residents, skiing costs a lot and takes plenty of planning. Joining a club gives you a ready-made group of companions, pooled resources, and experienced advice. Newcomers to the region also often find it one of the simplest ways to meet people who share an interest.
+
+## Typical Activities and Benefits
+
+**Trips together.** Organizing weekend and holiday outings to ski resorts is the main event. Members commonly carpool, divide lodging costs, and buy lift tickets in bulk, all of which can cut expenses considerably.
+
+**A place to stay.** Plenty of Northern California clubs own or rent a lodge near Tahoe, near Truckee, or along Highways 50 and 80. Members share rooms and rotate cooking and cleaning duties, keeping prices down and fostering community.
+
+**Learning to ski better.** Beginners can often get lessons through the club, intermediates may receive coaching, and new members are sometimes paired with veterans.
+
+**Deals.** Through ties with regional ski associations, members may get discounts on gear, lift tickets, or resort packages.
+
+**Life off the slopes.** Dinners, summer barbecues, hikes, bike rides, and holiday parties are common, and for many members the friendships matter as much as the skiing.
+
+## How Membership Works
+
+Annual dues are standard, and some clubs ask for a sponsor or a trial period before granting full membership. Certain clubs welcome every age and skill level, while others center on adults or families. Trip planning, money matters, and lodge upkeep usually fall to a volunteer board.
+
+## Getting Reliable Details
+
+For particulars such as when the club was founded, what dues currently cost, the trip calendar, or whether it has a lodge, check the club's website or social media, local community listings, or regional ski council directories. Reaching out to the club itself is the surest way to get accurate, up-to-date information.
+
+=== id: 9de23cc80bc29588.A1_light ===
+**Hong Kong's Latest Monastery Features Bulletproof VIP Rooms and a Towering Goddess of Mercy**
+
+HONG KONG — A $193 million Buddhist monastery featuring bulletproof VIP rooms and the world's second tallest Goddess of Mercy statue is getting ready to open to the public.
+
+The Tsz Shan Monastery, built on a hillside in Tai Po in Hong Kong's New Territories, was paid for by Li Ka-shing, Asia's richest man. Li, whose business empire spans ports, retail, telecoms and property, has also earned a reputation as one of the region's best-known philanthropists. The monastery is set to receive visitors by mid-April.
+
+The statue of the Goddess of Mercy, called Guanyin in Chinese, stands at the heart of the complex. In Buddhist tradition, Guanyin represents compassion and is one of the most widely revered figures in Chinese communities worldwide. Just one statue of the deity anywhere in the world is taller than the one at Tsz Shan.
+
+More surprising for a place of worship are the bulletproof VIP rooms, a security feature usually linked with banks and government buildings rather than with places meant for meditation and prayer. It was not immediately clear who would be allowed to use the rooms or under what conditions.
+
+The $193 million price tag stands out even in a city where land is scarce and building costs are among the highest in the world. Hong Kong's hillsides and outlying areas have long been scattered with temples and monasteries, and the territory still has a deeply rooted tradition of Buddhist and Taoist worship.
+
+Hong Kong already has one monumental Buddhist landmark. The Tian Tan Buddha, a 34-meter bronze statue on Lantau Island, attracts crowds of pilgrims and tourists all year round. Tsz Shan's Goddess of Mercy, which is significantly taller, gives the city a second giant to compete with it.
+
+The opening of the monastery comes as Li keeps giving away a large portion of his fortune through the Li Ka Shing Foundation, which has funded hospitals, universities and cultural projects in Hong Kong, mainland China and abroad.
+
+With the mid-April opening approaching, the monastery's organizers face a balancing act: how to stop a place intended for stillness and reflection from turning into just another tourist attraction. For now, the bulletproof rooms and the towering statue guarantee that Tsz Shan will get attention either way.
+
+=== id: 4cec36adcead28c0.A1_medium ===
+The belief that today's young people show less respect than earlier generations did has been around for a long time. Grumbling about youth can be found in texts from ancient Greece, which hints that the idea reveals as much about every generation's nostalgia as about any actual change. I partly disagree with this view, though I accept that respect is now shown in different ways.
+
+People who support the claim usually highlight shifts in behavior. Young people might call teachers by their first names, push back against authority, or spend more time on screens than talking with older people. Some elders see these habits as rude. It is true that traditional gestures of respect, like rising when an older person enters or using formal titles, have faded in many societies.
+
+Yet a different style does not mean respect has disappeared. Young people now tend to be more ready to question ideas, but that may come from a conviction that everyone's views deserve a hearing, their own included. Many of them volunteer to assist elderly neighbors, show grandparents how to use technology, and look after relatives patiently. Respect expressed through deeds may be harder to notice than formal manners, but it is just as genuine.
+
+In addition, behavior is shaped by social circumstances. Families have become smaller and more spread out, and fewer young people share a home with their grandparents. When generations spend less time together, mutual understanding inevitably fades on both sides. That is a structural issue, not a moral one.
+
+To conclude, I do not think young people respect their elders any less. They simply express it differently, and creating more chances for the generations to interact would help each appreciate the other.
+
+=== id: 6d7208e5ee87e55d.A1_heavy ===
+# Teen With Cystic Fibrosis Asks Chile's President to Let Her Die
+
+SANTIAGO, Chile — In a video that has set off a nationwide debate about end-of-life rights, 14-year-old Valentina Maureira has asked the President of Chile directly for permission to end her life through assisted suicide.
+
+Valentina has had cystic fibrosis, a chronic genetic disease that worsens over time, since she was a small child. Speaking straight to the head of state in the recording, which spread widely on social media before national media picked it up, she described what the illness does to her every day and asked to be allowed to choose how and when her suffering ends.
+
+The disease is inherited. It causes thick, sticky mucus to build up in the lungs and digestive tract, bringing chronic infections, trouble breathing, and a much shorter life expectancy. Although treatment has advanced over the past few decades, the condition cannot be cured, and many patients are hospitalized again and again.
+
+Her request leaves the government in an awkward spot, because Chilean law does not recognize assisted suicide or euthanasia, and both remain banned. Only legislation could change that, and past proposals have run into fierce resistance from religious institutions and conservative legislators, along with wariness from some in the medical field.
+
+Those who back Valentina say people living with painful, incurable diseases should be free to make decisions about their own lives. To advocacy groups, her case shows why Chile needs a wider national discussion about dying with dignity and about access to palliative care.
+
+Critics counter that legal assisted death could endanger vulnerable people and raises deep ethical problems, especially when the one asking is a child. Medical ethicists point out that the small number of countries allowing assisted dying impose strict conditions and usually either exclude minors or require extra safeguards for them. Pediatric health specialists, for their part, stress that young patients with life-limiting illnesses need comprehensive support: pain management, psychological counseling, and help for their families.
+
+The president's office had not formally responded to the video at the time of publication. Officials have said before that the government intends to improve care for the seriously ill, but they have given no sign of plans to change Chile's assisted suicide laws.
+
+Attention to the case keeps growing in Chile and internationally, and it is likely to play a major role in continuing debates about medical ethics, patients' rights, and how far the state should reach into questions of life and death.
+
+=== id: c36213f221fe2eef.A1_light ===
+Girard's geometry of interaction (GoI) offers a dynamic, algebraic account of cut elimination in linear logic, in which proofs are read as operators and normalization is captured by running a feedback loop between them. Although the original construction was designed for the multiplicative-exponential fragment, extending it to richer systems has turned out to be delicate, particularly when one wants to retain a clear link with the structure of proofs. In this paper we examine the geometry of interaction for polarized linear logic (LLP), a variant where formulas are split into positive and negative classes and structural rules are limited accordingly. This discipline makes LLP a natural target language for translating call-by-value and call-by-name lambda calculi, so a GoI for it also helps explain how functional programs execute. We define an interpretation of LLP proofs as partial isometries on a Hilbert space of token configurations, and we prove that the execution formula converges exactly when the proof normalizes. The polarity restriction plays a central role, since it lets us handle the exponential modalities through a simple duplication mechanism instead of the full apparatus of boxes and their auxiliary ports. We establish soundness of the interpretation with respect to cut elimination, and we prove adequacy for the polarized fragment by connecting our semantics to a token machine. Lastly, we show how the construction accounts for a standard continuation-passing translation, and we discuss possible links with game semantics and with the implementation of efficient abstract machines.
+
+=== id: 5b44cd4ec71ae8d5.A1_medium ===
+# Suggested Films and TV Series for Learning English
+
+Watching films and television is a useful addition to formal study, since it introduces learners to natural pronunciation, idioms, and cultural background. The titles below are grouped according to proficiency level.
+
+## Beginner to Elementary
+
+- **Peppa Pig (series):** Brief episodes featuring slow, clear speech and basic vocabulary, ideal for developing core listening comprehension.
+- **Paddington (film):** Its gentle story and simple dialogue offer an easy first look at everyday British English.
+
+## Intermediate
+
+- **Friends (series):** Conversational exchanges, regular repetition of everyday phrases, and situational comedy help learners pick up casual American English.
+- **The Crown (series):** Introduces formal British English along with useful historical vocabulary. Using subtitles is recommended.
+- **Forrest Gump (film):** Speech is clearly pronounced, and the storyline is structured in a way that makes the plot easy to follow.
+
+## Upper-Intermediate to Advanced
+
+- **Sherlock (series):** Fast, exact dialogue and advanced vocabulary push more experienced learners.
+- **The West Wing (series):** A strong choice for learning professional and political language and following complex arguments.
+- **The King's Speech (film):** Helpful for examining formal register, rhetoric, and precise pronunciation.
+
+## Suggested Practice
+
+1. Start by using English subtitles instead of ones in your first language.
+2. Rewatch short clips several times and write down words you don't know.
+3. Say lines of dialogue out loud to work on intonation and fluency.
+4. Keep a log of helpful expressions to go over later.
+
+Regular practice, even just twenty to thirty minutes each day, will lead to noticeable progress over time.
+
+=== id: c950aee405e54677.A1_heavy ===
+**Finding a cylinder's volume**
+
+Think of a cylinder as a pile of identical circles stacked on top of each other. Each circle has an area of pi x r^2, and the height tells you how tall the pile is, so multiplying the two gives the volume:
+
+**V = pi x r^2 x h**
+
+Here **V** stands for volume, **r** for the radius of the circular base, **h** for the cylinder's height, and **pi** for a constant roughly equal to 3.14159. It's the same idea behind every prism's volume: area of the base times the height.
+
+**How to calculate it**
+
+1. Find the radius. It is half the diameter, so if the diameter is all you have, halve it.
+2. Multiply the radius by itself to square it.
+3. Multiply that by pi.
+4. Multiply the answer by the height.
+
+**Worked example**
+
+Suppose a can is 10 cm tall with a 3 cm radius. Then V = pi x 3^2 x 10 = pi x 9 x 10 = 90 x pi, or roughly **282.7 cubic centimeters**.
+
+**Useful notes**
+
+- Your answer will be in cubic units such as cm^3 or m^3. When measuring liquids, remember that 1 cm^3 is 1 milliliter and 1,000 cm^3 is 1 liter.
+- Make sure both measurements use the same unit; if one is in meters and the other in centimeters, convert before calculating.
+- If you'd rather work from the diameter d, use V = pi x d^2 x h / 4.
+- For a hollow shape like a pipe, take the outer cylinder's volume and subtract the inner one's: V = pi x h x (R^2 - r^2).
+
+=== id: f03fc51483c49290.A1_light ===
+Use semantic `<section>` elements, assign each one a unique `id`, and create a `<nav>` list whose links target those ids with `#`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <h1 id="top">My Page</h1>
+
+  <nav aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#results">Results</a></li>
+    </ol>
+  </nav>
+
+  <section id="intro">
+    <h2>Introduction</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+
+  <section id="methods">
+    <h2>Methods</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+</body>
+</html>
+```
+
+**How it works**
+
+- A link with `href="#methods"` makes the browser scroll to the element with the `id` of `methods`.
+- `<nav>` signals to browsers and screen readers that the block is meant for navigation.
+- `<ol>` produces numbered items. Change it to `<ul>` for bullets, or nest lists for subsections.
+- `scroll-behavior: smooth` animates the jump rather than snapping straight to it.
+
+**Tips**
+
+- Make ids lowercase, without spaces, and unique on the page.
+- To keep the table of contents on screen while you scroll, add `position: sticky; top: 1rem;` to the `nav` element.
+- For longer documents, a short script can generate the list automatically from your headings.
+
+=== id: f56cfbc243575f5a.A1_medium ===
+**Officer's Plea Captured as Toddler Is Rescued From Car Sunk in Icy River**
+
+"Come on, sweetie. Come on, sweetie."
+
+A police officer said those words over and over in a soft voice as he tried to coax a scared toddler to safety after she was discovered buckled into a car that had gone into a cold river. Authorities said the girl, named as Lily, may have been stuck inside the vehicle for up to 14 hours before rescuers reached her.
+
+Her mother, Lynn Jennifer Groesbeck, died in the crash. According to investigators, the car went off the road and ended up in the water, where drivers passing by could not see it overnight and into the next day.
+
+Responding officers recorded the rescue on audio and video, and the footage has since attracted wide attention. In the recording, the officer talks gently to the crying child, encouraging her to hang on and to trust him as he reaches into the wreck. He stays calm and patient, even though the conditions around him are clearly tough.
+
+According to emergency workers, the chilly river made the situation particularly dangerous for such a small child. Medical experts point out that babies and toddlers lose body heat much faster than adults do, and that extended exposure to cold water or damp, freezing air can bring on hypothermia in a matter of hours. Authorities called it remarkable that Lily made it through such a long ordeal.
+
+After she was pulled from the car, Lily was bundled in blankets and brought to a hospital to be examined and treated. Officials said she was alert and responsive, and her condition was reported as stable. Doctors kept watching her for signs of cold exposure and for any injuries from the crash.
+
+Police leaders commended the officers who responded for their professionalism and compassion. A department spokesperson said the rescue showed the frequently overlooked human side of policing, adding that officers are often the first to encounter families on the very worst days of their lives.
+
+What caused the crash is still being investigated. Authorities have not announced a cause, and it was not immediately known how long people had been near the scene before the car was found. As part of the inquiry, investigators are examining the road, the weather conditions and the vehicle itself.
+
+Groesbeck's friends and family remembered her as a dedicated mother. People in the community have started arranging support for the family, such as donations and offers of assistance, as Lily starts what is expected to be a lengthy recovery, both physically and emotionally.
+
+Authorities said more information would be made public as the investigation goes on.

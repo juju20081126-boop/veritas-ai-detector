@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "abst-0127",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Behavior of Charmonium Systems after Deconfinement\"."
+ },
+ {
+  "prompt_id": "stor-0307",
+  "instruction": "Write a 500-word story for this prompt: You swear that you keep seeing the same woman in blue every time you go on family vacation, when you turn 18, you are introduced to her. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0407",
+  "instruction": "I'm a college student and need help with an assignment. Why do beams of light travel in a straight lines if beams aimed at double slits can go through either and end up all over the place to create interference patterns?\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0487",
+  "instruction": "Can you provide a dockerfile for a Node.js application and explain what it the file is doing?"
+ },
+ {
+  "prompt_id": "news-0018",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 300-word news story:\n- Two pieces of asteroid crashed into Australia many millions of years ago.\n- Researchers stumble across traces of the impact zone deep in the earth's crust."
+ },
+ {
+  "prompt_id": "abst-0128",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Structure Functions and Extraction of PDFs at HERA\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0308",
+  "instruction": "If you stay alive for no other reason, do it for spite.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0408",
+  "instruction": "I'm a college student and need help with an assignment. How do base 2 and base 16 number systems relate to each other?\n\nExplain it in about 75 words."
+ },
+ {
+  "prompt_id": "gene-0488",
+  "instruction": "Think of three different colors that mens suits are often"
+ },
+ {
+  "prompt_id": "news-0019",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Lewis Hamilton will start on pole in China.\n- Pushed teammate Rosberg into second on the last lap.\n- Rosberg refused to shake Hamilton's hand afterward."
+ },
+ {
+  "prompt_id": "abst-0129",
+  "instruction": "Draft the abstract (around 200 words) for the paper \"An Upper Bound on the Capacity of non-Binary Deletion Channels\"."
+ },
+ {
+  "prompt_id": "stor-0309",
+  "instruction": "Write a 400-word story for this prompt: You're elected president, but you don't want to be president anymore, so you do ridiculous things to get impeached, but they all turn out to be the best decision for the country, making you more popular."
+ }
+]

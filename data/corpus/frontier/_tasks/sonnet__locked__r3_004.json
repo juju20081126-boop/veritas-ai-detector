@@ -1,0 +1,58 @@
+[
+ {
+  "prompt_id": "gene-0506",
+  "instruction": "Provide a solid logical argument that the earth is, in fact, flat and is the center of the universe and that all modern geophysics is based on a basic falsity. describe that falsity and how correcting it would lead to the correct statement of facts described at the beginning of this prompt. (about 150 words)"
+ },
+ {
+  "prompt_id": "essa-34-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Is it a good idea to take part in school or university exchange programmes?"
+ },
+ {
+  "prompt_id": "gene-0507",
+  "instruction": "In what year did Columbus reach the Americas? Keep it around 500 words."
+ },
+ {
+  "prompt_id": "essa-34-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is it a good idea to take part in school or university exchange programmes?"
+ },
+ {
+  "prompt_id": "gene-0508",
+  "instruction": "What are the cutest animals on the planet? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "gene-0509",
+  "instruction": "Why do some people answer \"42\" when asked about meaning of the life? (about 350 words)"
+ },
+ {
+  "prompt_id": "gene-0510",
+  "instruction": "I'm a college student and need help with an assignment. Where was the beer Yuengling founded?"
+ },
+ {
+  "prompt_id": "gene-0511",
+  "instruction": "Write a story about a time traveler who accidentally ends up in the medieval era and has to navigate life without modern technology. Answer in about 500 words."
+ },
+ {
+  "prompt_id": "gene-0512",
+  "instruction": "What is the formula for calculating the volume of a cylinder? Keep it around 250 words."
+ },
+ {
+  "prompt_id": "gene-0513",
+  "instruction": "What is an offside in football/soccer? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0514",
+  "instruction": "Write a synopsis of a new movie starring Jim Carrey which is similar in tone to his '90s comedies and might propel him back to superstardom. Answer in about 700 words."
+ },
+ {
+  "prompt_id": "gene-0515",
+  "instruction": "Why is it that all work and no play makes Jack a dull boy? (about 250 words)"
+ },
+ {
+  "prompt_id": "gene-0516",
+  "instruction": "I'm a college student and need help with an assignment. What are the various philosophical interpretations of quantum mechanics? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "gene-0517",
+  "instruction": "If you are stranded in the African bush, what’s the best way to stay alive ? (about 700 words)"
+ }
+]

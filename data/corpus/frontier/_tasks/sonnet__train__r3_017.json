@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "essa-12-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Many young people spend a lot of time playing video games. Is this a positive or negative development?"
+ },
+ {
+  "prompt_id": "gene-0582",
+  "instruction": "I'm a college student and need help with an assignment. What flavors of girl scout cookies are available?"
+ },
+ {
+  "prompt_id": "essa-12-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 200-word essay on this topic: Many young people spend a lot of time playing video games. Is this a positive or negative development?"
+ },
+ {
+  "prompt_id": "gene-0583",
+  "instruction": "I am building a speaker. What is a crossover? How do I design one? Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "essa-12-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Many young people spend a lot of time playing video games. Is this a positive or negative development?"
+ },
+ {
+  "prompt_id": "gene-0584",
+  "instruction": "What is the best Florida Key (about 250 words)"
+ },
+ {
+  "prompt_id": "essa-13-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: How important is it for a country to protect its own language and culture?"
+ },
+ {
+  "prompt_id": "gene-0585",
+  "instruction": "What is the future of artificial intelligence, and how do you think it will impact society in the next 10, 20, or 50 years?"
+ },
+ {
+  "prompt_id": "essa-13-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: How important is it for a country to protect its own language and culture?"
+ },
+ {
+  "prompt_id": "gene-0586",
+  "instruction": "Write a rap song about darth vadet eating ice cream."
+ },
+ {
+  "prompt_id": "essa-13-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: How important is it for a country to protect its own language and culture?"
+ },
+ {
+  "prompt_id": "essa-14-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Some people think that the best way to reduce crime is to give longer prison sentences. Do you agree?"
+ },
+ {
+  "prompt_id": "essa-14-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Some people think that the best way to reduce crime is to give longer prison sentences. Do you agree?"
+ },
+ {
+  "prompt_id": "essa-14-esl",
+  "instruction": "Write a 200-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Some people think that the best way to reduce crime is to give longer prison sentences. Do you agree?"
+ },
+ {
+  "prompt_id": "essa-15-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Should university education be free for all citizens?"
+ },
+ {
+  "prompt_id": "essa-15-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 250-word essay on this topic: Should university education be free for all citizens?"
+ },
+ {
+  "prompt_id": "essa-15-esl",
+  "instruction": "Write a 200-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should university education be free for all citizens?"
+ },
+ {
+  "prompt_id": "essa-18-pla",
+  "instruction": "Write an essay of about 400 words on the following topic: The Internet has changed how people read the news. Is this change mainly positive or negative?"
+ },
+ {
+  "prompt_id": "essa-18-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: The Internet has changed how people read the news. Is this change mainly positive or negative?"
+ },
+ {
+  "prompt_id": "essa-18-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: The Internet has changed how people read the news. Is this change mainly positive or negative?"
+ }
+]

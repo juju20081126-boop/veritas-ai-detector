@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0049",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Adrian Peterson had been suspended after pleading guilty to misdemeanor reckless assault.\n- NFL Commissioner Roger Goodell requires him to keep going to counseling, other treatment.\n- Minnesota Vikings, 7-9 last season, say they look forward to him rejoining the team."
+ },
+ {
+  "prompt_id": "abst-0159",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"Learning to Advertise for Organic Traffic Maximization in E-Commerce Product Feeds\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0254",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: form a without intercompanies (around 125 words)."
+ },
+ {
+  "prompt_id": "stor-0335",
+  "instruction": "I once remembered that I was God, but then I forgot again as quickly as I could.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0427",
+  "instruction": "I'm a college student and need help with an assignment. How do unions stay competitive with nonunions? (answer in roughly 75 words)"
+ },
+ {
+  "prompt_id": "gene-0560",
+  "instruction": "List five titles by Ann M. Martin."
+ },
+ {
+  "prompt_id": "news-0050",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 300-word news story:\n- Nico Rosberg fastest ahead of team Lewis Hamilton in Australia GP practice.\n- Mercedes duo dominated last season winning all but three of 19 races.\n- Giedo van der Garde doesn't race for Sauber despite court ruling.\n- Sebatian Vettel makes good start for new team Ferrari finishing second practice in third."
+ },
+ {
+  "prompt_id": "abst-0160",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 150 words) for the paper \"Generative diffeomorphic atlas construction from brain and spinal cord MRI data\"."
+ },
+ {
+  "prompt_id": "emai-0255",
+  "instruction": "Write an email with the subject line \"Memorial Day\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0336",
+  "instruction": "Somehow make the line \"Boy, its a joyous day outside! \"sound sad.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0428",
+  "instruction": "What does it really mean if \"four out of five\" dentists approve my toothpaste? Does someone actually poll dentists?\n\nExplain it in about 125 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0561",
+  "instruction": "Do you recommend playing Dr. Mercy who is also called Swiss doctor Angela Ziegler to support your Chinese teammates in Overwatch ? Answer in about 350 words. Use a formal, professional tone."
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0045",
+  "instruction": "Write a news article of about 300 words based on these key points:\n- The value of the bounty in American dollars is about $774,000.\n- Al Qaeda in the Arabian Peninsula wants a Houthi leader and a former Yemeni president killed or captured. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0155",
+  "instruction": "Draft the abstract (around 150 words) for the paper \"Formation of a polar-ring galaxy in a galaxy merger\"."
+ },
+ {
+  "prompt_id": "emai-0250",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: Update Meetings - Today (around 175 words)."
+ },
+ {
+  "prompt_id": "stor-0331",
+  "instruction": "As it turns out, the desolation is not worldwide, you've just been living on an \"Apocalypse Reserve \"your whole life.\n\nWrite a short story of about 300 words."
+ },
+ {
+  "prompt_id": "expl-0423",
+  "instruction": "Why are English words phonetically explained with strange symbols? Why not just include those symbols in the alphabet? (answer in roughly 150 words) Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0556",
+  "instruction": "Give me a list of environment conscious clothing brands. (about 350 words)"
+ },
+ {
+  "prompt_id": "news-0046",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 500 words):\n- Suspect dies after treatment for bullet wounds.\n- Sheriff says the suspect also had smoke bombs and Molotov cocktails.\n- Richard White allegedly stormed an airport security area with a machete."
+ },
+ {
+  "prompt_id": "abst-0156",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 125 words) for the paper \"Joint and double coboundaries of commuting contractions\"."
+ },
+ {
+  "prompt_id": "emai-0251",
+  "instruction": "I'm a college student and need help with an assignment. Write an email with the subject line \"Adding authorized traders to the ENA Authorized Trader List\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0332",
+  "instruction": "Unknown to us mirrors actually are just windows into an alternate dimension that is exactly the same except right and left are reversed. Until one day something throws the mirror dimension out of sync...\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0424",
+  "instruction": "How do we know that a 64,000 pixel black-and-white screen requires 8KB memory? (answer in roughly 75 words) Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0557",
+  "instruction": "Describe the process to making a great Texas style smoked brisket. Keep it around 700 words."
+ }
+]

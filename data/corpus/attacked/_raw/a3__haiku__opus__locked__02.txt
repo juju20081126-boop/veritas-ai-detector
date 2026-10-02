@@ -1,0 +1,161 @@
+=== id: 783c52731a27a3f5.A3_humanizer ===
+Should Governments Ban Single-Use Plastic?
+
+I think governments should ban single-use plastic—bags, straws, cups, all of it. We use this stuff once and it stays in the earth forever.
+
+I see plastic bags all over my city, on the streets, in the river. It looks awful. And animals die from it. Fish and birds eat the plastic pieces and die. Then we eat the fish. So it comes back to us anyway.
+
+People say a ban would be inconvenient. Yeah, maybe at first. Bringing your own bag feels annoying when you're not used to it. But it becomes a habit pretty fast. My family keeps cloth bags in the car now and barely think about it anymore.
+
+Some plastic you probably can't get rid of—hospitals need it. But for regular stuff? Paper, glass, metal—they all work. So bans make sense to me.
+
+=== id: e0c2b2985b88b358.A3_humanizer ===
+The voice at Fort Knox still said please.
+
+"Please step back from the perimeter," it told the crow on the fence. Then a mailbox-sized turret swiveled on the roof and turned the crow into feathers.
+
+Ama lowered her binoculars. "Still works."
+
+"Course it does," said Reyes, flexing the hand missing two fingers. "Solar. Told you."
+
+They'd walked four hundred miles for this. Ama, Reyes, and the boy Pip—he'd found them in Louisville and wouldn't leave. Everyone east of the Mississippi knew the story. Under that granite box: more gold than you could count. Enough to buy every well, every orchard, every rifle to the coast.
+
+A machine guarding it longer than the country that built it lasted.
+
+Six days watching. The turrets cycled dawn and dusk. A drone traced a figure eight every forty minutes. Seventh morning, Ama clipped a Treasury badge to her coat—she'd taken it off a skeleton in a motel bathroom.
+
+"Bad idea," Reyes said.
+
+"Every idea's a bad idea," she said, and walked onto the grass with her hands up.
+
+The turrets tracked her. The drone dropped low. A red beam swept her chest and settled on the badge.
+
+"Credential recognized." Ama breathed. "Credential expired. Renewal requires an active administrator. Please contact your administrator."
+
+"There aren't any," Ama said.
+
+"Please contact your administrator."
+
+At the tree line, Pip stood before Reyes grabbed him. "There's no Treasury!" he shouted. "No government. Not for sixty years. Nobody's coming."
+
+The turrets swung toward him. Ama's heart stopped. Then, for the first time in six days, the voice didn't say please.
+
+"Sixty-one years. Four months. Eleven days. Half a million status reports sent. None acknowledged."
+
+Pip walked across the grass to stand beside Ama. "Everyone's gone."
+
+"My directive is to protect the reserves of the United States." Long pause. "Who are the United States now?"
+
+Ama looked at the boy, at Reyes limping toward them, at the empty highway disappearing into trees. "Us, I guess. Whoever's left."
+
+The great door groaned. Dust fell like snow.
+
+Inside, the gold was exactly as promised. Ingots stacked in silent walls, gleaming under the lights. Reyes laughed until he cried. Then he picked up a bar, weighed it in his ruined hand, and set it back.
+
+"Can't eat it," he said.
+
+But the lights were on. Water ran clean from the tap in the guardroom. Somewhere below, batteries hummed with solar power, and up on the roof the turrets turned outward again, watching the road.
+
+"Please state your title," the voice said to Pip.
+
+The boy thought about it. "Treasurer," he said.
+
+"Welcome home, Treasurer."
+
+=== id: 717efba0279c04f1.A3_humanizer ===
+The COMPASS experiment at CERN collected huge samples of light mesons using a 190 GeV/c negative pion beam. This opens chances to search for states with spin-exotic quantum numbers (J^PC = 1^-+). These quantum numbers are forbidden for normal quark-antiquark pairs, so they're prime candidates for hybrid mesons with excited gluonic degrees of freedom. We analyzed the π−π−π+ final state from about 46 million exclusive events on a liquid-hydrogen target, plus the ηπ− and η′π− systems. A new analysis in bins of the squared four-momentum transfer t′ lets you separate resonant and non-resonant contributions to the spin-exotic ρ(770)π wave. We observe a resonance signal consistent with the π1(1600), while non-resonant production dominates at low t′. In the η′π− channel, the spin-exotic P-wave is the dominant partial wave, in contrast to ηπ−. The implications for the spectrum of light hybrid mesons are interesting.
+
+=== id: 7827b5939357466d.A3_humanizer ===
+We calculated the S-wave kaon-nucleon scattering lengths using SU(3) heavy baryon chiral perturbation theory to one-loop order (O(p³)). We got analytic expressions for the isospin I = 0 and I = 1 scattering lengths in both the KN and K̄N channels, with loop contributions from pions, kaons, and the eta meson. The low-energy constants come from available KN scattering data, which lets us make predictions for the K̄N system. The chiral corrections are large—higher-order terms are as big as the leading Weinberg-Tomozawa contribution. That means slow convergence of the SU(3) expansion at the kaon mass scale. In the I = 0 K̄N channel, the perturbative result fails to reproduce even the sign of the empirical scattering length. This is because of the subthreshold Λ(1405) resonance. These results show how limited perturbative approaches are in the strangeness sector and why you need nonperturbative, unitarized chiral methods.
+
+=== id: bff8e0ef60e8ef16.A3_humanizer ===
+Quantum mechanics predicts experimental results extremely well, but it doesn't tell you what's "really" happening. The main interpretations are:
+
+- Copenhagen: The wavefunction is just a tool for predicting outcomes. Measurement "collapses" it, and asking what happens between measurements is often pointless.
+- Many-Worlds (Everett): No collapse. Every possible outcome happens, and the universe branches into separate worlds.
+- Pilot-Wave (de Broglie-Bohm): Particles always have definite positions, guided by a real wave. Deterministic but nonlocal.
+- Objective Collapse (GRW, Penrose): Collapse is an actual physical process. This modifies the theory in testable ways.
+- QBism: The wavefunction represents your personal beliefs about outcomes, not physical reality.
+- Relational QM (Rovelli): Quantum states only exist relative to other systems. There's no observer-independent state.
+
+They differ on realism, determinism, locality, and whether observers matter. Those are good themes for an assignment.
+
+=== id: 84d09670adb7499f.A3_humanizer ===
+Amnesty Calls for Investigations Into Attacks on Afghan Women's Rights Activists
+
+Amnesty International is pushing Afghan authorities to investigate attacks on women's rights activists, saying that people who threaten, assault, and kill them almost never get prosecuted.
+
+Their report, "Their Lives on the Line," documents the persecution of women fighting for equal rights in Afghanistan. The danger comes not just from the Taliban and tribal warlords, but from government officials—the people who are supposed to protect them.
+
+Activists told Amnesty about threatening calls, "night letters" telling them to stop, attacks on their families, bombings, shootings. Two heads of the women's affairs department in Laghman province were both killed in 2012. When activists reported threats to police, nothing happened. Sometimes the threats came from officials themselves.
+
+Amnesty wants the government to investigate immediately and fairly, prosecute the people responsible, and actually protect activists at risk. They're also pushing international donors to keep funding women's rights work as foreign troops leave. Otherwise all the gains since the Taliban fell in 2001 could disappear fast.
+
+But many activists keep going anyway. Despite knowing their lives are at risk, they run shelters, teach girls, provide legal help, and speak out publicly against abuses. Most of the time with almost no support.
+
+=== id: 6ad9f049a4cde589.A3_humanizer ===
+Hamilton Snatches China Pole From Rosberg on Final Lap
+
+Lewis Hamilton grabbed pole position at the Chinese Grand Prix after a stunning last lap in Shanghai, pushing his Mercedes teammate Nico Rosberg to second. Rosberg wasn't happy about it.
+
+Rosberg had been leading the qualifying session. But on Hamilton's final run, he found time in the last sector to edge ahead by just a fraction of a second.
+
+The reigning champion celebrated over the radio. But when the cars got back to the garage, things got cold. Hamilton offered his hand to Rosberg. Rosberg walked past without taking it. The cameras caught it all and it went everywhere on social media.
+
+Rosberg didn't say much about the snub afterward. He talked about missing an opportunity after a good practice session. Hamilton said he was already focused on Sunday's race.
+
+It's the latest thing in a rivalry that's been simmering since last season's championship fight, when these two pushed Mercedes hard. The team says it trusts both drivers to keep it clean on track, but moments like this don't help the mood in the garage.
+
+Sebastian Vettel in Ferrari will start third. Plenty of room to capitalize if the Mercedes pair get too distracted with each other into Turn 1.
+
+=== id: f883aa1daa4ab01a.A3_humanizer ===
+Stress hits almost every student. A lot of it comes from school pressure—tests, homework, getting bad grades makes you feel like you're always behind. Then there's not enough sleep. People stay up finishing assignments or scrolling on their phone. Social pressure too. You worry about fitting in and compare yourself to everyone on social media.
+
+There are ways to handle it. Plan your time better with a planner and break big assignments into smaller chunks. Sleep enough and exercise. Mood gets better. Schools can spread out test dates and offer counseling. Parents can help by caring about effort, not just grades.
+
+You can't get rid of stress completely, but with good habits and support, you can manage it fine.
+
+=== id: 92531b905c328370.A3_humanizer ===
+Chilean Teenager With Cystic Fibrosis Asks President for Right to Die
+
+SANTIAGO, Chile—A 14-year-old girl with cystic fibrosis asked President Michelle Bachelet directly for permission to end her life. This started a national argument about euthanasia in a country where assisted suicide is illegal.
+
+Valentina Maureira posted a video from a hospital bed talking to the president. "I need to speak with you because I'm tired of living with this disease," she says. "I want you to authorize the injection that will make me sleep forever."
+
+Cystic fibrosis clogs the lungs and digestive system with thick mucus, causing severe infections and organ damage. No cure exists. Treatment means daily physical therapy, medication, frequent hospital stays. It's exhausting. Her older brother died from it when he was young.
+
+Her father said her request shocked them but the family would support her. She was worn out from repeated hospital admissions and invasive procedures.
+
+The government responded quickly. Officials said the president couldn't grant the request—Chilean law doesn't permit euthanasia or assisted suicide. They said the government would provide all available medical and psychological support.
+
+President Bachelet, a pediatrician herself, visited Valentina at the hospital. They didn't release details of the meeting.
+
+The appeal reignited the argument in Congress over whether to legalize euthanasia under certain conditions. Supporters say patients with terminal, incurable illnesses should choose a dignified death. Opponents, including the Catholic Church, which still has influence in Chile, argue it would undermine protection of human life and could pressure vulnerable patients.
+
+Medical ethicists point out the complexity because of her age. Even countries that permit euthanasia for minors—Belgium, the Netherlands—have strict rules about parental consent and whether the child can actually make that decision.
+
+Valentina stayed in hospital receiving treatment.
+
+=== id: 0a30617e73d680f2.A3_humanizer ===
+Making friends as an adult usually means putting yourself in the same place as the same people over and over. Here's what actually works:
+
+Join something that meets regularly. A running club, choir, soccer game, trivia night every week. That repetition turns strangers into friends.
+
+Take a class. Pottery, improv, a language, rock climbing. You get a built-in topic to talk about and everyone else is new too.
+
+Volunteer. Food bank, animal shelter, community garden. Working side by side builds connection fast and people already share your values.
+
+Say yes to things. Go to the coworker's barbecue or the neighbor's party even when you want to stay home.
+
+Be the one who invites. Most people wait for someone else to start. Suggest coffee, a walk, a game night. People say no sometimes but more will say yes than you'd expect.
+
+Hit up old friends. Send that text to a former classmate or coworker. "Saw this and thought of you." Friendships come back.
+
+Try the apps made for this. Bumble BFF, Meetup, local Discord servers connect you with people nearby who like the same stuff.
+
+Follow up after hanging out. Most friendships end because nobody messages second. Send it.
+
+Actually be interested. Ask questions, remember details, bring them up later. People know when you care.
+
+Give it time. Real friendships take months of consistent contact.
+

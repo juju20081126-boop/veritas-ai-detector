@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "news-0001",
+  "instruction": "Write a news article of about 250 words based on these key points:\n- The ramp agent fell asleep in the plane's cargo hold.\n- He can no longer work on Alaska Airlines flights."
+ },
+ {
+  "prompt_id": "abst-0111",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 200 words) for the paper \"Dynamical system analysis of logotropic dark fluid with a power law in the rest-mass energy density\"."
+ },
+ {
+  "prompt_id": "emai-0221",
+  "instruction": "Write an email with the subject line \"EnronOnline access to Australian Power products\". Aim for about 175 words."
+ },
+ {
+  "prompt_id": "stor-0291",
+  "instruction": "I'm a college student and need help with an assignment. Write a 300-word story for this prompt: You are part of a group of scientists that are in the verge of discovering immortality, the death god of your pantheon appears to you one day."
+ },
+ {
+  "prompt_id": "expl-0391",
+  "instruction": "I'm a college student and need help with an assignment. If the moon is tidal locked to Earth why are there craters on the Earth-facing side? Shouldn't meteors only be striking the dark side?\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0471",
+  "instruction": "Discuss the various methods and technologies used in underwater archaeology to uncover and study ancient shipwrecks and other submerged artifacts. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "news-0002",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 250 words based on these key points:\n- Iranian sports official: The ban will be lifted for some events in the coming year.\n- But he says \"families are not interested in attending\" some sports matches."
+ },
+ {
+  "prompt_id": "abst-0112",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"Strong convergence of a linearization method for semi-linear elliptic equations with variable scaled production\"."
+ },
+ {
+  "prompt_id": "emai-0222",
+  "instruction": "Please draft a work email about: Welcome Julie Kearney! (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0292",
+  "instruction": "Write a 500-word story for this prompt: You wake up one morning to find that everyone, including you, is now the opposite sex. Tell the story of the person most affected by this change."
+ },
+ {
+  "prompt_id": "expl-0392",
+  "instruction": "I'm a college student and need help with an assignment. Why you can't upload or download folders on the internet.\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0472",
+  "instruction": "Why is Albert Einstein so popular, what did he do?"
+ },
+ {
+  "prompt_id": "news-0003",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Marc Randazza: Court upholds a trademark denial for Asian-American band The Slants on the grounds that name was disparaging.\n- He says court is wrong: Trademarks are commercial speech, protected by First Amendment. Ruling a sign or our easily offended times."
+ },
+ {
+  "prompt_id": "abst-0113",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 225 words for a research paper titled \"Tunka-Rex: a Radio Antenna Array for the Tunka Experiment (ARENA 2012)\"."
+ },
+ {
+  "prompt_id": "emai-0223",
+  "instruction": "Please draft a work email about: [Fwd: Meserve Production] (around 75 words). Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0293",
+  "instruction": "Write a 300-word story for this prompt: Everyone is allowed to kill one person in their life. However, you have to fill out a form explaining why this person deserves to be killed and the committee can deny/approve your request as per the rules. You are presenting your form today. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0393",
+  "instruction": "How do companies that make free products like web browsers and linux version stay afloat?\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0473",
+  "instruction": "Why to people lift their trucks? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "news-0004",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 250 words):\n- An Amnesty International report calls for attacks on women's rights activists in Afghanistan to be investigated.\n- The report examines the persecution of activists not only by the Taliban and tribal warlords, but also by government officials.\n- Some activists continue their work despite their lives being at risk."
+ },
+ {
+  "prompt_id": "abst-0114",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"Subjective and Objective Quality Assessment of Mobile Gaming Video\"."
+ }
+]

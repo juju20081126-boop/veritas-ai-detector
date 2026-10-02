@@ -1,0 +1,324 @@
+=== prompt_id: news-0031 ===
+**Stars Push Red Carpet Reporters to #AskHerMore, but the Gowns Still Pay the Bills**
+
+LOS ANGELES — The question "Who are you wearing?" has been a fixture of Oscar night for decades. This year, several of Hollywood's biggest names made it clear they want it to share the spotlight.
+
+Reese Witherspoon was among the actresses who threw their support behind #AskHerMore, a social media campaign urging red carpet interviewers to ask women about their work, their ambitions and the films they came to celebrate, rather than only their dresses, hair and jewelry. Witherspoon, nominated for her role in "Wild," posted about the campaign before the ceremony and told reporters she was proud to be part of a movement asking for more substance.
+
+The campaign, started by The Representation Project, gained momentum online as fans posted examples of questions they would rather hear. Supporters point out that male nominees are routinely asked about their craft and their careers, while women are often asked to twirl for the camera.
+
+But the push sits uneasily alongside the economics of the red carpet. Fashion is a major reason millions of people tune in to awards shows, and many of the gowns on display are not simply chosen for their looks. Stars frequently have contracts with designers and luxury houses, and some are paid significant sums to wear a particular label and make sure it gets mentioned on camera. For those brands, a single televised moment can be worth far more than a magazine ad.
+
+That raises an awkward question: can an actress demand to be seen as more than her outfit while also being paid to promote it?
+
+Some stylists and publicists say yes. They argue the two goals are not contradictory, and that a short exchange about the designer can easily be followed by a real conversation about the work. Others say the industry will have to decide which story it actually wants to tell.
+
+For now, the dresses are still drawing the cameras. The question is what happens once they arrive.
+
+=== prompt_id: abst-0141 ===
+Abstracting Gradual Typing (AGT) offers a systematic recipe for deriving gradually typed languages from static type disciplines by interpreting gradual types as abstractions of sets of static types. While AGT has produced sound gradual counterparts for a wide range of type systems, the resulting dynamic semantics suffer from two practical shortcomings. First, the runtime evidence that justifies type consistency can accumulate without bound, so programs that are tail-recursive in their static form may consume unbounded space when made gradual. Second, the evidence combination operators prescribed by the original framework can be imprecise, rejecting programs later than necessary or failing to detect inconsistencies as early as a programmer would expect. In this technical report, we revisit the foundations of AGT to address both problems. We identify forward completeness, a property drawn from abstract interpretation, as the key condition under which evidence composition is both precise and admits compact representations. Building on this insight, we present a refined construction of evidence and its runtime operations, prove that it yields optimal precision with respect to the underlying static semantics, and show that evidence can be normalized to bounded size. We demonstrate the approach on a gradual language with structural types and records, and we discuss how the methodology extends to richer type disciplines. Full proofs accompany the development.
+
+=== prompt_id: stor-0319 ===
+The first one through was a dragon, which was unfortunate for Reading, Pennsylvania.
+
+It came out of a used bookstore on Penn Street at 4:12 on a Tuesday afternoon, shouldering through the shelves of discounted fantasy paperbacks like they were tissue paper. Witnesses agreed it looked confused more than angry. It sat in the intersection for a while, blinking at the traffic lights, and then flew off toward the Poconos. Nobody saw it again.
+
+After that they came steadily. A detective in a trench coat stepped out of a cinema in Lyon and immediately began interrogating a waiter. Two hobbits were found asleep in a garden center outside Leeds. In Osaka, a giant robot from a cartoon nobody over forty remembered walked out of the sea and stood very politely at a crosswalk.
+
+The governments held meetings. The meetings produced committees. The committees produced a word: *arrivals*.
+
+Marisol Vega worked intake at the Philadelphia Arrivals Center, which was a converted convention hall with a coffee machine that only worked on Thursdays. Her job was to sit across a folding table from people who had, until last month, been words on a page, and ask them where they were from.
+
+Most of them handled it badly. You would too, if you had spent your whole existence fighting a war that turned out to be chapter eleven.
+
+But the man in front of her today was calm. Gray beard, patched coat, a pipe he did not light.
+
+"Name?" she asked.
+
+"I'm not sure it matters," he said. "My author died before finishing my story. I was halfway up a mountain."
+
+Marisol set down her pen. She had read that book. Everyone had. Twenty years of waiting for the ending.
+
+"So what do you want?" she asked.
+
+He smiled, and for the first time, it looked like the smile of someone free.
+
+"I'd like to find out what's at the top," he said. "Myself."
+
+=== prompt_id: gene-0523 ===
+If you think your laptop has been compromised, act quickly but calmly. Here's a practical order of operations.
+
+## 1. Disconnect it
+- Turn off Wi-Fi and unplug any Ethernet cable. This cuts off an attacker's remote access and stops data from being sent out.
+- Don't shut it down yet if you might want to investigate, but don't keep using it for anything sensitive.
+
+## 2. Secure your accounts from a different device
+Use a phone or another computer you trust, not the affected laptop.
+- **Change passwords** for your most important accounts first: email, banking, password manager, Apple ID/Microsoft/Google account, and work accounts.
+- **Turn on two-factor authentication** (preferably an authenticator app or security key, not SMS) wherever you can.
+- **Sign out of all sessions** — most major services have a "log out everywhere" option.
+- Check your email for forwarding rules or recovery addresses you didn't set up. Attackers often add these quietly.
+
+## 3. Check for financial damage
+- Review recent bank and credit card transactions.
+- Call your bank if anything looks wrong, and consider freezing your credit with the major bureaus if personal information may have been stolen.
+
+## 4. Clean the laptop
+- Run a full scan with a reputable security tool (Windows Security/Defender, Malwarebytes, or similar). Booting into Safe Mode first can help.
+- Uninstall programs or browser extensions you don't recognize.
+- Check for remote-access software (TeamViewer, AnyDesk, etc.) you didn't install yourself.
+
+**The safest option is a full reset.** Back up only your personal files (documents, photos — not programs), then wipe the drive and reinstall the operating system. Scan your backup before restoring it.
+
+## 5. If it's a work or school laptop
+Contact your IT department immediately and don't try to fix it yourself. They may need to preserve evidence.
+
+## 6. Report it
+- If money was stolen or you were extorted, file a report with local police and your national cybercrime agency (in the US, that's the FBI's IC3 at ic3.gov).
+- If someone called claiming to be "tech support" and asked for remote access, that's a common scam — report it too.
+
+## 7. Prevent a repeat
+- Keep your OS and apps updated.
+- Use a password manager with unique passwords for every account.
+- Be wary of email attachments, unexpected links, and pop-ups warning that your computer is infected.
+
+**Signs it might not be a hack:** Slow performance, random pop-ups, or a frozen screen can also be caused by adware or ordinary software problems. Still, if you're seeing unknown logins, password changes you didn't make, or your mouse moving by itself, treat it as a real compromise.
+
+=== prompt_id: essa-19-esl ===
+Money and Happiness
+
+Many people believe that if they have a lot of money, they will be happy forever. Other people say money cannot buy happiness. In my opinion, money is important for a happy life, but it is not the key. I think it is only one part of the picture.
+
+First, I want to say that money is necessary. We need money for food, a house, clothes and to go to the doctor. If a family don't have enough money, they worry every day and it is very hard to feel happy. My uncle lost his job two years ago, and I saw how stressed he was. He could not sleep well and he was angry a lot. When he found a new job, he became more relax and smiled again. So I agree that money can take away many problems.
+
+However, after we have enough money for basic things, more money does not make us much more happier. For example, some famous people are very rich, but they are lonely or they have problems with drugs. I read on the internet that many lottery winners are not happier after some years. Some of them even lose all their money and their friends. This shows that money alone is not enough.
+
+In my experience, the things that make me most happy are free or very cheap. When I spend time with my family at dinner, when I laugh with my friends after school, or when I play football in the park, I feel really good. Nobody can buy these moments in a shop. Also, helping other people make me feel happy. Last year I helped my neighbor to carry her shopping every week, and she always thanked me with a big smile. I did not get money for it, but I felt very warm inside.
+
+Another important thing is health. If you are very rich but you are sick all the time, you cannot enjoy your life. Money can pay for a good hospital, but it cannot always give you back your health.
+
+In conclusion, I think money is important because it gives us safety and help us to live without big worries. But real happiness come from people we love, good health and doing things that have meaning. So money is helpful, but it is not the key to happiness. If I have to choose, I prefer to have a normal salary and a happy family than to be rich and alone.
+
+=== prompt_id: news-0032 ===
+MOSCOW — Boris Nemtsov, the Russian opposition leader shot dead near the Kremlin last week, was laid to rest Tuesday at Moscow's Troyekurovskoye cemetery after a memorial service that drew thousands of mourners.
+
+Long lines snaked through the cold outside the Andrei Sakharov Center, where Nemtsov's body lay in an open casket. Friends, political allies, diplomats and ordinary Muscovites filed past, many carrying red carnations and roses. Some wept openly. Others stood in silence before the photograph of the 55-year-old former deputy prime minister.
+
+"He always said everything that others were afraid to say," one mourner told reporters outside the service. "That is why we are here."
+
+Nemtsov, a sharp critic of President Vladimir Putin and of Russia's involvement in the conflict in eastern Ukraine, was gunned down late Friday as he walked across a bridge within sight of the Kremlin walls. His killing has shaken Russia's small and embattled opposition movement, which turned out in large numbers for a march in his memory over the weekend.
+
+Several foreign politicians who had hoped to attend the funeral said they were refused entry to Russia, a move that drew criticism from European governments.
+
+Meanwhile, Moscow's Investigative Committee said investigators were considering "all scenarios" in the slaying. Officials have floated several possible motives, including links to Islamist extremism, the Ukraine conflict and Nemtsov's personal life, as well as what they called a possible "provocation" aimed at destabilizing the country.
+
+Nemtsov's supporters have dismissed those theories and say they believe the killing was political. No arrests have been announced.
+
+=== prompt_id: abst-0142 ===
+Globular cluster (GC) systems in a wide range of galaxies display broad, frequently bimodal metallicity distributions, and the origin of this structure remains a central question in models of galaxy assembly. We present a homogeneous analysis of GC metallicity distributions for a sample of early- and late-type galaxies spanning roughly three orders of magnitude in host stellar mass, using optical and near-infrared colors calibrated against spectroscopic metallicities. We fit the distributions with Gaussian mixture models and assess the statistical significance of multimodality in each system. Bimodality is common in massive galaxies but becomes less pronounced toward lower luminosities, where metal-poor clusters dominate. The mean metallicities of both the metal-poor and metal-rich subpopulations correlate with host galaxy luminosity, with the metal-rich relation being steeper. We compare these trends with predictions from hierarchical merging, in situ formation and accretion-driven scenarios, and find that the observed scaling relations favor a picture in which metal-poor GCs are largely accreted from low-mass satellites while metal-rich GCs form within the host during its main star-forming phase.
+
+=== prompt_id: stor-0320 ===
+The child would not stop staring at him.
+
+Lord Varic had been staring back for nearly a minute now, which was unusual for him. Normally he did not look at the people in the villages he cleared. It was not cruelty. It was efficiency. You could not build a better kingdom if you stopped to look at every face standing in the way of it.
+
+But this one was small, maybe six, holding a wooden horse with one leg snapped off. She was standing in front of what had been a bakery, and she was not crying. She was just looking at him with the expression he had seen on his own reflection, years ago, the morning after the Duke's men burned his family's farm.
+
+*That is not the same,* he told himself. *They burned us for nothing. I am doing this for something.*
+
+He had a list of reasons. He had always had them. The old order was corrupt. The roads would be safer. The granaries would be full. In ten years, no child in this province would ever go hungry, and that future was worth a few ruined streets. He had said it in speeches. His soldiers cheered when he said it.
+
+The Duke had given speeches too, he remembered. Varic had been eleven, hiding in the ditch. The Duke had explained to his men, very reasonably, that the farmland was needed for the greater stability of the region.
+
+Varic's hand tightened on the reins.
+
+Every villain in every story he'd loved as a boy had believed he was right. He had always thought that was the trick of it, the lie they told themselves. He had never once considered that from the inside, the lie would feel exactly like the truth.
+
+The girl turned and walked away, still holding the broken horse.
+
+Behind him, a captain asked whether they should move on to the next village.
+
+For the first time in eleven years, Varic did not have an answer.
+
+=== prompt_id: gene-0524 ===
+Cellular respiration is the process cells use to break down glucose and capture the energy stored in its chemical bonds as ATP (adenosine triphosphate), the molecule that powers nearly every cellular activity. The overall reaction is:
+
+**C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy (ATP)**
+
+It happens in three main stages:
+
+**1. Glycolysis**
+This occurs in the cytoplasm and doesn't require oxygen. One glucose molecule is split into two molecules of pyruvate. The process yields a net gain of 2 ATP and 2 NADH, an electron carrier that will be used later.
+
+**2. The Krebs cycle (citric acid cycle)**
+Pyruvate moves into the mitochondria, where it's converted into acetyl-CoA, releasing CO₂. Acetyl-CoA enters the Krebs cycle, a series of reactions that fully oxidizes the carbon atoms into CO₂. Per glucose, this stage produces 2 ATP plus a large supply of high-energy electron carriers: NADH and FADH₂.
+
+**3. Electron transport chain and oxidative phosphorylation**
+On the inner mitochondrial membrane, NADH and FADH₂ hand off their electrons to a chain of proteins. As electrons pass down the chain, their energy is used to pump hydrogen ions across the membrane, creating a gradient. Ions flow back through an enzyme called ATP synthase, which uses that flow to make ATP. Oxygen is the final electron acceptor, combining with electrons and hydrogen to form water. This stage produces the majority of ATP, around 26–34 molecules.
+
+Altogether, one glucose molecule yields roughly 30–38 ATP. When oxygen is unavailable, cells rely on fermentation, which regenerates the carriers needed for glycolysis but produces only 2 ATP per glucose. That ATP fuels muscle contraction, active transport, protein synthesis and cell division.
+
+=== prompt_id: essa-21-pla ===
+Tourism and the Communities That Host It
+
+Few industries reshape a place as quickly as tourism. A fishing village can become a resort town within a decade; a quiet historic quarter can fill with souvenir shops and rental apartments. Whether this transformation is a gain or a loss for the people who actually live there is not a simple question. On balance, I believe tourism's benefits can outweigh its costs, but only when local communities have real control over how it develops.
+
+The economic case for tourism is strong. It creates jobs in hotels, restaurants, transport and guiding, many of which require little formal training and are therefore accessible to young people and those without university degrees. In countries with few other export industries, tourism brings in foreign currency and supports small businesses, from family guesthouses to craft producers. Tax revenue from visitors can fund roads, airports and clean water systems that residents use too. Tourism can also give communities a reason to preserve their heritage: a crumbling temple or a traditional festival gains new value when outsiders are willing to travel to see it.
+
+Yet the problems are real and, in some places, severe. Mass tourism drives up the cost of housing, as landlords convert apartments into short-term rentals and locals are priced out of their own neighborhoods, a pattern visible in Barcelona, Lisbon and Venice. Crowds strain infrastructure and damage fragile environments such as coral reefs and mountain trails. Much of the money spent by tourists may not stay locally at all, flowing instead to international hotel chains, cruise companies and tour operators. And the jobs tourism creates are often seasonal and poorly paid, leaving workers vulnerable when a pandemic or a bad season keeps visitors away.
+
+What separates the success stories from the cautionary tales is usually governance. Bhutan's policy of charging a daily fee for visitors limits numbers while channeling revenue into public services. Community-owned ecotourism projects in parts of Kenya and Costa Rica keep profits with residents and give them a voice in deciding what is protected. Cities that cap short-term rentals or limit cruise ship arrivals are trying, belatedly, to restore that balance.
+
+Tourism, then, is neither a blessing nor a curse in itself. It is a powerful tool whose effects depend on who holds it. When local people help shape the industry and share fairly in its rewards, the benefits clearly outweigh the problems. When they are treated as scenery rather than stakeholders, the opposite is too often true.
+
+=== prompt_id: news-0033 ===
+**New Steve Jobs Biography Paints Softer Portrait, Wins Praise From Apple Insiders**
+
+A new biography of Steve Jobs is offering readers a markedly different picture of Apple's late co-founder: less tyrant, more complicated human being who grew and changed over the course of his career.
+
+"Becoming Steve Jobs," written by veteran technology journalist Brent Schlender and Fast Company editor Rick Tetzeli, draws on Schlender's decades of interviews with Jobs as well as fresh conversations with family members, colleagues and Apple executives. The authors argue that the Jobs who returned to Apple in 1997 was a more mature and thoughtful leader than the brash, impulsive figure who was forced out of the company in 1985.
+
+That portrayal has earned an unusual endorsement from Apple itself. Several senior executives, who cooperated with the authors, have openly praised the book and contrasted it with Walter Isaacson's 2011 bestseller, "Steve Jobs." Apple's head of internet software and services, Eddy Cue, wrote on Twitter that the new book was the best portrayal of Jobs he had read and that it captured him "as a brilliant, caring & thoughtful" man. Chief executive Tim Cook told the authors that Isaacson's book had done Jobs "a tremendous disservice" and did not reflect the person he knew.
+
+Isaacson's authorized biography, written with Jobs' cooperation in the final years of his life, became a global bestseller and was the basis for a forthcoming Hollywood film. But many in Jobs' inner circle felt it dwelt too heavily on his temper, his harsh treatment of employees and his difficult personal relationships.
+
+Among the most striking revelations in "Becoming Steve Jobs" is a story Cook shares about Jobs' illness. In 2009, as Jobs waited for a liver transplant while battling pancreatic cancer, Cook learned that he had the same rare blood type. After getting tested, Cook offered to donate part of his own liver.
+
+According to the book, Jobs refused almost immediately. "No," Cook recalls him saying. "I'll never let you do that. I'm not going to do that." Cook described it as one of only a handful of times Jobs ever yelled at him. Jobs later received a transplant in Tennessee.
+
+The book also explores Jobs' years at NeXT and Pixar, which the authors portray as a period in which he learned patience and the value of building strong teams, lessons he brought back to Apple.
+
+Not everyone has embraced the softer narrative. Some critics note that Apple's enthusiasm for the book may reflect a desire to shape Jobs' legacy. Still, for readers who found Isaacson's portrait incomplete, "Becoming Steve Jobs" offers another version of the man behind the iPhone.
+
+=== prompt_id: abst-0143 ===
+Gravitational microlensing is uniquely sensitive to cool, low-mass planets orbiting at several astronomical units from their host stars, including planets around faint M dwarfs that are inaccessible to other detection techniques. Because planetary signals are typically brief, lasting from hours to a few days, their detection depends on dense, well-timed photometric follow-up of ongoing microlensing events. With survey teams now alerting more than two thousand events per season, follow-up resources must be allocated carefully. We present RoboTAP (Robotic Target Assessment and Prioritisation), an automated system that selects and ranks microlensing targets for observation by robotic telescope networks in real time.
+
+RoboTAP evaluates each alerted event using up-to-date photometry from the survey teams and follow-up observers, fits point-source point-lens models, and estimates the current and predicted magnification. From these quantities it computes an expected planet detection sensitivity per unit observing time, accounting for the source brightness, the photometric precision achievable with a given telescope and exposure time, and the time remaining before peak. Events are then assigned priorities and cadences that maximize the overall sensitivity of the campaign to planetary companions, with special handling for high-magnification events where sensitivity to planets near the Einstein ring is greatest.
+
+We describe the implementation of RoboTAP within the operations of the MiNDSTEp consortium and its use in scheduling observations on the Danish 1.54 m telescope at La Silla and on the Las Cumbres Observatory global network. We assess its performance over several observing seasons by comparing the events it selected against the full set of alerts, and we show that it efficiently recovered anomalous events, including known planetary detections. RoboTAP substantially reduces the burden on human observers and provides a reproducible, quantitative framework for follow-up strategy, paving the way for fully autonomous microlensing campaigns.
+
+=== prompt_id: gene-0525 ===
+The next number is **21**.
+
+This is the **Fibonacci sequence**, one of the most famous patterns in mathematics. Each number is the sum of the two numbers before it:
+
+- 1 + 1 = 2
+- 1 + 2 = 3
+- 2 + 3 = 5
+- 3 + 5 = 8
+- 5 + 8 = 13
+- **8 + 13 = 21**
+
+Written as a rule, if F(n) is the nth term, then F(n) = F(n−1) + F(n−2), starting with F(1) = 1 and F(2) = 1. Continuing the pattern gives 34, 55, 89, 144, 233, and so on.
+
+### Where it comes from
+
+The sequence is named after Leonardo of Pisa, known as Fibonacci, who introduced it to European readers in his 1202 book *Liber Abaci*. He used it to solve a puzzle about rabbit populations: if each pair of rabbits produces a new pair every month starting from their second month, how many pairs will there be after a year? The answer follows exactly this sequence. Indian mathematicians had described the same numbers centuries earlier while studying patterns in Sanskrit poetry.
+
+### Why it's interesting
+
+**The golden ratio.** If you divide each Fibonacci number by the one before it, the results get closer and closer to about 1.618, known as the golden ratio (φ). For example, 21 ÷ 13 ≈ 1.615 and 144 ÷ 89 ≈ 1.618.
+
+**Nature.** Fibonacci numbers show up surprisingly often in living things. The number of petals on many flowers (3, 5, 8, 13), the spirals in sunflower heads and pinecones, and the arrangement of leaves around a stem often match Fibonacci numbers. This happens because these arrangements pack seeds or leaves efficiently.
+
+**Computer science.** The sequence is a classic example for teaching recursion and dynamic programming, and it appears in algorithms such as Fibonacci search and Fibonacci heaps.
+
+### A quick caution
+
+Strictly speaking, any finite list of numbers can be continued in more than one way if you invent a complicated enough rule. But in a question like this, the Fibonacci pattern is clearly the intended one, and 21 is the answer you'd be expected to give.
+
+=== prompt_id: essa-21-stu ===
+Is Tourism Worth It?
+
+Last summer my family visited a small beach town that I had seen in a travel video. The water was beautiful, but what I remember most was a conversation with the woman who ran our hotel. She told us that tourists were the reason she could send her kids to college, but also the reason she could no longer afford to live near the beach where she grew up. Her story made me realize that tourism is not simply good or bad. Still, I believe that for most communities, the benefits of tourism outweigh the problems, as long as it is managed responsibly.
+
+The biggest benefit is money and jobs. When tourists come to a place, they spend money on hotels, food, tours and souvenirs. That money pays the salaries of waiters, drivers, guides and shop owners. In many developing countries, tourism is one of the most important industries, and without it, a lot of people would have to move to big cities to find work. Tourism can also help pay for things the whole community uses, like better roads, hospitals and airports.
+
+Another benefit is cultural exchange. When people travel, they learn about traditions, food and history that are different from their own. Local people also get to share their culture and feel proud of it. In some places, traditional crafts and dances survive today partly because tourists are interested in them.
+
+However, tourism definitely causes problems. Large numbers of visitors can create pollution, traffic and trash. Popular places like Venice have become so crowded that residents complain they cannot walk through their own city. Housing prices can also go up when homes are turned into vacation rentals, which is exactly what happened to the hotel owner I met. On top of that, some of the money tourists spend goes to big international companies instead of local families.
+
+These problems are serious, but I think they can be solved with good planning. Governments can limit the number of visitors, charge tourist taxes to pay for cleanup, and make rules about short-term rentals. Tourists can also help by choosing locally owned businesses and respecting the places they visit.
+
+In conclusion, tourism brings jobs, money and cultural understanding that many communities depend on. Its problems are real, but they are mostly the result of poor management, not tourism itself. If communities and visitors work together, tourism can do far more good than harm.
+
+=== prompt_id: news-0034 ===
+**Is Khamenei Following Khomeini's Path to a "Bitter Peace"?**
+
+As Iran's negotiators press toward a nuclear agreement with world powers, a growing number of observers are asking whether Supreme Leader Ayatollah Ali Khamenei is preparing for his own version of a historic compromise, one with clear echoes of the decision his predecessor made more than a quarter-century ago.
+
+In 1988, after eight years of devastating war with Iraq, Ayatollah Ruhollah Khomeini, the founder of the Islamic Republic, agreed to a United Nations-brokered ceasefire with Saddam Hussein. For a leader who had vowed to fight until Saddam was toppled, it was a humiliating reversal. Khomeini famously told the nation that accepting the truce was "more deadly than drinking poison," but said he did so for the survival of the revolution. He died less than a year later.
+
+Iranian journalist and author Nazila Fathi argues that Khamenei, now in his mid-70s and reportedly in uncertain health, may be weighing a similar calculation. Years of sanctions have battered Iran's economy, driven up inflation and fueled frustration among a young population eager for jobs and engagement with the outside world.
+
+According to Fathi, Khamenei has long cast the United States as Iran's chief enemy and has publicly voiced deep skepticism about the talks. Yet he has also given President Hassan Rouhani and Foreign Minister Mohammad Javad Zarif room to negotiate, describing his approach as "heroic flexibility." Fathi suggests that this may reflect a leader trying to put the country on a more stable footing before his death, and to secure the future of the system he has guarded for more than 25 years.
+
+The comparison has its limits. Khomeini ended a shooting war in which hundreds of thousands had died, while Khamenei faces economic pressure rather than battlefield defeat. Hardliners in Tehran continue to oppose concessions, and Khamenei has been careful to avoid any appearance of surrender.
+
+Still, analysts say, the parallel is hard to ignore. If a deal is reached, Khamenei may find himself, like his predecessor, accepting a compromise he once rejected, and hoping history judges it as the choice that saved the Islamic Republic.
+
+=== prompt_id: abst-0144 ===
+We study the effective geometry of noncommutative branes arising as solutions of Yang-Mills matrix models of the IKKT type. Fluctuations of the matrices around a background brane are shown to propagate on an effective metric determined by the embedding and the underlying Poisson structure, rather than the induced metric alone. Using heat kernel techniques adapted to the matrix setting, we compute the one-loop effective action for scalar, gauge and fermionic fluctuations in the semi-classical limit. In the maximally supersymmetric model the leading divergences cancel, while the remaining contributions induce gravitational terms, including an Einstein-Hilbert action, for the effective metric. We discuss the implications for emergent gravity and the conditions under which the resulting dynamics are compatible with four-dimensional general relativity.
+
+=== prompt_id: gene-0526 ===
+Your coworker is right. "Corporate Memphis" is the nickname for that style of flat, brightly colored illustration with people who have oversized limbs, tiny heads, bendy arms and skin in shades like purple or blue.
+
+**Where it came from**
+
+The name nods to the Memphis Group, an Italian design collective from the 1980s led by Ettore Sottsass, known for bold colors and playful geometric shapes, though the connection is more about the vibe than a direct lineage. The more immediate roots are in the flat design trend of the early 2010s, when tech companies moved away from realistic, 3D-looking graphics toward simple shapes and solid colors.
+
+The style really took off around 2017, when Facebook commissioned an illustration system called "Alegria" from the design studio Buck. Its stretched, faceless characters became widely imitated, and soon similar art was everywhere: Slack, Airbnb, Google, banks, healthcare startups and government websites.
+
+**Why it's so popular**
+
+- **It's cheap and scalable.** Vector illustrations are easy to resize, recolor and reuse across websites, apps and ads. Libraries of ready-made characters make it even easier.
+- **It feels friendly and safe.** Soft shapes and cheerful colors make companies seem approachable, which is especially useful for products involving money, data or work.
+- **It's inclusive by design.** Unrealistic skin tones and generic features let viewers see themselves in the characters without specific representation choices.
+- **It's neutral.** It rarely offends anyone or looks dated quickly.
+
+That same blandness is also why it's widely criticized. Many people see it as soulless and interchangeable, and some brands have started moving toward more distinctive styles.
+
+=== prompt_id: essa-21-esl ===
+Tourism: Good or Bad?
+
+Tourism is very big business in many country today. I think the benefits of tourism are more than the problems, but we need to be careful.
+
+First, tourism give many jobs to local people. They can work in hotels, restaurants or as tour guides. In my city, many families have small shops for tourists and they earn good money. Also, tourists help people to learn about other cultures.
+
+But tourism has some problems too. When too many tourists come, the streets is crowded and there is a lot of rubbish. Sometimes prices go up and local people can't pay for houses anymore.
+
+In my opinion, the government should make some rules, for example a tourist tax, to keep the city clean. If we control it good, tourism can help everybody. So I believe the benefits are bigger than the problems.
+
+=== prompt_id: gene-0527 ===
+Zebras are famous for their black and white stripes, and scientists have wondered for a long time why they have them. There are a few ideas, but the strongest one is a bit surprising: the stripes help keep biting flies away!
+
+**The fly problem**
+
+In Africa, where zebras live, there are lots of flies that bite animals to drink their blood. Two of the worst are horseflies and tsetse flies. These bites hurt, and they can also spread diseases that make animals very sick. So for a zebra, keeping flies away is really important.
+
+**How stripes confuse flies**
+
+Scientists did a fun experiment. They put coats on horses, some plain and some with black and white stripes, and watched what the flies did. The flies flew toward the striped horses but had trouble landing on them. Many of them flew right past or bumped into them instead of landing smoothly!
+
+Why? Flies have eyes that are very different from ours. When they get close, the stripes seem to mess up how they see movement and distance. It's a bit like trying to land on something while the ground looks like it is flickering. The fly gets confused and can't slow down properly, so it misses.
+
+Tsetse flies also seem to dislike landing on striped surfaces, so stripes may help zebras avoid these dangerous flies too.
+
+**Other ideas**
+
+Some scientists think stripes might also help zebras stay a little cooler in the hot sun, or help them recognize each other, because every zebra's stripes are different, like a fingerprint.
+
+But the fly idea has the most evidence. So a zebra's stripes are a bit like a built-in bug spray!
+
+=== prompt_id: essa-22-pla ===
+Depth Over Breadth: The Case for a Few Close Friends
+
+Social media has made it easy to count our friends, and the numbers can be impressive: hundreds of followers, dozens of group chats, a full calendar of acquaintances. Yet the question of whether it is better to have a few close friends or many casual ones is less about quantity than about what we actually need from other people. In my view, a small circle of close friends offers something that a wide network of casual connections cannot replace.
+
+Close friendships provide support when it matters most. When someone loses a job, goes through a breakup or faces an illness, a casual friend might send a kind message, but a close friend shows up, listens for hours and remembers to check in a week later. That kind of reliability is built over years of shared experience and trust, and it is difficult to sustain with more than a handful of people. Research on wellbeing consistently finds that the quality of relationships, not their number, is one of the strongest predictors of happiness and even physical health.
+
+Close friends also know us well enough to be honest. They can tell us when we are making a mistake, and we are more likely to listen because we know they care. Casual friends, understandably, tend to keep things light.
+
+That said, casual friendships have genuine value. Acquaintances expose us to new ideas, opportunities and communities. Sociologists have noted that people often hear about jobs through loose connections rather than close ones, simply because those connections move in different circles. A life with only three people in it can become narrow.
+
+The best answer, then, is probably not either-or. But if forced to prioritize, I would choose depth. A wide network can make life more interesting, but a few close friends make it more bearable, and in difficult moments, that difference is everything.

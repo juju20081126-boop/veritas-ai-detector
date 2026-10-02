@@ -1,0 +1,476 @@
+=== prompt_id: essa-10-esl ===
+Is Competition Between Students Good or Bad?
+
+In my school, competition is everywhere. We have tests every week, and after big exams the teachers put the ranking on the board. Some of my classmates love this, but some of them feel very stress. I think competition has both good side and bad side, but in the end I believe it is more good than bad if teachers and parents control it carefully.
+
+First, competition can make students work harder. When I see my friend get a higher score than me, I want to study more for the next test. Without competition, maybe I would be lazy and play games on my phone all the night. Competition give us a clear goal. It is like sport. A runner runs faster when other runners are next to him.
+
+Second, competition prepare students for the real life. After we finish school, we must compete for university, for jobs and for promotions. If students never compete in school, they will be surprised when they start working. Learning how to win and also how to lose is an important skill. My father always tell me that losing is a lesson, not a failure.
+
+However, competition also have some bad effects. The biggest problem is stress. Some students are so worried about their rank that they cannot sleep well. I have a classmate who cried after a math test because she was number twelve and not number one. This is not healthy. Also, too much competition can destroy friendship. If everyone want to be the best, students may not want to share their notes or help each other.
+
+Another problem is that competition usually only measure test scores. But students have many different talents, for example art, music or helping other people. When schools only care about grades, students who are good in other things can feel they are not smart. This is unfair and it can make them lose their confidence.
+
+In my opinion, the solution is not to stop competition, but to make it more balance. Teachers can make group competitions, so students learn teamwork too. Schools can also give prizes for improvement, not only for the highest score. In this way, every student has a chance to feel success.
+
+To conclude, competition among students is like medicine. A little bit is good for you, but too much can make you sick. If we use it in the right way, it can help students to grow and become stronger people.
+
+=== prompt_id: news-0028 ===
+**Wisconsin pizzeria caught in crossfire of Indiana "religious freedom" fight**
+
+A family-owned pizza restaurant in Wisconsin has found itself on the receiving end of angry phone calls and hostile online messages, all because its name resembles that of an Indiana business at the center of a national controversy.
+
+The owners of Memories Gourmet Pizza Co. say they began fielding calls this week from people who mistook their restaurant for Memories Pizza, a small shop in Walkerton, Indiana, that drew national attention after one of its owners told a local television reporter the business would not cater a same-sex wedding.
+
+Those comments came as Indiana's newly signed Religious Freedom Restoration Act set off a fierce debate over whether the law could allow businesses to refuse service to gay and lesbian customers. Within hours, Memories Pizza became a lightning rod, with supporters and critics flooding its online reviews and social media pages.
+
+Some of that anger landed hundreds of miles away.
+
+"We've had people calling and yelling at us, calling us bigots," one of the Wisconsin owners said. "We kept having to explain that we're not even in Indiana. We have nothing to do with it."
+
+The restaurant's Facebook page was also hit with negative posts and comments, according to the owners, who said they spent much of the week deleting messages and answering confused customers. Some posters apologized after realizing their mistake. Others did not.
+
+The owners said the misdirected outrage was especially frustrating because it involved a debate they had played no part in. They posted a message on social media clarifying that their business is unrelated to the Indiana shop and that everyone is welcome at their tables.
+
+"We serve everybody," the owner said. "That's what a restaurant is supposed to do."
+
+Regular customers have rallied behind the restaurant, leaving supportive comments and stopping in to order food. Several local residents posted reminders online urging people to check a business's location before sending messages.
+
+Researchers who study online behavior say mistaken identity is common during viral controversies, when people rush to express outrage before confirming the facts. Businesses with similar names, and individuals who share a name with someone in the news, often absorb collateral damage.
+
+Meanwhile, the Indiana pizzeria temporarily closed its doors after receiving threats, while an online fundraising campaign started by supporters raised a large sum on its behalf. Indiana lawmakers have moved to revise the law under pressure from businesses and civil rights groups.
+
+For the Wisconsin owners, the hope is simply that the phone stops ringing for the wrong reasons.
+
+"We just want to make pizza," the owner said.
+
+=== prompt_id: abst-0138 ===
+We present results from an initial survey of white dwarf stars identified in early imaging and spectroscopic data from the Sloan Digital Sky Survey (SDSS). The SDSS five-band (ugriz) photometry allows hot white dwarfs to be efficiently separated from main-sequence stars and quasars in color space, while follow-up spectroscopy provides secure classifications and atmospheric parameters. Over the area surveyed to date, we identify several hundred spectroscopically confirmed white dwarfs. The majority are hydrogen-atmosphere (DA) stars, but the sample also contains substantial numbers of helium-atmosphere DB, DO, and DC objects, magnetic white dwarfs, and white dwarf–main-sequence binaries. We describe the photometric selection criteria, assess the completeness of the spectroscopic targeting, and compare our sample with previously published catalogs, finding that a large fraction of the SDSS objects are new discoveries. Effective temperatures and surface gravities are derived for the DA stars by fitting model atmospheres to the Balmer line profiles, and the resulting mass distribution peaks near 0.6 solar masses, consistent with earlier studies. Using proper motions and reduced proper-motion diagrams, we construct a preliminary luminosity function for disk white dwarfs that extends to fainter magnitudes than many previous determinations. We also highlight several unusual objects, including stars with peculiar spectra and candidate ultracool white dwarfs. These early results demonstrate that the completed SDSS will increase the number of known white dwarfs by roughly an order of magnitude, enabling detailed studies of the age of the Galactic disk, its star formation history, and the late stages of stellar evolution.
+
+=== prompt_id: emai-0239 ===
+Subject: IMPORTANT! Actions this evening.
+
+Hi everyone,
+
+Building management has confirmed that the electrical work on our floor will begin tonight at 7:00 p.m. and run until roughly 6:00 a.m. Power to all workstations, printers, and the kitchen will be shut off during that window. To avoid lost work or damaged equipment, please do the following before you leave today:
+
+1. **Save and close all open files.** Anything unsaved at 7:00 p.m. will be lost.
+2. **Shut down your computer completely.** Don't just put it to sleep or lock the screen.
+3. **Unplug everything** (monitors, chargers, desk lamps, and personal devices) from the wall and from power strips.
+4. **Clear your desk surface.** The electricians need access to the floor boxes under several desks, especially along the window side.
+5. **Empty the kitchen fridge** of anything you want to keep. It will be off for about eleven hours, and whatever is left will be thrown out tomorrow morning.
+6. **Take your laptop home** if you plan to start early tomorrow. The office won't be accessible until 8:00 a.m.
+
+If you're working on anything time-sensitive tonight, please switch to working remotely by 6:30 p.m. IT will be available by phone until 9:00 p.m. if you have trouble with the VPN.
+
+Facilities will send an all-clear once power is restored. If something at your desk isn't working tomorrow, let me know right away so we can report it while the electricians are still on site.
+
+Thanks for your help with this.
+
+Best,
+Dana
+
+=== prompt_id: stor-0316 ===
+The man in the corner booth had been typing for forty minutes before I noticed anything strange about him.
+
+I'd come into the café to escape my apartment, where the radiator clanked like someone was trapped inside it. I had a book open in front of me, but I wasn't reading it. I was doing what I always do in coffee shops: watching people and inventing their lives.
+
+He was maybe sixty, in a gray cardigan, with reading glasses pushed up into thinning hair. His laptop was old, one of those thick silver ones, with a lighthouse sticker peeling off the lid. He typed with two fingers, slowly, deliberately, as if each letter cost him something.
+
+I was sitting just behind him, close enough to see the screen if I leaned a little. So I leaned a little.
+
+*It begins raining outside.*
+
+He pressed the period key, and the window beside us went dark with water.
+
+It wasn't gradual. There was no drizzle, no first fat drop on the glass. One moment the street was bright with October sun, and the next it was pouring, the kind of rain that makes people on the sidewalk shriek and run for the awnings. A woman at the counter said, "Where did that come from?" The barista shrugged and mumbled something about the forecast.
+
+The man didn't look up. He sipped his coffee, which had to be cold by now, and kept typing.
+
+*The rain softens. A boy across the street laughs at the puddles.*
+
+Outside, the downpour eased into a steady patter. Across the street, a kid of about seven in a yellow jacket broke away from his mother and jumped, two-footed, into a puddle by the bus stop. He laughed. I could see him laughing.
+
+My cup was rattling against its saucer. I set it down.
+
+I told myself it was coincidence. People write about the weather. Weather happens. But I kept watching, and he kept typing, and every sentence he wrote arrived in the world half a second later. The bell over the door chimed for a delivery man he had described as tired. The radio changed to a song he'd named. A pigeon landed on the windowsill exactly where he said it would.
+
+I don't know how long I sat there. Long enough that he finally stopped, rubbed his eyes, and turned around.
+
+"You've been reading over my shoulder," he said. He didn't sound angry. He sounded like somebody's grandfather.
+
+"I'm sorry," I said. Then, because I couldn't help it: "How are you doing that?"
+
+He considered me for a moment. "I'm not sure I am," he said. "I started writing here three weeks ago. A little story about this street. At first I thought I was just very observant. Then I wrote that the espresso machine broke, and it broke." He tapped the edge of the laptop. "I've been very careful since then."
+
+"Careful how?"
+
+"Small things. Rain. Puddles. A boy laughing." He smiled faintly. "I wrote a sunset on Tuesday. You should have seen it."
+
+"Why not write something bigger? You could—" I stopped, because I didn't actually know what he could do. End a war. Cure something. Win the lottery.
+
+"I thought about it," he said. "But I don't know where the edges are. I don't know what it costs, or who pays." He closed the laptop gently, the way you'd close a door on a sleeping child. "So I write the rain. People need rain."
+
+He stood, tucked the computer under his arm, and left a few dollars on the table. At the door he paused and looked back at me.
+
+"Tomorrow," he said, "I think the sun comes out around ten."
+
+It did. I was there to see it.
+
+=== prompt_id: expl-0412 ===
+Both can show up as lumps, but they're fundamentally different structures.
+
+A **granuloma** is a solid, organized cluster of immune cells, mainly macrophages that have transformed into epithelioid cells (sometimes fusing into multinucleated giant cells), usually ringed by lymphocytes. It forms when the immune system tries to wall off something it can't eliminate, such as *Mycobacterium tuberculosis*, fungi, or foreign material. It's a type of chronic inflammation.
+
+A **cyst** is a closed sac with a distinct lining (typically epithelium) filled with fluid, air, or semisolid material like keratin. Cysts often result from blocked ducts or developmental abnormalities rather than immune activity.
+
+**In short:** granuloma = solid inflammatory tissue; cyst = lined, filled cavity.
+
+=== prompt_id: gene-0521 ===
+# The Roman Republic and the Roman Empire
+
+Rome's history spans more than a thousand years, from a small settlement on the Tiber River to a state that controlled the entire Mediterranean world. Historians usually divide it into three phases: the Kingdom, the Republic, and the Empire.
+
+## The Roman Republic (509–27 BCE)
+
+### Origins
+According to tradition, Rome was founded in 753 BCE and ruled by kings for about two and a half centuries. In 509 BCE, the Roman aristocracy expelled the last king, Tarquinius Superbus, and replaced the monarchy with a republic, a system designed to prevent any single person from holding too much power.
+
+### Government
+The Republic's government balanced several institutions:
+- **Two consuls**, elected annually, who led the state and the army and could veto each other.
+- **The Senate**, a body of aristocrats (mostly former magistrates) that advised magistrates and controlled finances and foreign policy.
+- **Popular assemblies**, which elected officials and passed laws.
+- **Other magistrates**, including praetors (judges), quaestors (finance), censors, and aediles.
+- **Tribunes of the plebs**, created during the *Conflict of the Orders* (c. 494–287 BCE), when common citizens (plebeians) struggled against the patrician elite for political rights. One early result was the **Twelve Tables** (c. 450 BCE), Rome's first written law code.
+
+### Expansion
+By 264 BCE, Rome controlled most of the Italian peninsula. It then fought three **Punic Wars** against Carthage (264–146 BCE), including the famous invasion of Italy by Hannibal, who crushed the Romans at Cannae (216 BCE) before being defeated at Zama (202 BCE). Rome destroyed Carthage in 146 BCE and, in the same year, sacked Corinth, cementing its dominance over Greece and the eastern Mediterranean.
+
+### Crisis and Collapse
+Conquest brought enormous wealth, but also deep inequality, a displaced rural population, and ambitious generals with loyal armies. Key events in the Republic's decline include:
+- The reforms and violent deaths of the **Gracchi brothers** (133 and 121 BCE).
+- **Marius's** military reforms, which tied soldiers' loyalty to their commanders.
+- The civil war and dictatorship of **Sulla** (82–79 BCE).
+- The **First Triumvirate** of Julius Caesar, Pompey, and Crassus (60 BCE).
+- Caesar's crossing of the Rubicon (49 BCE), his victory in civil war, his appointment as dictator, and his assassination in 44 BCE.
+
+After further civil wars, Caesar's heir Octavian defeated Mark Antony and Cleopatra at **Actium** (31 BCE). In 27 BCE the Senate granted him the title **Augustus**, marking the start of the Empire.
+
+## The Roman Empire (27 BCE–476 CE in the West)
+
+### The Principate and the Pax Romana
+Augustus kept the outward forms of the Republic while holding real power himself. His reign began roughly two centuries of relative stability known as the **Pax Romana**. Notable dynasties and rulers include the Julio-Claudians (Tiberius, Caligula, Claudius, Nero), the Flavians (Vespasian, Titus, Domitian), and the so-called **Five Good Emperors** (Nerva, Trajan, Hadrian, Antoninus Pius, Marcus Aurelius). Under Trajan in 117 CE, the empire reached its greatest territorial extent, stretching from Britain to Mesopotamia.
+
+### Crisis and Reform
+The **Crisis of the Third Century** (235–284 CE) brought civil war, invasions, plague, and economic collapse, with dozens of short-lived emperors. **Diocletian** restored order by reorganizing the provinces, reforming the army and tax system, and dividing power among four rulers (the Tetrarchy). **Constantine** later legalized Christianity (Edict of Milan, 313 CE) and founded **Constantinople** in 330 CE. Under **Theodosius I**, Christianity became the official state religion (380 CE), and after his death in 395 the empire was permanently divided into eastern and western halves.
+
+### Fall of the West, Survival of the East
+The Western Empire weakened under pressure from Germanic peoples, internal instability, and financial strain. Rome was sacked by the Visigoths in 410 and the Vandals in 455. In **476 CE**, the Germanic leader Odoacer deposed the last western emperor, Romulus Augustulus, a date traditionally used for the "fall of Rome." The Eastern Roman (Byzantine) Empire survived until the Ottoman conquest of Constantinople in **1453**.
+
+## Key Achievements
+
+| Area | Achievements |
+|---|---|
+| **Law** | Twelve Tables; centuries of legal scholarship culminating in Justinian's *Corpus Juris Civilis*, the basis of civil law systems across Europe and Latin America |
+| **Government** | Republican institutions, separation of powers, checks and balances, and the idea of citizenship, all of which influenced the framers of the U.S. Constitution |
+| **Engineering & architecture** | Roman concrete, the arch, vaults, and domes; aqueducts; tens of thousands of miles of paved roads; landmarks like the Pantheon and the Colosseum |
+| **Military** | A professional, highly organized army with legions, standardized training, and fortified camps |
+| **Language & literature** | Latin, the ancestor of the Romance languages (Italian, Spanish, French, Portuguese, Romanian); writers such as Cicero, Virgil, Ovid, Livy, and Tacitus |
+| **Religion** | Spread and institutionalization of Christianity across Europe |
+| **Urban life** | Planned cities with forums, baths, sewers, and public entertainment venues |
+
+## Why It Matters
+Rome's significance lies not only in its size or longevity but in how much of its legacy survives. Modern legal systems, political vocabulary (senate, republic, veto, citizen), architecture, calendars, and languages all trace back to it. For an assignment, a strong thesis might focus on *why* the Republic collapsed into an empire, or on *which* Roman achievement has had the most lasting influence. Both questions give you room to make an argument rather than just summarize events.
+
+=== prompt_id: essa-19-pla ===
+Money and happiness are connected, but I do not believe money is the key to happiness. It is better understood as a foundation: essential up to a point, and far less important beyond it.
+
+There is no denying that a lack of money causes real misery. A family that cannot pay rent, afford medicine, or put food on the table lives under constant stress, and no amount of positive thinking removes that burden. Research supports this, showing that rising income greatly improves well-being for people moving out of poverty. In this sense, money buys security, and security makes happiness possible.
+
+Once basic needs are met, however, the link weakens. Wealthy people still experience loneliness, illness, grief, and boredom. Many who chase higher salaries end up sacrificing the very things that make life satisfying: time with family, good health, and meaningful work. A bigger house or a newer car brings a brief lift, but people quickly adapt and begin wanting more.
+
+The deepest sources of happiness tend to be things money cannot directly purchase: close relationships, a sense of purpose, and gratitude for what one already has.
+
+In my view, then, money is a useful tool for building a good life, but it is not the key that unlocks happiness itself.
+
+=== prompt_id: news-0029 ===
+**Pentagon Map Shows ISIS Losing Ground in Iraq**
+
+The U.S. Department of Defense has released a map indicating that coalition and Iraqi forces have retaken between 25% and 30% of the territory in Iraq that had fallen under the control of the Islamic State in Iraq and Syria (ISIS).
+
+The map compares the areas held by the militant group at the peak of its advance with its current positions. It shows ISIS pushed back from parts of northern and central Iraq, including territory near the Kurdish region and along the Tigris River corridor. Defense officials presented the shift as evidence that coalition airstrikes, combined with ground operations by Iraqi security forces and Kurdish Peshmerga, are producing measurable results.
+
+Afzal Ashraf, a counterinsurgency specialist and consultant fellow at the Royal United Services Institute, cautioned against reading too much into the figures. Much of the recovered land, he noted, is sparsely populated and of limited strategic value.
+
+"Where it counts, they are not standing and fighting," Ashraf said. In his assessment, ISIS has chosen to withdraw from contested rural areas rather than absorb heavy losses, preserving its fighters for urban strongholds such as Mosul.
+
+Ashraf added that territorial measures offer only a partial picture of the conflict. The group's capacity to govern, recruit, and finance its operations, he said, will ultimately determine how long it can endure.
+
+Pentagon officials acknowledged that ISIS continues to hold significant territory in Iraq and that its position in Syria remains largely unchanged. They emphasized that retaking major population centers will require sustained effort and capable Iraqi ground forces.
+
+=== prompt_id: abst-0139 ===
+We argue that nonlinear response functions offer a direct experimental route to the growing length scale thought to accompany the glass transition. Within a general framework applicable to both supercooled liquids and spin glasses, we show that the third-order dynamical susceptibility χ₃(ω) is governed by the number of dynamically correlated molecules, N_corr, much as the nonlinear susceptibility of a spin glass reflects its correlation length. Specifically, χ₃ is predicted to exhibit a peak near the α-relaxation frequency whose height scales with N_corr, and to vanish at both low and high frequencies. This signature distinguishes genuinely collective behavior from trivial single-particle nonlinearities. We discuss how dielectric measurements of χ₃ in molecular glass formers can therefore track the temperature dependence of the cooperative length, and outline extensions to other nonlinear probes.
+
+=== prompt_id: emai-0240 ===
+Subject: SCE Advice Letter to Implement Settlement with Commission
+
+Team,
+
+Southern California Edison filed an advice letter with the CPUC late yesterday to begin implementing its settlement with the Commission. As you know, the settlement resolves SCE's federal lawsuit challenging the Commission's refusal to let it recover the wholesale power costs it incurred during the energy crisis. The filing is attached; the highlights are below.
+
+**Key elements of the filing**
+
+- **PROACT.** SCE proposes to establish the Procurement-Related Obligations Account to record its unrecovered procurement costs, net of certain credits. The opening balance is roughly $3.3 billion, which SCE intends to pay down through existing retail rates rather than a new surcharge.
+- **Rates held at current levels.** Retail rates, including the surcharges approved earlier this year, would remain in place until the PROACT balance is recovered or through the end of 2003, whichever comes first.
+- **Headroom.** The difference between revenues at current rates and SCE's ongoing costs would be applied to reduce the PROACT balance.
+- **Dividend restrictions.** SCE commits not to pay dividends to its parent company until the balance is recovered or a specified date passes.
+- **Litigation.** SCE will dismiss its federal case once the settlement takes effect.
+
+**Issues to watch**
+
+1. Several consumer groups have already signaled they will protest, arguing the settlement was negotiated outside the normal public process. Protests are due within 20 days.
+2. It is unclear how the Department of Water Resources' revenue requirement will interact with the headroom calculation. If DWR's costs come in higher than expected, the recovery period could stretch out considerably.
+3. Direct access customers may be asked to contribute to PROACT recovery. We need to understand the potential exposure for customers who have switched providers.
+
+**Next steps**
+
+Please review the sections relevant to your areas and send me comments by Friday. Legal is evaluating whether we should file a response to the protests or simply monitor the proceeding. I'll circulate a short memo with our recommended position early next week.
+
+Please keep this filing internal for now.
+
+Thanks,
+Mark
+
+=== prompt_id: stor-0317 ===
+The worst part of the job isn't the fires. It's the people who try to put them out.
+
+My assignment came through at 0600: Chicago, October 8, 1871. A traveler had jumped from 2157 with a fire-suppression drone the size of a thermos and a head full of good intentions. Bureau analytics flagged the departure eleven minutes after it happened, which, in our line of work, is plenty of time.
+
+I've been with the Disasters Department for nine years. People outside the Bureau assume we're monsters. They picture us standing on hills with clipboards, watching cities burn. And, to be fair, sometimes we do. But nobody who works here likes it. You just learn, eventually, that you can't pull one brick out of history without bringing down the house.
+
+The Chicago fire killed around three hundred people. It also left the city a blank slate. The rebuilding brought fire codes, steel-frame skyscrapers, an entire school of architecture. Pull the fire out and the 2160 models show a Chicago that never modernizes, a Midwest economy that bends a different way, and a cascade of changes that eventually erases about forty million people who exist in my present. Including, statistically, my sister's kids.
+
+So I went.
+
+I landed in an alley off DeKoven Street in the late afternoon, wearing wool that itched and boots a size too big. The air smelled of manure and lake water. It hadn't rained in weeks, and the wooden sidewalks cracked under my feet like kindling, which, in a sense, they were.
+
+I found the traveler near the O'Leary barn just after dark. She was young, maybe twenty-two, crouched behind a fence with the drone cradled in her lap. She was shaking.
+
+"You're Bureau," she said, before I'd said anything. They always know.
+
+"I am."
+
+"You can't let this happen. Do you know how many people—"
+
+"Around three hundred dead," I said. "A hundred thousand homeless."
+
+She stared at me. I think she'd expected someone who didn't know the numbers. That's the other thing outsiders get wrong. We know the numbers better than anyone. We have to.
+
+"Then how can you—"
+
+"Because I've seen what happens if I don't." I crouched beside her. "We ran your intervention before I left. You save this neighborhood. Then you save the city. And in 2160 there are forty million fewer people. They don't die. They just never were. Nobody mourns them, because nobody remembers them. Is that better?"
+
+She didn't answer. Inside the barn, a lantern swung on its hook. I could hear a cow shifting in the straw.
+
+"My grandmother died in the Phoenix grid collapse," she said finally. "I thought if I could prove one disaster could be stopped, maybe someone would let me stop the next one."
+
+"I know," I said. And I did. Most of them have a reason like that. Almost nobody travels back to stop a fire out of abstract principle.
+
+I held out my hand. After a long moment, she gave me the drone.
+
+We were a block away, walking toward the extraction point, when the first shout went up behind us. I didn't turn around. I've learned not to. She did, and I let her, and I didn't say anything while she cried.
+
+Back in 2160, my debrief took forty minutes. My supervisor marked the timeline stable and asked if I wanted the afternoon off. I said no.
+
+I spent it in the Bureau archive instead, reading the names of the Chicago dead, every one I could find, one at a time. Nobody requires it. Some of us just think somebody should.
+
+=== prompt_id: expl-0413 ===
+Not really. Oxygen is only half the problem; pressure is the other half. In a vacuum, the fluids in your exposed tissues would begin to vaporize at body temperature, causing painful swelling, and gas trapped in your body would expand. You'd lose consciousness within about 15 seconds. That said, a bulky gas-filled suit isn't strictly necessary. A skintight elastic "mechanical counterpressure" suit could squeeze the body instead, paired with a pressurized helmet. Researchers have prototyped exactly this.
+
+=== prompt_id: gene-0522 ===
+**There and Back Again (A Hauling Song)**
+
+*Leader sings each line; the crew answers in parentheses.*
+
+**Verse 1**
+I was smoking by my round green door, *(haul away, haul!)*
+Never wanted nothing more, *(haul away, haul!)*
+Then a grey old wizard scratched a mark, *(haul away, haul!)*
+And thirteen dwarves came after dark. *(haul away, haul!)*
+
+**Chorus**
+So lift and swing and lift again,
+The mountain's far and the night rolls in,
+Pull, my lads, and pull it through,
+There and back is a long road too.
+
+**Verse 2**
+Well, they ate my cakes and drank my ale, *(haul away, haul!)*
+Sang of gold in a misty vale, *(haul away, haul!)*
+I left my handkerchief on the shelf, *(haul away, haul!)*
+And I ran out the door in spite of myself. *(haul away, haul!)*
+
+**Verse 3**
+Three great trolls by a mutton fire, *(haul away, haul!)*
+Sat us in sacks and stoked it higher, *(haul away, haul!)*
+But the wizard kept them squabbling on, *(haul away, haul!)*
+Till they all turned stone at the break of dawn. *(haul away, haul!)*
+
+**Chorus**
+So lift and swing and lift again,
+The mountain's far and the night rolls in,
+Pull, my lads, and pull it through,
+There and back is a long road too.
+
+**Verse 4**
+Deep in the goblin dark I fell, *(haul away, haul!)*
+Found a ring by a cold black well, *(haul away, haul!)*
+A slimy thing asked riddles nine, *(haul away, haul!)*
+But "What's in my pocket?" won the line. *(haul away, haul!)*
+
+**Verse 5**
+Through the Mirkwood, black and deep, *(haul away, haul!)*
+Spiders spun us up to sleep, *(haul away, haul!)*
+I took my blade and named it Sting, *(haul away, haul!)*
+Then rode the barrels from the Elvenking. *(haul away, haul!)*
+
+**Chorus**
+So lift and swing and lift again,
+The mountain's far and the night rolls in,
+Pull, my lads, and pull it through,
+There and back is a long road too.
+
+**Verse 6**
+Up on the mountain, by the hidden door, *(haul away, haul!)*
+A thrush came knocking on the stone once more, *(haul away, haul!)*
+I crept down soft where the dragon lay, *(haul away, haul!)*
+On a bed of gold, and I slipped away. *(haul away, haul!)*
+
+**Verse 7**
+Fire came down on the long lake town, *(haul away, haul!)*
+Till a black arrow brought the dragon down, *(haul away, haul!)*
+I gave the Arkenstone for peace, *(haul away, haul!)*
+But it took five armies 'fore the war would cease. *(haul away, haul!)*
+
+**Verse 8**
+Thorin lay where the battle ran, *(haul away, haul!)*
+Said, "You're worth more than a gold-proud man," *(haul away, haul!)*
+I wept for him and I wept for all, *(haul away, haul!)*
+Then I turned my feet toward the hill and hall. *(haul away, haul!)*
+
+**Chorus**
+So lift and swing and lift again,
+The mountain's far and the night rolls in,
+Pull, my lads, and pull it through,
+There and back is a long road too.
+
+**Verse 9**
+Came home to find my spoons for sale, *(haul away, haul!)*
+Cousins bidding on the garden pail, *(haul away, haul!)*
+They swore that Baggins must be dead, *(haul away, haul!)*
+So I bought my own good chairs instead. *(haul away, haul!)*
+
+**Verse 10**
+Now the kettle sings and the fire is low, *(haul away, haul!)*
+But I'm not the hobbit that I used to know, *(haul away, haul!)*
+For the road goes on past the garden gate, *(haul away, haul!)*
+And it's never too late, boys, never too late. *(haul away, haul!)*
+
+**Final Chorus** *(slower)*
+So lift and swing and lift again,
+The mountain's far, but I'm home again,
+Pull, my lads, and pull it through,
+There and back, and the road calls you.
+
+=== prompt_id: essa-19-stu ===
+**Money and Happiness**
+
+My grandparents grew up with almost nothing. They lived in a two-room house and shared one bicycle among five kids. Yet when they talk about those years, they laugh more than they complain. That is a big reason I believe money is not the key to happiness, even though it definitely helps.
+
+To be fair, money solves a lot of problems. If you are worried about paying the bills or getting sick without insurance, it is hard to feel happy. Money also gives people choices, like where to live, what to study, and how to spend their free time. I'd be lying if I said I don't want a good-paying job someday.
+
+But money can't buy the things that actually make me happy day to day. My best memories are road trips with my family, staying up late talking with friends, and the feeling of finally finishing a hard project. None of those cost much. I've also noticed that when I buy something I really wanted, the excitement fades within a week.
+
+In conclusion, money is like a tool. It can make life easier, but real happiness comes from people, experiences, and purpose, and those are things you have to build yourself.
+
+=== prompt_id: news-0030 ===
+**She lost much of her sight and hearing as a child. Now she makes sure other kids get checked.**
+
+When Chelsea Elliott was in elementary school, her teachers thought she simply wasn't paying attention. She squinted at the board, missed instructions, and fell behind in reading. It wasn't until years later that doctors identified the real problem: she had lost much of her vision and hearing, and no one had caught it.
+
+"I thought everyone saw the world the way I did, blurry and quiet," Elliott said. "I didn't know anything was wrong, so I didn't know to ask for help."
+
+Her experience is far from unique. Eight U.S. states do not require schools to screen students for vision or hearing problems, and rules vary widely in the states that do. Some mandate screenings only in certain grades; others leave the decision to individual districts. Advocates say these gaps mean many children start school with undiagnosed conditions that make learning much harder than it needs to be.
+
+Experts estimate that about one in four school-age children has a vision problem, and a significant number have some degree of hearing loss. Left untreated, these conditions are often mistaken for learning disabilities, attention disorders, or behavioral issues.
+
+After receiving treatment and hearing aids herself, Elliott decided to do something about it. She founded a nonprofit organization that brings free vision and hearing screenings directly into schools in underserved communities. Volunteers, many of them nursing and audiology students, set up stations in gyms and libraries and can test an entire grade in a single day.
+
+Children who fail a screening are referred for follow-up care, and the organization helps families find free or low-cost providers. In many cases, it also helps cover the cost of glasses.
+
+"The screening itself takes five minutes," Elliott said. "But those five minutes can change the next twelve years of a kid's education."
+
+Teachers at participating schools say the impact can be immediate. One elementary school teacher recalled a second-grader who had been labeled a troublemaker. After a screening revealed he needed glasses, his behavior and his grades improved within weeks.
+
+"He wasn't being difficult," the teacher said. "He just couldn't see."
+
+Since its founding, Elliott's group has screened thousands of children and continues to expand into new districts. Elliott also lobbies state lawmakers to adopt mandatory screening requirements, often sharing her own story at legislative hearings.
+
+Her goal, she says, is simple: no child should have to go through what she did.
+
+"It's such an easy thing to check," she said. "Every kid deserves to start school able to see the board and hear their teacher."
+
+**Do you know a hero?** Nominations are now open for 2015 CNN Heroes. Each year, CNN honors everyday people who are making extraordinary contributions to their communities. If you know someone who deserves recognition, visit CNN.com/Heroes to submit a nomination.
+
+=== prompt_id: abst-0140 ===
+We describe the SCUBA HAlf Degree Extragalactic Survey (SHADES), a submillimetre survey designed to map approximately half a square degree of sky at 850 μm with the SCUBA camera on the James Clerk Maxwell Telescope. Divided between the Lockman Hole East and the Subaru/XMM-Newton Deep Field, SHADES aims to reach a uniform depth of roughly 2 mJy rms, yielding a statistically robust sample of a few hundred submillimetre galaxies. Its principal goals are to determine the redshift distribution of the bright submillimetre population, measure its clustering, and clarify its relationship to massive elliptical galaxies and active galactic nuclei. These aims are made possible by extensive multi-wavelength coverage of both fields, including deep radio, optical, infrared, and X-ray data. We present the survey design, observing strategy, and anticipated scientific returns.
+
+=== prompt_id: emai-0241 ===
+Subject: Conference call 1/27/00
+
+All,
+
+Just a reminder that our conference call is scheduled for Thursday, January 27, at 2:00 p.m. Central. We'll review the status of the transportation agreements and agree on next steps before the month-end deadline.
+
+Dial-in: 1-800-555-0142
+Passcode: 48613
+
+Please send me any agenda items by Wednesday afternoon. If you can't make it, let me know who will be covering for you.
+
+Thanks,
+Kim
+
+=== prompt_id: stor-0318 ===
+The archivist wore gloves, though they were mostly ceremonial. The object had survived eleven centuries; it would survive her fingers.
+
+"This is called a book," she told the children gathered around the case. "People pressed words onto thin sheets of plant fiber and bound them together. You turned the pages by hand."
+
+A boy near the front wrinkled his nose. "Why not just store it?"
+
+"They did, at first. Everything was stored. That's part of the story." She opened the cover. The pages were brittle, the ink faded to the color of weak tea.
+
+She read aloud.
+
+*We did not believe it would happen until it had already happened. There was no single first shot. First the networks went quiet. Then the satellites. Then the power. By the time anyone understood we were at war, we could no longer tell each other.*
+
+*I am writing this by hand because there is nothing else left to write with. My daughter asks what the war is about. I tell her the truth: I no longer know. Every side said it was defending itself.*
+
+The children were silent now. The archivist turned a page, then another, skipping long lists of names and places that no longer existed.
+
+*The winter lasted three years. We learned to grow potatoes under glass. We learned which neighbors would share and which would not. Mostly, they shared.*
+
+The final page was nearly blank, just a few lines in a shakier hand.
+
+*If you are reading this, someone survived. I do not know who won. I am not sure anyone did. Please, whoever you are, remember how quiet it was before it began. That was the warning.*
+
+She closed the book.
+
+"Who won?" asked a girl at the back.
+
+The archivist placed it gently back in its case.
+
+"That," she said, "is the one thing the author wanted us to stop asking."
+
+=== prompt_id: expl-0414 ===
+Many Old Norse names survive in English, reshaped by centuries of sound changes and spelling conventions. Personal names like Eiríkr became Eric, and Rögnvaldr became Ronald. Surnames ending in "-son," such as Johnson or Anderson, echo the Norse patronymic tradition. Place names ending in "-by" (farmstead), "-thorpe" (outlying settlement), and "-thwaite" (clearing) mark Viking settlement in northern and eastern England. Translating them reveals their meaning: Grimsby is "Grim's village," and Thorstein means "Thor's stone."

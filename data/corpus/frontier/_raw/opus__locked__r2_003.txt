@@ -1,0 +1,352 @@
+=== prompt_id: news-0011 ===
+# Asia's Richest Man Builds a $193 Million Monastery — Complete With Bulletproof VIP Rooms
+
+HONG KONG — A lavish Buddhist monastery financed by Li Ka-shing, Asia's richest man, will open to the public by mid-April, offering visitors a close-up view of one of the largest statues of the Goddess of Mercy ever built — and, for a privileged few, rooms protected by bulletproof glass.
+
+Tsz Shan Monastery, whose name translates roughly as "Mountain of Compassion," sits on a green hillside in Tai Po, in Hong Kong's New Territories. The complex cost about HK$1.5 billion, or $193 million, and was paid for through the tycoon's charitable foundation after years of planning and construction.
+
+Towering over the grounds is a gleaming white bronze statue of Guan Yin, the bodhisattva of compassion revered across East Asia. At 76 meters (about 250 feet), it is believed to be the second-tallest Guan Yin statue in the world, surpassed only by a 108-meter figure in Sanya, on China's southern island province of Hainan.
+
+The monastery's more worldly touches have drawn just as much attention. Its VIP rooms are reported to be fitted with bulletproof windows, a feature more often associated with embassies than with places of meditation. The precaution may reflect the high-profile guests the monastery expects to receive, as well as the security concerns that come with being tied to one of the world's wealthiest men.
+
+Li, 86, built an empire spanning ports, property, telecommunications and retail, and his fortune is estimated at more than $30 billion. He is also one of Hong Kong's most prominent philanthropists and has famously described his foundation as his "third son," pledging a third of his assets to it.
+
+Visitors won't pay to get in, but they won't be able to simply turn up, either. Entry will be handled through an online booking system, with daily numbers capped to keep the grounds peaceful. Organizers have said they want Tsz Shan to remain a place for reflection and the study of Buddhism rather than another stop on the city's crowded tourist circuit.
+
+That would set it apart from Hong Kong's best-known Buddhist landmark, the 34-meter Tian Tan Buddha on Lantau Island, which draws busloads of sightseers every day.
+
+Whether a monastery with a 76-meter goddess and bulletproof glass can stay off the tourist map remains to be seen. For now, anyone hoping to see Guan Yin up close will need to book ahead.
+
+=== prompt_id: abst-0121 ===
+The COMPASS experiment at CERN has collected large samples of diffractively produced light mesons using a 190 GeV/c negative pion beam, opening new opportunities to search for states with spin-exotic quantum numbers J^PC = 1^-+. Because these quantum numbers are forbidden for ordinary quark–antiquark pairs, such states are prime candidates for hybrid mesons with excited gluonic degrees of freedom. We present new results from partial-wave analyses of the π−π−π+ final state, based on about 46 million exclusive events recorded on a liquid-hydrogen target, as well as of the ηπ− and η′π− systems. A novel analysis performed in bins of the squared four-momentum transfer t′ allows resonant and non-resonant contributions to the spin-exotic ρ(770)π wave to be disentangled. A resonance signal consistent with the π1(1600) is observed, while non-resonant production dominates at low t′. In the η′π− channel, the spin-exotic P-wave is the dominant partial wave, in striking contrast to ηπ−. Implications for the spectrum of light hybrid mesons are discussed.
+
+=== prompt_id: emai-0231 ===
+Subject: ISDA for Clark County PUD #1
+
+Hi Sara,
+
+Attached is the revised draft of the ISDA Master Agreement and Schedule for Clark County PUD #1. I've incorporated the changes their counsel requested on our call last week, including the updated additional termination events and a cross-default threshold of $10 million. I also added the standard representations for a governmental counterparty, since the PUD will need to confirm it has the legal authority to enter into these transactions.
+
+Could you review the collateral thresholds in the Credit Support Annex before I send it over? I'd like to get the draft back to them by Friday.
+
+Thanks,
+Mark
+
+=== prompt_id: stor-0301 ===
+**Lost and Found**
+
+The first thing I found was a red umbrella, half-buried in the sand above the tide line. I knew it was mine before I'd even pulled it free. I'd left it on a streetcar in Toronto in 2009, and here was the same bent spoke, the same coffee ring on the handle.
+
+I didn't think much about it. I had bigger problems: no boat, no radio, and a coastline that curved away in both directions without a single sign of another person. So I did what the survival shows tell you to do. I went looking for supplies.
+
+Within an hour I'd found my Swiss Army knife, the one I lost at summer camp when I was eleven, my initials still scratched into the red casing. Then a green lighter. Then the sleeping bag I'd abandoned at a music festival, a tarp, a thermos, and an alarming number of water bottles. By noon I had a pile of gear that would have made a quartermaster weep.
+
+I also had forty-three pairs of sunglasses. I had not realized it was forty-three.
+
+Behind the dunes was a hollow filled with nothing but socks. Single socks, thousands of them, every color I'd ever owned, drifted against the palm trunks like snow. I sat down in them and laughed until it turned into something else.
+
+That was when I started to understand the rules. The island didn't hold everything — only the things that had been mine and then weren't. Keys. Library cards. The retainer my parents paid for twice. A ten-dollar bill I dropped outside a movie theater in 1997, still folded into quarters. My grandmother's ring, which I lost when I moved apartments and told my mother had been stolen. I held that one for a long time.
+
+On the second day, a dog came out of the trees.
+
+She was small and brown, with one ear that never stood up, and she ran at me the way she used to when I came home from school. Biscuit. She'd slipped her collar when I was nine, and we'd covered the neighborhood in posters and never heard a thing. She hadn't aged a day. Lost things, apparently, wait exactly as you left them.
+
+I cried into her fur, and she licked the salt off my face, and for a while I didn't care about being rescued at all.
+
+But the longer I walked, the more I wondered what else was out there. I had lost things that weren't shaped like things. A friend named Marcus I'd simply stopped calling. Most of my twenties. The version of me who sang in the car and believed things would work out because they usually had. If he was anywhere, he'd be here.
+
+On the third morning I climbed the island's only hill to look for him.
+
+He wasn't there. But below me, on the far shore, rocking in the shallows with its anchor line trailing, was the boat I had lost three days earlier.
+
+Of course. Everything.
+
+I spent the afternoon deciding what to take. The boat was small. I couldn't bring forty-three pairs of sunglasses or a dune of socks, and I left the ten-dollar bill on a rock for whoever washed up next. Marcus wasn't on the island anywhere, and neither was the version of me who sang in the car. I decided that meant they weren't lost. I'd just stopped going back for them.
+
+I took water. I took the knife. I took my grandmother's ring, because I owed my mother a phone call and the truth.
+
+And I took the dog, who leapt into the bow before I could ask, as though she'd spent twenty-six years waiting for someone to come and bring her home.
+
+=== prompt_id: expl-0401 ===
+Melatonin isn't really a sleeping pill — it's a timing signal. At night, your pineal gland releases a small amount that tells your internal clock it's dark and time to wind down. A dose of about 0.3–0.5 mg roughly matches that natural level. The 5–10 mg doses common on store shelves push blood levels many times higher than normal, and they linger into the next morning. That can cause grogginess, headaches, and vivid dreams, and the leftover hormone sends a muddled "it's still night" message that can blur your circadian rhythm. Constant high exposure may also make melatonin receptors less responsive, so more isn't better.
+
+=== prompt_id: gene-0481 ===
+In the yogic and tantric traditions of India, chakras (Sanskrit for "wheels") are centers of energy and awareness in the subtle body, the nonphysical dimension of a person that is said to interpenetrate the physical one. They're usually pictured as spinning wheels or lotuses arranged along a central channel, the *sushumna nadi*, which runs from the base of the spine to the crown of the head. Different traditions describe their role differently, but most share one core idea: the chakras form a map of consciousness, and spiritual growth means bringing awareness upward through them while keeping the whole system in balance.
+
+## Where the idea comes from
+
+Chakras appear in Hindu and Buddhist tantric texts from roughly the 8th century onward, and early sources don't agree on how many there are; systems with four, five, six, or many more exist. The seven-chakra model most people know today comes mainly from a 16th-century Sanskrit text, the *Ṣaṭ-cakra-nirūpaṇa*, which reached Western readers through Sir John Woodroffe's 1919 book *The Serpent Power*. Many popular associations, such as the rainbow colors, links to specific glands, and psychological themes for each center, were added by Western writers in the 20th century. That doesn't make the modern version worthless, but it is a blend of an old framework and newer interpretation.
+
+## The seven chakras as a path
+
+- **Root (Muladhara)**: base of the spine; safety, survival, grounding
+- **Sacral (Svadhisthana)**: lower abdomen; emotion, pleasure, creativity
+- **Solar plexus (Manipura)**: navel; willpower, confidence, agency
+- **Heart (Anahata)**: center of the chest; love, compassion, forgiveness
+- **Throat (Vishuddha)**: communication, honest self-expression
+- **Third eye (Ajna)**: between the brows; insight, intuition
+- **Crown (Sahasrara)**: top of the head; transcendence, union with the divine
+
+Read from bottom to top, the list describes a journey. A person first needs stability and safety, then a healthy relationship with feeling and desire, then a self they can act from. On that foundation the heart can open to others, followed by authentic expression, deeper insight, and finally a sense of connection beyond the individual self. Many teachers note how closely this mirrors developmental psychology; Maslow's hierarchy of needs is a frequent comparison.
+
+## Kundalini and awakening
+
+In tantric yoga, the chakras are also the stations of *kundalini*, a dormant spiritual energy imagined as a serpent coiled at the base of the spine. Through practice, kundalini is said to rise through the central channel, piercing each chakra in turn. When it reaches the crown, Shakti (the dynamic, feminine principle) unites with Shiva (pure consciousness), and the practitioner attains liberation. In this view, the chakras aren't just symbols of growth but the actual mechanism of awakening, which is why traditional teachers approached kundalini practice with caution and insisted on experienced guidance.
+
+## How practitioners work with them
+
+Common practices include:
+
+- **Meditation and visualization**, resting attention on each center in turn
+- **Mantra**, especially the seed syllables LAM, VAM, RAM, YAM, HAM, and OM
+- **Breathwork (pranayama)**, believed to move vital energy through the subtle channels
+- **Yoga postures** chosen to open particular regions of the body
+- **Self-inquiry**, using each chakra's themes as prompts for reflection
+
+That last practice may be the most useful. Even without any metaphysical commitments, the chakras give people a vocabulary for asking where they feel stuck. Is it a lack of security? Difficulty with intimacy? Fear of speaking up?
+
+## Balance, not just ascent
+
+Many modern teachers stress that spiritual growth isn't a race to the crown. Someone who chases transcendent experiences while neglecting relationships, money, or unresolved grief risks what psychologist John Welwood called "spiritual bypassing." The chakra model pushes back against this: the lower centers aren't obstacles to rise above but foundations to strengthen. Maturity, in this view, means integration: being grounded and open at the same time.
+
+## A note on evidence
+
+There's no scientific evidence that chakras exist as physical structures, and claims linking them to nerve plexuses or endocrine glands are speculative. Many of the practices built around them, however, do have research support: meditation, breathwork, and yoga have measurable effects on stress, attention, and mood. For many people, chakras work best as a contemplative map. They aren't a description of anatomy so much as a structured way to pay attention to the body, examine the mind, and move toward a fuller, more compassionate life.
+
+=== prompt_id: news-0012 ===
+**Philadelphia Woman Charged With Trying to Join ISIS as FBI Cites Her Social Media Posts**
+
+PHILADELPHIA — A 30-year-old Philadelphia woman has been charged with attempting to provide material support to ISIS, with federal investigators citing a string of social media messages they say reveal her eagerness to travel overseas and fight — and possibly die — for the terror group.
+
+Keonna Thomas was taken into custody Friday. She is one of three women to face federal terrorism charges this week, a cluster of cases that has sharpened concern among U.S. officials about the Islamic State's ability to recruit Americans online, including women.
+
+According to an FBI affidavit, Thomas used Twitter and other platforms to voice support for ISIS and to communicate with people investigators believe were fighting in Syria. In one post cited by the FBI, she wrote that if people "truly knew the realities" of the conflict, "we all would be rushing to join our brothers in the front lines."
+
+In another exchange described in the affidavit, a fighter asked whether she would be interested in taking part in a martyrdom operation. Thomas replied that it would be "amazing," adding, "a girl can only wish," according to the FBI.
+
+Investigators say Thomas took concrete steps to act on those words. She obtained a passport, bought an electronic visa for Turkey — a common gateway for foreigners trying to reach ISIS-held territory — and purchased a ticket for a flight to Barcelona, Spain, scheduled to depart in late March. Authorities believe she intended to make her way from there to Syria.
+
+If convicted, Thomas faces up to 15 years in prison. Federal law counts offering oneself to work under a terrorist group's direction as "material support," which allows prosecutors to bring charges even when a suspect never leaves the United States.
+
+Thomas' arrest came a day after two New York women, Noelle Velentzas, 28, and Asia Siddiqui, 31, were charged with conspiring to use a weapon of mass destruction. Prosecutors say the Queens women researched how to build explosives, gathered materials including propane tanks and discussed potential targets in the United States, unaware that a friend they confided in was an undercover officer.
+
+Officials have not suggested the cases are connected, but together they highlight a trend counterterrorism experts have warned about for months. ISIS has made a deliberate push to recruit women through social media, promising them purpose, marriage to fighters and a role in building a so-called caliphate. Hundreds of women from Western countries are believed to have traveled to Syria and Iraq, including three London schoolgirls who slipped away to Syria in February.
+
+For investigators, the same online activity that makes recruitment possible has also become a crucial source of evidence. Many Americans charged with trying to support ISIS were first flagged because of what they posted publicly, and monitoring those conversations has become one of the most important tools for stopping would-be recruits before they ever board a plane.
+
+=== prompt_id: abst-0122 ===
+**Abstract**
+
+We study moduli stabilisation in type II orientifold compactifications on the T^6/(Z_2 × Z_2) orbifold in the presence of general flux backgrounds, including gauge, geometric and non-geometric fluxes. The resulting four-dimensional theories are N = 1 supergravities whose superpotentials depend polynomially on all closed-string moduli, with flux parameters constrained by Bianchi identities and tadpole cancellation conditions. We show that the Bianchi identities can be recast as the Jacobi identities of an underlying gauge algebra of the effective supergravity, so that the space of consistent flux configurations can be organised algebraically. Exploiting this correspondence, we classify the admissible algebras and analyse the vacuum structure associated with each. We derive no-go theorems that forbid de Sitter, and in certain cases Minkowski, vacua with all moduli stabilised for specific classes of algebras, and identify the algebraic structures capable of evading these restrictions. Our results clarify the interplay between duality-covariant fluxes, gauge algebras and vacuum selection in string compactifications.
+
+=== prompt_id: emai-0232 ===
+Subject: Reminder – Personal Online Trading Policy
+
+Hello all,
+
+A quick reminder that all personal online trades in individual stocks, bonds, or options must be pre-cleared through the compliance portal before you place them. This applies to any brokerage account you or your immediate family members control. Trading in company stock during the blackout period ahead of quarterly earnings is not permitted. If you've recently opened a new online brokerage account, please disclose it to Compliance by Friday.
+
+Thanks,
+Daniel
+
+=== prompt_id: stor-0302 ===
+Steve had put it in his will as a joke. Mostly a joke. Item seven, right below "the bass boat goes to Kevin," read: *I want a Viking funeral. Burning ship, the works. Sounds cool.*
+
+He had not expected Kevin to take it literally. But Kevin had always been a literal kid, the kind who, when told to go jump in a lake, asked which one. So on a gray Saturday morning, with a borrowed canoe, two bottles of lighter fluid, and a park ranger who'd been told it was "a memorial bonfire," Kevin pushed his father out onto the water and fired a flaming arrow that missed by eleven feet.
+
+The second one hit.
+
+Steve watched from somewhere above the treeline, feeling oddly proud. Then came the light, and the warmth, and distant singing, and he thought: *Okay. Here we go.*
+
+He opened his eyes in a vast hall of timber and shields. Long tables stretched into the haze. The air smelled like roast pork and wet dog. And directly in front of him, roughly the size of a refrigerator and twice as hairy, stood a Viking.
+
+"YOU," the Viking bellowed.
+
+"Hi," said Steve. "Is this—am I in—"
+
+"Do you know what a man must do to earn a burning ship?" The Viking jabbed a finger the size of a bratwurst into Steve's chest. "I took an axe to the face at Stamford Bridge! I drowned in my own blood with a sword in each hand! And you? How did you die?"
+
+Steve considered lying. "Pretzel," he said finally. "At a hockey game."
+
+The Viking made a noise like a bear stepping on a Lego.
+
+"It was a really big pretzel," Steve added.
+
+"The ship is a sacred passage. It is not a *theme*." The Viking stomped to a weapons rack and wrenched something free. "You came by the ship, so you fight with the einherjar. Every day until Ragnarök. We fight. We die. We wake. We feast. We fight again."
+
+"Every day?"
+
+"Every. Day." He tossed the weapon. Steve caught it mostly with his face. When his vision cleared, he looked down. It was half of a spear. Less than half. A broken stick with a rusty point wobbling on the end.
+
+"Why is mine broken?"
+
+"The good ones are for warriors." The Viking leaned close, his breath a mix of mead and old herring. "Good luck, Steve. It's going to be a long afterlife."
+
+A horn blasted. Across the hall, a thousand bearded men rose from the benches with a roar, and every one of them turned to look at Steve.
+
+He swallowed. He thought about Kevin back on the shore, probably crying, definitely holding the bow wrong. He thought about item seven, and how easily it could have said *cremation, nice urn, somewhere on the mantel.*
+
+Steve raised his stick.
+
+"Okay," he said. "Before we start — does anyone want to talk about this?"
+
+Nobody did.
+
+=== prompt_id: expl-0402 ===
+Data can be stored in diamond by exploiting atomic-scale defects in its crystal lattice, most notably nitrogen-vacancy (NV) centers, in which a nitrogen atom sits beside a missing carbon atom. These defects can exist in different electrical charge states, and precisely tuned laser pulses can switch the defects within a tiny targeted region from one state to another. Because each charge state fluoresces differently under illumination, a low-power reading laser can determine whether a given site represents a 0 or a 1. Focusing the laser at different depths allows information to be written in multiple layers, enabling three-dimensional storage. Owing to diamond's exceptional stability, data kept in darkness can persist for very long periods.
+
+=== prompt_id: gene-0482 ===
+Before the 1800s, most people didn't "apply" for jobs the way we do today. The vast majority worked in agriculture or in a family trade, and work was usually found through personal connections and face-to-face arrangements rather than written applications.
+
+**How people heard about openings**
+
+- **Word of mouth.** Family, neighbors, fellow parishioners, and other workers were the main source of information. Taverns, coffeehouses, and market days served as informal job boards.
+- **Hiring fairs.** In England, annual "hiring" or "mop" fairs brought farm laborers and servants into market towns. Workers displayed a token of their trade (a shepherd might hold a tuft of wool, a carter a piece of whipcord, a maid a mop) and were typically hired for a year.
+- **Apprenticeship.** Skilled trades were controlled by guilds. Parents arranged for a child, often around age 14, to be bound by contract (an indenture) to a master for about seven years in exchange for training, food, and lodging.
+- **Newspapers.** By the 1700s, newspapers in London and colonial American cities carried advertisements for clerks, servants, and tutors, and job seekers sometimes advertised themselves.
+- **Register offices.** Cities developed early employment agencies. In 1749, novelist Henry Fielding and his brother John opened London's Universal Register Office, which, among other services, matched servants with employers for a fee.
+
+**How people applied**
+
+Most hiring happened in person. A laborer showed up at a farm, workshop, or dock and was judged on appearance, strength, and skill. For domestic service and other positions of trust, a "character" (a reference from a former employer) was essential. More educated candidates, such as clerks, secretaries, or tutors, wrote letters of application by hand, and neat penmanship was itself a qualification. Many government, church, and military posts depended on patronage: the backing of a powerful sponsor often mattered more than ability.
+
+**An important caveat**
+
+A great deal of labor in this era wasn't freely chosen. Indentured servitude, parish apprenticeships forced on poor children, and slavery accounted for a large share of work, particularly in the Americas, so any discussion of "job hunting" in this period should acknowledge that many workers had little choice at all.
+
+=== prompt_id: news-0013 ===
+When an investor turned down Jia Jiang's startup idea in 2012, the rejection hurt so much that he nearly abandoned his dream of becoming an entrepreneur. Instead, he decided to get used to hearing "no."
+
+Jiang, who moved from China to the United States as a teenager, gave himself a challenge: every day for 100 days, he would make a request he expected to be refused, and he would film each attempt.
+
+The requests were deliberately unusual. He asked a stranger to lend him $100. He asked a burger restaurant for a "burger refill." He asked to play soccer in a stranger's backyard.
+
+Then, on day three, he walked into a Krispy Kreme and asked for doughnuts linked together like the Olympic rings. To his astonishment, the employee made them. The video spread rapidly online, drawing millions of views, and "100 Days of Rejection" suddenly had a global audience.
+
+What began as personal therapy turned into an unexpected career. Jiang wrote a book, "Rejection Proof," delivered a popular TED talk and now speaks to audiences about overcoming fear.
+
+The experiment pushed him far outside his comfort zone, but it taught him that rejection itself is rarely as painful as people imagine. What really holds us back, Jiang concluded, is the fear of rejection — the dread of hearing "no" that keeps many people from asking at all.
+
+Along the way, he discovered something else: when he asked, people said "yes" far more often than he expected.
+
+=== prompt_id: abst-0123 ===
+Although L1₀-ordered Mn–Ga combines large perpendicular magnetic anisotropy, low Gilbert damping, and high spin polarization, making it attractive for spin-transfer-torque memory and terahertz spintronic devices, its magnetic behavior in the ultrathin limit required for device integration remains poorly understood. Here, epitaxial L1₀ Mn–Ga films with thicknesses from 1 to 10 nm were grown by molecular beam epitaxy on Cr-buffered MgO(001) substrates and characterized by X-ray diffraction, reflection high-energy electron diffraction, and magnetometry. The perpendicular anisotropy decreases markedly as film thickness is reduced and is almost entirely lost below a critical thickness. Structural measurements indicate that this loss originates from epitaxial strain imposed by the buffer layer, which suppresses the tetragonal distortion of the unit cell. These findings establish strain management as a central consideration in scaling Mn–Ga-based devices.
+
+=== prompt_id: emai-0233 ===
+Subject: Bread Pudding Recipe
+
+Hi everyone,
+
+Thanks to all who came out for Friday's potluck, and to the many of you who stopped by my desk asking for the bread pudding recipe. Here it is:
+
+**Ingredients**
+- 1 loaf day-old brioche or French bread, cubed (about 8 cups)
+- 4 large eggs
+- 2 cups whole milk
+- 1 cup heavy cream
+- ¾ cup brown sugar
+- 4 tbsp butter, melted
+- 1 tsp vanilla extract
+- 1 tsp cinnamon
+- ¼ tsp nutmeg
+- ½ cup raisins (optional)
+
+**Instructions**
+1. Preheat the oven to 350°F and butter a 9x13-inch baking dish.
+2. Spread the bread cubes in the dish and scatter the raisins over them.
+3. Whisk together the eggs, milk, cream, sugar, butter, vanilla, and spices.
+4. Pour the mixture evenly over the bread, press down gently, and let it soak for 20 minutes.
+5. Bake for 45–50 minutes, until the top is golden and the center is set.
+
+For the caramel sauce, simmer ½ cup butter, 1 cup brown sugar, and ½ cup cream for about 3 minutes, then stir in a splash of bourbon or vanilla.
+
+If you try it at home, I'd love to hear how it turns out.
+
+Best,
+Rachel
+
+=== prompt_id: stor-0303 ===
+**A Revised Assessment of Risk**
+
+For twenty-six years I was employed as an actuary, which is to say that my profession consisted of determining, with as much precision as the data allowed, the probability that something terrible would happen to someone. I mention this so the reader understands that I did not undertake the robbery of the Commonwealth Savings Bank lightly. I had calculated the risks. I had concluded that they were acceptable.
+
+My circumstances were as follows. I had been dismissed from my position in March, following a restructuring that was described to me as "no reflection on your performance." My savings had been exhausted by my wife's illness, and subsequently by her funeral. In August, the bank in question foreclosed on the house she and I had shared for thirty-one years. I offer these facts not as justification, but as context.
+
+I entered the branch at 9:42 on a Tuesday morning, wearing my good overcoat and carrying a replica pistol purchased from a theatrical supply shop. I presented a typed note at the second teller window and waited. The teller, a young man whose badge identified him as Desmond, read the note twice, then looked past my shoulder.
+
+I had not accounted for the security guard. It was, in retrospect, an elementary error.
+
+He fired three times. I registered the reports and a sensation comparable to being struck by a thrown tennis ball, followed by the sound of small metal objects striking the marble floor. Looking down, I observed three bullets, each flattened into a disc roughly the size of a coin. My overcoat had been perforated. I had not.
+
+The guard, to his credit, recovered more quickly than I did. He fired twice more, the second shot directed at my head. I felt it as a firm tap on the forehead, as though someone were attempting to get my attention.
+
+There followed a silence of perhaps four seconds, during which every person in the lobby, myself included, attempted to revise their understanding of the world.
+
+I wish to be precise about my state of mind at that moment, as I believe it is the most important part of this account. I did not feel powerful. I felt, rather, that every calculation I had ever made about my own life rested on a flawed assumption. I had robbed the bank because I believed I had nothing left to lose. It now appeared that I could not lose anything at all — not my life, at any rate, and possibly not for a very long time.
+
+That is a different problem, and a considerably larger one.
+
+I placed the replica on the counter, slid the note back to Desmond, and sat down on the bench beside the window to await the police. When they arrived, I informed them that I would not resist and requested a pen and paper. This statement is the result.
+
+I am told the charges against me carry a substantial sentence. I find I am less concerned with its length than with what I shall do once it has been served, and in all the years that follow. I remain, by training, an actuary. I have begun revising the tables.
+
+=== prompt_id: expl-0403 ===
+The Earth's rotation does not directly affect flight duration. The atmosphere rotates along with the planet, so an aircraft moves relative to a body of air that is already traveling at essentially the same speed as the surface below. Consequently, an eastbound aircraft gains no advantage from the Earth "turning beneath it," and a westbound aircraft incurs no penalty.
+
+Rotation does, however, exert an important indirect influence. Together with the temperature contrast between the equator and the poles, the Coriolis effect arising from the Earth's rotation helps generate the jet streams: fast, west-to-east currents of air in the upper atmosphere. At mid-latitudes, eastbound flights can take advantage of these tailwinds, whereas westbound flights must fly into them. For this reason, a flight from New York to London is typically about an hour shorter than the return journey.
+
+=== prompt_id: gene-0483 ===
+In cold-weather climates, winter activities generally fall into a few categories:
+
+**Snow sports**
+- Downhill skiing and snowboarding
+- Cross-country skiing and snowshoeing
+- Sledding and tobogganing
+- Snowmobiling
+
+**Ice-based activities**
+- Ice skating on rinks or frozen ponds
+- Ice hockey and curling
+- Ice fishing, often from small shelters on frozen lakes
+
+**Casual outdoor fun**
+- Building snowmen and snow forts
+- Snowball fights
+- Winter hiking and wildlife spotting
+
+**Cultural traditions**
+- Winter festivals, such as Quebec City's Winter Carnival or the Harbin Ice and Snow Festival in China
+- Sauna sessions followed by a cold plunge, especially popular in Finland and other Nordic countries
+
+**Indoor pastimes**
+- Gathering with friends and family over hot drinks and comfort food
+- Reading, crafts, and board games
+- Visiting museums, theaters, and indoor sports facilities
+
+Several of these began as necessities rather than hobbies. Skis and snowshoes, for example, were originally practical tools for traveling and hunting over deep snow.
+
+=== prompt_id: news-0014 ===
+Germanwings crash: Flight data shows descent was programmed from inside the cockpit
+
+The descent that sent Germanwings Flight 9525 into a mountainside in the French Alps was deliberately programmed from inside the cockpit, according to transponder data, adding new weight to investigators' conclusion that the plane's co-pilot crashed it on purpose.
+
+Data analyzed by the flight-tracking service Flightradar24 shows that shortly after the Airbus A320 reached its cruising altitude of 38,000 feet, the altitude selected on the autopilot was changed to about 100 feet, the lowest possible setting. The jet then began a steady descent that lasted roughly 10 minutes before it struck remote terrain, killing all 150 people on board.
+
+Such a change requires deliberately turning a selector on the autopilot control panel in the cockpit, making an accidental input or mechanical fault highly unlikely.
+
+The finding supports the account given by Marseille prosecutor Brice Robin, who said the cockpit voice recorder showed that co-pilot Andreas Lubitz, 27, was alone at the controls after the captain stepped out, refused to open the door, and initiated the descent. According to Robin, the recording captures the captain knocking and then pounding on the door while the co-pilot remains silent. Lubitz's breathing, he said, was normal until the moment of impact.
+
+Carsten Spohr, chief executive of Germanwings' parent company Lufthansa, said the company was "speechless that this aircraft has been deliberately crashed by the co-pilot." He said Lubitz had passed all of the airline's required tests and was fully fit to fly. Lubitz joined Germanwings in 2013 and had about 630 hours of flight experience. His pilot training had been interrupted for several months in 2009, Spohr said, though he did not say why.
+
+Yet despite the mounting evidence about how the crash happened, investigators say they are baffled as to why. Authorities have found no indication of links to terrorism. German police on Thursday searched Lubitz's apartment in Düsseldorf and his parents' home in Montabaur, carrying away boxes and a computer, as investigators examine his personal life, health and communications for clues to his state of mind.
+
+The flight was en route from Barcelona to Düsseldorf on Tuesday morning when it went down. Among the victims were 16 students and two teachers from a high school in Haltern am See, Germany, who were returning from an exchange trip to Spain. Most of the passengers were German or Spanish.
+
+The revelations have already prompted changes across the industry. Several airlines, including easyJet, Norwegian Air Shuttle and Air Canada, announced they would require two crew members to be in the cockpit at all times — a rule already standard for U.S. carriers.
+
+Meanwhile, recovery teams continue to work on the steep, rocky slope where the plane came down, a site reachable only by helicopter. They are still searching for the aircraft's second black box, the flight data recorder, which could provide further detail about the final minutes of the flight.
+
+For the families of those killed, many of whom traveled to the region this week, the unanswered question of why may be the hardest part.
+
+=== prompt_id: abst-0124 ===
+Millimeter wave (mmWave) communication is a key enabler of 5G connected vehicle applications that demand multi-gigabit data rates and low latency, such as cooperative perception, high-definition map distribution, and remote driving. However, mmWave links are highly sensitive to blockage, mobility, and beam misalignment, and most existing studies evaluate these effects at the physical or link layer in isolation, offering limited insight into the performance that applications actually experience. This paper presents an evaluation framework for end-to-end 5G mmWave communication in vehicular environments. The framework couples a network simulator implementing a full 5G protocol stack, including beam management, handover, the radio access and core networks, and transport-layer protocols, with a microscopic traffic simulator and a geometry-based channel model that captures dynamic blockage by surrounding vehicles and buildings. Application-level models allow end-to-end metrics such as latency, throughput, packet delivery ratio, and age of information to be measured under realistic traffic conditions. Using the framework, we evaluate representative connected vehicle applications in urban and highway scenarios with varying base station densities, traffic loads, and deployment options, including multi-access edge computing. Results show that while mmWave links can satisfy the throughput requirements of bandwidth-intensive applications under line-of-sight conditions, frequent blockage and handover events introduce latency spikes that can violate the requirements of safety-critical services. TCP-based applications are particularly affected, with throughput dropping sharply during link interruptions. We further show that denser base station deployment, multi-connectivity, and edge computing substantially improve reliability and latency. The framework provides a foundation for the design and evaluation of mmWave-based vehicular networks.

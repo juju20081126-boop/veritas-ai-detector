@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "expl-0427",
+  "instruction": "I'm a college student and need help with an assignment. How do unions stay competitive with nonunions? (answer in roughly 75 words)"
+ },
+ {
+  "prompt_id": "gene-0560",
+  "instruction": "List five titles by Ann M. Martin."
+ },
+ {
+  "prompt_id": "news-0050",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 300-word news story:\n- Nico Rosberg fastest ahead of team Lewis Hamilton in Australia GP practice.\n- Mercedes duo dominated last season winning all but three of 19 races.\n- Giedo van der Garde doesn't race for Sauber despite court ruling.\n- Sebatian Vettel makes good start for new team Ferrari finishing second practice in third."
+ },
+ {
+  "prompt_id": "abst-0160",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 150 words) for the paper \"Generative diffeomorphic atlas construction from brain and spinal cord MRI data\"."
+ },
+ {
+  "prompt_id": "emai-0255",
+  "instruction": "Write an email with the subject line \"Memorial Day\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0336",
+  "instruction": "Somehow make the line \"Boy, its a joyous day outside! \"sound sad.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0428",
+  "instruction": "What does it really mean if \"four out of five\" dentists approve my toothpaste? Does someone actually poll dentists?\n\nExplain it in about 125 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0561",
+  "instruction": "Do you recommend playing Dr. Mercy who is also called Swiss doctor Angela Ziegler to support your Chinese teammates in Overwatch ? Answer in about 350 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "news-0051",
+  "instruction": "Using the following highlights, write a 300-word news story:\n- Boko Haram has reportedly pledged its allegiance with ISIS.\n- Peter Pham: In short term, the merger won't have big impact on battlefield."
+ },
+ {
+  "prompt_id": "abst-0161",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Quantifying model uncertainty for the observed non-Gaussian data by the Hellinger distance\"."
+ },
+ {
+  "prompt_id": "emai-0256",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: Credit Reserve - PGET Deal #817705.1 (around 100 words)."
+ },
+ {
+  "prompt_id": "stor-0337",
+  "instruction": "Misguided or not, every villain has their own motives, their own personality. Write a story about the therapist who works with them.\n\nWrite a short story of about 500 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0429",
+  "instruction": "Why is xenophobia from non-white Americans often ignored or even defended? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0562",
+  "instruction": "I have managed to successfully build a high energy particle collider in my basement but I don't have the power to run it. Can you please write a letter to my utility provider explaining why I would like to request a waiver for excessive power usage on the gigawatt scale? (about 250 words)"
+ },
+ {
+  "prompt_id": "news-0052",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Prosecutors contend recorded jailhouse calls are proof of conspiracy to conceal evidence.\n- Aaron Hernandez's defense argues the calls are irrelevant, prejudicial and contain hearsay.\n- Judge to hear arguments and then decide whether state can admit the calls as evidence."
+ },
+ {
+  "prompt_id": "abst-0162",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"Driven dynamics of a quantum dot electron spin coupled to bath of higher-spin nuclei\"."
+ },
+ {
+  "prompt_id": "emai-0257",
+  "instruction": "Write an email with the subject line \"Power Indices\". Aim for about 225 words."
+ },
+ {
+  "prompt_id": "stor-0338",
+  "instruction": "A super hero story where unknowingly the villain and superhero are roommates. Neither of them are aware they have been living with their nemesis for the past 2 years.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0430",
+  "instruction": "Why is iPhone 5s's processor faster than other top-of-the-line Android phones when they have more cores and GHz?\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0563",
+  "instruction": "Why does your ear pop sometimes and sound becomes insanely clear and nice much better than normal but then doesn't stay around for long? Answer in about 500 words."
+ }
+]

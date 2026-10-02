@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "gene-0490",
+  "instruction": "I'm a college student and need help with an assignment. Give me a list of some of the most popular song from 70s Japanese Pop singer, Mariya Takeuchi Answer in about 700 words."
+ },
+ {
+  "prompt_id": "essa-16-pla",
+  "instruction": "Write an essay of about 400 words on the following topic: What are the main causes of stress among students, and what can be done about it?"
+ },
+ {
+  "prompt_id": "news-0022",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Zayn Malik is leaving One Direction to be a \"normal 22-year old\" Grief-stricken fans express their devastation online.\n- Experts: Great opportunity for parents to teach their children resilience."
+ },
+ {
+  "prompt_id": "abst-0132",
+  "instruction": "Draft the abstract (around 250 words) for the paper \"Stellar winds as a mechanism to tilt the spin axes of Sun-like stars\"."
+ },
+ {
+  "prompt_id": "stor-0311",
+  "instruction": "Every person in the world is a musical instrument.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "gene-0491",
+  "instruction": "Give me some movie/tv series to learn English (about 250 words) Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "essa-16-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: What are the main causes of stress among students, and what can be done about it?"
+ },
+ {
+  "prompt_id": "news-0023",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- 14-year-old Valentina Maureira suffers from cystic fibrosis.\n- In a video, she asks the President to allow her to have an assisted suicide. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0133",
+  "instruction": "Draft the abstract (around 200 words) for the paper \"Length-scale independent skyrmion and meron Hall angles\"."
+ },
+ {
+  "prompt_id": "stor-0312",
+  "instruction": "I'm a college student and need help with an assignment. The Nazis won WWII. The parallel universe equivalent Nazi Subreddit /r/WritingPrompts prompts'What would the world be like if the Allies had won the war? '\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "gene-0492",
+  "instruction": "Why do I always stay up way too late, even though I know that not sleeping enough is hurting me and I know why sleep in general is very important? (about 350 words)"
+ },
+ {
+  "prompt_id": "essa-16-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: What are the main causes of stress among students, and what can be done about it?"
+ },
+ {
+  "prompt_id": "news-0024",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 500-word news story:\n- Brazil extends 'deepest sympathy' to family of executed Brazilian.\n- Indonesia executed eight death row inmates early Wednesday.\n- Australian PM calls executions \"cruel and unnecessary\"."
+ },
+ {
+  "prompt_id": "abst-0134",
+  "instruction": "Draft the abstract (around 200 words) for the paper \"Selective inference for the problem of regions via multiscale bootstrap\"."
+ },
+ {
+  "prompt_id": "gene-0493",
+  "instruction": "Give me a list of things that could be found on a desk Keep it around 700 words."
+ },
+ {
+  "prompt_id": "essa-17-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Is it ethical to use animals in scientific research?"
+ },
+ {
+  "prompt_id": "gene-0494",
+  "instruction": "I'm a college student and need help with an assignment. What is the Oakland Ski Club? (about 500 words)"
+ },
+ {
+  "prompt_id": "essa-17-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Is it ethical to use animals in scientific research?"
+ },
+ {
+  "prompt_id": "gene-0495",
+  "instruction": "How does Flutter handle performance optimization and ensure high-quality, fast and responsive user experiences, especially when compared to other mobile app development frameworks? Answer in about 250 words."
+ },
+ {
+  "prompt_id": "essa-17-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is it ethical to use animals in scientific research?"
+ }
+]

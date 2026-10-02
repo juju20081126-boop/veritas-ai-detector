@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0041",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 300 words based on these key points:\n- At least 23 people were killed in an attack on Bardo Museum in Tunis.\n- Mabrouka M'Barek: Tunisia has failed to \"recruit\" its citizens into society."
+ },
+ {
+  "prompt_id": "abst-0151",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"A Universal Critical Density Underlying the Physics of Electrons at the LaAlO3/SrTiO3 Interface\"."
+ },
+ {
+  "prompt_id": "emai-0246",
+  "instruction": "Write an email with the subject line \"[EDIS] URGENT WEATHER MESSAGE [Urgent: Sacramento Valley]\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0327",
+  "instruction": "You were reincarnated and you retained all memories of your previous life. But instead of using this knowledge to become famous or rich, you instead use it to be the worst obnoxious little shit possible, always saying'innocent 'things that are 100% inappropriate in the given situation.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0419",
+  "instruction": "Did Romans invent anything (culturally) new or just rip off the superior Greek culture? (answer in roughly 125 words)"
+ },
+ {
+  "prompt_id": "gene-0552",
+  "instruction": "How does the mathematical concept of a fractal relate to the physical world? Keep it around 250 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "news-0042",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 250 words based on these key points:\n- Remains of Richard III were sensationally rediscovered 530 years after death.\n- Actor Benedict Cumberbatch, a distant cousin of king, reads poem at celebratory service.\n- Historian Phillippa Langley said discovery had prompted researchers to rethink the king."
+ },
+ {
+  "prompt_id": "abst-0152",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"Surface Networks via General Covers\"."
+ },
+ {
+  "prompt_id": "emai-0247",
+  "instruction": "I'm a college student and need help with an assignment. Write an email with the subject line \"Annual Meeting 2002\". Aim for about 150 words."
+ },
+ {
+  "prompt_id": "stor-0328",
+  "instruction": "I'm a college student and need help with an assignment. Write a 300-word story for this prompt: everyone who had taken the vaccine died or went insane. You survived but when you looked in mirror something was different.."
+ },
+ {
+  "prompt_id": "expl-0420",
+  "instruction": "Is there a difference between a drone and an RC quadcopter?\n\nExplain it in about 60 words."
+ },
+ {
+  "prompt_id": "gene-0553",
+  "instruction": "I'm a college student and need help with an assignment. How many squares does a chessboard have? Answer in about 350 words."
+ }
+]

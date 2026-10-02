@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "abst-0144",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"On Matrix Geometry and Effective Actions\"."
+ },
+ {
+  "prompt_id": "gene-0527",
+  "instruction": "Why are zebras striped? Explain, with a focus on the function of the stripes esp in Zse sze fly repellation - formulate at primary school level. Answer in about 250 words."
+ },
+ {
+  "prompt_id": "gene-0528",
+  "instruction": "Why does a US $20 bill have a vertical strip on it when held to light? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0529",
+  "instruction": "What is the best way to wake up fresh in the morning?"
+ },
+ {
+  "prompt_id": "gene-0530",
+  "instruction": "I'm a college student and need help with an assignment. Write a paragraph explaining what an ostrich is in the style of Charles Dickens."
+ },
+ {
+  "prompt_id": "gene-0531",
+  "instruction": "I'm a college student and need help with an assignment. What is the best skill in judo? (about 700 words)"
+ },
+ {
+  "prompt_id": "gene-0532",
+  "instruction": "How do you know if you're a good person? Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0533",
+  "instruction": "How did human behavior and cognition evolve over time and what are some of the factors that influence them in different cultures and contexts? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "gene-0534",
+  "instruction": "I'm a college student and need help with an assignment. Could you provide a latex template to write an academic article? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0535",
+  "instruction": "What are the typical plans for white in the Scheveningen?"
+ },
+ {
+  "prompt_id": "gene-0536",
+  "instruction": "Write a joke about a person going into a bar."
+ },
+ {
+  "prompt_id": "gene-0537",
+  "instruction": "What are some sports that are played with a round ball?"
+ }
+]

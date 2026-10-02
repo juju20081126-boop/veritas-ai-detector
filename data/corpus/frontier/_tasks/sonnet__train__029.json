@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "gene-0575",
+  "instruction": "I'm a college student and need help with an assignment. Please write a generic Kotlin function that finds the transpose of a matrix (i.e. a two-dimensional list), which satisfies the following constraints:\n- It should be written as an extension function, so it can be called on any instance of type `List<List<T>>`.\n- It should throw an exception if the List is not a matrix.\n- It shouldn't modify the original list, but instead return a new instance."
+ },
+ {
+  "prompt_id": "news-0065",
+  "instruction": "Write a news article of about 300 words based on these key points:\n- Kim Bok-dong is determined to share her story of sexual slavery until she's no longer physically able.\n- Kim was held prisoner by the Japanese military in a \"comfort station\" for five years, raped ceaselessly.\n- She says she won't rest until she receives a formal apology from the Japanese government."
+ },
+ {
+  "prompt_id": "abst-0175",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 150 words) for the paper \"A 3D Non-Stationary Wideband Geometry-Based Channel Model for MIMO Vehicle-to-Vehicle Communication System\"."
+ },
+ {
+  "prompt_id": "gene-0576",
+  "instruction": "I'm a college student and need help with an assignment. Who won the 1998-99 UEFA Champions League?"
+ },
+ {
+  "prompt_id": "news-0066",
+  "instruction": "Write a news article of about 500 words based on these key points:\n- CNN investigation uncovers the business inside a human smuggling ring.\n- 10% discount offered for every referral of another paying migrant, desperate to reach Europe."
+ },
+ {
+  "prompt_id": "abst-0176",
+  "instruction": "Draft the abstract (around 225 words) for the paper \"Black hole in the West Nucleus of Arp 220\"."
+ },
+ {
+  "prompt_id": "gene-0577",
+  "instruction": "How do you create an array in toml?"
+ },
+ {
+  "prompt_id": "news-0067",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- A second teen has been charged with helping plan an \"ISIS-inspired\" attack.\n- One 18-year-old suspect has already been charged, report says. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0177",
+  "instruction": "Write an abstract of about 100 words for a research paper titled \"Domains and Random Variables\"."
+ },
+ {
+  "prompt_id": "gene-0578",
+  "instruction": "Supposed we lived in a world like Toy Story, where toys were anthropomorphic and could speak, but everyone was aware of them.\nWhat would toy society look like? How would a large number of unemployed toys impact the economy?"
+ },
+ {
+  "prompt_id": "gene-0579",
+  "instruction": "Why do think the number zero only emerged in human culture a limited amount of times? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "gene-0580",
+  "instruction": "What is the best way to develop a tool, such a small farm implement, that a bird such as a crow could use effectively? Describe the process of building such a tool. Answer in about 500 words."
+ }
+]

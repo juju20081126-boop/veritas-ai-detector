@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "expl-0404",
+  "instruction": "I'm a college student and need help with an assignment. \"galicia\" refers to multiples places (presumably) because of how widespread celtic peoples were; iberia also refers to multiple places. what other examples are there?\n\nExplain it in about 150 words."
+ },
+ {
+  "prompt_id": "gene-0484",
+  "instruction": "What is a Flat Earth Society Keep it around 350 words."
+ },
+ {
+  "prompt_id": "essa-16-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: What are the main causes of stress among students, and what can be done about it?"
+ },
+ {
+  "prompt_id": "news-0016",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 500 words):\n- Arnold Palmer says he understands why Tiger Woods won't play at his tournament.\n- Woods is struggling to be ready for next month's Masters at Augusta."
+ },
+ {
+  "prompt_id": "abst-0126",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"I-vector Transformation Using Conditional Generative Adversarial Networks for Short Utterance Speaker Verification\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0235",
+  "instruction": "Write an email with the subject line \"The Morning Market Call - Thursday September 6th, 2001.\". Aim for about 125 words."
+ },
+ {
+  "prompt_id": "stor-0305",
+  "instruction": "I'm a college student and need help with an assignment. Write a 400-word story for this prompt: An immortal man is sentenced to life in prison."
+ },
+ {
+  "prompt_id": "expl-0405",
+  "instruction": "How many of the French aristocrats who fled to England/Austria/wherever after the Revolution of eventually managed to come back to France? Did Napoleon allow any of them to return? (answer in roughly 150 words)"
+ },
+ {
+  "prompt_id": "gene-0485",
+  "instruction": "Can you please explain to me the problem with three doors and two goats? Why is it better to change the door? (about 500 words)"
+ },
+ {
+  "prompt_id": "essa-17-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Is it ethical to use animals in scientific research?"
+ },
+ {
+  "prompt_id": "news-0017",
+  "instruction": "Using the following highlights, write a 500-word news story:\n- Incumbent President Goodluck Jonathan and retired general Muhammedu Buhari faced off in election.\n- It could be the closest elections since a return to democracy in 1999 after decades of military rule.\n- There are fears that results may not be accepted by the losers."
+ },
+ {
+  "prompt_id": "abst-0127",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Behavior of Charmonium Systems after Deconfinement\"."
+ },
+ {
+  "prompt_id": "stor-0306",
+  "instruction": "You run an RPG pawn shop. You haggle with adventurers who try to sell loot they've acquired.\n\nWrite a short story of about 400 words."
+ },
+ {
+  "prompt_id": "expl-0406",
+  "instruction": "Would a long system of gears transfer power/information faster than light or electricity\n\nExplain it in about 200 words."
+ },
+ {
+  "prompt_id": "gene-0486",
+  "instruction": "Why do gamer groups have clerics in their party, and what might happen if those clerics were not in the party? (about 250 words)"
+ },
+ {
+  "prompt_id": "essa-17-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Is it ethical to use animals in scientific research?"
+ },
+ {
+  "prompt_id": "news-0018",
+  "instruction": "I'm a college student and need help with an assignment. Using the following highlights, write a 300-word news story:\n- Two pieces of asteroid crashed into Australia many millions of years ago.\n- Researchers stumble across traces of the impact zone deep in the earth's crust."
+ },
+ {
+  "prompt_id": "abst-0128",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Structure Functions and Extraction of PDFs at HERA\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0307",
+  "instruction": "Write a 500-word story for this prompt: You swear that you keep seeing the same woman in blue every time you go on family vacation, when you turn 18, you are introduced to her. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0407",
+  "instruction": "I'm a college student and need help with an assignment. Why do beams of light travel in a straight lines if beams aimed at double slits can go through either and end up all over the place to create interference patterns?\n\nExplain it in about 125 words."
+ }
+]

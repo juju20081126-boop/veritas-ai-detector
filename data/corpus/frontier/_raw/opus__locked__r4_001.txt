@@ -1,0 +1,361 @@
+=== prompt_id: news-0018 ===
+Scientists in Australia have uncovered evidence of what may be the largest asteroid impact zone ever found on Earth, buried deep beneath the outback.
+
+The impact area stretches roughly 400 kilometers across and lies in the Warburton Basin, near the meeting point of South Australia, Queensland and the Northern Territory. Researchers believe it formed when an asteroid broke apart shortly before striking the planet, sending two enormous fragments, each thought to be more than 10 kilometers wide, slamming into the ground.
+
+The collision happened so long ago, likely more than 300 million years, that no craters remain at the surface. Erosion, sediment and the slow movement of the crust have long since erased any visible scar.
+
+Instead, the discovery came almost by accident. Geologists drilling several kilometers into the crust as part of geothermal research noticed something unusual in the rock cores they brought up. Embedded in the samples were grains of quartz crossed by thin, parallel fractures, a feature known as shock lamellae that forms only under the extreme pressures created by a violent impact.
+
+Further evidence emerged when the team examined geophysical data from the region. Their models of the deep crust revealed two separate dome-shaped structures, the kind of rebound that occurs when rock springs back after being struck with tremendous force. The paired domes support the theory that the asteroid split in two before it hit.
+
+Lead researcher Andrew Glikson of the Australian National University said that impacts of this scale may have shaped Earth's history far more than scientists have assumed, potentially playing a role in major extinction events.
+
+For now, however, the precise age of the impact remains uncertain, and researchers have not been able to tie it to a specific extinction. The team hopes that further drilling and laboratory dating will narrow down exactly when the twin fragments struck, and what effect they had on life at the time.
+
+=== prompt_id: abst-0128 ===
+Deep inelastic scattering measurements at the HERA electron–proton collider provide the most precise determination of proton structure over a wide kinematic domain. This paper reviews the measurement of the neutral- and charged-current structure functions F₂, F_L and xF₃ by the H1 and ZEUS collaborations, covering four-momentum transfers from below 1 GeV² to above 10⁴ GeV² and Bjorken x down to approximately 10⁻⁶. The procedure for combining the two experiments' data sets, including the treatment of correlated systematic uncertainties, is described, together with its application in the HERAPDF next-to-leading and next-to-next-to-leading order QCD analyses. The resulting parton distribution functions constrain the valence, sea and gluon densities, with particular sensitivity to the gluon at low x. Implications for precision predictions at the LHC and the remaining theoretical uncertainties are discussed.
+
+=== prompt_id: stor-0307 ===
+The first occasion on which I observed her, I was six years of age and standing at the edge of the water at Cape May, holding a plastic pail my father had purchased that morning. She was seated beneath a striped umbrella some thirty yards distant, wearing a dress of deep cornflower blue. She was not reading, nor sleeping, nor attending to any child of her own. She was, as far as I could determine, watching me.
+
+I mentioned her to my mother, who glanced in the indicated direction and remarked that the beach was full of people. When I looked again, the umbrella had been folded and the woman had gone.
+
+I would not have retained the memory were it not for its repetition. At eight, she stood in the lobby of a hotel in Quebec City, in a coat of the same shade. At eleven, she occupied a table across the terrace of a restaurant in Lisbon. At fourteen, she was among the passengers on the ferry to Mackinac Island, gloved hands folded upon the rail. Her appearance altered only as one would expect over the course of a decade: a certain silvering at the temples, a slight increase in the care with which she rose from a chair. The color never changed.
+
+Each time I raised the matter, my parents exchanged a look I was not then equipped to interpret, and the subject was set aside. By my sixteenth year I had ceased mentioning her altogether, having privately concluded that I was either the object of an extraordinary coincidence or the author of a modest delusion.
+
+On the evening of my eighteenth birthday, my father asked me to join him in the study. My mother was already seated there, and beside her, in a chair brought in from the dining room, sat the woman in blue.
+
+"This is Mrs. Eleanor Hartwell," my father said. "She was your grandfather's attorney. She is now, I suppose, yours."
+
+Mrs. Hartwell inclined her head. At close range her eyes were grey and exceedingly direct. "I owe you an explanation," she said, "and I have waited twelve years to provide it."
+
+My grandfather, whom I had never met, had died the spring before I was born. He had left a considerable estate in trust for me, subject to a single condition: that a person of his choosing observe me periodically throughout my childhood, without interference, and report upon my character before the funds were released. He had not wished, she explained, to bequeath his life's work to a stranger. Since he could not know me himself, he had appointed someone to know me on his behalf.
+
+"Why blue?" I asked, because it was the only question I could assemble.
+
+For the first time, she smiled. "Your grandfather's instruction. He said that if the boy was observant, he would notice. And that an observant boy was the only kind worth trusting with anything."
+
+She opened a leather folder and placed it on the desk between us. Inside, in a neat and unhurried hand, were twelve years of notes: the pail at Cape May, a waiter I had thanked in Lisbon, a younger child I had helped onto the ferry.
+
+"He would have approved of you," she said. "I certainly do."
+
+=== prompt_id: expl-0407 ===
+Light doesn't fundamentally travel in straight lines; that's an approximation that works extremely well in everyday situations. In quantum terms, light behaves as a wave (or, for a single photon, a probability amplitude) that spreads out and effectively explores every possible path. When the wavelength is tiny compared with the openings and obstacles it meets, contributions from paths far from the straight line cancel through destructive interference, leaving only the straight-line route with significant amplitude. That's why a flashlight beam looks straight.
+
+A double slit breaks that approximation. The slits are narrow, close in scale to the wavelength, so the wave diffracts through both openings, and the two contributions overlap and interfere on the screen. Each photon still lands at one spot, but the probability pattern reflects both paths.
+
+=== prompt_id: gene-0487 ===
+Here's a clean, production-ready Dockerfile for a typical Node.js app:
+
+```dockerfile
+# 1. Start from an official, lightweight Node.js base image
+FROM node:20-alpine
+
+# 2. Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# 3. Copy only the dependency manifests first
+COPY package*.json ./
+
+# 4. Install production dependencies
+RUN npm ci --omit=dev
+
+# 5. Copy the rest of the application source code
+COPY . .
+
+# 6. Tell Node (and many libraries) to run in production mode
+ENV NODE_ENV=production
+
+# 7. Document the port the app listens on
+EXPOSE 3000
+
+# 8. Run as the unprivileged "node" user instead of root
+USER node
+
+# 9. Define the command that starts the app
+CMD ["node", "server.js"]
+```
+
+## What each part does
+
+**`FROM node:20-alpine`**
+Every Docker image builds on top of another image. This one uses the official Node.js 20 image based on Alpine Linux, which is very small (tens of megabytes instead of hundreds). Node and npm come preinstalled.
+
+**`WORKDIR /usr/src/app`**
+Creates the directory if it doesn't exist and makes it the current directory for all following instructions. It keeps your app files organized and avoids writing into the container's root.
+
+**`COPY package*.json ./`**
+Copies `package.json` and `package-lock.json` into the image *before* the rest of your code. This matters because of **layer caching**: Docker caches each step, and if these files haven't changed, it can skip reinstalling dependencies on the next build. That makes rebuilds much faster when you've only edited source files.
+
+**`RUN npm ci --omit=dev`**
+Installs dependencies exactly as pinned in `package-lock.json`. `npm ci` is faster and more reproducible than `npm install`, and `--omit=dev` skips devDependencies like test frameworks and linters that you don't need at runtime.
+
+**`COPY . .`**
+Copies the rest of your project into the working directory.
+
+**`ENV NODE_ENV=production`**
+Sets an environment variable. Frameworks such as Express use it to enable optimizations like view caching and less verbose error messages.
+
+**`EXPOSE 3000`**
+Documents that the app listens on port 3000. It doesn't actually publish the port; you still do that with `-p` when running the container.
+
+**`USER node`**
+The official Node images include a non-root user called `node`. Running as that user limits the damage if your app is ever compromised.
+
+**`CMD ["node", "server.js"]`**
+The default command that runs when the container starts. Replace `server.js` with your entry file. Calling `node` directly (rather than `npm start`) lets your app receive shutdown signals like `SIGTERM` properly.
+
+## Add a `.dockerignore`
+
+Create a `.dockerignore` file next to the Dockerfile so `COPY . .` doesn't pull in things you don't want:
+
+```
+node_modules
+npm-debug.log
+.git
+.env
+Dockerfile
+.dockerignore
+```
+
+Excluding `node_modules` is especially important: your local modules may be built for a different OS, and the image installs its own anyway.
+
+## Build and run it
+
+```bash
+docker build -t my-node-app .
+docker run -p 3000:3000 my-node-app
+```
+
+The first command builds an image tagged `my-node-app`. The second starts a container and maps port 3000 on your machine to port 3000 inside the container, so you can visit `http://localhost:3000`.
+
+If your app has a build step (TypeScript, a bundler, etc.), you'd typically switch to a multi-stage build: install all dependencies and compile in a first stage, then copy only the compiled output and production dependencies into a slim final image.
+
+=== prompt_id: essa-09-pla ===
+Whenever a holiday approaches, I face the same choice between staying at home and travelling abroad. Although home has its comforts, I prefer to travel to another country.
+
+The main reason is that travel teaches me things no book can. Bargaining in a market in Hanoi or ordering dinner in broken Spanish forces me to adapt, and I come back with a clearer sense of how other people live. Travel also breaks routine. At home, holidays easily dissolve into the same chores and screens that fill an ordinary week, whereas a new place makes every day feel distinct and memorable.
+
+Of course, staying at home is cheaper and more restful, and it offers precious time with family. However, I find that I rest more deeply when I am truly away from my usual responsibilities.
+
+For these reasons, I would rather spend my holidays abroad, even if it means saving carefully all year for the trip.
+
+=== prompt_id: news-0019 ===
+**Hamilton snatches China pole from Rosberg on final lap**
+
+Lewis Hamilton will start the Chinese Grand Prix from pole position after a blistering last-gasp lap in Shanghai bumped Mercedes teammate Nico Rosberg down to second, and left the German in no mood for pleasantries.
+
+Rosberg had appeared on course to claim pole after setting the pace in the opening runs of the final qualifying session. But Hamilton, who had trailed his teammate through parts of the lap, found time in the final sector on his last attempt to edge ahead by a fraction of a second.
+
+The reigning world champion celebrated over the team radio, but the mood was noticeably frostier once the cars returned to parc fermé. When Hamilton offered his hand to Rosberg, his teammate walked past without taking it, a moment captured clearly by television cameras and quickly shared across social media.
+
+Rosberg did not dwell on the snub when speaking to reporters afterward, focusing instead on what he described as a missed opportunity after a strong weekend of practice. Hamilton, for his part, said his attention was already on Sunday's race and on converting pole into victory.
+
+The incident is the latest sign of a rivalry that has simmered since the two fought for the drivers' championship last season, a battle that frequently tested Mercedes' policy of allowing its drivers to race freely. Team management has repeatedly said it trusts both men to keep their competition clean on track, but moments like Saturday's will do little to ease the tension inside the garage.
+
+Ferrari's Sebastian Vettel will line up third, ready to capitalize should the Mercedes pair become too preoccupied with each other into the first corner.
+
+With the two Silver Arrows starting side by side on the front row, all eyes will be on the run to Turn 1.
+
+=== prompt_id: abst-0129 ===
+We study the capacity of the q-ary deletion channel, in which each symbol drawn from an alphabet of size q is independently deleted with probability d, and the receiver observes the surviving symbols in order but without knowledge of their original positions. Although the binary deletion channel has been studied extensively, considerably less is known about its non-binary counterpart, and no closed-form expression for the capacity is available for any nontrivial deletion probability. In this paper, we derive a new upper bound on the capacity of the q-ary deletion channel for arbitrary q ≥ 2. Our approach builds on the technique of providing the receiver with genie-aided side information about the deletion process, which transforms the original channel into a memoryless channel whose capacity can be computed numerically using the Blahut–Arimoto algorithm. We show that the run structure of non-binary input sequences can be exploited to obtain a tighter reduction than a direct generalization of existing binary arguments. The resulting bound strictly improves on the trivial erasure-channel bound of (1 − d) log q across the full range of deletion probabilities, with the largest gains for small alphabets and high deletion rates. We further show that the gap between our bound and the erasure bound vanishes as q grows, in agreement with known asymptotic results. Numerical evaluations for several alphabet sizes illustrate the improvement over previously reported bounds.
+
+=== prompt_id: stor-0308 ===
+Dr. Peter Albright delivered the news the way some men hand out parking tickets: briskly, and with the faint air of having done her a favor.
+
+"Six months," he said. "Perhaps less. I'd get your affairs in order, Mrs. Kowalczyk."
+
+Edna Kowalczyk was eighty-one. She had buried a husband, two dogs, and a forty-year fondness for menthol cigarettes. She looked down at Dr. Albright's loafers, which had tassels, and decided right then that she would not be giving him the satisfaction.
+
+"I'll see you in six months," she said.
+
+"I'd hope so," he replied, already reaching for the next chart.
+
+She went home and made a list. It was not a list of affairs to put in order. It was titled THINGS ALBRIGHT WILL HAVE TO HEAR ABOUT, and the first item was *Walk to the mailbox without the cane.*
+
+It took three weeks. Her hip complained the entire time, and she told her hip, out loud, that it could take its complaints to Dr. Albright.
+
+The second item was the county fair, where she intended to enter her rhubarb pie for the first time since 1997. The third was learning to use the tablet her granddaughter had given her, because she had heard you could leave reviews of doctors on the internet.
+
+At the six-month appointment, Dr. Albright frowned at her bloodwork for a very long time.
+
+"Well," he said. "This is unusual."
+
+"Second place," Edna said. "For the pie. The woman who won is married to one of the judges. I'm appealing."
+
+He didn't know what to say to that, so he told her to come back in three months.
+
+She came back in three months. And three after that. Her granddaughter, Talia, started driving her to the appointments because she wanted to watch. Edna would sit bolt upright on the crinkly paper, Dr. Albright would study her numbers as though they had personally insulted him, and Talia would bite the inside of her cheek to keep from laughing.
+
+"What's your secret?" a nurse asked her once in the hallway.
+
+"Pettiness," Edna said. "Wildly underrated."
+
+It wasn't the whole truth. There was also the pie, which took first place the following year, after the judge's wife retired. There was the tablet, on which she discovered Talia had been posting photos of her with captions like *my grandma is undefeated*. There was the spring she planted tomatoes she had no business expecting to eat, and ate them anyway, warm from the vine, with a little salt.
+
+But spite was what had gotten her out of the chair that first morning, and Edna believed in giving credit where it was due.
+
+Four years after the six-month prognosis, Dr. Albright announced his retirement. Edna sent a card. Inside, in careful cursive, she wrote: *Congratulations. I'll be here when you get back.*
+
+Talia asked whether that was a little mean.
+
+"Sweetheart," Edna said, cutting her a slice of pie, "it's a lot mean. That's the whole point."
+
+=== prompt_id: expl-0408 ===
+Base 16 (hexadecimal) is essentially shorthand for base 2 (binary). Because 16 = 2⁴, each hexadecimal digit maps exactly onto a group of four binary digits. For example, binary 1010 is hex A, and 1111 is F. To convert, split a binary number into four-bit groups starting from the right and replace each group with its hex digit: 1101 0110 becomes D6. This clean correspondence is why programmers use hex to write memory addresses and byte values compactly.
+
+=== prompt_id: gene-0488 ===
+Three of the most common colors for men's suits are:
+
+1. **Navy** – arguably the most versatile option, suitable for business, weddings, and evening events alike.
+2. **Charcoal gray** – a conservative, professional choice that pairs easily with nearly any shirt and tie.
+3. **Black** – traditionally reserved for formal evening wear and solemn occasions such as funerals.
+
+=== prompt_id: essa-09-stu ===
+**There's No Place Like Home**
+
+Every winter break, half my class seems to post pictures from Tokyo, Bali, or the Swiss Alps. I'll admit those photos look amazing. Still, if I get to choose, I would rather spend my holidays at home, and I have three reasons.
+
+First, home is where I actually get to rest. The school year is exhausting, with tests, practices, and homework piling up week after week. Traveling abroad sounds relaxing, but it usually means waking up early for flights, standing in long security lines, and rushing from one tourist attraction to the next. At home, I can sleep in, read a book I picked out myself, and recharge before the next semester starts.
+
+Second, staying home gives me time with the people who matter most. During the school year, my family is so busy that we rarely eat dinner together. Holidays are the one time we can cook a big meal, play board games, or visit my grandparents, who live only twenty minutes away but whom I hardly see once school starts.
+
+Finally, there is a lot to explore close by. Last summer, my friends and I biked to a hiking trail in our own city that none of us had ever visited. It felt like a real adventure, and it didn't require a passport or a plane ticket.
+
+Traveling abroad definitely has its benefits, and I hope to see other countries someday. For now, though, my favorite holidays are the ones spent at home, where I can rest, reconnect with my family, and rediscover the place I live.
+
+=== prompt_id: news-0020 ===
+A U.S. military official said Wednesday that the fall of the Iraqi city of Ramadi to ISIS militants is "not imminent," even as a local official inside the city warned that government forces may not be able to hold out much longer.
+
+Ramadi, the capital of Anbar province, lies about 110 kilometers (70 miles) west of Baghdad and has been contested for more than a year. In recent days, ISIS fighters have pushed into neighborhoods on the city's eastern edge, forcing thousands of residents to flee toward the capital.
+
+Speaking to CNN, the U.S. official acknowledged the situation was serious but said Iraqi security forces still controlled key government buildings in the city center and continued to receive coalition air support.
+
+An official in Ramadi offered a far bleaker assessment. He said it was unclear how long the city's defenders, many of them police officers and local tribal fighters, could continue to resist without fresh troops, weapons and supplies. He pleaded with the Iraqi government in Baghdad to send reinforcements immediately and urged the U.S.-led coalition to step up airstrikes on militant positions around the city.
+
+The loss of Ramadi would be a major setback for Prime Minister Haider al-Abadi's government, which recaptured Tikrit only weeks ago and has vowed that Anbar will be the next front in the campaign against ISIS.
+
+The coalition said it has conducted several strikes near Ramadi in recent days and is monitoring the situation closely.
+
+=== prompt_id: abst-0130 ===
+Model predictive control (MPC) offers a natural framework for handling constraints, but its effectiveness depends on an accurate dynamics model and on optimizers capable of coping with nonconvex, nonsmooth costs. This paper presents a safe learning-based MPC scheme that combines a learned dynamics model with gradient-free trajectory optimization using the cross-entropy method (CEM). System dynamics are represented by a probabilistic neural network ensemble that captures epistemic uncertainty. To ensure constraint satisfaction during learning, sampled control sequences are evaluated against a safe set constructed from uncertainty-aware reachability bounds, and unsafe samples are discarded before the CEM sampling distribution is updated. We establish conditions under which recursive feasibility is preserved. Simulations on a cart-pole system and an autonomous vehicle path-tracking task show that the method achieves performance comparable to gradient-based learning MPC while substantially reducing constraint violations.
+
+=== prompt_id: stor-0309 ===
+On my first day in office, I signed an executive order requiring every federal employee to take a forty-minute nap at 2 p.m.
+
+I should explain. I won the presidency by accident: a write-in campaign that started as a joke on a bass-fishing forum, and by the time anyone took it seriously, I'd carried thirty-one states. Four days into the job, I learned that the president gets briefed at 6:30 every morning and that nobody would let me cancel. I wanted out. Impeachment seemed like the fastest exit.
+
+Nap Time lasted two weeks before the Department of Labor reported that federal productivity had jumped eighteen percent. Workplace accidents dropped. Half the Fortune 500 adopted the policy voluntarily. My approval rating rose nine points.
+
+Fine. I escalated.
+
+I listed Air Force One on an online auction site with the description "big plane, runs great, some missiles removed." It sold for 1.3 billion dollars to a tech billionaire who also agreed to cover its maintenance. Economists called it the most efficient asset sale in American history. Cable news ran a segment titled "Is He a Genius?"
+
+I was getting desperate. I skipped the State of the Union and instead livestreamed myself reading every bill Congress had sent me, word for word, in a monotone, pausing whenever I hit something I didn't understand. It took eleven hours. Sixty million people watched. Three senators resigned after I reached page 840 of the farm bill and asked, out loud, why there was a subsidy for a golf course.
+
+For my final attempt, I sent my mother to negotiate a trade deal with China. She had no diplomatic experience. She did have forty years of running the church bake sale. She came home with tariff reductions, a panda loan, and the premier's recipe for scallion pancakes, which she has since improved.
+
+Last week, the House Judiciary Committee finally convened to discuss me. I watched from the Oval Office couch, full of hope.
+
+They voted unanimously to propose a constitutional amendment allowing me a third term.
+
+I'm going to take a nap.
+
+=== prompt_id: gene-0489 ===
+Me Grok. Me tell you about water. Water big magic. Water go round and round, never stop. You listen.
+
+Start at big water. Lake. Ocean. Much water, lie flat, shine. Sun come up. Sun hot. Sun stare at water all day long. Water get warm. Then water do strange thing. Water go UP. No legs, but go up. Water get so light, so tiny, it fly into sky. Grok not see it anymore. Water turn invisible. Grok call this "water ghost." Smart people say "evaporate." Grok not smart people.
+
+Grok know water ghost real. Grok put wet fur on rock in sun. Later, fur dry. Where water go? Water ghost take it. Same with puddle. Morning, big puddle. Night, no puddle. Water ghost.
+
+Water ghost float up, up, up. High sky very cold. Grok climb big mountain once. So cold. Grok teeth go clack clack clack. Water ghost feel cold too. Water ghost huddle together, like tribe around fire. Many tiny water hold hands. Now Grok can see them again! They make cloud. Cloud is water ghost family. Fluffy. White. Sometimes gray and angry.
+
+Cloud collect more water, more water. Cloud get heavy, like Grok after eat whole mammoth leg. Cloud cannot hold. Water fall down! Rain. If sky very cold, water fall as white cold fluff. Snow. Sometimes fall as ice rock. Hail. Hail hit Grok head. Grok not like hail.
+
+Rain land on ground. Some water sink into dirt. Tree drink it. Grok drink it. Some water run down hill, join little stream. Little stream join big river. Big river run, run, run, back to big water. Back to ocean.
+
+Also, trees sweat. Grok see leaf in morning, little water drops on it. Tree push water out through leaf, and water ghost carry it to sky too. Tree help.
+
+Then sun come again. Sun stare again. Water go up again. Cloud again. Rain again. River again. Big circle. Water very old. Water Grok drink today maybe same water Grok great-great-great-grandfather drink. Water never gone. Water only travel.
+
+That why Grok respect water. Water best traveler. Water see whole world. Grok only see this valley.
+
+=== prompt_id: essa-09-esl ===
+Holidays: At Home or Abroad?
+
+Many people have different opinion about holidays. Some people like to stay at home and relax, but other people want to travel to another country. In my opinion, I prefer to travel abroad, and I will explain why.
+
+First, when I travel abroad I can learn many new things. Every country have its own culture, food and history. For example, two years ago I went to Japan with my family. I was very surprise because the streets were so clean and people was very polite. I also eat real sushi and ramen, and it was much more delicious than in my country. This kind of experience I cannot get if I stay at home.
+
+Second, travelling abroad helps me to practice English. In my country I only use English in the class. But when I travel, I need to speak English in the hotel, in the restaurant and in the airport. Sometimes I make mistakes, but people are usually kind and they understand me. After the trip, I feel more confident for speaking.
+
+Of course, staying at home also has some good points. It is more cheap and you don't need to worry about the plane or the luggage. You can sleep a lot and spend time with your friends. Sometimes I also like this, especially when I am very tired after exams.
+
+However, I think holidays is a special time and we should use it for do something different. Travelling abroad give me memories that I will remember for all my life. That is why I prefer to travel abroad instead of staying at home.
+
+=== prompt_id: news-0021 ===
+**Toddler survives 14 hours in overturned car in icy Utah river**
+
+SPANISH FORK, Utah — An 18-month-old girl is recovering in a Salt Lake City hospital after spending roughly 14 hours strapped into her car seat inside an overturned car that had plunged into a frigid river, authorities said.
+
+The child, Lily, was found hanging upside down in the vehicle in the Spanish Fork River on Saturday afternoon after a fisherman spotted the wreck from the riverbank and called for help. Her mother, 25-year-old Lynn Jennifer Groesbeck, who had been driving, died in the crash.
+
+Police believe the car left the road late Friday night after striking a concrete barrier near a bridge on the edge of Spanish Fork, about 50 miles south of Salt Lake City. The vehicle came to rest on its roof in the shallow, fast-moving water, where it went unnoticed throughout the night as temperatures dropped toward freezing.
+
+When police officers and firefighters arrived, they waded into the chest-deep current and worked together to push the car onto its side. Inside, they found Lily unconscious but alive, suspended in her car seat just above the surface of the water.
+
+Rescuers passed the little girl hand to hand up the riverbank to waiting paramedics. She was taken to a local hospital and then flown to Primary Children's Hospital in Salt Lake City, where she arrived in critical condition and suffering from severe hypothermia. Several of the officers involved in the rescue were also treated for hypothermia after spending long minutes in the icy water.
+
+By the following day, hospital officials said Lily's condition had improved significantly. Relatives reported that she was awake, responsive and beginning to eat.
+
+Doctors said several factors likely worked in the toddler's favor. Her car seat held her clear of the water, and the cold may have slowed her metabolism, reducing her body's need for oxygen and food during the long hours she spent alone in the wreck.
+
+"Children are very resilient ... sometimes we don't realize how much they actually can withstand," said one of the physicians involved in her care.
+
+Investigators have not determined what caused the car to leave the road. Police said they are examining the vehicle and the crash site, including whether speed, visibility or road conditions played a role. Because the car was largely hidden from passing traffic below the bridge, it is not clear whether anyone saw or heard the crash when it happened.
+
+The rescue has drawn an outpouring of support from the community, with residents leaving notes and flowers at the bridge and offering help to the family. Officers who took part in the rescue described the moment they found Lily alive as one they would never forget.
+
+For Groesbeck's family, the relief over Lily's survival is tempered by profound grief. Relatives now face the task of caring for the young girl while mourning the mother she lost, and authorities have asked for privacy as the family begins to recover from the tragedy.
+
+=== prompt_id: abst-0131 ===
+We compute the strange quark helicity distribution in the proton within chiral effective field theory, in which strangeness arises from fluctuations of the nucleon into kaon–hyperon intermediate states. Including both octet (Λ, Σ) and decuplet (Σ*) hyperon contributions, we evaluate the relevant kaon loop diagrams in a relativistic framework with finite-range regularization. Because the antistrange quark resides in the spin-zero kaon, its helicity vanishes at this order, and the net strange polarization is carried entirely by the strange quark in the hyperon. We find the integrated helicity Δs to be small and negative, consistent in sign and magnitude with recent determinations from inclusive and semi-inclusive deep-inelastic scattering. The x-dependence of Δs(x) is presented for comparison with global parton distribution analyses and lattice QCD calculations.
+
+=== prompt_id: stor-0310 ===
+The interviews were going badly.
+
+The first candidate, a hedge fund manager named Bradley, spent twenty minutes explaining how he would "scale suffering" and "disrupt the afterlife vertical." The Devil wrote *no* on his legal pad and underlined it twice.
+
+The second, a former dictator, wanted to know about the dental plan. The third was a man who had once hit reply-all on a forty-thousand-person company email. The Devil respected the instinct but found him lacking in follow-through.
+
+"They all want the fire," he told Asmodeus, his assistant of nine thousand years, as the door closed behind the dictator. "The pitchforks. The screaming. Nobody understands that the fire was never the point."
+
+"What was the point, sir?"
+
+The Devil rubbed his horns. He was tired. He had been tired since roughly the Renaissance. "Patience. Real torment is patient. It's quiet. It wears you down one small, reasonable-sounding obstacle at a time, until you forget you ever wanted anything."
+
+Asmodeus checked the clipboard. "There is one more applicant. She wasn't on the list. She, ah, let herself in."
+
+"She?"
+
+"You did write 'man' in the posting, sir. She has filed a written objection."
+
+The woman who entered wore a beige cardigan and a lanyard. She sat without being asked, opened a manila folder, and slid a form across the desk.
+
+"Before we begin, you'll need to complete this," she said. "Black ink. Not blue. Blue will be rejected."
+
+The Devil looked at the form. It was eleven pages long. Section 4 asked him to list all previous addresses, including those prior to the creation of the universe. Section 7 referred him to Section 9, which referred him back to Section 7.
+
+"And what," he said slowly, "is your current occupation?"
+
+"Department of Motor Vehicles. Window six. Twenty-two years." She glanced at her watch. "You'll want to take a number."
+
+He took a number. It was 847. A small screen on the wall, which had not been there a moment ago, flickered to life: NOW SERVING 12.
+
+For the first time in four thousand years, the Devil felt something cold slide down his spine. He looked at Asmodeus. Asmodeus, wide-eyed, nodded.
+
+"When can you start?" the Devil asked.
+
+She did not look up from her folder. "Your application is incomplete," she said. "Come back Tuesday."

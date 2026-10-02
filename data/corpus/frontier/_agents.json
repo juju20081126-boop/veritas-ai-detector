@@ -1,0 +1,174 @@
+{
+ "sonnet__train__018": {
+  "agent_id": "ad9f5034093db6b36",
+  "alias": "sonnet"
+ },
+ "opus__train__018": {
+  "agent_id": "aa762f864c509e2ff",
+  "alias": "opus"
+ },
+ "opus__locked__r2_000": {
+  "agent_id": "acba46f70a34a3eaf",
+  "alias": "opus"
+ },
+ "opus__locked__r2_001": {
+  "agent_id": "adf9cda02bd2ec907",
+  "alias": "opus"
+ },
+ "opus__locked__r2_002": {
+  "agent_id": "a7689946de7c64443",
+  "alias": "opus"
+ },
+ "opus__locked__r2_003": {
+  "agent_id": "a47bea5f5accadffa",
+  "alias": "opus"
+ },
+ "sonnet__locked__r2_000": {
+  "agent_id": "a42a3748598c310ee",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r2_001": {
+  "agent_id": "a1fa98945dcc408a8",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r2_002": {
+  "agent_id": "aadbae937896bcd1b",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r2_003": {
+  "agent_id": "a06353322c3798104",
+  "alias": "sonnet"
+ },
+ "opus__locked__r3_000": {
+  "agent_id": "a8ddac3b9c8526de4",
+  "alias": "opus"
+ },
+ "opus__locked__r3_001": {
+  "agent_id": "a8ef9428e9faba868",
+  "alias": "opus"
+ },
+ "opus__locked__r3_002": {
+  "agent_id": "ad696aab3b9226d23",
+  "alias": "opus"
+ },
+ "sonnet__locked__r3_000": {
+  "agent_id": "a1c414a0a694b7545",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r3_001": {
+  "agent_id": "a9c2f7348571ab164",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r3_002": {
+  "agent_id": "a8f0a94d776c7ccf9",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r4_000": {
+  "agent_id": "a8c031a1b08a7dc56",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r4_001": {
+  "agent_id": "a49f9a0f0dd754e27",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r4_002": {
+  "agent_id": "ac262bc350680707d",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r4_003": {
+  "agent_id": "a7f471f509a7ca40f",
+  "alias": "sonnet"
+ },
+ "opus__locked__r4_000": {
+  "agent_id": "ac26c4eecadce1efe",
+  "alias": "opus"
+ },
+ "opus__locked__r4_001": {
+  "agent_id": "a5b07433a27924a88",
+  "alias": "opus"
+ },
+ "sonnet__locked__r4_004": {
+  "agent_id": "a759eabc6d537ca19",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r4_005": {
+  "agent_id": "a0ca39df2f2bbe573",
+  "alias": "sonnet"
+ },
+ "opus__locked__r4_002": {
+  "agent_id": "a21a7b31bb5fbf29a",
+  "alias": "opus"
+ },
+ "opus__locked__r4_003": {
+  "agent_id": "ae036ca64f34be3cc",
+  "alias": "opus"
+ },
+ "opus__locked__r5_000": {
+  "agent_id": "a51a5b5e5e298b6ff",
+  "alias": "opus"
+ },
+ "sonnet__locked__r5_000": {
+  "agent_id": "a9ff9f1087663526a",
+  "alias": "sonnet"
+ },
+ "sonnet__locked__r5_001": {
+  "agent_id": "a7ae4b7179fbdc001",
+  "alias": "sonnet"
+ },
+ "opus__dev__r5_001": {
+  "agent_id": "ac24a7db100a65cea",
+  "alias": "opus"
+ },
+ "opus__dev__r5_002": {
+  "agent_id": "a5447742c4870f88d",
+  "alias": "opus"
+ },
+ "sonnet__dev__r5_002": {
+  "agent_id": "aa98d26f95835763d",
+  "alias": "sonnet"
+ },
+ "sonnet__dev__r5_003": {
+  "agent_id": "a1ed656a752d58a40",
+  "alias": "sonnet"
+ },
+ "opus__dev__r6_000": {
+  "agent_id": "a3e84b2f57c2f005c",
+  "alias": "opus"
+ },
+ "opus__dev__r6_001": {
+  "agent_id": "ab26547f7ecd23cdd",
+  "alias": "opus"
+ },
+ "sonnet__dev__r6_000": {
+  "agent_id": "ace47dd8c8761d767",
+  "alias": "sonnet"
+ },
+ "sonnet__dev__r6_001": {
+  "agent_id": "afdc8aec3d1cd1db5",
+  "alias": "sonnet"
+ },
+ "opus__train__r6_002": {
+  "agent_id": "aedb1ef9fc19144fc",
+  "alias": "opus"
+ },
+ "opus__train__r6_003": {
+  "agent_id": "a36f40e3a532e6066",
+  "alias": "opus"
+ },
+ "opus__train__r6_004": {
+  "agent_id": "aa6ddbdd3f0e083c2",
+  "alias": "opus"
+ },
+ "sonnet__train__r6_002": {
+  "agent_id": "a81eaf4f7fdac038e",
+  "alias": "sonnet"
+ },
+ "sonnet__train__r6_003": {
+  "agent_id": "abd08d837605cf1fe",
+  "alias": "sonnet"
+ },
+ "sonnet__train__r6_004": {
+  "agent_id": "adb2a99f220c15aee",
+  "alias": "sonnet"
+ }
+}

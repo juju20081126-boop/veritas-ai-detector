@@ -1,0 +1,290 @@
+=== prompt_id: news-0001 ===
+**Ramp Agent Who Fell Asleep in Cargo Hold Barred From Alaska Airlines Flights**
+
+A ramp agent who fell asleep in the cargo hold of a plane will no longer be allowed to work on Alaska Airlines flights.
+
+Ramp agents load and unload bags and freight, guide aircraft in and out of gates, and operate ground equipment such as baggage tugs and belt loaders. This agent fell asleep inside the plane's cargo hold, a dark, enclosed compartment that is largely out of view of the cabin and flight deck. It was not immediately clear what led to the lapse or whether he faces further discipline.
+
+Cargo holds are not designed to be occupied while a plane is moving. Ground crews are generally expected to confirm that compartments are clear of people before doors are closed and the aircraft is pushed back from the gate. Those checks are a basic part of ramp safety, and they depend on every member of the crew being where they are supposed to be. A worker left inside when a plane departs could face noise, cold, and no easy way to call for help.
+
+Fatigue is a well-known challenge in aviation. Shifts that start before dawn or run through the night, long hours outdoors in all kinds of weather, and tight turnaround times are common on the ramp. Even a brief lapse can matter when heavy equipment, moving aircraft, and passenger safety are involved.
+
+Alaska Airlines, based in Seattle, is one of the largest carriers on the U.S. West Coast and depends on large teams of ramp workers to keep flights on schedule.
+
+=== prompt_id: abst-0111 ===
+We investigate the cosmological dynamics of a logotropic dark fluid, a unified description of dark matter and dark energy in which the pressure depends logarithmically on the rest-mass density, and we extend the model by including a power law in the rest-mass energy density. Using the methods of dynamical system analysis, we rewrite the Friedmann and continuity equations as an autonomous system in suitable dimensionless variables. We then identify the critical points of this system, linearize around each of them, and determine their stability together with their cosmological interpretation in terms of the effective equation of state and the deceleration parameter. For appropriate ranges of the model parameters, the phase space contains a saddle point corresponding to a matter-dominated era and a stable late-time attractor with accelerated expansion, so the model can reproduce the standard sequence of cosmic epochs. The power-law index changes the character of the late-time attractor and controls how the evolution approaches it, which provides a way to distinguish the model from the standard ΛCDM scenario. These results show that the extended logotropic fluid is a viable and flexible candidate for the dark sector and provide a basis for confronting it with observational data.
+
+=== prompt_id: emai-0221 ===
+Subject: EnronOnline access to Australian Power products
+
+Hi everyone,
+
+I wanted to follow up on the launch of Australian power products on EnronOnline and explain how access will work.
+
+Our Australian power desk will now quote prices online for the main National Electricity Market regions, including New South Wales, Victoria, Queensland, and South Australia. Prices are displayed in Australian dollars per MWh and can be transacted in real time, in the same way as our other EnronOnline products.
+
+Before you can trade these products, three things need to be in place:
+
+1. An approved EnronOnline user ID
+2. Credit approval for the relevant Enron Australia entity
+3. Signed trading documentation covering Australian power
+
+If you already have an EnronOnline ID, please send me your user details and the counterparty you will be trading for, and I will coordinate with Credit and Legal to get the approvals moving. If you do not have an ID yet, the application form is available on the EnronOnline intranet page.
+
+Please contact me directly with any questions about products or pricing.
+
+Thanks,
+[Name]
+
+=== prompt_id: stor-0291 ===
+**The Courtesy Call**
+
+The centrifuge was spinning down at 2:14 a.m. when a voice behind me said, "Dr. Iyer."
+
+A tall man stood in the doorway, dressed in red, a coil of rope over one shoulder. Behind him in the corridor, a water buffalo chewed, its hooves silent on the linoleum.
+
+I should have screamed. Instead I looked at the mole-rat tank, at three years of data glowing on the monitor, and thought: so this is what no sleep does.
+
+"I am Yama," he said. "I would have knocked, but nobody has ever answered."
+
+"You're here to stop us."
+
+"Stop you? No. Your compound will work. Those animals are the only creatures that have ever made me nervous." He bent over the tank gently. "I came to ask what you intend to do with it."
+
+"Give it to everyone."
+
+"Everyone," he said mildly. "The woman upstairs in oncology, who has asked me to come for six months? The man who has done things I won't mention in front of a mole-rat?"
+
+I had no answer.
+
+"I am not cruel, Doctor. I am the last door in a long hallway, and you are about to brick it over."
+
+"My mother died in March," I said. It wasn't an argument. It was simply true.
+
+"I know. I was there." He said it so kindly that I had to look away. "Grief is a good reason to start. It is a poor reason to finish."
+
+When I looked back, the doorway was empty, though the air smelled of wet grass.
+
+I sat at the keyboard and opened the protocol. It would cost us a year, and half the committee would call me a coward, but I added a final section: a reversal. A way for anyone, at any time, to choose to stop.
+
+Somewhere down the corridor, someone knocked twice.
+
+"Come in," I said.
+
+=== prompt_id: expl-0391 ===
+There is no permanently dark side of the Moon. Tidal locking means the Moon always shows Earth the same face, but it still rotates once per orbit, so every part of its surface gets roughly two weeks of daylight followed by two weeks of night. The "dark side" is just the far side, the one we never see.
+
+Meteoroids don't care about lighting, either. They strike from every direction, sunlit or not, and Earth shields almost nothing: from the Moon, our planet covers only a tiny patch of sky. So both hemispheres get hit. In fact, the far side is more heavily cratered, because lava once flooded much of the near side and covered older craters. The dark patches we see from Earth are those lava plains.
+
+=== prompt_id: gene-0471 ===
+Underwater archaeology applies the methods and ethics of terrestrial archaeology to sites beneath seas, lakes, and rivers. Because submerged environments can preserve organic materials that would decay on land, shipwrecks and drowned settlements often yield exceptionally rich evidence of past societies. Investigating them, however, requires specialized techniques and technologies, which may be grouped as follows.
+
+**Site Location and Remote Sensing**
+
+Most projects begin with the search for a site. Researchers combine archival research, historical charts, and reports from fishers and divers with geophysical survey:
+
+- **Side-scan sonar** produces detailed acoustic images of the seabed, revealing wreck mounds, debris fields, and other anomalies.
+- **Multibeam echosounders** generate high-resolution bathymetric maps that show the form of a wreck and its relationship to the surrounding seafloor.
+- **Sub-bottom profilers** penetrate sediment to detect structures that have been buried.
+- **Marine magnetometers** record disturbances in the Earth's magnetic field caused by ferrous objects such as anchors, cannon, and fastenings.
+
+In shallow coastal waters, airborne LiDAR bathymetry may also be used to map drowned landscapes and nearshore wrecks.
+
+**Robotic and Remotely Operated Systems**
+
+Where depth or hazardous conditions exceed the limits of human divers, remotely operated vehicles (ROVs) and autonomous underwater vehicles (AUVs) are employed. ROVs, which are tethered to a surface vessel, carry cameras, lighting, sonar, and manipulator arms, allowing archaeologists to inspect, sample, and recover objects in real time. AUVs follow pre-programmed survey paths and can map extensive areas with considerable precision. Such systems have made it possible to study deep-water sites, including the well-preserved ancient wrecks identified in the oxygen-free depths of the Black Sea.
+
+**Diving Technology**
+
+For sites within reach of divers, specialized equipment extends both safe working time and operational depth. Open-circuit SCUBA remains standard in shallow water, while surface-supplied air, mixed-gas techniques, and closed-circuit rebreathers permit longer and deeper dives. Saturation diving enables personnel to work at depth for extended periods with a single decompression at the end of the operation, and atmospheric diving suits, which maintain internal pressure at one atmosphere, have been used at sites such as the Antikythera wreck.
+
+**Excavation and Documentation**
+
+Underwater excavation follows the same rigorous principles as work on land. A grid or baseline is established so that every find can be located within a three-dimensional framework, and fine sediment is removed with hand fanning, airlifts, or water dredges that clear overburden without damaging fragile material. Acoustic positioning systems, together with traditional offset measurements, record the precise position of artifacts and structural elements.
+
+Documentation has been transformed by digital methods. Photogrammetry, in which overlapping photographs are processed into accurate three-dimensional models, allows a site to be recorded in detail, measured at a later date, and shared with scholars and the public through virtual reconstructions. Laser and structured-light scanning serve a similar purpose for individual artifacts.
+
+**Conservation and Scientific Analysis**
+
+Objects that have lain underwater for centuries are chemically and physically unstable once recovered, and they require immediate conservation. Waterlogged wood must be kept wet and impregnated with consolidants such as polyethylene glycol before it is dried under controlled conditions, as was done with the hulls of the Vasa and the Mary Rose; smaller objects are often freeze-dried. Ceramics and metals require desalination to remove soluble salts, and iron objects encased in marine concretion are commonly examined by X-radiography or computed tomography before cleaning begins.
+
+Scientific analysis complements this work. Dendrochronology and radiocarbon dating provide chronological frameworks, while residue analysis, isotopic studies, and DNA recovery can reveal the contents of cargoes, patterns of trade, and the origins of timber and crew.
+
+**Legal and Ethical Considerations**
+
+Technological capability must be matched by responsible practice. The UNESCO 2001 Convention on the Protection of the Underwater Cultural Heritage establishes preservation in situ as the first option and prohibits the commercial exploitation of such heritage. Archaeologists therefore weigh the research value of excavation against the risk of irreversible loss, and non-invasive survey is increasingly preferred wherever possible.
+
+**Conclusion**
+
+Underwater archaeology depends on the integration of geophysical survey, robotics, diving technology, digital documentation, and conservation science. As these tools continue to advance, they permit ever more precise and less intrusive investigation of submerged heritage, while established ethical and legal frameworks help ensure that such discoveries remain available for future study.
+
+=== prompt_id: news-0002 ===
+**Iran to Lift Stadium Ban for Some Events, Official Says**
+
+Iran will lift its ban on women attending some sporting events in the coming year, a senior Iranian sports official has said, though he suggested the change may not draw large numbers of new spectators.
+
+The ban has kept women out of stadiums during men's matches for years, a restriction that has drawn criticism from rights groups and international sports bodies. Under the plan described by the official, some events will be opened to a wider audience in the year ahead.
+
+The official cautioned, however, that interest may be limited. He said "families are not interested in attending" some sports matches. Activists have long said that it is the restriction itself, not a lack of enthusiasm, that keeps women away.
+
+The restrictions date back decades, and the question has been a flashpoint in Iranian public life. Supporters say they shield women from crowded stands and abusive language, while critics call them discriminatory and say they deny women the chance to take part in national sporting life on equal terms.
+
+Football and volleyball are among Iran's most popular spectator sports, and matches regularly draw large crowds of men. Women who have tried to enter stadiums have in the past been turned away, and some have been detained.
+
+The official's remarks did not specify which events would be opened or when the change would take effect, and it remains unclear whether the move signals a broader loosening of the restrictions.
+
+=== prompt_id: abst-0112 ===
+Linearization schemes solve a semilinear elliptic problem by replacing it with a sequence of linear ones, an approach that avoids differentiating the nonlinearity. This paper analyzes such a method for equations in which the production term is multiplied by a spatially varying scaling factor. Assuming that the nonlinear term is monotone and Lipschitz continuous, we prove that the iterates converge strongly in H¹ to the unique weak solution, and that the convergence is linear with a rate independent of the scaling. The proof rests on a contraction estimate that exploits the structure of the variable scaling and makes explicit the role of the stabilization parameter. We then show that the same result holds for conforming finite element discretizations, with a rate that does not depend on the mesh size. Numerical experiments confirm the theoretical findings and illustrate how the method behaves for different choices of the scaling function.
+
+=== prompt_id: emai-0222 ===
+Subject: Welcome Julie Kearney!
+
+Hi everyone,
+
+Please join me in welcoming Julie Kearney, who is joining our team as [Job Title] on [start date]. Julie brings [X years] of experience in [field], and we're excited about the skills and perspective she'll add to our work.
+
+Over her first few weeks, Julie will be getting to know the team and our projects, so please stop by to say hello and offer a helping hand. Welcome aboard, Julie!
+
+Best regards,
+[Your Name]
+
+=== prompt_id: stor-0292 ===
+Marta knew something was wrong before she opened her eyes. The pillow smelled like her shampoo, but there was a rasp under her palm when she touched her jaw, and the hand itself, held up to the gray light, was broad and thick-knuckled. Her father's hand. When she said "oh," the sound rumbled up from deep in her chest and rattled the glass on the nightstand.
+
+By eight o'clock the whole world knew. Through the wall, her neighbor Mrs. Lindqvist, who was seventy-four, was laughing helplessly in a baritone. Marta stood in the bathroom staring at the stranger in the mirror. Six feet tall. Shoulders that filled the glass. She flexed an arm and watched the muscle jump.
+
+For years she would have given anything for a body like this.
+
+Dale had been six-two. He hadn't needed to hit her often; once was enough to teach her the geography of the apartment: which corners were safe, which floorboards creaked, how long it took to reach the door. She had made herself small in every room he entered. Even after the divorce, she kept a packed bag under the sink and a chair wedged beneath the doorknob at night.
+
+Somewhere across the city, Dale was waking up smaller than she was now.
+
+She waited to feel triumphant. What she felt was her new heart hammering inside its larger cage.
+
+At noon, three knocks came at the door, spaced the way he used to do it: two quick, one slow. Her whole body went cold. Through the peephole she saw a small woman with Dale's pale eyes, hands raised, palms out. "Marta," said a voice too light to be his. "I only want to talk. Look at me. You've got nothing to be afraid of."
+
+Marta backed against the wall. Her arms could have lifted the door off its hinges, and she was shaking so hard her teeth clicked.
+
+That was when she understood what no one had ever told her: the fear had never lived in her muscles. It lived in the knowing, in the memory of how his voice changed once the door was closed, of what he was willing to do when no one could hear. Her body had changed overnight. The fear hadn't even noticed.
+
+"I'm still afraid of you," she said through the wood, in her father's voice. "I want you to hear that. I'm the strongest I've ever been, and I'm still afraid of you. That's what you did."
+
+Silence. Then, thin and sharp: "Don't be dramatic."
+
+Sharp sounded the same in any body. Footsteps went away down the stairs, light and quick.
+
+A softer knock came a minute later. "Marta? It's Edna Lindqvist. I heard through the wall. The police are on their way, and I'm going to sit right here until they come."
+
+Marta opened the door. On the landing sat a stout old man in a flowered robe. She lowered herself onto the step beside him, two strangers in borrowed bodies, and waited for help. Her hands, she noticed, had finally stopped shaking.
+
+=== prompt_id: expl-0392 ===
+A folder isn't really a file. It's just a label your operating system uses to organize files, and it has no content of its own to send. Web transfers are built to move one stream of bytes with one name at a time, so there's no standard way to say "here is a directory containing these items."
+
+The workaround is to bundle everything into a single file first. A ZIP or TAR archive packs the files and records their folder structure, so the receiver can unpack it and rebuild the original layout. That's why services like Google Drive zip a folder when you download it, or upload its files one by one and rebuild the structure on their servers.
+
+=== prompt_id: gene-0472 ===
+Einstein is famous for two overlapping reasons: his work changed how we understand the universe, and he became a cultural icon in a way few scientists ever have.
+
+**What he did**
+
+- **Special relativity (1905):** He showed that space and time aren't fixed but depend on how you're moving, and that nothing can travel faster than light. A consequence of the theory is E = mc², which links mass and energy and explains why nuclear reactions release so much power.
+- **Photoelectric effect (1905):** He proposed that light comes in discrete packets, now called photons, which helped launch quantum theory. This, not relativity, earned him the 1921 Nobel Prize in Physics.
+- **Brownian motion (1905):** His analysis of tiny particles jittering in fluid gave strong evidence that atoms really exist.
+- **General relativity (1915):** A new theory of gravity in which mass and energy curve space and time. It predicted the bending of starlight, gravitational waves, and black holes, and GPS satellites need its corrections to stay accurate.
+
+**Why he's so famous**
+
+In 1919, astronomers measured starlight bending around the Sun during a solar eclipse, as general relativity predicted, and newspapers worldwide turned a respected physicist into a global celebrity. His ideas were strange enough to fascinate the public, and his personality helped: the wild hair, the gentle humor, and the quotable lines (many of which he never actually said).
+
+He was also a public figure beyond physics. He left Germany as the Nazis rose to power, settled at Princeton, spoke out against racism and militarism, and signed a 1939 letter to President Roosevelt warning that atomic weapons were possible, though he never worked on the Manhattan Project. His name has since become shorthand for "genius."
+
+=== prompt_id: news-0003 ===
+**Court Upholds Trademark Denial for Asian-American Band The Slants**
+
+A federal appeals court has upheld the government's refusal to register the name of the Asian-American band The Slants, ruling that the name is disparaging and therefore not eligible for federal trademark registration.
+
+The U.S. Patent and Trademark Office had turned down the band's application under a provision of federal law that bars the registration of marks that may disparage people or groups. The court agreed that the name fell within that prohibition, even though the band has said it chose the name to reclaim a term often used as a slur.
+
+First Amendment attorney Marc Randazza says the court got it wrong. He argues that trademarks are a form of commercial speech, and that commercial speech is protected by the First Amendment. In his view, the government has no business deciding which names are too offensive to receive legal protection.
+
+Randazza also sees the ruling as a symptom of the times. He says it reflects a culture that has become easily offended, in which officials feel pressure to police language that some find upsetting, even when the people using the word belong to the group it targets.
+
+The decision highlights a long-running tension in trademark law. Registration carries valuable benefits, including nationwide rights in a name and a stronger basis to stop others from using it. Critics of the disparagement provision say that it gives government examiners wide discretion to deny those benefits based on subjective judgments about what is offensive, and that the results can be inconsistent.
+
+For The Slants, the outcome is a setback in a fight over the name that has dragged on for years. But Randazza's argument points to where the dispute may head next: a larger constitutional question about how far the government can go in deciding which words are fit to be registered as brand names.
+
+=== prompt_id: abst-0113 ===
+Tunka-Rex is a radio antenna array for the detection of air showers induced by high-energy cosmic rays. It is built as an extension of the Tunka-133 array of non-imaging air-Cherenkov detectors in the Tunka Valley in Siberia, close to Lake Baikal, and records the radio emission of air showers in the frequency band of 30–80 MHz. Because radio waves are emitted mainly by the electromagnetic component of the shower, are only weakly attenuated in the atmosphere, and can be measured with an almost 100% duty cycle, the radio technique is an attractive and relatively inexpensive complement to established detection methods. Its measurements are triggered by Tunka-133, which independently determines the energy and the depth of shower maximum from the Cherenkov light of the same events. This makes it possible to cross-calibrate the two techniques and to determine how precisely radio measurements can reconstruct these key shower parameters. Particular attention is paid to the energy range above 10¹⁷ eV, where the transition from galactic to extragalactic cosmic rays is expected. In this contribution we present the layout and hardware of the array, including the antennas, the analog signal chain, and the data acquisition system, which shares the infrastructure of Tunka-133. We describe the calibration procedures and give an overview of the status of the first stage of the experiment and of the first measurements.
+
+=== prompt_id: emai-0223 ===
+Subject: Fwd: Meserve Production
+
+Dear [Name],
+
+I am forwarding the message below regarding Meserve Production for your review. Please review it carefully and let me know by [date] whether any action is required on our part.
+
+I would also appreciate your thoughts on the points it raises. If you believe other colleagues should be copied on this matter, please advise and I will include them accordingly.
+
+Thank you for your prompt attention.
+
+Sincerely,
+[Your Name]
+
+=== prompt_id: stor-0293 ===
+Good morning. My name is Ruth Aldana, and I am here to present Form 9-C, Application to Take One Life, in accordance with Article Four of the Allotment Act.
+
+The Subject is Thomas Brandt, aged forty-one. Section Two requires a description of the harm. On the night of March third, Mr. Brandt drove through a red light at sixty-one miles per hour. My husband, Samuel, died at the scene. Mr. Brandt served fourteen months. I have attached the court records, the toxicology report, and eleven letters from his neighbors, each describing him as a good man. The Committee should know that I read every one.
+
+Section Three asks whether lesser remedies were exhausted. They were. I pursued civil damages, which Mr. Brandt paid in full, and I received a written apology, which is also attached. I did not reply to it.
+
+Section Four concerns necessity. My prepared statement runs to four pages, but it may be summarized in one sentence: the law was satisfied, and justice was not.
+
+The Chair raised one hand. "Thank you, Ms. Aldana. Before you continue, please read Section Eleven aloud."
+
+I turned the page. "Describe your anticipated circumstances one year following approval."
+
+I had rehearsed every other answer in the mirror for three years. I had skipped this one, assuming it was a formality.
+
+The room was silent. I could picture the act in precise detail, and nothing at all after it: no kitchen, no morning, no chair where Samuel used to sit.
+
+"I would like to withdraw the application," I said, "under Article Seven."
+
+"Withdrawal is permitted. Your allotment remains with you." The Chair stamped the form WITHDRAWN without looking up. "For the record, most applicants prepare for the question of the Subject. Few prepare for the question of themselves."
+
+I gathered my papers and the eleven letters, and walked out into the morning.
+
+=== prompt_id: expl-0393 ===
+In most cases, the free product isn't what pays the bills. Firefox gets most of its revenue from search companies, mainly Google, which pays to be the default search engine. Chrome is built by Google because more people browsing means more people using Google's search and ads. Microsoft's Edge and Apple's Safari similarly steer users toward their own services and ecosystems.
+
+Linux works differently. No single company owns it, but companies such as Red Hat and SUSE sell support, security updates, and enterprise tooling around it. Meanwhile, giants like Google, Intel, and IBM pay engineers to improve the kernel because their own servers and devices depend on it, so sharing development costs saves them money. Foundations and donations fill in some of the remaining gaps.
+
+=== prompt_id: gene-0473 ===
+There isn't one reason; it's a mix of practical needs and personal taste, and the mix differs a lot from owner to owner.
+
+The original reason is function. A lift raises the body or suspension, which gives the truck more ground clearance so it can pass over rocks, ruts, and deep snow without scraping the underbody. It also makes room for bigger tires, which add more clearance and traction, and it improves approach and departure angles on steep terrain. People who actually go off-road, whether for hunting, trail riding, or ranch work, have good reason to do it. Competition adds to that: mud bogging, rock crawling, and desert racing all reward clearance and big tires, and many street trucks are built in the image of those rigs.
+
+For many owners, though, looks matter more than capability. A lifted truck sits tall and wide on large wheels, and that aggressive stance makes a stock truck look timid by comparison. Truck building is also a hobby and a social scene. Clubs, meetups, and online forums give owners a way to swap ideas and parts, and a customized truck is a visible way to show personality, skill, and commitment. In some regions, a big lifted truck also signals toughness or belonging to a particular culture, and styles spread quickly when friends and neighbors adopt them.
+
+There's a smaller comfort factor too. Sitting higher gives some drivers a better view over traffic and a feeling of security, although the extra height also creates bigger blind spots directly in front of the vehicle.
+
+Lifts do have costs. They raise the center of gravity, which hurts handling and can increase rollover risk. They usually reduce fuel economy, put extra stress on suspension, steering, and driveline parts, and make the truck harder to climb into, park, and stop. Some states regulate maximum lift or bumper and headlight heights, and insurers may charge more for modified vehicles.
+
+So some people lift their trucks because they truly need the capability, but many do it for the look, the hobby, and the identity that comes with it.
+
+=== prompt_id: news-0004 ===
+**Amnesty Urges Afghan Authorities to Investigate Attacks on Women's Rights Activists**
+
+Amnesty International is calling on Afghan authorities to investigate attacks on women's rights activists, warning that those who speak out for equality in the country do so at great personal risk.
+
+A new report by the human rights group examines the persecution of women activists and finds that the threats come from several directions. They are not limited to the Taliban and tribal warlords, but also involve government officials, Amnesty says.
+
+That finding complicates the question of who can protect activists. When some of the danger comes from people within the state, women who face intimidation or violence may have few places to turn for help. Impunity is often cited as a driver of such violence: when attackers face no consequences, threats can escalate and others may be discouraged from speaking out. Amnesty is urging the authorities to investigate the attacks thoroughly and to bring those responsible to account.
+
+Women's rights activists in Afghanistan work on issues ranging from girls' education to protection from domestic violence, often in conservative communities where such work is controversial. Rights groups have long warned about the safety of women in public life in the country, including politicians, journalists, and police officers.
+
+Despite the dangers, some activists are continuing their work, even though their lives are at risk. That determination underscores what is at stake: the ability of women to take part in public life and to push for changes in law and practice.
+
+Whether the authorities will act on the report's recommendations remains to be seen.
+
+=== prompt_id: abst-0114 ===
+Mobile gaming video is one of the fastest-growing forms of online content, yet its perceptual quality has received far less attention than that of natural videos. Gaming content differs in important ways, with synthetic scenes, rapid motion, sharp graphical elements, and on-screen overlays, and it is often streamed or recorded on mobile devices under limited bandwidth. To study how these factors affect perceived quality, we constructed a new database of mobile gaming videos spanning a variety of games, compression levels, and resolutions, and conducted a large-scale subjective study to collect human opinion scores. We then benchmarked a broad set of existing objective video quality models on the database and found that many general-purpose methods perform poorly on gaming content, which motivates models designed specifically for it. The database and our findings aim to support future work on quality-aware streaming, encoding, and evaluation of mobile games.

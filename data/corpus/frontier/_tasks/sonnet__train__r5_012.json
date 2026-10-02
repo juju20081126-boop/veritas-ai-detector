@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "expl-0438",
+  "instruction": "I'm a college student and need help with an assignment. Operation Market Garden: Could the war really had been over by Christmas 1944 if it had suceeded? Could that have a significant effect on the shape of post-war Europe?\n\nExplain it in about 100 words."
+ },
+ {
+  "prompt_id": "gene-0571",
+  "instruction": "I'm a college student and need help with an assignment. In c++, what is the \"friend\" statement used for?"
+ },
+ {
+  "prompt_id": "essa-06-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Technology has made our lives easier but has also created new problems. Discuss."
+ },
+ {
+  "prompt_id": "news-0061",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 250 words based on these key points:\n- Barcelona extends lead over Real Madrid in Spanish league.\n- Champions League opponent Manchester City suffers shock defeat."
+ },
+ {
+  "prompt_id": "abst-0171",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 175 words for a research paper titled \"Decay of Activity Complexes, Formation of Unipolar Magnetic Regions and Coronal Holes in their Causal Relation\"."
+ },
+ {
+  "prompt_id": "stor-0347",
+  "instruction": "The protagonist is narrating his entire life... out loud.\n\nWrite a short story of about 300 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0572",
+  "instruction": "In 1961 which Henry Mancini record won Grammy record of year"
+ },
+ {
+  "prompt_id": "essa-07-pla",
+  "instruction": "Write an essay of about 400 words on the following topic: Should public transport be free for everyone? Explain your view."
+ },
+ {
+  "prompt_id": "news-0062",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- Closing arguments in the case are set for Tuesday.\n- Aaron Hernandez is charged with first-degree murder in the killing of Odin Lloyd.\n- His defense lawyers made their case on Monday."
+ },
+ {
+  "prompt_id": "abst-0172",
+  "instruction": "Draft the abstract (around 275 words) for the paper \"Characterizing the Topography of Multi-dimensional Energy Landscapes\"."
+ },
+ {
+  "prompt_id": "stor-0348",
+  "instruction": "For the first time ever, a person is born with a genuine superpower. They proceed to live out their entire life without noticing or realizing it.\n\nWrite a short story of about 400 words."
+ },
+ {
+  "prompt_id": "gene-0573",
+  "instruction": "What are the potential ecological effects/dangers if a train carrying over a million pounds of vinyl chloride derailed, leaked, and exploded? How might the immediate area be impacted and how far could it spread?"
+ },
+ {
+  "prompt_id": "essa-07-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 250-word essay on this topic: Should public transport be free for everyone? Explain your view."
+ },
+ {
+  "prompt_id": "news-0063",
+  "instruction": "Write a news article of about 300 words based on these key points:\n- U.S. Sen. Jim Inhofe: Nuclear is our largest source of carbon-free energy, generating over 60% of our carbon-free electricity.\n- So why doesn't the President's climate plan, allegedly aimed at reducing carbon emissions, do more with nuclear power?. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0173",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 175 words for a research paper titled \"A Novel PHY Layer Approach for Enhanced Data Rate in LoRa using Adaptive Symbol Periods\"."
+ },
+ {
+  "prompt_id": "stor-0349",
+  "instruction": "I'm a college student and need help with an assignment. Everyone on Earth has a superpower. Some people have incredible abilities, but most have very mundane powers, you included. Tell us about being a convenience store worker when someone tries to rob your store.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "gene-0574",
+  "instruction": "What are the ways to create a GIF animation from a bunch of images? Answer in about 700 words."
+ },
+ {
+  "prompt_id": "essa-07-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should public transport be free for everyone? Explain your view."
+ },
+ {
+  "prompt_id": "news-0064",
+  "instruction": "Using the following highlights, write a 500-word news story:\n- Abu Khdeir's name is on the memorial wall at Jerusalem's Mount Herzl.\n- His father and a terror victim advocacy group objected to his being included in the list.\n- The Palestinian teenager was beaten and burned by three Israelis, authorities say."
+ },
+ {
+  "prompt_id": "abst-0174",
+  "instruction": "Draft the abstract (around 150 words) for the paper \"Angular momentum decomposition of the three-dimensional Wigner harmonic oscillator\"."
+ }
+]

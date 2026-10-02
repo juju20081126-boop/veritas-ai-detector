@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "news-0032",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Boris Nemtsov is buried in a Moscow cemetery following a somber memorial service.\n- Nemtsov \"always said everything that others were afraid to say,\" says one mourner.\n- Moscow Investigative Committee says \"all scenarios\" are being considered in Nemtsov slaying."
+ },
+ {
+  "prompt_id": "abst-0142",
+  "instruction": "Draft the abstract (around 150 words) for the paper \"Metallicity distributions of globular cluster systems in galaxies\"."
+ },
+ {
+  "prompt_id": "stor-0320",
+  "instruction": "Write a 300-word story for this prompt: A villian who thinks he's a hero realizes he's the villian. What is he thinking?"
+ },
+ {
+  "prompt_id": "gene-0525",
+  "instruction": "What is the next number in the sequence: 1, 1, 2, 3, 5, 8, 13, ...? (about 350 words)"
+ },
+ {
+  "prompt_id": "news-0033",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 400 words):\n- New book, \"Becoming Steve Jobs,\" offers a gentler vision of the mercurial CEO.\n- Apple execs have praised the new book over Walter Isaacson's 2011 bestseller.\n- Among new book's tidbits: When Jobs was dying, Tim Cook offered piece of his liver."
+ },
+ {
+  "prompt_id": "abst-0143",
+  "instruction": "Draft the abstract (around 275 words) for the paper \"RoboTAP - target priorities for robotic microlensing observations\"."
+ },
+ {
+  "prompt_id": "gene-0526",
+  "instruction": "I've noticed that a lot of big tech companies are using the same art style. When I talked to a coworker about it they said that it's called \"Corporate Memphis\". Where did this art style come from and why is it so popular? Keep it around 250 words."
+ },
+ {
+  "prompt_id": "news-0034",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 300 words):\n- Iran's first Supreme Leader made a bitter peace with Iraq's Saddam Hussein.\n- Nazila Fathi: Is current leader Ayatollah Khamanei trying to put Iran on right track before he dies?."
+ },
+ {
+  "prompt_id": "abst-0144",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"On Matrix Geometry and Effective Actions\"."
+ },
+ {
+  "prompt_id": "gene-0527",
+  "instruction": "Why are zebras striped? Explain, with a focus on the function of the stripes esp in Zse sze fly repellation - formulate at primary school level. Answer in about 250 words."
+ },
+ {
+  "prompt_id": "gene-0528",
+  "instruction": "Why does a US $20 bill have a vertical strip on it when held to light? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0529",
+  "instruction": "What is the best way to wake up fresh in the morning?"
+ },
+ {
+  "prompt_id": "gene-0530",
+  "instruction": "I'm a college student and need help with an assignment. Write a paragraph explaining what an ostrich is in the style of Charles Dickens."
+ },
+ {
+  "prompt_id": "gene-0531",
+  "instruction": "I'm a college student and need help with an assignment. What is the best skill in judo? (about 700 words)"
+ },
+ {
+  "prompt_id": "gene-0532",
+  "instruction": "How do you know if you're a good person? Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0533",
+  "instruction": "How did human behavior and cognition evolve over time and what are some of the factors that influence them in different cultures and contexts? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "gene-0534",
+  "instruction": "I'm a college student and need help with an assignment. Could you provide a latex template to write an academic article? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0535",
+  "instruction": "What are the typical plans for white in the Scheveningen?"
+ },
+ {
+  "prompt_id": "gene-0536",
+  "instruction": "Write a joke about a person going into a bar."
+ },
+ {
+  "prompt_id": "gene-0537",
+  "instruction": "What are some sports that are played with a round ball?"
+ }
+]

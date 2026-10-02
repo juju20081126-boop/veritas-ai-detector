@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0005",
+  "instruction": "Write a news article of about 500 words based on these key points:\n- Actors Kristin Chenoweth and Alan Cumming are set to host the 2015 Tony Awards ceremony.\n- Best play nominees: 'The Curious Incident of the Dog in the Night-Time,\" \"Disgraced,\" \"Hand to God\" and \"Wolf Hall Parts One & Two\" The awards will be presented on June 7 in a ceremony airing live at 8 p.m. on CBS. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0115",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 150 words for a research paper titled \"Chiral corrections to kaon-nucleon scattering lengths\"."
+ },
+ {
+  "prompt_id": "emai-0225",
+  "instruction": "Write an email with the subject line \"Concern about EBS\". Aim for about 300 words."
+ },
+ {
+  "prompt_id": "stor-0295",
+  "instruction": "I'm a college student and need help with an assignment. Tell the story of a spider that fell in love with an arachnophobe.\n\nWrite a short story of about 400 words."
+ },
+ {
+  "prompt_id": "expl-0395",
+  "instruction": "Why is the best tasting food usually unhealthy?\n\nExplain it in about 100 words."
+ },
+ {
+  "prompt_id": "gene-0475",
+  "instruction": "I'm a college student and need help with an assignment. What is a helicopter autorotation?\nWhat are the steps involved? Keep it around 350 words."
+ },
+ {
+  "prompt_id": "news-0006",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 300 words based on these key points:\n- 1,200 sailors to go through a three-hull swap, serving aboard three different carriers in one tour of duty.\n- Crew members will serve on three carriers named after presidents.\n- The swap will take them from Japan, around South America to Virginia, and then back west to San Diego."
+ },
+ {
+  "prompt_id": "abst-0116",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Tunneling dynamics of bosonic Josephson junctions assisted by a cavity field\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0226",
+  "instruction": "Please draft a work email about: today's jokes - Not bad if your up late (around 250 words). Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0296",
+  "instruction": "Write a 400-word story for this prompt: A person's eye colour correlates to what superpower they have, activated at age 18. You are the first person to be born with totally black eyes."
+ },
+ {
+  "prompt_id": "expl-0396",
+  "instruction": "How did people (esp. European townsmen) get fresh water in the Middle Ages?\n\nExplain it in about 150 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0476",
+  "instruction": "I'm a college student and need help with an assignment. Should technology and software coding subjects be mandatory in the curriculum of high school education? Answer in about 500 words."
+ }
+]
