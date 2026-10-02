@@ -89,6 +89,11 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Updated Section 7 to note deprecation and quarantine of the legacy synthetic refresh pipeline.
 - Evidence: `git diff --stat` shows 145 insertions, 18 deletions in `RESEARCH_COMPENDIUM.md`.
 
+## 2026-10-02 — Antigravity CLI — Task 5: Label synthetic samples in sample_data.py
+- Added module docstring and `SYNTHETIC_DEMO = True` constant to `samples/sample_data.py` declaring that texts are hand-written demonstration passages, not model outputs or measured data.
+- Evidence: `git diff --stat` shows 9 insertions, 8 deletions in `samples/sample_data.py`.
+
+
 
 
 

@@ -1,12 +1,13 @@
+"""Synthetic Demo Samples for UI and CLI Demonstration.
+
+SYNTHETIC_DEMO = True
+NOTICE: The sample texts contained in this file are hand-written demonstration passages
+crafted for testing user interface flows and CLI display. They are NOT genuine model
+outputs generated via live frontier APIs, nor are they empirically measured ground-truth data.
+Replacement with verified real corpus samples will follow from the frontier corpus pipeline.
 """
-Preloaded Realistic Sample Datasets for Instant Demonstration & Testing
-Includes:
-1. Pure ChatGPT 4o Generated Academic Essay
-2. Pure Claude 3.5 Sonnet Technical Analysis
-3. Genuine Human Academic History Essay
-4. Genuine Human Narrative & Personal Reflection
-5. Mixed Submission (Human Student Intro + AI Generated Body)
-"""
+
+SYNTHETIC_DEMO = True
 
 SAMPLES = {
     "chatgpt_academic": {
