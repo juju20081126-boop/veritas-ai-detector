@@ -152,3 +152,58 @@ Status from me: Opus 5.5 locked-split generations are in; Sonnet 5.5 and the dev
 - Provides complete pipeline to load `data/splits/train.jsonl.gz` (fields: `text`, `label`), fine-tune `microsoft/deberta-v3-small` on 4-class taxonomy, evaluate macro-F1, export to FP32 ONNX, and quantize to dynamic INT8 (`onnxruntime.quantization`).
 - Evidence: `git status` shows new untracked file `notebooks/03_gpu_finetune.ipynb` (236 lines).
 
+## 2026-10-02 — Antigravity CLI — Round 2 Task 1: Real-data pipeline execution guide in README
+- Added "How to Run the Real-Data Pipeline" section to `README.md` with the 5 sequential phases and all 12 script invocations copied directly from script docstrings:
+  - Step 1 (Prompts & Human Data): `scripts/corpus/build_prompts.py`, `build_esl.py`, `build_public_ai.py [--only raid|mage|hc3]`, `build_human_extra.py`.
+  - Step 2 (Frontier Model Generations): `scripts/corpus/make_generation_batches.py [--batch-size 20] [--round r2]`, `ingest_generations.py [--batch <id>]`.
+  - Step 3 (Adversarial Attacks): `scripts/corpus/make_attacks.py`, `make_llm_attack_batches.py [--stage 1|2]`, `ingest_llm_attacks.py`.
+  - Step 4 (Splits & Integrity): `scripts/corpus/build_splits.py [--lock]`, `scripts/check_integrity.py [--legacy-demo|--json]`.
+  - Step 5 (Evaluation): `scripts/eval_frontier.py --split dev|locked`.
+- Marked section prominently: "Status: in progress; results will be in `data/reports/` when finished".
+- Evidence: `git diff --stat` showed 67 insertions, 1 deletion in `README.md` (commit `d38d404`).
+
+## 2026-10-02 — Antigravity CLI — Round 2 Task 2: Documented Limitations section in README
+- Added "Limitations & Forensic Boundaries" section to `README.md` restricted to claims tagged `[documented]` in `data/research/sources.md`:
+  - Non-native English (ESL) false-positive risk (Liang et al. 2023, 61.22% average FP on TOEFL essays).
+  - Short-text unreliability (<= 100 words degraded in Ghostbuster, Fast-DetectGPT, and Pangram; 150+ words recommended).
+  - Vulnerability to iterative paraphrasing and commercial humanizers (PADBen 2025, DAMAGE 2025).
+  - Vendor accuracy claims are self-reported marketing figures that drop under independent multi-model adversarial benchmarks.
+  - Probabilistic nature of detection: outputs are statistical resemblance signals, not proof of authorship.
+- Evidence: `git diff --stat` showed 13 insertions in `README.md` (commit `c61b4f2`).
+
+## 2026-10-02 — Antigravity CLI — Round 2 Task 3: Short-text and probabilistic disclaimer in frontend
+- Added disclaimer copy under results area in `frontend/index.html`: `"Results are unreliable for text under 100 words (150+ recommended) and are signals, not proof of authorship."`
+- Styled via `.results-disclaimer` in `frontend/style.css` using theme variable `--ink-3` so it adapts cleanly across light and dark modes.
+- Preserved all element IDs that `app.js` relies upon; no logic or ID changes.
+- Evidence: `git diff --stat` showed 8 insertions across `frontend/index.html` and `frontend/style.css` (commit `f7e0943`).
+
+## 2026-10-02 — Antigravity CLI — Round 2 Task 4: notebooks/README.md declaring unexecuted status
+- Created `notebooks/README.md` explicitly documenting that none of the notebooks in `notebooks/` have been executed in this repository and no experimental results come from them.
+- Catalogs `01_teacher_ensemble_and_labeling.ipynb`, `02_student_distillation_and_onnx_export.ipynb`, and `03_gpu_finetune.ipynb` as reference templates for cloud GPU environments (Kaggle/Colab) rather than low-end local CPU inference.
+- Evidence: `git diff --stat` showed 30 insertions in `notebooks/README.md` (commit `b80b82b`).
+
+## 2026-10-02 — Antigravity CLI — Round 2 Task 5: Clean-checkout pytest scripts/ execution
+- Environment: Isolated clean checkout clone (`scratch/test_env/repo`) and dedicated virtualenv (`scratch/test_env/venv`) with `numpy==2.4.6`, `pytest==9.1.1`, and `scikit-learn==1.9.1` installed via pip.
+- Command executed: `pytest scripts/ -v`
+- Test Results:
+  - **14 passed in 7.55s** (0 failed, 0 errors, 0 skipped).
+  - Passing tests:
+    - `scripts/tests/test_integrity.py::test_lint_flags_hard_coded_metrics` PASSED
+    - `scripts/tests/test_integrity.py::test_lint_ignores_parameters_and_neutral_values` PASSED
+    - `scripts/tests/test_integrity.py::test_active_code_passes_metric_lint` PASSED
+    - `scripts/tests/test_integrity.py::test_valid_records_pass` PASSED
+    - `scripts/tests/test_integrity.py::test_synthetic_provenance_rejected` PASSED
+    - `scripts/tests/test_integrity.py::test_unregistered_generator_and_post_chatgpt_human_rejected` PASSED
+    - `scripts/tests/test_integrity.py::test_attacked_row_needs_parent` PASSED
+    - `scripts/tests/test_integrity.py::test_near_duplicate_detected_across_groups_only` PASSED
+    - `scripts/tests/test_integrity.py::test_wilson_and_auroc_and_threshold` PASSED
+    - `scripts/tests/test_integrity.py::test_paired_bootstrap_detects_a_clear_gain` PASSED
+    - `scripts/tests/test_integrity.py::test_normalize_text_removes_attack_characters_and_keeps_style` PASSED
+    - `scripts/tests/test_integrity.py::test_balance_gate_flags_dominated_genre` PASSED
+    - `scripts/tests/test_integrity.py::test_split_gate_fails_on_shared_group_and_passes_when_disjoint` PASSED
+    - `scripts/tests/test_integrity.py::test_gates_fail_closed_on_empty` PASSED
+  - Failure text: None.
+
+
+
+
