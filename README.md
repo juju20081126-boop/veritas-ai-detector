@@ -217,7 +217,20 @@ In strict accordance with terms of service (no scraping or automated querying), 
 
 ---
 
+## ⚠️ Limitations & Forensic Boundaries
+
+Based strictly on documented findings in empirical research (see [`data/research/sources.md`](file:///C:/Users/justi/AI%20detector/data/research/sources.md)):
+
+- **Non-Native English (ESL) False-Positive Risk:** Standard perplexity and vocabulary diversity measures carry documented bias against non-native writers. Liang et al. (*Patterns* 2023) showed that seven commercial detectors misclassified non-native TOEFL essays as AI-generated an average of 61.22% of the time (vs. 5.19% on native student essays). Simpler vocabulary and structured phrasing must not be treated as a proxy for machine authorship.
+- **Short Text is Unreliable:** Statistical detection degrades substantially on passages under 100 words because token counts are insufficient for stable distribution estimates (Ghostbuster, Verma et al. 2024; Fast-DetectGPT, Bao et al. 2024; Pangram, 2024). A minimum of 150+ words is strongly recommended, and texts below 80 words should be treated as insufficient for evaluation.
+- **Paraphrased and Humanized Text is the Hardest:** Iterative paraphrasing and commercial humanizer bypasses severely degrade all detector architectures. In independent benchmarks (PADBen, 2025; DAMAGE, 2025), automated humanizers cut leading zero-shot detector recall from over 94% down to 28%–60%.
+- **Vendor Accuracy Figures are Self-Reported:** Published commercial detection claims (often claiming 98%–99% accuracy) reflect vendor-selected marketing benchmarks rather than independent evaluations. When evaluated across multi-generator, adversarial benchmarks like RAID (ACL 2024), detectors suffer substantial performance drops.
+- **Probabilistic Signals, Not Proof of Authorship:** No detector is error-free. AI detection outputs represent statistical similarity to observed language model distributions in specific contexts, not definitive or legal proof of authorship. Scores should serve as informational screening signals rather than sole arbiters for disciplinary decisions.
+
+---
+
 ## 📜 License & Acknowledgments
 
 - Public research datasets tracked under individual open licenses: RAID (CC-BY 4.0), M4 (Apache-2.0), HC3 (CC-BY-SA 4.0), DetectRL (Apache-2.0). See [`data/public_licenses.md`](file:///C:/Users/justi/AI%20detector/data/public_licenses.md).
 - Veritas AI is released under the **MIT License**.
+
