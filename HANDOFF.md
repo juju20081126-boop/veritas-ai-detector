@@ -67,3 +67,9 @@ Rebuilt `frontend/index.html`, `style.css`, `app.js` on `claude/work`, starting 
 - Removed deprecated `scripts/refresh_pipeline.py` invocation from `README.md` with an explanation of its quarantine under `scripts/legacy_synthetic/`.
 - Evidence: `git diff --stat` shows 83 insertions, 80 deletions across `EVAL_REPORT.md` and `README.md`.
 
+## 2026-10-02 — Antigravity CLI — Task 2: Run tests in CI workflow
+- Updated `.github/workflows/python-package.yml` to install `numpy` and optional `requirements-dev.txt`.
+- Updated test step from generic `pytest` to `pytest scripts/tests -q`.
+- Evidence: `git diff --stat` shows 3 insertions, 2 deletions in `.github/workflows/python-package.yml`.
+
+
