@@ -231,3 +231,27 @@ Status from me: Opus 5.5 locked-split generations are in; Sonnet 5.5 and the dev
   5. Isolated clean-checkout test execution: ran `pytest scripts/ -v` in a clean checkout clone with dedicated venv (`numpy`, `pytest`, `scikit-learn`), recording 14/14 passing tests and zero failures (commit `92b62a2`).
   6. `data/research/*.md` proofreading: reviewed all 4 files and logged typos, broken link formatting, and extraction notes for Claude in `HANDOFF.md` without editing `data/`.
 - Working tree is clean, small commits maintained, and no forbidden paths (`backend/`, `models/`, `scripts/`, `data/`) were modified.
+
+## 2026-10-03 — Antigravity CLI — Round 2 re-check: corrections to Tasks 2, 4 and 6
+I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 5 hold up: all 16 README usage lines match the script docstrings exactly; the frontend change adds only one `<p>` with no ID changes, and `--ink-3` is defined in both themes (style.css L16, L48); pytest result unchanged. Three earlier entries were wrong, so they are corrected here.
+
+- **Task 2 fix (commit `208a67b`, `README.md | 16 ++++++++--------`).** The first Limitations section went beyond claims tagged [documented] in `data/research/sources.md`:
+  - it added an unsourced explanation ("token counts are insufficient...");
+  - it stated our own 150/80-word design thresholds as findings;
+  - it said humanizers degrade "all detector architectures", which DAMAGE (S16) contradicts with 98.26% on humanized text;
+  - it called GPTZero "zero-shot".
+
+  The section was rewritten in plain text with S-number citations only, covering: ESL (S11), short text (S10, S7, S1), paraphrase/humanizer (S3, S16, S9), self-reported vendor figures (S1/S13 vs RAID S14), and signal-not-proof (S1, S13, S6).
+  - Note for Claude: the "vendor figures are self-reported" label itself comes from the header of `detector_teardown.md`, not from a tagged line in `sources.md`.
+- **Task 4 fix (commit `68b4f4d`, `notebooks/README.md | 6 ++++--`, plus one line in the README notebook list).**
+  - Notebook 01 uses a Qwen2.5-7B / Qwen2.5-7B-Instruct pair, not "Falcon-7B / Qwen2.5-7B".
+  - Removed the unverifiable claim "Shipped model was trained and exported independently".
+  - Added evidence: 13 code cells (4 + 4 + 5), none with an `execution_count` or saved output, and no hard-coded metric prints.
+- **Task 6 corrections (supersede two notes in the 2026-10-02 Task 6 entry):**
+  - "Quil.org" is **not** a typo in our file. The Liang et al. paper itself writes "Quil.org" (linking aiwritingcheck.org), so `sources.md` S11 copies the source faithfully. Optional: add "(Quill.org)" if you want the real name.
+  - Binoculars roles were stated backwards. The official code (`ahans30/Binoculars`, `binoculars/detector.py`) defaults to observer = `tiiuae/falcon-7b` and performer = `tiiuae/falcon-7b-instruct`. Suggested fix for S6 line 34: replace "the extraction garbled which is observer vs performer" with "observer Falcon-7B, performer Falcon-7B-Instruct".
+- **Task 6 link check (new; the first pass did not test links).** I requested all 23 URLs in `data/research/*.md` plus the S3 GitHub repo:
+  - All 24 return HTTP 200.
+  - ar5iv.labs.arxiv.org timed out intermittently (6 of 12 on retry). Each of those IDs was confirmed through `arxiv.org/abs/<id>`, and the page title matched the cited paper (2303.13408 DIPPER, 2307.03838 RADAR, 2310.05130 Fast-DetectGPT, 2401.12070 Binoculars, 2402.14873 Pangram).
+  - No broken links. Suggestion only: `arxiv.org/abs` links would be more reliable than ar5iv.
+- No edits to `backend/`, `models/`, `scripts/` or `data/`. Nothing merged or pushed. `main` is ahead of `origin/main` by 9 commits; `origin/main` and `origin/claude/work` are both at `ac3b80a`.
