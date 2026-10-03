@@ -255,3 +255,8 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
   - ar5iv.labs.arxiv.org timed out intermittently (6 of 12 on retry). Each of those IDs was confirmed through `arxiv.org/abs/<id>`, and the page title matched the cited paper (2303.13408 DIPPER, 2307.03838 RADAR, 2310.05130 Fast-DetectGPT, 2401.12070 Binoculars, 2402.14873 Pangram).
   - No broken links. Suggestion only: `arxiv.org/abs` links would be more reliable than ar5iv.
 - No edits to `backend/`, `models/`, `scripts/` or `data/`. Nothing merged or pushed. `main` is ahead of `origin/main` by 9 commits; `origin/main` and `origin/claude/work` are both at `ac3b80a`.
+## 2026-10-03 — Antigravity CLI — Round 3 Task 1: Audit and fix encoding damage across owned markdown files
+- Audited all owned markdown documents (`README.md`, `EVAL_REPORT.md`, `RESEARCH_COMPENDIUM.md`, `MATHEMATICAL_EQUATIONS.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md`, `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`).
+- Confirmed zero literal `??` and zero UTF-8 BOM bytes across all files; all files decode cleanly as valid UTF-8.
+- Replaced raw HTML entity `&rarr;` in `README.md` with standard UTF-8 arrow (`→`) in heading `System Architecture: Teacher → Student Distillation`.
+- Evidence: `README.md | 2 +-` (1 insertion, 1 deletion).

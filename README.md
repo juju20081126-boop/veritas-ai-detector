@@ -34,7 +34,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 
 ---
 
-## 🔬 System Architecture: Teacher &rarr; Student Distillation
+## 🔬 System Architecture: Teacher → Student Distillation
 
 ```
 Cloud Teacher Ensemble (Kaggle/Colab GPU)
