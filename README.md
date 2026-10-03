@@ -21,6 +21,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
   - [Cloud Jupyter Notebooks (Kaggle / Google Colab)](#cloud-jupyter-notebooks-kaggle--google-colab)
 - [State-of-the-Art Research & Mathematical Formulations (2024–2026)](#state-of-the-art-research--mathematical-formulations-20242026)
 - [QuillBot Comparison Sheet (30 Hand-Check Samples)](#quillbot-comparison-sheet-30-hand-check-samples)
+- [Hand-collecting detector verdicts (no automation)](#hand-collecting-detector-verdicts-no-automation)
 - [Limitations](#limitations)
 - [License & Acknowledgments](#license--acknowledgments)
 
@@ -233,6 +234,19 @@ For an exhaustive technical compendium covering modern detection equations, zero
 In strict accordance with terms of service (no scraping or automated querying), exactly 30 representative passages across all 4 classes, native human, ESL human, and frontier models are provided for manual side-by-side inspection:
 - JSON format: [`data/quillbot_comparison_sheet.json`](file:///C:/Users/justi/AI%20detector/data/quillbot_comparison_sheet.json)
 - Markdown table: [`data/quillbot_comparison_sheet.md`](file:///C:/Users/justi/AI%20detector/data/quillbot_comparison_sheet.md)
+
+---
+
+## Hand-collecting detector verdicts (no automation)
+
+To benchmark third-party commercial detectors safely and in compliance with Terms of Service:
+1. Claude produces a numbered CSV containing test passages (`id`, `text`).
+2. The user pastes each text into a detector's web page **BY HAND**.
+3. The user records the verdict in a result column.
+
+**Rules:**
+- Maximum ~200 texts per detector to avoid abuse and maintain manual feasibility.
+- Never automate a detector or paraphraser website, never scrape, and never send requests programmatically.
 
 ---
 

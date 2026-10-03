@@ -264,3 +264,11 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
 - Added Table of Contents at the top of `README.md` referencing all major sections and subsections.
 - Verified heading hierarchy: exactly one top-level H1 (`#`), with all primary sections at H2 (`##`), subsections at H3 (`###`), and pipeline sub-phases at H4 (`####`).
 - Evidence: `README.md | 19 +++++++++++++++++++` (19 insertions).
+## 2026-10-03 — Antigravity CLI — Round 3 Task 3: Hand-collecting detector verdicts guide in README
+- Added "Hand-collecting detector verdicts (no automation)" section to `README.md` (10 lines, under 15-line limit):
+  - Step 1: Claude generates numbered CSV of texts (`id`, `text`).
+  - Step 2: User pastes each text into detector web page BY HAND.
+  - Step 3: User records verdict in result column.
+  - Rules: max ~200 texts per detector; never automate detector/paraphraser websites; never scrape.
+- Updated Table of Contents in `README.md` to link to the new section.
+- Evidence: `README.md | 14 ++++++++++++++` (14 insertions).
