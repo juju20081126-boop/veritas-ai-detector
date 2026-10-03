@@ -283,3 +283,9 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
   - Common categories: unused imports (`F401`), unsorted imports (`I001`), mutable default arguments (`B006`), explicit conversion flags (`RUF010`), and unescaped characters in test strings (`PLE2515`).
   - As per ownership boundaries in `AGENTS.md`, no edits were made to `scripts/` or `backend/`.
 - Evidence: `.github/workflows/python-package.yml | 6 ++++++` (6 insertions).
+## 2026-10-03 — Antigravity CLI — Round 3 Task 6: Validate notebook JSON and nbformat schema
+- Validated all 3 notebooks in `notebooks/` using `nbformat.validate` (nbformat v5.11.1, schema v4.4):
+  - `notebooks/01_teacher_ensemble_and_labeling.ipynb`: Valid JSON, valid nbformat v4.4 (9 cells: 5 markdown, 4 code; 0 outputs, `execution_count=None`).
+  - `notebooks/02_student_distillation_and_onnx_export.ipynb`: Valid JSON, valid nbformat v4.4 (8 cells: 4 markdown, 4 code; 0 outputs, `execution_count=None`).
+  - `notebooks/03_gpu_finetune.ipynb`: Valid JSON, valid nbformat v4.4 (10 cells: 5 markdown, 5 code; 0 outputs, `execution_count=None`).
+- Result: 0 structural errors detected; all notebooks conform strictly to Jupyter notebook specification v4. No fixes required.
