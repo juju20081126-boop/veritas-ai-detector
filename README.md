@@ -190,7 +190,7 @@ python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta .
 
 ### Cloud Jupyter Notebooks (Kaggle / Google Colab)
 - [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
-- [`notebooks/02_student_distillation_and_onnx_export.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/02_student_distillation_and_onnx_export.ipynb): Distills student, fits stylometrics meta-classifier, exports INT8 ONNX, and performs calibration.
+- [`notebooks/02_student_distillation_and_onnx_export.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/02_student_distillation_and_onnx_export.ipynb): Student distillation, stylometrics meta-classifier, INT8 ONNX export and calibration (unrun template; no results claimed).
 - [`notebooks/03_gpu_finetune.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/03_gpu_finetune.ipynb): Fine-tunes DeBERTa-v3-small on real training data and exports ONNX INT8 (unrun template; no results claimed).
 
 
@@ -217,15 +217,15 @@ In strict accordance with terms of service (no scraping or automated querying), 
 
 ---
 
-## ⚠️ Limitations & Forensic Boundaries
+## Limitations
 
-Based strictly on documented findings in empirical research (see [`data/research/sources.md`](file:///C:/Users/justi/AI%20detector/data/research/sources.md)):
+Every point below is a claim tagged [documented] in data/research/sources.md. The S-numbers refer to entries in that file.
 
-- **Non-Native English (ESL) False-Positive Risk:** Standard perplexity and vocabulary diversity measures carry documented bias against non-native writers. Liang et al. (*Patterns* 2023) showed that seven commercial detectors misclassified non-native TOEFL essays as AI-generated an average of 61.22% of the time (vs. 5.19% on native student essays). Simpler vocabulary and structured phrasing must not be treated as a proxy for machine authorship.
-- **Short Text is Unreliable:** Statistical detection degrades substantially on passages under 100 words because token counts are insufficient for stable distribution estimates (Ghostbuster, Verma et al. 2024; Fast-DetectGPT, Bao et al. 2024; Pangram, 2024). A minimum of 150+ words is strongly recommended, and texts below 80 words should be treated as insufficient for evaluation.
-- **Paraphrased and Humanized Text is the Hardest:** Iterative paraphrasing and commercial humanizer bypasses severely degrade all detector architectures. In independent benchmarks (PADBen, 2025; DAMAGE, 2025), automated humanizers cut leading zero-shot detector recall from over 94% down to 28%–60%.
-- **Vendor Accuracy Figures are Self-Reported:** Published commercial detection claims (often claiming 98%–99% accuracy) reflect vendor-selected marketing benchmarks rather than independent evaluations. When evaluated across multi-generator, adversarial benchmarks like RAID (ACL 2024), detectors suffer substantial performance drops.
-- **Probabilistic Signals, Not Proof of Authorship:** No detector is error-free. AI detection outputs represent statistical similarity to observed language model distributions in specific contexts, not definitive or legal proof of authorship. Scores should serve as informational screening signals rather than sole arbiters for disciplinary decisions.
+- Non-native English writers can be wrongly flagged as AI. Liang et al. (Patterns 2023, S11) ran seven detectors on 91 TOEFL essays by non-native writers and 88 essays by US 8th-graders. On average, 61.22% of the TOEFL essays were labelled AI-written, against about 5.19% of the native essays. The authors link this to lower perplexity and less varied vocabulary. Those were 2023 detectors, but the result is the standing worst case.
+- Short text is unreliable. Ghostbuster (S10) degrades substantially on text of 100 tokens or fewer. Fast-DetectGPT (S7) reports that accuracy rises steadily with passage length. Pangram (S1) states that shorter text is harder: in its humanizer test, texts under 50 words reached 73.32% TPR at 1% FPR, compared with 100% at full length.
+- Paraphrased and humanized text is the hardest case. PADBen (S3) finds that iterative paraphrasing is the hardest attack, and that detectors break on the intermediate paraphrase steps. In DAMAGE (S16), detection of humanized text fell to 60.04% for GPTZero and 28.23% for Binoculars (TPR at 5% FPR). DIPPER paraphrasing (S9) cut DetectGPT from 70.3% to 4.6% TPR at 1% FPR.
+- Vendor accuracy figures are self-reported. For example, Pangram's figures (S1, S13) come from Pangram's own technical reports. The independent RAID benchmark (S14) found that detectors are biased toward the domains and models they were trained on, and are "not yet robust enough for high-stakes use".
+- A score is a signal, not proof of authorship. Pangram (S1) says its detector is statistical and that the same text can score differently in different contexts. The Pangram authors also advise against using a detector as the only basis for a decision (S13). Binoculars (S6) flagged famous memorised texts, such as the US Constitution, as machine-generated.
 
 ---
 
