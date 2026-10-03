@@ -239,4 +239,59 @@ test.describe('Veritas AI Detector — Frontend Smoke Suite', () => {
     await expect(langLabel).toHaveText('繁中');
     await expect(analyzeBtn).toHaveText('Check text');
   });
+
+  test('7. Visual rendering at 1280px desktop in light theme', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(BASE_URL, { waitUntil: 'networkidle' });
+    await page.evaluate(() => {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('veritas_theme', 'light');
+    });
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+    await expect(page.locator('#textInput')).toBeVisible();
+    await expect(page.locator('#btnAnalyze')).toBeVisible();
+    await page.screenshot({ path: 'test-results/desktop_1280px_light.png' });
+  });
+
+  test('8. Visual rendering at 1280px desktop in dark theme', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(BASE_URL, { waitUntil: 'networkidle' });
+    await page.evaluate(() => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('veritas_theme', 'dark');
+    });
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    await expect(page.locator('#textInput')).toBeVisible();
+    await expect(page.locator('#btnAnalyze')).toBeVisible();
+    await page.screenshot({ path: 'test-results/desktop_1280px_dark.png' });
+  });
+
+  test('9. Visual rendering at 375px mobile in light theme', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto(BASE_URL, { waitUntil: 'networkidle' });
+    await page.evaluate(() => {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('veritas_theme', 'light');
+    });
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+    await expect(page.locator('#textInput')).toBeVisible();
+    const scrollWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(scrollWidth).toBeLessThanOrEqual(376);
+    await page.screenshot({ path: 'test-results/mobile_375px_light.png' });
+  });
+
+  test('10. Visual rendering at 375px mobile in dark theme', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto(BASE_URL, { waitUntil: 'networkidle' });
+    await page.evaluate(() => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('veritas_theme', 'dark');
+    });
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    await expect(page.locator('#textInput')).toBeVisible();
+    const scrollWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(scrollWidth).toBeLessThanOrEqual(376);
+    await page.screenshot({ path: 'test-results/mobile_375px_dark.png' });
+  });
 });
+
