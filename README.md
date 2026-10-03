@@ -146,58 +146,395 @@ The engine extracts a 20-dimensional stylometric feature vector (`backend/stylom
   This generates QuillBot-style headlines such as `"82% of text is likely AI"` or `"100% of text is likely Human"`.
 
 ### 6. FastAPI Server Endpoints & Response Schema
-The backend server (`backend/server.py`) provides the following endpoints:
+The backend server (`backend/server.py`) provides 5 REST endpoints. Below is the complete specification including request parameters, full response schemas with explicit types, error status codes, and verified `curl` examples executed against a live local instance (`http://127.0.0.1:8003`).
 
-#### `POST /api/detect`
-- **Request Body**:
+---
+
+#### 1. `GET /api/health`
+Checks backend server liveness, model execution runtime, and process memory telemetry.
+
+- **Method**: `GET`
+- **Request Parameters**: None
+- **Response Keys**:
+  - `status` (`str`): Server operational state (e.g. `"online"`).
+  - `architecture` (`str`): Model architecture description (`"Distilled Student ONNX INT8 + Stylometric Meta-Classifier"`).
+  - `engine_runtime` (`str`): Inference runtime execution environment (`"onnxruntime (Zero PyTorch)"`).
+  - `device` (`str`): Hardware target device (`"cpu"`).
+  - `cpu_threads` (`int`): Configured intra-op execution thread count (`2`).
+  - `process_ram_mb` (`float`): Current process resident set size (RSS) memory consumption in megabytes.
+  - `target_ram_cap_mb` (`float`): Maximum target memory budget envelope (`1500.0`).
+  - `timestamp` (`float`): Unix epoch timestamp of response generation.
+- **Error Codes**: `500 Internal Server Error` if telemetry inspection fails.
+- **Verified `curl` Example**:
+  ```bash
+  curl.exe -s http://127.0.0.1:8003/api/health
+  ```
+  **Real Server Output**:
   ```json
   {
-    "text": "String of text to analyze (minimum 5 words)",
-    "confidence_threshold": 0.40,
-    "filename": "Pasted Text"
+    "status": "online",
+    "architecture": "Distilled Student ONNX INT8 + Stylometric Meta-Classifier",
+    "engine_runtime": "onnxruntime (Zero PyTorch)",
+    "device": "cpu",
+    "cpu_threads": 2,
+    "process_ram_mb": 76.0,
+    "target_ram_cap_mb": 1500.0,
+    "timestamp": 1791033220.3387377
   }
   ```
-- **Response JSON Keys**:
-  - `summary`:
-    - `verdict`: `"Human-written"`, `"Human-written & AI-refined"`, `"AI-generated & AI-refined"`, `"AI-generated"`, or `"Uncertain"`.
-    - `verdict_description`: Textual explanation of the forensic classification.
-    - `badge`: HTML badge label.
-    - `is_uncertain`: Boolean indicating if judgment was withheld.
-    - `confidence` / `confidence_pct`: Overall confidence score.
-    - `quillbot_headline`: QuillBot headline string (e.g., `"78% of text is likely AI"`).
-    - `quillbot_headline_class`: CSS badge class (`badge-ai`, `badge-ai-refined`, `badge-human`).
-    - `quillbot_ai_pct` / `quillbot_human_pct`: Aggregate word-weighted percentage coverage.
-    - `word_count`, `character_count`, `sentence_count`: Text statistics.
-    - `length_warning`: Warning message if text has fewer than 80 words.
-    - `elapsed_seconds`: Wall-clock analysis duration.
-  - `calibrated_probabilities`: Dictionary mapping each of the 4 classes to its calibrated probability float.
-  - `percentages`: Dictionary with percentage coverage breakdown for `ai_generated`, `ai_ai_refined`, `human_ai_refined`, and `human`.
-  - `quillbot_breakdown`: Structured breakdown containing `headline`, `headline_class`, `ai_percentage`, `human_percentage`, and `segments`.
-  - `sentences`: List of sentence analysis dictionaries:
-    - `index`: 0-based sentence position.
-    - `text`: Sentence string.
-    - `class_label`: Assigned class.
-    - `class_key`: Key identifier (`ai_generated`, `ai_ai_refined`, `human_ai_refined`, `human`).
-    - `color_class` / `highlight_class`: CSS styling classes.
-    - `confidence`: Confidence score.
-    - `ai_likelihood_pct`: Combined AI probability percentage ($p_{\text{ai\_gen}} + p_{\text{ai\_ref}}$).
-    - `probabilities`: 4-class calibrated probabilities for this sentence.
-    - `reasons`: Forensic explanation strings (e.g., detected AI transitions, personal voice markers, clause lengths).
-  - `stylometrics`: Extracted 20 tabular features and guardrail metrics.
-  - `mathematical_equations`: Mathematical formulation calculations for display.
 
-#### `POST /api/upload`
-- Accepts multipart file upload (`.txt`, `.pdf`, `.docx`).
-- Parses document using `backend/document_parser.py` and returns the detection JSON schema plus `metadata` (page count, author metadata, filename).
+---
 
-#### `GET /api/health`
-- Returns system telemetry: `status`, `architecture`, `engine_runtime`, `device`, `cpu_threads`, `process_ram_mb`, `target_ram_cap_mb`, and `timestamp`.
+#### 2. `GET /api/samples`
+Retrieves pre-loaded 4-class reference passages representing distinct authorship archetypes for interface demonstration and testing.
 
-#### `GET /api/samples`
-- Returns pre-loaded 4-class benchmark archetype sample texts.
+- **Method**: `GET`
+- **Request Parameters**: None
+- **Response Keys**:
+  - Top-level object mapped by archetype key (`"ai_pure"`, `"ai_refined_ai"`, `"human_refined_ai"`, `"human_pure"`, `"human_esl"`), each containing:
+    - `title` (`str`): Human-readable descriptive name of the sample text.
+    - `expected_class` (`str`): Canonical 4-class classification label.
+    - `text` (`str`): Full sample passage text content.
+- **Error Codes**: `500 Internal Server Error` if archetype definitions fail to load.
+- **Verified `curl` Example**:
+  ```bash
+  curl.exe -s http://127.0.0.1:8003/api/samples
+  ```
+  **Real Server Output (Truncated Excerpt)**:
+  ```json
+  {
+    "ai_pure": {
+      "title": "1. Pure AI-generated (GPT-4o Academic Essay)",
+      "expected_class": "AI-generated",
+      "text": "In the contemporary era, the rapid proliferation of artificial intelligence technologies has fundamentally reconstituted the landscape of higher education..."
+    },
+    "human_pure": {
+      "title": "4. Human-written (Venetian Maritime Commerce)",
+      "expected_class": "Human-written",
+      "text": "The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance between centralized state regulation..."
+    }
+  }
+  ```
 
-#### `GET /api/comparison-sheet`
-- Returns the 30-sample side-by-side QuillBot comparison sheet from `data/quillbot_comparison_sheet.json`.
+---
+
+#### 3. `GET /api/comparison-sheet`
+Returns the 30-sample side-by-side QuillBot comparison sheet from `data/quillbot_comparison_sheet.json` for benchmark alignment inspection.
+
+- **Method**: `GET`
+- **Request Parameters**: None
+- **Response Keys**:
+  - Array of 30 test case objects, each containing:
+    - `id` (`str`): Unique sample identifier (`"QB-01"` through `"QB-30"`).
+    - `text` (`str`): Passage text submitted for side-by-side evaluation.
+    - `expected_class` (`str`): Ground-truth category label (`"Human-written"`, `"Human-written & AI-refined"`, `"AI-generated & AI-refined"`, or `"AI-generated"`).
+    - `class_id` (`int`): Integer class index (0 to 3).
+    - `type` (`str`): Specific generation or authorial sub-type tag.
+    - `domain` (`str`): Genre or source domain (`"academic"`, `"creative"`, `"email"`, `"technical"`, `"story"`).
+    - `word_count` (`int`): Word count of the passage.
+    - `notes` (`str`): Contextual annotations detailing model, prompt, or editing origin.
+- **Error Codes**: `500 Internal Server Error` if dataset file is missing or corrupted.
+- **Verified `curl` Example**:
+  ```bash
+  curl.exe -s http://127.0.0.1:8003/api/comparison-sheet
+  ```
+  **Real Server Output (First Item Excerpt)**:
+  ```json
+  [
+    {
+      "id": "QB-01",
+      "text": "The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance...",
+      "expected_class": "Human-written",
+      "class_id": 0,
+      "type": "human_native",
+      "domain": "academic",
+      "word_count": 87,
+      "notes": "Authentic academic prose with historical domain vocabulary."
+    }
+  ]
+  ```
+
+---
+
+#### 4. `POST /api/detect`
+Performs comprehensive forensic analysis on submitted text, returning document-level verdicts, QuillBot-style coverage percentages, sentence-level predictions, and 20 stylometrics.
+
+- **Method**: `POST`
+- **Request Headers**: `Content-Type: application/json`
+- **Request Body Fields**:
+  - `text` (`str`, required): Text string to analyze (minimum 5 words).
+  - `confidence_threshold` (`float`, optional): Calibrated confidence threshold for verdict withholding (default `0.40`).
+  - `filename` (`str`, optional): Identifier tag for client export provenance (default `"Pasted Text"`).
+- **Response Keys**:
+  - `summary` (`dict`):
+    - `verdict` (`str`): Final discrete classification verdict (`"Human-written"`, `"Human-written & AI-refined"`, `"AI-generated & AI-refined"`, `"AI-generated"`, or `"Uncertain"`).
+    - `verdict_description` (`str`): Forensic rationale for the document-level classification.
+    - `badge` (`str`): CSS badge style identifier (e.g. `"badge-success"`).
+    - `is_uncertain` (`bool`): `true` if calibrated confidence is below threshold or margin is too narrow.
+    - `confidence` (`float`): Calibrated decision confidence on $[0.0, 1.0]$.
+    - `confidence_pct` (`float`): Calibrated confidence formatted as percentage $[0.0, 100.0]$.
+    - `quillbot_headline` (`str`): QuillBot-style headline summary (e.g. `"100% of text is likely Human"`).
+    - `quillbot_headline_class` (`str`): UI CSS theme class for the headline pill (`"badge-human"`, `"badge-ai"`, `"badge-ai-refined"`).
+    - `quillbot_ai_pct` (`float`): Word-weighted percentage of text classified as AI-generated or AI-refined.
+    - `quillbot_human_pct` (`float`): Word-weighted percentage of text classified as Human-written or Human-refined.
+    - `word_count` (`int`): Total word count of analyzed text.
+    - `character_count` (`int`): Total character count.
+    - `sentence_count` (`int`): Count of parsed sentences.
+    - `length_warning` (`str` or `null`): Non-null warning string if word count is under 80 words.
+    - `elapsed_seconds` (`float`): Total wall-clock inference latency in seconds.
+  - `calibrated_probabilities` (`dict[str, float]`): Calibrated softmax posterior probabilities across the 4 canonical classes:
+    - `"Human-written"` (`float`): Probability of pure human authorship.
+    - `"Human-written & AI-refined"` (`float`): Probability of human text with AI revision.
+    - `"AI-generated & AI-refined"` (`float`): Probability of AI draft with secondary rewrite.
+    - `"AI-generated"` (`float`): Probability of pure machine generation.
+  - `percentages` (`dict[str, float]`): Word-weighted segment coverage percentages for `"ai_generated"`, `"ai_ai_refined"`, `"human_ai_refined"`, and `"human"`.
+  - `quillbot_breakdown` (`dict`): Structured replica metadata containing `headline`, `headline_class`, `ai_percentage`, `human_percentage`, and `segments`.
+  - `sentences` (`list[dict]`): Ordered list of per-sentence diagnostic objects:
+    - `index` (`int`): 0-based sentence position.
+    - `text` (`str`): Verbatim sentence text.
+    - `class_label` (`str`): Highest-probability class name.
+    - `class_key` (`str`): Machine key identifier (`"human"`, `"human_ai_refined"`, `"ai_ai_refined"`, `"ai_generated"`).
+    - `color_class` (`str`): CSS badge color class.
+    - `highlight_class` (`str`): CSS text span highlight class (`"highlight-human"`, `"highlight-ai"`, etc.).
+    - `confidence` (`float`): Blended confidence for the assigned sentence class.
+    - `ai_likelihood_pct` (`float`): Total sentence AI likelihood percentage ($p_{\text{ai\_gen}} + p_{\text{ai\_ref}}$).
+    - `probabilities` (`dict[str, float]`): 4-class blended probabilities for this specific sentence.
+    - `reasons` (`list[str]`): Forensic explanation tags (e.g. detected AI markers, personal voice, cadence anomalies).
+  - `stylometrics` (`dict`): Full 20-dimensional stylometric feature vector and linguistic breakdowns:
+    - `word_count`, `character_count`, `sentence_count` (`int`): Structural token counts.
+    - `readability` (`dict`): `flesch_reading_ease` (`float`), `flesch_kincaid_grade` (`float`), `words_per_sentence` (`float`).
+    - `lexical_diversity` (`dict`): `ttr` (`float`), `root_ttr` (`float`), `hapax_ratio` (`float`), `yule_k` (`float`), `simpsons_d` (`float`), `honore_r` (`float`).
+    - `syntax_variance` (`dict`): `mean_length` (`float`), `std_length` (`float`), `cv_length` (`float`), `rhythm_delta` (`float`), `rhythm_curvature` (`float`), `uniformity_score` (`float`).
+    - `syllable_dispersion` (`dict`): `mean_syllables` (`float`), `std_syllables` (`float`), `dispersion_cv` (`float`).
+    - `hyphenation` (`dict`): `hyphenated_count` (`int`), `hyphen_rate_per_100w` (`float`), `hyphenated_samples` (`list[str]`).
+    - `entropy` (`dict`): `shannon_entropy` (`float`), `vocab_richness_bits` (`float`).
+    - `compression_ratio` (`float`): Zlib deflate compression ratio (NCD proxy).
+    - `binoculars_proxy` (`float`): Shannon token entropy divided by compression ratio.
+    - `discourse_punctuation` (`dict`): AI marker rates, human voice rates, contraction/comma/semi rates, and matched keyword lists.
+    - `mathematical_equations` (`dict`): Closed-form forensic values: `lexical_richness_omega` (`float`), `syntactic_burstiness_b` (`float`), `discourse_polarity_phi` (`float`), `binoculars_ratio_r` (`float`), `authorial_affinity_lambda` (`float`).
+    - `stylometric_ai_score` (`float`): Linear composite stylometric score $[0.0, 1.0]$.
+  - `mathematical_equations` (`dict`): Top-level copy of closed-form equation outputs for dashboard rendering.
+- **Error Codes**:
+  - `400 Bad Request`: When `text` is empty (`{"detail":"Text cannot be empty."}`) or contains fewer than 5 words (`{"detail":"Text is too brief. Please enter at least 5 words."}`).
+  - `422 Unprocessable Entity`: When request body fails schema validation (e.g. non-numeric `confidence_threshold`).
+  - `500 Internal Server Error`: When unexpected neural inference or feature extraction failure occurs.
+- **Verified `curl` Example**:
+  ```bash
+  curl.exe -s -X POST http://127.0.0.1:8003/api/detect \
+    -H "Content-Type: application/json" \
+    -d '{"text": "The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance between state regulation and private merchant enterprise. The Senate maintained rigorous oversight of the state galley fleets which operated along fixed routes.", "confidence_threshold": 0.4}'
+  ```
+  **Real Server Output**:
+  ```json
+  {
+    "summary": {
+      "verdict": "Human-written",
+      "verdict_description": "Text displays natural syntactic cadence, authentic idiosyncratic phrasing, and human burstiness.",
+      "badge": "badge-success",
+      "is_uncertain": false,
+      "confidence": 1.0,
+      "confidence_pct": 100.0,
+      "quillbot_headline": "100% of text is likely Human",
+      "quillbot_headline_class": "badge-human",
+      "quillbot_ai_pct": 0.0,
+      "quillbot_human_pct": 100.0,
+      "word_count": 38,
+      "character_count": 274,
+      "sentence_count": 2,
+      "length_warning": "Input contains 38 words. QuillBot recommends 80–2,000 words for optimal forensic accuracy.",
+      "elapsed_seconds": 0.017
+    },
+    "calibrated_probabilities": {
+      "Human-written": 0.9648,
+      "Human-written & AI-refined": 0.0245,
+      "AI-generated & AI-refined": 0.0081,
+      "AI-generated": 0.0026
+    },
+    "percentages": {
+      "ai_generated": 0.0,
+      "ai_ai_refined": 0.0,
+      "human_ai_refined": 0.0,
+      "human": 100.0
+    },
+    "quillbot_breakdown": {
+      "headline": "100% of text is likely Human",
+      "headline_class": "badge-human",
+      "ai_percentage": 0.0,
+      "human_percentage": 100.0,
+      "segments": {
+        "human": 100.0,
+        "human_ai_refined": 0.0,
+        "ai_ai_refined": 0.0,
+        "ai_generated": 0.0
+      }
+    },
+    "sentences": [
+      {
+        "index": 0,
+        "text": "The historical development of maritime trade during the Venetian Republic was characterized by a delicate balance between state regulation and private merchant enterprise.",
+        "class_label": "Human-written",
+        "class_key": "human",
+        "color_class": "badge-human",
+        "highlight_class": "highlight-human",
+        "confidence": 0.82,
+        "ai_likelihood_pct": 5.1,
+        "probabilities": {
+          "Human-written": 0.82,
+          "Human-written & AI-refined": 0.129,
+          "AI-generated & AI-refined": 0.032,
+          "AI-generated": 0.018
+        },
+        "reasons": [
+          "Natural stylistic variation and human syntactic burstiness."
+        ]
+      },
+      {
+        "index": 1,
+        "text": "The Senate maintained rigorous oversight of the state galley fleets which operated along fixed routes.",
+        "class_label": "Human-written",
+        "class_key": "human",
+        "color_class": "badge-human",
+        "highlight_class": "highlight-human",
+        "confidence": 0.804,
+        "ai_likelihood_pct": 6.9,
+        "probabilities": {
+          "Human-written": 0.804,
+          "Human-written & AI-refined": 0.127,
+          "AI-generated & AI-refined": 0.044,
+          "AI-generated": 0.025
+        },
+        "reasons": [
+          "Natural stylistic variation and human syntactic burstiness."
+        ]
+      }
+    ],
+    "stylometrics": {
+      "word_count": 38,
+      "character_count": 274,
+      "sentence_count": 2,
+      "readability": {
+        "flesch_reading_ease": 20.6,
+        "flesch_kincaid_grade": 15.1,
+        "words_per_sentence": 19.0
+      },
+      "lexical_diversity": {
+        "ttr": 0.868,
+        "root_ttr": 5.35,
+        "hapax_ratio": 0.909,
+        "yule_k": 110.8,
+        "simpsons_d": 0.9886,
+        "honore_r": 4001.3
+      },
+      "syntax_variance": {
+        "mean_length": 19.0,
+        "std_length": 4.0,
+        "cv_length": 0.211,
+        "rhythm_delta": 8.0,
+        "rhythm_curvature": 0.0,
+        "uniformity_score": 0.9
+      },
+      "syllable_dispersion": {
+        "mean_syllables": 1.97,
+        "std_syllables": 1.04,
+        "dispersion_cv": 0.526
+      },
+      "hyphenation": {
+        "hyphenated_count": 0,
+        "hyphen_rate_per_100w": 0.0,
+        "hyphenated_samples": []
+      },
+      "entropy": {
+        "shannon_entropy": 4.93,
+        "vocab_richness_bits": 0.978
+      },
+      "compression_ratio": 0.6788,
+      "binoculars_proxy": 7.263,
+      "discourse_punctuation": {
+        "base_ai_marker_rate": 0.0,
+        "base_human_marker_rate": 0.0,
+        "ai_marker_rate": 0.0,
+        "human_marker_rate": 0.0,
+        "contraction_rate": 0.0,
+        "comma_rate": 0.0,
+        "semi_rate": 0.0,
+        "dash_rate": 0.0,
+        "ai_count": 0,
+        "human_count": 0,
+        "detected_ai_samples": [],
+        "detected_human_samples": []
+      },
+      "mathematical_equations": {
+        "lexical_richness_omega": 0.8846,
+        "syntactic_burstiness_b": 0.2317,
+        "discourse_polarity_phi": 0.0,
+        "binoculars_ratio_r": 7.263,
+        "authorial_affinity_lambda": 0.2284
+      },
+      "stylometric_ai_score": 0.465
+    },
+    "mathematical_equations": {
+      "lexical_richness_omega": 0.8846,
+      "syntactic_burstiness_b": 0.2317,
+      "discourse_polarity_phi": 0.0,
+      "binoculars_ratio_r": 7.263,
+      "authorial_affinity_lambda": 0.2284
+    }
+  }
+  ```
+
+---
+
+#### 5. `POST /api/upload`
+Accepts document files (`.txt`, `.pdf`, `.docx`), parses text content and metadata via `backend/document_parser.py`, and runs full forensic detection.
+
+- **Method**: `POST`
+- **Request Headers**: `Content-Type: multipart/form-data`
+- **Request Form Fields**:
+  - `file` (`UploadFile`, binary, required): Document file to parse and analyze. Supported extensions: `.txt`, `.pdf`, `.docx`.
+- **Response Keys**:
+  - Contains identical keys to `POST /api/detect` (`summary`, `calibrated_probabilities`, `percentages`, `quillbot_breakdown`, `sentences`, `stylometrics`, `mathematical_equations`), plus:
+    - `summary.filename` (`str`): Original uploaded file basename.
+    - `metadata` (`dict`): Extracted document metadata (e.g. `{"format": "Plain Text"}` or PDF page counts/properties).
+- **Error Codes**:
+  - `400 Bad Request`: If uploaded file is 0 bytes (`{"detail":"Uploaded file is empty."}`) or contains no extractable text (`{"detail":"No readable text extracted from document."}`).
+  - `500 Internal Server Error`: If document parsing fails (`{"detail":"File parsing error: ..."}`).
+- **Verified `curl` Example**:
+  ```bash
+  curl.exe -s -X POST http://127.0.0.1:8003/api/upload \
+    -F "file=@sample_essay.txt"
+  ```
+  **Real Server Output (Truncated Excerpt)**:
+  ```json
+  {
+    "summary": {
+      "verdict": "AI-generated",
+      "verdict_description": "Text exhibits direct machine-generation signatures, uniform token predictability, and canonical structures.",
+      "badge": "badge-danger",
+      "is_uncertain": false,
+      "confidence": 1.0,
+      "confidence_pct": 100.0,
+      "quillbot_headline": "100% of text is likely AI",
+      "quillbot_headline_class": "badge-ai",
+      "quillbot_ai_pct": 100.0,
+      "quillbot_human_pct": 0.0,
+      "word_count": 50,
+      "character_count": 427,
+      "sentence_count": 3,
+      "length_warning": "Input contains 50 words. QuillBot recommends 80–2,000 words for optimal forensic accuracy.",
+      "elapsed_seconds": 0.018,
+      "filename": "sample_essay.txt"
+    },
+    "calibrated_probabilities": {
+      "Human-written": 0.0,
+      "Human-written & AI-refined": 0.0259,
+      "AI-generated & AI-refined": 0.0731,
+      "AI-generated": 0.901
+    },
+    "metadata": {
+      "format": "Plain Text"
+    }
+  }
+  ```
 
 ---
 
