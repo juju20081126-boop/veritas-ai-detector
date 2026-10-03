@@ -616,6 +616,68 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { copyLabel.textContent = "Copy summary"; }, 1800);
   });
 
+  // ---------- download results & clear report ----------
+
+  const btnDownloadJson = $("btnDownloadJson");
+  const btnDownloadCsv = $("btnDownloadCsv");
+  const btnResetReport = $("btnResetReport");
+
+  function downloadClientBlob(content, filename, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 150);
+  }
+
+  if (btnDownloadJson) {
+    btnDownloadJson.addEventListener("click", () => {
+      if (!currentAnalysisData) return;
+      const fn = (currentAnalysisData.summary && currentAnalysisData.summary.filename)
+        ? currentAnalysisData.summary.filename.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9_-]/g, "_")
+        : "veritas_analysis";
+      downloadClientBlob(JSON.stringify(currentAnalysisData, null, 2), `${fn}.json`, "application/json");
+    });
+  }
+
+  if (btnDownloadCsv) {
+    btnDownloadCsv.addEventListener("click", () => {
+      if (!currentAnalysisData || !currentAnalysisData.sentences) return;
+      const escapeCsv = (str) => `"${String(str != null ? str : "").replace(/"/g, '""')}"`;
+      const header = ["index", "text", "dominant_class", "confidence_pct", "class_label", "ai_likelihood_pct"];
+      const rows = currentAnalysisData.sentences.map((s) => [
+        s.index,
+        escapeCsv(s.text),
+        escapeCsv(s.class_key != null ? s.class_key : s.class_label),
+        (Number(s.confidence || 0) * 100).toFixed(1),
+        escapeCsv(s.class_label),
+        Number(s.ai_likelihood_pct || 0).toFixed(1)
+      ].join(","));
+      const csvContent = [header.join(","), ...rows].join("\r\n");
+      const fn = (currentAnalysisData.summary && currentAnalysisData.summary.filename)
+        ? currentAnalysisData.summary.filename.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9_-]/g, "_")
+        : "veritas_analysis";
+      downloadClientBlob(csvContent, `${fn}_sentences.csv`, "text/csv;charset=utf-8;");
+    });
+  }
+
+  if (btnResetReport) {
+    btnResetReport.addEventListener("click", () => {
+      textInput.value = "";
+      updateTextCounters();
+      clearError();
+      markLoadedChip(null);
+      resetResults();
+      textInput.focus();
+    });
+  }
+
   // ---------- samples ----------
 
   function markLoadedChip(chip) {

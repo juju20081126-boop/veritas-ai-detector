@@ -723,8 +723,8 @@ button:disabled { cursor: not-allowed; }
 .metrics dt small { display: block; font-size: 11.5px; opacity: .85; }
 .metrics dd { margin: 3px 0 0; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
 
-.report-actions { display: flex; gap: 10px; }
-.report-actions .btn { flex: 1; }
+.report-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.report-actions .btn { flex: 1 1 calc(50% - 8px); min-width: 105px; padding: 0 10px; font-size: 13.5px; }
 
 .verdict-disclaimer {
   margin: 10px 0 0;
