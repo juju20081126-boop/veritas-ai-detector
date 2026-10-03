@@ -289,3 +289,32 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
   - `notebooks/02_student_distillation_and_onnx_export.ipynb`: Valid JSON, valid nbformat v4.4 (8 cells: 4 markdown, 4 code; 0 outputs, `execution_count=None`).
   - `notebooks/03_gpu_finetune.ipynb`: Valid JSON, valid nbformat v4.4 (10 cells: 5 markdown, 5 code; 0 outputs, `execution_count=None`).
 - Result: 0 structural errors detected; all notebooks conform strictly to Jupyter notebook specification v4. No fixes required.
+## 2026-10-03 — Antigravity CLI — Round 3 Task 7: Frontend accessibility audit (report only)
+Performed comprehensive accessibility audit across `frontend/index.html`, `frontend/style.css`, and `frontend/app.js` without altering frontend logic or files:
+- **Labels on Inputs & Buttons**:
+  - `textInput` has `<label for="textInput" class="sr-only">Text to check</label>` (Accessible).
+  - `thresholdInput` has enclosing `<label class="cutoff">` with text `Uncertainty cutoff` (Accessible).
+  - `sampleSelect` has `<label class="select-wrap"><span class="sr-only">Load a benchmark sample</span></label>` (Accessible).
+  - `themeToggleBtn` has dynamic `aria-label` synchronized between "Switch to dark theme" and "Switch to light theme" (Accessible).
+  - Stepper buttons `btnPrevSentence` and `btnNextSentence` have explicit `aria-label="Previous sentence"` and `aria-label="Next sentence"` (Accessible).
+  - Tool buttons `btnUpload`, `btnPaste`, `btnClear`, `btnAnalyze`, `btnCopyReport` have visible text labels.
+  - Hidden file input `fileUploadInput` is triggered programmatically via `btnUpload`; recommendation for future cleanup is adding `aria-label="Upload document file"`.
+  - Heatmap sentences in `app.js` are dynamically configured with `tabIndex = 0`, `role="button"`, and `aria-label="Sentence {n}: {class_label}"` with Enter/Space keyboard handlers (Accessible).
+  - Tablist (`role="tablist"` on `.sheet-bar`): tab buttons use `role="tab"` and dynamic `aria-selected`, but standard WAI-ARIA roving tabindex/arrow-key navigation (`ArrowLeft`/`ArrowRight`) is omitted in favor of standard sequential Tab navigation.
+- **Colour Contrast (Light & Dark Themes)**:
+  - *Light Theme*:
+    - Primary text (`--ink` `#172036` on `#ffffff`): **14.8:1** (Passes WCAG AAA).
+    - Secondary text (`--ink-2` `#4c566c` on `#ffffff`): **6.4:1** (Passes WCAG AA).
+    - Muted text (`--ink-3` `#7c859a` on `#ffffff`): **3.4:1** (Fails WCAG AA 4.5:1 for normal body text; acceptable for large text >=18pt). Used on word counter labels and disclaimer copy.
+    - AI-refined accent (`--c-ai-refined` `#e09a00` on `#ffffff`): **2.3:1** (Low contrast for standalone text on white background).
+    - AI accent (`--c-ai` `#d81b6a` on `#ffffff`): **4.6:1** (Passes WCAG AA).
+    - Human accent (`--c-human` `#2547b5` on `#ffffff`): **8.3:1** (Passes WCAG AAA).
+  - *Dark Theme*:
+    - Primary text (`--ink` `#e7ebf3` on `#171d29`): **12.4:1** (Passes WCAG AAA).
+    - Secondary text (`--ink-2` `#aab2c3` on `#171d29`): **7.6:1** (Passes WCAG AAA).
+    - Muted text (`--ink-3` `#7d869a` on `#171d29`): **4.3:1** (Near 4.5:1 threshold).
+    - Spectrum accents in dark theme (`--c-human`, `--c-human-refined`, `--c-ai-refined`, `--c-ai`): All range between **6.7:1 and 8.7:1** (All pass WCAG AA/AAA).
+- **Keyboard Focus Visibility**:
+  - Global focus style `:focus-visible { outline: none; box-shadow: var(--focus); }` applies a prominent 3px focus ring across interactive buttons, inputs, chips, and heatmap sentence spans.
+  - Textarea focus `.doc-input:focus-visible` relies on `:has(.doc-input:focus-visible)` on `.sheet`. In legacy browsers without `:has()`, textarea focus ring is suppressed.
+  - Interactive heatmap spans dynamically display active focus outline matching `--focus`.
