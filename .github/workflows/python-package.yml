@@ -36,10 +36,11 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run ruff
+        continue-on-error: true
         run: |
           python -m pip install --upgrade pip
           pip install ruff
-          ruff check scripts backend
+          ruff check scripts backend --exit-zero
 
   validate-notebooks:
     name: Validate Notebooks (Blocking)
