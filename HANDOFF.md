@@ -407,6 +407,18 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   3. `validate-notebooks` (`nbformat.validate`): **Blocking** (verified passing locally: all 3 notebooks strictly conform to valid JSON and nbformat v4 schema).
   4. `check-markdown-links`: **Blocking** (verified passing locally: parsed and verified all relative markdown documentation links across `README.md`, `EVAL_REPORT.md`, `RESEARCH_COMPENDIUM.md`, `MATHEMATICAL_EQUATIONS.md`, plan files, `notebooks/README.md`, and `samples/README.md` with 0 broken links).
 - Evidence: commit `a4828b0` (`.github/workflows/python-package.yml | 127 +++++++++++++++++++++++++----------`, 93 insertions, 34 deletions).
+## 2026-10-03 — Antigravity CLI — Workstream G: Notebooks validation and GPU fine-tune polish
+- Validated all 3 notebooks via `nbformat.validate` (schema v4.4):
+  - `notebooks/01_teacher_ensemble_and_labeling.ipynb`: 9 cells, valid JSON, unrun template.
+  - `notebooks/02_student_distillation_and_onnx_export.ipynb`: 8 cells, valid JSON, unrun template.
+  - `notebooks/03_gpu_finetune.ipynb`: 14 cells, valid JSON, unrun template.
+- Polished `notebooks/03_gpu_finetune.ipynb` to match the real training pipeline:
+  - Mirrored `scripts/train_detector.py` 4-class label mapping logic (`0: human`, `1: human_ai_refined`, `2: ai_ai_refined`, `3: ai_generated`) using origin and `attack_id` conditions.
+  - Mirrored text hygiene functions directly into notebook cells (`normalize_text`, confusable replacement, zero-width stripping, quote standardization, markdown syntax removal via `strip_markdown`, and whitespace cleanup) without importing from `scripts/`.
+  - Added a dedicated data-packaging utility cell `package_splits_for_kaggle` that zips `data/splits/*.jsonl.gz` for Kaggle/Colab dataset upload.
+  - Kept clearly tagged `UNRUN; no results claimed` with zero execution counts or saved outputs.
+- Evidence: commit `5b9860b` (`notebooks/03_gpu_finetune.ipynb | 224 ++++++++++++++++++++++++++++++----------`, 168 insertions, 56 deletions).
+
 
 
 
