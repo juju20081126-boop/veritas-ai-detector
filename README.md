@@ -10,7 +10,13 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 ## Table of Contents
 
 - [Key Highlights & Capabilities](#key-highlights--capabilities)
-- [System Architecture: Teacher → Student Distillation](#system-architecture-teacher--student-distillation)
+- [How It Works: Current Engine Architecture](#how-it-works-current-engine-architecture)
+  - [1. Quantized ONNX INT8 Neural Student](#1-quantized-onnx-int8-neural-student)
+  - [2. 20 Tabular Stylometric Features](#2-20-tabular-stylometric-features)
+  - [3. Meta-Classifier Fusion](#3-meta-classifier-fusion)
+  - [4. Temperature Calibration & Confidence Gating](#4-temperature-calibration--confidence-gating)
+  - [5. Hierarchical Chunking & Sentence-Level Smoothing](#5-hierarchical-chunking--sentence-level-smoothing)
+  - [6. FastAPI Server Endpoints & Response Schema](#6-fastapi-server-endpoints--response-schema)
 - [Quick Start Guide](#quick-start-guide)
   - [1. Installation on Low-End PC (Offline Ready)](#1-installation-on-low-end-pc-offline-ready)
   - [2. Launch Local Web UI](#2-launch-local-web-ui)
@@ -21,7 +27,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
   - [Cloud Jupyter Notebooks (Kaggle / Google Colab)](#cloud-jupyter-notebooks-kaggle--google-colab)
 - [State-of-the-Art Research & Mathematical Formulations (2024–2026)](#state-of-the-art-research--mathematical-formulations-20242026)
 - [QuillBot Comparison Sheet (30 Hand-Check Samples)](#quillbot-comparison-sheet-30-hand-check-samples)
-- [Hand-collecting detector verdicts (no automation)](#hand-collecting-detector-verdicts-no-automation)
+- [Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)](#hand-collecting-detector-verdicts-no-automation-tos-safe-200-texts)
 - [Limitations](#limitations)
 - [License & Acknowledgments](#license--acknowledgments)
 
@@ -54,22 +60,144 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 
 ---
 
-## 🔬 System Architecture: Teacher → Student Distillation
+## 🔬 How It Works: Current Engine Architecture
+
+The runtime engine in `backend/runtime_engine.py` and the server in `backend/server.py` implement an offline, low-resource detection architecture designed to run on modest consumer hardware (2 CPU threads, &le;150 MB RAM, zero PyTorch).
 
 ```
-Cloud Teacher Ensemble (Kaggle/Colab GPU)
-├── Binoculars (Hans et al., 2024): 7B model pair ratio (Qwen2.5-7B / Instruct)
-├── Fast-DetectGPT (Bao et al., 2024): Conditional curvature likelihood
-└── DeBERTa-v3-large: 4-class multi-source sequence discriminator
-    │
-    ▼ (Knowledge Distillation at T=2.0)
-Shipped Student (Runs on Low-End Target)
-├── Backbone: Distilled MiniLM-L6-v2 / DeBERTa-v3-xsmall
-├── Tabular Stylometric Features: Sentence-length CV, TTR, syllable dispersion, entropy
-├── Meta-Classifier: Ridge/Logistic regression fusing neural logits + stylometrics
-├── Format: ONNX with Dynamic INT8 Quantization (22.4 MB)
-└── Calibration: Post-quantization temperature scaling (ECE = 0.038 < 0.05)
+Raw Input Document (Pasted Text / Uploaded File)
+  │
+  ├─► Regex Sentence Splitter & ~100-Word Paragraph Chunking
+  │
+  ├─► 20-Dimensional Stylometric Feature Extraction (backend/stylometrics.py)
+  │     (Burstiness CV, TTR, ARI, Syllable Variance, Entropy, Rhythm Δ, DEFLATE, Discourse Markers)
+  │
+  ├─► ONNX INT8 Student Model (models/student_model_int8.onnx via onnxruntime)
+  │     (Rust tokenizers, max sequence length 512, 2 CPU threads)
+  │
+  ├─► Meta-Classifier Fusion (models/meta_classifier.json)
+  │     (Z-score normalized stylometrics + neural logits fused via learned weights)
+  │
+  ├─► Temperature Calibration & Confidence Gating
+  │     (Post-quantization scaling, uncertainty thresholding)
+  │
+  ├─► Hierarchical Sentence Smoothing (40% sentence + 60% chunk context)
+  │
+  ▼
+QuillBot-Style 4-Class Breakdown, Word-Weighted AI %, and Sentence Highlights
 ```
+
+### 1. Quantized ONNX INT8 Neural Student
+- **Model Asset**: `models/student_model_int8.onnx` (~22 MB).
+- **Runtime**: Evaluated via `onnxruntime.InferenceSession` with `intra_op_num_threads=2`. Zero PyTorch or CUDA dependencies are loaded at runtime.
+- **Tokenizer**: Hugging Face Rust `tokenizers` loaded from `models/tokenizer/tokenizer.json`. Operates with a maximum sequence length of 512 tokens with truncation and padding.
+- **Output**: 4-class raw neural logits corresponding to:
+  1. `human` (0)
+  2. `human_ai_refined` (1)
+  3. `ai_ai_refined` (2)
+  4. `ai_generated` (3)
+
+### 2. 20 Tabular Stylometric Features
+The engine extracts a 20-dimensional stylometric feature vector (`backend/stylometrics.py`) invariant to passage topic:
+1. **Sentence length mean**: Mean words per sentence.
+2. **Sentence length variance**: Spread of sentence lengths across the document.
+3. **Sentence length CV ($\lambda_{\text{auth}}$)**: Coefficient of variation ($\sigma / \mu$), capturing human syntactic burstiness versus uniform LLM cadence.
+4. **Type-Token Ratio (TTR)**: Unique tokens divided by total tokens (lexical diversity).
+5. **Root TTR (Guiraud's Index)**: $V / \sqrt{N}$, mitigating length bias.
+6. **Automated Readability Index (ARI)**: Character- and sentence-based structural readability level.
+7. **Flesch Reading Ease**: Syllable- and sentence-based readability score.
+8. **Mean syllables per word**: Average lexical complexity.
+9. **Syllable count variance**: Polysyllabic distribution across words.
+10. **Punctuation density**: Frequency of punctuation marks per 100 words.
+11. **Comma frequency**: Average commas per sentence.
+12. **Semicolon and colon frequency**: Density of complex clause delimiters.
+13. **Question mark frequency**: Rhetorical question density.
+14. **Shannon token entropy rate**: Information density per token position.
+15. **Consecutive rhythm delta ($\Delta_{\text{rhythm}}$)**: Mean absolute difference between adjacent sentence lengths.
+16. **DEFLATE compression ratio**: Algorithmic information complexity under Lempel-Ziv compression.
+17. **AI discourse transition density**: Frequency of formulaic LLM discourse markers (*furthermore*, *delve*, *moreover*, *testament*, *in summary*).
+18. **Personal voice marker frequency**: Frequency of first-person and experiential pronouns (*I*, *my*, *we*, *personally*).
+19. **Long clause ratio**: Proportion of sentences with $\ge 35$ words.
+20. **Short clause ratio**: Proportion of sentences with $\le 6$ words.
+
+*Forensic Guardrail*: An authentic voice check protects literary human prose. When $\lambda_{\text{auth}} \ge 0.70$, personal voice markers are present, and AI transition markers are absent, the detector prevents false-positive escalation.
+
+### 3. Meta-Classifier Fusion
+- **Parameters**: `models/meta_classifier.json` stores `scaler_mean`, `scaler_std`, `meta_weights`, and `meta_intercept`.
+- **Z-Score Normalization**: Each stylometric feature is standardized:
+  $$\tilde{x}_i = \frac{x_i - \mu_i}{\sigma_i}$$
+- **Linear Logit Fusion**: The 4-class neural logits from the ONNX student model are combined with the 20 normalized stylometric features:
+  $$\mathbf{z}_{\text{fused}} = \mathbf{W}_{\text{neural}} \mathbf{z}_{\text{onnx}} + \mathbf{W}_{\text{style}} \tilde{\mathbf{x}}_{\text{style}} + \mathbf{b}$$
+
+### 4. Temperature Calibration & Confidence Gating
+- **Temperature Scaling**: Platt-style post-quantization calibration adjusts the fused logits:
+  $$p_c = \frac{\exp(z_c / T)}{\sum_{k=1}^4 \exp(z_k / T)}$$
+  where $T$ is the empirically fit `calibration_temperature` from `models/meta_classifier.json`.
+- **Confidence Gating & Uncertain Verdict**:
+  If the top calibrated probability is below the decision threshold (default $0.40$), or if the top probability is $< 0.45$ and the margin between the top two classes is $< 0.04$, the engine withholds judgment and assigns the verdict **Uncertain**.
+
+### 5. Hierarchical Chunking & Sentence-Level Smoothing
+- **Paragraph Chunking**: Texts exceeding typical sentence lengths are partitioned into hierarchical context chunks (~100 words) using sentence boundary preservation.
+- **Context Blending**: To eliminate erratic classification flickering across short clauses, each sentence's prediction blends its local sentence-level logits ($40\%$) with the surrounding chunk context ($60\%$):
+  $$\mathbf{p}_{\text{sentence}}^{\text{blended}} = 0.40 \cdot \mathbf{p}_{\text{local}} + 0.60 \cdot \mathbf{p}_{\text{chunk}}$$
+- **QuillBot Headline & Percentage**:
+  The document-level AI percentage is computed as the word-weighted coverage of sentences classified as `ai_generated` or `ai_ai_refined`:
+  $$\text{AI Coverage \%} = \frac{\sum_{s \in \text{AI Sentences}} \text{Words}(s)}{\sum_{s \in \text{All Sentences}} \text{Words}(s)} \times 100$$
+  This generates QuillBot-style headlines such as `"82% of text is likely AI"` or `"100% of text is likely Human"`.
+
+### 6. FastAPI Server Endpoints & Response Schema
+The backend server (`backend/server.py`) provides the following endpoints:
+
+#### `POST /api/detect`
+- **Request Body**:
+  ```json
+  {
+    "text": "String of text to analyze (minimum 5 words)",
+    "confidence_threshold": 0.40,
+    "filename": "Pasted Text"
+  }
+  ```
+- **Response JSON Keys**:
+  - `summary`:
+    - `verdict`: `"Human-written"`, `"Human-written & AI-refined"`, `"AI-generated & AI-refined"`, `"AI-generated"`, or `"Uncertain"`.
+    - `verdict_description`: Textual explanation of the forensic classification.
+    - `badge`: HTML badge label.
+    - `is_uncertain`: Boolean indicating if judgment was withheld.
+    - `confidence` / `confidence_pct`: Overall confidence score.
+    - `quillbot_headline`: QuillBot headline string (e.g., `"78% of text is likely AI"`).
+    - `quillbot_headline_class`: CSS badge class (`badge-ai`, `badge-ai-refined`, `badge-human`).
+    - `quillbot_ai_pct` / `quillbot_human_pct`: Aggregate word-weighted percentage coverage.
+    - `word_count`, `character_count`, `sentence_count`: Text statistics.
+    - `length_warning`: Warning message if text has fewer than 80 words.
+    - `elapsed_seconds`: Wall-clock analysis duration.
+  - `calibrated_probabilities`: Dictionary mapping each of the 4 classes to its calibrated probability float.
+  - `percentages`: Dictionary with percentage coverage breakdown for `ai_generated`, `ai_ai_refined`, `human_ai_refined`, and `human`.
+  - `quillbot_breakdown`: Structured breakdown containing `headline`, `headline_class`, `ai_percentage`, `human_percentage`, and `segments`.
+  - `sentences`: List of sentence analysis dictionaries:
+    - `index`: 0-based sentence position.
+    - `text`: Sentence string.
+    - `class_label`: Assigned class.
+    - `class_key`: Key identifier (`ai_generated`, `ai_ai_refined`, `human_ai_refined`, `human`).
+    - `color_class` / `highlight_class`: CSS styling classes.
+    - `confidence`: Confidence score.
+    - `ai_likelihood_pct`: Combined AI probability percentage ($p_{\text{ai\_gen}} + p_{\text{ai\_ref}}$).
+    - `probabilities`: 4-class calibrated probabilities for this sentence.
+    - `reasons`: Forensic explanation strings (e.g., detected AI transitions, personal voice markers, clause lengths).
+  - `stylometrics`: Extracted 20 tabular features and guardrail metrics.
+  - `mathematical_equations`: Mathematical formulation calculations for display.
+
+#### `POST /api/upload`
+- Accepts multipart file upload (`.txt`, `.pdf`, `.docx`).
+- Parses document using `backend/document_parser.py` and returns the detection JSON schema plus `metadata` (page count, author metadata, filename).
+
+#### `GET /api/health`
+- Returns system telemetry: `status`, `architecture`, `engine_runtime`, `device`, `cpu_threads`, `process_ram_mb`, `target_ram_cap_mb`, and `timestamp`.
+
+#### `GET /api/samples`
+- Returns pre-loaded 4-class benchmark archetype sample texts.
+
+#### `GET /api/comparison-sheet`
+- Returns the 30-sample side-by-side QuillBot comparison sheet from `data/quillbot_comparison_sheet.json`.
 
 ---
 
@@ -237,7 +365,7 @@ In strict accordance with terms of service (no scraping or automated querying), 
 
 ---
 
-## Hand-collecting detector verdicts (no automation)
+## Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)
 
 To benchmark third-party commercial detectors safely and in compliance with Terms of Service:
 1. Claude produces a numbered CSV containing test passages (`id`, `text`).
