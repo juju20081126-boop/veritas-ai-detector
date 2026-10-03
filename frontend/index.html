@@ -87,7 +87,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/></svg>
               <span>Upload file</span>
             </button>
-            <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" hidden />
+            <input type="file" id="fileUploadInput" accept=".txt,.pdf,.docx" aria-label="Upload document file" hidden />
             <button id="btnPaste" class="tool-btn" type="button">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5V3.8A.8.8 0 0 1 9.8 3h4.4a.8.8 0 0 1 .8.8v.7"/></svg>
               <span>Paste</span>
@@ -205,6 +205,7 @@
               </div>
             </div>
             <p id="verdictDescription" class="verdict-desc"></p>
+            <p id="verdictSignalDisclaimer" class="verdict-disclaimer">Verdicts are statistical signals, not proof of authorship. Results are unreliable for text under 80 words (150+ recommended).</p>
             <p id="lengthWarning" class="note" hidden></p>
             <p id="uncertainAlertBanner" class="note note-uncertain" hidden>
               <strong>Verdict withheld.</strong> The signals fall below your uncertainty cutoff, so Veritas won't call this one. Try a longer passage or lower the cutoff.
@@ -272,8 +273,25 @@
               <span class="btn-label">Copy summary</span>
             </button>
           </div>
-          <p class="results-disclaimer">Results are unreliable for text under 100 words (150+ recommended) and are signals, not proof of authorship.</p>
+          <p class="results-disclaimer">Results are unreliable for text under 80 words (150+ recommended) and are signals, not proof of authorship.</p>
         </div>
+
+        <details class="signals method-limits" id="methodLimitsDetails">
+          <summary>
+            <span>Method & limits</span>
+            <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="signals-body method-limits-body">
+            <p class="limits-intro">Documented limits from peer-reviewed literature (see README Limitations for S-numbers):</p>
+            <ul class="limits-list">
+              <li><strong>Non-native English false positives:</strong> Non-native English writers can be wrongly flagged as AI. Liang et al. (Patterns 2023, S11) found 7 detectors averaged 61.22% false positives on 91 TOEFL essays vs ~5.19% on native essays due to lower perplexity and simpler vocabulary.</li>
+              <li><strong>Short text is unreliable:</strong> Texts under 80 words lack reliable statistical signatures (Ghostbuster S10 degrades on &le;100 tokens; Fast-DetectGPT S7 accuracy scales with length; Pangram S1 drops to 73.32% under 50 words). 150+ words is recommended.</li>
+              <li><strong>Paraphrasing and humanizers:</strong> Paraphrased/humanized text is the hardest case. In DAMAGE (S16), detection of humanized text fell to 60.04% for GPTZero and 28.23% for Binoculars. Iterative paraphrasing (PADBen S3) breaks statistical detectors.</li>
+              <li><strong>Vendor figures are self-reported:</strong> Commercial accuracy claims (e.g. Pangram S1/S13) are self-reported. Independent RAID benchmarks (S14) show detectors are domain-biased and not robust enough for high-stakes sole-arbiter use.</li>
+              <li><strong>Signals, not proof of authorship:</strong> A score is a probabilistic signal, not proof of authorship (Pangram S1/S13). Memorized texts like the US Constitution can be flagged as machine-generated (Binoculars S6).</li>
+            </ul>
+          </div>
+        </details>
       </aside>
     </div>
   </main>
