@@ -344,3 +344,16 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
 - Verified Table of Contents in `README.md` covering all sections with valid relative anchor links.
 - Verified all internal document links are relative and resolve to existing files.
 - Evidence: automated script verification confirmed 0 broken relative links, 0 absolute file URLs, and 0 mojibake occurrences.
+## 2026-10-03 — Antigravity CLI — Workstream B: README rewrite of "How it works" & pipeline documentation
+- Rewrote "System Architecture" into "How It Works: Current Engine Architecture" in `README.md` strictly reflecting `backend/runtime_engine.py` and `backend/server.py`:
+  - Quantized ONNX INT8 student model (`models/student_model_int8.onnx`, ~22 MB, Rust `tokenizers`, max 512 tokens, 2 CPU threads, zero PyTorch).
+  - 20 tabular stylometric features (`backend/stylometrics.py`: burstiness CV $\lambda_{\text{auth}}$, TTR, Root TTR, ARI, Flesch Reading Ease, syllable stats, punctuation density, Shannon entropy, rhythm delta $\Delta_{\text{rhythm}}$, DEFLATE compression, discourse markers, human voice markers, long/short clause ratios) plus authentic voice protection guardrail.
+  - Meta-classifier fusion (`models/meta_classifier.json`: z-score scaling, linear fusion of normalized stylometric features + neural logits).
+  - Platt temperature calibration ($z / T$) and confidence gating / "Uncertain" verdict withholding.
+  - Hierarchical chunking (~100-word paragraph chunks) and sentence smoothing (40% sentence + 60% chunk context blend) with word-weighted QuillBot headline calculation.
+  - Complete documentation of FastAPI endpoints (`POST /api/detect`, `POST /api/upload`, `GET /api/health`, `GET /api/samples`, `GET /api/comparison-sheet`) with full request/response schemas and JSON keys.
+- Confirmed "How to run the real-data pipeline" uses exact usage commands from docstrings of `scripts/*.py` and `scripts/corpus/*.py` and carries the "in progress; results will be in data/reports/ when finished" notice.
+- Confirmed "Limitations" section contains only claims tagged `[documented]` in `data/research/sources.md` (Liang et al. S11, Ghostbuster S10, Fast-DetectGPT S7, Pangram S1/S13, PADBen S3, DAMAGE S16, DIPPER S9, RAID S14, Binoculars S6).
+- Standardized "Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)" heading and table of contents anchor.
+- Evidence: commit `c67993b` (`README.md | 160 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------`, 144 insertions, 16 deletions).
+
