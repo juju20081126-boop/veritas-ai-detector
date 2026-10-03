@@ -576,3 +576,68 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Added `'README.zh-TW.md'` to the `check-markdown-links` validation step to guarantee ongoing link integrity for the Traditional Chinese documentation.
   - Validated YAML syntax with `yaml.safe_load`.
 - Evidence: commit `2852c6d` (`.github/workflows/python-package.yml | 46 ++++++++++++++++++++++++++++++++++++`, 46 insertions).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream I: Final Verification Pass & Numbers Provenance Audit
+
+Comprehensive verification completed across all repository components within Antigravity ownership scope:
+
+### 1. Pytest Test Suite (`pytest scripts/tests -q`)
+Executed clean check of backend and scripts unit tests without modifying any code outside Antigravity ownership:
+```
+..............                                                           [100%]
+14 passed in 1.60s
+```
+
+### 2. Notebook Integrity & Unrun State Audit (`nbformat.validate`)
+Validated all 4 notebooks in `notebooks/` using `nbformat.validate` (JSON schema v4):
+- `notebooks/01_teacher_ensemble_and_labeling.ipynb`: VALID (unrun, 4 code cells, 9 total cells)
+- `notebooks/02_student_distillation_and_onnx_export.ipynb`: VALID (unrun, 4 code cells, 8 total cells)
+- `notebooks/03_gpu_finetune.ipynb`: VALID (unrun, 7 code cells, 14 total cells)
+- `notebooks/04_results_figures.ipynb`: VALID (unrun, 6 code cells, 12 total cells)
+- Total: 21 code cells across all 4 notebooks, every cell confirmed with `execution_count=None` and 0 outputs.
+
+### 3. Playwright Smoke Test Execution (`npm test --prefix frontend`)
+Executed against live background instance (`http://127.0.0.1:8003`):
+```
+Running 6 tests using 1 worker
+  ✓  1 [chromium] › 1. Page loads cleanly with zero console or uncaught errors (1.6s)
+  ✓  2 [chromium] › 2. Every element ID used by app.js exists in the DOM (1.1s)
+  ✓  3 [chromium] › 3. Pasting a 100-word sample and clicking analyze displays a verdict and renders heatmap (2.0s)
+  ✓  4 [chromium] › 4. Client-side download buttons and clear action exist and are visible in results (1.6s)
+  ✓  5 [chromium] › 5. Responsive layout functions cleanly at 375px mobile width (833ms)
+  ✓  6 [chromium] › 6. Language toggle switches between English and Traditional Chinese UI copy (1.4s)
+6 passed (10.0s)
+```
+
+### 4. Heading Correspondence Audit (`README.md` vs. `README.zh-TW.md`)
+Extracted all `#` lines (including markdown sections and code block comments) from both English and Traditional Chinese READMEs:
+- Total heading lines in `README.md`: 64
+- Total heading lines in `README.zh-TW.md`: 64
+- Line-by-line heading diff: **EXACTLY ZERO DIFF (100% match)**.
+
+### 5. Numbers Provenance & Verification Audit Table
+All quantitative figures in documentation and code were traced to physical files, code implementations, or peer-reviewed literature:
+
+| Quantity / Claim | Value in Documentation | Origin / Provenance | Verification Status |
+|---|---|---|---|
+| ONNX INT8 Student Model Size | 21.96 MB (~22 MB) | `models/student_model_int8.onnx` (23,027,338 bytes) | VERIFIED (Disk inspect) |
+| Runtime CPU Threads Budget | 2 threads | `intra_op_num_threads=2` in `backend/runtime_engine.py` & `run.py` | VERIFIED (Code inspect) |
+| Peak Process RAM Envelope | ≤150 MB (Target: ≤1.5 GB) | `process_ram_mb=76.0` reported by `/api/health` | VERIFIED (Live API telemetry) |
+| Tabular Stylometrics Dimension | 20 features | Vector length in `backend/stylometrics.py` | VERIFIED (Code inspect) |
+| Hierarchical Smoothing Ratio | 40% sentence / 60% chunk | `0.40 * p_local + 0.60 * p_chunk` in `backend/runtime_engine.py` | VERIFIED (Code inspect) |
+| Default Confidence Cutoff | 0.40 | `DEFAULT_CONFIDENCE_THRESHOLD = 0.40` in `backend/runtime_engine.py` | VERIFIED (Code inspect) |
+| Max Sequence Length | 512 tokens | `models/tokenizer/tokenizer.json` configuration | VERIFIED (Code inspect) |
+| Context Chunk Window | ~100 words | `CHUNK_SIZE = 100` in `backend/runtime_engine.py` | VERIFIED (Code inspect) |
+| QuillBot Hand-Check Sheet | 30 samples | Count of entries in `data/quillbot_comparison_sheet.json` | VERIFIED (File count) |
+| Max Locked Access Limit | 3 evaluations | `MAX_LOCKED = 3` in `scripts/eval_frontier.py` | VERIFIED (Code inspect) |
+| ESL False Positive Risk | 61.22% vs ~5.19% | Liang et al., Patterns 2023, S11 in `data/research/sources.md` | VERIFIED (Literature cite) |
+| Short Text Degradation Threshold | ≤100 tokens / <50 words | Ghostbuster S10 / Pangram S1 in `data/research/sources.md` | VERIFIED (Literature cite) |
+| Humanized Text Recall Drop | 60.04% (GPTZero) / 28.23% (Bino) | DAMAGE ACL 2025, S16 in `data/research/sources.md` | VERIFIED (Literature cite) |
+| Empirical Frontier Benchmark Metrics | All unmeasured values | `EVAL_REPORT.md` / `notebooks/04_results_figures.ipynb` | MARKED "TBD" (Fail-safe) |
+| Legacy Synthetics Retraction | All synthetic evaluation metrics | `data/eval/legacy_audit.json` / Retraction banners | STRUCK THROUGH (~~...~~) |
+
+### 6. Repo Hygiene & Boundaries Summary
+- Zero occurrences of `??` mojibake across the entire repository.
+- Zero occurrences of `file:///` local paths in documentation.
+- All relative markdown links validated (0 broken links across 28+ references).
+- Zero modifications to Claude-owned areas: `backend/`, `models/`, `scripts/`, `data/`.
+- No branch pushing or merging; all work committed cleanly to local `main` branch.
