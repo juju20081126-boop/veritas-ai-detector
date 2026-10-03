@@ -74,6 +74,7 @@ jobs:
           import os, re, sys
           files = [
               'README.md',
+              'README.zh-TW.md',
               'EVAL_REPORT.md',
               'RESEARCH_COMPENDIUM.md',
               'MATHEMATICAL_EQUATIONS.md',
@@ -105,3 +106,48 @@ jobs:
               sys.exit(1)
           print('All documentation links valid!')
           "
+
+  frontend-smoke:
+    name: Frontend Smoke Tests (Playwright)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Node dependencies
+        working-directory: ./frontend
+        run: |
+          npm ci || npm install
+          npx playwright install --with-deps chromium
+      - name: Start Veritas local server in background
+        run: |
+          python run.py --port 8003 --no-browser &
+          sleep 4
+          curl -s http://127.0.0.1:8003/api/health || sleep 3
+      - name: Run Playwright smoke tests
+        working-directory: ./frontend
+        env:
+          BASE_URL: http://127.0.0.1:8003
+        run: |
+          npm test
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-smoke-artifacts
+          path: |
+            frontend/test-results/
+            frontend/playwright-report/
+          if-no-files-found: ignore
+
