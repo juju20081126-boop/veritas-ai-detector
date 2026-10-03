@@ -203,7 +203,7 @@ The cause is mathematical:
 3. Naive detectors that equate low perplexity with machine generation inadvertently penalize writers with simpler vocabulary.
 
 ### 5.2 Veritas AI Algorithmic Mitigation Strategy
-To achieve our measured **0.00% False-Positive Rate on ESL writers** (ratio: $1.00\times$, well within the $\le 2.0\times$ threshold), Veritas AI employs three forensic mechanisms:
+To target an ESL writer False-Positive Rate $\le 2.0\times$ native rate (legacy unverified claims retracted; verified metrics pending from `data/reports/FRONTIER_DETECTION_REPORT.md`), Veritas AI employs three forensic mechanisms:
 1. **Decoupling Vocabulary Diversity from AI Verdicts**:
    Instead of using simple TTR, the engine evaluates **syllable dispersion CV** and **consecutive rhythm deltas**. ESL writers may use simple words, but their syntactic pacing and clause progression exhibit distinct human cadence rather than machine uniformity.
 2. **Authorial Voice & Personal Narrative Guardrail**:
@@ -248,14 +248,14 @@ flowchart TD
         Quant["INT8 Dynamic Quantization<br/>(21.96 MB ONNX Model)"]
         ChunkPool["Hierarchical Paragraph-Window<br/>Logit Mean-Pooling"]
         Stylometrics["20-Dimensional Stylometric<br/>Meta-Classifier (NumPy)"]
-        Calib["Temperature-Scaled Calibrator<br/>(T = 1.55, ECE = 0.0325)"]
+        Calib["Temperature-Scaled Calibrator<br/>(Target: ECE < 0.05)"]
         
         Loss --> MiniLM
         MiniLM --> Quant
         Quant --> ChunkPool
         ChunkPool --> Stylometrics
         Stylometrics --> Calib
-        Calib --> Output["4-Class Verdict + Highlighting<br/>(0.167s Latency, 154MB RAM)"]
+        Calib --> Output["4-Class Verdict + Highlighting<br/>(Target: <=15s, <=1.5GB RAM)"]
     end
 ```
 
@@ -267,7 +267,7 @@ Standard transformer sequence classification heads (trained with `max_length = 2
 **The Solution**:
 The runtime decomposes the text into natural paragraph windows ($\sim 70 - 100$ words), runs micro-batched ONNX inference with dynamic sequence padding, and mean-pools the logit representations:
 $$\mathbf{z}_{\text{doc}} = \frac{1}{M} \sum_{m=1}^M \mathbf{z}_m$$
-This enables the edge student to process a 2,000-word text in under **0.62 seconds** on 2 CPU threads while maintaining high classification fidelity.
+This enables the edge student to process a 2,000-word text well within the 15-second latency budget on 2 CPU threads while maintaining high classification fidelity.
 
 ---
 
@@ -400,9 +400,9 @@ Below is the verified comparative teardown of existing industrial, commercial, a
 
 | Detector | Architecture & Methodology | Training Data & Tactics | Granularity | Length Constraints | Paraphrase / Humanizer Handling | Published Accuracy & Known Issues | Primary Source & Access Date |
 |---|---|---|---|---|---|---|---|
-| **Turnitin** | `[documented]` Transformer-based deep learning classifier; breaks submissions into overlapping segments (~200–250 words / 5–10 sentences); evaluates sentence-level perplexity and burstiness; aggregates scores into document %; multi-model pipeline (AIW-1, AIW-2, AIR-1) with specialized AI-paraphrased / bypasser detection. | `[documented]` Curated student academic writing paired with LLM generations (GPT-3, GPT-3.5, GPT-4). | `[documented]` Document % + sentence highlights (AI-generated vs AI-paraphrased). | `[documented]` Min 300 words of qualifying text. | `[documented]` Flags AI-paraphrased and bypasser text via specialized heads; sensitive to heavy edits. | `[documented, vendor claim]` Target document FPR < 1% for documents with >20% AI. Suppresses scores between 1% and 19% due to high false-positive risk. Stated policy: indicator is not proof of misconduct. | Official Educator Guide & FAQs: https://help.turnitin.com/feedback-studio/turnitin-website/instructor/ai-writing-detection/about-the-ai-writing-report.htm (Access: 2026-10-02) |
-| **QuillBot** | `[documented]` Proprietary machine learning model combining binary and fine-grained 4-class categorization (`AI-generated`, `AI-generated & AI-refined`, `Human-written & AI-refined`, `Human-written`); sentence-level perplexity and burstiness analysis; word-count weighted sentence coverage. | `[documented]` Trained on human writing, academic prose, and diverse LLM outputs (ChatGPT, Claude, Gemini); specifically models multi-stage rewriting and paraphrasing. | `[documented]` Headline % ("XX% of text is likely AI/Human") + 4-color highlighted spans + 4-tier segment breakdown. | `[documented]` Free tier up to 1,200 words; recommends >300 words for reliable statistics. | `[documented]` Explicitly models AI-refined human vs AI-refined AI; trained on QuillBot's own paraphrase modes. | `[documented, vendor policy]` Scores described as "signals, not verdicts". `[secondary]` Independent reviews report 70–91% on raw AI with drops to ~58% on heavy humanizers. | Official Documentation & FAQ: https://quillbot.com/ai-content-detector and https://help.quillbot.com/ (Access: 2026-10-02) |
-| **Copyleaks** | `[documented]` Multi-stage statistical and deep-learning pipeline analyzing word/phrase ratios, POS distributions, and syllable dispersion; features "AI Insights" explanation and "AI Source Match" checking similarity to known public LLM generations; separate model pipelines for plagiarism vs AI. | `[documented]` Massive human archive (>trillions of crawled and enterprise pages since 2015) paired with multi-LLM outputs; ongoing updates (e.g. V11 testing methodology). | `[documented]` Sentence and passage-level highlighting with confidence scores; LMS/API integration. | `[documented]` Continuous prose; short passages lack sufficient statistical power. | `[documented]` Targets spun/paraphrased text; notes that AI grammar-enhancement features (e.g. generative Grammarly rewrites) may be flagged. | `[documented, vendor claim]` Claims >99% accuracy, 0.03% FPR. `[secondary]` Independent studies report practical FPR of 6–11% on out-of-domain and non-native English writing. | Official Methodology & FAQ: https://copyleaks.com/ai-content-detector/ai-detector-methodology (Access: 2026-10-02) |
+| **Turnitin** | `[secondary]` Transformer-based deep learning classifier; breaks submissions into overlapping segments (~200–250 words / 5–10 sentences); evaluates sentence-level perplexity and burstiness; aggregates scores into document %; multi-model pipeline (AIW-1, AIW-2, AIR-1) with specialized AI-paraphrased / bypasser detection. | `[unknown]` | `[secondary]` Document % + sentence highlights (AI-generated vs AI-paraphrased). | `[secondary]` Min 300 words of qualifying text. | `[secondary]` Flags AI-paraphrased and bypasser text via specialized heads; sensitive to heavy edits. | `[secondary, vendor claim]` Target document FPR < 1% for documents with >20% AI. Suppresses scores between 1% and 19% due to high false-positive risk. Stated policy: indicator is not proof of misconduct. (Vendor page fetch blocked 403) | Search summaries of educator guide / FAQs (Access: 2026-10-01) |
+| **QuillBot** | `[secondary]` Proprietary machine learning model combining binary and fine-grained 4-class categorization (`AI-generated`, `AI-generated & AI-refined`, `Human-written & AI-refined`, `Human-written`); sentence-level perplexity and burstiness analysis; word-count weighted sentence coverage. | `[unknown]` | `[secondary]` Headline % ("XX% of text is likely AI/Human") + 4-color highlighted spans + 4-tier segment breakdown. | `[secondary]` Free tier up to 1,200 words; recommends >300 words for reliable statistics. | `[secondary]` Explicitly models AI-refined human vs AI-refined AI; trained on QuillBot's own paraphrase modes. | `[secondary, vendor policy]` Scores described as "signals, not verdicts". Independent reviews report 70–91% on raw AI with drops to ~58% on heavy humanizers. (Vendor page fetch blocked 403) | Search summaries (GPTZero review, product docs) (Access: 2026-10-01) |
+| **Copyleaks** | `[secondary]` Multi-stage statistical and deep-learning pipeline analyzing word/phrase ratios, POS distributions, and syllable dispersion; features "AI Insights" explanation and "AI Source Match" checking similarity to known public LLM generations; separate model pipelines for plagiarism vs AI. | `[secondary]` Massive human archive (>trillions of crawled and enterprise pages since 2015) paired with multi-LLM outputs; ongoing updates. | `[secondary]` Sentence and passage-level highlighting with confidence scores; LMS/API integration. | `[unknown]` | `[secondary]` Targets spun/paraphrased text; notes that AI grammar-enhancement features (e.g. generative Grammarly rewrites) may be flagged. | `[secondary, vendor claim]` Claims >99% accuracy, 0.03% FPR. Independent studies report practical FPR of 6–11% on out-of-domain and non-native English writing. (Vendor page fetch blocked 403) | Search summaries (Copyleaks FAQ/blog, review sites) (Access: 2026-10-01) |
 | **GPTZero** | `[documented]` Multi-stage deep learning pipeline: input normalization -> sentence-level classification -> "Paraphraser Shield" -> document aggregation. | `[documented]` Web, educational, and multi-LLM corpora; ESL bias reduction via parameter tagging and dataset insertions. | `[documented]` Document % + sentence highlighting. | `[unknown]` Vendor states best performance on longer text. | `[documented]` Paraphraser Shield defends against rewriting and homoglyphs; mixed-doc accuracy 96.5%. | `[documented, vendor claim]` Self-reported FPR < 1%, TOEFL FPR 1.1%. `[secondary]` DAMAGE benchmark (S16) measured 99.73% on raw AI but **60.04% on humanized AI**. | https://gptzero.me/technology ; S16 (Access: 2026-10-01) |
 | **Pangram (4)** | `[documented]` Open-weight MoE + LoRA with multi-task heads: 15-way segment fraction, token-wise 3-way, mixed-authorship, humanizer probe; CRF decoding. | `[documented]` Synthetic mirrors, EditLens AI-assisted modeling, active learning hard negatives; 26 frontier models; >1M human texts. | `[documented]` Token-wise + segment + document. | `[documented]` Shorter text is harder: <50 words TPR@1% FPR is 73.32% under humanizer challenge. | `[documented]` Humanized text flagged at 97.67%; commercial humanizers 91.5–99.4%; AI-polished human flagged only 0.01%. | `[documented, self-reported]` FPR 0.0041%, FNR 0.34%, AUROC 0.9916; ESL 1 FP in 24,586. | arXiv:2607.27183 (S1), arXiv:2402.14873 (S13) (Access: 2026-10-01) |
 | **Originality.ai** | `[documented]` Multi-model suite (Lite 1.0.2, Turbo 3.0.2, Multilingual 2.0.0, "AI Allowance" spectrum model). | `[documented]` Internal benchmark V6: 456,872 samples across modern flagship LLMs. | `[documented]` Document score + highlighted text. | `[unknown]` | `[documented, self-reported]` "Up to 97%" detection on latest humanizers (Turbo 3.0.2). | `[documented, self-reported]` Lite 99.3% accuracy; Turbo 98.3% (precision 91.8%); Multilingual FPR 2.4%; states FPR is "still too high for disciplinary action". | https://originality.ai/blog/ai-content-detection-accuracy (Access: 2026-10-01) |
@@ -430,4 +430,16 @@ Below is the verified comparative teardown of existing industrial, commercial, a
    All vendors and research papers agree that short text (<100 tokens / <80 words) lacks sufficient statistical signal for high certainty. Short passages must be gated with an uncertainty warning.
 5. **Fairness on Non-Native English (ESL)**:
    Perplexity-only metrics severely penalize non-native English writers (S11: up to 61% false positives). Incorporating length-invariant stylometrics (Yule's K, syllable dispersion, syntactic burstiness) and validating on learner corpora (W&I, TOEFL) prevents bias.
+
+---
+
+### 9.4 Open Investigation Items: Not Yet Read / Unknown
+
+The following items represent gaps in public disclosure or unrecovered tables identified during the research review:
+1. **Commercial Paraphraser & Humanizer Internal Implementations [unknown]:**
+   Proprietary commercial rewriters and evasion tools (QuillBot modes, BypassGPT, StealthWriter, Undetectable AI) keep their model backbones, training data, decoding parameters, and prompt chains unstated. They can only be studied via external black-box evaluation (DAMAGE, S16; RAID, S14).
+2. **Authorship-Rewriting Benchmark (ARB, arXiv:2607.29539) Detailed Disaggregation [unknown]:**
+   While the conceptual framework of 3-way matched authorship (human original, LLM rewrite, full AI) is documented [documented], specific model parameter lists and individual per-detector numeric accuracy matrices were unrecoverable from the PDF text extraction during Phase 1.
+3. **Per-Detector Numerical Breakdowns in Attack Benchmarks [unknown]:**
+   The exact numerical performance tables across individual commercial detectors in PADBen (arXiv:2511.00416, S3) and the exact coordinate percentages in performance curves from *Base Models Look Human To AI Detectors* (arXiv:2605.19516, S5) were rendered as raster images in preprints and were unrecoverable in automated text extraction.
 
