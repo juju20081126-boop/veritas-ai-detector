@@ -514,3 +514,25 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Persists ONLY language preference (`localStorage.setItem('veritas_lang', ...)`) — strictly no text or analysis caching.
   - Retained all existing element IDs, API calls, and logic intact.
 - Evidence: commit `3055658` (`README.zh-TW.md | 732 +++`, `frontend/app.js | 359 +++---`, `frontend/i18n.js | 390 +++`, `frontend/index.html | 10 +-`, `frontend/style.css | 6 +`, 1422 insertions, 75 deletions).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream E: Frontend Playwright Smoke Tests
+- Implemented frontend Playwright smoke test suite in `frontend/tests/smoke.spec.js` and `frontend/tests/smoke.spec`:
+  - Starts nothing itself; targets configured `BASE_URL` (defaults to local server on port 8003).
+  - Test 1: Page loads cleanly with status 200, title containing "Veritas", and zero browser console errors or uncaught page errors.
+  - Test 2: Validates all 74 DOM element IDs queried by `frontend/app.js` exist in the document (100% presence check).
+  - Test 3: Pastes a 100-word authentic historical sample, triggers `#btnAnalyze`, and verifies that `#activeResultsContent` is displayed, `#verdictTitle` is populated, `#scoreNumber` renders, and `#heatmapViewer` highlights sentences.
+  - Test 4: Verifies client-side export buttons (`#btnDownloadJson`, `#btnDownloadCsv`), summary copy, and clear action (`#btnResetReport`), confirming the report is cleared and editor reset.
+  - Test 5: Validates responsive mobile layout at 375px viewport width, verifying visibility of core controls and no horizontal scroll overflow (`scrollWidth <= 376`).
+  - Test 6: Verifies language toggle switching UI copy between English and Traditional Chinese (`lang="zh-TW"`, `#btnAnalyze` button label updates to '開始檢測', and reverts cleanly to English).
+- Configured `frontend/playwright.config.js` with auto-detection of local Chromium binaries, single worker, and zero tracing overhead.
+- Test run output (`npm test --prefix frontend`):
+  ```
+  Running 6 tests using 1 worker
+    ✓  1 [chromium] › tests/smoke.spec.js:98:3 › 1. Page loads cleanly with zero console or uncaught errors (1.2s)
+    ✓  2 [chromium] › tests/smoke.spec.js:126:3 › 2. Every element ID used by app.js exists in the DOM (718ms)
+    ✓  3 [chromium] › tests/smoke.spec.js:136:3 › 3. Pasting a 100-word sample and clicking analyze displays a verdict and renders heatmap (1.2s)
+    ✓  4 [chromium] › tests/smoke.spec.js:176:3 › 4. Client-side download buttons and clear action exist and are visible in results (1.3s)
+    ✓  5 [chromium] › tests/smoke.spec.js:203:3 › 5. Responsive layout functions cleanly at 375px mobile width (508ms)
+    ✓  6 [chromium] › tests/smoke.spec.js:218:3 › 6. Language toggle switches between English and Traditional Chinese UI copy (678ms)
+    6 passed (6.8s)
+  ```
+- Evidence: commit `ec86f15` (`frontend/.gitignore | 3 +`, `frontend/package-lock.json | 54 +`, `frontend/package.json | 11 +`, `frontend/playwright.config.js | 44 +`, `frontend/tests/smoke.spec | 242 +`, `frontend/tests/smoke.spec.js | 242 +`, 596 insertions).
