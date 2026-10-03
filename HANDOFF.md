@@ -272,3 +272,7 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
   - Rules: max ~200 texts per detector; never automate detector/paraphraser websites; never scrape.
 - Updated Table of Contents in `README.md` to link to the new section.
 - Evidence: `README.md | 14 ++++++++++++++` (14 insertions).
+## 2026-10-03 — Antigravity CLI — Round 3 Task 4: samples/README.md declaring synthetic/demo status
+- Created `samples/README.md` explicitly declaring that all texts in `samples/` are synthetic or demonstration passages for UI/CLI testing.
+- Clarified that samples are not genuine model outputs from live frontier APIs and are not empirical evidence or evaluation data (which reside strictly in `data/corpus/`, `data/splits/`, `data/eval/`, and `data/reports/`).
+- Evidence: `git status` shows new file `samples/README.md` (12 lines).
