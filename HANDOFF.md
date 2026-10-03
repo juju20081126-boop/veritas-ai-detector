@@ -276,3 +276,10 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
 - Created `samples/README.md` explicitly declaring that all texts in `samples/` are synthetic or demonstration passages for UI/CLI testing.
 - Clarified that samples are not genuine model outputs from live frontier APIs and are not empirical evidence or evaluation data (which reside strictly in `data/corpus/`, `data/splits/`, `data/eval/`, and `data/reports/`).
 - Evidence: `git status` shows new file `samples/README.md` (12 lines).
+## 2026-10-03 — Antigravity CLI — Round 3 Task 5: Add non-blocking ruff lint step to CI
+- Added non-blocking lint step (`continue-on-error: true`) to `.github/workflows/python-package.yml` running `python -m pip install ruff` and `ruff check scripts backend`.
+- Ran `ruff check scripts backend` locally to measure baseline error count:
+  - Total errors found: **358 errors** (249 automatically fixable with `--fix`, 32 with `--unsafe-fixes`).
+  - Common categories: unused imports (`F401`), unsorted imports (`I001`), mutable default arguments (`B006`), explicit conversion flags (`RUF010`), and unescaped characters in test strings (`PLE2515`).
+  - As per ownership boundaries in `AGENTS.md`, no edits were made to `scripts/` or `backend/`.
+- Evidence: `.github/workflows/python-package.yml | 6 ++++++` (6 insertions).
