@@ -468,3 +468,9 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Explanation: In GitHub Actions, when `ruff check scripts backend` exited with code 1 due to 358 un-reformatted files in `scripts/` and `backend/`, GitHub displayed an error annotation (`Process completed with exit code 1`) on the step despite the job-level continue-on-error setting.
   - Adding `--exit-zero` ensures that ruff still runs on every push and outputs the complete 358 lint messages into the workflow logs for Claude's inspection, but exits 0 so GitHub Actions marks the step as successful (green).
   - Note for Claude: `ruff check scripts backend` currently identifies 358 errors (mostly UP006, UP035, RUF100, I001, F401, F541). Whenever Claude is ready to run formatting on `scripts/` and `backend/`, 249 of them are automatically fixable via `ruff check --fix`.
+
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream A: REST API Reference
+- Exhaustively documented all 5 backend REST endpoints in `README.md` (`GET /api/health`, `GET /api/samples`, `GET /api/comparison-sheet`, `POST /api/detect`, `POST /api/upload`).
+- Documented HTTP method, request parameters/payload types and defaults, full response JSON schemas with explicit types for every key (including `summary`, `calibrated_probabilities`, `percentages`, `quillbot_breakdown`, per-sentence diagnostic objects, and full 20 stylometrics), and HTTP error status codes (400, 422, 500).
+- Verified every curl command against the live local server running on port 8003 (`python run.py --port 8003 --no-browser`) and pasted verbatim real server responses in `README.md`.
+- Evidence: commit `c1938df` (`README.md | 431 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------`, 384 insertions, 47 deletions).
