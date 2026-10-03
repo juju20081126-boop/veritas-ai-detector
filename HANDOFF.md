@@ -484,3 +484,17 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Strictly zero localStorage persistence of text or analysis results.
   - Preserved all existing element IDs, API calls, and logic.
 - Evidence: commit `40f57f3` (`frontend/app.js | 62 +++++`, `frontend/index.html | 12 +++`, `frontend/style.css | 4 ++-`, 76 insertions, 2 deletions).
+
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream C: Print Stylesheet & Keyboard Help Overlay
+- Added `@media print` rules to `frontend/style.css`:
+  - Automatically hides interactive UI chrome (headers, sample chips, edit toolbars, export buttons, stepping icons, colophon, and modals).
+  - Preserves document text and heatmap highlights with high-contrast monochrome patterns:
+    - Plain text for human-written.
+    - Dashed underline for human-written & AI-refined.
+    - Dotted underline with light grayscale fill for AI-generated & AI-refined.
+    - Double underline with bold weight and dark grayscale fill for pure AI-generated.
+  - Formats summary cards and signals cleanly for hardcopy / PDF printing.
+- Implemented accessible keyboard shortcuts modal (`#shortcutsModal`) in `frontend/index.html`:
+  - Added `#btnHelpShortcuts` trigger in topbar with `?` keyboard toggle listener.
+  - Lists existing navigation controls: `?` (toggle guide), `Ctrl+Enter` (analyze), `↓`/`→` (next sentence), `↑`/`←` (previous sentence), and `Esc` (dismiss).
+- Evidence: commit `63df44e` (`frontend/app.js | 42 +++`, `frontend/index.html | 24 +++`, `frontend/style.css | 223 ++++++`, 287 insertions, 2 deletions).
