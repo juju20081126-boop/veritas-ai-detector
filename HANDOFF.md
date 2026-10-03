@@ -356,4 +356,16 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
 - Confirmed "Limitations" section contains only claims tagged `[documented]` in `data/research/sources.md` (Liang et al. S11, Ghostbuster S10, Fast-DetectGPT S7, Pangram S1/S13, PADBen S3, DAMAGE S16, DIPPER S9, RAID S14, Binoculars S6).
 - Standardized "Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)" heading and table of contents anchor.
 - Evidence: commit `c67993b` (`README.md | 160 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------`, 144 insertions, 16 deletions).
+## 2026-10-03 — Antigravity CLI — Workstream C: Evaluation report template replacement
+- Replaced the body of `EVAL_REPORT.md` with a structured, honest evaluation template ready to be populated by real-data pipeline runs (`python scripts/eval_frontier.py`):
+  - Preserved the top legacy-retraction banner.
+  - Added explicit "Source of Truth Notice" stating that every figure must come from `scripts/eval_frontier.py` output and that all unfilled metrics remain `TBD (from data/reports/FRONTIER_DETECTION_REPORT.md)`.
+  - Added Section 1: Overall Benchmark Performance table (columns: detector, split, threshold [1% Dev FPR], TPR@1%FPR [95% CI], realized FPR, AUROC) across `dev` and `locked` splits for `shipped`, `hc3_roberta`, and `binoculars`.
+  - Added Section 2: Per Generator $\times$ Attack Family Breakdown covering frontier models (Claude 3.5 Sonnet, Claude Opus 5.5, GPT-4o, Gemini 1.5 Pro, Llama 3.3 70B, DeepSeek-V3) and attack families (A0 raw, A1 paraphrase, A2 iterative, A3 humanizer prompt, A4 RAID T5, A5 zero-width, A7 typos).
+  - Added Section 3: Performance Per Length Bucket (<80 words, 80-150 words, 150-300 words, 300-600 words, >600 words).
+  - Added Section 4: ESL vs Native English Writer Fairness Audit covering native cohorts (LOCNESS, news/abstracts) and ESL learner cohorts (W&I CEFR bands A, B, C, and total learner essays) with disparity ratio tracking.
+  - Added Section 5: Leave-One-Family-Out & Generalization Performance table.
+  - Added Section 6: Shipped Hardware Footprint & Operational Telemetry table with verified static metrics (21.96 MB INT8 model, zero PyTorch) and TBD placeholders for dynamic benchmarks.
+- Evidence: commit `d06054a` (`EVAL_REPORT.md | 177 +++++++++++++++++++++++++++------------------------------`, 84 insertions, 93 deletions).
+
 
