@@ -536,3 +536,15 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
     6 passed (6.8s)
   ```
 - Evidence: commit `ec86f15` (`frontend/.gitignore | 3 +`, `frontend/package-lock.json | 54 +`, `frontend/package.json | 11 +`, `frontend/playwright.config.js | 44 +`, `frontend/tests/smoke.spec | 242 +`, `frontend/tests/smoke.spec.js | 242 +`, 596 insertions).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream F: Analysis Notebook Template
+- Authored `notebooks/04_results_figures.ipynb`:
+  - Complete, unexecuted (`execution_count=None`, zero cached outputs) analysis notebook template.
+  - Rigorously matches the schema produced by `python scripts/eval_frontier.py` (`data/eval/results/*.json`).
+  - Figure 1: True Positive Rate (TPR) with Wilson 95% Confidence Interval error bars per generator × attack family (`tpr_by_generator_family`).
+  - Figure 2: Realized False Positive Rates (FPR) across demographic groups (`fpr_clean_human`, `fpr_esl`, `fpr_native`) with 1.0% threshold benchmark, plus FPR by genre breakdown (`fpr_by_genre`).
+  - Figure 3: Development split vs. locked test split generalization comparison (`tpr_pooled` on `dev` vs. `locked`).
+  - Section 5: Structured Markdown summary table export formatting records according to `EVAL_REPORT.md` specifications.
+  - Defensive fallback: Prints `"TBD (from data/reports/FRONTIER_DETECTION_REPORT.md)"` whenever files or specific metric keys are missing; strictly zero fabricated numbers.
+  - Fully validated with `nbformat.validate` (all 4 repository notebooks verified structural integrity and unrun state).
+- Updated `notebooks/README.md` to catalog `04_results_figures.ipynb` and confirmed the total code cell count across the four notebooks (21 code cells, 0 outputs).
+- Evidence: commit `1301b06` (`notebooks/04_results_figures.ipynb | 348 +++`, `notebooks/README.md | 3 +-`, 350 insertions, 1 deletion).
