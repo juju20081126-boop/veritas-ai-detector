@@ -386,6 +386,21 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Desktop 1280px (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_light.png`
   - Desktop 1280px (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_dark.png`
 - Evidence: commit `3f9da1d` (`frontend/index.html | 22 ++-`, `frontend/style.css | 53 ++-`, 63 insertions, 12 deletions).
+## 2026-10-03 — Antigravity CLI — Workstream E: Real frontier model generation samples
+- Created `samples/real_samples.py` with exactly 10 Claude Opus 5.5 and 10 Claude Sonnet 5.5 texts extracted READ-ONLY from `data/corpus/frontier/` (via Claude's worktree).
+- Preserved complete row provenance: `text`, `generator_id`, `prompt_id`, `task_type`, `date`, `words`, `batch_id`.
+- Sampled across varied task types for both models:
+  - 2 essay
+  - 2 news
+  - 2 abstract
+  - 1 email
+  - 1 story
+  - 1 explain
+  - 1 general
+- Confirmed zero human texts were added to `samples/real_samples.py`.
+- Preserved `samples/sample_data.py` with its clear `SYNTHETIC_DEMO = True` designation and `samples/README.md`.
+- Evidence: commit `8eebe56` (`samples/real_samples.py | 195 +++++++++++++++++++++++++++++++++++++++++++++++++++`, 1 file created).
+
 
 
 
