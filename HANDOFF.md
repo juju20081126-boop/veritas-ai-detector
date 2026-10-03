@@ -498,3 +498,19 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Added `#btnHelpShortcuts` trigger in topbar with `?` keyboard toggle listener.
   - Lists existing navigation controls: `?` (toggle guide), `Ctrl+Enter` (analyze), `↓`/`→` (next sentence), `↑`/`←` (previous sentence), and `Esc` (dismiss).
 - Evidence: commit `63df44e` (`frontend/app.js | 42 +++`, `frontend/index.html | 24 +++`, `frontend/style.css | 223 ++++++`, 287 insertions, 2 deletions).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream D: Traditional Chinese Translation & Frontend i18n
+- Authored `README.zh-TW.md`:
+  - Complete, faithful translation of `README.md` into Traditional Chinese (Taiwan conventions / 繁體中文).
+  - Maintains 100% exact heading match with `README.md` across all 49 heading and bash-comment lines (zero diff under heading line extraction).
+  - Preserved all code blocks, curl examples, JSON payloads, and relative links (28 links validated, 0 broken).
+  - Validated zero `??` mojibake characters and zero `file:///` URLs.
+- Implemented frontend internationalization (`frontend/i18n.js`):
+  - Created standalone UMD module supporting English (`en`) and Traditional Chinese (`zh-TW`).
+  - Covers all UI copy: topbar, intro, sample chips, sheet tabs, upload/paste buttons, dropzone overlay, word/sentence counter guides, uncertainty cutoff tooltip, empty state key to marks, score headline, class breakdown, verdict card, inspector, writing signals, engine telemetry, action buttons, method & limits panel, and keyboard shortcuts modal.
+- Integrated language toggle in `frontend/index.html` and `frontend/app.js`:
+  - Added `#langToggleBtn` and `#langToggleLabel` in topbar (`.topbar-right`).
+  - Dynamically updates DOM labels and placeholders upon toggle.
+  - Automatically re-renders active analysis results so verdict and sentence badges translate synchronously.
+  - Persists ONLY language preference (`localStorage.setItem('veritas_lang', ...)`) — strictly no text or analysis caching.
+  - Retained all existing element IDs, API calls, and logic intact.
+- Evidence: commit `3055658` (`README.zh-TW.md | 732 +++`, `frontend/app.js | 359 +++---`, `frontend/i18n.js | 390 +++`, `frontend/index.html | 10 +-`, `frontend/style.css | 6 +`, 1422 insertions, 75 deletions).
