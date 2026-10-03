@@ -564,3 +564,15 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Verified 100% heading correspondence between `README.md` and `README.zh-TW.md` (64 heading lines, exactly zero diff).
   - Validated zero `??` mojibake characters and zero `file:///` URLs.
 - Evidence: commit `c7c5dc3` (`README.md | 50 +++`, `README.zh-TW.md | 63 +++`, 113 insertions).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream H: CI Workflow Enhancement
+- Enhanced `.github/workflows/python-package.yml`:
+  - Added `frontend-smoke` CI job running Playwright smoke tests:
+    - Runs on `ubuntu-latest` with `continue-on-error: true`.
+    - Sets up Python 3.11 and Node.js 20.
+    - Installs runtime dependencies and Chromium via `npx playwright install --with-deps chromium`.
+    - Launches Veritas backend server in background (`python run.py --port 8003 --no-browser &`) and verifies server health readiness with curl poll.
+    - Executes `npm test` inside `frontend/` targeting `BASE_URL=http://127.0.0.1:8003`.
+    - Uploads test results and failure screenshots as GitHub Actions workflow artifacts via `actions/upload-artifact@v4`.
+  - Added `'README.zh-TW.md'` to the `check-markdown-links` validation step to guarantee ongoing link integrity for the Traditional Chinese documentation.
+  - Validated YAML syntax with `yaml.safe_load`.
+- Evidence: commit `2852c6d` (`.github/workflows/python-package.yml | 46 ++++++++++++++++++++++++++++++++++++`, 46 insertions).
