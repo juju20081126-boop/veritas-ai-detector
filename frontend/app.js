@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heatmapSentCountBadge.hidden = marked === 0;
 
     // Score
-    const aiPct = Number(summary.quillbot_ai_pct ?? ((pcts.ai_generated || 0) + (pcts.ai_ai_refined || 0)));
+    const aiPct = Number(summary.quillbot_ai_pct != null ? summary.quillbot_ai_pct : ((pcts.ai_generated || 0) + (pcts.ai_ai_refined || 0)));
     const scoreEl = $("qbHeadlineBanner");
     // Color the score by whichever AI class dominates; human blue when nothing is flagged.
     scoreEl.dataset.tone = aiPct <= 0 ? "human"
@@ -604,7 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Breakdown",
       ...CLASSES.map((c) => `  ${c.label}: ${fmtPct(p[c.key])}`),
       "",
-      `Words: ${s.word_count ?? "—"}, sentences: ${s.sentence_count ?? "—"}`,
+      `Words: ${s.word_count != null ? s.word_count : "—"}, sentences: ${s.sentence_count != null ? s.sentence_count : "—"}`,
       `Checked offline in ${s.elapsed_seconds != null ? Number(s.elapsed_seconds).toFixed(2) : "—"} s`,
     ].join("\n");
     try {

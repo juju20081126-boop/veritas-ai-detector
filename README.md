@@ -256,8 +256,8 @@ python cli.py --text "This is a brief text." --json
 |---|---|---|---|
 | 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | ~~0.167 seconds~~ | *Legacy benchmark* |
 | Peak Process RAM (Simulated Target) | ≤ 1,500 MB | ~~178.5 MB~~ | *Legacy benchmark* |
-| Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | PASS |
-| Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | PASS |
+| Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | VERIFIED |
+| Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | VERIFIED |
 | ESL Writer False Positive Rate | ≤ 2.0× Native Rate | ~~0.00%~~ | *Retracted (Synthetic / Leaked data)* |
 | 4-Class Macro-F1 Score | Balanced 4-Class F1 | ~~0.6392~~ | *Retracted (Synthetic / Leaked data)* |
 | In-Distribution TPR (@ ≤1% FPR) | Student TPR | ~~85.00% (Teacher: 96.2%)~~ | *Retracted (Teacher never trained)* |

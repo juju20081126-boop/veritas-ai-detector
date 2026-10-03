@@ -1,10 +1,10 @@
-# Demonstration Samples
+# Demonstration & Reference Samples
 
 > [!WARNING]
-> **Status: Synthetic / Demo Texts Only**  
-> All passages and texts in this directory (`samples/`) are synthetic or demonstration passages created solely for testing user interface rendering, CLI display formatting, and manual walkthroughs.
+> **Status: Demo & Reference Samples Only**
 >
-> - **Not model outputs:** These texts are not live or genuine model outputs generated via frontier APIs.
-> - **Not evaluation evidence:** These samples must never be used as empirical evidence, benchmark results, or ground-truth evaluation data.
+> Passages in this directory are intended solely for local manual testing, CLI formatting checks, and UI walkthroughs:
+> - **`samples/sample_data.py` (Synthetic Demo Texts)**: Hand-crafted demo passages (`SYNTHETIC_DEMO = True`) for quick UI smoke tests. Not genuine model outputs and not evaluation evidence.
+> - **`samples/real_samples.py` (Frontier Generation Extracts)**: Exactly 20 real model generation passages (10 Claude Opus 5.5, 10 Claude Sonnet 5.5) extracted READ-ONLY from `data/corpus/frontier/` with full provenance metadata. Provided for offline sanity checks. Not benchmark evaluation data.
 >
-> Genuine empirical evaluation data, verified frontier model generations, and adversarial test splits are located strictly in `data/corpus/`, `data/splits/`, `data/eval/`, and `data/reports/`.
+> Genuine empirical evaluation data, full benchmark corpora, and locked test splits are located strictly in `data/corpus/`, `data/splits/`, `data/eval/`, and `data/reports/`.

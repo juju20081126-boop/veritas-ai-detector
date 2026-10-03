@@ -186,13 +186,13 @@ Create `scripts/benchmark_quillbot_parity.py` containing 30 reference passages *
 #### Verification Acceptance Criteria (Proposed Targets):
 1. **David Sedaris Memoir**:
    - QuillBot Online: `0% AI` (100% Human) *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
-   - Veritas Target: **`0.0% - 5.0% AI`** ($\ge 75\%$ Human-written) -> **PASS** *(UNVERIFIED HYPOTHESIS)*
+   - Veritas Target: **`0.0% - 5.0% AI`** ($\ge 75\%$ Human-written) -> **TARGET CRITERION** *(UNVERIFIED HYPOTHESIS)*
 2. **ChatGPT Essay (AI in Education)**:
    - QuillBot Online: `100% AI` *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
-   - Veritas Target: **`90.0% - 100.0% AI`** -> **PASS** *(UNVERIFIED HYPOTHESIS)*
+   - Veritas Target: **`90.0% - 100.0% AI`** -> **TARGET CRITERION** *(UNVERIFIED HYPOTHESIS)*
 3. **ESL Essays (Non-Native English)**:
    - QuillBot Online: `0% AI` *(UNVERIFIED HYPOTHESIS: unverified pending manual check)*
-   - Veritas Target: **`0.0% False Positive Rate`** (0 / 30 flagged as pure AI) -> **PASS** *(UNVERIFIED HYPOTHESIS: measured on leaked synthetic data)*
+   - Veritas Target: **`0.0% False Positive Rate`** (0 / 30 flagged as pure AI) -> **TARGET CRITERION** *(UNVERIFIED HYPOTHESIS: unmeasured)*
 4. **Headline MAE**: Mean absolute error between Veritas AI percentage and QuillBot online percentage $\le 8.5\%$ across the 30-sample benchmark *(UNVERIFIED HYPOTHESIS: proposed target)*.
 5. **Class Agreement ($\kappa$)**: Cohen's Kappa $\ge 0.80$ on sentence-level classification *(UNVERIFIED HYPOTHESIS: proposed target)*.
 
