@@ -400,6 +400,14 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
 - Confirmed zero human texts were added to `samples/real_samples.py`.
 - Preserved `samples/sample_data.py` with its clear `SYNTHETIC_DEMO = True` designation and `samples/README.md`.
 - Evidence: commit `8eebe56` (`samples/real_samples.py | 195 +++++++++++++++++++++++++++++++++++++++++++++++++++`, 1 file created).
+## 2026-10-03 — Antigravity CLI — Workstream F: CI workflows expansion
+- Restructured `.github/workflows/python-package.yml` into 4 distinct, parallel jobs:
+  1. `test` (`pytest scripts/tests -q`): **Blocking** (verified passing locally: 14 passed in 0.35s).
+  2. `ruff-lint` (`ruff check scripts backend`): **Non-blocking** (`continue-on-error: true`) to inform Claude of lint status without breaking main CI.
+  3. `validate-notebooks` (`nbformat.validate`): **Blocking** (verified passing locally: all 3 notebooks strictly conform to valid JSON and nbformat v4 schema).
+  4. `check-markdown-links`: **Blocking** (verified passing locally: parsed and verified all relative markdown documentation links across `README.md`, `EVAL_REPORT.md`, `RESEARCH_COMPENDIUM.md`, `MATHEMATICAL_EQUATIONS.md`, plan files, `notebooks/README.md`, and `samples/README.md` with 0 broken links).
+- Evidence: commit `a4828b0` (`.github/workflows/python-package.yml | 127 +++++++++++++++++++++++++----------`, 93 insertions, 34 deletions).
+
 
 
 
