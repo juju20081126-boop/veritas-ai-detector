@@ -420,7 +420,13 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
 - Evidence: commit `5b9860b` (`notebooks/03_gpu_finetune.ipynb | 224 ++++++++++++++++++++++++++++++----------`, 168 insertions, 56 deletions).
 
 
-
-
-
-
+## 2026-10-03 — Antigravity CLI — Workstream H: Research compendium reconciliation
+- Reconciled `RESEARCH_COMPENDIUM.md` with `data/research/*.md` sources:
+  - Replaced legacy synthetic claims (0.00% ESL FPR, 0.167s latency, 0.0325 ECE) with target specifications / pending verified metrics from `data/reports/FRONTIER_DETECTION_REPORT.md`.
+  - Reconciled Table 9.2 tags with `detector_teardown.md` (`Turnitin`, `QuillBot`, and `Copyleaks` tagged `[secondary]`).
+  - Added Section 9.4: "Open Investigation Items: Not Yet Read / Unknown" detailing:
+    1. Commercial Paraphraser & Humanizer Internal Implementations [unknown]
+    2. Authorship-Rewriting Benchmark (ARB, arXiv:2607.29539) Detailed Disaggregation [unknown]
+    3. Per-Detector Numerical Breakdowns in Attack Benchmarks [unknown]
+  - Verified every claim carries `[documented]`, `[secondary]`, or `[unknown]`.
+- Evidence: commit `0ab9bb6` (`RESEARCH_COMPENDIUM.md | 26 +++++++++++++++++++-------`, 19 insertions, 7 deletions).
