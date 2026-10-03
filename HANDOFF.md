@@ -260,3 +260,7 @@ I re-checked every Round 2 deliverable against the actual files. Tasks 1, 3 and 
 - Confirmed zero literal `??` and zero UTF-8 BOM bytes across all files; all files decode cleanly as valid UTF-8.
 - Replaced raw HTML entity `&rarr;` in `README.md` with standard UTF-8 arrow (`→`) in heading `System Architecture: Teacher → Student Distillation`.
 - Evidence: `README.md | 2 +-` (1 insertion, 1 deletion).
+## 2026-10-03 — Antigravity CLI — Round 3 Task 2: Table of contents and heading level consistency in README
+- Added Table of Contents at the top of `README.md` referencing all major sections and subsections.
+- Verified heading hierarchy: exactly one top-level H1 (`#`), with all primary sections at H2 (`##`), subsections at H3 (`###`), and pipeline sub-phases at H4 (`####`).
+- Evidence: `README.md | 19 +++++++++++++++++++` (19 insertions).

@@ -7,6 +7,25 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 
 ---
 
+## Table of Contents
+
+- [Key Highlights & Capabilities](#key-highlights--capabilities)
+- [System Architecture: Teacher → Student Distillation](#system-architecture-teacher--student-distillation)
+- [Quick Start Guide](#quick-start-guide)
+  - [1. Installation on Low-End PC (Offline Ready)](#1-installation-on-low-end-pc-offline-ready)
+  - [2. Launch Local Web UI](#2-launch-local-web-ui)
+  - [3. Command-Line Interface (CLI)](#3-command-line-interface-cli)
+- [Verification & Empirical Evaluation](#verification--empirical-evaluation)
+- [Retraining & Data-Refresh Pipeline](#retraining--data-refresh-pipeline)
+  - [How to Run the Real-Data Pipeline](#how-to-run-the-real-data-pipeline)
+  - [Cloud Jupyter Notebooks (Kaggle / Google Colab)](#cloud-jupyter-notebooks-kaggle--google-colab)
+- [State-of-the-Art Research & Mathematical Formulations (2024–2026)](#state-of-the-art-research--mathematical-formulations-20242026)
+- [QuillBot Comparison Sheet (30 Hand-Check Samples)](#quillbot-comparison-sheet-30-hand-check-samples)
+- [Limitations](#limitations)
+- [License & Acknowledgments](#license--acknowledgments)
+
+---
+
 ## ⚡ Key Highlights & Capabilities
 
 - **QuillBot-Grade 4-Class Classification**:
