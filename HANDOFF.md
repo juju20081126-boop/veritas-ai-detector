@@ -474,3 +474,13 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
 - Documented HTTP method, request parameters/payload types and defaults, full response JSON schemas with explicit types for every key (including `summary`, `calibrated_probabilities`, `percentages`, `quillbot_breakdown`, per-sentence diagnostic objects, and full 20 stylometrics), and HTTP error status codes (400, 422, 500).
 - Verified every curl command against the live local server running on port 8003 (`python run.py --port 8003 --no-browser`) and pasted verbatim real server responses in `README.md`.
 - Evidence: commit `c1938df` (`README.md | 431 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------`, 384 insertions, 47 deletions).
+
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream B: Client-side Export & Clear
+- Implemented client-side export in `frontend/index.html` and `frontend/app.js` without any backend API modifications:
+  - Added `#btnDownloadJson`: triggers browser download of raw `currentAnalysisData` JSON blob.
+  - Added `#btnDownloadCsv`: triggers RFC-4180 compliant CSV download of sentence-level diagnostic records with columns `(index, text, dominant_class, confidence_pct, class_label, ai_likelihood_pct)`.
+  - Added `#btnResetReport`: quick clear action that wipes the analysis report, resets heatmap state, empties text editor, and refocuses input.
+  - Responsive button layout in `frontend/style.css` (`.report-actions`) with 2x2 wrapping grid.
+  - Strictly zero localStorage persistence of text or analysis results.
+  - Preserved all existing element IDs, API calls, and logic.
+- Evidence: commit `40f57f3` (`frontend/app.js | 62 +++++`, `frontend/index.html | 12 +++`, `frontend/style.css | 4 ++-`, 76 insertions, 2 deletions).
