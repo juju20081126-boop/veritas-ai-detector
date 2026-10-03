@@ -28,6 +28,8 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 - [State-of-the-Art Research & Mathematical Formulations (2024–2026)](#state-of-the-art-research--mathematical-formulations-20242026)
 - [QuillBot Comparison Sheet (30 Hand-Check Samples)](#quillbot-comparison-sheet-30-hand-check-samples)
 - [Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)](#hand-collecting-detector-verdicts-no-automation-tos-safe-200-texts)
+- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+- [Glossary](#glossary)
 - [Limitations](#limitations)
 - [License & Acknowledgments](#license--acknowledgments)
 
@@ -677,6 +679,7 @@ python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta .
 - [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
 - [`notebooks/02_student_distillation_and_onnx_export.ipynb`](notebooks/02_student_distillation_and_onnx_export.ipynb): Student distillation, stylometrics meta-classifier, INT8 ONNX export and calibration (unrun template; no results claimed).
 - [`notebooks/03_gpu_finetune.ipynb`](notebooks/03_gpu_finetune.ipynb): Fine-tunes DeBERTa-v3-small on real training data and exports ONNX INT8 (unrun template; no results claimed).
+- [`notebooks/04_results_figures.ipynb`](notebooks/04_results_figures.ipynb): Generates evaluation figures and tables from `data/eval/results/*.json` (unrun template; no results claimed).
 
 
 ---
@@ -712,6 +715,53 @@ To benchmark third-party commercial detectors safely and in compliance with Term
 **Rules:**
 - Maximum ~200 texts per detector to avoid abuse and maintain manual feasibility.
 - Never automate a detector or paraphraser website, never scrape, and never send requests programmatically.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### 1. Can Veritas prove that a student or writer used AI?
+No. AI detection scores are probabilistic estimates based on stylistic and syntactic patterns, not forensic proof of authorship (S1, S13). Authors of leading detection systems explicitly advise against using automated detectors as sole arbiters in disciplinary or punitive decisions (S13, S14). Veritas is designed to provide transparent, multi-signal evidence to guide human review rather than replace human judgment.
+
+### 2. Why does text under 80 words produce an uncertain or unreliable score?
+Statistical signatures such as burstiness, entropy, and vocabulary richness require sufficient text volume to converge to meaningful distributions (S7, S10). On passages under 50 to 100 words, sensitivity drops significantly across all evaluated detectors (e.g. Pangram TPR drops from 100% to 73.32% on <50-word passages, S1; Ghostbuster degrades on <=100 tokens, S10). For passages under 80 words, Veritas issues a length warning and recommends testing 150+ words for reliable results.
+
+### 3. How does Veritas prevent false accusations against non-native (ESL) writers?
+Detectors that rely solely on language model perplexity disproportionately flag non-native English writers due to their more limited vocabulary and simpler phrasing (Liang et al. observed an average 61.22% false positive rate on TOEFL essays, S11). Veritas counterbalances neural representations with 20 length-invariant stylometric features, authentic voice guardrails, and explicit calibration on ESL learner corpora (S1, S11, S13). Furthermore, our evaluation pipeline audits ESL false positive rates separately from native writing to guarantee fairness.
+
+### 4. Does Veritas transmit my text or documents to any cloud server?
+No. Veritas executes entirely on local hardware using an INT8-quantized ONNX student model and local Python feature extractors. The runtime requires zero internet connectivity, transmits zero telemetry, and performs zero cloud API calls. All pasted text and uploaded files remain strictly in volatile memory on your local machine and are never written to localStorage or remote servers.
+
+### 5. How does Veritas handle text rewritten by paraphrasers or AI humanizers?
+Paraphrasing and humanizer tools rewrite AI drafts to strip uniform n-gram patterns, making detection substantially more challenging (PADBen S3, DAMAGE S16). While metric-based detectors experience severe drops (falling to 28.23% in DAMAGE, S16), Veritas trains on multi-round attack batches (A1–A3) and distinguishes between pure AI (`ai_generated`) and modified drafts (`ai_ai_refined`). This 4-class taxonomy models intermediate rewriting states and surfaces specific stylistic anomalies.
+
+---
+
+## Glossary
+
+### AUROC (Area Under the Receiver Operating Characteristic Curve)
+AUROC measures the probability that a randomly selected AI passage receives a higher anomaly score than a randomly selected human passage across all potential classification thresholds. Unlike raw accuracy, it is threshold-independent and provides a holistic measure of class separability across full operating curves (S7, S8, S12). However, AUROC can obscure severe performance degradation at the strict, low false-positive operating points required for real-world deployment (S14).
+
+### TPR@1%FPR (True Positive Rate at 1% False Positive Rate)
+TPR@1%FPR measures the fraction of genuine AI texts detected when the decision threshold is calibrated to allow at most a 1% false positive rate on clean human writing (S6, S9, S14). It represents the primary benchmark standard for high-stakes deployment because minimizing wrongful accusations against human authors is paramount (S1, S13). While overall accuracy may appear high under loose thresholds, TPR@1%FPR exposes steep detection drops under adversarial paraphrase attacks (S4, S9, S16).
+
+### FPR (False Positive Rate)
+The False Positive Rate is the proportion of authentic human-written texts incorrectly flagged as AI-generated or AI-refined. In educational and professional contexts, elevated false positives lead to unjustified disciplinary actions and a breakdown of institutional trust (S11, S13). Realized FPR must be audited separately across native and non-native demographic cohorts to identify and eliminate systemic bias (S11, S13).
+
+### ESL (English as a Second Language / Non-Native Writers)
+ESL denotes writing authored by non-native English speakers and international language learners (such as TOEFL, IELTS, and W&I+LOCNESS benchmark corpora). Detectors relying on perplexity metrics exhibit acute demographic disparities, misclassifying ESL essays as AI at rates up to 61.22% compared to 5.19% for native speakers due to lower perplexity and simpler word choices (S11). Veritas audits ESL FPR explicitly to ensure fairness safeguards prevent false-positive penalization (S1, S11, S13).
+
+### Group Split
+A group split is a rigorous dataset partitioning methodology where all generations, attacks, and revisions originating from the same seed prompt or document are assigned strictly to the same partition (train, dev, or locked test). This prevents prompt leakage, wherein a classifier memorizes topic-specific vocabulary rather than learning generalizable forensic signatures (S1, S10). Group splitting ensures that reported benchmarks reflect genuine out-of-domain detection ability rather than topic memorization (S10, S14).
+
+### Locked Test Split
+The locked test split is an immutable, held-out evaluation corpus stored in `data/locked/` that is never accessed during model distillation, training, or threshold tuning. To prevent overfitting through repeated probing, access is cryptographically audited and capped at a maximum of three lifetime evaluations (`ACCESS_LOG.md`). It serves as the definitive arbiter of real-world generalization across unseen frontier generators and attack vectors (S1, S14).
+
+### Humanizer
+A humanizer is an adversarial rewriting tool, prompt template, or online service engineered specifically to modify AI text to evade detection filters (including DIPPER, BypassGPT, and Undetectable AI) (S9, S16). Humanizers introduce deliberate lexical perturbations, synonym substitutions, and syntactic jitter that can degrade detector recall from >90% to below 30% (S4, S16). Effective defense requires training against structured adversarial attack families (A1–A3, A8) to capture underlying invariant anomalies (S3, S16).
+
+### Hybrid / Mixed Authorship
+Hybrid authorship refers to texts resulting from collaborative human-AI workflows, including human drafts polished by an LLM and machine drafts substantially restructured by human editors (S1, S2). Traditional binary detectors routinely fail on hybrid content by forcing a polarized, inaccurate verdict across the entire passage (S1, S2). Veritas explicitly models this boundary using a 4-class taxonomy (`human_ai_refined` versus `ai_ai_refined`) and sentence-level segmentation to reflect real-world writing practices (S1, S2).
 
 ---
 

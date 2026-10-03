@@ -28,6 +28,8 @@ Veritas AI 是一款完全離線運行、達到生產級品質的 4 類別 AI �
 - [State-of-the-Art Research & Mathematical Formulations (2024–2026)](#state-of-the-art-research--mathematical-formulations-20242026) — 前沿研究與數學公式 (2024–2026)
 - [QuillBot Comparison Sheet (30 Hand-Check Samples)](#quillbot-comparison-sheet-30-hand-check-samples) — QuillBot 對照工作表（30 篇人工檢核範例）
 - [Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)](#hand-collecting-detector-verdicts-no-automation-tos-safe-200-texts) — 手動收集偵測器判定（無自動化、符合服務條款、<=200 篇）
+- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq) — 常見問題解答 (FAQ)
+- [Glossary](#glossary) — 專有名詞辭典 (Glossary)
 - [Limitations](#limitations) — 限制與已知邊界
 - [License & Acknowledgments](#license--acknowledgments) — 授權條款與致謝
 
@@ -677,6 +679,7 @@ python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta .
 - [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](notebooks/01_teacher_ensemble_and_labeling.ipynb)：教師模型集成與偽標註範本（未執行；筆記本中之數據為未實測佔位符）。
 - [`notebooks/02_student_distillation_and_onnx_export.ipynb`](notebooks/02_student_distillation_and_onnx_export.ipynb)：學生模型蒸餾、文體計量元分類器、INT8 ONNX 匯出與校準範本（未執行範本；不宣稱任何實測成果）。
 - [`notebooks/03_gpu_finetune.ipynb`](notebooks/03_gpu_finetune.ipynb)：在真實訓練資料上微調 DeBERTa-v3-small 並匯出 ONNX INT8（未執行範本；不宣稱任何實測成果）。
+- [`notebooks/04_results_figures.ipynb`](notebooks/04_results_figures.ipynb)：自 `data/eval/results/*.json` 產出評估圖表與彙整表（未執行範本；不宣稱任何實測成果）。
 
 ---
 
@@ -711,6 +714,66 @@ python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta .
 **守則：**
 - 每個偵測器最多手動測試約 200 篇文字，以避免過度使用並維持人工操作可行性。
 - 嚴禁對任何偵測器或改寫網站進行自動化程式呼叫、嚴禁爬蟲，且絕不透過腳本傳送請求。
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### 1. Can Veritas prove that a student or writer used AI?
+**繁體中文：Veritas 能否確鑿證明某位學生或作者使用了 AI？**
+不行。AI 偵測分數純屬基於文體與句法模式的機率統計估算，絕非作者身分的法證確鑿證明（S1, S13）。頂尖偵測系統之開發學者皆明確建議，切勿將自動化偵測器作為處分或懲戒決策的唯一裁決依據（S13, S14）。Veritas 旨在提供透明、多維度的特徵佐證以輔助人工審核，而非取代人類的獨立判斷。
+
+### 2. Why does text under 80 words produce an uncertain or unreliable score?
+**繁體中文：為何 80 字以下的短文本容易產生不確定或不可靠的分數？**
+突發變異性 (Burstiness)、資訊熵率及詞彙豐富度等統計特徵，皆需足夠之文字篇幅才能收斂為具代表性之分佈（S7, S10）。在 50 至 100 字以下的極短文本中，所有已評估偵測器之敏感度皆會大幅下滑（例如 Pangram 之 TPR 在小於 50 字時由 100% 暴跌至 73.32%，S1；Ghostbuster 在 100 token 以下顯著衰退，S10）。對於少於 80 字之輸入，Veritas 會顯示篇幅警語並建議提供 150 字以上文本以確保精準度。
+
+### 3. How does Veritas prevent false accusations against non-native (ESL) writers?
+**繁體中文：Veritas 如何防止對非英語母語 (ESL) 寫作者產生不實指控？**
+單純依賴語言模型困惑度 (Perplexity) 之偵測器，因非母語者用詞較簡潔且句式單純，極易對其產生嚴重的偏見誤判（Liang 等人指出托福作文之偽陽性率平均高達 61.22%，S11）。Veritas 結合了 20 維長度不變文體特徵、真實主觀語態防護關卡，並在 ESL 學習者語料庫上進行嚴格校準（S1, S11, S13）。此外，我們的評估管線獨立審核 ESL 偽陽性率，確保演算法符合公平性標準。
+
+### 4. Does Veritas transmit my text or documents to any cloud server?
+**繁體中文：Veritas 是否會將我的文章或文件傳送至任何雲端伺服器？**
+絕不傳送。Veritas 完全在本機個人電腦上運行，採用 INT8 量化之 ONNX 學生模型與本機 Python 特徵擷取模組。執行時期零網路連線需求、零遙測數據上傳，亦不進行任何雲端 API 呼叫。所有貼入文字與上傳檔案僅暫存於本機記憶體中，絕不上傳遠端伺服器，亦不儲存於 localStorage。
+
+### 5. How does Veritas handle text rewritten by paraphrasers or AI humanizers?
+**繁體中文：Veritas 如何處理經由改寫工具或「降 AI 人工化 (Humanizer)」處理之文字？**
+改寫與 Humanizer 工具透過打亂規律的 n-gram 模式重構 AI 文章，大幅增加偵測難度（PADBen S3, DAMAGE S16）。指標型偵測器在此類攻擊下表現驟降（在 DAMAGE 測試中準確率降至 28.23%，S16），而 Veritas 針對多輪改寫攻擊批次（A1–A3）進行對抗訓練，並細緻區分純 AI (`ai_generated`) 與經改寫文字 (`ai_ai_refined`)。此 4 類別體系能有效辨識中間改寫狀態並揭露殘留之文體特徵。
+
+---
+
+## Glossary
+
+### AUROC (Area Under the Receiver Operating Characteristic Curve)
+**繁體中文：受試者操作特徵曲線下面積 (AUROC)**
+AUROC 衡量隨機抽選之 AI 文本其異常分數高於隨機抽選之人類文本的整體機率。不同於單一準確率，AUROC 與決策門檻無關，能全面反映分類器在整體操作曲線上的類別分離能力（S7, S8, S12）。然而，AUROC 往往會掩蓋實際部署時嚴格低偽陽性率運作點上的嚴重效能衰減（S14）。
+
+### TPR@1%FPR (True Positive Rate at 1% False Positive Rate)
+**繁體中文：在 1% 偽陽性率下之真陽性率 (TPR@1%FPR)**
+TPR@1%FPR 代表當決策門檻被嚴格校準為在純真人文本上僅容許至多 1% 誤判率時，能成功檢出真實 AI 文本的比例（S6, S9, S14）。這是高風險部署環境下的首要基準標準，因為防止對無辜真人作者產生不實指控至關重要（S1, S13）。雖然寬鬆門檻下的表面整體準確率看似極高，但 TPR@1%FPR 能如實揭露改寫與逃逸攻擊下的顯著效能滑落（S4, S9, S16）。
+
+### FPR (False Positive Rate)
+**繁體中文：偽陽性率 (FPR)**
+偽陽性率為真實人類原創文本被錯誤標記為 AI 生成或 AI 潤飾之比例。在學術與專業工作場合中，偏高的偽陽性率將引發不公正的懲處並瓦解人際與體制信任（S11, S13）。系統必須在母語與非母語等不同背景群體間獨立審核實際測得之 FPR，以消除系統性群體偏見（S11, S13）。
+
+### ESL (English as a Second Language / Non-Native Writers)
+**繁體中文：非英語母語寫作者 (ESL)**
+ESL 指由英語非母語者與國際語言學習者撰寫的文章（如 TOEFL, IELTS, 以及 W&I+LOCNESS 基準語料庫）。僅依賴困惑度之偵測器具備明顯的族群偏差，因非母語者用詞較為受限且困惑度較低，導致誤判為 AI 的機率高達 61.22%（母語者僅 5.19%，S11）。Veritas 明確將 ESL FPR 列為獨立評估指標，確保公平性防護生效（S1, S11, S13）。
+
+### Group Split
+**繁體中文：確定性分組劃分 (Group Split)**
+分組劃分是一種嚴謹的資料集切分方法，確保源自同一提示詞或母篇文本的所有生成、改寫與對照版本，皆被嚴格指派至同一資料劃分集中（訓練集、驗證集或鎖定測試集）。此機制能徹底防止模型因記憶特定主題用詞而產生「資料外洩」，使其必須學習真正泛化的法證特徵（S1, S10）。分組劃分確保回報之基準測試能如實反映跨領域偵測能力（S10, S14）。
+
+### Locked Test Split
+**繁體中文：鎖定測試劃分集 (Locked Test Split)**
+鎖定測試集是封存在 `data/locked/` 的不可變保留評估語料庫，在模型蒸餾、訓練或門檻調整過程中嚴禁存取。為防止因反覆試探而對測試集過擬合，系統透過密碼學簽章稽核每次存取，且每個模型家族終生至多僅能評估三次（記錄於 `ACCESS_LOG.md`）。它是驗證對未見過前沿模型與新形態攻擊具備真實泛化能力的最高評判準則（S1, S14）。
+
+### Humanizer
+**繁體中文：降 AI 人工化改寫工具 (Humanizer)**
+Humanizer 係指專為逃逸 AI 偵測而設計之對抗性改寫工具、提示詞樣板或線上服務（如 DIPPER, BypassGPT, Undetectable AI 等，S9, S16）。Humanizer 刻意引入詞彙擾動、同義詞替換與句法抖動，可將傳統偵測器召回率由 90% 以上削弱至 30% 以下（S4, S16）。構建穩健防線必須納入結構化對抗攻擊家族（A1–A3, A8）之專門訓練（S3, S16）。
+
+### Hybrid / Mixed Authorship
+**繁體中文：人機協作 / 混合署名 (Hybrid / Mixed Authorship)**
+混合署名指人類與 AI 深度協作之文本，包括由大語言模型潤飾的人類草稿，以及經人類作者實質修訂重組的機器生成段落（S1, S2）。傳統二元分類器往往強行對整篇混合文本做出非黑即白的錯誤判斷（S1, S2）。Veritas 透過 4 類別體系（區分 `human_ai_refined` 與 `ai_ai_refined`）及逐句分析模型，如實呈現當代真實的協同寫作風貌（S1, S2）。
 
 ---
 
