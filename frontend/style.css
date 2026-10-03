@@ -151,6 +151,12 @@ button:disabled { cursor: not-allowed; }
 .icon-btn:hover:not(:disabled) { background: var(--paper); color: var(--ink); }
 .icon-btn:disabled { opacity: .35; }
 .icon-btn.sm { width: 30px; height: 30px; border-radius: 8px; }
+.icon-btn.text-icon-btn {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 :root[data-theme="light"] .i-sun { display: none; }
 :root[data-theme="dark"] .i-moon { display: none; }
 
