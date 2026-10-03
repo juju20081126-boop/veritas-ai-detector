@@ -596,16 +596,22 @@ Validated all 4 notebooks in `notebooks/` using `nbformat.validate` (JSON schema
 - Total: 21 code cells across all 4 notebooks, every cell confirmed with `execution_count=None` and 0 outputs.
 
 ### 3. Playwright Smoke Test Execution (`npm test --prefix frontend`)
-Executed against live background instance (`http://127.0.0.1:8003`):
+Expanded smoke suite to 10 automated end-to-end tests covering responsive viewports (375px mobile, 1280px desktop) and themes (light, dark) in commit `204ae8b` (`test(frontend): expand smoke tests to 1280px and 375px light and dark viewports`):
 ```
-Running 6 tests using 1 worker
-  ✓  1 [chromium] › 1. Page loads cleanly with zero console or uncaught errors (1.6s)
-  ✓  2 [chromium] › 2. Every element ID used by app.js exists in the DOM (1.1s)
-  ✓  3 [chromium] › 3. Pasting a 100-word sample and clicking analyze displays a verdict and renders heatmap (2.0s)
-  ✓  4 [chromium] › 4. Client-side download buttons and clear action exist and are visible in results (1.6s)
-  ✓  5 [chromium] › 5. Responsive layout functions cleanly at 375px mobile width (833ms)
-  ✓  6 [chromium] › 6. Language toggle switches between English and Traditional Chinese UI copy (1.4s)
-6 passed (10.0s)
+Running 10 tests using 1 worker
+
+  ✓   1 [chromium] › tests\smoke.spec.js:98:3 › Veritas AI Detector — Frontend Smoke Suite › 1. Page loads cleanly with zero console or uncaught errors (1.6s)
+  ✓   2 [chromium] › tests\smoke.spec.js:126:3 › Veritas AI Detector — Frontend Smoke Suite › 2. Every element ID used by app.js exists in the DOM (774ms)
+  ✓   3 [chromium] › tests\smoke.spec.js:136:3 › Veritas AI Detector — Frontend Smoke Suite › 3. Pasting a 100-word sample and clicking analyze displays a verdict and renders heatmap (1.3s)
+  ✓   4 [chromium] › tests\smoke.spec.js:176:3 › Veritas AI Detector — Frontend Smoke Suite › 4. Client-side download buttons and clear action exist and are visible in results (1.2s)
+  ✓   5 [chromium] › tests\smoke.spec.js:203:3 › Veritas AI Detector — Frontend Smoke Suite › 5. Responsive layout functions cleanly at 375px mobile width (540ms)
+  ✓   6 [chromium] › tests\smoke.spec.js:218:3 › Veritas AI Detector — Frontend Smoke Suite › 6. Language toggle switches between English and Traditional Chinese UI copy (739ms)
+  ✓   7 [chromium] › tests\smoke.spec.js:243:3 › Veritas AI Detector — Frontend Smoke Suite › 7. Visual rendering at 1280px desktop in light theme (1.1s)
+  ✓   8 [chromium] › tests\smoke.spec.js:256:3 › Veritas AI Detector — Frontend Smoke Suite › 8. Visual rendering at 1280px desktop in dark theme (1.3s)
+  ✓   9 [chromium] › tests\smoke.spec.js:269:3 › Veritas AI Detector — Frontend Smoke Suite › 9. Visual rendering at 375px mobile in light theme (1.1s)
+  ✓  10 [chromium] › tests\smoke.spec.js:283:3 › Veritas AI Detector — Frontend Smoke Suite › 10. Visual rendering at 375px mobile in dark theme (1.4s)
+
+  10 passed (12.6s)
 ```
 
 ### 4. Heading Correspondence Audit (`README.md` vs. `README.zh-TW.md`)
