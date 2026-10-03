@@ -576,11 +576,49 @@ document.addEventListener("DOMContentLoaded", () => {
     inspectorContent.appendChild(ul);
   }
 
+  // ---------- keyboard shortcuts & modal ----------
+
+  const shortcutsModal = $("shortcutsModal");
+  const btnHelpShortcuts = $("btnHelpShortcuts");
+  const btnCloseShortcuts = $("btnCloseShortcuts");
+
+  function openShortcutsModal() {
+    if (shortcutsModal) shortcutsModal.hidden = false;
+  }
+  function closeShortcutsModal() {
+    if (shortcutsModal) shortcutsModal.hidden = true;
+  }
+
+  if (btnHelpShortcuts) btnHelpShortcuts.addEventListener("click", openShortcutsModal);
+  if (btnCloseShortcuts) btnCloseShortcuts.addEventListener("click", closeShortcutsModal);
+  if (shortcutsModal) {
+    shortcutsModal.addEventListener("click", (e) => {
+      if (e.target === shortcutsModal) closeShortcutsModal();
+    });
+  }
+
   // Arrow keys step through sentences while the marked-up view is open.
+  // '?' key toggles the shortcuts help modal.
   document.addEventListener("keydown", (e) => {
-    if (heatmapViewer.hidden || !currentSentences.length) return;
     const tag = (e.target.tagName || "").toLowerCase();
-    if (tag === "textarea" || tag === "input" || tag === "select") return;
+    const inInput = tag === "textarea" || tag === "input" || tag === "select";
+
+    if (e.key === "Escape") {
+      closeShortcutsModal();
+      return;
+    }
+
+    if ((e.key === "?" || (e.key === "/" && e.shiftKey)) && !inInput) {
+      e.preventDefault();
+      if (shortcutsModal && !shortcutsModal.hidden) {
+        closeShortcutsModal();
+      } else {
+        openShortcutsModal();
+      }
+      return;
+    }
+
+    if (heatmapViewer.hidden || !currentSentences.length || inInput) return;
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       if (activeSentence < currentSentences.length - 1) { e.preventDefault(); selectSentence(activeSentence + 1); }
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {

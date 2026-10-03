@@ -815,3 +815,226 @@ button:disabled { cursor: not-allowed; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; transition-duration: .001ms !important; }
 }
+
+/* ---------- Keyboard Shortcuts Modal ---------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+  backdrop-filter: blur(4px);
+  padding: 16px;
+}
+.modal-backdrop[hidden] {
+  display: none !important;
+}
+.modal-panel {
+  width: 100%;
+  max-width: 440px;
+  background: var(--paper);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-card);
+  box-shadow: var(--sh-card);
+  overflow: hidden;
+  animation: modalPop .15s ease-out;
+}
+@keyframes modalPop {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.modal-body {
+  padding: 16px 20px 20px;
+}
+.shortcuts-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.shortcuts-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.shortcuts-list dt {
+  display: flex;
+  gap: 4px;
+}
+.shortcuts-list kbd {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--paper-2);
+  border: 1px solid var(--line-2);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.shortcuts-list dd {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+/* ---------- Print Stylesheet ---------- */
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide interactive controls and chrome */
+  header.topbar,
+  .samples,
+  .sheet-bar,
+  .sheet-foot,
+  .report-actions,
+  .inspector .stepper,
+  .colophon,
+  .icon-btn,
+  .tool-btn,
+  .modal-backdrop,
+  #dragDropOverlay,
+  .cutoff,
+  .form-error {
+    display: none !important;
+  }
+
+  .desk {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .intro h1 {
+    font-size: 20pt;
+    margin-bottom: 4pt;
+    color: #000 !important;
+  }
+  .intro p {
+    font-size: 11pt;
+    color: #333 !important;
+  }
+
+  .workspace {
+    display: block !important;
+  }
+
+  .sheet {
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    margin-bottom: 24pt;
+  }
+
+  .sheet-body {
+    padding: 0 !important;
+  }
+
+  .doc-input {
+    display: block !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  /* Keep heatmap viewer readable in black and white */
+  .doc-view {
+    display: block !important;
+    padding: 0 !important;
+    color: #000 !important;
+    background: transparent !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Black and white patterns & markings for printing */
+  .doc-view .s {
+    border-radius: 0 !important;
+    padding: 0 1pt !important;
+  }
+
+  .doc-view .s-human {
+    background: transparent !important;
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .doc-view .s-human-refined {
+    background: transparent !important;
+    color: #000 !important;
+    border-bottom: 1.5pt dashed #444 !important;
+    text-decoration: underline !important;
+  }
+
+  .doc-view .s-ai-refined {
+    background: #e6e6e6 !important;
+    color: #000 !important;
+    border-bottom: 1.5pt dotted #000 !important;
+    outline: 1pt solid #bbb !important;
+  }
+
+  .doc-view .s-ai {
+    background: #cccccc !important;
+    color: #000 !important;
+    border-bottom: 2.5pt double #000 !important;
+    font-weight: 600 !important;
+  }
+
+  .report {
+    position: static !important;
+    box-shadow: none !important;
+    border-top: 2pt solid #000 !important;
+    padding-top: 14pt !important;
+    page-break-before: auto;
+  }
+
+  .verdict-card {
+    border: 1.5pt solid #000 !important;
+    background: #fff !important;
+    padding: 12pt !important;
+  }
+
+  .score-num {
+    color: #000 !important;
+  }
+
+  .signals {
+    border: 1pt solid #ccc !important;
+    margin-top: 12pt !important;
+  }
+  .signals summary {
+    display: none !important;
+  }
+  .signals-body {
+    display: block !important;
+    padding: 8pt !important;
+  }
+
+  .results-disclaimer {
+    color: #444 !important;
+    font-size: 9.5pt !important;
+    margin-top: 10pt !important;
+  }
+}
