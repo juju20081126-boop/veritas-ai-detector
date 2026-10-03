@@ -209,16 +209,16 @@ python scripts/eval_frontier.py --split locked --detectors shipped hc3_roberta .
 ```
 
 ### Cloud Jupyter Notebooks (Kaggle / Google Colab)
-- [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
-- [`notebooks/02_student_distillation_and_onnx_export.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/02_student_distillation_and_onnx_export.ipynb): Student distillation, stylometrics meta-classifier, INT8 ONNX export and calibration (unrun template; no results claimed).
-- [`notebooks/03_gpu_finetune.ipynb`](file:///C:/Users/justi/AI%20detector/notebooks/03_gpu_finetune.ipynb): Fine-tunes DeBERTa-v3-small on real training data and exports ONNX INT8 (unrun template; no results claimed).
+- [`notebooks/01_teacher_ensemble_and_labeling.ipynb`](notebooks/01_teacher_ensemble_and_labeling.ipynb): Teacher ensemble template (unrun; results in notebook were unmeasured placeholders).
+- [`notebooks/02_student_distillation_and_onnx_export.ipynb`](notebooks/02_student_distillation_and_onnx_export.ipynb): Student distillation, stylometrics meta-classifier, INT8 ONNX export and calibration (unrun template; no results claimed).
+- [`notebooks/03_gpu_finetune.ipynb`](notebooks/03_gpu_finetune.ipynb): Fine-tunes DeBERTa-v3-small on real training data and exports ONNX INT8 (unrun template; no results claimed).
 
 
 ---
 
 ## 📚 State-of-the-Art Research & Mathematical Formulations (2024–2026)
 
-For an exhaustive technical compendium covering modern detection equations, zero-shot curvature metrics, 4-class forensic taxonomy, and dataset benchmarks, see **[RESEARCH_COMPENDIUM.md](file:///C:/Users/justi/AI%20detector/RESEARCH_COMPENDIUM.md)**:
+For an exhaustive technical compendium covering modern detection equations, zero-shot curvature metrics, 4-class forensic taxonomy, and dataset benchmarks, see **[RESEARCH_COMPENDIUM.md](RESEARCH_COMPENDIUM.md)**:
 
 - **Binoculars Zero-Shot Cross-Ratio**: $\text{Score}(x) = \frac{\log \text{PPL}_{M_1}(x)}{\log \text{xPPL}_{M_1, M_2}(x)}$ (Hans et al., ICML 2024)
 - **Fast-DetectGPT Conditional Probability Curvature**: $\tilde{d}(x) = \frac{\sum_t (\log p(x_t) + \mathcal{H}(p))}{\sqrt{\sum_t \text{Var}[\log p]}}$ (Bao et al., ICLR 2024)
@@ -232,8 +232,8 @@ For an exhaustive technical compendium covering modern detection equations, zero
 ## 📋 QuillBot Comparison Sheet (30 Hand-Check Samples)
 
 In strict accordance with terms of service (no scraping or automated querying), exactly 30 representative passages across all 4 classes, native human, ESL human, and frontier models are provided for manual side-by-side inspection:
-- JSON format: [`data/quillbot_comparison_sheet.json`](file:///C:/Users/justi/AI%20detector/data/quillbot_comparison_sheet.json)
-- Markdown table: [`data/quillbot_comparison_sheet.md`](file:///C:/Users/justi/AI%20detector/data/quillbot_comparison_sheet.md)
+- JSON format: [`data/quillbot_comparison_sheet.json`](data/quillbot_comparison_sheet.json)
+- Markdown table: [`data/quillbot_comparison_sheet.md`](data/quillbot_comparison_sheet.md)
 
 ---
 
@@ -264,6 +264,6 @@ Every point below is a claim tagged [documented] in data/research/sources.md. Th
 
 ## 📜 License & Acknowledgments
 
-- Public research datasets tracked under individual open licenses: RAID (CC-BY 4.0), M4 (Apache-2.0), HC3 (CC-BY-SA 4.0), DetectRL (Apache-2.0). See [`data/public_licenses.md`](file:///C:/Users/justi/AI%20detector/data/public_licenses.md).
+- Public research datasets tracked under individual open licenses: RAID (CC-BY 4.0), M4 (Apache-2.0), HC3 (CC-BY-SA 4.0), DetectRL (Apache-2.0). See [`data/public_licenses.md`](data/public_licenses.md).
 - Veritas AI is released under the **MIT License**.
 

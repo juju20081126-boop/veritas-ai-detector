@@ -318,3 +318,12 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Global focus style `:focus-visible { outline: none; box-shadow: var(--focus); }` applies a prominent 3px focus ring across interactive buttons, inputs, chips, and heatmap sentence spans.
   - Textarea focus `.doc-input:focus-visible` relies on `:has(.doc-input:focus-visible)` on `.sheet`. In legacy browsers without `:has()`, textarea focus ring is suppressed.
   - Interactive heatmap spans dynamically display active focus outline matching `--focus`.
+## 2026-10-03 — Antigravity CLI — Round 3 Task 8: Convert absolute file:// URLs to relative links
+- Audited all markdown files for broken relative links and absolute machine links (`file:///C:/Users/...`).
+- Broken relative links: **0** across the repository.
+- Fixed 10 absolute links in Antigravity-owned files:
+  - `README.md` (7 links converted): `notebooks/01_teacher_ensemble_and_labeling.ipynb`, `notebooks/02_student_distillation_and_onnx_export.ipynb`, `notebooks/03_gpu_finetune.ipynb`, `RESEARCH_COMPENDIUM.md`, `data/quillbot_comparison_sheet.json`, `data/quillbot_comparison_sheet.md`, `data/public_licenses.md`.
+  - `notebooks/README.md` (3 links converted): `01_teacher_ensemble_and_labeling.ipynb`, `02_student_distillation_and_onnx_export.ipynb`, `03_gpu_finetune.ipynb`.
+- Remaining absolute link outside owned area:
+  - `HANDOFF.md` line 125 contains legacy `file:///C:/Users/justi/AI%20detector/ZEROGPT_REVERSE_ENGINEERING_PLAN.md` (shared file, preserved per append-only logging policy).
+- Evidence: `README.md | 14 +++++++-------`, `notebooks/README.md | 6 +++---` (10 insertions, 10 deletions).
