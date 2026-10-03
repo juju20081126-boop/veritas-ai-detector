@@ -548,3 +548,19 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Fully validated with `nbformat.validate` (all 4 repository notebooks verified structural integrity and unrun state).
 - Updated `notebooks/README.md` to catalog `04_results_figures.ipynb` and confirmed the total code cell count across the four notebooks (21 code cells, 0 outputs).
 - Evidence: commit `1301b06` (`notebooks/04_results_figures.ipynb | 348 +++`, `notebooks/README.md | 3 +-`, 350 insertions, 1 deletion).
+## 2026-10-03 — Antigravity CLI — Round 4 Workstream G: FAQ & Rigorous Glossary
+- Added `## Frequently Asked Questions (FAQ)` and `## Glossary` to `README.md` and mirrored identically in `README.zh-TW.md`:
+  - FAQ addresses 5 core operational and scientific inquiries: forensic evidentiary limitations (S1, S13), short-text sample size requirements (S1, S7, S10), ESL demographic safeguards (S1, S11, S13), offline local execution privacy, and robustness against paraphrasers/humanizers (S3, S16).
+  - Glossary defines 8 key project concepts, each strictly constrained to $\le 3$ sentences and citing peer-reviewed literature from `data/research/sources.md` (S1..S17):
+    1. **AUROC**: Threshold-invariant class separability across full curves (S7, S8, S12, S14).
+    2. **TPR@1%FPR**: High-stakes deployable detection benchmark standard minimizing false accusations (S1, S4, S6, S9, S13, S14, S16).
+    3. **FPR**: Proportion of authentic human writing wrongly flagged; demographic fairness auditing requirement (S11, S13).
+    4. **ESL**: International non-native learner writing; perplexity bias mitigation (S1, S11, S13).
+    5. **Group Split**: Deterministic grouping by prompt/document seed to prevent topic leakage (S1, S10, S14).
+    6. **Locked Test Split**: Immutable, held-out evaluation corpus with cryptographic logging and 3-access lifetime cap (S1, S14).
+    7. **Humanizer**: Adversarial rewriting services and prompts designed to strip stylistic n-grams (S3, S4, S9, S16).
+    8. **Hybrid / Mixed Authorship**: Interwoven human-AI co-writing modeled via 4-class taxonomy and sentence segmentation (S1, S2).
+  - Cataloged `notebooks/04_results_figures.ipynb` under Cloud Jupyter Notebooks in both README files.
+  - Verified 100% heading correspondence between `README.md` and `README.zh-TW.md` (64 heading lines, exactly zero diff).
+  - Validated zero `??` mojibake characters and zero `file:///` URLs.
+- Evidence: commit `c7c5dc3` (`README.md | 50 +++`, `README.zh-TW.md | 63 +++`, 113 insertions).
