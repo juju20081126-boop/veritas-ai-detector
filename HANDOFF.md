@@ -204,6 +204,30 @@ Status from me: Opus 5.5 locked-split generations are in; Sonnet 5.5 and the dev
     - `scripts/tests/test_integrity.py::test_gates_fail_closed_on_empty` PASSED
   - Failure text: None.
 
+## 2026-10-02 — Antigravity CLI — Round 2 Task 6: Proofreading notes for data/research/*.md
+- Proofread all 4 research files in `data/research/` (`sources.md`, `detector_teardown.md`, `attack_catalogue.md`, `hypotheses_ranked.md`). Per `AGENTS.md` ownership rules, no edits were made to `data/`. Notes and observations recorded for Claude:
+  - **`data/research/sources.md`**:
+    - **Typo**: Line 63 references "Quil.org" instead of "Quill.org".
+    - **Formatting**: Missing blank newline between the end of section S10 (line 61) and the section heading `## S11` (line 62).
+    - **Link formatting**: S3 (line 18) lists `github.com/JonathanZha47/PadBen-Paraphrase-Attack-Benchmark` without the `https://` protocol prefix, unlike other URLs in the document.
+    - **Unresolved extraction / editorial notes**:
+      - S6 (line 34): "(Falcon-7B / Falcon-7B-Instruct family; the extraction garbled which is observer vs performer)" — in Binoculars, Falcon-7B is performer and Falcon-7B-Instruct is observer.
+      - S7 (line 44): "(A first extraction of this paper from the PDF gave different, wrong-looking figures; they were discarded and re-read from the HTML version.)" — internal working note left in text.
+      - S2 (line 15): Mentions that model list, sizes, and per-detector numbers were unrecoverable from the PDF extraction.
+  - **`data/research/detector_teardown.md`**:
+    - **Empty Table Row**: Row 22 (`DNA-GPT, RAID-leaderboard top entries`) has `[unknown] — not read in this pass` in column 2 and completely empty cells across columns 3–8. (Note: A full synthesis of DNA-GPT and top RAID entries was researched and documented in `RESEARCH_COMPENDIUM.md`).
+    - **403 blocks**: Rows 11–13 (Turnitin, QuillBot, Copyleaks) rely on third-party search summaries due to vendor HTTP 403 blocks during direct fetch.
+  - **`data/research/attack_catalogue.md`**:
+    - **Model ID wildcard**: Line 11 specifies `local_model:Helsinki-NLP/opus-mt-*` with a wildcard instead of explicit HuggingFace model repo names (`Helsinki-NLP/opus-mt-en-zh`, `opus-mt-zh-en`, `opus-mt-en-de`, `opus-mt-de-en`).
+  - **`data/research/hypotheses_ranked.md`**:
+    - **Taxonomy expansion**: Hypotheses table extends beyond initial H1–H12 with `H13 (new)` (base-model completion slice) and `H14 (new)` (mixed-authorship handling). Clean and well structured.
 
-
-
+## 2026-10-02 — Antigravity CLI — Round 2 Complete Summary
+- All 6 Round 2 tasks are complete on branch `main` within Antigravity-owned paths:
+  1. `README.md`: Added "How to Run the Real-Data Pipeline" section with 12 verbatim docstring invocations across 5 phases (commit `d38d404`).
+  2. `README.md`: Added "Limitations & Forensic Boundaries" section based strictly on claims tagged `[documented]` in `data/research/sources.md` (commit `c61b4f2`).
+  3. `frontend/`: Added short-text and probabilistic disclaimer copy under results area in `frontend/index.html` and styled via `frontend/style.css` preserving all element IDs and theme compatibility (commit `f7e0943`).
+  4. `notebooks/README.md`: Documented that none of the notebooks have been executed and no results stem from them (commit `b80b82b`).
+  5. Isolated clean-checkout test execution: ran `pytest scripts/ -v` in a clean checkout clone with dedicated venv (`numpy`, `pytest`, `scikit-learn`), recording 14/14 passing tests and zero failures (commit `92b62a2`).
+  6. `data/research/*.md` proofreading: reviewed all 4 files and logged typos, broken link formatting, and extraction notes for Claude in `HANDOFF.md` without editing `data/`.
+- Working tree is clean, small commits maintained, and no forbidden paths (`backend/`, `models/`, `scripts/`, `data/`) were modified.
