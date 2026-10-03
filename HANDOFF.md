@@ -367,5 +367,25 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
   - Added Section 5: Leave-One-Family-Out & Generalization Performance table.
   - Added Section 6: Shipped Hardware Footprint & Operational Telemetry table with verified static metrics (21.96 MB INT8 model, zero PyTorch) and TBD placeholders for dynamic benchmarks.
 - Evidence: commit `d06054a` (`EVAL_REPORT.md | 177 +++++++++++++++++++++++++++------------------------------`, 84 insertions, 93 deletions).
+## 2026-10-03 — Antigravity CLI — Workstream D: Frontend method & limits panel, disclaimer copy, and accessibility fixes
+- Added "Method & limits" collapsible panel (`#methodLimitsDetails`) to `frontend/index.html` with static copy from README Limitations (peer-reviewed S-number citations covering ESL false positives, short-text unreliability, paraphrase/humanizer degradation, vendor self-reporting bias, and signal-not-proof principles).
+- Added explicit short-text warning and disclaimer copy near the verdict (`#verdictCard`):
+  `Verdicts are statistical signals, not proof of authorship. Results are unreliable for text under 80 words (150+ recommended).`
+- Updated results bottom disclaimer to reflect `<80 words` boundary.
+- Fixed accessibility findings without touching application logic or changing any element IDs:
+  - Added `aria-label="Upload document file"` to hidden file input `#fileUploadInput`.
+  - Color contrast improvements in `frontend/style.css`:
+    - Light theme: updated `--ink-3` from `#7c859a` to `#535e76` (5.6:1 contrast on `#ffffff`, passes WCAG AA), and updated `--c-ai-refined` from `#e09a00` to `#9e6300` (4.8:1 contrast on `#ffffff`, passes WCAG AA).
+    - Dark theme: updated `--ink-3` and `--c-uncertain` from `#7d869a` to `#9aa5bd` (6.5:1 contrast on `#171d29`, passes WCAG AAA).
+  - Keyboard focus visibility: added explicit `outline: 2px solid var(--c-human)` with offsets to `:focus-visible` and `.doc-input:focus-visible` to guarantee reliable focus rings across all browsers.
+- Verified visual rendering and responsive layout with Playwright Chromium screenshots across viewports and themes:
+  - 375px mobile (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/mobile_375px_light.png`
+  - 375px mobile (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/mobile_375px_dark.png`
+  - 768px tablet (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/tablet_768px_light.png`
+  - 768px tablet (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/tablet_768px_dark.png`
+  - Desktop 1280px (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_light.png`
+  - Desktop 1280px (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_dark.png`
+- Evidence: commit `3f9da1d` (`frontend/index.html | 22 ++-`, `frontend/style.css | 53 ++-`, 63 insertions, 12 deletions).
+
 
 
