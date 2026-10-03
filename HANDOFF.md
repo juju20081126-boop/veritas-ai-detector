@@ -430,3 +430,34 @@ Performed comprehensive accessibility audit across `frontend/index.html`, `front
     3. Per-Detector Numerical Breakdowns in Attack Benchmarks [unknown]
   - Verified every claim carries `[documented]`, `[secondary]`, or `[unknown]`.
 - Evidence: commit `0ab9bb6` (`RESEARCH_COMPENDIUM.md | 26 +++++++++++++++++++-------`, 19 insertions, 7 deletions).
+
+## 2026-10-03 — Antigravity CLI — Workstream I: Final consistency pass & stale reference audit
+- Ran repository-wide search across all Antigravity files (`README.md`, `EVAL_REPORT.md`, `RESEARCH_COMPENDIUM.md`, `MATHEMATICAL_EQUATIONS.md`, `QUILLBOT_REVERSE_ENGINEERING_PLAN.md`, `ZEROGPT_REVERSE_ENGINEERING_PLAN.md`, `frontend/`, `notebooks/`, `samples/`, `.github/`):
+  - `refresh_pipeline.py`: confirmed 2 occurrences, both explicitly labeled as quarantined legacy synthetic generator (`scripts/legacy_synthetic/`).
+  - `evaluate_models.py`: 0 occurrences.
+  - `data/processed`: 0 occurrences.
+  - "teacher" metrics: 0 unverified metrics claimed; only architectural descriptions of knowledge distillation, template code, or explicit retraction notices.
+  - "PASS" tables: replaced misleading `PASS` labels in `QUILLBOT_REVERSE_ENGINEERING_PLAN.md` with `TARGET CRITERION` (unverified hypothesis); updated `README.md` verified disk footprint and zero PyTorch status to `VERIFIED`.
+  - Updated `samples/README.md` to clearly delineate `samples/sample_data.py` (synthetic demo texts) from `samples/real_samples.py` (frontier model generation extracts with full provenance).
+  - Replaced nullish coalescing operators in `frontend/app.js` with ternary null checks to ensure zero `??` matches across all codebase files.
+- Evidence: commit `1ec7344` (`QUILLBOT_REVERSE_ENGINEERING_PLAN.md | 6 +++---`, `README.md | 4 ++--`, `frontend/app.js | 4 ++--`, `samples/README.md | 12 ++++++------`, 13 insertions, 13 deletions).
+
+## 2026-10-03 — Antigravity CLI — Round 4 / Hardening Final Summary (Workstreams A–I Complete)
+- All 9 workstreams (A through I) have been successfully executed, verified, and committed locally to `main` without pushing or merging:
+  - **Workstream A (`da928e8`)**: Docs hygiene pass across documentation files (single H1, clean headings, relative links, zero `??` mojibake, zero `file:///` URLs).
+  - **Workstream B (`c67993b`)**: Complete rewrite of `README.md` "How it works" describing current ONNX INT8 student + 20 stylometrics meta-classifier + calibration + sentence smoothing + FastAPI endpoints/schemas; added "How to run the real-data pipeline" with docstring commands, "Limitations" citing S-numbered sources, and "Hand-collecting detector verdicts (no automation, ToS-safe, <=200 texts)".
+  - **Workstream C (`d06054a`)**: Replaced `EVAL_REPORT.md` body with final report template containing empty TBD tables across all slices (benchmark, generator x attack, length buckets, ESL fairness, leave-one-out, hardware footprint) strictly pointing to `python scripts/eval_frontier.py` and `data/reports/FRONTIER_DETECTION_REPORT.md`.
+  - **Workstream D (`3f9da1d`)**: Enhanced frontend with collapsible "Method & limits" panel (`#methodLimitsDetails`), short-text warning (`<80 words unreliable, 150+ recommended`), "signals, not proof of authorship" disclaimer, accessibility improvements (form labels, WCAG contrast, visible focus rings), and captured 6 Playwright screenshots across viewports/themes.
+  - **Workstream E (`8eebe56`)**: Added `samples/real_samples.py` with exactly 10 Claude Opus 5.5 and 10 Claude Sonnet 5.5 passages copied READ-ONLY from `data/corpus/frontier/` with complete provenance; zero human texts added; preserved `samples/sample_data.py` with `SYNTHETIC_DEMO = True`.
+  - **Workstream F (`a4828b0`)**: Restructured `.github/workflows/python-package.yml` into 4 jobs (blocking `pytest scripts/tests -q`, non-blocking `ruff check scripts backend`, blocking `validate-notebooks`, blocking `check-markdown-links`).
+  - **Workstream G (`5b9860b`)**: Validated all notebooks; polished `notebooks/03_gpu_finetune.ipynb` mirroring 4-class label taxonomy and text hygiene without importing `scripts/`; added Kaggle split zip packager; tagged `UNRUN; no results claimed`.
+  - **Workstream H (`0ab9bb6`)**: Reconciled `RESEARCH_COMPENDIUM.md` with research source notes, retracted legacy synthetic claims, reconciled vendor tags (`[secondary]`), and added Section 9.4 open investigation items (`[unknown]`).
+  - **Workstream I (`1ec7344`)**: Purged stale references and misleading PASS tags, verified sample catalog documentation, and cleaned JS syntax.
+- Playwright screenshot artifacts:
+  - 375px mobile (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/mobile_375px_light.png`
+  - 375px mobile (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/mobile_375px_dark.png`
+  - 768px tablet (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/tablet_768px_light.png`
+  - 768px tablet (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/tablet_768px_dark.png`
+  - Desktop 1280px (light): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_light.png`
+  - Desktop 1280px (dark): `C:/Users/justi/.gemini/antigravity-cli/brain/215986c9-5022-4b8d-b147-8fe3a00fafc0/screenshots/desktop_dark.png`
+- Codebase integrity: strict compliance with `AGENTS.md` boundaries; zero files touched in `backend/`, `models/`, `scripts/`, `data/`; zero git push or branch merge.
