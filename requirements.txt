@@ -2,7 +2,7 @@
 # Designed for low-end hardware: <= 1.5GB RAM, 2 CPU threads, <= 500MB disk
 onnxruntime>=1.17.0
 tokenizers>=0.15.0
-numpy>=1.24.0
+numpy>=2.5.3
 scipy>=1.10.0
 psutil>=5.9.0
 fastapi>=0.110.0
