@@ -866,3 +866,25 @@ All 9 tasks for Round 5 housekeeping and repository maintenance are complete wit
 - **Visual Evidence**: Screenshots captured at desktop (1280px) and mobile (375px) in both light and dark themes with favicon, meta description, and theme-color active.
 - **Heading Symmetry**: 68/68 heading levels and anchors in `README.md` and `README.zh-TW.md` matched.
 - **Code Ownership Compliance**: Zero modifications to Claude-owned directories (`backend/`, `models/`, `scripts/`, `data/`).
+
+---
+
+## 2026-10-04 — Claude Code — Frontier goal: runtime integration done; HANDOFF of the remaining steps to Antigravity
+
+Branch `claude/work`. Merged `main` (Antigravity Rounds 3-5, 73 commits) into `claude/work` at `456cbb9`; verified: all
+20 `samples/real_samples.py` texts come from dev/train batches (none from the locked test), gates 7/7 PASS, pytest green.
+
+New since the last entry:
+- `965a468` `scripts/onboard_model.py` (fails closed without keys); trainer class-weight cap; locked access #1 logged.
+- `be1a86e` frontier detector mode in `backend/runtime_engine.py` behind `VERITAS_DETECTOR=frontier` (default unchanged:
+  `shipped`; response schema unchanged plus a `detector` block); `backend/textnorm.py`; `export_onnx.py --hf-dir/--out-dir`;
+  `benchmark_target.py --mode`; `frontier_onnx` detector; `scripts/tests/test_runtime_api.py` (18 passed, 2 skipped).
+- this commit: `scripts/log_experiment.py`, `scripts/write_frontier_config.py`, `data/reports/HANDOFF_FRONTIER_GOAL.md`.
+
+Shipped detector on the locked test (access #1, from `scratch/locked_baselines.log`): AUROC 0.59, TPR@1%FPR 0.2%.
+
+**Handoff:** the user asked for the remaining goal steps (dev eval, ablations/LOFO, export, final locked eval, report)
+to be handed to Antigravity. The full runbook is `data/reports/HANDOFF_FRONTIER_GOAL.md`. This requires Antigravity to
+work in the `AI detector-claude` worktree on `claude/work` and in Claude-owned paths, which is outside the normal AGENTS.md
+ownership: it happens only with the user's explicit instruction. Claude will not work in that worktree while Antigravity
+holds it. Two background jobs are still running (locked baselines; training `h1h2h9`).
