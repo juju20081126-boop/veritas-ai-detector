@@ -740,6 +740,34 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  4 files changed, 790 insertions(+), 737 deletions(-)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 5: Frontend Metadata, SVG Favicon & Offline Banner
+
+**Commit**: `5e17098` (`feat(frontend): add meta tags, SVG favicon, and friendly offline error banner (Task 5)`)
+
+- Added `<meta name="description">` and `<meta name="theme-color" content="#172036">` to `frontend/index.html`.
+- Created bespoke SVG favicon `frontend/favicon.svg` (dual-layer brand geometry) and linked via `<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">`.
+- Confirmed `lang` attribute on `<html>` (`lang="en"` default, dynamically updated on language toggle).
+- Added `#offlineNotice` container and styled `.offline-banner` with actionable guidance (`python run.py --port 8003`) when `/api/health` fails.
+- Preserved every element ID and API contract unchanged; verified with 10 passing Playwright smoke tests.
+- Captured visual screenshots across themes and viewports:
+  - Desktop light (1280px): `frontend/test-results/desktop_1280px_light.png`
+  - Desktop dark (1280px): `frontend/test-results/desktop_1280px_dark.png`
+  - Mobile light (375px): `frontend/test-results/mobile_375px_light.png`
+  - Mobile dark (375px): `frontend/test-results/mobile_375px_dark.png`
+
+**Evidence (`git diff --stat`)**:
+```
+ frontend/app.js     | 20 ++++++++++++++++++++
+ frontend/favicon.svg | 11 +++++++++++
+ frontend/i18n.js    | 12 ++++++++++--
+ frontend/index.html | 14 ++++++++++++--
+ frontend/style.css  | 37 ++++++++++++++++++++++++++++++++++++-
+ 5 files changed, 89 insertions(+), 5 deletions(-)
+```
+
+
 
 
 
