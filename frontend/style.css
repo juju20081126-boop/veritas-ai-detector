@@ -545,6 +545,40 @@ button:disabled { cursor: not-allowed; }
   font-weight: 500;
 }
 
+.offline-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(234, 153, 0, 0.12);
+  color: var(--ink);
+  border: 1px solid var(--c-uncertain);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.offline-banner svg {
+  color: var(--c-uncertain);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.offline-banner-body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.offline-banner-body code {
+  background: var(--paper-2);
+  color: var(--ink);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  border: 1px solid var(--line);
+}
+
 /* ---------- report rail ---------- */
 
 .report { position: sticky; top: 20px; }
@@ -924,7 +958,8 @@ button:disabled { cursor: not-allowed; }
   .modal-backdrop,
   #dragDropOverlay,
   .cutoff,
-  .form-error {
+  .form-error,
+  #offlineNotice {
     display: none !important;
   }
 

@@ -153,12 +153,24 @@ document.addEventListener("DOMContentLoaded", () => {
       engineStatus.classList.add("is-online");
       engineStatus.classList.remove("is-offline");
       engineStatusText.textContent = t("engine_online", { threads: h.cpu_threads || 2 });
+      engineStatus.setAttribute("title", t("engine_title"));
       if (h.cpu_threads) $("telemetryThreads").textContent = h.cpu_threads;
       if (h.process_ram_mb) $("telemetryMemory").textContent = `${Math.round(h.process_ram_mb)} MB of ${Number(h.target_ram_cap_mb || 1500).toLocaleString()} MB`;
+      const offlineNotice = $("offlineNotice");
+      if (offlineNotice) offlineNotice.hidden = true;
     } catch (e) {
       engineStatus.classList.add("is-offline");
       engineStatus.classList.remove("is-online");
       engineStatusText.textContent = t("engine_offline");
+      engineStatus.setAttribute("title", t("engine_offline_title"));
+      const offlineNotice = $("offlineNotice");
+      if (offlineNotice) {
+        offlineNotice.hidden = false;
+        const bannerTitle = $("offlineBannerTitle");
+        const bannerDesc = $("offlineBannerDesc");
+        if (bannerTitle) bannerTitle.textContent = t("offline_banner_title");
+        if (bannerDesc) bannerDesc.innerHTML = t("offline_banner_desc");
+      }
     }
   }
 
@@ -826,6 +838,14 @@ document.addEventListener("DOMContentLoaded", () => {
       engineStatusText.textContent = t("engine_online", { threads: th || 2 });
     } else if (engineStatus.classList.contains("is-offline")) {
       engineStatusText.textContent = t("engine_offline");
+      engineStatus.setAttribute("title", t("engine_offline_title"));
+      const offlineNotice = $("offlineNotice");
+      if (offlineNotice && !offlineNotice.hidden) {
+        const bannerTitle = $("offlineBannerTitle");
+        const bannerDesc = $("offlineBannerDesc");
+        if (bannerTitle) bannerTitle.textContent = t("offline_banner_title");
+        if (bannerDesc) bannerDesc.innerHTML = t("offline_banner_desc");
+      }
     } else {
       engineStatusText.textContent = t("engine_connecting");
     }
