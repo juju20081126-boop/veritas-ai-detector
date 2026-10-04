@@ -32,6 +32,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 - [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
 - [Glossary](#glossary)
 - [Limitations](#limitations)
+- [Changelog](#changelog)
 - [License & Acknowledgments](#license--acknowledgments)
 
 ---
@@ -841,6 +842,66 @@ Every point below is a claim tagged [documented] in data/research/sources.md. Th
 - Paraphrased and humanized text is the hardest case. PADBen (S3) finds that iterative paraphrasing is the hardest attack, and that detectors break on the intermediate paraphrase steps. In DAMAGE (S16), detection of humanized text fell to 60.04% for GPTZero and 28.23% for Binoculars (TPR at 5% FPR). DIPPER paraphrasing (S9) cut DetectGPT from 70.3% to 4.6% TPR at 1% FPR.
 - Vendor accuracy figures are self-reported. For example, Pangram's figures (S1, S13) come from Pangram's own technical reports. The independent RAID benchmark (S14) found that detectors are biased toward the domains and models they were trained on, and are "not yet robust enough for high-stakes use".
 - A score is a signal, not proof of authorship. Pangram (S1) says its detector is statistical and that the same text can score differently in different contexts. The Pangram authors also advise against using a detector as the only basis for a decision (S13). Binoculars (S6) flagged famous memorised texts, such as the US Constitution, as machine-generated.
+
+---
+
+## 📜 Changelog
+
+This changelog records the repository evolution and cross-agent coordination history from [`HANDOFF.md`](HANDOFF.md), arranged in reverse chronological order (newest first):
+
+- **2026-10-04** (*Antigravity CLI*): Added repository project structure tree (depth 2) and ownership table according to `AGENTS.md` (Round 5 Task 1).
+- **2026-10-03** (*Antigravity CLI*): Pushed verified Round 4 clean commits (`0139842..e9b6d19`) to `origin/main` upon explicit user request.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream I: Executed final verification pass across unit tests, unrun notebooks, 10-test Playwright suite, and logged numbers provenance audit in `HANDOFF.md`.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream H: Enhanced CI workflow adding Playwright smoke test job with HTML report and trace artifact uploads.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream G: Added FAQ (5 questions) and Glossary (8 terms strictly $\le 3$ sentences citing S1..S17) to README.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream F: Created unrun analysis template `notebooks/04_results_figures.ipynb` and cataloged in `notebooks/README.md`.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream E: Built automated Playwright smoke test suite in `frontend/tests/smoke.spec.js` and `playwright.config.js`.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream D: Authored full Traditional Chinese `README.zh-TW.md` and added UI language toggle with `i18n.js`.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream C: Added `@media print` monochrome stylesheet and `?` keyboard shortcuts overlay to frontend.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream B: Added client-side JSON and CSV report export buttons and report reset action to frontend.
+- **2026-10-03** (*Antigravity CLI*): Round 4 Workstream A: Documented all 5 REST API endpoints with schemas, types, error codes, and verified curl outputs.
+- **2026-10-03** (*Antigravity CLI*): Added `--exit-zero` safeguard to CI ruff linting step to prevent GitHub workflow failure annotations.
+- **2026-10-03** (*Antigravity CLI*): Final verification and documentation consistency pass (Workstreams A–I).
+- **2026-10-03** (*Antigravity CLI*): Workstream I: Purged stale references and misleading PASS tags, verified sample catalog documentation.
+- **2026-10-03** (*Antigravity CLI*): Workstream H: Reconciled `RESEARCH_COMPENDIUM.md` with research source notes, retracted legacy synthetic claims, added Section 9.4.
+- **2026-10-03** (*Antigravity CLI*): Workstream G: Validated all notebooks, polished `notebooks/03_gpu_finetune.ipynb` mirroring 4-class taxonomy, added Kaggle split zip packager.
+- **2026-10-03** (*Antigravity CLI*): Workstream F: Restructured CI workflow into 4 jobs (blocking tests, non-blocking ruff, blocking notebooks, blocking link check).
+- **2026-10-03** (*Antigravity CLI*): Workstream E: Added `samples/real_samples.py` with 10 Claude Opus 5.5 and 10 Claude Sonnet 5.5 passages from `data/corpus/frontier/`.
+- **2026-10-03** (*Antigravity CLI*): Workstream D: Added method & limits panel, short-text warning banner, probabilistic disclaimer, and fixed accessibility in frontend.
+- **2026-10-03** (*Antigravity CLI*): Workstream C: Replaced `EVAL_REPORT.md` body with final report template containing empty TBD tables and legacy banner.
+- **2026-10-03** (*Antigravity CLI*): Workstream A: Fixed encoding mojibake across markdown files, added TOC to README, enforced single H1 per document.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Summary: Completed encoding fixes, TOC, hand-collecting guide, samples disclaimer, ruff CI step, notebook validation, and accessibility audit.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 8: Converted absolute `file:///` URLs to repository-relative markdown links.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 7: Executed comprehensive frontend accessibility audit across inputs, labels, color contrast, and focus states.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 6: Validated JSON structure and nbformat schema v4 for all repository notebooks.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 5: Added non-blocking `ruff check scripts backend` step to CI workflow.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 4: Added synthetic/demo disclaimer notice to `samples/README.md`.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 3: Added step-by-step hand-collecting detector verdicts guide (ToS-safe, $\le 200$ texts) in README.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 2: Standardized heading hierarchy to single H1 and added Table of Contents in README.
+- **2026-10-03** (*Antigravity CLI*): Round 3 Task 1: Audited and resolved encoding mojibake (`??`) across all owned markdown files.
+- **2026-10-03** (*Antigravity CLI*): Round 2 re-check: Applied corrections to README limitations, notebook declarations, and research notes.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Summary: Logged completion of Tasks 1–6 covering pipeline run guide, documented limitations, disclaimer copy, and pytest execution.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 6: Proofread `data/research/*.md` and reported link/typo findings in `HANDOFF.md` without modifying Claude files.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 5: Executed clean-checkout `pytest scripts/` run and reported 14 passing tests.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 4: Created `notebooks/README.md` explicitly declaring notebooks are unexecuted templates.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 3: Added short-text reliability disclaimer and probabilistic warning copy to frontend results panel.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 2: Added documented Limitations section in README strictly citing `[documented]` claims from sources.md.
+- **2026-10-02** (*Antigravity CLI*): Round 2 Task 1: Added real-data pipeline execution run guide to README copying exact script docstrings.
+- **2026-10-02** (*Antigravity CLI*): Task 7: Created unrun GPU fine-tuning notebook template `notebooks/03_gpu_finetune.ipynb`.
+- **2026-10-02** (*Antigravity CLI*): Task 6: Removed hard-coded unmeasured teacher metrics from `notebooks/01_teacher_ensemble_and_labeling.ipynb`.
+- **2026-10-02** (*Antigravity CLI*): Task 5: Added `SYNTHETIC_DEMO = True` notice and docstring to `samples/sample_data.py`.
+- **2026-10-02** (*Antigravity CLI*): Task 4: Merged literature survey (17 sources) and commercial detector teardown into `RESEARCH_COMPENDIUM.md`.
+- **2026-10-02** (*Antigravity CLI*): Task 3: Labeled unverified theoretical hypotheses and thresholds in equations and reverse-engineering plans.
+- **2026-10-02** (*Antigravity CLI*): Task 2: Integrated blocking `pytest scripts/tests -q` test run in `.github/workflows/python-package.yml`.
+- **2026-10-02** (*Antigravity CLI*): Task 1: Retracted legacy synthetic metrics and added warning banners to `README.md` and `EVAL_REPORT.md`.
+- **2026-10-02** (*Claude Code*): Handed off documentation and verification housekeeping tasks to Antigravity CLI.
+- **2026-10-01** (*Claude Code*): Executed frontier-detection goal Phases 1–2 (literature research, real corpus generation, attack transforms).
+- **2026-10-01** (*Claude Code*): Executed frontier-detection goal Phase 0 (truth audit, legacy synthetic quarantine, integrity gates).
+- **2026-10-01** (*Claude Code*): Merged `claude/work` into `main` following user authorization.
+- **2026-10-01** (*Claude Code*): Completed frontend redesign Round 3 ('ink and highlighter' split view).
+- **2026-09-29** (*Claude Code*): Completed frontend redesign Round 2 (layout polishing and interactive controls).
+- **2026-09-29** (*Claude Code*): Frontend ownership transition and initial UI redesign.
+- **2026-09-29** (*Antigravity CLI*): Initial repository baseline setup, runtime engine architecture, and stylometrics integration.
 
 ---
 

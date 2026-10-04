@@ -32,6 +32,7 @@ Veritas AI 是一款完全離線運行、達到生產級品質的 4 類別 AI �
 - [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq) — 常見問題解答 (FAQ)
 - [Glossary](#glossary) — 專有名詞辭典 (Glossary)
 - [Limitations](#limitations) — 限制與已知邊界
+- [Changelog](#changelog) — 變更日誌 (Changelog)
 - [License & Acknowledgments](#license--acknowledgments) — 授權條款與致謝
 
 ---
@@ -857,6 +858,68 @@ Humanizer 係指專為逃逸 AI 偵測而設計之對抗性改寫工具、提示
 - 改寫與降 AI 人工化處理文本為最困難之情境。PADBen（S3）發現多輪反覆改寫是最難以防範的攻擊手法，偵測器在各階段的中間改寫步驟便會失效。在 DAMAGE（S16）測試中，對降 AI 人工化文本之檢測，GPTZero 之 TPR 降至 60.04%，Binoculars 則降至 28.23%（皆在 5% FPR 下測得）。DIPPER 改寫（S9）使 DetectGPT 在 1% FPR 下之 TPR 由 70.3% 暴跌至 4.6%。
 - 商業廠商公佈之準確率數據多屬自行回報。例如 Pangram 之各項數據（S1, S13）皆源自 Pangram 自行發佈之技術報告。而獨立的 RAID 基準測試（S14）則發現，現有偵測器對於其訓練所用的領域與模型存在顯著偏差，且「目前仍不足以穩健地在重大高風險決策中單獨作為裁決依據」。
 - 偵測分數純屬機率統計信號，非作者身分之確鑿證明。Pangram（S1）表明其偵測器係基於統計機率運作，同一篇文章在不同脈絡環境下可能得出不同評分。Pangram 作者亦嚴正建議切勿將偵測器作為做出判斷的唯一依據（S13）。Binoculars（S6）亦曾將被模型高度記憶之著名歷史文本（如美國憲法）誤判為機器生成。
+
+---
+
+## 📜 Changelog
+
+**專案變更歷程日誌：**
+
+本日誌完整彙整 [`HANDOFF.md`](HANDOFF.md) 所記錄之跨代理協作與版本演進歷程，依時間倒序排列（最新在前）：
+
+- **2026-10-04** (*Antigravity CLI*): 新增深度 2 之專案目錄結構樹與依據 `AGENTS.md` 規範之代碼所有權劃分表（第 5 輪任務 1）。
+- **2026-10-03** (*Antigravity CLI*): 應使用者明確指示將第 4 輪乾淨提交 (`0139842..e9b6d19`) 推送至 GitHub `main` 分支。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 I：完成單元測試、未執行筆記本、10 項 Playwright 冒煙測試之最終驗證，並在 `HANDOFF.md` 建立數據來源審計表。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 H：強化 CI 管線，新增 Playwright 前端冒煙測試自動化作業與 HTML 報告/Trace 產出物上傳。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 G：於 README 新增常見問題解答 (FAQ，5 題) 與學術名詞辭典 (Glossary，8 詞，嚴格 $\le 3$ 句並引用 S1..S17 文獻)。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 F：建立未執行之評估結果圖表繪製筆記本範本 `notebooks/04_results_figures.ipynb` 並登錄於目錄。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 E：建立 `frontend/tests/smoke.spec.js` 與 `playwright.config.js` 之 Playwright 自動化端對端冒煙測試套件。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 D：撰寫完整繁體中文 `README.zh-TW.md` 並於前端新增 UI 語系切換功能與 `i18n.js` 辭典。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 C：於前端新增 `@media print` 單色黑白列印樣式表與 `?` 鍵盤快速鍵說明浮層。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 B：於前端新增客戶端 JSON/CSV 報告下載匯出按鈕與檢測狀態重設清除功能。
+- **2026-10-03** (*Antigravity CLI*): 第 4 輪工作流 A：於 README 詳盡記錄所有 5 個後端 REST API 端點結構、欄位型別、錯誤代碼與本機 curl 實測輸出。
+- **2026-10-03** (*Antigravity CLI*): 於 CI ruff 程式碼檢查步驟加入 `--exit-zero` 防護以避免 GitHub 產生失敗標記。
+- **2026-10-03** (*Antigravity CLI*): 完成工作流 A 至 I 之全面驗證與文檔一致性檢核。
+- **2026-10-03** (*Antigravity CLI*): 工作流 I：清除過期參照與容易誤導之 PASS 標記，驗證樣本目錄文檔。
+- **2026-10-03** (*Antigravity CLI*): 工作流 H：將研究手冊與文獻來源筆記進行對齊，撤回早期合成指標，新增第 9.4 節開放研究項目。
+- **2026-10-03** (*Antigravity CLI*): 工作流 G：驗證所有筆記本結構，完善對應 4 分類體系之 `notebooks/03_gpu_finetune.ipynb` 並新增 Kaggle 封裝程式。
+- **2026-10-03** (*Antigravity CLI*): 工作流 F：將 CI 工作流程重構為 4 個獨立作業（單元測試、ruff、筆記本綱要、相對連結）。
+- **2026-10-03** (*Antigravity CLI*): 工作流 E：於 `samples/real_samples.py` 新增來自真實語料庫之 10 篇 Claude Opus 5.5 與 10 篇 Claude Sonnet 5.5 文本。
+- **2026-10-03** (*Antigravity CLI*): 工作流 D：於前端新增方法與限制說明面板、短文本可靠度警示標語、機率屬性警語並修復無障礙對比。
+- **2026-10-03** (*Antigravity CLI*): 工作流 C：將 `EVAL_REPORT.md` 替換為待填充之最終評估報告空白範本（標註 TBD）並保留歷史廢止橫幅。
+- **2026-10-03** (*Antigravity CLI*): 工作流 A：修復所有 Markdown 文件之編碼亂碼 (`??`)，加入目錄索引，規範單一檔案僅保留一個 H1 標題。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪總結：完成編碼修復、目錄、人工數據收集指引、樣本免責聲明、ruff CI 步驟、筆記本驗證與無障礙審計。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 8：將絕對 `file:///` 本機路徑轉換為正規之儲存庫相對 Markdown 連結。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 7：執行前端無障礙全面審計（輸入欄位標籤、色彩對比度、焦點可見性）。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 6：驗證儲存庫內所有 Jupyter 筆記本之 JSON 格式與 nbformat v4 結構綱要。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 5：於 CI 工作流程新增非阻斷式 `ruff check scripts backend` 靜態語法檢查步驟。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 4：於 `samples/README.md` 明確註記展示文本為手寫示範樣本。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 3：於 README 新增手動收集第三方偵測器判定之逐步指南（符合服務條款、<= 200 篇）。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 2：統一標題階層為單一 H1 並於 README 頂部建立目錄。
+- **2026-10-03** (*Antigravity CLI*): 第 3 輪任務 1：審計並修復所有 Antigravity 負責之 Markdown 文件中的文字編碼破損。
+- **2026-10-03** (*Antigravity CLI*): 第 2 輪複檢：修正 README 限制章節、筆記本說明與研究筆記細節。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪總結：記錄完成管線執行指南、限制章節、免責聲明與 pytest 執行。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 6：校對 `data/research/*.md` 並於 `HANDOFF.md` 彙報連結與錯字清單（未改動 Claude 檔案）。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 5：於乾淨環境執行 `pytest scripts/` 並確認 14 項測試全數通過。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 4：建立 `notebooks/README.md` 明確宣告筆記本為未執行之範本。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 3：於前端結果面板下方加入短文本限制警示與機率信號免責聲明。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 2：於 README 新增限制章節，嚴格引用 sources.md 中具備 `[documented]` 標籤之事實。
+- **2026-10-02** (*Antigravity CLI*): 第 2 輪任務 1：於 README 新增真實資料管線執行指令指南，忠實呈現各腳本之 docstring。
+- **2026-10-02** (*Antigravity CLI*): 任務 7：建立未執行之 GPU 微調筆記本範本 `notebooks/03_gpu_finetune.ipynb`。
+- **2026-10-02** (*Antigravity CLI*): 任務 6：從 `notebooks/01_teacher_ensemble_and_labeling.ipynb` 移除寫死之未測量教師模型指標。
+- **2026-10-02** (*Antigravity CLI*): 任務 5：於 `samples/sample_data.py` 加入 `SYNTHETIC_DEMO = True` 標示與免責說明。
+- **2026-10-02** (*Antigravity CLI*): 任務 4：彙整 17 篇研究文獻與商業偵測器拆解報告至 `RESEARCH_COMPENDIUM.md`。
+- **2026-10-02** (*Antigravity CLI*): 任務 3：於數學公式與逆向計畫文件中將未測量之理論門檻標註為「UNVERIFIED HYPOTHESIS」。
+- **2026-10-02** (*Antigravity CLI*): 任務 2：於 `.github/workflows/python-package.yml` 整合阻斷式 `pytest scripts/tests -q` 單元測試。
+- **2026-10-02** (*Antigravity CLI*): 任務 1：於 `README.md` 與 `EVAL_REPORT.md` 頂部新增歷史數據撤回警示橫幅，並刪除寫死之合成數據。
+- **2026-10-02** (*Claude Code*): 將文檔與驗證整理維護任務交接予 Antigravity CLI。
+- **2026-10-01** (*Claude Code*): 執行前沿偵測目標第 1–2 階段（文獻調研、真實語料庫建構、對抗重寫攻擊）。
+- **2026-10-01** (*Claude Code*): 執行前沿偵測目標第 0 階段（數據審計、歷史合成資料隔離、完整性閘門）。
+- **2026-10-01** (*Claude Code*): 經使用者授權將 `claude/work` 分支合併至 `main`。
+- **2026-10-01** (*Claude Code*): 完成前端第 3 輪重新設計（「墨水與螢光筆」左右雙欄分割視圖）。
+- **2026-09-29** (*Claude Code*): 完成前端第 2 輪重新設計（佈局最佳化與互動式控制項）。
+- **2026-09-29** (*Claude Code*): 完成前端目錄所有權交接與初始介面重構。
+- **2026-09-29** (*Antigravity CLI*): 建立儲存庫基礎架構、離線推論引擎架構與文體計量特徵整合。
 
 ---
 
