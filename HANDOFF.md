@@ -696,5 +696,26 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  2 files changed, 124 insertions(+)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 3: GitHub Community Standards & Dependabot
+
+**Commit**: `9b00d31` (`ci(github): add issue templates, PR template, and dependabot configuration (Task 3)`)
+
+- Added `.github/ISSUE_TEMPLATE/bug_report.md` with repro steps, expected vs actual behavior, system environment details, and logs.
+- Added `.github/ISSUE_TEMPLATE/feature_request.md` with problem statement, proposed solution, and low-end CPU/offline constraint impacts.
+- Added `.github/pull_request_template.md` with standardized verification checklist (`pytest`, no hard-coded metrics, path ownership, `HANDOFF.md` logging, offline constraints, and notebook hygiene).
+- Added `.github/dependabot.yml` configured for weekly pip dependency updates.
+
+**Evidence (`git diff --stat`)**:
+```
+ .github/ISSUE_TEMPLATE/bug_report.md      | 37 +++++++++++++++++++++++++++++++++++++
+ .github/ISSUE_TEMPLATE/feature_request.md | 24 ++++++++++++++++++++++++
+ .github/dependabot.yml                    |  9 +++++++++
+ .github/pull_request_template.md          | 20 ++++++++++++++++++++
+ 4 files changed, 90 insertions(+)
+```
+
+
 
 
