@@ -661,3 +661,22 @@ To https://github.com/juju20081126-boop/veritas-ai-detector.git
 ```
 Branch is completely up to date with `origin/main`. No merge or changes made to Claude's `claude/work` branch.
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 1: Project Structure & Ownership
+
+**Commit**: `c34ab5f` (`docs(readme): add project structure section and ownership table (Task 1)`)
+
+- Added a `## 📁 Project Structure` section to both `README.md` and `README.zh-TW.md`.
+- Formatted depth-2 repository directory tree reflecting physical folders (`.github/`, `backend/`, `data/`, `frontend/`, `models/`, `notebooks/`, `samples/`, `scratch/`, `scripts/`).
+- Included a comprehensive ownership and responsibilities table according strictly to `AGENTS.md`.
+- Updated Table of Contents in both language documents.
+
+**Evidence (`git diff --stat`)**:
+```
+ README.md       | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.zh-TW.md | 71 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 138 insertions(+)
+```
+
+
