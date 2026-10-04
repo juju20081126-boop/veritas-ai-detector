@@ -67,7 +67,7 @@ Where the weights are set to $w_D = 0.40, w_R = 0.40, w_K = 0.20$, and $K_{\max}
    Quantifies the distribution of hapax legomena ($V_1$, words appearing exactly once) relative to vocabulary size $V$, normalized by $R_{\text{norm}} = 2500.0$:
    $$\tilde{R}_{\text{Honoré}} = \min\left(1.0, \frac{100 \ln N}{R_{\text{norm}} \cdot \left(1 - \min(0.99, V_1 / V)\right)}\right)$$
 
-3. **Yule's Characteristic Characteristic ($K_{\text{Yule}}$)**:
+3. **Yule's Characteristic ($K_{\text{Yule}}$)**:
    Based on the negative binomial distribution of token occurrences:
    $$K_{\text{Yule}} = 10^4 \cdot \frac{\sum_{i=1}^V n_i^2 - N}{N^2}$$
 
