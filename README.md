@@ -727,7 +727,7 @@ python scripts/corpus/ingest_llm_attacks.py            # every batch whose raw f
 
 #### Step 4: Split Assembly & Integrity Verification
 ```bash
-# Assemble the final train / dev / locked-test splits from the corpus pieces (deterministic group splits)
+# Assemble the final train / dev / locked test splits from the corpus pieces (deterministic group splits)
 python scripts/corpus/build_splits.py [--lock]
 
 # Integrity gates for the Veritas real-data pipeline (FAIL-CLOSED)

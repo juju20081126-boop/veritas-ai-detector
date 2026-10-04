@@ -183,7 +183,7 @@ Most commercial and academic detectors are binary classifiers ($y \in \{0, 1\}$)
 
 ### 4.2 Forensic Indicators Across the 4 Classes
 
-| Forensic Dimension | 🟢 Class 0: Human-Written | 🟡 Class 1: Human & AI-Refined | 🟠 Class 2: AI & AI-Refined | 🔴 Class 3: AI-Generated |
+| Forensic Dimension | 🟢 Class 0: Human-written | 🟡 Class 1: Human-written & AI-refined | 🟠 Class 2: AI-generated & AI-refined | 🔴 Class 3: AI-generated |
 |---|---|---|---|---|
 | **Syntactic Rhythm Delta ($\Delta_{\text{rhythm}}$)** | **High** ($\ge 11.0$): Wild jumps between short (5w) and long (35w) sentences. | **Moderate** ($7.0 - 11.0$): Grammar tools smooth clunky clauses. | **Low-Moderate** ($5.0 - 8.0$): Paraphrasers swap synonyms, leaving rhythm flat. | **Uniform** ($\le 6.5$): Autoregressive token generation produces uniform pacing. |
 | **Discourse AI Markers** | **Zero** ($0.0\%$): No *"moreover"*, *"delve"*, *"pivotal"*, *"testament"*. | **Low-Moderate** ($0.5 - 1.5\%$): Tool injects transitional smoothing. | **Moderate** ($1.0 - 2.5\%$): Hallmarks persist through synonym replacement. | **High** ($\ge 2.0\%$): High density of canonical LLM transition idioms. |

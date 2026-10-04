@@ -57,10 +57,10 @@ We construct an empirical black-box probe suite of **60 reference texts** spanni
 
 ```mermaid
 flowchart TD
-    A["Empirical Probe Suite - 60 Documents"] --> B["Quadrant 1: Pure Human"]
-    A --> C["Quadrant 2: Human + AI Refined"]
-    A --> D["Quadrant 3: AI + AI Refined"]
-    A --> E["Quadrant 4: Pure AI"]
+    A["Empirical Probe Suite - 60 Documents"] --> B["Quadrant 1: Human-written"]
+    A --> C["Quadrant 2: Human-written & AI-refined"]
+    A --> D["Quadrant 3: AI-generated & AI-refined"]
+    A --> E["Quadrant 4: AI-generated"]
     
     B --> B1["Creative Memoirs - Sedaris, Didion"]
     B --> B2["Academic Papers - arXiv CS/Bio"]
