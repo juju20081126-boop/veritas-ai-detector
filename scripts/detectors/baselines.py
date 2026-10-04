@@ -21,11 +21,13 @@ sys.path.insert(0, REPO)
 
 
 class ShippedDetector:
-    name = "shipped"
+    """The runtime engine end to end. mode="shipped" is the pre-change baseline; mode="frontier" (detector name `frontier_onnx`)
+    is the exported INT8 frontier model as deployed, used to check that the shipped artefact matches the PyTorch candidate."""
 
-    def __init__(self, threads=2):
+    def __init__(self, threads=2, mode="shipped"):
         from backend.runtime_engine import QuillBotDetectorEngine
-        self.engine = QuillBotDetectorEngine.get_instance(threads=threads)
+        self.name = "shipped" if mode == "shipped" else "frontier_onnx"
+        self.engine = QuillBotDetectorEngine(threads=threads, mode=mode)
 
     def score(self, texts):
         out = []
@@ -156,6 +158,8 @@ def get_detector(name, threads=6):
         return StudentDetector(name[5:], threads=threads)
     if name == "shipped":
         return ShippedDetector(threads=2)
+    if name == "frontier_onnx":
+        return ShippedDetector(threads=2, mode="frontier")
     if name == "hc3_roberta":
         return HFSeqClassifier("hc3_roberta", "Hello-SimpleAI/chatgpt-detector-roberta", ai_index=1, threads=threads)
     if name == "openai_roberta":
