@@ -716,6 +716,31 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  4 files changed, 90 insertions(+)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 4: Notebook Output Hygiene & Prerequisite Cells
+
+**Commit**: `306431d` (`feat(notebooks): add prerequisite installation markdown cell and clear outputs (Task 4)`)
+
+- Added an initial markdown cell (index 0) to each notebook specifying the exact `pip install` line required for its execution environment:
+  - `01_teacher_ensemble_and_labeling.ipynb`: `pip install torch transformers numpy`
+  - `02_student_distillation_and_onnx_export.ipynb`: `pip install torch transformers onnx onnxruntime scipy numpy`
+  - `03_gpu_finetune.ipynb`: `pip install torch transformers datasets scikit-learn onnx onnxruntime numpy`
+  - `04_results_figures.ipynb`: `pip install matplotlib numpy`
+- Purged all execution counts (`execution_count = None`) and outputs (`outputs = []`) across all 21 code cells.
+- Preserved `nbformat` schema compatibility (`v4.4` for 01–03, `v4.5` for 04) by omitting invalid cell `id` fields on v4.4 schemas.
+- Validated all 4 notebooks via `nbformat.validate`.
+
+**Evidence (`git diff --stat`)**:
+```
+ notebooks/01_teacher_ensemble_and_labeling.ipynb   | 401 ++++++------
+ notebooks/02_student_distillation_and_onnx_export.ipynb  | 409 ++++++------
+ notebooks/03_gpu_finetune.ipynb                    | 703 +++++++++++----------
+ notebooks/04_results_figures.ipynb                 |  14 +
+ 4 files changed, 790 insertions(+), 737 deletions(-)
+```
+
+
 
 
 
