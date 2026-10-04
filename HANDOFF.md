@@ -790,6 +790,34 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 7: Terminology Standardization Pass
+
+**Commit**: `bcae9ee` (`docs: standardize terminology spellings across documentation (Task 7)`)
+
+- Audited all owned documentation for consistency across canonical terms:
+  - `AI-generated` (Class 3)
+  - `human-written` (Class 0)
+  - `AI-refined` (used in `Human-written & AI-refined` and `AI-generated & AI-refined`)
+  - `TPR` (True Positive Rate)
+  - `FPR` (False Positive Rate)
+  - `ESL` (English as a Second Language)
+  - `locked test` (immutable held-out test split)
+- Fixed taxonomy heading in `RESEARCH_COMPENDIUM.md` table 4.2 (`Human-Written` -> `Human-written`, `Human & AI-Refined` -> `Human-written & AI-refined`, etc.).
+- Standardized quadrant flowchart labels in `QUILLBOT_REVERSE_ENGINEERING_PLAN.md` to canonical taxonomy names.
+- Fixed hyphenation in `README.md` and `README.zh-TW.md` (`locked-test` -> `locked test`).
+
+**Evidence (`git diff --stat`)**:
+```
+ QUILLBOT_REVERSE_ENGINEERING_PLAN.md | 8 ++++----
+ README.md                            | 2 +-
+ README.zh-TW.md                      | 2 +-
+ RESEARCH_COMPENDIUM.md               | 2 +-
+ 4 files changed, 7 insertions(+), 7 deletions(-)
+```
+
+
 
 
 
