@@ -1,0 +1,382 @@
+=== id: 1ee3c69fe19f0fd0.A1_light ===
+**Gunmen Kill at Least 23 at Tunisia's Bardo Museum**
+
+TUNIS, Tunisia — Gunmen stormed the Bardo National Museum in the Tunisian capital on Wednesday, killing at least 23 people in an assault on one of the country's most famous cultural sites and on the tourism trade that its economy relies on.
+
+The majority of the victims were foreign tourists, a number of whom had disembarked that morning from cruise ships moored in Tunis. Security forces brought an end to a standoff inside the museum by shooting two of the attackers, and dozens of people received treatment for injuries. The Bardo, home to one of the finest collections of Roman mosaics anywhere, stands beside the national parliament.
+
+The assault has rattled a country frequently called the lone success story of the Arab Spring. Following the 2011 revolution that toppled President Zine El Abidine Ben Ali, Tunisia approved a new constitution and held free elections. At the same time, it has become one of the biggest suppliers of foreign fighters to extremist groups in Syria and Iraq, where an estimated 3,000 Tunisians are thought to have signed up.
+
+To Mabrouka M'Barek, a onetime member of Tunisia's National Constituent Assembly, those two facts are tightly connected. She argues that Tunisia has not managed to "recruit" its own citizens into society, so that many young people, especially in the poorer interior regions, feel they hold no stake in the new democracy. When the state gives them no place, she says, extremist groups are happy to supply one.
+
+Her argument moves the focus away from policing and toward joblessness, regional inequality and political exclusion, the very grievances that drove the 2011 uprising.
+
+Tunisian leaders have promised a forceful response, and investigators are trying to determine who planned the attack. But while the country grieves, many Tunisians are asking whether their young democracy can reach the next generation before the recruiters get there.
+
+=== id: d6b2368ecd51a76a.A1_medium ===
+Remote work is now an ordinary part of life for a lot of people, and it brings benefits as well as drawbacks.
+
+The upside is that people who work from home save both time and money, since there is no commute. My mom used to drive for more than an hour each day; these days she spends that hour making dinner and helping me with my homework. Being at home also lets people arrange their schedules in the way that suits them.
+
+There are genuine downsides too, though. Without coworkers nearby, plenty of people get lonely, and talking with a team through a screen can be more difficult. Home also has its share of distractions, such as the television, pets, and relatives, and these can make concentrating hard. And when the office is in the bedroom, some people struggle to switch off at the end of the day.
+
+All in all, working from home can work very well, provided people look for ways to keep in touch with others and draw firm lines between work and rest.
+
+=== id: 39129c6ffbee76e0.A1_heavy ===
+Reaching for the Stars Without Neglecting Home
+
+Critics have an obvious point to make. Governments pour billions into rockets, probes, and telescopes each year, yet millions of people still have no clean water, medical care, or education, so it seems natural to say the money should be spent here on Earth. But setting space exploration against earthly problems as if they were competitors gets wrong how progress works in both.
+
+The argument against space funding hits hard emotionally. The price of one Mars mission might pay for hospitals or vaccination drives, and with people suffering today, reaching for distant planets can look like an indulgence of rich countries.
+
+Still, the budgets are smaller than most people imagine. NASA gets under half a percent of the U.S. federal budget, a sliver next to defense or health spending. Even more significant is that space research pays for itself in practical terms. Satellites follow hurricanes, watch over crops, and record climate change. Water purification, medical imaging, and solar power have all benefited from technology first created for spaceflight. Space programs also push students toward careers in science and engineering.
+
+So governments ought to keep funding space exploration, but with care: they should favor missions with clear scientific or social payoff and share costs through international cooperation. In the end, looking up often helps us look after the ground we stand on.
+
+=== id: 1123ef9735a049ac.A1_light ===
+Should Governments Pay for Space Exploration?
+
+Some people think the money spent on exploring space ought to be used against problems such as poverty and disease. Although these problems are serious, I think governments should keep funding space exploration.
+
+To begin with, space research helps address problems on Earth. Weather satellites alert people to storms, and GPS is useful for everything from agriculture to emergency services. Many inventions, such as improved water filters and medical scanners, grew out of space programs.
+
+Next, space exploration inspires young people. When students see a rover touch down on Mars, many develop an interest in science and engineering, and that leads to new discoveries.
+
+Lastly, space budgets are fairly small next to other government spending, so cutting them would not put an end to poverty.
+
+To sum up, space exploration and solving problems at home are not opposed to each other. When governments invest in space, they are also investing in a better future on Earth.
+
+=== id: 4c7ee32ae61fb633.A1_medium ===
+On big e-commerce platforms, product feeds mix organic recommendations with sponsored listings, and ad placement has usually been tuned to bring in as much advertising revenue as possible right away. That short-term view misses an important side effect: when ads are badly placed or too numerous, users may engage less with organic content, which lowers the platform's long-term value. This paper casts the allocation of ads in product feeds as a sequential decision problem, with the goal of maximizing organic traffic subject to limits on ad exposure and revenue. We put forward a reinforcement learning framework in which an agent decides, for each request, how many ads to insert into the feed and where, taking into account the user's context and the list of candidate items. Because engagement signals are sparse and delayed, our reward blends immediate click feedback with a learned estimate of how deeply users will browse afterward, and a constrained policy optimization scheme is used to meet platform-wide advertising targets. Offline experiments on large-scale logged data, together with online A/B tests on a leading e-commerce platform, show that the method considerably raises organic clicks and session length while keeping advertising revenue steady, and it beats fixed-slot and greedy allocation baselines.
+
+=== id: 45ba70d78fd313fa.A1_heavy ===
+FeSe offers an ideal platform for pinning down the electronic origin of rotational symmetry breaking in iron-based superconductors, because its nematic phase appears at around 90 K without any long-range magnetic order alongside it. We used high-resolution angle-resolved photoemission spectroscopy on mechanically detwinned single crystals to follow how the electronic structure changes, resolved by momentum and orbital character, through the nematic transition. At low temperature, the d_xz/d_yz splitting at the Brillouin zone corner is about 50 meV, which sets the characteristic nematic energy scale; near the zone center the splitting is far smaller, so the order parameter depends strongly on momentum. One result is especially striking: in the nematic state we see just one electron pocket, and within our experimental resolution the pocket expected at the Y point is missing. We examine the roles that orbital-selective correlations and the d_xy orbital play in suppressing it, and we argue that the anisotropic Fermi surface that results offers a natural explanation both for the strongly anisotropic superconducting gap and for the lack of magnetic order in FeSe.
+
+=== id: 643aa741813889f2.A1_light ===
+The azimuthal angular decorrelation of dijet systems is a sensitive probe of QCD radiation patterns and of parton dynamics at small Bjorken x. We present here a study of jet azimuthal decorrelation in deep inelastic electron–proton scattering at the proposed electron–proton mode of the Future Circular Collider (FCC-ep), where a 60 GeV electron beam collides with a 50 TeV proton beam at a centre-of-mass energy of roughly 3.5 TeV. Events are simulated using leading-order and next-to-leading-order matrix elements matched to parton showers, and jets are reconstructed with the anti-kT algorithm inside a realistic detector acceptance. We measure the distribution of the azimuthal angle difference between the two leading jets as a function of jet transverse momentum, photon virtuality, and rapidity separation. A clear decorrelation appears and grows with rapidity separation, and we compare its size to predictions from DGLAP and BFKL evolution. The results show that FCC-ep will widen the accessible kinematic range by over an order of magnitude compared with HERA, allowing stringent tests of small-x QCD dynamics and possible sensitivity to gluon saturation effects.
+
+=== id: ab224b22f4442e19.A1_medium ===
+# Richard III Laid to Rest Again in Leicester as Cumberbatch Delivers Tribute
+
+King Richard III was finally reburied on Thursday at Leicester Cathedral, five hundred years after he died at the Battle of Bosworth, in a ceremony that combined medieval pageantry with modern celebrity.
+
+Richard, the last Plantagenet king, was killed in 1485 and buried in a hurry in the church of the Greyfriars friary in Leicester. In the following centuries the site was built over and its location was lost. Then in 2012 archaeologists made a stunning discovery, finding his remains under a city council car park, and DNA tests against descendants of his sister later confirmed the identification.
+
+On Thursday, 530 years after the king's death, his oak coffin was lowered into a grave inside the cathedral. Actor Benedict Cumberbatch, a distant cousin of Richard, was one of the participants, reading a poem that Poet Laureate Carol Ann Duffy had written for the occasion.
+
+Historian Philippa Langley, whose campaign set the search for the grave in motion, said the find had led researchers to reconsider the king. Richard's reputation has long been molded mostly by Tudor chroniclers and by Shakespeare, who depicted him as a hunchbacked tyrant who killed his young nephews, the "Princes in the Tower," in order to take the throne.
+
+Examination of the skeleton revealed that Richard suffered from severe scoliosis but did not have a withered arm, and that a fatal blow to the skull killed him, a grim sign of his violent last moments on the battlefield.
+
+For Leicester, the ceremony brings an extraordinary chapter to a close. Among historians, the debate over who Richard really was seems far from over.
+
+=== id: e2ae5f6fee5d8a9c.A1_heavy ===
+**NFL Reinstates Peterson; Vikings Welcome Back Running Back**
+
+The National Football League has reinstated Minnesota Vikings running back Adrian Peterson, bringing to an end a suspension that came after he pleaded guilty to misdemeanor reckless assault in a child abuse case.
+
+NFL Commissioner Roger Goodell, announcing the decision, made it plain that conditions come attached to Peterson's return. As part of the reinstatement, the league expects him to keep going to counseling and to stay with other treatment programs. If he falls short of those obligations, he could face more discipline.
+
+Peterson, among the best rushers of his era, missed almost all of last season after being charged over how he disciplined his young son. He later agreed to a plea deal on the lesser misdemeanor charge and was spared jail time. The league then suspended him without pay, a ruling that Peterson and the NFL Players Association contested.
+
+Last season the Vikings went 7-9 without their star back. They reacted to the news with a brief statement saying they look forward to having Peterson rejoin the team, and did not say how soon he would be worked into offseason activities.
+
+The reinstatement leaves questions about what lies ahead for Peterson in Minnesota. During the suspension his relationship with the club was reported to be strained, and people have continued to speculate that he might want a fresh start somewhere else. He is still under contract with the Vikings.
+
+In his prime, Peterson won the league's Most Valuable Player award and came close to breaking the single-season rushing record. Nobody knows yet whether he can get back to that level after a year off the field, at an age when many running backs start to slow down.
+
+For the moment, the Vikings say they are ready to welcome him back.
+
+=== id: b6a31790e1d891d1.A1_light ===
+Claims like "four out of five dentists recommend" usually rest on real surveys, but the phrasing often exaggerates what was really measured. A company, or a research firm working for it, may survey a group of dental professionals, sometimes just a few hundred, and ask which brands they would recommend. The key detail is that respondents are often allowed to name more than one brand. As a result, 80 percent of dentists might list a given toothpaste while recommending its competitors equally often.
+
+In 2007, the UK Advertising Standards Authority decided that a Colgate advertisement making this kind of claim was misleading for exactly that reason. So the figure does not normally mean that dentists favor your toothpaste over every other. It typically shows only that most of the dentists surveyed regard it as an acceptable choice, which holds true for most fluoride toothpastes.
+
+=== id: 8ce25da48bcd0ab3.A1_medium ===
+It was a Tuesday, in the cereal aisle of a Kroger in Dayton, Ohio.
+
+I had a box of bran flakes in my hand and was reading the fiber numbers when the memory returned all at once. There was no voice and no vision, only a simple recollection, like suddenly recalling where you put your keys. Oh, right. I made all of this.
+
+The bran flakes. The fluorescent lights buzzing above me. The teenage stock boy with a cold sore, shelving oatmeal. The oats themselves, and the fields they grew in, and the bees that worked those fields, and the sun the bees flew beneath, and the hundred billion other suns, and the darkness that surrounded them. I remembered choosing the darkness. At the time it had felt important, to give things a place to be lonely.
+
+I remembered every bit of it. Every sparrow, as the saying goes, although the saying doesn't do it justice. I remembered the lice on the sparrows. I remembered the bacteria in the lice.
+
+And I remembered everything that was happening at that very moment, everywhere.
+
+That was where the trouble lay.
+
+When you are God, looking away is not an option. I could feel a woman in Jakarta going into labor, a man in Lisbon realizing his marriage had ended, and a boy in Manitoba breaking through the ice on a pond, and with the same awful clarity I knew how every one of those stories would finish. I knew which of them I could alter. I knew why I had chosen, long ago, not to.
+
+I had my reasons, and they were good ones. I could feel their goodness the way you feel load-bearing walls in a house. Free will. Consequence. The need for a world that is really a world and not a puppet show. But reasons give little comfort when one part of your mind holds a drowning boy and another holds a box of bran flakes.
+
+The stock boy glanced my way. "You okay, sir?"
+
+I noticed that I was crying.
+
+"I'm fine," I said. "Allergies."
+
+He nodded and returned to the oatmeal. I knew his name was Tyler. I knew he would grow up to be a nurse. I knew the precise date of his death, that it would be peaceful, and that his granddaughter would be holding his hand. I loved him so much that my knees buckled.
+
+I set the bran flakes back on the shelf.
+
+Here is what nobody tells you about omniscience: it isn't knowledge. It's weight. Every sorrow in the universe lands at once, and all of it is yours, because you built the room where it takes place.
+
+Then I understood why I had done what I'd done. Why I had folded myself up so small and climbed inside a man called Gerald Pruitt, forty-seven, regional insurance adjuster, mild sleep apnea. It was not a punishment, and it was not an experiment. It was a vacation. It was the only way to get any rest.
+
+So I did what any sensible person does with a memory too heavy to carry: I let it go. I focused on the buzz of the lights, on the squeak of my cart's bad wheel, on whether we needed milk. I felt the boy in Manitoba slip away, then the woman in Jakarta, then the suns, then the dark. It happened faster than you'd think. Forgetting comes easily when you want it badly enough.
+
+When I got to the dairy section, I was just Gerald again.
+
+I bought the milk and drove home. My wife asked how the store had been, and I said fine, a bit crowded, and she said that's Tuesdays for you.
+
+That night I dreamed about a frozen pond, and I woke without knowing why my face was wet. I lay in the dark for a long while, listening to my wife breathe, grateful for something I couldn't name.
+
+Then I went back to sleep. It's the one thing I've always been good at.
+
+=== id: cbfa7efb7a1c1b45.A1_heavy ===
+The cruelty of it was that the sky stayed bright. On the morning of the Blanking, everyone with eyes knew the sun was still overhead, warming their faces, and not one of them could see it.
+
+At 10:14 a.m. Eastern, it struck everywhere on Earth at once. Planes kept flying only because an autopilot needs no eyes; cars had no such luck. By noon the hospitals were swamped, and the doctors inside them were as helpless as the patients.
+
+Marguerite Oyelaran had been blind since the age of six. That morning she was making coffee in her Baltimore apartment, and she noticed nothing wrong until her neighbor began to scream.
+
+Following the sound, she went next door and found him crawling across his kitchen floor, knocking things over. She knelt down and took his hand.
+
+"Mr. Kowalski," she said. "Stop moving. Breathe. You're going to learn this."
+
+It was the first lesson, and millions more were coming.
+
+Inside a week, the world's roughly forty million blind people were the only part of humanity still able to function. They could cross streets by listening to the traffic. They could read with their fingertips, cook without burns, and tell bills apart by how they were folded. All their lives they had found their way through a world designed for the sighted, and now the sighted needed someone to guide them.
+
+Marguerite had been a mid-level employee at the National Federation of the Blind, and by the end of the month she found herself leading something close to a government. Nobody elected it; there was no time. The blind organized because they alone could, and people followed whoever sounded calm and had a plan.
+
+Her plan was a simple one: teach. Each blind person would take on ten sighted students, and each of those students, once capable, would teach ten more. Cane technique came first, then braille, then cooking, cleaning, and the thousand small skills that daily life requires.
+
+It worked better than anyone had predicted. The newly blind were desperate to learn, and their teachers had a patience that only people who had spent decades being underestimated could have.
+
+Not everyone went along. In the second year, a movement formed among the formerly sighted, headed by a former senator, calling for a "return to normal governance." They wanted their old leaders back, along with the institutions that had run things before.
+
+Marguerite faced him in a packed town hall. She could hear the crowd breathing and shifting, the rustle of their anxiety.
+
+"Senator," she said, "who taught you to tie your shoes again?"
+
+He said nothing.
+
+"Who taught your wife to cook? Who taught your grandchildren to read?" She let the silence stretch. "You can have your old institutions. But the people who built them never once thought about us. We had to build our own. That is why we were ready and you weren't."
+
+The movement did not vanish, but it dwindled. People were exhausted, and they had learned a hard truth about who had gone unseen in the old world.
+
+Years afterward, scientists still could not explain the Blanking. Some of the sighted continued to pray each night that they would wake up able to see.
+
+Marguerite did not blame them. Her own hope was different: that if sight ever came back, the world would remember who had reached out a hand when it was crawling across the kitchen floor.
+
+=== id: 0cb5b0677591792a.A1_light ===
+Plants lack a nervous system, a brain, and any means of moving from place to place, but they continually sense what is around them and change their behavior accordingly. Over the last few decades, researchers have discovered that plants pass information both within their own bodies and to other organisms through several channels. The word "communication" is used loosely here: it refers to sending and receiving signals that alter behavior, not to conscious intent.
+
+## Communication Within a Single Plant
+
+**Electrical signals.** When a leaf is injured, changes in membrane potential can spread to distant parts of the plant within seconds to minutes. In a widely cited 2018 study, Toyota and colleagues used a fluorescent calcium sensor in *Arabidopsis* to reveal waves of calcium traveling from a caterpillar-damaged leaf to other leaves and setting off defense responses. The Venus flytrap is the most dramatic case: two touches to its trigger hairs within roughly 20 seconds produce action potentials that make the trap snap shut.
+
+**Hormonal signals.** Plant hormones including jasmonic acid, salicylic acid, ethylene, and auxin coordinate growth and defense between tissues. Damage to one leaf can cause jasmonate-driven production of defensive compounds across the whole plant, a phenomenon called systemic acquired resistance (or, for wound responses, systemic induced resistance).
+
+**Hydraulic signals.** Shifts in water pressure can also move rapidly through the vascular system and affect processes such as stomatal closure.
+
+## Communication Between Plants
+
+**Airborne chemicals (volatile organic compounds).** This is the best-supported kind of plant-to-plant signaling.
+
+- In the 1980s, researchers reported that willow and poplar trees growing near insect-damaged neighbors raised their own chemical defenses. These early studies drew criticism over their methods but started a new field of research.
+- Stronger evidence arrived later from sagebrush and wild tobacco. Richard Karban's field experiments showed that clipping sagebrush released volatiles that left nearby plants (tobacco included) with less herbivore damage.
+- Lima beans exposed to volatiles from damaged neighbors make more extrafloral nectar, which draws predatory insects.
+- Green leaf volatiles, the "cut grass" smell, are released almost immediately after damage and can prime the defenses of neighboring plants.
+
+**Root exudates.** Plants release chemicals from their roots that affect nearby plants. Some hold back competitors (allelopathy, as with juglone from black walnut). Others seem to help plants recognize relatives; studies of sea rocket (*Cakile edentula*) found that plants grew fewer competitive roots when they shared soil with siblings than when they shared it with strangers.
+
+**Mycorrhizal networks.** Most plants form partnerships with fungi that colonize their roots, and fungal threads can link several plants underground. In the 1990s, Suzanne Simard and colleagues ran experiments that followed carbon isotopes moving between trees through these networks, and later laboratory work suggested that defense signals might pass between connected plants. This idea, often called the "wood wide web," is popular but disputed. A 2023 review by Karst, Jones, and Hoeksema argued that field evidence for widespread resource sharing and for "mother trees" nurturing seedlings is much weaker than popular accounts suggest. Fungal networks plainly exist; how far they work as communication systems is still debated.
+
+## Communication With Other Species
+
+Plants also send signals to animals and microbes:
+
+- **Calling bodyguards:** Corn attacked by caterpillars releases volatiles that draw parasitic wasps, which lay their eggs inside the caterpillars.
+- **Attracting pollinators:** Flower color, scent, ultraviolet patterns, and even electric fields help steer bees. Some research suggests that bumblebees can sense floral electric charges.
+- **Recruiting microbes:** When stressed, roots can alter their exudates to recruit helpful bacteria.
+
+## Sensing and Responding
+
+Plants also "listen." Studies have found that *Arabidopsis* exposed to recordings of caterpillar chewing vibrations later made more defensive chemicals than plants exposed to silence or wind sounds. Pea roots have reportedly grown toward the sound of running water, although such findings need further replication.
+
+## How Strong Is the Evidence?
+
+| Mechanism | Strength of evidence |
+|---|---|
+| Internal electrical, hormonal, hydraulic signaling | Strong |
+| Airborne volatiles between plants | Strong, especially in lab and some field settings |
+| Signals to insects and pollinators | Strong |
+| Root-based kin recognition | Moderate |
+| Mycorrhizal "communication" and resource sharing | Debated; real but probably overstated |
+| Plant "hearing" | Early and intriguing |
+
+## Bottom Line
+
+Plants coordinate their behavior with electrical, chemical, and hydraulic signals, and they trade chemical information with neighbors, insects, and microbes. These processes are well documented and help plants defend themselves, compete, and reproduce. Claims that plants are "intelligent" or that forests behave as cooperative superorganisms go further than the evidence allows, but the central finding is solid: plants are much more responsive and interconnected than they look.
+
+=== id: 28927983a0c4e684.A1_medium ===
+# How to Cook an Excellent Texas-Style Smoked Brisket
+
+On paper, Texas brisket is famously simple: beef, salt, pepper, smoke, and time. The hard part is doing every step well across a cook that may run 12 hours or longer. Here is how to get it right.
+
+## 1. Pick the Right Brisket
+
+Get a **whole packer brisket**, which contains both the lean "flat" and the fattier "point," and look for one between 12 and 16 pounds. The grade makes a difference: USDA Prime or top Choice carries more intramuscular fat, so the meat forgives mistakes more easily. A good brisket should sag a little in the middle when you lift it, while a rigid one is often tougher.
+
+## 2. Trim With Care
+
+How you trim determines how the brisket cooks.
+
+- Chill the brisket beforehand, because cold fat cuts more easily.
+- Cut the fat cap down to roughly **¼ inch**. If it is too thick, the fat will not render and will keep the bark from forming; if it is too thin, the meat is left exposed.
+- Take out the hard, waxy fat between the point and the flat (the "deckle") wherever you can get at it.
+- Round off thin edges and corners so they won't burn.
+- Square off the flat so its thickness is uniform from end to end.
+
+Hold on to the trimmings, since you can render them into tallow later.
+
+## 3. Season the Central Texas Way
+
+The traditional rub is nothing more than **coarse kosher salt and 16-mesh black pepper**, normally in equal volumes. Some pitmasters put in a little garlic powder, but purists keep to salt and pepper. Coat every side evenly. A thin film of mustard or hot sauce can act as a binder if you like, though you don't need it. You can season an hour before cooking or the night before.
+
+## 4. Prepare Your Smoker
+
+An offset smoker is the traditional choice, but pellet grills, kamados, and kettle grills arranged for indirect heat all do the job.
+
+- **Wood:** Post oak is the Texas standard, with hickory or pecan as good substitutes. Skip mesquite for long cooks, as it can go bitter.
+- **Temperature:** Keep it steady between **225 and 275°F**. Many pitmasters target about 250°F.
+- **Smoke:** Look for thin, blue smoke that you can barely see. Thick white smoke signals a smoldering fire and will leave a sooty, bitter taste on the meat.
+
+Set a water pan inside the cooker to keep the humidity up and the temperature steady.
+
+## 5. The Cook
+
+Lay the brisket on the grate **fat side up or down**, depending on your smoker. In offsets, where the heat enters from one side, many cooks aim the point toward the firebox because it tolerates more heat.
+
+Don't disturb it for the first several hours. Once the bark has set (around hour three), spritz with water, apple cider vinegar, or beef broth about once an hour whenever the surface looks dry.
+
+## 6. Get Past the Stall
+
+At around **150 to 170°F internal**, the temperature will stop rising, at times for hours. That is evaporative cooling at work. You have two options:
+
+- **Push through** without wrapping to get the most bark.
+- **Wrap** in pink butcher paper (the "Texas crutch") once the bark has turned a deep mahogany and no longer rubs off when you touch it. Butcher paper breathes better than foil, so it keeps more of the bark while still shortening the cook. Some cooks spread a little beef tallow on before wrapping.
+
+## 7. Go by Tenderness, Not a Number
+
+Brisket generally finishes between **200 and 205°F**, but the temperature is just a guideline. The real test is feel: a probe or skewer should go into the thickest part of the flat with almost no resistance, as if you were pushing it into soft butter. Test several places, and if any spot feels tight, keep cooking.
+
+## 8. Let It Rest
+
+You can't skip the rest. Take the brisket off, keep it wrapped, and let it sit **for at least an hour**, ideally two to four. Wrap the whole bundle in towels and set it in an empty cooler, or keep it in an oven at about 150 to 170°F. Resting lets the juices spread back through the meat and gives the connective tissue time to finish relaxing.
+
+## 9. Slice It the Right Way
+
+- Split the point from the flat along the fat seam.
+- Cut the **flat against the grain** into slices as thick as a pencil, about ¼ inch.
+- Rotate the point 90 degrees, since its grain runs in a different direction, and cut it a little thicker, or cube it for burnt ends.
+
+A perfectly cooked slice should stay together when you lift it but come apart with a light tug.
+
+## 10. Keep the Serving Simple
+
+In Texas, brisket arrives on butcher paper with white bread, pickles, raw onion, and perhaps some sauce on the side. If you did everything properly, you won't need the sauce.
+
+## Quick Tips
+
+- Invest in a good leave-in thermometer for both the meat and the pit.
+- Allow about **1 to 1.5 hours per pound**, then add resting time. Begin earlier than you think you need to.
+- Write down notes on every cook. Brisket rewards practice more than it rewards any single recipe.
+
+=== id: 3131153e0ae1ff64.A1_heavy ===
+It's a bit of both. The Romans freely borrowed from Greece and were well aware of it, as Horace admitted when he wrote that "captive Greece took her savage conqueror captive." Yet they also produced a good deal that was truly their own:
+
+- **Law:** A systematic legal tradition, complete with professional jurists and ideas about contracts, property, and the rights of citizens, which still forms the foundation of civil law across Europe and Latin America.
+- **Engineering:** Concrete construction, which allowed enormous vaults and domes such as the Pantheon, along with aqueducts, sewers, and a network of roads stretching around the Mediterranean.
+- **Governance:** Ruling a multiethnic empire for centuries, while step by step giving citizenship to the peoples they had conquered.
+- **Literature and art:** Verse satire, which Quintilian proudly described as "wholly ours," and a distinctive tradition of portrait busts that were realistic without flinching.
+
+Moreover, Greek culture itself owed a great deal to Egypt and the Near East. This is simply how civilizations usually develop: by borrowing and adapting.
+
+=== id: 18bf146d1df1a570.A1_light ===
+Deaths and Imprisonments of Putin Critics Prompt Suspicion; Kremlin Denies Allegations
+
+MOSCOW — For many opponents of Vladimir Putin, criticizing the Russian president has carried a heavy cost. Across the past twenty years, a series of critics, journalists and political rivals have been shot, poisoned or jailed, a pattern that human rights groups and Western governments say chance cannot explain.
+
+The Kremlin flatly rejects that reading, maintaining that it had no part in the deaths and that those in prison were convicted of real crimes in Russian courts.
+
+The latest case to attract international attention was the killing of Boris Nemtsov, a former deputy prime minister and outspoken opposition leader who was shot dead on a bridge within sight of the Kremlin walls. At the time he died, Nemtsov had been working on a report about Russian military involvement in eastern Ukraine. Several men from Chechnya were arrested and later convicted, but Nemtsov's allies say those who ordered the killing have never been named.
+
+His death came after a long run of similar cases. Anna Politkovskaya, an investigative journalist and fierce critic of Russia's war in Chechnya, was shot in the elevator of her Moscow apartment building in 2006. In the same year, former security officer Alexander Litvinenko died in London after being poisoned with radioactive polonium-210. A British public inquiry later found that his killing was "probably approved" by Putin, a conclusion that Moscow dismissed as politically motivated.
+
+Others have met prison rather than violence. Mikhail Khodorkovsky, a former oil tycoon who was once Russia's richest man, spent ten years behind bars on fraud and tax evasion charges that his supporters described as punishment for bankrolling the opposition. Anti-corruption campaigner Alexei Navalny was arrested and convicted several times in cases that were widely condemned abroad as politically motivated.
+
+"There is a clear message being sent," said one Moscow-based human rights advocate, who requested anonymity out of fear for her safety. "Not every critic is killed, but everyone knows it could happen."
+
+Kremlin spokesman Dmitry Peskov has repeatedly called such accusations baseless. Officials say Russia has an independent justice system, that many of the cases were investigated thoroughly, and that Western governments and media exploit the deaths to smear the country. Putin himself has suggested that some killings may have been staged by his enemies to make the Russian government look bad.
+
+Analysts point out that proving direct state involvement is extremely difficult. Russian authorities control the investigations, and those convicted are often low-level suspects. That ambiguity, critics say, is part of the design: it lets officials deny responsibility while the climate of fear does its work.
+
+For the time being, Russia's opposition remains small and divided. Many of its best-known figures have either left the country or are in prison, and those who stay say they weigh the risks each time they speak publicly.
+
+=== id: 651b60e07494f05e.A1_medium ===
+In my previous life I was Gerald Pruitt, a certified public accountant, and I died at my desk on April 14th, about the least surprising end an accountant could have.
+
+For sixty-eight years I was easygoing. I chuckled at my boss's golf stories. I told my sister-in-law that her tuna casserole was "really something." I said "no, no, after you" to men who deserved to stand in the rain. Then I shut my eyes over a pile of tax returns and opened them in a hospital nursery, red-faced, furious, and named Tyler, with all my memories still in place.
+
+It took some time before I realized what I had been handed. It wasn't the knowledge; it was the immunity. Nobody blames a small child for anything. Getting my mouth to work properly took five painful years, and I've been making up for the delay ever since.
+
+At Aunt Denise's wedding, in the sacred quiet just before the vows, I pulled on my mother's sleeve and asked, loudly enough to reach the back pew, "Mommy, when they get divorced, who gets the boat?"
+
+At Grandpa Lou's funeral, the pastor asked anyone with a memory to step up. I put my hand in the air. "Grandpa always said he didn't trust banks," I told the mourners, "so is the money still in the freezer, or has somebody already looked?" Three of my uncles left before the last hymn. Only two returned.
+
+When Dad invited his regional manager over for pot roast, I held off until the man's mouth was full, and then I asked if golden parachutes were just for the people who do the firing, and whether Daddy would be getting a parachute or only a shove.
+
+At the mall, I climbed into Santa's lap and requested a Roth IRA. "Mommy says it's too late for her," I explained, "but I still have time to let compound interest do its job." Santa, who I'd guess was sixty-one and just renting the suit, needed a moment.
+
+In Sunday school, Mrs. Abernathy asked what God expects from us. "Ten percent," I answered. "But is that before or after taxes?"
+
+My parents have had me evaluated twice. The first psychologist called me gifted. The second asked, very carefully, whether anyone in our house worked in accounting.
+
+I know what you're thinking. A CPA's mind inside a six-year-old's body ought to make me a prodigy, with morning television appearances and college at eleven. Instead I'm the kid who asked a pregnant stranger in Target whether she planned to claim the baby as a dependent this year.
+
+But I have already lived the sensible life. It earned me a corner office, a retirement party I didn't survive to attend, and a heart attack in the middle of tax season.
+
+Tonight Mom tucked me in and asked, in the voice of a woman at the very end of her rope, where I pick up these things. I gave her my roundest, most innocent eyes.
+
+"Mommy," I whispered, "what's a midlife crisis, and why does Daddy's new car have one?"
+
+=== id: ed79148fc8f0d233.A1_heavy ===
+Subject: PGET Deal #817705.1 – Credit Reserve
+
+Hi Mark,
+
+After reviewing the counterparty's latest exposure, Credit has requested that we set up a reserve against PGET Deal #817705.1. They are recommending $250,000, to take effect with this month's close.
+
+Would you book the reserve in the system and let me know when it shows up in the P&L? Credit also wants the deal flagged for monthly review until the counterparty's rating has been reassessed.
+
+Their memo, with the supporting calculation, is attached. Should any of the figures differ from what you see on your side, please tell me before Friday so we can resolve it ahead of close.
+
+Thanks,
+Sarah
+
+=== id: 87ac72ca1bdf7608.A1_light ===
+A fractal is a geometric object that shows self-similarity, which means its parts look like the whole at different levels of magnification, and its complexity is captured by a fractional, or non-integer, dimension. Fractals started out as abstract constructions in pure mathematics, but Benoit Mandelbrot argued in *The Fractal Geometry of Nature* (1982) that they describe many natural forms more accurately than the smooth shapes of Euclidean geometry. As he put it, clouds are not spheres and mountains are not cones.
+
+Coastlines are the classic example. A coastline is irregular at every scale, so its measured length grows as the unit of measurement shrinks, a result called the coastline paradox. Fractal dimension gives a more meaningful description than length alone; the west coast of Great Britain, for instance, has a dimension of about 1.25.
+
+Living systems often take on fractal designs because such structures maximize surface area or coverage within a limited volume. The branching of human airways and blood vessels, like that of trees and root systems, allows gases, fluids, and nutrients to be exchanged and distributed efficiently.
+
+Fractal patterns also arise from physical processes, as in lightning discharges, mineral dendrites, river networks carved by erosion, turbulent flow, and the strange attractors that mark chaotic systems such as atmospheric convection.
+
+Note, though, that physical fractals are only approximations. Their self-similarity is usually statistical rather than exact, and it holds only across a limited range of scales. Even so, the concept is of real practical value in antenna design, materials science, and computer graphics.
+
+=== id: 27cfd391fd8aed43.A1_medium ===
+Population atlases of the brain and spinal cord are vital for spatial normalization, morphometric analysis, and research on neurological disease. However, most current atlases handle the brain and spinal cord separately and rely on deterministic registration, which reveals little about anatomical variability. We introduce a generative framework for building diffeomorphic atlases that models the brain and cervical spinal cord together from MRI data. Each subject is expressed as a smooth, invertible deformation of a common template, and both the template and a probabilistic model of the deformations are learned through variational inference, implemented with a convolutional neural network. This formulation makes it possible to register new subjects efficiently, draw samples of plausible anatomical variation, and measure the uncertainty in the estimated deformations. We test the approach on multi-subject T1- and T2-weighted MRI datasets and show better alignment of anatomical structures, preserved topology, and much shorter computation time than conventional iterative atlas-building methods.

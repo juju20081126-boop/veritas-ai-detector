@@ -1,0 +1,451 @@
+=== prompt_id: essa-00-esl ===
+Practical Skills or Theory at University?
+
+Today many students go to university because they want a good job in the future. Because of this, people have different ideas about what universities should teach. Some people think universities must teach practical job skills, but other people believe theoretical knowledge is more important. In this essay I will discuss both side and give my own opinion.
+
+On the one hand, practical skills are very useful. When students finish university, companies want them to start working quickly. If a student already know how to use computer programs, write reports or work in a team, the company don't need to train them for a long time. Also, many students pay a lot of money for university, so they want to learn things they can use in real life. For example, my cousin studied business, but he said he never learned how to make a simple budget in Excel. He had to learn it by himself after he got a job.
+
+On the other hand, theoretical knowledge is also important. Theory helps students understand why things happen, not only how to do them. Technology changes very fast, so a skill that is useful today maybe will be old in five years. But if students understand the basic ideas, they can learn new skills more easy. For example, doctors and engineers need a strong theory background, because without it they can make dangerous mistakes.
+
+In my opinion, universities should teach both, but theory should be the base. Students can learn some practical skills from internships or part-time jobs, and universities can help them to find these chances. However, deep knowledge is hard to get alone, so this is the main job of university.
+
+In conclusion, both practical skills and theory have advantages. I think a good university gives students strong knowledge and also some chance to practice, so they are ready for work and for the future.
+
+=== prompt_id: news-0046 ===
+Machete-Wielding Suspect in New Orleans Airport Attack Dies; Sheriff Says Bag Held Molotov Cocktails and Smoke Bombs
+
+NEW ORLEANS — The man accused of charging into a security checkpoint at Louis Armstrong New Orleans International Airport with a machete has died after being shot by a sheriff's deputy, authorities said, as investigators revealed he had also been carrying an arsenal of homemade incendiary devices.
+
+Richard White, 63, died at a hospital where he had been treated for gunshot wounds sustained during the confrontation Friday night, according to the Jefferson Parish Sheriff's Office. He had been taken into surgery shortly after the attack and remained in critical condition before succumbing to his injuries.
+
+Jefferson Parish Sheriff Newell Normand told reporters that a search of White's belongings turned up six Molotov cocktails, several smoke bombs and other materials. The sheriff said the contents of the bag suggested the attack may have been planned, though investigators had not yet determined a motive.
+
+"This individual came prepared to do harm," Normand said at a news conference. "What he intended to do with those devices, we may never fully know."
+
+According to the sheriff's account, White approached a checkpoint operated by the Transportation Security Administration at around 8 p.m. He allegedly sprayed a TSA officer with what appeared to be a can of wasp and insect spray before pulling out a machete and chasing screening officers through the area. Travelers waiting in line scattered as officers ran for cover.
+
+A Jefferson Parish deputy stationed nearby responded within moments. The deputy fired three shots, striking White in the face, chest and thigh, Normand said. A TSA officer was also struck in the arm by one of the rounds and was treated at a hospital for a non-life-threatening wound. A second TSA employee suffered minor injuries during the chaos.
+
+Witnesses described a frightening scene. One passenger said she heard screaming and saw people running toward the gates before hearing gunshots. "Everybody just dropped," she said. "Nobody knew what was happening."
+
+The concourse was evacuated and several flights were delayed as police secured the area and bomb technicians examined White's bag. Operations gradually resumed later that night.
+
+Investigators said White had no significant criminal history. Neighbors and acquaintances in the New Orleans suburb of Kenner, where he lived, described him as a quiet man. Officials said they were looking into his medical and personal background as part of the inquiry. Authorities said there was no indication that he was acting with anyone else or that the attack was connected to any terrorist organization.
+
+The sheriff praised the deputy's quick reaction, saying the response likely prevented further injuries in a crowded terminal. "In a matter of seconds, he made the decision that needed to be made," Normand said.
+
+The TSA said in a statement that it was grateful for the swift action of law enforcement and that its officers had followed their training. The agency added that it was reviewing the incident with airport and local officials.
+
+The attack renewed questions about the vulnerability of public areas of airports that sit before security screening, where travelers gather in large numbers. The FBI is assisting the sheriff's office with the investigation.
+
+=== prompt_id: abst-0156 ===
+Let T and S be commuting contractions on a Hilbert space H. A vector x is called a joint coboundary if it lies in the range of both I − T and I − S, and a double coboundary if it lies in the range of (I − T)(I − S). Every double coboundary is clearly a joint coboundary, and we study when the converse holds. We show that, in general, the inclusion is strict: there exist commuting unitary operators, and even commuting contractions arising from measure-preserving actions, for which some joint coboundaries fail to be double coboundaries. On the other hand, we obtain sufficient conditions, expressed through spectral properties and the closedness of the relevant ranges, under which the two notions coincide. Applications to the joint behavior of ergodic averages and to the solvability of coupled cohomological equations are discussed.
+
+=== prompt_id: emai-0251 ===
+Subject: Adding authorized traders to the ENA Authorized Trader List
+
+Hi all,
+
+Please add the following individuals to the ENA Authorized Trader List, effective immediately:
+
+- John Arnold – Natural Gas
+- Mike Grigsby – Natural Gas (West)
+- Kevin Presto – Power (East)
+
+Each has completed the required compliance training and their trading limits have been approved by their desk heads. Signed acknowledgment forms are attached. Let me know if anything else is needed to finalize the update.
+
+Thanks,
+Sara
+
+=== prompt_id: stor-0332 ===
+The first person to notice was a barber named Elias Moreno, which made sense, because nobody spends more time watching mirrors than barbers.
+
+He was trimming the back of Mr. Hollis's neck on a Tuesday morning when he glanced up and saw his reflection holding the scissors a half-second late. Not much. Just a lag, like a video call on a bad connection. Elias stopped. His reflection stopped a beat after him.
+
+He blinked. His reflection blinked, eventually.
+
+"Something wrong?" said Mr. Hollis.
+
+"No," said Elias, and kept cutting, and did not look up again for the rest of the day.
+
+By Thursday it was everywhere. People filmed themselves waving at bathroom mirrors and posted the clips with confused captions. The delay was growing. Half a second became a full second, then two. Scientists went on the news with careful faces and said words like "optical anomaly" and "under investigation," which everyone understood to mean they had no idea.
+
+What none of them knew, what nobody on this side had ever known, was that mirrors were not reflecting anything. They were windows. On the other side lived another Earth, a perfect copy with left and right swapped, where another Elias cut another Mr. Hollis's hair in another shop with the barber pole on the other side of the door. For all of history, the two worlds had moved in perfect lockstep, every gesture matched, every glance returned. There had never been a reason to suspect anything.
+
+Until something on the other side slipped.
+
+Nobody would ever learn exactly what. Maybe a single atom decayed when its twin didn't. Maybe a butterfly in the mirror-Amazon flapped its wings counterclockwise. Whatever it was, the two worlds had begun to drift apart, and the drift was accelerating.
+
+By the second week, the delay was gone, replaced by something worse: divergence. People looked into mirrors and saw themselves doing things they weren't doing. A woman in Ohio watched her reflection brush its teeth while she stood perfectly still, toothbrush in hand. A teenager in Seoul saw his reflection get up and walk out of frame, leaving an empty bedroom behind the glass.
+
+Elias kept the shop open, because people still needed haircuts, but he hung sheets over the mirrors. Customers didn't complain. Most of them had done the same at home.
+
+One evening, after closing, he lifted the corner of the sheet. He couldn't help it.
+
+His reflection was sitting in the barber chair, facing him. It looked tired. It had a few days of stubble that Elias didn't have, and its shop was messier, the floor unswept. It held up a piece of paper, the handwriting backward, and Elias had to read it twice.
+
+YOU SEE IT TOO?
+
+Elias grabbed a pen from the counter and wrote on the back of a receipt, slowly, in mirror letters, the way he'd practiced as a kid for fun: YES.
+
+His reflection laughed. Elias had never seen himself laugh from the outside before. It was a strange sound to see without hearing.
+
+They talked for hours that way, holding paper to the glass. The other Elias said his world was frightened too. Their scientists also had careful faces. Their mirrors were also covered in sheets.
+
+DO YOU THINK IT STOPS? the other Elias wrote.
+
+Elias thought about it. He thought about all the years he'd spent looking into mirrors, never once imagining someone was looking back.
+
+I DON'T KNOW, he wrote. BUT COME BACK TOMORROW.
+
+The next night, the other Elias was waiting. So was he. And as the two worlds kept drifting, two barbers kept meeting at the glass, holding up their backward letters, trying to stay in sync on purpose.
+
+=== prompt_id: expl-0424 ===
+A black-and-white (monochrome) display requires only one bit per pixel, since each pixel has two possible states: on or off. Consequently, 64,000 pixels require 64,000 bits of memory. Because one byte comprises eight bits, dividing 64,000 by 8 yields 8,000 bytes. Using the decimal convention in which one kilobyte equals 1,000 bytes, this is precisely 8 KB. Under the binary convention (1 KB = 1,024 bytes), the figure is approximately 7.8 KB, commonly rounded to 8 KB.
+
+=== prompt_id: gene-0557 ===
+# How to Make a Great Texas-Style Smoked Brisket
+
+Texas brisket is famously simple on paper: beef, salt, pepper, smoke, and time. The difficulty lies in executing each step well over a cook that can last 12 hours or more. Here's how to do it right.
+
+## 1. Choose the Right Brisket
+
+Buy a **whole packer brisket**, which includes both the lean "flat" and the fattier "point." Aim for 12 to 16 pounds. Grade matters: USDA Prime or high Choice has more intramuscular fat, which makes the meat more forgiving. When you pick it up, a good brisket should bend a little in the middle; a stiff one is often tougher.
+
+## 2. Trim Carefully
+
+Trimming shapes how the brisket cooks.
+
+- Chill the brisket first; cold fat is easier to cut.
+- Trim the fat cap down to about **¼ inch**. Too much fat won't render and blocks the bark from forming; too little leaves the meat exposed.
+- Remove the hard, waxy fat between the point and the flat (the "deckle") where you can reach it.
+- Round off thin edges and corners so they don't burn.
+- Square up the flat so it's an even thickness from end to end.
+
+Keep the trimmings. You can render them into tallow for later.
+
+## 3. Season Like Central Texas
+
+The classic rub is just **coarse kosher salt and 16-mesh black pepper**, usually in equal parts by volume. Some pitmasters add a little garlic powder, but purists stick to salt and pepper. Apply an even coat on all sides. If you like, use a thin layer of mustard or hot sauce as a binder, though it isn't necessary. Season an hour before cooking or the night before.
+
+## 4. Set Up Your Smoker
+
+An offset smoker is traditional, but pellet grills, kamados, and kettles set up for indirect heat all work.
+
+- **Wood:** Post oak is the Texas standard. Hickory or pecan are good alternatives. Avoid mesquite for long cooks; it can turn bitter.
+- **Temperature:** Hold steady at **225–275°F**. Many pitmasters aim for around 250°F.
+- **Smoke:** You want thin, blue, barely visible smoke. Thick white smoke means the fire is smoldering and will coat the meat in a sooty, acrid flavor.
+
+Place a water pan in the cooker to help maintain humidity and stabilize temperature.
+
+## 5. The Cook
+
+Put the brisket on the grate **fat side up or down** depending on your smoker. In offsets where heat comes from one side, many cooks place the point toward the firebox, since it can handle more heat.
+
+Leave it alone for the first several hours. Spritz with water, apple cider vinegar, or beef broth every hour or so after the bark has set (around hour three) if the surface looks dry.
+
+## 6. Beat the Stall
+
+Somewhere around **150–170°F internal**, the temperature will stop climbing, sometimes for hours. This is evaporative cooling. You have two choices:
+
+- **Push through** unwrapped for maximum bark.
+- **Wrap** in pink butcher paper (the "Texas crutch") once the bark is a deep mahogany color and doesn't rub off when touched. Butcher paper breathes better than foil, so it preserves more bark while speeding up the cook. Some people add a smear of beef tallow before wrapping.
+
+## 7. Cook to Tenderness, Not a Number
+
+Brisket is usually done between **200 and 205°F**, but temperature is only a guide. The real test is feel: a probe or skewer should slide into the thickest part of the flat with almost no resistance, like pushing into soft butter. Check several spots. If any area feels tight, keep cooking.
+
+## 8. Rest It
+
+Resting is non-negotiable. Pull the brisket, leave it wrapped, and let it rest **at least one hour**, ideally two to four. Wrap the whole package in towels and place it in an empty cooler, or hold it in an oven set to around 150–170°F. Resting lets the juices redistribute and the connective tissue finish relaxing.
+
+## 9. Slice It Properly
+
+- Separate the point from the flat along the fat seam.
+- Slice the **flat against the grain** into pencil-thick slices, about ¼ inch.
+- Turn the point 90 degrees (its grain runs differently) and slice it slightly thicker, or cube it for burnt ends.
+
+A perfectly cooked slice should hold together when lifted but pull apart with a gentle tug.
+
+## 10. Serve Simply
+
+In Texas, brisket comes on butcher paper with white bread, pickles, raw onion, and maybe sauce on the side. If you've done everything right, you won't need the sauce.
+
+## Quick Tips
+
+- Buy a good leave-in thermometer for both the meat and the pit.
+- Plan for roughly **1 to 1.5 hours per pound**, then add time for resting. Start earlier than you think.
+- Keep notes on each cook. Brisket rewards practice more than any single recipe.
+
+=== prompt_id: essa-02-pla ===
+Reaching for the Stars Without Neglecting Home
+
+Every year, governments spend billions on rockets, probes, and telescopes, while millions of people lack clean water, healthcare, or schooling. It is easy to see why critics argue that this money belongs on Earth. Yet treating space exploration and earthly problems as rivals misunderstands how both progress.
+
+The case against space spending is emotionally powerful. A single Mars mission could fund hospitals or vaccination campaigns. When people suffer now, spending on distant planets can seem like a luxury for wealthy nations.
+
+However, space budgets are smaller than many assume. NASA receives less than half a percent of the U.S. federal budget, a fraction of what goes to defense or health programs. More importantly, space research repays its cost in practical ways. Satellites track hurricanes, monitor crops, and measure climate change. Technologies first developed for spaceflight have led to improvements in water purification, medical imaging, and solar power. Space programs also inspire students to pursue science and engineering.
+
+Governments should therefore continue funding space exploration, but wisely: prioritizing missions with clear scientific or social value and cooperating internationally to share costs. Looking upward, in the end, often helps us take better care of the ground beneath our feet.
+
+=== prompt_id: news-0047 ===
+Pop Culture Roundup: "Star Wars" Fans Get a Jolt, and a Reporter's Rant Goes Viral for All the Wrong Reasons
+
+It was a week of extremes in entertainment news, with one long-awaited trailer sending fans into a frenzy and one short video clip sending a television reporter into damage-control mode. Here's a look at the stories that dominated conversation online.
+
+**Han Solo is back**
+
+The biggest moment of the week arrived when Lucasfilm unveiled the second teaser trailer for "Star Wars: The Force Awakens" at the Star Wars Celebration fan convention in Anaheim, California. Within hours, the two-minute preview had racked up millions of views and become the top trending topic on social media.
+
+The trailer offered fleeting glimpses of new characters played by John Boyega, Daisy Ridley and Oscar Isaac, along with the wreckage of a Star Destroyer half-buried in desert sand. But the shot that sent fans over the edge came at the very end, when Harrison Ford appeared as Han Solo alongside Chewbacca and delivered a single line: "Chewie, we're home."
+
+Fans who packed the convention hall reportedly screamed so loudly when Ford appeared that the audio was hard to hear. Director J.J. Abrams and producer Kathleen Kennedy took the stage to introduce the footage and were joined by members of the cast, including original stars Mark Hamill and Carrie Fisher.
+
+The film, the first installment in a new trilogy, is scheduled to open in December.
+
+**An apology after a meltdown**
+
+On the other end of the spectrum, ESPN reporter Britt McHenry found herself at the center of a backlash after a video surfaced showing her berating an employee at a towing company in Virginia.
+
+In the footage, which was recorded by a security camera and posted online, McHenry can be heard insulting the woman's appearance, education and job, telling her she was "on television" while the employee was not. The clip spread quickly, drawing widespread criticism from viewers who called her comments cruel and elitist.
+
+ESPN announced that McHenry had been suspended for one week. McHenry apologized on Twitter, writing that she had allowed her emotions to get the better of her during "an intense and stressful moment" and that she was "embarrassed" by her behavior.
+
+The episode set off a broader online debate about how people treat service workers, as well as how much a private moment caught on camera should affect someone's career.
+
+**Elsewhere in entertainment**
+
+The week also brought plenty of smaller buzz. Streaming services continued their push for original programming, a handful of networks announced which shows had been renewed or canceled ahead of the fall season, and festival lineups for the summer concert circuit continued to roll out, giving music fans plenty to plan around.
+
+If this week proved anything, it's that the internet can turn a two-minute video into a global event, whether that video features a beloved space smuggler or a moment someone would surely rather forget.
+
+=== prompt_id: abst-0157 ===
+The nematic phase of FeSe, which emerges near 90 K without accompanying long-range magnetic order, provides an ideal setting for isolating the electronic origin of rotational symmetry breaking in iron-based superconductors. Using high-resolution angle-resolved photoemission spectroscopy on mechanically detwinned single crystals, we determine the momentum- and orbital-resolved evolution of the electronic structure across the nematic transition. We find that the d_xz/d_yz splitting at the Brillouin zone corner reaches approximately 50 meV at low temperature, establishing the characteristic nematic energy scale, while the splitting near the zone center is markedly smaller, indicating a strongly momentum-dependent order parameter. Strikingly, only one electron pocket is observed in the nematic state; the pocket expected at the Y point is absent within our experimental resolution. We discuss how orbital-selective correlations and the d_xy orbital contribute to this suppression, and argue that the resulting anisotropic Fermi surface naturally accounts for the highly anisotropic superconducting gap and the absence of magnetic order in FeSe.
+
+=== prompt_id: emai-0252 ===
+Subject: O&M/Capital Review with Stan
+
+Team,
+
+Stan has asked for a review of our year-to-date O&M and capital spending before the budget meeting with the executive committee. We've scheduled it for Thursday at 2:00 p.m. in conference room 3C.
+
+Please come prepared with:
+
+- Actual spending versus plan for your area through the end of last month
+- Explanations for any variances greater than 10%
+- Updated forecasts for the remainder of the year
+- Any capital projects you expect to delay, accelerate, or cancel
+
+Send your materials to me by Wednesday at noon so I can consolidate them into one package for Stan.
+
+Thanks,
+Rod
+
+=== prompt_id: stor-0333 ===
+The sky did not darken. That was the cruel part. Everyone who had eyes knew the sun was still up there on the morning of the Blanking, warm on their faces, and none of them could see it.
+
+It happened at 10:14 a.m. Eastern, simultaneously everywhere on Earth. Planes stayed in the air only because autopilot doesn't need eyes. Cars did not. By noon the hospitals were overwhelmed, and the doctors in them were as helpless as their patients.
+
+Marguerite Oyelaran had been blind since she was six. On the morning of the Blanking she was making coffee in her apartment in Baltimore, and she noticed nothing at all until her neighbor started screaming.
+
+She went next door, guided by the sound, and found him on his kitchen floor, crawling, knocking things over. She knelt beside him and took his hand.
+
+"Mr. Kowalski," she said. "Stop moving. Breathe. You're going to learn this."
+
+That was the first lesson. There would be millions more.
+
+Within a week, the world's roughly forty million blind people had become the only functioning population on the planet. They knew how to cross streets by the sound of traffic. They knew how to read with their fingers, how to cook without burning themselves, how to count money by its fold. They had spent their lives navigating a world built for the sighted. Now the sighted needed to be navigated.
+
+Marguerite, who had been a mid-level employee at the National Federation of the Blind, found herself at the head of something like a government by the end of the month. It wasn't elected. There wasn't time. The blind organized because they were the only ones who could, and people followed whoever had a calm voice and a plan.
+
+Her plan was simple: teach. Every blind person would take ten sighted students. Those students, once competent, would teach ten more. Cane technique first. Then braille. Then cooking, cleaning, the thousand tiny skills of daily life.
+
+It worked better than anyone expected, partly because the newly blind were so desperate, and partly because their teachers were patient in a way that only people who had spent decades being underestimated could be.
+
+Not everyone accepted it. In the second year, a movement rose among the formerly sighted, led by a former senator, demanding a "return to normal governance." They wanted their old leaders back. They wanted the institutions that had run things before.
+
+Marguerite met him in a town hall packed with people. She could hear them breathing, shifting, the rustle of anxiety.
+
+"Senator," she said, "who taught you to tie your shoes again?"
+
+He was quiet.
+
+"Who taught your wife to cook? Who taught your grandchildren to read?" She let the silence sit. "You can have your old institutions. But they were built by people who never once thought about us. We had to build our own. That's why we were ready, and you weren't."
+
+The movement didn't disappear, but it shrank. People were tired, and they had learned something difficult about who had been invisible in the old world.
+
+Years later, scientists still had no explanation for the Blanking. Some of the sighted still prayed every night to wake up and see.
+
+Marguerite didn't blame them. But she had a different hope. She hoped that if sight ever returned, the world would remember who had taken its hand when it was crawling on the kitchen floor.
+
+=== prompt_id: expl-0425 ===
+Obama pushed hard for fast-track authority (formally, Trade Promotion Authority) on the Trans-Pacific Partnership for a few interconnected reasons.
+
+**Getting the deal done at all.** Fast-track lets Congress vote yes or no on a trade agreement without amending it. Other countries, especially Japan, were reluctant to make final concessions if Congress could later rewrite the terms. Without TPA, negotiators believed the TPP would likely collapse.
+
+**Geopolitics and China.** The administration framed TPP as central to its "pivot to Asia." Obama argued that if the U.S. didn't help write the rules for trade in the Asia-Pacific, China would, on terms less favorable to American workers and businesses.
+
+**Economic goals.** The deal would cut tariffs on U.S. exports, set standards for intellectual property and digital trade, and include labor and environmental provisions stronger than earlier agreements like NAFTA.
+
+**Legacy.** TPP was a signature second-term initiative.
+
+The push was notable because most opposition came from Obama's own party, so he worked with Republican leaders to pass TPA in 2015.
+
+=== prompt_id: gene-0558 ===
+Plants have no nervous system, no brain, and no way to move from place to place, yet they constantly sense their surroundings and adjust their behavior in response. Over the past few decades, researchers have found that plants exchange information both within their own bodies and with other organisms through several channels. The word "communication" is used loosely here: it means sending and receiving signals that change behavior, not conscious intention.
+
+## Communication Within a Single Plant
+
+**Electrical signals.** When a leaf is wounded, electrical changes in membrane potential can travel to distant parts of the plant within seconds to minutes. In a widely cited 2018 study, Toyota and colleagues used a fluorescent calcium sensor in *Arabidopsis* to show waves of calcium moving from a caterpillar-damaged leaf to other leaves, triggering defense responses. The Venus flytrap is the most dramatic example: two touches to its trigger hairs within about 20 seconds generate action potentials that snap the trap shut.
+
+**Hormonal signals.** Plant hormones such as jasmonic acid, salicylic acid, ethylene, and auxin coordinate growth and defense across tissues. Damage in one leaf can lead to jasmonate-driven production of defensive compounds throughout the plant, a phenomenon called systemic acquired resistance (or, for wound responses, systemic induced resistance).
+
+**Hydraulic signals.** Changes in water pressure can also travel quickly through the vascular system and influence processes like stomatal closure.
+
+## Communication Between Plants
+
+**Airborne chemicals (volatile organic compounds).** This is the best-supported form of plant-to-plant signaling.
+
+- In the 1980s, researchers reported that willow and poplar trees near insect-damaged neighbors increased their own chemical defenses. These early studies were criticized for their methods but sparked a field of research.
+- Later, stronger work came from sagebrush and wild tobacco. Richard Karban's field experiments showed that clipping sagebrush released volatiles that made nearby plants (including tobacco) suffer less herbivore damage.
+- Lima beans exposed to volatiles from damaged neighbors produce more extrafloral nectar, which attracts predatory insects.
+- Green leaf volatiles, the "cut grass" smell, are released almost instantly upon damage and can prime defenses in neighboring plants.
+
+**Root exudates.** Plants release chemicals from their roots that affect neighbors. Some suppress competitors (allelopathy, as in black walnut's juglone). Others appear to help plants recognize kin; studies on sea rocket (*Cakile edentula*) found that plants grew fewer competitive roots when sharing soil with siblings than with strangers.
+
+**Mycorrhizal networks.** Most plants partner with fungi that colonize their roots, and fungal threads can connect multiple plants underground. Experiments in the 1990s by Suzanne Simard and colleagues tracked carbon isotopes moving between trees through these networks, and later lab work suggested that defense signals could travel between connected plants. This idea, often called the "wood wide web," is popular but contested. A 2023 review by Karst, Jones, and Hoeksema argued that field evidence for widespread resource sharing and "mother trees" nurturing seedlings is much weaker than public accounts suggest. Fungal networks clearly exist; how much they function as communication systems is still debated.
+
+## Communication With Other Species
+
+Plants also send signals to animals and microbes:
+
+- **Calling bodyguards:** Corn attacked by caterpillars releases volatiles that attract parasitic wasps, which lay eggs inside the caterpillars.
+- **Attracting pollinators:** Flower color, scent, ultraviolet patterns, and even electric fields help guide bees. Some research suggests bumblebees can detect floral electric charges.
+- **Recruiting microbes:** Under stress, roots can change their exudates to recruit beneficial bacteria.
+
+## Sensing and Responding
+
+Plants also "listen." Studies have shown that *Arabidopsis* exposed to recordings of caterpillar chewing vibrations later produced more defensive chemicals than plants exposed to silence or wind sounds. Roots of pea plants have been reported to grow toward the sound of running water, though such findings need further replication.
+
+## How Strong Is the Evidence?
+
+| Mechanism | Strength of evidence |
+|---|---|
+| Internal electrical, hormonal, hydraulic signaling | Strong |
+| Airborne volatiles between plants | Strong, especially in lab and some field settings |
+| Signals to insects and pollinators | Strong |
+| Root-based kin recognition | Moderate |
+| Mycorrhizal "communication" and resource sharing | Debated; real but probably overstated |
+| Plant "hearing" | Early and intriguing |
+
+## Bottom Line
+
+Plants coordinate their behavior through electrical, chemical, and hydraulic signals, and they exchange chemical information with neighbors, insects, and microbes. These processes are well documented and help plants defend themselves, compete, and reproduce. Claims that plants are "intelligent" or that forests act as cooperative superorganisms go beyond the evidence, but the core finding is solid: plants are far more responsive and interconnected than they appear.
+
+=== prompt_id: essa-02-stu ===
+Should Governments Fund Space Exploration?
+
+Some people believe money spent on space exploration should go toward problems like poverty and disease. While these problems are serious, I believe governments should continue funding space exploration.
+
+First, space research helps solve problems on Earth. Weather satellites warn people about storms, and GPS helps with everything from farming to emergency services. Many inventions, like better water filters and medical scanners, came from space programs.
+
+Second, space exploration inspires young people. When students watch a rover land on Mars, many become interested in science and engineering, which leads to new discoveries.
+
+Finally, space budgets are relatively small compared to other government spending, so cutting them would not end poverty.
+
+In conclusion, space exploration and solving earthly problems are not opposites. By investing in space, governments also invest in a better future on Earth.
+
+=== prompt_id: news-0048 ===
+Deaths and Jailings of Putin Critics Raise Suspicions; Kremlin Rejects Claims
+
+MOSCOW — For many of Vladimir Putin's opponents, speaking out against the Russian president has come at a steep price. Over the past two decades, a string of critics, journalists and political rivals have been shot, poisoned or sent to prison, a pattern that human rights groups and Western governments say cannot be explained by chance.
+
+The Kremlin rejects that interpretation outright, insisting it has no role in the deaths and that those imprisoned were convicted of genuine crimes in Russian courts.
+
+The most recent case to draw international attention was the killing of Boris Nemtsov, a former deputy prime minister and outspoken opposition leader who was shot dead on a bridge within sight of the Kremlin walls. Nemtsov had been working on a report about Russian military involvement in eastern Ukraine at the time of his death. Several men from Chechnya were arrested and later convicted, but Nemtsov's allies say the people who ordered the killing have never been identified.
+
+His death followed a long list of similar cases. Investigative journalist Anna Politkovskaya, a fierce critic of Russia's war in Chechnya, was shot in the elevator of her Moscow apartment building in 2006. That same year, former security officer Alexander Litvinenko died in London after being poisoned with radioactive polonium-210. A British public inquiry later concluded that his killing was "probably approved" by Putin, a finding Moscow dismissed as politically motivated.
+
+Others have faced prison rather than violence. Former oil tycoon Mikhail Khodorkovsky, once Russia's richest man, spent a decade behind bars on fraud and tax evasion charges that his supporters called retribution for funding the opposition. Anti-corruption campaigner Alexei Navalny was repeatedly arrested and convicted in cases widely condemned abroad as politically driven.
+
+"There is a clear message being sent," said one Moscow-based human rights advocate, who asked not to be named out of concern for her safety. "Not every critic is killed, but everyone knows it could happen."
+
+Kremlin spokesman Dmitry Peskov has repeatedly described such accusations as baseless. Officials argue that Russia has an independent justice system, that many of the cases were thoroughly investigated, and that Western governments and media use the deaths to smear the country. Putin himself has suggested that some killings may have been staged by his enemies to make the Russian government look bad.
+
+Analysts note that proving direct state involvement is extremely difficult. Investigations are controlled by Russian authorities, and those convicted are often low-level suspects. That ambiguity, critics say, is part of the point: it allows officials to deny responsibility while the climate of fear does its work.
+
+For now, Russia's opposition remains small and fragmented. Many of its most prominent figures have either left the country or are in prison, and those who remain say they weigh the risks every time they speak in public.
+
+=== prompt_id: abst-0158 ===
+Azimuthal angular decorrelation of dijet systems provides a sensitive probe of QCD radiation patterns and of parton dynamics at small Bjorken x. This paper presents a study of jet azimuthal decorrelation in deep inelastic electron–proton scattering at the proposed Future Circular Collider in electron–proton mode (FCC-ep), in which a 60 GeV electron beam collides with a 50 TeV proton beam at a centre-of-mass energy of approximately 3.5 TeV. Simulated events are generated with leading-order and next-to-leading-order matrix elements matched to parton showers, and jets are reconstructed using the anti-kT algorithm within a realistic detector acceptance. The distribution of the azimuthal angle difference between the two leading jets is measured as a function of jet transverse momentum, photon virtuality, and rapidity separation. A clear decorrelation is observed, increasing with rapidity separation, and its magnitude is compared with predictions based on DGLAP and BFKL evolution. The results demonstrate that FCC-ep will extend the accessible kinematic range by more than an order of magnitude relative to HERA, enabling stringent tests of small-x QCD dynamics and potential sensitivity to gluon saturation effects.
+
+=== prompt_id: emai-0253 ===
+Subject: Dynegy Merger - Canadian Counsel
+
+Dear Peter,
+
+In connection with the proposed merger with Dynegy, we require Canadian counsel to advise on regulatory approvals, including Competition Act and Investment Canada Act filings, and on matters affecting our Canadian subsidiaries. We would be grateful if you could confirm by Friday whether your firm is available and free of conflicts, and provide an estimate of fees for the initial review.
+
+Thank you for your prompt attention.
+
+Kind regards,
+Mark Haedicke
+Enron Wholesale Services, Legal
+
+=== prompt_id: stor-0334 ===
+I could see it in their hooded glances and practiced smiles.
+
+They knew.
+
+Thanksgiving at my aunt Carol's house always began the same way: the smell of turkey that had been in the oven since dawn, the football game muttering in the den, my cousins arguing about who got the good chair. This year the smells and sounds were the same, but the moment I stepped into the foyer, every conversation stopped for exactly one heartbeat too long.
+
+"Danny!" Aunt Carol said, with a smile that didn't reach anywhere near her eyes. "You made it."
+
+"I made it," I said.
+
+She hugged me with the stiff tenderness of someone holding a bomb.
+
+I had told exactly one person. My mother. Three weeks ago, on the phone, after two glasses of wine and a long silence, I had said, "Mom, I quit law school." And she had said, after an even longer silence, "Okay. Okay. We'll talk about it." Then she had apparently talked about it with everyone in the tri-state area.
+
+My uncle Ray clapped me on the shoulder. "How's school?" he asked, and then his eyes slid over to my mother, who was suddenly very interested in a dish of cranberry sauce.
+
+"It's fine," I said.
+
+My grandmother patted the seat next to her on the couch. "Sit, sweetheart. Tell me what you're doing these days." Her voice was gentle in the way you'd talk to a horse that might bolt.
+
+I sat. Across the room, my cousin Megan, who had passed the bar exam on her first try and never let anyone forget it, gave me a look of such enormous sympathy that I wanted to crawl under the carpet.
+
+For two hours it went on like this. Nobody said it. Everyone circled it. Uncle Ray told a story about a friend's son who "found his passion" after "a few false starts." My aunt mentioned, apropos of nothing, that "plenty of successful people changed direction." My grandfather, who was eighty-nine and mostly deaf, said loudly, "Is this the one who flunked out?" and the room went silent until Carol announced the rolls were ready.
+
+I didn't flunk out. I left. There's a difference, though I wasn't sure anyone at that table would hear it.
+
+When we finally sat down to eat, my mother caught my eye. She looked miserable. I realized she hadn't been gossiping, or not only gossiping. She had been asking for help. She had been asking everyone what to say to me, because she didn't know.
+
+I put my fork down.
+
+"Okay," I said. "I quit law school."
+
+The silence that followed was the purest silence I had ever heard in that house.
+
+"I know you all know," I went on. "I'd rather just talk about it than have everyone tiptoe around me all night. I wasn't happy. I was good at it, but I wasn't happy. I'm working at a woodshop in Easton right now. I'm building furniture. I'm learning. And I'm okay."
+
+Nobody moved. Then my grandfather, who had heard every word for once, said, "Furniture?"
+
+"Furniture," I said.
+
+He nodded slowly. "My father built furniture. Best man I ever knew."
+
+And just like that, the room exhaled. Uncle Ray asked what kind of wood I liked working with. Megan admitted she hated her firm. My aunt asked if I could fix her wobbly dining chair, the one she'd been threatening to throw out for a decade.
+
+My mother didn't say anything. She just reached under the table and squeezed my hand.
+
+The glances were still there for the rest of the night, but they had changed. They weren't hooded anymore. They were curious. The smiles weren't practiced. They were real.
+
+On my way out, Aunt Carol handed me a bag of leftovers and the wobbly chair.
+
+"No pressure," she said.
+
+I laughed, and for the first time all evening, so did she.
+
+=== prompt_id: expl-0426 ===
+This phenomenon reflects several well-documented features of human memory and cognition. First, memory consolidation continues after practice has ended; during rest, and particularly during sleep, the brain reorganizes and strengthens newly acquired information, integrating it with existing knowledge. Second, the spacing effect demonstrates that learning distributed over time produces more durable understanding than concentrated study, partly because retrieving partially forgotten material requires effort that reinforces it. Third, stepping away reduces mental fatigue and allows the mind to abandon unproductive approaches, a process sometimes termed incubation. When one returns, the problem can be viewed afresh, without the fixation that previously obstructed progress. Finally, the brain's unconscious processing may continue to make connections while attention is directed elsewhere. Collectively, these mechanisms explain why a period of rest frequently yields clearer and deeper comprehension.

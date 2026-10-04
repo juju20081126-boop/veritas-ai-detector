@@ -1,0 +1,69 @@
+{
+  "overall_pass": true,
+  "gates": [
+    {
+      "gate": "G1",
+      "name": "PROVENANCE",
+      "pass": true,
+      "summary": "19440 rows, all with registered provenance",
+      "details": []
+    },
+    {
+      "gate": "G2",
+      "name": "NO-SYNTHETIC",
+      "pass": true,
+      "summary": "19440 rows free of synthetic markers; no active template generator",
+      "details": []
+    },
+    {
+      "gate": "G3",
+      "name": "METRIC-LINT",
+      "pass": true,
+      "summary": "no hard-coded metric literals in scripts/ or backend/",
+      "details": []
+    },
+    {
+      "gate": "G4",
+      "name": "SPLITS",
+      "pass": true,
+      "summary": "19440 rows: groups disjoint, 0 exact dups, 0 near-dups across ['dev', 'locked', 'train']",
+      "details": []
+    },
+    {
+      "gate": "G5",
+      "name": "LOCKED",
+      "pass": true,
+      "summary": "SHA-256 matches manifest; 0/3 locked evaluations used",
+      "details": []
+    },
+    {
+      "gate": "G6",
+      "name": "COUNTS",
+      "pass": true,
+      "summary": "locked-test minimums met",
+      "details": [
+        "locked human=1380 (ESL=404)",
+        "claude-opus-5-5        raw= 174 A1=99 A2=71 A3=49 A4=40 A5=40 A7=40 | A6=22 A8=0",
+        "claude-sonnet-5-5      raw= 174 A1=99 A2=44 A3=45 A4=40 A5=40 A7=40 | A6=19 A8=0",
+        "gpt-6-astra            UNTESTED (declared)"
+      ]
+    },
+    {
+      "gate": "G7",
+      "name": "BALANCE",
+      "pass": true,
+      "summary": "train classes balanced within every genre and length bucket",
+      "details": [
+        "genre  academic       n=  2844 AI share=0.51 (allowed 0.33-0.67)",
+        "genre  creative       n=  1196 AI share=0.67 (allowed 0.33-0.67)",
+        "genre  forum_qa       n=  3612 AI share=0.50 (allowed 0.33-0.67)",
+        "genre  news           n=  3017 AI share=0.59 (allowed 0.33-0.67)",
+        "genre  reviews        n=   552 AI share=0.44 (allowed 0.33-0.67)",
+        "length 100-250        n=  5611 AI share=0.52 (allowed 0.25-0.75)",
+        "length 250-600        n=  3328 AI share=0.57 (allowed 0.25-0.75)",
+        "length 50-100         n=  1870 AI share=0.54 (allowed 0.25-0.75)",
+        "length 600+           n=   605 AI share=0.50 (allowed 0.25-0.75)"
+      ]
+    }
+  ]
+}

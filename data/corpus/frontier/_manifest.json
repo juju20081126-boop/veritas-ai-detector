@@ -558,8 +558,17 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_002.json",
    "out_path": "data/corpus/frontier/_raw/opus__train__r6_002.txt",
-   "status": "running",
-   "agent_id": "aedb1ef9fc19144fc"
+   "status": "ingested",
+   "agent_id": "aedb1ef9fc19144fc",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {
+     "stripped_wrapper": 1
+    },
+    "missing": [],
+    "words_median": 208
+   }
   },
   {
    "batch_id": "opus__train__r6_003",
@@ -568,8 +577,15 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_003.json",
    "out_path": "data/corpus/frontier/_raw/opus__train__r6_003.txt",
-   "status": "running",
-   "agent_id": "a36f40e3a532e6066"
+   "status": "ingested",
+   "agent_id": "a36f40e3a532e6066",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 205
+   }
   },
   {
    "batch_id": "opus__train__r6_004",
@@ -578,8 +594,15 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/opus__train__r6_004.json",
    "out_path": "data/corpus/frontier/_raw/opus__train__r6_004.txt",
-   "status": "running",
-   "agent_id": "aa6ddbdd3f0e083c2"
+   "status": "ingested",
+   "agent_id": "aa6ddbdd3f0e083c2",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 295
+   }
   },
   {
    "batch_id": "opus__train__r6_005",
@@ -694,8 +717,15 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_002.json",
    "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_002.txt",
-   "status": "running",
-   "agent_id": "a81eaf4f7fdac038e"
+   "status": "ingested",
+   "agent_id": "a81eaf4f7fdac038e",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 200
+   }
   },
   {
    "batch_id": "sonnet__train__r6_003",
@@ -704,8 +734,15 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_003.json",
    "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_003.txt",
-   "status": "running",
-   "agent_id": "abd08d837605cf1fe"
+   "status": "ingested",
+   "agent_id": "abd08d837605cf1fe",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 242
+   }
   },
   {
    "batch_id": "sonnet__train__r6_004",
@@ -714,8 +751,15 @@
    "n": 20,
    "tasks_path": "data/corpus/frontier/_tasks/sonnet__train__r6_004.json",
    "out_path": "data/corpus/frontier/_raw/sonnet__train__r6_004.txt",
-   "status": "running",
-   "agent_id": "adb2a99f220c15aee"
+   "status": "ingested",
+   "agent_id": "adb2a99f220c15aee",
+   "report": {
+    "rows": 20,
+    "usable": 20,
+    "flags": {},
+    "missing": [],
+    "words_median": 308
+   }
   },
   {
    "batch_id": "sonnet__train__r6_005",

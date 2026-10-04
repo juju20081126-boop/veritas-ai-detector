@@ -1,0 +1,44 @@
+{
+ "seed": 20261010,
+ "created": "2026-10-04T12:52:04+00:00",
+ "files": {
+  "train.jsonl.gz": {
+   "sha256": "cf04dd0a04e0ee6873f870f9c02b7cf314fd8c64be55cabd8c87c917c2ffd415",
+   "n": 11416
+  },
+  "dev.jsonl.gz": {
+   "sha256": "dc9bfaa336094d07d5b69847bc8ac3cc0b3d95a6eb330d007deb8b44100eab94",
+   "n": 5608
+  }
+ },
+ "train_genre_balance": {
+  "news": {
+   "ai": 1785,
+   "human": 1232
+  },
+  "academic": {
+   "ai": 1450,
+   "human": 1394
+  },
+  "email": {
+   "ai": 30,
+   "human": 45
+  },
+  "creative": {
+   "ai": 797,
+   "human": 399
+  },
+  "forum_qa": {
+   "ai": 1805,
+   "human": 1807
+  },
+  "student_essay": {
+   "ai": 30,
+   "human": 90
+  },
+  "reviews": {
+   "ai": 242,
+   "human": 310
+  }
+ }
+}

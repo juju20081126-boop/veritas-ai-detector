@@ -1,0 +1,320 @@
+=== prompt_id: news-0043 ===
+**Laughing at Terror: Why an SNL Skit Struck a Nerve**
+
+A "Saturday Night Live" sketch about a girl who joins ISIS set off a wave of reaction on Twitter this weekend. Some viewers called the skit tasteless. Others said it was exactly the kind of satire the moment required.
+
+Commentator Dean Obeidallah is firmly in the second group. In his view, the outrage misses the point of the joke. The sketch, he argues, was not mocking victims of terrorism or making light of violence. It was ridiculing the extremists themselves and the pitch they use to recruit young people.
+
+"Ridiculing and laughing at terrorists undermines them," Obeidallah said, adding that humor diminishes the power such groups depend on. Organizations like ISIS cultivate an image of menace and invincibility. They present themselves as serious, righteous and feared. Satire punctures that image by showing them as absurd, and that, he says, may be as damaging to their appeal as it is uncomfortable for them.
+
+Obeidallah pointed to a long tradition of comedians and writers using ridicule against authoritarian figures and violent movements. Mockery, he noted, has often been the weapon of those who have no army but still want to take away a tyrant's aura.
+
+Critics of the skit have countered that terrorism is too grave a subject for comedy, particularly when young people are being drawn into real conflicts and families are suffering real losses. Supporters respond that the sketch targeted the recruiters' propaganda rather than the tragedy it produces.
+
+The debate reflects a wider question about where the boundaries of satire lie when the subject is political violence. For Obeidallah, the answer is that laughter is not a sign of disrespect. It is a way of refusing to be afraid. By treating terrorists as ridiculous rather than as mythic figures, he contends, audiences deny them the fear they hope to inspire.
+
+Whether the sketch will change any minds remains uncertain, but it has clearly succeeded in starting a conversation.
+
+=== prompt_id: abst-0153 ===
+Angular asymmetries in hard scattering processes are sensitive to the linear polarization of gluons inside unpolarized hadrons. Because this polarization is generated perturbatively, it can produce azimuthal modulations such as cos 2φ in final states like heavy-quark pairs, dijets and Higgs production. The size of the effect is controlled by the maximal linear polarization allowed by positivity bounds, and many phenomenological studies have assumed it could be large. We examine how soft gluon radiation affects this expectation. Resumming large logarithms in the ratio of the hard scale to the transverse momentum of the pair, we find that Sudakov-type effects suppress the linearly polarized component much more strongly than the unpolarized one. The resulting asymmetries fall well below the maximal values at transverse momenta where the factorized description applies. We quantify the suppression for representative kinematics at the LHC and a future electron-ion collider, and show how it depends on the hard scale and on the nonperturbative input. Our results imply that earlier estimates are overly optimistic and indicate which observables retain meaningful sensitivity to gluon polarization.
+
+=== prompt_id: emai-0248 ===
+Subject: JOBHUNT: risk analyst at Bear-PhD theoretical Physics
+
+Hi Daniel,
+
+I hope you're well. I saw that Bear is hiring a risk analyst and wanted to reach out. I'm finishing a PhD in theoretical physics, and much of my work involves stochastic modeling, numerical simulation and probability, which I think carry over well to quantitative risk work.
+
+Would you be open to a short call next week to talk about the team and what the role involves? I'd also be glad to send my CV beforehand. Any advice on how physicists have fared in the interview process would be very welcome.
+
+Thanks so much for your time.
+
+Best,
+Maya
+
+=== prompt_id: stor-0329 ===
+The countdown reached ninety seconds, and Dr. Imani Reyes decided she would not look at the monitors. She looked at the ceiling instead, at the pale panel lights she had stared at through eleven months of training, and tried to breathe the way the instructors had taught her.
+
+"Chamber seal confirmed," said Okafor from the control room. His voice was too steady, the kind of steady people put on when they are holding something back.
+
+The cryosleep pod hummed around her. Its gel lining was cool and faintly sweet-smelling. This was the sixth human trial, and the first of a proposed ninety-day cycle. If it worked, NASA could send crews to Mars without feeding and housing them for two years. If it didn't, the line in the press release was already written: *a valuable data point*.
+
+She turned her head as the lid began to lower, and that was when she saw it. A red light was pulsing above the main door, the facility alarm that was never supposed to trigger indoors. Through the glass she watched Okafor spin toward someone out of frame. A technician ran past with a tablet held against her chest. Somebody was shouting, and Imani couldn't hear the words, only the shape of them.
+
+"Okafor," she said into the mic. "What's happening?"
+
+No answer. Then, faintly, a crackle. "Imani, hold on. We're having a... there's a pressure fault in sublevel two. Stay calm."
+
+"Abort the sequence."
+
+"We can't. The sedatives are already in your line. If we cut the cycle now, you might..." He stopped.
+
+The cold had started in her fingertips. It crept up her wrists the way water climbs a towel. She watched the room dissolve into movement, and she thought, absurdly, about the plant on her kitchen windowsill that nobody would remember to water.
+
+"Okafor." Her tongue felt thick. "My sister. Tell her..."
+
+"Tell her yourself," he said. His voice cracked, finally. "In ninety days. You hear me? That's an order."
+
+The lid sealed with a soft pneumatic sigh. The red light blurred into a smear and then into a single warm point, like a distant planet.
+
+She tried to hold on to it. She thought of the faces she had last seen, mouths open, hands raised, and wondered what they were afraid of and whether it was already too late for any of them.
+
+Then the dark came, gentle and total, and Imani Reyes slept.
+
+When she woke, the room was silent. The red light was gone. The lid was open, and the air smelled of dust.
+
+No one was there to greet her.
+
+=== prompt_id: expl-0421 ===
+Tumors are masses of abnormal cells, plus the supporting tissue around them: blood vessels, connective tissue and immune cells. They form when mutations in a cell's DNA disable the controls on growth and division, often by activating growth-promoting genes or silencing protective ones. The damaged cell multiplies without restraint and passes the mutations on. Over time, further mutations accumulate, and the cells may recruit blood vessels to feed the growth. Benign tumors stay local, while malignant ones can invade tissue and spread.
+
+=== prompt_id: gene-0554 ===
+It was Friday night, and the three of us, Priya, Marcus and me, were hunched over a large pepperoni pizza in the office, pretending we weren't going to touch the production server.
+
+"Nobody touches anything," said Marcus, wiping grease from his hand. "We eat, we go home."
+
+That was when the dashboard turned red.
+
+Every graph on it spiked at once. Priya leaned in. "That can't be right. It says we have four million requests per second."
+
+"We have forty users," I said.
+
+"Then someone's very popular." She took a slice and kept staring.
+
+We traced the traffic to a test box in the corner, a machine we had nicknamed Zombie because it had been "decommissioned" three times and kept coming back. Someone had left it plugged in, and it was happily hammering our staging environment with requests from a script nobody remembered writing.
+
+"Kill it," Marcus said.
+
+"I can't SSH in," I said. "It's not on the network."
+
+"It's clearly on the network."
+
+"The dashboard says it's on the network. The dashboard also thinks it's 1970."
+
+Priya was already on her knees under the desk. "There's an ethernet cable here. It goes into the wall. It's yellow. Why is it yellow?"
+
+"Nobody knows why it's yellow," said Marcus gravely. "It's always been yellow."
+
+She followed it with her hand like someone tracing a fuse. I opened a laptop and typed *sudo shutdown now* over the wrong connection, which, naturally, shut down my own laptop. The screen went black. We stared at it.
+
+"Well," Marcus said, "at least it's working."
+
+Priya yanked the yellow cable out of the wall. The Zombie's fans wound down with a long, sad whine. On the dashboard, every line dropped to zero, and the red faded to green.
+
+We sat in silence. Then Marcus lifted the last slice and bowed to it.
+
+"To the Zombie," he said. "May it rest in peace."
+
+"It won't," Priya said. "It never does."
+
+On Monday, we found the Zombie running again. Someone had plugged in the yellow cable.
+
+=== prompt_id: essa-00-pla ===
+Whether universities should focus on practical job skills or theoretical knowledge is a question with no simple answer.
+
+Supporters of practical training point out that students pay high tuition and expect to be employable. Courses in coding, accounting or clinical practice give graduates abilities employers want immediately, and internships let students test their interest in a career before committing to it. For many families, a degree that leads to a stable job is the whole purpose of going.
+
+Defenders of theory respond that specific skills go out of date quickly. A programming language learned this year may be obsolete in ten, while an understanding of mathematics, statistics, or the principles of economics stays useful. Theoretical study also trains people to question assumptions, weigh evidence and write clearly, which are valuable in any field.
+
+In my view, universities should aim for a balance with theory as the foundation. Students need deep understanding to adapt as industries change, but they also need chances to apply it, through projects, placements and partnerships with employers. A graduate who knows why something works and has also practiced doing it will be better prepared than one with only half of that.
+
+=== prompt_id: news-0044 ===
+**From Teenage Curiosity to a Visit From the FBI**
+
+When Timothy Winslow was a teenager, most of his free time went to one thing: exploring computer systems. He wasn't interested in sports or in the usual hangouts. What drew him in was the challenge of finding out how networked machines worked, and he pursued it across the country, connecting to systems at companies, universities and institutions he had never visited.
+
+To Winslow, it felt like curiosity. He says he never thought of it as crime. He was learning how the systems fit together, tracing connections from one machine to another and seeing how far a single login could take him. "It was like a giant map that nobody had finished drawing," he recalled.
+
+Then the FBI arrived.
+
+The agents' visit turned what he saw as a hobby into a serious legal matter. Federal law treats unauthorized access to computer systems as a crime regardless of the intent behind it, and investigators had no way to know whether a curious teenager was also a threat. For a young person who had spent months immersed in a world of terminals and passwords, the experience was a sudden reminder that the real world has rules his curiosity had ignored.
+
+Cases like Winslow's are not unusual. As computers became central to business and government, a generation of young enthusiasts taught themselves how to move through networks, often without understanding the consequences. Some were prosecuted. Others were warned. A few were later hired by the same organizations they had probed.
+
+Security experts say the story illustrates a persistent tension. The same skills that can be used to break into systems are the ones needed to defend them, and many of today's professionals started out exactly as Winslow did. What separates a career from a criminal record, they argue, often comes down to permission, guidance and timing.
+
+Winslow says he doesn't regret what he learned. He does, however, wish someone had told him earlier where the line was. "I would have been glad to explore the right way," he said, "if I'd known there was one."
+
+=== prompt_id: abst-0154 ===
+We study kinetic theory models for the distribution of wealth in a market economy, with particular attention to the emergence of power-law tails. Within a Boltzmann-type framework, agents exchange wealth through binary trades that combine a conservative component with a stochastic one representing risk and speculation. Starting from the resulting master equation, we derive Fokker-Planck-type approximations in the limit of small exchanges and obtain stationary distributions in closed form. We show that when agents are partitioned into groups with different saving propensities or different degrees of risk, each group relaxes to an exponential or gamma-type equilibrium with its own characteristic scale. The distribution of wealth over the whole population is then a superposition of these exponentials. We demonstrate analytically that such an overlap, weighted by a suitable distribution of scales, generates a Pareto power-law tail with an exponent determined by the statistics of the parameters. Numerical simulations of the underlying particle system confirm the analytical predictions and show convergence toward the stationary profiles. The results offer a transparent mechanism by which heterogeneity among economic agents produces the heavy-tailed wealth distributions observed in empirical data, and they clarify the conditions under which the bulk and the tail of the distribution coexist.
+
+=== prompt_id: emai-0249 ===
+Subject: Kathleen Ann
+
+Dear Ms. Whitfield,
+
+I am writing on behalf of the Harlow Community Library Foundation to follow up on our recent conversation regarding Kathleen Ann, who has served as a volunteer coordinator with our organization for the past six years.
+
+Kathleen has indicated that she would like to be considered for the position of Program Director at your institution. In support of her application, I am pleased to offer a strong recommendation. She has consistently demonstrated reliability, sound judgment and a capacity for leading teams under pressure. During her tenure, she organized our annual literacy drive, which increased participation by nearly forty percent, and she trained more than fifty new volunteers.
+
+She is also respected for her integrity and her ability to build constructive relationships with staff, donors and members of the public.
+
+I would be happy to provide further detail or arrange a call at your convenience. Please feel free to contact me at 555-0142 or at the address below.
+
+Thank you for your time and consideration.
+
+Sincerely,
+
+Robert Chandler
+Executive Director
+Harlow Community Library Foundation
+r.chandler@harlowlibrary.example
+
+=== prompt_id: stor-0330 ===
+Victor Kane had never apologized to anyone in his life, and he did not intend to start in a hospital bed.
+
+The surgery was a success. The surgeons said so, and the nurses repeated it as though he ought to be grateful. His new heart thumped steadily under the bandages, a stranger's heart in a stranger's chest. Victor, who had made a fortune ruining people and enjoyed every day of it, assumed the thing would behave like any other purchase.
+
+He was wrong.
+
+The first night, he woke to an ache so sharp that he reached for the call button. It wasn't in his chest. It was something else, a heaviness he couldn't place. Then he remembered Mrs. Alvarez, the widow whose shop he had driven out of business to build a parking lot. He had laughed when she cried. Now, with his pulse tapping against his ribs, he could not remember why it had seemed funny.
+
+"Phantom pain," the doctor told him. "Anxiety. It's common."
+
+But it kept coming. Each time he thought of cruelty, he felt it in his body, a tightening and a heat behind his eyes. He remembered the employee he fired on Christmas Eve, the brother he hadn't spoken to in twenty years, the dog he had once kicked just to watch it yelp. These memories had always been trophies. Now they were evidence.
+
+Weeks later, he asked the transplant coordinator, a tired woman named Dolores, about the donor. She was not supposed to say anything. She looked at him for a long time.
+
+"She was twenty-six," Dolores said finally. "A teacher. She volunteered at a shelter on weekends."
+
+Victor said nothing. The heart beat on, patient and relentless, as if it had been waiting for him to listen.
+
+He wrote the first letter that evening, to the donor's family, and tore it up. He wrote it again. It was clumsy and unpolished, and it said *thank you* and *I'm sorry* in words that felt foreign in his hand. He didn't know whether they would forgive him. He didn't know whether he deserved it.
+
+But when he finally sealed the envelope, the ache in his chest eased, not gone, but quieter, like a door closing softly on an empty room.
+
+Redemption, he understood, wasn't something you were handed. It was something you earned one apology at a time, with a borrowed heart and a stubborn, unfamiliar hope.
+
+=== prompt_id: expl-0422 ===
+"kWh/kW" works out to hours. A kilowatt-hour (kWh) is an amount of energy, and a kilowatt (kW) is a rate of power, so dividing energy by power gives time. In practice, the ratio often describes how many hours a system would need to run at full power to produce a given amount of energy. For solar installations, annual kWh per kW of installed capacity measures yield, and it's closely related to capacity factor.
+
+=== prompt_id: gene-0555 ===
+Here are the five athletes with the most Olympic gold medals, based on the Summer Games, where the highest totals are found.
+
+1. **Michael Phelps (USA, swimming):** 23 golds
+2. **Larisa Latynina (USSR, gymnastics):** 9 golds
+3. **Paavo Nurmi (Finland, athletics):** 9 golds
+4. **Mark Spitz (USA, swimming):** 9 golds
+5. **Carl Lewis (USA, athletics):** 9 golds
+
+Katie Ledecky (USA, swimming) also reached 9 golds at the 2024 Paris Games, so she is tied with the athletes at spots two through five. Counts can shift with each Olympics, so it's worth checking the official Olympic site if you need current numbers for your assignment.
+
+=== prompt_id: essa-00-stu ===
+**Should Universities Teach Skills or Theory?**
+
+Every year, millions of students walk into university lecture halls with a question in the back of their minds: what will all this lead to? For some, the answer should be a good job. For others, it should be a better way of thinking. The debate over whether universities should teach practical job skills or theoretical knowledge touches on what higher education is really for.
+
+People who favor practical skills have a strong argument. University is expensive, and graduates often leave with significant debt. They want assurance that their degree will lead to employment. Courses that teach coding, accounting, nursing or engineering practice can give students abilities they can use on the first day of work. Internships and project-based classes also help students understand what a profession is actually like before they commit to it. Employers, too, often complain that new graduates arrive knowing plenty of facts but little about how to apply them.
+
+On the other side, supporters of theoretical knowledge argue that specific skills expire quickly. The software a company uses today might be replaced in five years, and a student who learned only that tool could be left behind. Theory, by contrast, teaches principles that last. Studying mathematics, philosophy, history or economics trains students to analyze problems, question assumptions and build arguments. These abilities are useful in nearly every career, including ones that don't exist yet. Universities also have a mission beyond employment: they push human understanding forward, and that requires research grounded in theory.
+
+I believe the best approach combines both, with theory as the base. A student who understands why a method works can adapt when the method changes, and a student who has practiced applying ideas will be more confident when facing real situations. Universities can achieve this by pairing lectures with labs, case studies and work placements. Neither extreme serves students well. A purely practical education produces workers who can follow instructions but not adjust, while a purely theoretical one risks producing graduates who know a great deal but have never used it.
+
+In the end, a university's job is to prepare people for both a career and a life. Teaching students how to think and how to do should not be competing goals. Together, they give graduates the best chance of succeeding in a changing world.
+
+=== prompt_id: news-0045 ===
+**Al Qaeda Branch Offers $774,000 Bounty for Houthi Leader and Former Yemeni President**
+
+Al Qaeda in the Arabian Peninsula (AQAP) has announced a reward for the killing or capture of two prominent figures in Yemen's conflict: a leader of the Houthi movement and a former Yemeni president. The combined bounty is worth approximately $774,000 in American dollars.
+
+The offer, circulated by the group, is a further sign of the militant organization's determination to take part in Yemen's fractured political landscape. AQAP, widely regarded by Western governments as one of the most dangerous branches of the network, has long used the country's instability to expand its presence and recruit supporters.
+
+The Houthis, a group based largely in the north of the country, have battled both the government and Sunni militant groups. Their rivalry with AQAP has contributed to a cycle of attacks and reprisals across several provinces. The former president, who held power for many years before leaving office, remains a politically influential figure with significant support among elements of the military.
+
+Analysts say the bounty is as much a propaganda device as an operational threat. By publicly placing a price on the heads of high-profile opponents, AQAP seeks to project strength and appeal to militants who may be weighing which factions to support. Such announcements, they note, have appeared before and have not always been followed by successful attacks.
+
+Security officials in the region have not publicly responded to the announcement. Yemen continues to face a humanitarian crisis, with millions of civilians affected by years of fighting, displacement and shortages of food and medicine.
+
+Observers caution that the continuing power struggle among rival factions provides a favorable environment for extremist groups. Without a durable political settlement, they warn, organizations like AQAP will remain a serious threat to both Yemeni civilians and regional stability.
+
+=== prompt_id: abst-0155 ===
+Polar-ring galaxies are rare systems in which a ring of gas, dust and stars orbits nearly perpendicular to the plane of a central host. Their origin remains debated, with accretion from a neighbor and cold gas infall both proposed. We use N-body simulations including gas dynamics and star formation to test whether a polar ring can form in a major merger of two disk galaxies. We explore a range of mass ratios, orbital geometries and gas fractions. In a subset of encounters, particularly those with nearly perpendicular spin orientations and unequal gas content, the gas of one progenitor is stripped, settles into a rotating structure orthogonal to the remnant's stellar body, and forms stars over time. The resulting ring persists for several gigayears and reproduces observed morphology, rotation curves and stellar masses of known polar-ring galaxies. We find that the formation requires the host remnant to be a relatively gas-poor, early-type system. These results suggest that mergers, and not only accretion, can account for a significant fraction of polar-ring galaxies.
+
+=== prompt_id: emai-0250 ===
+Subject: Update Meetings - Today
+
+Hi team,
+
+I wanted to let you know that today's update meetings will run on a slightly adjusted schedule. Please see the times below and let me know if any of them conflict with your calendar.
+
+- 10:00 AM: Project Alpha status review
+- 1:30 PM: Marketing and sales sync
+- 3:00 PM: Operations check-in
+
+Please come prepared with a short summary of your progress since last week, any blockers you are facing, and what you plan to finish by Friday. Keeping each update to about two minutes will help us stay on time.
+
+If you can't attend one of the sessions, please send me your notes beforehand so I can share them with the group. The meeting links are in the calendar invitations.
+
+Thanks for your continued hard work. I appreciate everyone's flexibility today.
+
+Best regards,
+Jordan Ellis
+Operations Manager
+
+=== prompt_id: stor-0331 ===
+Mara had always known the world was ending. Everyone in Haven knew it. The sky outside the dome was a bruised yellow, and the elders taught that beyond the wall there was only ash and silence.
+
+On her seventeenth birthday, the fence failed.
+
+It was a small thing, a corroded panel at the edge of the north fields, and she only noticed because the wind coming through smelled of something she couldn't name. It was green. She crawled through the gap before she could stop herself.
+
+Past the fence, the ground rose into a hill, and from the top of the hill she saw a road. A real road, cracked but intact, and beside it a truck painted bright red, with a man loading crates into the back. He was whistling.
+
+Mara dropped to her knees. Behind her lay the Reserve, a circle of gray domes and neat fields, smaller than she had ever imagined. Ahead of her stretched forests and, far in the distance, the shimmer of a city with lights she had only read about in the old books.
+
+The man looked up and saw her. He didn't scream or run. He only lifted a hand, slowly, the way you would greet a frightened animal.
+
+"You're from the Reserve, aren't you?" he called. "Don't be scared. We've been waiting for one of you to find the gap."
+
+"Waiting?" Her voice came out as a whisper.
+
+"It's an experiment, kid. Your grandparents signed up to see what a sealed community would do. Nobody told you?"
+
+She looked back at the domes, at the elders she trusted, at everything she had been told. A cold feeling began in her stomach and, beneath it, something warmer and stranger. Hope.
+
+"Is it true?" she asked. "The world isn't dead?"
+
+He smiled. "Come see for yourself."
+
+Mara stood, brushed the dirt from her knees, and took her first step toward the road.
+
+=== prompt_id: expl-0423 ===
+The use of special symbols in pronunciation guides reflects a fundamental limitation of the English writing system. English spelling is not phonetic. A single letter can represent several sounds, as with the "a" in "cat," "father" and "late," and a single sound can be written in multiple ways. The International Phonetic Alphabet (IPA) was developed to give each distinct sound exactly one symbol, so that pronunciation could be recorded without ambiguity.
+
+Adding those symbols to the English alphabet would not be practical. Many of them, such as the schwa or the symbol for the "th" sound, would require readers and writers to learn new characters, and printing, keyboards and existing literature would need to be adapted. English spelling also preserves historical and etymological information, which makes reform politically and culturally difficult. Moreover, pronunciation varies by region, so no single set of respellings would suit every speaker. For these reasons, the symbols remain a specialized tool for dictionaries and linguists rather than part of everyday writing.
+
+=== prompt_id: gene-0556 ===
+Here are some well-regarded clothing brands that put environmental responsibility at the center of what they do.
+
+**Patagonia**
+A pioneer in sustainable outdoor wear. It uses recycled and organic materials, runs the Worn Wear repair and resale program, and donates a share of its profits to environmental causes. Its founder transferred ownership of the company to a trust and a nonprofit to fund climate work.
+
+**Eileen Fisher**
+Known for timeless women's clothing made with organic linen, recycled fibers and responsibly sourced materials. Its Renew program takes back old garments to be resold or remade into new pieces.
+
+**Reformation**
+A fashion-forward label that tracks and publishes the environmental footprint of its products. It favors deadstock fabric, low-impact fibers and responsible factories.
+
+**Pact**
+Makes affordable basics, such as underwear, tees and loungewear, from organic cotton, and manufactures in Fair Trade Certified facilities.
+
+**Outerknown**
+Founded by surfer Kelly Slater, it focuses on recycled and organic fabrics, fair labor and transparent supply chains, with many pieces certified by Fair Trade.
+
+**Stella McCartney**
+A luxury label that is entirely free of leather and fur and has been a leader in developing plant-based and recycled materials.
+
+**Tentree**
+Plants ten trees for every item sold and uses recycled and organic fabrics for casual and outdoor clothing.
+
+**Kotn**
+Offers essentials made from Egyptian cotton that is traced directly to the farmers who grow it, with a focus on community investment.
+
+**Veja**
+Best known for sneakers made with organic cotton, wild rubber from the Amazon and recycled materials, with direct trade relationships with producers.
+
+**tentree alternatives and secondhand options**
+If you want to lower your footprint further, consider buying secondhand through platforms such as ThredUp, Depop or Vinted, or look at brands such as Thought, People Tree and Armedangels, which also emphasize ethical production.
+
+A note when shopping: look for third-party certifications like GOTS (Global Organic Textile Standard), Fair Trade, B Corp and bluesign. These make it easier to separate real commitments from marketing claims.
+

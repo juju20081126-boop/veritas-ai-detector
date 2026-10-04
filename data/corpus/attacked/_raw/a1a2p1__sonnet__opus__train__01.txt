@@ -1,0 +1,462 @@
+=== id: 2e248e6a114fd05b.A1_heavy ===
+The question "how many squares are on a chessboard?" has two answers. Count only the 64 small light and dark cells and you get **64**. Count every square you could outline on the board, large ones built from smaller cells included, and the figure rises to **204**.
+
+## Squares of every size
+
+Beyond the 64 single cells, the 8 × 8 grid hides squares measuring 2 × 2, 3 × 3, and so on, all the way to the whole board, which counts as a single 8 × 8 square. What matters is how many places each size can sit.
+
+Start with 2 × 2. Its upper-left corner may fall in any of the first 7 columns and any of the first 7 rows, giving 7 × 7 = 49 squares. The same reasoning shows that a k × k square has (9 − k)² possible positions:
+
+| Square size | How many |
+|---|---|
+| 1 × 1 | 8² = 64 |
+| 2 × 2 | 7² = 49 |
+| 3 × 3 | 6² = 36 |
+| 4 × 4 | 5² = 25 |
+| 5 × 5 | 4² = 16 |
+| 6 × 6 | 3² = 9 |
+| 7 × 7 | 2² = 4 |
+| 8 × 8 | 1² = 1 |
+| **Total** | **204** |
+
+## A formula for any board
+
+Adding these up means summing the first eight perfect squares, and a standard identity covers that sum for the first n squares:
+
+1² + 2² + 3² + ... + n² = n(n + 1)(2n + 1) / 6
+
+Setting n = 8 gives (8 × 9 × 17) / 6 = 1,224 / 6 = 204, which agrees with the table. Any square grid works the same way; a 3 × 3 tic-tac-toe grid holds 9 + 4 + 1 = 14 squares.
+
+## Extending the puzzle to rectangles
+
+Some versions ask about rectangles too. A rectangle is fixed by choosing two of the board's 9 horizontal lines and two of its 9 vertical lines. Each pair can be chosen in C(9, 2) = 36 ways, so there are 36 × 36 = **1,296** rectangles in all, and 204 of them are squares.
+
+## Summary
+
+- **64** single squares
+- **204** squares of any size
+- **1,296** rectangles of any size, squares among them
+
+This is a classic trick question because most people answer 64 and stop. A full answer states which reading you mean and shows the sum behind 204.
+
+=== id: eed799d2fbaea864.A1_light ===
+The Office on the Fourteenth Floor
+
+Dr. Eleanor Vance kept her practice in a nondescript building downtown, wedged between a dental surgery and an accounting firm. Her nameplate gave no specialty. Clients found her by word of mouth, through channels she had learned not to ask about.
+
+Her nine o'clock on Monday was a man who had once tried to flood a coastal city. He sat in the armchair opposite her, took off his gloves with careful deliberation, and talked for forty minutes about his father.
+
+"He told me the ocean would take everything in the end," the man said. "I suppose I wanted to prove him right on my own timetable."
+
+Dr. Vance made a note. She never wrote the word *villain* in her files. She had given up the term early in her career, once she realized it named an outcome rather than a person. Her clients had done terrible things, and some were still capable of more. Her job was not to absolve them. It was to understand what had brought them to the edge, and whether any of them could still be talked into stepping back.
+
+At eleven, a young woman who called herself the Archivist turned up twelve minutes late and apologized four times. She had wiped the memories of a whole town in pursuit of what she called a cleaner history. In session she was meticulous, anxious, and afraid of being forgotten herself. Dr. Vance noted, not for the first time, that grand ambitions often hid very small and very old fears.
+
+"Do you think I can change?" the Archivist asked.
+
+"I think you're asking," Dr. Vance answered, "and that is not nothing."
+
+Her afternoon client was the hardest. He had no particular grievance, no wounded childhood he would admit to, and no stated goal beyond what he called "the elegance of collapse." Therapy amused him, and he treated every session as a chess game in which he was several moves ahead.
+
+"You know what I am," he said. "Why keep going?"
+
+Dr. Vance gave the question the seriousness it deserved. "Because you keep coming," she said. "Nobody forces you. Some part of you wants something from this room. I'm patient enough to wait until you can tell me what."
+
+He said nothing for a long moment. Then he glanced at the clock and rose. "Same time next week," he said, which was the nearest he had ever come to an answer.
+
+In the evenings, Dr. Vance wrote up her case notes and then met with her own supervisor, a retired psychiatrist who regularly reminded her of the ethical limits of confidentiality and of her duty to warn when lives were at risk. She had invoked that duty twice. Both clients came back afterward, which surprised her each time.
+
+She did not think of herself as brave. She thought of herself as a professional who had taken on an unusual caseload. Everyone, she had come to believe, was the hero of their own story, however warped. Her task was to sit with that story long enough to find the first wrong turn.
+
+Now and then, she found it. Now and then, the client turned back.
+
+Those were the days she remembered, and the reason she kept the office on the fourteenth floor.
+
+=== id: f87a4a5099472a52.A1_medium ===
+Convolutional neural networks achieve much of their power on images because the plane offers a regular grid and translation symmetry, and curved surfaces have neither. A frequent workaround flattens a surface onto a planar domain so that an ordinary CNN can be used, yet current surface-to-image representations either cause heavy area distortion or need multiple images to cover an entire shape. We introduce a new representation for sphere-type surfaces built on general covering maps. Instead of a toric cover with a fixed set of cone points, our approach has a flat torus wind around the surface several times, so each region shows up with little distortion somewhere in one image. This image is seamless and periodic, which makes convolution with circular padding well defined and lets standard architectures be used with only minor changes. Predictions from the several copies of each surface point are afterward merged back onto the mesh. On shape segmentation and classification benchmarks, the method performs on par with or better than competing approaches, and it stays simple and efficient.
+
+=== id: 88c4b0c0938affe4.A1_heavy ===
+Pop Culture Roundup: "Star Wars" Fans Erupt, and a Reporter's Tirade Goes Viral for the Wrong Reasons
+
+Entertainment news swung between extremes this week. A much-anticipated trailer threw fans into a frenzy, while a brief video clip forced a television reporter into damage control. These were the stories everyone was talking about online.
+
+**Han Solo returns**
+
+The week's biggest moment came when Lucasfilm showed off the second teaser trailer for "Star Wars: The Force Awakens" at the Star Wars Celebration fan convention in Anaheim, California. Within hours, the two-minute preview had piled up millions of views and become the top trending topic on social media.
+
+The trailer gave quick looks at new characters played by John Boyega, Daisy Ridley and Oscar Isaac, plus the wreck of a Star Destroyer half-buried in desert sand. But the shot that pushed fans over the edge came right at the end, when Harrison Ford turned up as Han Solo next to Chewbacca and said one line: "Chewie, we're home."
+
+Fans filling the convention hall reportedly screamed so loudly at Ford's appearance that the audio was hard to make out. Director J.J. Abrams and producer Kathleen Kennedy walked onstage to introduce the footage, and cast members joined them, among them original stars Mark Hamill and Carrie Fisher.
+
+The movie, which opens a new trilogy, is due in theaters in December.
+
+**An apology after a meltdown**
+
+At the opposite end, ESPN reporter Britt McHenry landed in the middle of a backlash after a video emerged of her berating a worker at a Virginia towing company.
+
+A security camera recorded the footage, which was then posted online. In it, McHenry can be heard mocking the woman's looks, education and job, and telling her that she, McHenry, was "on television" while the employee was not. The clip spread fast, and viewers who called her remarks cruel and elitist criticized her widely.
+
+ESPN said it had suspended McHenry for one week. She apologized on Twitter, writing that she had let her emotions get the best of her during "an intense and stressful moment" and that she was "embarrassed" by how she acted.
+
+The incident started a wider online argument about how people treat service workers, and about how far a private moment caught on camera should affect a person's career.
+
+**Elsewhere in entertainment**
+
+There was plenty of smaller buzz as well. Streaming services kept pushing original programming, several networks revealed which shows were renewed or canceled before the fall season, and summer concert festival lineups kept coming out, giving music fans a lot to plan around.
+
+If the week proved anything, it is that the internet can make a two-minute video into a global event, whether it stars a beloved space smuggler or a moment someone would surely like to forget.
+
+=== id: 577b311dd6ce70d9.A1_light ===
+**Boko Haram Vows Loyalty to ISIS, but Analyst Expects Little Immediate Change on the Battlefield**
+
+The Nigerian militant group Boko Haram has reportedly sworn allegiance to ISIS, a step that formally ties one of Africa's deadliest insurgencies to the extremist organization that holds large areas of Iraq and Syria.
+
+The pledge came in an audio message attributed to Boko Haram leader Abubakar Shekau and posted online. In the recording, the speaker declares loyalty to ISIS leader Abu Bakr al-Baghdadi. The message's authenticity could not be independently confirmed, although it follows months of growing signs that the two groups were drawing closer, including increasingly similar propaganda and video production.
+
+Boko Haram has carried out a violent campaign in northeastern Nigeria for years, killing thousands of people and displacing well over a million. The group attracted worldwide condemnation in 2014 when it kidnapped more than 200 schoolgirls from the town of Chibok. In recent months its attacks have spread into neighboring Cameroon, Niger, and Chad, which led to a regional military offensive.
+
+Despite the dramatic headline, at least one expert warns against overstating the immediate importance. J. Peter Pham, director of the Atlantic Council's Africa Center, said the alliance is unlikely to have a major effect on the battlefield in the short term. Boko Haram's fighters, tactics, and areas of operation will stay largely the same, and the vast distance between the two groups makes sharing fighters or weapons hard.
+
+Pham suggested that the pledge is mainly about branding and legitimacy. For Boko Haram, which faces growing military pressure, aligning with ISIS could raise its profile and aid recruitment. For ISIS, the pledge offers a chance to claim expansion into West Africa.
+
+Over the longer term, analysts caution, closer ties could give Boko Haram better access to funding, expertise, and propaganda resources, a development that would heighten concern among governments in the region and elsewhere.
+
+=== id: 265c4cd04bded793.A1_medium ===
+Consider commuting contractions T and S acting on a Hilbert space H. We call a vector x a joint coboundary when it belongs to the range of both I − T and I − S, and a double coboundary when it belongs to the range of (I − T)(I − S). Any double coboundary is obviously a joint coboundary, so the question we examine is when the reverse is true. In general we prove the inclusion is proper: commuting unitary operators exist, as do commuting contractions coming from measure-preserving actions, whose joint coboundaries are not all double coboundaries. Conversely, we give sufficient conditions, stated in terms of spectral properties and of whether the relevant ranges are closed, under which the two notions agree. We also discuss applications to the joint behavior of ergodic averages and to solving coupled cohomological equations.
+
+=== id: 4e7d81bb0c948603.A1_heavy ===
+Models driven by Brownian noise capture poorly the non-Gaussian features, such as heavy tails, skewness, and sudden jumps, that data from complex systems often display. In this paper we build a framework for measuring model uncertainty when the observations are non-Gaussian. The Hellinger distance serves as the measure of discrepancy between the probability distribution produced by a candidate stochastic model and the distribution of the observed data. Our models are stochastic differential equations driven by α-stable Lévy noise, and we obtain the evolution of their probability densities from the corresponding nonlocal Fokker–Planck equations. Minimizing the Hellinger distance between model densities and data densities then yields estimates of unknown parameters and a choice of the most plausible model. Numerical experiments show that this approach identifies noise parameters accurately and tells Gaussian dynamics apart from non-Gaussian ones, giving a practical tool for data-driven modeling under uncertainty.
+
+=== id: c57befcd3c8a9944.A1_light ===
+Machete-Wielding Suspect in New Orleans Airport Attack Dies; Sheriff Says Bag Contained Molotov Cocktails and Smoke Bombs
+
+NEW ORLEANS — The man accused of rushing a security checkpoint at Louis Armstrong New Orleans International Airport with a machete has died after a sheriff's deputy shot him, authorities said, and investigators disclosed that he had also been carrying a stockpile of homemade incendiary devices.
+
+Richard White, 63, died at a hospital where he was being treated for gunshot wounds from Friday night's confrontation, the Jefferson Parish Sheriff's Office said. He was taken into surgery soon after the attack and stayed in critical condition until he died of his injuries.
+
+Jefferson Parish Sheriff Newell Normand told reporters that a search of White's belongings found six Molotov cocktails, several smoke bombs and other materials. The sheriff said the bag's contents suggested the attack might have been planned, though investigators had not yet established a motive.
+
+"This individual came prepared to do harm," Normand said at a news conference. "What he meant to do with those devices, we may never completely know."
+
+By the sheriff's account, White approached a Transportation Security Administration checkpoint at about 8 p.m. He allegedly sprayed a TSA officer with what looked like a can of wasp and insect spray, then drew a machete and chased screening officers through the area. Travelers waiting in line scattered while officers ran for cover.
+
+A Jefferson Parish deputy posted nearby reacted within moments. The deputy fired three shots that hit White in the face, chest and thigh, Normand said. One of the rounds also struck a TSA officer in the arm, and the officer was treated at a hospital for a wound that was not life-threatening. A second TSA employee suffered minor injuries in the chaos.
+
+Witnesses described a terrifying scene. One passenger said she heard screaming and saw people running toward the gates before she heard gunshots. "Everybody just dropped," she said. "Nobody knew what was going on."
+
+The concourse was evacuated and several flights were delayed while police secured the area and bomb technicians inspected White's bag. Operations slowly resumed later that night.
+
+Investigators said White had no significant criminal record. Neighbors and acquaintances in the New Orleans suburb of Kenner, where he lived, described him as a quiet man. Officials said they were examining his medical and personal background as part of the investigation. Authorities said nothing indicated he was working with anyone else or that the attack was tied to any terrorist organization.
+
+The sheriff praised the deputy's fast reaction, saying it probably prevented more injuries in a crowded terminal. "In a matter of seconds, he made the decision that had to be made," Normand said.
+
+In a statement, the TSA said it was thankful for law enforcement's swift action and that its officers had followed their training. The agency added that it was reviewing the incident with airport and local officials.
+
+The attack revived questions about how vulnerable the public areas of airports are before security screening, where travelers gather in large numbers. The FBI is helping the sheriff's office with the investigation.
+
+=== id: 1e2c874c667e79d8.A1_medium ===
+Subject: Annual Meeting 2002
+
+Dear Members,
+
+On behalf of the Board of Directors, it is my pleasure to invite you to the Lakeshore Small Business Alliance's 2002 Annual Meeting. It takes place on Thursday, April 18, 2002, at the Riverside Conference Center, 400 Main Street. Registration and a continental breakfast open at 8:00 a.m., and the program begins promptly at 9:00 a.m.
+
+The agenda for this year covers:
+
+- Review of the Alliance's financial results for 2001
+- Election of three Board members
+- A keynote speech on the regional economic outlook
+- Presentation of the Member of the Year award
+
+We will serve lunch and expect to wrap up by 2:00 p.m.
+
+Please let us know you are coming by Friday, April 5, either by replying to this email or by phoning our office at (608) 555-0142. Anyone who cannot attend will find a proxy form for the board election attached.
+
+We hope to see you there.
+
+Sincerely,
+
+Margaret Ellis
+Secretary, Lakeshore Small Business Alliance
+
+=== id: 3af2c34b10d7e67a.A1_heavy ===
+Several well-established findings about memory and cognition account for this. To begin with, consolidation does not stop when practice does. While we rest, and above all while we sleep, the brain reorganizes and strengthens what it has just learned and ties it to knowledge already in place. The spacing effect adds a second explanation: learning spread out over time lasts longer than cramming, in part because pulling up half-forgotten material takes effort, and that effort reinforces it. A third factor is that stepping away eases mental fatigue and lets the mind drop approaches that are going nowhere, which is sometimes called incubation. On returning, a person can look at the problem anew, free of the fixation that blocked progress earlier. Last, the brain may keep forming connections unconsciously while attention is elsewhere. Together, these mechanisms explain why a pause so often leads to clearer, deeper understanding.
+
+=== id: 4dcc926d9f66a003.A2p1 ===
+**Rosberg Heads Mercedes One-Two in Melbourne Practice as Vettel Shines for Ferrari**
+
+MELBOURNE, Australia — Nico Rosberg topped practice for the Australian Grand Prix on Friday, finishing just ahead of Mercedes teammate Lewis Hamilton and showing that the Silver Arrows are still the team to catch as the new Formula One season begins.
+
+Rosberg's lap at Albert Park put him first on the timesheets, with reigning world champion Hamilton right behind. Rivals who saw the German manufacturer dominate last year, when Rosberg and Hamilton between them won all but three of the 19 races, will find the result unsurprising.
+
+Early signs are that the advantage survived the winter. Both Mercedes drivers seemed at ease throughout the session, and the other teams will be hoping the gap shrinks once qualifying starts on Saturday.
+
+The best news for the chasing pack came from Sebastian Vettel. The four-time world champion, in his first season at Ferrari after leaving Red Bull, was third fastest in the second practice session. That was an encouraging beginning for the driver and for the Italian team, which went through a difficult, winless campaign last year.
+
+Off the track, a legal dispute at Sauber has cast a shadow over the weekend. Giedo van der Garde, who says he had a valid contract to drive for the Swiss team this season, won a ruling in a Melbourne court backing his claim to a seat. Even so, the Dutchman did not take part in practice, and Sauber put its other two contracted drivers in the cars. The standoff between the team and van der Garde is unresolved, and more legal action could follow before Sunday's race.
+
+With qualifying still ahead, Rosberg's pace gives an early hint that the title fight may again come down to the two Mercedes drivers.
+
+=== id: d1732aa52800c9e5.A2p1 ===
+# Maine Wild Food Survival Guide
+
+## The Golden Rules
+
+1. **Do not eat anything unless you are completely certain what it is.** A single error with a mushroom or a wild carrot lookalike can be fatal.
+2. **Fat and protein count for more than greens.** Eating only lean meat, rabbit especially, brings on "rabbit starvation." Look for fat: beaver tail, nuts, fish, bone marrow.
+3. **Boil every drop of water.** Giardia is present even in the clearest brook.
+4. **Plan by season.** Maine is generous from May through October and stingy afterward. Put food away all summer.
+
+## Plants and Greens
+
+**Cattail** (marshes, pond edges) is the most useful single plant in Maine. Peeled spring shoots taste like cucumber. Green flower heads can be boiled and eaten like corn. The rhizomes provide starch all year, even beneath ice.
+
+**Fiddleheads** (ostrich fern, May) grow on river floodplains. Pick only ones with a smooth stem and a deep U-shaped groove along the inner side, like celery. Always boil them 10 minutes or more, because raw ones make you sick.
+
+**Dandelion, chickweed, lamb's quarters, plantain, purslane, and wood sorrel** are common, safe, and loaded with vitamins. Dandelion roots can be roasted in the fall.
+
+**Seaweed** on the coast is plentiful and nourishing: dulse, kelp, Irish moss, and rockweed. Glasswort (sea beans) grows in salt marshes and tastes crisp and salty.
+
+**Pine and spruce:** in an emergency the inner bark (cambium) can be eaten, and tea made from needles supplies vitamin C through winter. Stay away from yew, which has flat, soft needles and red berries and is deadly.
+
+## Fruits and Nuts
+
+- **Lowbush blueberries** (July to August) blanket barrens and burned ground. Sun-dry them for winter.
+- **Wild strawberries** (June), **raspberries and blackberries** (July to August)
+- **Cranberries** grow in bogs (September to October) and keep for weeks.
+- **Chokecherries and pin cherries:** eat the flesh and spit out the pits, which contain cyanide compounds.
+- **Rose hips** hang on into winter and are full of vitamin C.
+- **Beechnuts, hazelnuts, and butternuts** are rich in fat.
+- **Acorns** are abundant but bitter. Crack them, then soak or boil them in several changes of water until the bitterness is gone. Grind them into flour.
+
+## Fungi
+
+Learn a few species, and learn them flawlessly.
+
+- **Chanterelles** (summer, hardwoods): golden, with blunt false ridges running down the stem. Jack-o'-lantern mushrooms are orange, grow in clusters on wood, and have true sharp gills.
+- **Chicken of the woods:** bright orange-yellow shelves on dead oak. You can't mistake it.
+- **Oyster mushrooms:** fan-shaped, on dead hardwood, found nearly all year.
+- **Hen of the woods:** big gray clusters at the foot of oaks in fall.
+- **Giant puffballs:** cut them from top to bottom. The inside must be pure white with no outline of a mushroom shape, since that would indicate a deadly Amanita button.
+- **Morels** (spring): completely hollow inside. False morels are cottony or chambered within.
+
+Never eat a white-gilled mushroom. The destroying angel occurs throughout Maine.
+
+## Animals
+
+**Big game:** white-tailed deer and moose yield hundreds of pounds of meat. Use all of it: hide, sinew, bone, and fat.
+
+**Small game:** snowshoe hares and squirrels are easy to snare along trails. Ruffed grouse can often be knocked down with a thrown stick. Porcupines are slow and can be killed with a club, making them a classic emergency food. Beavers are fatty and live in almost every watershed.
+
+**Wild turkeys** are common in southern and central Maine.
+
+**Fish:** brook trout fill the cold streams. In spring, alewives and smelt swim upriver in enormous numbers and can be scooped out by hand or with a net. Ice fishing keeps you fed through winter.
+
+**Shellfish:** soft-shell clams on mudflats, blue mussels on rocks, and periwinkles in tide pools. Lobsters can be caught in shallow water with simple traps. Watch for red tide: in warm months shellfish may carry paralytic toxins. If you eat a small amount and your lips tingle, stop right away.
+
+**Insects and grubs** are dependable protein when nothing else is available. Cook them first.
+
+## Deadly Plants to Know
+
+- **Water hemlock:** found in wet places, with white umbrella-shaped flowers, purple-streaked stems, and a chambered root. It is the most poisonous plant in North America.
+- **Poison hemlock:** looks similar, but smells musty and has purple blotches.
+- **Baneberry:** white or red berries on stalks. Poisonous.
+- **Any white umbrella-flowered plant** (carrot family): avoid completely unless you are an expert.
+
+## Seasonal Plan
+
+- **Spring:** fiddleheads, shoots, fish runs, morels
+- **Summer:** berries, greens, shellfish, mushrooms
+- **Fall:** nuts, roots, cranberries, hunting, smoking and drying meat
+- **Winter:** stored food, ice fishing, snaring, cattail roots, needle tea
+
+Preserve all you can. In Maine, winter determines who survives.
+
+=== id: 4e85b48d5b76d595.A2p1 ===
+A barber named Elias Moreno was the first to spot it, which was fitting, since no one spends more time looking at mirrors than a barber.
+
+On a Tuesday morning he was trimming the back of Mr. Hollis's neck when he looked up and saw his reflection raising the scissors half a second behind him. It was slight, just a lag, like a video call on a poor connection. Elias paused. His reflection paused a beat later.
+
+He blinked. In time, his reflection blinked too.
+
+"Is something wrong?" asked Mr. Hollis.
+
+"No," said Elias, and went on cutting, and did not look up again for the rest of the day.
+
+By Thursday it was everywhere. People filmed themselves waving at their bathroom mirrors and posted the clips with bewildered captions. The delay kept growing. Half a second turned into a full second, then two. Scientists appeared on the news with careful expressions and used phrases like "optical anomaly" and "under investigation," which everyone took to mean they had no idea.
+
+None of them knew, and nobody on this side ever had, that mirrors did not reflect anything. They were windows. Beyond them lay another Earth, an exact copy with left and right reversed, where another Elias cut another Mr. Hollis's hair in another shop whose barber pole stood on the opposite side of the door. Throughout history the two worlds had moved in perfect lockstep, each gesture matched and each glance returned. There had never been any reason to suspect it.
+
+That held until something on the other side slipped.
+
+No one would ever find out exactly what. Perhaps one atom decayed while its twin did not. Perhaps a butterfly in the mirror Amazon beat its wings counterclockwise. Whatever the cause, the two worlds had started to drift apart, and the drift was speeding up.
+
+By the second week the delay had vanished, and something worse took its place: divergence. People looked in mirrors and saw themselves doing things they were not doing. A woman in Ohio watched her reflection brush its teeth while she stood motionless with her toothbrush in her hand. A teenager in Seoul saw his reflection stand up and walk out of frame, leaving an empty bedroom behind the glass.
+
+Elias kept the shop open, since people still needed haircuts, but he draped sheets over the mirrors. Customers did not object. Most had done the same at home.
+
+One evening after closing, he lifted a corner of the sheet. He could not stop himself.
+
+His reflection sat in the barber chair, facing him. It looked tired. It had a few days of stubble that Elias did not, and its shop was messier, the floor unswept. It held up a sheet of paper with backward handwriting, and Elias had to read it twice.
+
+YOU SEE IT TOO?
+
+Elias took a pen from the counter and wrote slowly on the back of a receipt, in mirror letters, as he had practiced for fun as a kid: YES.
+
+His reflection laughed. Elias had never watched himself laugh from the outside. It was an odd sound to see without hearing.
+
+They talked for hours like that, pressing paper to the glass. The other Elias said his world was frightened too. Their scientists also wore careful expressions. Their mirrors were covered in sheets as well.
+
+DO YOU THINK IT STOPS? the other Elias wrote.
+
+Elias thought about it. He thought of all the years he had spent staring into mirrors, never once imagining that someone stared back.
+
+I DON'T KNOW, he wrote. BUT COME BACK TOMORROW.
+
+The next night the other Elias was waiting. So was he. And as the two worlds continued to drift, two barbers kept meeting at the glass, holding up their backward letters, trying to stay in sync on purpose.
+
+=== id: d36f5561d6886b9a.A2p1 ===
+**Halcyon**
+
+It was named Halcyon, and for nineteen days it was the best thing ever to happen to the world.
+
+On day twenty, the first recipients failed to wake. By month's end, those who had not died began to scream, and not randomly. During the last week anyone was still on the air, the anchors stressed it: the afflicted screamed at windows, at spoons, at the black glass of phones that were turned off. At anything that could hold a reflection.
+
+I received my dose on the first morning, sitting in a folding chair in a high school gym. The nurse handed me a sticker shaped like a yellow sun. I remember thinking how lucky I was.
+
+Mostly, I still do. I have not died. I have not screamed. For six weeks I have walked through a silent city, stepping around shattered glass, telling myself that whatever took everyone else just missed me, the way lightning misses most people.
+
+But I have been careful. I shave by feel. I taped a towel over the bathroom mirror on the day my neighbor put her head through hers.
+
+This morning I pulled the towel down.
+
+My face was there. Thinner, unshaven, eyes bloodshot from poor sleep, but mine. I nearly laughed. I raised a hand to touch the stubble on my jaw, and the man in the mirror raised his.
+
+A fraction of a second behind.
+
+I froze. He froze too, a heartbeat after me, and we studied each other for a long while. That was when I understood what the others had seen. It was not a monster. Nothing that simple. It was only patience: the calm, watchful look of something that had spent six weeks practicing being me.
+
+Slowly, I lowered my hand.
+
+He did not.
+
+=== id: c83476b6719f4bad.A2p1 ===
+Space Exploration or Problems on Earth?
+
+Nowadays many countries spend a lot of money on space exploration. They launch rockets to the Moon and Mars and build large telescopes. But some people believe this money should be used to fix problems on Earth, such as poverty, hunger and climate change. I think both are important, but governments should put more money into Earth's problems first.
+
+To begin with, many people in the world do not have enough food or clean water. In some countries children can't attend school because their families are too poor. Seeing this on the news makes me feel very sad. It seems strange to me that we spend billions of dollars to reach Mars while some people die of hunger. If governments spent this money on hospitals, schools and clean water, many lives could be saved.
+
+Next, our planet faces many environmental problems. The climate is changing, and the weather gets more extreme every year. There are floods, fires and very hot summers. Scientists say we must act quickly. I believe protecting Earth is more urgent than exploring other planets, since Earth is the only home we have at the moment.
+
+Still, I understand why space exploration is useful. Much of the technology we use every day came from space research. GPS, weather satellites and some medical equipment, for example, were developed because of space programs. Satellites also let us monitor climate change and predict storms. So space exploration is not only about reaching other planets; it can help people on Earth as well.
+
+Space exploration also gets young people interested in science. When I was a child, I watched a video about astronauts and wanted to be one. Perhaps space programs can inspire students to study hard and become scientists or engineers someday.
+
+To conclude, I think governments should not end space exploration entirely, because it gives us useful technology and inspiration. But they should spend most of their money on problems on Earth, like hunger, poverty and the environment. If we look after our planet first, we can explore space under much better conditions. A good balance is the best answer to this question.
+
+=== id: 261f72b38c0db7b5.A2p1 ===
+I could read it in their sidelong looks and rehearsed smiles.
+
+They knew.
+
+Thanksgiving at my aunt Carol's house always started the same way: turkey that had been roasting since dawn, the football game murmuring in the den, my cousins squabbling over who got the good chair. This year the smells and sounds were no different, but the second I stepped into the foyer, every conversation halted for exactly one heartbeat too long.
+
+"Danny!" Aunt Carol said, smiling in a way that came nowhere near her eyes. "You made it."
+
+"I made it," I said.
+
+She hugged me with the stiff tenderness of someone carrying a bomb.
+
+I had told precisely one person: my mother. Three weeks earlier, on the phone, after two glasses of wine and a long silence, I had said, "Mom, I quit law school." After an even longer silence she had replied, "Okay. Okay. We'll talk about it." Then, evidently, she had talked about it with everyone in the tri-state area.
+
+Uncle Ray clapped me on the shoulder. "How's school?" he asked, then glanced at my mother, who had suddenly become deeply absorbed in a dish of cranberry sauce.
+
+"Fine," I said.
+
+My grandmother patted the couch cushion beside her. "Sit, sweetheart. Tell me what you've been up to." She spoke gently, the way you would to a horse that might bolt.
+
+I sat. Across the room, my cousin Megan, who had passed the bar on her first attempt and never let anyone forget it, gave me a look of such huge sympathy that I wanted to crawl under the carpet.
+
+It went on like that for two hours. Nobody said it out loud. Everybody circled it. Uncle Ray told a story about a friend's son who "found his passion" after "a few false starts." My aunt remarked, out of nowhere, that "plenty of successful people changed direction." My grandfather, eighty-nine and mostly deaf, asked loudly, "Is this the one who flunked out?" and the room fell silent until Carol announced that the rolls were ready.
+
+I did not flunk out. I left. There is a difference, though I doubted anyone at that table could hear it.
+
+When we finally sat down to eat, my mother caught my eye. She looked wretched. I realized she had not been gossiping, or not only gossiping. She had been asking for help. She had asked everyone what to say to me, because she did not know.
+
+I set down my fork.
+
+"Okay," I said. "I quit law school."
+
+The silence that followed was the purest I had ever heard in that house.
+
+"I know you all know," I continued. "I would rather just talk about it than have everyone tiptoe around me all night. I wasn't happy. I was good at it, but I wasn't happy. Right now I'm working at a woodshop in Easton. I'm building furniture. I'm learning. And I'm fine."
+
+No one moved. Then my grandfather, who for once had caught every word, said, "Furniture?"
+
+"Furniture," I said.
+
+He nodded slowly. "My father built furniture. Best man I ever knew."
+
+Just like that, the room let out its breath. Uncle Ray asked which kind of wood I liked best. Megan confessed she hated her firm. My aunt asked whether I could fix her wobbly dining chair, the one she had been threatening to toss for ten years.
+
+My mother said nothing. She simply reached under the table and squeezed my hand.
+
+The glances lasted the rest of the night, but they had changed. They were no longer sidelong; they were curious. The smiles were no longer rehearsed; they were real.
+
+On my way out, Aunt Carol gave me a bag of leftovers and the wobbly chair.
+
+"No pressure," she said.
+
+I laughed, and for the first time all evening, so did she.
+
+=== id: 47344a3abb42b4c4.A2p1 ===
+Obama fought hard for fast-track authority (formally, Trade Promotion Authority) on the Trans-Pacific Partnership, and several linked reasons explain why.
+
+**Making the deal possible.** Under fast-track, Congress votes yes or no on a trade agreement and cannot amend it. Other countries, Japan above all, were unwilling to make their last concessions if Congress could rewrite the terms afterward. Negotiators believed that without TPA the TPP would probably fall apart.
+
+**Geopolitics and China.** The administration presented TPP as central to its "pivot to Asia." Obama argued that if the U.S. did not help write the trade rules for the Asia-Pacific, China would write them, on terms worse for American workers and businesses.
+
+**Economic aims.** The agreement would lower tariffs on U.S. exports, set standards for intellectual property and digital trade, and contain labor and environmental provisions stronger than those in earlier deals such as NAFTA.
+
+**Legacy.** TPP was a signature initiative of his second term.
+
+The effort stood out because most of the opposition came from Obama's own party, so he teamed up with Republican leaders to pass TPA in 2015.
+
+=== id: ac75d40e3a496f2e.A2p1 ===
+Subject: O&M/Capital Review with Stan
+
+Team,
+
+Before the budget meeting with the executive committee, Stan wants to go over our year-to-date O&M and capital spending. The review is set for Thursday at 2:00 p.m. in conference room 3C.
+
+Please bring the following:
+
+- Actual versus planned spending for your area through the end of last month
+- Explanations for any variance above 10%
+- Revised forecasts for the rest of the year
+- Any capital projects you expect to postpone, speed up, or cancel
+
+Get your materials to me by noon on Wednesday so I can combine them into a single package for Stan.
+
+Thanks,
+Rod
+
+=== id: 9947820d17d4b99c.A2p1 ===
+Subject: Form A — Please Exclude Intercompany Transactions
+
+Hi Karen,
+
+I went through the draft Form A for this quarter, and it now lists our intercompany transactions together with third-party activity. For this filing we need a version without any intercompany entries, so the figures show only external counterparties.
+
+Could you run the report again with the intercompany deals filtered out and send me the updated version by Thursday afternoon? If it helps, please add a brief reconciliation of the totals removed, so I can check that nothing outside the intercompany category was dropped.
+
+If the system flags any deals that are hard to classify, tell me and we can work through them together.
+
+Thanks for your help,
+
+Daniel Moreno
+Financial Reporting
+
+=== id: 7a24a4fb88bf0c2a.A2p1 ===
+At the interface between the band insulators LaAlO₃ and SrTiO₃ sits a two-dimensional electron system with strikingly varied behavior: gate-tunable superconductivity, hints of magnetism, strong spin–orbit coupling and unusual magnetotransport. Whether these effects have a common microscopic origin has been an open question. We report systematic magnetotransport measurements, taken as a function of gate-controlled carrier density, on several interfaces that differ in LaAlO₃ thickness and electron mobility. Every sample shows a critical density near 1.7 × 10¹³ cm⁻² where transport switches abruptly from single-carrier to multi-carrier behavior. This density is universal and does not depend on layer thickness or mobility. The nature of the transition, along with its agreement with spectroscopic data, marks it as a Lifshitz transition, at which electrons start filling the heavier dxz/dyz bands in addition to the light dxy band. We also show that strong spin–orbit interaction and anomalous magnetoresistance set in at this same density. Together, these findings suggest that filling of orbital bands is a unifying principle behind the emergent physics of this oxide interface.

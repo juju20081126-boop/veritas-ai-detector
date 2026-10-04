@@ -9,8 +9,8 @@
       "access_paths": [
         "claude-code-subagent:opus"
       ],
-      "verified_model_id": null,
-      "verification": "pending"
+      "verified_model_id": "claude-opus-5-5",
+      "verification": "message.model in 110 assistant messages of 82 subagent transcripts (all equal)"
     },
     "claude-sonnet-5-5": {
       "kind": "frontier",
@@ -20,8 +20,8 @@
       "access_paths": [
         "claude-code-subagent:sonnet"
       ],
-      "verified_model_id": null,
-      "verification": "pending"
+      "verified_model_id": "claude-sonnet-5-5",
+      "verification": "message.model in 127 assistant messages of 82 subagent transcripts (all equal)"
     },
     "gpt-6-astra": {
       "kind": "frontier",
@@ -45,8 +45,8 @@
       "access_paths": [
         "claude-code-subagent:haiku"
       ],
-      "verified_model_id": null,
-      "verification": "pending",
+      "verified_model_id": "claude-haiku-4-5-20251001",
+      "verification": "message.model in 146 assistant messages of 82 subagent transcripts (all equal)",
       "note": "used as paraphraser/humanizer (attack tool) and optionally as extra generator"
     }
   },

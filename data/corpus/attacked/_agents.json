@@ -98,5 +98,61 @@
  "a2p2__haiku__opus__locked__04": {
   "agent_id": "abb41055dba84a545",
   "alias": "haiku"
+ },
+ "a1a2p1__sonnet__opus__dev__00": {
+  "agent_id": "af80cfb4bace89d1e",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__train__00": {
+  "agent_id": "a6ddfd3187c892b77",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__train__01": {
+  "agent_id": "abc69e4a4c2585375",
+  "alias": "sonnet"
+ },
+ "a1a2p1__sonnet__opus__train__02": {
+  "agent_id": "accea55020b0575dd",
+  "alias": "sonnet"
+ },
+ "a1a2p1__opus__sonnet__dev__00": {
+  "agent_id": "a1c06405769478903",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__train__00": {
+  "agent_id": "a24469f1c532badae",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__train__01": {
+  "agent_id": "a95ee523d77a759a0",
+  "alias": "opus"
+ },
+ "a1a2p1__opus__sonnet__train__02": {
+  "agent_id": "a73b18c7ba1063253",
+  "alias": "opus"
+ },
+ "a3__haiku__opus__dev__00": {
+  "agent_id": "a0f7e3426a139c72a",
+  "alias": "haiku"
+ },
+ "a3__haiku__opus__train__00": {
+  "agent_id": "ae6c3f3b5f20491ca",
+  "alias": "haiku"
+ },
+ "a3__haiku__opus__train__01": {
+  "agent_id": "a9704b10db1c8669a",
+  "alias": "haiku"
+ },
+ "a3__haiku__sonnet__dev__00": {
+  "agent_id": "ab3b7db151c8f0fcf",
+  "alias": "haiku"
+ },
+ "a3__haiku__sonnet__train__00": {
+  "agent_id": "a83e658e8baed9332",
+  "alias": "haiku"
+ },
+ "a3__haiku__sonnet__train__01": {
+  "agent_id": "a89e477e4c7256b1f",
+  "alias": "haiku"
  }
 }

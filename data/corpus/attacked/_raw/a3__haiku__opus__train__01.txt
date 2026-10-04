@@ -1,0 +1,117 @@
+=== id: 4e7d81bb0c948603.A3_humanizer ===
+Real-world data rarely looks clean. You get heavy tails, skewed distributions, weird jumps—stuff that doesn't fit the standard Brownian motion models at all. This paper's about measuring how far off your model is from the actual data using something called Hellinger distance. The idea is to work with stochastic differential equations driven by α-stable Lévy noise and track how the probability density evolves through nonlocal Fokker–Planck equations. Then you minimize that Hellinger distance to fit parameters and pick the best model. Tests show it actually works for telling Gaussian from non-Gaussian dynamics, which makes it useful for real data-driven modeling when you're dealing with uncertainty.
+
+=== id: c57befcd3c8a9944.A3_humanizer ===
+Guy with a machete charged a TSA checkpoint at the New Orleans airport Friday night. He's dead now—shot by a sheriff's deputy during the confrontation. Richard White, 63, died at the hospital after surgery for his gunshot wounds. What made it worse: authorities found six Molotov cocktails and smoke bombs in his bag, plus other incendiary stuff. Sheriff said it looked planned, though they still don't know why he did it. White sprayed wasp spray at a TSA officer, pulled a machete, chased people through the area. The deputy shot him three times—face, chest, thigh. A TSA officer got hit in the arm, another had minor injuries. Travelers were screaming, running. The concourse got evacuated, flights delayed while bomb techs checked things out. White didn't have much of a criminal history, neighbors said he was quiet. FBI's helping with the investigation. No sign he was working with anyone else or tied to any group.
+
+=== id: 1e2c874c667e79d8.A3_humanizer ===
+We're having the annual meeting on Thursday, April 18 at the Riverside Conference Center. Doors open at 8 with coffee and breakfast, program starts at 9. We'll go over the 2001 numbers, vote on three new board members, hear from someone about the regional economy, and give out the Member of the Year award. Lunch is covered, should wrap up around 2. RSVP by April 5 if you can make it. If you can't, there's a proxy form for the election. Hope to see you there.
+
+=== id: 3af2c34b10d7e67a.A3_humanizer ===
+There's a few things going on when you learn something. First, your brain keeps organizing and strengthening what you learned even after you stop practicing—especially when you sleep. The spacing effect is real too: learning spaced out over time sticks better than cramming because you have to work to retrieve half-forgotten stuff, which reinforces it. Taking a break helps. You get tired mentally and get stuck on bad approaches, but when you come back fresh, you see the problem differently. Plus your brain's probably still making connections in the background while you're doing something else. That's why stepping away usually means you figure it out better.
+
+=== id: 4dcc926d9f66a003.A3_humanizer ===
+Nico Rosberg was fastest in practice for the Australian Grand Prix on Friday at Albert Park, just ahead of his Mercedes teammate Lewis Hamilton. Not surprising given Mercedes dominated last year—they won all but three races with these two drivers. Both looked solid throughout, so other teams are hoping the gap closes by qualifying Saturday. Sebastian Vettel had the best news for the rest: the Ferrari driver finished third in the second session, a good sign for him starting his first year with the team after leaving Red Bull. Ferrari had a rough season last year. Meanwhile, there's a mess at Sauber. Giedo van der Garde won a court ruling saying he has a contract to drive for them, but he didn't run in practice—the team ran their two other drivers instead. It's unresolved and there could be more legal action before the race Sunday.
+
+=== id: d1732aa52800c9e5.A3_humanizer ===
+Cattail is your best friend in Maine—it grows in marshes and pond edges. Spring shoots taste like cucumber, flower heads boil like corn, and the roots give you starch year-round even under ice. Fiddleheads in May: look for the ones with smooth stems and a deep U-groove inside. Boil them 10 minutes minimum or you'll get sick. Dandelion, chickweed, lamb's quarters, plantain, purslane, and wood sorrel are everywhere, safe, packed with vitamins. Seaweed along the coast is solid—dulse, kelp, Irish moss, rockweed. Pine and spruce needles make decent tea if you need vitamin C through winter. Inner bark (cambium) works in an emergency. Avoid yew—flat soft needles and red berries. It'll kill you.
+
+Lowbush blueberries cover the barrens July and August, dry them for winter. Strawberries in June, raspberries and blackberries July-August. Cranberries in bogs September-October, they keep for weeks. Chokecherries and pin cherries: eat the flesh, spit the pits. Rose hips last into winter. Beechnuts, hazelnuts, butternuts have good fat. Acorns are everywhere but bitter—crack them, soak or boil in fresh water until the taste is gone, grind into flour.
+
+Chanterelles in summer hardwoods: golden with blunt false ridges on the stem. Jack-o'-lanterns are orange, cluster on wood, sharp gills. Chicken of the woods is bright orange-yellow shelves on dead oak. Oyster mushrooms are fan-shaped on dead hardwood most of the year. Hen of the woods is gray clusters at oak bases in fall. Giant puffballs: slice one top to bottom and the inside has to be pure white, no mushroom shape inside or it's a deadly Amanita. Morels in spring are hollow inside. False morels are cottony or chambered. Never eat white-gilled mushrooms. The destroying angel is all over Maine.
+
+Snowshoe hares and squirrels are easy to snare on trails. You can knock down ruffed grouse with a stick. Porcupines move slow and you can club them—classic emergency food. Beaver is fatty and in most watersheds. White-tailed deer and moose mean hundreds of pounds of meat and you use all of it. Brook trout fill cold streams. Spring alewives and smelt runs are massive—scoop them by hand or net. Soft-shell clams on mudflats, blue mussels on rocks, periwinkles in tide pools. Lobsters in shallow water with simple traps. Watch for red tide in warm months—shellfish can carry toxins. Eat a little first, if your lips tingle, stop.
+
+Water hemlock kills. It's in wet areas, white umbrella flowers, purple-streaked stems, chambered root. Poison hemlock looks similar, musty smell, purple blotches. Baneberry has white or red berries on stalks. Any white umbrella-flowered plant in the carrot family: don't touch it unless you really know what you're doing.
+
+=== id: 4e85b48d5b76d595.A3_humanizer ===
+A barber named Elias Moreno noticed it first. He was cutting Mr. Hollis's neck on Tuesday morning and saw his reflection holding the scissors half a second late. Just a lag, like a bad video call. He stopped. His reflection stopped after him. By Thursday it was everywhere—people filming themselves in mirrors, posting confused clips. Delay kept growing. Half a second became a full second, two seconds. Scientists on TV with careful faces said "optical anomaly," which everyone knew meant they had no idea.
+
+What nobody knew was mirrors weren't reflecting anything. They were windows. Another Earth on the other side, perfect copy, left and right swapped. For all of history the two worlds moved in perfect lockstep. Every gesture matched. Until something over there slipped. Maybe an atom decayed wrong. Maybe a butterfly flapped the wrong way. The two worlds started drifting and it kept accelerating.
+
+Two weeks in, people weren't just seeing delays. They were seeing different things. A woman in Ohio watched her reflection brush its teeth while she stood still. A teenager in Seoul saw his reflection walk out of frame, leaving an empty bedroom behind the glass. Elias hung sheets over his mirrors. So did most people.
+
+One evening he lifted the corner. His reflection was sitting in the barber chair facing him. It looked tired, had stubble Elias didn't have, messier shop. It held up paper with backward handwriting: YOU SEE IT TOO?
+
+Elias grabbed a pen and wrote backward on a receipt, the way he used to do as a kid for fun: YES.
+
+His reflection laughed. He'd never seen himself laugh from the outside. Strange sound to watch without hearing.
+
+They talked for hours with paper to the glass. The other Elias said his world was scared too. His scientists had careful faces. His mirrors were covered.
+
+DO YOU THINK IT STOPS? the other wrote.
+
+Elias thought about all the years looking into mirrors, never once thinking someone was looking back.
+
+I DON'T KNOW. BUT COME BACK TOMORROW.
+
+The next night the other Elias was waiting. So was he. As the two worlds kept drifting apart, two barbers kept meeting at the glass, holding up their backward letters, trying to stay in sync on purpose.
+
+=== id: d36f5561d6886b9a.A3_humanizer ===
+They called it Halcyon, and for nineteen days it was perfect. On day twenty the first people didn't wake up. By month's end the ones still alive were screaming, and not random—at windows, at spoons, at dark phone screens. Anything that could hold a reflection.
+
+I got my shot the first morning in a high school gym. Yellow sun sticker. I thought I was lucky. Still do mostly. Haven't died. Haven't screamed. Six weeks in a silent city, stepping over broken glass, telling myself it just missed me like lightning misses most people. But I've been careful. Shaved by feel. Taped a towel over my bathroom mirror the day my neighbor went through hers.
+
+This morning I pulled the towel down. My face was there. Thinner, unshaven, bloodshot, but mine. I almost laughed. I lifted my hand to touch my stubble and the guy in the mirror lifted his. A fraction late. I went still. He went still too, a heartbeat after, and I understood what the others saw. Not a monster. Just patience: something calm and patient that spent six weeks learning to be me. Slowly I lowered my hand. He didn't.
+
+=== id: c83476b6719f4bad.A3_humanizer ===
+A lot of countries spend huge money on space. Rockets to the Moon and Mars, big telescopes. But some people think that money should go to Earth problems—poverty, hunger, climate change. I think both matter, but governments should fix Earth problems first.
+
+So many people don't have food or clean water. Kids can't go to school because their families are too poor. It's sad seeing that on the news. We spend billions on Mars while people starve. If governments used that money for hospitals, schools, clean water, a lot of lives would be saved.
+
+Earth has serious environment problems too. Climate's changing, weather getting more extreme. Floods, fires, crazy heat. Scientists say we need to act fast. I think protecting Earth is more urgent than exploring other planets. Earth's the only home we have right now.
+
+But I get why space exploration matters too. A lot of tech we use every day came from space research—GPS, weather satellites, medical equipment. Satellites help us watch climate change and predict storms. So space programs aren't just about other planets, they help people on Earth.
+
+Plus space exploration gets young people excited about science. I watched astronaut videos when I was a kid and wanted to be one. Space programs can inspire students to study hard and become scientists or engineers.
+
+So I don't think governments should stop space exploration, because it gives us useful tech and inspiration. But they should spend most of the money on Earth problems—hunger, poverty, environment. If we take care of our planet first, then we can explore space with better conditions. Balance is the answer.
+
+=== id: 261f72b38c0db7b5.A3_humanizer ===
+I could see it in their looks and the way they smiled. They knew.
+
+Thanksgiving at Aunt Carol's is always the same: turkey smell since dawn, football in the den, cousins fighting over the good chair. This year the smells and sounds were the same but the moment I walked in, every conversation stopped for one heartbeat too long.
+
+"Danny!" Carol said, smile that didn't reach her eyes. "You made it."
+
+"I made it," I said.
+
+She hugged me like I was a bomb.
+
+I'd told one person: my mom. Three weeks ago, after wine, I said, "Mom, I quit law school." Long silence. "Okay. We'll talk about it." She'd apparently told everyone in the tri-state area.
+
+Uncle Ray asked "How's school?" and then his eyes went to my mom, suddenly very interested in cranberry sauce.
+
+"It's fine," I said.
+
+Grandma patted the couch. "Sit, sweetheart. Tell me what you're doing." Voice like talking to a horse that might bolt.
+
+Across the room Megan, who passed the bar exam first try and never shut up about it, looked at me with so much pity I wanted to crawl under the carpet.
+
+For two hours it was like this. Nobody said it. Everyone circled it. Ray told a story about some guy's son who "found his passion" after "a few false starts." Carol mentioned "plenty of successful people changed direction." Grandpa, eighty-nine and mostly deaf, yelled "Is this the one who flunked out?" and the room went dead quiet until Carol said the rolls were ready.
+
+I didn't flunk out. I left. Different thing, though nobody at that table heard it.
+
+At dinner Mom caught my eye. She looked miserable. She'd been asking for help. Asking everyone what to say to me.
+
+I put my fork down.
+
+"Okay. I quit law school. You all know. I'd rather just talk about it than have everyone be weird all night. I wasn't happy. I was good at it, but wasn't happy. I'm working at a woodshop in Easton. Building furniture. Learning. I'm okay."
+
+Nobody moved. Then Grandpa, who heard everything for once, said, "Furniture?"
+
+"Furniture," I said.
+
+He nodded. "My father built furniture. Best man I ever knew."
+
+Just like that, the room breathed. Ray asked what kind of wood I like. Megan admitted she hates her firm. Carol asked if I could fix her wobbly dining chair she's been threatening to throw out for years.
+
+Mom didn't say anything. Just squeezed my hand under the table.
+
+The looks stayed the rest of the night but different now. Not hooded. Curious. Smiles real.
+
+Walking out, Carol handed me a bag of leftovers and the wobbly chair.
+
+"No pressure," she said.
+
+I laughed. So did she.
