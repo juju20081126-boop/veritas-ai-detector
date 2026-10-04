@@ -33,6 +33,7 @@ Veritas AI 是一款完全離線運行、達到生產級品質的 4 類別 AI �
 - [Glossary](#glossary) — 專有名詞辭典 (Glossary)
 - [Limitations](#limitations) — 限制與已知邊界
 - [Changelog](#changelog) — 變更日誌 (Changelog)
+- [Release Checklist](#release-checklist) — 發布檢查清單 (Release Checklist)
 - [License & Acknowledgments](#license--acknowledgments) — 授權條款與致謝
 
 ---
@@ -920,6 +921,19 @@ Humanizer 係指專為逃逸 AI 偵測而設計之對抗性改寫工具、提示
 - **2026-09-29** (*Claude Code*): 完成前端第 2 輪重新設計（佈局最佳化與互動式控制項）。
 - **2026-09-29** (*Claude Code*): 完成前端目錄所有權交接與初始介面重構。
 - **2026-09-29** (*Antigravity CLI*): 建立儲存庫基礎架構、離線推論引擎架構與文體計量特徵整合。
+
+---
+
+## 📋 Release Checklist
+
+在標記版本標籤並正式發布 Veritas AI 之前，請確認通過每項品質檢驗閘門：
+
+- [ ] **單元測試全數通過（Tests Green）**：執行 `pytest scripts/tests -q` 確認所有單元測試綠燈通過（14/14 項測試通過）。
+- [ ] **資料完整性檢查通過（Integrity Gate PASS）**：資料集完整性與群組切分隔離閘門檢驗無誤 (`python scripts/check_integrity.py`)。
+- [ ] **評估報告存在於 data/reports/（Report Exists in data/reports/）**：實證前沿偵測基準評估報告已產出且位於 `data/reports/FRONTIER_DETECTION_REPORT.md`。
+- [ ] **README 數據具備來源依據（README Numbers Sourced）**：`README.md` 與 `README.zh-TW.md` 中所有指標與量化宣稱皆嚴格溯源自基準評估產物或同行評審文獻引用。
+- [ ] **無敏感資訊外洩（No Secrets Committed）**：工作目錄樹已審核，確認未提交任何 API 金鑰、存取權杖或憑證資訊。
+- [ ] **HANDOFF.md 紀錄更新（HANDOFF.md Updated）**：跨代理協同紀錄已更新，詳實記載提交雜湊（commit hashes）、diff 佐證與發布里程碑細節。
 
 ---
 

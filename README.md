@@ -33,6 +33,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 - [Glossary](#glossary)
 - [Limitations](#limitations)
 - [Changelog](#changelog)
+- [Release Checklist](#release-checklist)
 - [License & Acknowledgments](#license--acknowledgments)
 
 ---
@@ -902,6 +903,19 @@ This changelog records the repository evolution and cross-agent coordination his
 - **2026-09-29** (*Claude Code*): Completed frontend redesign Round 2 (layout polishing and interactive controls).
 - **2026-09-29** (*Claude Code*): Frontend ownership transition and initial UI redesign.
 - **2026-09-29** (*Antigravity CLI*): Initial repository baseline setup, runtime engine architecture, and stylometrics integration.
+
+---
+
+## 📋 Release Checklist
+
+Before tagging and publishing an official release of Veritas AI, verify every quality gate:
+
+- [ ] **Tests Green**: All unit tests pass cleanly via `pytest scripts/tests -q` (14/14 tests passing).
+- [ ] **Integrity Gate PASS**: Dataset integrity and group-split hygiene gatekeeper passes without errors (`python scripts/check_integrity.py`).
+- [ ] **Report Exists in data/reports/**: Empirical frontier detection benchmark report is generated and present at `data/reports/FRONTIER_DETECTION_REPORT.md`.
+- [ ] **README Numbers Sourced**: Every metric and quantitative claim in `README.md` is strictly traceable to benchmark artifacts or peer-reviewed literature citations.
+- [ ] **No Secrets Committed**: Working tree is scanned and free of API keys, tokens, or credential leaks.
+- [ ] **HANDOFF.md Updated**: Cross-agent handoff log is updated with commit hashes, diff evidence, and release milestone details.
 
 ---
 
