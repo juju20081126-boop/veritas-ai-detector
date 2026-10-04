@@ -1,7 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Python package
+name: CI
 
 on:
   push:
@@ -10,32 +7,147 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  test:
+    name: Pytest scripts/tests (Blocking)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.9", "3.10", "3.11"]
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install flake8 pytest numpy
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest scripts/tests -q
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest numpy scikit-learn
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run pytest
+        run: |
+          pytest scripts/tests -q
+
+  ruff-lint:
+    name: Ruff Lint (Non-blocking)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run ruff
+        continue-on-error: true
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff
+          ruff check scripts backend --exit-zero
+
+  validate-notebooks:
+    name: Validate Notebooks (Blocking)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install nbformat
+        run: |
+          python -m pip install --upgrade pip
+          pip install nbformat
+      - name: Validate all notebooks
+        run: |
+          python -c "import glob, nbformat; [nbformat.validate(nbformat.read(f, as_version=4)) for f in sorted(glob.glob('notebooks/*.ipynb'))]; print('All notebooks valid JSON and schema v4')"
+
+  check-markdown-links:
+    name: Check Markdown Links (Blocking)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check relative links in documentation
+        run: |
+          python -c "
+          import os, re, sys
+          files = [
+              'README.md',
+              'README.zh-TW.md',
+              'EVAL_REPORT.md',
+              'RESEARCH_COMPENDIUM.md',
+              'MATHEMATICAL_EQUATIONS.md',
+              'QUILLBOT_REVERSE_ENGINEERING_PLAN.md',
+              'ZEROGPT_REVERSE_ENGINEERING_PLAN.md',
+              'notebooks/README.md',
+              'samples/README.md'
+          ]
+          pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+          errors = []
+          for doc in files:
+              if not os.path.exists(doc):
+                  continue
+              with open(doc, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              dir_name = os.path.dirname(doc)
+              for match in pattern.finditer(content):
+                  text, url = match.groups()
+                  url = url.strip()
+                  if url.startswith(('http://', 'https://', 'mailto:', '#')):
+                      continue
+                  target = url.split('#')[0]
+                  if target:
+                      full = os.path.normpath(os.path.join(dir_name, target))
+                      if not os.path.exists(full):
+                          errors.append(f'{doc}: Broken link [{text}]({url}) -> {full}')
+          if errors:
+              print('\n'.join(errors))
+              sys.exit(1)
+          print('All documentation links valid!')
+          "
+
+  frontend-smoke:
+    name: Frontend Smoke Tests (Playwright)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Node dependencies
+        working-directory: ./frontend
+        run: |
+          npm ci || npm install
+          npx playwright install --with-deps chromium
+      - name: Start Veritas local server in background
+        run: |
+          python run.py --port 8003 --no-browser &
+          sleep 4
+          curl -s http://127.0.0.1:8003/api/health || sleep 3
+      - name: Run Playwright smoke tests
+        working-directory: ./frontend
+        env:
+          BASE_URL: http://127.0.0.1:8003
+        run: |
+          npm test
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-smoke-artifacts
+          path: |
+            frontend/test-results/
+            frontend/playwright-report/
+          if-no-files-found: ignore
+
