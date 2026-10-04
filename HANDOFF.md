@@ -767,6 +767,30 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  5 files changed, 89 insertions(+), 5 deletions(-)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 6: Repository Spellcheck Pass
+
+**Commit**: `3273920` (`docs(equations): fix duplicate word typo in Yule Characteristic heading (Task 6)`)
+
+- Installed and executed `codespell` across all owned documentation and frontend files.
+- Fixed obvious duplicate-word typo in `MATHEMATICAL_EQUATIONS.md` line 70 (`Yule's Characteristic Characteristic` -> `Yule's Characteristic`).
+- Verified technical terms and non-typos in Antigravity scope:
+  - `ROUGE` in `RESEARCH_COMPENDIUM.md` is the standard NLP summarization metric (Recall-Oriented Understudy for Gisting Evaluation).
+  - `Akkumulation` in `samples/algorithmic_commons_essay.md` is Marx's original German terminology (*ursprüngliche Akkumulation*).
+- **Findings in other owners' files (for Claude to review/fix)**:
+  - `data/quillbot_comparison_sheet.md` (lines 12, 22): truncated sample preview ends with `sprin...` (short for "spring-driven").
+  - `scripts/common/dedup.py` (lines 62, 63): variable name `allk = np.concatenate(keys)` (valid Python code identifier, not a typo).
+  - `scripts/legacy_synthetic/expand_data_richness.py` (lines 92, 105): typo `trough` used instead of `through` ("loop trough").
+  - `scripts/legacy_synthetic/update_corpus.py` (lines 22, 35): typo `trough` used instead of `through` ("loop trough").
+
+**Evidence (`git diff --stat`)**:
+```
+ MATHEMATICAL_EQUATIONS.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+
 
 
 
