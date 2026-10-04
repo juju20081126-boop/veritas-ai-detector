@@ -10,6 +10,7 @@ Veritas AI 是一款完全離線運行、達到生產級品質的 4 類別 AI �
 ## Table of Contents
 
 - [Key Highlights & Capabilities](#key-highlights--capabilities) — 核心亮點與功能特點
+- [Project Structure](#project-structure) — 專案結構與模組歸屬
 - [How It Works: Current Engine Architecture](#how-it-works-current-engine-architecture) — 運作原理：現行推論引擎架構
   - [1. Quantized ONNX INT8 Neural Student](#1-quantized-onnx-int8-neural-student) — 量化 ONNX INT8 神經學生模型
   - [2. 20 Tabular Stylometric Features](#2-20-tabular-stylometric-features) — 20 維表格文體計量特徵
@@ -61,6 +62,76 @@ Veritas AI 是一款完全離線運行、達到生產級品質的 4 類別 AI �
   - **本機 Web UI**：採用純 HTML/CSS/JS 開發的響應式雙欄儀表板（零大型 npm / Node 繁重依賴）。
   - **互動式命令列 (CLI)**：提供終端機彩色文字高亮標記、各類別百分比長條圖與詳細延遲效能分析。
   - **REST API**：基於 FastAPI 構建之高效後端，便於本機整合與微服務介接。
+
+---
+
+## 📁 Project Structure
+
+**專案結構與模組歸屬：**
+
+Veritas AI 專案依循嚴格的模組化職責與代碼所有權劃分，由兩位自主代理（**Claude Code** 與 **Antigravity CLI**）依據 [`AGENTS.md`](AGENTS.md) 共同維護：
+
+```text
+veritas-ai-detector/
+├── .github/                   # GitHub Actions CI 工作流程、議題範本與自動化檢核
+│   └── workflows/             # CI 管線（pytest、ruff、nbformat、連結檢查、Playwright 冒煙測試）
+├── backend/                   # 離線推論核心引擎、20 維文體特徵抽取器與 FastAPI 伺服器
+│   ├── engine.py              # 備用啟發式偵測引擎
+│   ├── runtime_engine.py      # 雙分支推論引擎（ONNX INT8 + 文體計量 + 機率校準）
+│   ├── server.py              # FastAPI REST 端點實作
+│   └── stylometrics.py        # 20 維表格文體特徵向量抽取器
+├── data/                      # 前沿資料集、對抗攻擊套件、研究筆記與評估工作表
+│   ├── _quarantine_synthetic/ # 隔離之早期合成訓練資料
+│   ├── esl/                   # 國際英語學習者作文語料庫
+│   ├── eval/                  # 審計結果與歷史評估數據
+│   ├── research/              # 文獻回顧、攻擊目錄與商業拆解筆記
+│   └── quillbot_comparison_sheet.json # 30 篇人工檢核參照範例
+├── frontend/                  # 單頁 Web 儀表板、UI 樣式、國際化與冒煙測試
+│   ├── app.js                 # 前端控制器與 API 通訊
+│   ├── i18n.js                # 雙語辭典（英文 / 繁體中文）
+│   ├── index.html             # 主儀表板標記
+│   ├── style.css              # 響應式佈局、深色模式與列印樣式表
+│   └── tests/                 # Playwright 端對端冒煙測試套件
+├── models/                    # 蒸餾量化 ONNX 學生模型、權重與分詞器資產
+│   ├── student_model_int8.onnx # 內建量化學生模型（約 22 MB）
+│   ├── meta_classifier.json   # 校準之表格/神經融合權重
+│   └── tokenizer/             # 本機快速分詞器配置與詞彙表
+├── notebooks/                 # 互動式 Jupyter 研究、教師標註與視覺化範本
+│   ├── 01_teacher_ensemble_and_labeling.ipynb
+│   ├── 02_student_distillation_and_onnx_export.ipynb
+│   ├── 03_gpu_finetune.ipynb
+│   └── 04_results_figures.ipynb
+├── samples/                   # 具完整來源證明之評估文章與參照範例文本
+│   ├── algorithmic_commons_essay.md
+│   ├── real_samples.py        # 具備明確來源記錄之真實前沿生成文本
+│   └── sample_data.py         # 人工撰寫之示範展示文本
+├── scratch/                   # 臨時診斷、單一文本檢驗與探勘腳本
+└── scripts/                   # 語料庫構建、LLM 對抗管線、偵測器評估與訓練腳本
+    ├── common/                # 共用資料公用函式與文本標準化
+    ├── corpus/                # 前沿資料生成、提示詞收集與對抗管線
+    ├── detectors/             # 學生模型與基準偵測器包裝
+    ├── tests/                 # 後端與文體特徵單元測試
+    ├── check_integrity.py     # 資料集雜湊與綱要完整性閘門
+    ├── eval_frontier.py       # 鎖定測試集評估執行器
+    └── train_detector.py      # 前沿模型訓練與知識蒸餾腳本
+```
+
+### Folder Descriptions & Ownership
+
+**頂層目錄職責與權限劃分：**
+
+| 目錄路徑 | 負責代理（依據 [`AGENTS.md`](AGENTS.md)） | 職責與說明 |
+|---|---|---|
+| `.github/` | **Antigravity** | CI/CD 自動化工作流程、Issue/PR 範本與品質檢驗。 |
+| `backend/` | **Claude** | 離線推論核心引擎、20 維文體特徵抽取器與 FastAPI REST 端點。 |
+| `data/` | **Claude** | 前沿資料集、對抗攻擊樣本、文獻筆記與對照評估工作表。 |
+| `frontend/` | **Antigravity** | 單頁 Web 儀表板、雙語辭典 (EN / zh-TW) 與 Playwright 冒煙測試。 |
+| `models/` | **Claude** | 量化 INT8 ONNX 學生模型 (~22 MB)、元分類器權重與分詞器資產。 |
+| `notebooks/` | **Antigravity** | 研究、教師標註、GPU 微調與評估結果繪圖之 Jupyter 筆記本範本。 |
+| `samples/` | **Antigravity** | 具備完整來源記錄之評估文章與真實前沿文本範本。 |
+| `scratch/` | **Claude** | 探勘性診斷、單篇文章分析與即時除錯腳本。 |
+| `scripts/` | **Claude** | 語料庫管線、LLM 對抗重寫、評估框架與模型訓練腳本。 |
+| 根目錄共用檔案 | **Shared（共同維護）** | `cli.py`、`run.py`、`requirements*.txt`、`AGENTS.md` 與 `HANDOFF.md`。 |
 
 ---
 

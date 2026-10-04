@@ -10,6 +10,7 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
 ## Table of Contents
 
 - [Key Highlights & Capabilities](#key-highlights--capabilities)
+- [Project Structure](#project-structure)
 - [How It Works: Current Engine Architecture](#how-it-works-current-engine-architecture)
   - [1. Quantized ONNX INT8 Neural Student](#1-quantized-onnx-int8-neural-student)
   - [2. 20 Tabular Stylometric Features](#2-20-tabular-stylometric-features)
@@ -59,6 +60,72 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
   - **Local Web UI**: Responsive split dashboard in plain HTML/CSS/JS (no heavy npm/Node dependencies).
   - **Interactive CLI**: Terminal interface with formatted color highlights, class bars, and latency profiling.
   - **REST API**: FastAPI backend for local and microservice integration.
+
+---
+
+## 📁 Project Structure
+
+The Veritas AI repository is organized into modular functional areas with strict code ownership demarcated between collaborative agents (**Claude Code** and **Antigravity CLI**) per [`AGENTS.md`](AGENTS.md):
+
+```text
+veritas-ai-detector/
+├── .github/                   # GitHub Actions CI workflows, issue templates, and automated PR checks
+│   └── workflows/             # CI pipelines (pytest, ruff, nbformat, link check, Playwright smoke)
+├── backend/                   # Core offline runtime engine, 20-feature stylometric analyzer, and FastAPI server
+│   ├── engine.py              # Fallback heuristic detection engine
+│   ├── runtime_engine.py      # Dual-branch inference engine (ONNX INT8 + stylometrics + calibration)
+│   ├── server.py              # FastAPI REST server endpoints
+│   └── stylometrics.py        # 20-dimensional tabular feature extractor
+├── data/                      # Frontier datasets, attack suites, research notes, and evaluation sheets
+│   ├── _quarantine_synthetic/ # Quarantined legacy synthetic data
+│   ├── esl/                   # Non-native English learner essay corpora
+│   ├── eval/                  # Audit results and legacy evaluation scores
+│   ├── research/              # Literature review, attack catalog, and teardown notes
+│   └── quillbot_comparison_sheet.json # 30 hand-checked reference samples
+├── frontend/                  # Single-page web dashboard, UI styling, i18n, and smoke tests
+│   ├── app.js                 # Client controller and API interaction
+│   ├── i18n.js                # Bilingual dictionary (English / Traditional Chinese)
+│   ├── index.html             # Main dashboard markup
+│   ├── style.css              # Responsive layout, dark theme, and print stylesheet
+│   └── tests/                 # Playwright end-to-end smoke test suite
+├── models/                    # Distilled ONNX student models, weights, and tokenizer assets
+│   ├── student_model_int8.onnx # Shipped quantized student model (~22 MB)
+│   ├── meta_classifier.json   # Calibrated tabular/neural weights
+│   └── tokenizer/             # Local fast tokenizer configuration and vocabulary
+├── notebooks/                 # Interactive Jupyter research and visualization templates
+│   ├── 01_teacher_ensemble_and_labeling.ipynb
+│   ├── 02_student_distillation_and_onnx_export.ipynb
+│   ├── 03_gpu_finetune.ipynb
+│   └── 04_results_figures.ipynb
+├── samples/                   # Verified sample essays and reference passages with full provenance
+│   ├── algorithmic_commons_essay.md
+│   ├── real_samples.py        # Real frontier passages with explicit provenance
+│   └── sample_data.py         # Hand-written synthetic demonstration samples
+├── scratch/                   # Ad-hoc diagnostic and exploratory analysis scripts
+└── scripts/                   # Corpus assembly, LLM attack pipelines, detector evaluation, and training scripts
+    ├── common/                # Shared data utilities and text normalization
+    ├── corpus/                # Frontier generation, prompt harvesting, and attack pipeline
+    ├── detectors/             # Student and baseline detector wrappers
+    ├── tests/                 # Backend and stylometrics unit tests
+    ├── check_integrity.py     # Dataset hash and schema integrity gatekeeper
+    ├── eval_frontier.py       # Locked-split evaluation runner
+    └── train_detector.py      # Frontier model training and distillation script
+```
+
+### Folder Descriptions & Ownership
+
+| Top-Level Directory | Owner (per [`AGENTS.md`](AGENTS.md)) | Description |
+|---|---|---|
+| `.github/` | **Antigravity** | Continuous integration workflows, issue/PR templates, and automated verification checks. |
+| `backend/` | **Claude** | Core offline runtime engine, 20-feature stylometric vector extractor, and FastAPI REST endpoints. |
+| `data/` | **Claude** | Frontier datasets, attack test suites, research notes, and evaluation comparison sheets. |
+| `frontend/` | **Antigravity** | Web dashboard UI, bilingual dictionary (EN / zh-TW), and Playwright end-to-end smoke tests. |
+| `models/` | **Claude** | Quantized INT8 ONNX student model (~22 MB), meta-classifier weights, and tokenizer vocabulary. |
+| `notebooks/` | **Antigravity** | Research, teacher labeling, GPU fine-tuning, and results visualization Jupyter notebook templates. |
+| `samples/` | **Antigravity** | Reference essay samples and frontier passage collections with documented provenance. |
+| `scratch/` | **Claude** | Exploratory diagnostic, single-text inspection, and scratch analysis scripts. |
+| `scripts/` | **Claude** | Corpus assembly, LLM attack pipelines, detector evaluation harness, and model training pipelines. |
+| Shared Root Files | **Shared** | `cli.py`, `run.py`, `requirements*.txt`, `AGENTS.md`, and `HANDOFF.md`. |
 
 ---
 
