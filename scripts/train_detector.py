@@ -109,7 +109,11 @@ def main():
     n_per_epoch = len(kept) * args.chunks_per_doc
     steps = args.epochs * (n_per_epoch // args.batch)
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1.0, (s + 1) / 100) * max(0.05, 1 - s / max(1, steps)))
-    cls_w = torch.tensor(len(labels) / (4 * np.maximum(np.bincount(labels, minlength=4), 1)), dtype=torch.float32)
+    counts = np.bincount(labels, minlength=4)
+    raw_w = len(labels) / (4 * np.maximum(counts, 1))
+    raw_w[counts < 50] = 1.0                      # (near-)empty classes must not get huge weights
+    cls_w = torch.tensor(np.clip(raw_w, 0.5, 3.0), dtype=torch.float32)
+    print("class weights:", [round(float(x), 2) for x in cls_w])
     p = w / w.sum()
     log, t0, step = [], time.time(), 0
     model.train()
