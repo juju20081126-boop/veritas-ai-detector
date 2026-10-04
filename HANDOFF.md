@@ -679,4 +679,22 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  2 files changed, 138 insertions(+)
 ```
 
+---
+
+## 2026-10-04 — Antigravity CLI — Round 5 Task 2: Changelog in README
+
+**Commit**: `4a1bc11` (`docs(readme): add changelog section summarizing handoff history (Task 2)`)
+
+- Added a `## 📜 Changelog` section to both `README.md` and `README.zh-TW.md`.
+- Summarized the complete cross-agent history from `HANDOFF.md` in reverse chronological order (newest first), with exactly one line per entry (date, agent, what changed).
+- Updated Table of Contents in both language documents.
+
+**Evidence (`git diff --stat`)**:
+```
+ README.md       | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.zh-TW.md | 63 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 124 insertions(+)
+```
+
+
 
