@@ -1,6 +1,6 @@
 # Veritas AI — Developer & Training Dependencies (Cloud / Retraining Pipeline)
 torch>=2.0.0
-transformers>=4.40.0
+transformers>=5.18.0
 onnx>=1.15.0
 onnxruntime>=1.17.0
 scikit-learn>=1.3.0
