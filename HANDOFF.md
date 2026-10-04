@@ -814,13 +814,28 @@ Branch is completely up to date with `origin/main`. No merge or changes made to 
  README.md                            | 2 +-
  README.zh-TW.md                      | 2 +-
  RESEARCH_COMPENDIUM.md               | 2 +-
- 4 files changed, 7 insertions(+), 7 deletions(-)
 ```
 
+---
 
+## 2026-10-04 — Antigravity CLI — Round 5 Task 8: Release Checklist Section
 
+**Commit**: `69ff1ee` (`docs(readme): add release checklist section (Task 8)`)
 
+- Added `## 📋 Release Checklist` section and Table of Contents link to both `README.md` and `README.zh-TW.md`.
+- Checklist items cover all pre-release quality gates:
+  1. Tests Green (`pytest scripts/tests -q` 14/14 passing)
+  2. Integrity Gate PASS (`python scripts/check_integrity.py`)
+  3. Report Exists in `data/reports/` (`FRONTIER_DETECTION_REPORT.md`)
+  4. README Numbers Sourced (strictly traceable to benchmarks/literature)
+  5. No Secrets Committed (no API keys, tokens, or credential leaks)
+  6. HANDOFF.md Updated (cross-agent record complete)
+- Verified heading parity between `README.md` and `README.zh-TW.md` (68/68 headings match exactly).
 
-
-
+**Evidence (`git diff --stat`)**:
+```
+ README.md       | 14 ++++++++++++++
+ README.zh-TW.md | 14 ++++++++++++++
+ 2 files changed, 28 insertions(+)
+```
 
