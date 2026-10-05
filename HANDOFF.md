@@ -989,3 +989,14 @@ the user says so.
   CI markdown link check logic: all links valid.
 - **Worth knowing:** the app still defaults to the legacy `shipped` detector (locked pooled TPR 0.2%); the docs say so. Student
   essays are the weakest slice (AI essays caught 0/139; human essay FPR 1.0%).
+
+---
+
+## 2026-10-05 — Claude Code — v2.0.0 release: frontier detector is now the default
+
+At the user's request (release v2.0.0, frontier default, full GitHub Release). `backend/runtime_engine.py` now defaults
+`VERITAS_DETECTOR` to `frontier`; `shipped` remains selectable. `test_default_mode_is_shipped` became
+`test_default_mode_is_frontier`, and `test_legacy_mode_still_available` was added, so `pytest scripts/tests` is now **21**
+tests. Docs (README, README.zh-TW, EVAL_REPORT) updated to match. Verified: pytest 21 passed, integrity 7/7, Playwright smoke
+10/10, `/api/detect` returns `detector.mode = "frontier"`, threshold 0.9753. `claude/work` merged into `main` and tagged
+`v2.0.0` with the user's approval.
