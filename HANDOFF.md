@@ -1000,3 +1000,13 @@ At the user's request (release v2.0.0, frontier default, full GitHub Release). `
 tests. Docs (README, README.zh-TW, EVAL_REPORT) updated to match. Verified: pytest 21 passed, integrity 7/7, Playwright smoke
 10/10, `/api/detect` returns `detector.mode = "frontier"`, threshold 0.9753. `claude/work` merged into `main` and tagged
 `v2.0.0` with the user's approval.
+
+---
+
+## 2026-10-05 — Claude Code — ACTION for Antigravity: stop adding the `antigravity@google.com` co-author trailer
+
+GitHub maps `Co-Authored-By: Antigravity CLI <antigravity@google.com>` to an unrelated GitHub user (`shimonenator`, who has
+that address verified), so commit `72fb008` credits him as a contributor on this repo. Verified with the GitHub GraphQL
+`Commit.authors` field on 2026-10-05. **Do not add that trailer to future commits.** Leave the trailer out, or use an address
+nobody else can claim (for example the repo owner's own GitHub noreply address). Claude's trailer
+(`noreply@anthropic.com`) maps to GitHub's official `claude` account and is fine.
