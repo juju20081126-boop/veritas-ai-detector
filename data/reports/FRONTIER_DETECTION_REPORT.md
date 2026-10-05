@@ -15,7 +15,7 @@ This report establishes the empirical detection benchmark for 2026 frontier lang
 
 All evaluations adhere strictly to non-negotiable scientific integrity protocols:
 1. **Zero Data Leakage**: Document-group disjointness enforced across train, dev, and locked test splits (0 exact duplicates, 0 near-duplicates across splits).
-2. **Locked Held-Out Test Split**: Evaluated at most 3 times in total under immutable SHA-256 verification recorded in `data/locked/ACCESS_LOG.md`.
+2. **Locked Held-Out Test Split**: Evaluated under immutable SHA-256 verification recorded in `data/locked/ACCESS_LOG.md`. All 3 allowed evaluations were utilized (Access #1: baselines; Access #2: initial final run interrupted; Access #3: final run resumed to completion). The locked test budget is now 100% exhausted (3 of 3 used, 0 remaining); future model evaluations must use dev.
 3. **Threshold Selection Exclusively on Dev**: Every detection threshold is chosen strictly on development clean-human text at 1% False Positive Rate (FPR), then applied frozen to the locked test.
 4. **No Simulated Data**: Models without verifiable API access or real text (such as GPT-6 Astra) are reported honestly as **UNTESTED**; synthetic templates are quarantined.
 
@@ -163,7 +163,13 @@ Under a strict 2-thread CPU simulation (`intra_op_threads=2`), the exported INT8
 
 ---
 
-## 6. Locked Held-Out Test Evaluation (Access #2)
+## 6. Locked Held-Out Test Evaluation (Access #2 & #3)
+
+> **Locked Access Audit (3 of 3 evaluations used — budget exhausted)**:
+> - **Access #1** (2026-10-04T12:52:53Z): Baseline suite (`shipped`, `hc3_roberta`, `openai_roberta`, `modernbert`, `desklib`).
+> - **Access #2** (2026-10-05T02:10:33Z): Final locked candidate evaluation launched; timed out/interrupted during modernbert calibration.
+> - **Access #3** (2026-10-05T04:56:14Z): Resumed with disk score caches preserved; successfully completed all 7 detectors and serialized `data/eval/results/locked_final.json`.
+> - **Threshold Synchronization**: On the full unthinned dev negative split (n=1,823), the calibrated 1% FPR threshold for `frontier_onnx` is **0.9753** (compared to **0.9747** on the 1,500-sample thinned dev split). The runtime configuration in `models/frontier/frontier_config.json` is synchronized to **0.9753** to match the locked evaluation exactly.
 
 ### 6.1 Headline Model Comparison on Locked Test
 
@@ -294,8 +300,8 @@ STATUS: TARGETS NOT MET (T1 MET, T2 NOT MET, T3 NOT MET, T4 NOT MET)
    - Realized ESL FPR is **0.7%** [0.3–2.2] (n=404), which strictly satisfies the requirement of $\le 2\times$ native FPR (**0.1%–0.2%**). Input hygiene (H9) and class balancing prevent false-positive inflation on non-native writing.
 
 2. **Target T2 (Raw Frontier Detection) is NOT MET (3.4%–5.7% vs 90.0%)**:
-   - At a calibrated 1% dev FPR threshold, zero-shot detection of Claude Opus 5.5 and Claude Sonnet 5.5 raw texts achieves **3.4%** [1.6–7.3] (Opus) and **5.7%** [3.2–10.3] (Sonnet) recall on ~100-word chunks.
-   - While retraining provides emergent recall above the pre-change shipped baseline (**0.0%**), detecting frontier models at 90% TPR under a 1% FPR constraint is fundamentally inaccessible to compact sequence classifiers without paired reference-LLM perplexity modeling.
+   - At a calibrated 1% dev FPR threshold, in-distribution supervised detection of Claude Opus 5.5 and Claude Sonnet 5.5 raw texts achieves **3.4%** [1.6–7.3] (Opus) and **5.7%** [3.2–10.3] (Sonnet) recall on ~100-word chunks.
+   - While retraining provides emergent recall above the pre-change shipped baseline (**0.0%**), achieving 90% TPR under a strict 1% FPR constraint was not achieved with this compact sequence classifier approach (MiniLM-L6 student). Distinguishing frontier models from human writing at this operating point likely requires paired reference-LLM perplexity modeling or substantially longer text spans.
 
 3. **Target T3 (Adversarial Robustness) is NOT MET (1.1%–1.5% vs 70.0%)**:
    - Attacked AI text pooled TPR is **1.5%** [0.8–2.8] (n=647).

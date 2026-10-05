@@ -937,6 +937,32 @@ Branch `claude/work`. Executed Steps B through G of the Frontier AI-Text Detecti
 
 ### 3. Handoff Notes & Downstream Actions for Antigravity (`AI detector/`, `main`)
 
-1. **Frontier Model Reality**: The assumption that a compact sequence classifier (MiniLM-L6, 22MB) can achieve 90% TPR on 2026 frontier models (Claude Opus 5.5, Sonnet 5.5) under a strict 1% FPR threshold has been empirically disproven. Frontier LLMs produce text whose distributional perplexity and stylistic cadence blend into human writing on ~100-word spans.
+1. **Frontier Model Reality**: Achieving 90% TPR on 2026 frontier models (Claude Opus 5.5, Sonnet 5.5) under a strict 1% FPR threshold was not achieved with this compact sequence classifier approach (MiniLM-L6 student). Frontier LLMs produce text whose distributional perplexity and stylistic cadence blend into human writing on ~100-word spans.
 2. **README & Documentation Updates Needed**: In `AI detector/` on `main`, update `README.md` and `EVAL_REPORT.md` to reflect these verified empirical findings and correct any obsolete marketing claims regarding frontier model detection.
 3. **Branch Hygiene**: All changes in this worktree remain on `claude/work`. Merge into `main` only upon explicit user instruction.
+
+---
+
+## 2026-10-05 — Antigravity CLI — Merge to main, threshold synchronization & review reconciliation
+
+Branch `main`. Addressed review notes from Claude Code:
+
+1. **Locked Test Quota Clarification**:
+   - The locked test budget is **fully used (3 of 3 evaluations used, 0 remaining)**.
+   - Access history:
+     * Access #1 (2026-10-04T12:52:53Z): Baselines (`shipped`, `hc3_roberta`, `openai_roberta`, `modernbert`, `desklib`).
+     * Access #2 (2026-10-05T02:10:33Z): Final locked candidate evaluation launched; timed out/interrupted during modernbert baseline calibration.
+     * Access #3 (2026-10-05T04:56:14Z): Re-launched with disk score caches preserved; successfully completed all 7 detectors and serialized `data/eval/results/locked_final.json`.
+   - Gate G5 and `ACCESS_LOG.md` confirm 3/3. All future evaluations are restricted to the `dev` split. Updated `FRONTIER_DETECTION_REPORT.md` Sections 1 and 6.
+
+2. **Threshold Calibration Alignment (0.9747 vs 0.9753)**:
+   - On the 1,500-sample thinned dev negative split (`--neg-cap 1500`), the 1% clean FPR threshold was `0.9747`.
+   - On the full unthinned dev negative split (n=1,823), the 1% clean FPR threshold was `0.9753`.
+   - Synchronized `models/frontier/frontier_config.json` threshold from `0.9747` to `0.9753` so the production runtime decision boundary exactly matches the locked evaluation run.
+
+3. **Report Wording Adjustments**:
+   - Corrected "zero-shot detection" $\to$ "in-distribution supervised detection" in Section 10 of `FRONTIER_DETECTION_REPORT.md` (since Claude 5.x was present in the H1 training set).
+   - Softened "empirically disproven" $\to$ "not achieved with this compact sequence classifier approach (MiniLM-L6 student)".
+
+4. **Integration Verification on `main`**:
+   - `pytest scripts/tests -q` passes: **20 passed in 2.32s, 0 skipped**.
