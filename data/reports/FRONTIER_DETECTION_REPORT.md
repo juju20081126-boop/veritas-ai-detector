@@ -23,7 +23,7 @@ All evaluations adhere strictly to non-negotiable scientific integrity protocols
 
 | Target | Description | Criterion | Measured Status & Honest Result | Verdict |
 |---|---|---|---|:---:|
-| **T1: Realized Human & ESL Fairness** | Realized clean human FPR on locked test <= 1.5% and ESL FPR <= 2x native FPR | Human FPR <= 1.5%, ESL <= 2x Native | Clean Human FPR: **0.3%** [0.1–0.8] (n=1,281); ESL FPR: **0.7%** [0.3–2.2] (n=404); Native: **0.1%** [0.0–0.6] (n=877). | **MET** |
+| **T1: Realized Human & ESL Fairness** | Realized clean human FPR on locked test <= 1.5% and ESL FPR <= 2x native FPR | Human FPR <= 1.5%, ESL <= 2x Native | Clean Human FPR: **0.3%** [0.1–0.8] (n=1,281); ESL FPR: **0.7%** [0.3–2.2] (n=404); Native: **0.1%** [0.0–0.6] (n=877). FPR part met; ESL/native ratio **6.5×** (3/404 vs 1/877; INT8 runtime: 3.3×, 3/404 vs 2/877) exceeds 2×, though the difference is not statistically significant (Fisher p=0.095; runtime p=0.18). | **PARTIALLY MET** |
 | **T2: Raw Frontier Detection** | TPR on raw text from each frontier model >= 90% at 1% dev FPR threshold | Raw TPR >= 90% (Opus 5.5, Sonnet 5.5) | Claude Opus 5.5 raw: **3.4%** [1.6–7.3] (n=174); Claude Sonnet 5.5 raw: **5.7%** [3.2–10.3] (n=174); Raw pooled: **4.6%** [2.8–7.3]. | **NOT MET** |
 | **T3: Adversarial Robustness** | TPR >= 70% per paraphrase/humanizer family pooled, and >= 15 pts above baseline | Attack TPR >= 70%, +15 pts vs baseline | Attacked AI pooled: **1.5%** [0.8–2.8] (n=647); A7 typo/zwsp: **3.8%** [0.7–18.9]; A4 T5 para: **2.5%** [0.7–8.7]; A3 humanizer: **1.1%** [0.2–5.8]. | **NOT MET** |
 | **T4: Generalization (LOFO)** | Leave-one-family-out TPR >= 60% on unseen model / attack families | Unseen family TPR >= 60% | Claude held-out (`lofo_noclaude`): **0.6%–1.7%**; A3 held-out (`lofo_noA3`): **0.0%** [0.0–3.9] (0/94 caught); A4 held-out (`lofo_noA4`): **1.2%** [0.2–6.7]. | **NOT MET** |
@@ -291,13 +291,13 @@ python scripts/eval_frontier.py --split locked --detectors cand:h1h2h9 frontier_
 
 ## 10. Final Verification Status
 
-STATUS: TARGETS NOT MET (T1 MET, T2 NOT MET, T3 NOT MET, T4 NOT MET)
+STATUS: TARGETS NOT MET (T1 PARTIALLY MET, T2 NOT MET, T3 NOT MET, T4 NOT MET)
 
 ### Honest Scientific Verdict & Root Cause Analysis
 
-1. **Target T1 (Realized Human & ESL Fairness) is MET**:
+1. **Target T1 (Realized Human & ESL Fairness) is PARTIALLY MET**:
    - Clean Human FPR on locked held-out test is **0.3%** [0.1–0.8] (n=1,281) for the candidate PyTorch model and **0.4%** [0.2–0.9] for the exported INT8 ONNX production engine, well below the 1.5% ceiling.
-   - Realized ESL FPR is **0.7%** [0.3–2.2] (n=404), which strictly satisfies the requirement of $\le 2\times$ native FPR (**0.1%–0.2%**). Input hygiene (H9) and class balancing prevent false-positive inflation on non-native writing.
+   - Realized ESL FPR is **0.7%** [0.3–2.2] (n=404) against native FPR of **0.1%** (h1h2h9, 1/877) or **0.2%** (INT8 runtime, 2/877). That is a **6.5×** / **3.3×** ratio, so the ESL $\le 2	imes$ native criterion is **not met on point estimates**. The counts are tiny (3 ESL vs 1–2 native false positives), the Wilson CIs overlap, and the difference is not statistically significant (two-sided Fisher exact p=0.095 / 0.18), so the locked test cannot confirm either fairness or a disparity. *(Corrected 2026-10-05 by Claude Code: an earlier version marked T1 MET by comparing 0.7% directly against the 0.1%–0.2% native rate.)*
 
 2. **Target T2 (Raw Frontier Detection) is NOT MET (3.4%–5.7% vs 90.0%)**:
    - At a calibrated 1% dev FPR threshold, in-distribution supervised detection of Claude Opus 5.5 and Claude Sonnet 5.5 raw texts achieves **3.4%** [1.6–7.3] (Opus) and **5.7%** [3.2–10.3] (Sonnet) recall on ~100-word chunks.
