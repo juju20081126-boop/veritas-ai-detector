@@ -73,6 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return key;
   };
 
+  // Below this many words, results get a short-text sensitivity notice.
+  const SHORT_TEXT_WORDS = 150;
+  let lastWordCount = null;
+  function renderShortTextNotice() {
+    const el = $("shortTextNotice");
+    if (!el) return;
+    const short = lastWordCount != null && lastWordCount < SHORT_TEXT_WORDS;
+    el.hidden = !short;
+    el.textContent = short ? t("short_text_notice", { count: lastWordCount }) : "";
+  }
+
   // The backend's 4 classes, in spectrum order (most AI first).
   const getClasses = () => [
     { key: "ai_generated", label: t("cls_ai_generated"), short: t("cls_short_ai"), tone: "ai" },
@@ -201,6 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (words < 80) {
       wordGuideBadge.className = "guide warn";
       wordGuideBadge.textContent = t("guide_add", { count: 80 - words });
+    } else if (words < SHORT_TEXT_WORDS) {
+      wordGuideBadge.className = "guide warn";
+      wordGuideBadge.textContent = t("guide_short");
     } else if (words > 2000) {
       wordGuideBadge.className = "guide warn";
       wordGuideBadge.textContent = t("guide_over");
@@ -241,6 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function resetResults() {
     currentAnalysisData = null;
+    lastWordCount = null;
+    renderShortTextNotice();
     currentSentences = [];
     activeSentence = -1;
     resultsPlaceholder.hidden = false;
@@ -475,6 +491,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const lw = $("lengthWarning");
     lw.hidden = !summary.length_warning;
     lw.textContent = summary.length_warning || "";
+    lastWordCount = summary.word_count != null ? Number(summary.word_count) : null;
+    renderShortTextNotice();
 
     const counts = { ai: 0, "ai-refined": 0, "human-refined": 0, human: 0 };
     sentences.forEach((s) => {
@@ -938,6 +956,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const discl = $("verdictSignalDisclaimer");
     if (discl) discl.textContent = t("verdict_disclaimer");
+    renderShortTextNotice();
     const uncertAlert = $("uncertainAlertBanner");
     if (uncertAlert) uncertAlert.innerHTML = `<strong>${t("uncertain_alert_lead")}</strong> ${t("uncertain_alert")}`;
 

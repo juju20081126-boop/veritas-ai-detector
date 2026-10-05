@@ -678,6 +678,7 @@ button:disabled { cursor: not-allowed; }
 }
 .note strong { color: var(--ink); }
 .note-uncertain { border-left: 3px solid var(--c-uncertain); }
+.note-short { border-left: 3px solid var(--c-uncertain); }
 
 /* inspector */
 .inspector {

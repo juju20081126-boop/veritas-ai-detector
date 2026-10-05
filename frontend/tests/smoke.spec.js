@@ -5,7 +5,7 @@ const { test, expect } = require('@playwright/test');
  * Veritas AI Detector — Frontend Playwright Smoke Tests
  * Validates:
  * 1. Page loads successfully with no browser console or runtime errors.
- * 2. All 74 DOM element IDs queried by app.js exist in the document.
+ * 2. All 75 DOM element IDs queried by app.js exist in the document.
  * 3. Pasting a 100-word sample and clicking analyze renders a valid 4-class verdict.
  * 4. Client-side download buttons (#btnDownloadJson, #btnDownloadCsv, #btnResetReport) exist.
  * 5. Responsive mobile viewport (375px width) renders without horizontal scroll overflow.
@@ -14,7 +14,7 @@ const { test, expect } = require('@playwright/test');
 
 const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:8003';
 
-// Exhaustive catalog of all 74 element IDs referenced by frontend/app.js
+// Exhaustive catalog of all 75 element IDs referenced by frontend/app.js
 const REQUIRED_APP_IDS = [
   'activeResultsContent',
   'btnAnalyze',
@@ -49,6 +49,7 @@ const REQUIRED_APP_IDS = [
   'langToggleBtn',
   'langToggleLabel',
   'lengthWarning',
+  'shortTextNotice',
   'mathValAffinity',
   'mathValBinoculars',
   'mathValBurstiness',
@@ -159,6 +160,11 @@ test.describe('Veritas AI Detector — Frontend Smoke Suite', () => {
     const verdictText = await verdictTitle.textContent();
     expect(verdictText.trim().length).toBeGreaterThan(1);
     expect(verdictText.trim()).not.toBe('—');
+
+    // ~100 words is under 150, so the short-text sensitivity notice must be shown
+    const shortNotice = page.locator('#shortTextNotice');
+    await expect(shortNotice).toBeVisible();
+    await expect(shortNotice).toContainText('Short text');
 
     // Score number should be present
     const scoreNum = page.locator('#scoreNumber');
