@@ -966,3 +966,26 @@ Branch `main`. Addressed review notes from Claude Code:
 
 4. **Integration Verification on `main`**:
    - `pytest scripts/tests -q` passes: **20 passed in 2.32s, 0 skipped**.
+---
+
+## 2026-10-05 — Claude Code — Docs + UI updated to the locked frontier benchmark; T1 corrected
+
+Branch `claude/work` (commits `ae278d4`, `8f13666`, `12341c1`). **At the user's direct request (`/goal`), Claude edited
+Antigravity-owned files:** `README.md`, `README.zh-TW.md`, `EVAL_REPORT.md`, `frontend/`. Not merged to `main`; merge only when
+the user says so.
+
+- **T1 correction (`data/reports/FRONTIER_DETECTION_REPORT.md`).** T1 is **PARTIALLY MET**, not MET. ESL FPR 0.74% (3/404) vs
+  native 0.11% (1/877, h1h2h9) / 0.23% (2/877, INT8 runtime) is 6.5× / 3.3×, above the "ESL ≤ 2× native" criterion. The earlier
+  text compared 0.7% against 0.1–0.2% directly. The gap is not statistically significant (Fisher p = 0.095 / 0.18). The
+  2026-10-05 Antigravity entries above that say "T1 MET" are superseded by this.
+- **Docs.** README / README.zh-TW: legacy banner, retracted-metrics table and "pending" notes replaced with the locked results
+  (targets table, detector comparison, measured hardware), plus two new Limitations bullets (frontier models; short text).
+  Heading count still 68/68. EVAL_REPORT.md: TBD template replaced with real locked tables (protocol, T1–T4, detector
+  comparison, generator × attack, length, CEFR/genre fairness, LOFO, hardware). Every number comes from
+  `data/eval/results/locked_final.json` or report §3.2.
+- **UI.** New badge tier for 80–149 words and a `#shortTextNotice` results note (EN + zh-TW) under 150 words; re-rendered on
+  language switch, cleared on reset. Smoke test 3 asserts it; ID catalog now 75.
+- **Verified:** `pytest scripts/tests -q` 20 passed; `check_integrity.py` 7/7; Playwright smoke 10/10 (server on :8013);
+  CI markdown link check logic: all links valid.
+- **Worth knowing:** the app still defaults to the legacy `shipped` detector (locked pooled TPR 0.2%); the docs say so. Student
+  essays are the weakest slice (AI essays caught 0/139; human essay FPR 1.0%).
