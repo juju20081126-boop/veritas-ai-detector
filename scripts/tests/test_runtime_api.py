@@ -31,10 +31,17 @@ def _check_schema(r):
     assert r["sentences"] and {"text", "class_label", "probabilities", "reasons"} <= set(r["sentences"][0])
 
 
-def test_default_mode_is_shipped(monkeypatch):
+def test_default_mode_is_frontier(monkeypatch):
     monkeypatch.delenv("VERITAS_DETECTOR", raising=False)
     e = runtime_engine.QuillBotDetectorEngine(threads=1)
-    assert e.mode == "shipped"
+    assert e.mode == "frontier"
+    r = e.analyze_text(TEXT)
+    _check_schema(r)
+    assert r["detector"]["mode"] == "frontier"
+
+
+def test_legacy_mode_still_available():
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="shipped")
     r = e.analyze_text(TEXT)
     _check_schema(r)
     assert r["detector"]["mode"] == "shipped"

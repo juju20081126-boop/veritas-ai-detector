@@ -40,9 +40,9 @@ ONNX_MODEL_PATH = os.path.join(MODELS_DIR, "student_model_int8.onnx")
 TOKENIZER_PATH = os.path.join(MODELS_DIR, "tokenizer", "tokenizer.json")
 META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 
-# Opt-in frontier detector (trained on real Claude Opus/Sonnet 5.5 text and paraphrase attacks; see
-# data/reports/FRONTIER_DETECTION_REPORT.md). Select with VERITAS_DETECTOR=frontier or QuillBotDetectorEngine(mode="frontier").
-# The default stays "shipped" so existing callers see no change. The response schema is identical in both modes, plus a
+# Frontier detector (trained on real Claude Opus/Sonnet 5.5 text and paraphrase attacks; see
+# data/reports/FRONTIER_DETECTION_REPORT.md) is the default since v2.0.0. The legacy model is still available with
+# VERITAS_DETECTOR=shipped or QuillBotDetectorEngine(mode="shipped"). The response schema is identical in both modes, plus a
 # "detector" block. Frontier mode decides AI vs human with the dev-calibrated threshold stored in frontier_config.json.
 FRONTIER_DIR = os.path.join(MODELS_DIR, "frontier")
 DETECTOR_MODES = ("shipped", "frontier")
@@ -105,7 +105,7 @@ class QuillBotDetectorEngine:
     _instance: Optional["QuillBotDetectorEngine"] = None
 
     def __init__(self, threads: int = 2, mode: Optional[str] = None):
-        self.mode = (mode or os.environ.get("VERITAS_DETECTOR", "shipped")).strip().lower()
+        self.mode = (mode or os.environ.get("VERITAS_DETECTOR", "frontier")).strip().lower()
         if self.mode not in DETECTOR_MODES:
             raise ValueError(f"Unknown detector mode {self.mode!r}; expected one of {DETECTOR_MODES}.")
         print(f"[RuntimeEngine] Initializing Offline QuillBot-behavior Student Engine (mode={self.mode}, threads={threads})...")
