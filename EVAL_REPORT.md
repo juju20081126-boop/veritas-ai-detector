@@ -44,15 +44,15 @@ TPR = share of AI texts flagged; FPR = share of human texts wrongly flagged. Thr
 
 | Detector | AUROC | Clean-human FPR | ESL FPR | Native FPR | Raw AI TPR | Attacked AI TPR | Pooled TPR |
 |---|---|---|---|---|---|---|---|
-| **`frontier_onnx`** (deployed INT8, `VERITAS_DETECTOR=frontier`) | 0.637 | 0.4% [0.2–0.9] | 0.7% [0.3–2.2] | 0.2% [0.1–0.8] | 4.3% [2.6–7.0] | 1.1% [0.5–2.2] | **2.2%** [1.5–3.3] |
+| **`frontier_onnx`** (deployed INT8, default since v2.0.0) | 0.637 | 0.4% [0.2–0.9] | 0.7% [0.3–2.2] | 0.2% [0.1–0.8] | 4.3% [2.6–7.0] | 1.1% [0.5–2.2] | **2.2%** [1.5–3.3] |
 | `cand:h1h2h9` (champion, PyTorch) | 0.645 | 0.3% [0.1–0.8] | 0.7% [0.3–2.2] | 0.1% [0.0–0.6] | 4.6% [2.8–7.3] | 1.5% [0.8–2.8] | **2.6%** [1.8–3.8] |
-| `shipped` (legacy default) | 0.593 | 0.3% [0.1–0.8] | 0.2% [0.0–1.4] | 0.3% [0.1–1.0] | 0.0% [0.0–1.1] | 0.3% [0.1–1.1] | **0.2%** [0.1–0.7] |
+| `shipped` (legacy, `VERITAS_DETECTOR=shipped`) | 0.593 | 0.3% [0.1–0.8] | 0.2% [0.0–1.4] | 0.3% [0.1–1.0] | 0.0% [0.0–1.1] | 0.3% [0.1–1.1] | **0.2%** [0.1–0.7] |
 | `hc3_roberta` (public baseline) | 0.629 | 1.0% [0.6–1.7] | 0.7% [0.3–2.2] | 1.1% [0.6–2.1] | 3.4% [2.0–5.9] | 1.7% [1.0–3.0] | **2.3%** [1.5–3.4] |
 | `openai_roberta` (public baseline) | 0.578 | 0.5% [0.2–1.0] | 0.7% [0.3–2.2] | 0.3% [0.1–1.0] | 1.4% [0.6–3.3] | 2.2% [1.3–3.6] | **1.9%** [1.2–3.0] |
 | `modernbert` (public baseline) | 0.843 | 0.0% [0.0–0.3] | 0.0% [0.0–0.9] | 0.0% [0.0–0.4] | 0.0% [0.0–1.1] | 0.0% [0.0–0.6] | **0.0%** [0.0–0.4] |
 
 Notes:
-- The local app still runs the **legacy `shipped` detector by default**. Set `VERITAS_DETECTOR=frontier` to use the retrained INT8 model.
+- Since v2.0.0 the app runs the **frontier INT8 detector by default**. Set `VERITAS_DETECTOR=shipped` to use the legacy model.
 - `modernbert` ranks texts best (AUROC 0.843), but its scores saturate on dev human text (1% FPR threshold = 1.0), so it flags nothing at this operating point.
 - At a looser 5% dev FPR threshold, `frontier_onnx` catches 5.0% [3.8–6.6] of AI text while wrongly flagging 2.7% [2.0–3.8] of human text.
 

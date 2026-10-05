@@ -673,8 +673,8 @@ python cli.py --text "This is a brief text." --json
 
 | Detector | AUROC | Human FPR | AI caught (pooled TPR) |
 |---|---|---|---|
-| Frontier INT8 (`VERITAS_DETECTOR=frontier`) | 0.637 | 0.4% [0.2–0.9] | 2.2% [1.5–3.3] |
-| Legacy shipped model (current default) | 0.593 | 0.3% [0.1–0.8] | 0.2% [0.1–0.7] |
+| Frontier INT8 (default since v2.0.0) | 0.637 | 0.4% [0.2–0.9] | 2.2% [1.5–3.3] |
+| Legacy shipped model (`VERITAS_DETECTOR=shipped`) | 0.593 | 0.3% [0.1–0.8] | 0.2% [0.1–0.7] |
 | `hc3_roberta` public baseline | 0.629 | 1.0% [0.6–1.7] | 2.3% [1.5–3.4] |
 
 **Hardware (frontier mode, 2 CPU threads):** 22.6 MB on disk, 177 MB peak RAM, 0.23 s per 500 words. All within limits.
