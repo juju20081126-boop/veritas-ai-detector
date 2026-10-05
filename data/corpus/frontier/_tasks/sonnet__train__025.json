@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0055",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- \"It looks like there's been a little war zone around here\" National Weather Service:  There are preliminary reports of 7 tornadoes.\n- \"It looks like there's been a little war zone around here,\" Oklahoma resident says."
+ },
+ {
+  "prompt_id": "abst-0165",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 175 words) for the paper \"Cooperation in public goods games: stay, but not for too long\"."
+ },
+ {
+  "prompt_id": "emai-0260",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: Great Lakes Chemical Corp. (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0341",
+  "instruction": "I'm a college student and need help with an assignment. Five teenage friends make a video-message for themselves to playback when they are older. Now they are in there 30's and they all reunite to watch that video.\n\nWrite a short story of about 300 words."
+ },
+ {
+  "prompt_id": "expl-0433",
+  "instruction": "How does China raise money under a communist tax system?\n\nExplain it in about 100 words."
+ },
+ {
+  "prompt_id": "gene-0566",
+  "instruction": "I'm a college student and need help with an assignment. How do meteorologists predict what the wind speed will be?"
+ },
+ {
+  "prompt_id": "news-0056",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Opposition leader Boris Nemtsov was shot dead while walking near Kremlin with girlfriend.\n- Vladimir Putin: Russia should be safe from \"disgrace and tragedies\" like Nemtsov's killing.\n- Russian President criticizes \"extremists\" for use of \"illegal street protests\" and social media."
+ },
+ {
+  "prompt_id": "abst-0166",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"Polynomial identity rings as rings of functions, II\"."
+ },
+ {
+  "prompt_id": "emai-0261",
+  "instruction": "Write an email with the subject line \"commodity logic request\". Aim for about 150 words."
+ },
+ {
+  "prompt_id": "stor-0342",
+  "instruction": "Write a 500-word story for this prompt: End a story with, \"Oh well, at least the dog was fine. \" Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0434",
+  "instruction": "How did the Romans justify slavery, especially of other Romans, for example debtors? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0567",
+  "instruction": "I want to develop OKRs for my team at work. What process should I use? Keep it around 350 words."
+ }
+]

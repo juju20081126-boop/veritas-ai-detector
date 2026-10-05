@@ -1,0 +1,374 @@
+=== prompt_id: gene-0487 ===
+Here is a typical Dockerfile for a Node.js app:
+
+```dockerfile
+# Use a slim Node.js base image
+FROM node:20-alpine
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy dependency manifests first to take advantage of layer caching
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --omit=dev
+
+# Copy the rest of the application code
+COPY . .
+
+# Document the port the app listens on
+EXPOSE 3000
+
+# Run as the unprivileged user that ships with the image
+USER node
+
+# Start the app
+CMD ["node", "server.js"]
+```
+
+## What each line does
+
+**`FROM node:20-alpine`** picks the starting image. It contains Node.js 20 on Alpine Linux, which is much smaller than the default Debian-based image. Smaller images download faster and expose less attack surface.
+
+**`WORKDIR /usr/src/app`** sets the directory where later commands run. Docker creates it if it doesn't exist, so you don't have to chain `cd` commands.
+
+**`COPY package*.json ./`** copies only `package.json` and `package-lock.json`. This is deliberate. Docker caches each instruction as a layer, and if the files for a step haven't changed, it reuses the cached layer. Because dependencies change far less often than source code, copying the manifests first means `npm ci` only reruns when they change.
+
+**`RUN npm ci --omit=dev`** installs dependencies exactly as pinned in the lockfile. It is stricter and more reproducible than `npm install`. The `--omit=dev` flag skips dev dependencies such as test runners, which keeps the image lean.
+
+**`COPY . .`** brings in the rest of your source code. Pair this with a `.dockerignore` file that lists `node_modules`, `.git`, and `.env`, so you don't copy local clutter or secrets into the image.
+
+**`EXPOSE 3000`** documents that the app listens on port 3000. It doesn't publish the port by itself. You still need `-p 3000:3000` when you run the container.
+
+**`USER node`** switches from root to the built-in `node` user. If someone exploits your app, they get fewer privileges inside the container.
+
+**`CMD ["node", "server.js"]`** sets the default command. The JSON array form runs Node directly as the main process, so it receives signals like SIGTERM and can shut down cleanly.
+
+## Building and running
+
+```bash
+docker build -t my-node-app .
+docker run -p 3000:3000 my-node-app
+```
+
+If your project needs a build step, such as TypeScript or a frontend bundle, use a multi-stage build. Compile in one stage, then copy only the output into a clean final image.
+
+=== prompt_id: essa-17-esl ===
+Is It Ethical to Use Animals in Scientific Research?
+
+Many people ask if it is right to use animals in scientific research. I think this is a very difficult question, because there are good reasons on both sides. In this essay I will explain my opinion.
+
+First, animal research has helped people a lot. Many medicines and vaccines were tested on animals before doctors gave them to humans. For example, the vaccine for polio and many medicines for cancer were developed with help from animals like mice and monkeys. Without this research, many people would be dead today. When a scientist can save thousands of human lives, some people believe that it is acceptable to use animals.
+
+However, animals can feel pain and fear just like us. A mouse in a laboratory cannot say "no" or choose to leave. Some experiments make animals suffer a lot, and I think this is very sad. Animals are living creatures, and they have a right to live without being hurt. Some people say that if we are kind to our pets, we should be also kind to the animals in laboratories.
+
+Another problem is that animals are not the same as humans. Sometimes a medicine works well in a mouse, but it does not work in a person, or it can even be dangerous. So the results are not always useful. This means that some animals suffer for nothing, and this is not fair.
+
+Fortunately, today scientists have other choices. They can use computer models, or grow human cells in a laboratory to test new drugs. These methods are often cheaper and they do not hurt any animal. Many countries also have rules that say scientists must use as few animals as possible and must give them good care. I think these rules are very important.
+
+In my opinion, using animals in research can be ethical only in some situations. If the research is really necessary to cure serious diseases, and if there is no other way, then it can be accepted. But scientists must always try to reduce the pain of the animals, and they should use new technology to replace animals when it is possible. We should not forget that animals are living beings too.
+
+In conclusion, I do not think the answer is simply yes or no. Science is important for our future, but kindness is important too. If we are careful and responsible, we can protect both human health and animal life.
+
+=== prompt_id: news-0019 ===
+**Hamilton Takes Pole in China After Last-Lap Shove Past Rosberg**
+
+SHANGHAI -- Lewis Hamilton will start from pole position at the Chinese Grand Prix, but the headlines after qualifying were about what happened on the final lap and what followed it.
+
+Hamilton, the reigning champion, found the time he needed on his last run, pushing his Mercedes teammate Nico Rosberg down to second on the grid. The margin was small, but it was enough to give Hamilton the front-row slot that matters most at a circuit where a clean start often decides the race.
+
+The mood in the garage turned cold almost as soon as the session ended. Rosberg, who had held provisional pole until Hamilton's lap, declined to shake his teammate's hand afterward. The snub was noticed by team staff and by the television cameras, and it quickly became the main talking point in the paddock.
+
+The two drivers have shared a title fight for several seasons, and tension between them has been building for much of that time. Each is aware that any points dropped to the other could prove decisive at the end of the year. Rosberg's gesture, or lack of one, suggested the rivalry has moved past polite professional distance.
+
+Mercedes management will have an interesting evening ahead. The team has worked hard to stop its two drivers' competition from damaging its dominance, and it has repeatedly urged them to keep disputes private. A public refusal to shake hands makes that harder.
+
+Hamilton did not appear bothered by the incident. Starting first gives him track position, clean air and the first choice of racing line into the opening corner, all valuable advantages over a long race.
+
+Rosberg will line up directly behind him and will have a clear view of the car he needs to beat. If he wants to turn his frustration into points, the first few seconds of the race will be his best chance.
+
+The race starts Sunday.
+
+=== prompt_id: abst-0129 ===
+We study the capacity of deletion channels over non-binary alphabets, where each transmitted symbol is independently deleted with probability d and the receiver gets the remaining symbols without any indication of where the deletions occurred. Although the binary deletion channel has attracted a great deal of attention, its capacity is still unknown, and far less is understood for larger alphabets. We derive an upper bound on the capacity of the q-ary deletion channel that holds for every alphabet size and deletion probability. Our approach extends the genie-aided technique used for the binary case: we give the receiver side information that turns the channel into one with a tractable structure, and then bound the resulting information rate using a Markov-chain input distribution and a carefully chosen set of auxiliary variables. The bound is expressed as a numerically computable optimization over a small number of parameters. For large alphabets, we show that the bound approaches the capacity of the erasure channel more slowly than a naive analysis would suggest, and for small deletion probabilities it matches the known asymptotic behavior to the first order. Numerical evaluation shows that our bound improves on the best previously known bounds for a wide range of deletion probabilities and alphabet sizes.
+
+=== prompt_id: stor-0308 ===
+The first thing Marguerite did after the funeral was eat the whole sleeve of the good crackers, standing at the counter, because nobody was there to tell her that was dinner.
+
+The second thing was open her laptop and read the email from her brother again. Four lines. *Mom's house sells next month. Thought you should know. No need to come. Hope you're doing okay.* He had signed it with just an initial, like she was a client.
+
+She was fifty-three. She had been, by her own count, forgotten by people for about eleven months. Her husband had gone first, in the quiet way, a slow fading, and then the layoff, and then the friends who stopped calling because grief was apparently contagious. Somewhere in the middle of all that she had started doing the math on pills in the cabinet. Not seriously. Just math.
+
+Tonight the math was louder.
+
+She opened the cabinet. She looked at the orange bottles for a long time. Then she looked at the fridge, where a magnet held a postcard from her sister-in-law Delia, who had said at the funeral, loudly and in front of everyone, *Well, Marguerite always did take things hard.*
+
+*Always did take things hard.* As if she had been a fussy houseplant.
+
+Marguerite closed the cabinet.
+
+She was not feeling better. She wanted to be clear about that, to herself, to the empty kitchen. Nothing had lifted. The grief sat in her chest like a stone in a river, and the water just kept going around it. But something small and mean and stubborn had woken up under the stone.
+
+If she were gone, Delia would tell the story at Thanksgiving with a sad little head tilt. *Poor Marguerite. We should have seen.* She'd make it about herself, gracefully. Her brother would sell the house and feel a clean, administrative sort of sadness.
+
+No.
+
+Marguerite got a pen. On the back of the postcard, under Delia's looping handwriting, she wrote: *Day one.* Then she wrote the date. Then, after a moment, she added: *Out of spite.*
+
+It was not a beautiful reason. She knew that. There were better reasons, gentler ones, the kind that therapists put on posters. Maybe she would find one of those eventually.
+
+But spite had gotten her off the couch, and spite had made her put the pills away, and spite, she thought, taking the last cracker, might just get her to the doctor on Monday.
+
+She would go to the doctor. She would answer the phone when her cousin called. She would plant the tomatoes in spring, if only so she could invite the entire family to watch her enjoy them.
+
+She would stay alive, very much on purpose, in the most irritating way possible.
+
+And one day, she thought, she might even forget why she started.
+
+=== prompt_id: expl-0408 ===
+Base 2 (binary) and base 16 (hexadecimal) are directly linked because 16 equals 2^4. That means every hexadecimal digit corresponds to exactly four binary digits (bits). To convert binary to hex, split the bits into groups of four starting from the right, then replace each group with its hex digit. For example, 1101 0110 becomes D6. Going from hex to binary reverses the process: A is 1010, F is 1111. This is why programmers use hex as a compact, readable shorthand for long binary values.
+
+=== prompt_id: gene-0488 ===
+Three colors that men's suits often come in:
+
+1. **Navy blue**, which is probably the most versatile choice and works for business and formal events alike.
+2. **Charcoal gray**, a classic that looks sharp in professional settings.
+3. **Black**, which is most common for formal occasions such as evening events, weddings and funerals.
+
+=== prompt_id: essa-20-pla ===
+Should Companies Be Allowed to Track Their Employees' Online Activity?
+
+Employers have good reasons to want to know what happens on their networks, and employees have equally good reasons to want some privacy. I think companies should be allowed to monitor online activity at work, but only within clear limits.
+
+The case for monitoring starts with security. Company networks hold customer records, financial data and trade secrets. A single employee who clicks a malicious link or uploads files to a personal account can expose all of it. Monitoring tools help companies catch these problems early. Employers are also legally responsible for what happens on their systems, including harassment and data leaks, so they need some way to detect misconduct. Finally, a company pays for working hours, and it is reasonable to check that those hours are being used for work.
+
+Still, unlimited tracking causes real harm. Constant surveillance makes people anxious and distrustful, and research suggests that stressed employees are often less productive, not more. Monitoring can also reach into personal matters, such as private messages, medical searches or union organizing, which workers should be able to keep to themselves. Without limits, data collected for security can be used for entirely different purposes.
+
+The best answer is regulated monitoring. Companies should tell employees exactly what is tracked and why, in writing, before it begins. They should monitor work accounts and devices rather than personal ones, collect only what they need, and store it securely. Where possible, they should focus on patterns that signal risk rather than reading every message.
+
+With these safeguards, monitoring can protect both the business and its workers. Without them, it turns a workplace into a place where nobody feels trusted.
+
+=== prompt_id: news-0020 ===
+**U.S. Official: Fall of Ramadi 'Not Imminent,' but Iraqi Forces Plead for Help**
+
+BAGHDAD -- A U.S. military official said Friday that the fall of Ramadi to ISIS militants is "not imminent," even as a local official inside the besieged city warned that it is unclear how much longer government forces can hold out.
+
+The U.S. official, speaking to CNN on condition of anonymity, offered a more measured assessment than the grim picture painted by those on the ground. He did not describe the situation as secure, but said the Iraqi forces defending the city were not on the verge of collapse.
+
+An official in Ramadi gave a very different account. He said the troops and local fighters are stretched thin, short of supplies and under heavy pressure, and that no one can say with confidence how long they can last.
+
+The official said he has begged the Iraqi government in Baghdad for reinforcements and asked the U.S.-led coalition to step up airstrikes against militant positions around the city. So far, he said, neither request has produced the help he needs.
+
+Ramadi, the capital of Anbar province, lies about 70 miles west of Baghdad and has been contested for months. Its fall would be a significant symbolic and strategic blow to the Iraqi government, which has struggled to hold ground in the largely Sunni province.
+
+The gap between the two accounts reflects a familiar tension in the campaign against ISIS. American officials have tended to stress that the Iraqi military is still capable and that coalition airpower is making a difference, while Iraqi commanders on the front line have often said they lack the weapons, manpower and air cover to match what they are facing.
+
+The coalition has carried out airstrikes in Anbar in recent weeks, but the local official said the strikes have not been frequent enough to turn the tide around Ramadi.
+
+It was not immediately clear whether Baghdad planned to send additional troops.
+
+=== prompt_id: abst-0130 ===
+Learning-based model predictive control (MPC) can handle systems whose dynamics are hard to model by hand, but it often relies on gradients of a learned model and offers few guarantees of safe behavior. We propose a safe learning-based MPC method that is gradient-free, using the cross-entropy method (CEM) to solve the optimal control problem by sampling candidate input sequences and refining the sampling distribution. A learned dynamics model, such as a neural network, predicts future states, and a safety mechanism filters or penalizes samples that would violate state or input constraints. This avoids differentiating through the model and works with non-smooth or non-differentiable components. We analyze the conditions under which the controller keeps the system within the safe set, and we demonstrate the approach in simulation on nonlinear control benchmarks, where it satisfies constraints reliably and achieves performance comparable to gradient-based solvers.
+
+=== prompt_id: stor-0309 ===
+Day one, I tried to ruin everything.
+
+I'd won the election by a sliver, the kind of margin that makes everyone suspicious of you, and I woke up in the residence realizing I had made a terrible mistake. I did not want to be in charge of anything. I could barely manage my own dishwasher.
+
+So I made a plan. If I couldn't resign, I'd get myself thrown out.
+
+First, I announced on live television that the national budget would be balanced by selling the unused federal parking lots. Everyone laughed. Then economists actually ran the numbers and discovered that the government owned several thousand acres of empty asphalt in prime city centers. The lots sold for billions, and developers built housing on them. Rents dropped. My approval rating rose six points.
+
+Fine. Step two.
+
+I declared a national "Do Nothing Wednesday," on which all non-essential government offices would close and everyone should go outside. I assumed the cries of impeachment would be immediate. Instead, a study came out within the month showing a surge in volunteer work, neighborhood gatherings and sleep. Hospitals reported fewer stress visits. A cereal company put my face on a box.
+
+I got more desperate. I appointed my barber as Secretary of Commerce, because he had once told me his business model and it sounded like a scam. It was not a scam. It was simply a very good business model, and he cut red tape the way he cut hair, quickly and without apologizing. Small businesses filed paperwork in an afternoon.
+
+I tried insulting the opposition in a speech. I called them "a committee of very stubborn geese." The geese became their mascot, and the first bipartisan bill in ten years passed because both sides wanted to prove they weren't geese.
+
+Then I tried the big one. I pardoned a turkey, then I pardoned the entire turkey industry's outstanding fines on the condition that they fix their wastewater systems. Rivers got cleaner. Farmers sent me thank-you notes with photos.
+
+By autumn, my approval rating was sixty-eight percent. Crowds chanted my name. A congressman I'd tried to enrage by wearing mismatched socks to the State of the Union gave me a standing ovation, mostly because he'd started wearing mismatched socks too.
+
+That night I sat in the Oval Office, staring at the portraits of presidents who had actually wanted the job.
+
+"I just wanted to go home," I told the room.
+
+The portrait of Lincoln, to my eye, looked sympathetic.
+
+But the trouble with going home is that everything I'd broken was working. And somewhere in the building, I could hear my chief of staff laughing with joy.
+
+I picked up the phone. "Draft the reelection papers," I sighed. "And please, someone, find me a bigger scandal."
+
+=== prompt_id: gene-0489 ===
+Me tell you about water. Big story. Water go round and round, never stop.
+
+First, there is big hot light in sky. Sun. Sun very strong. Sun look down at water in lake, in river, in big big water that taste bad, the sea. Sun warm the water. Water get hot. Hot water get small and light, like smoke from fire. Water go up. Up, up, up. You no see it go. Water turn into air-water. Wise people say "evaporate." Caveman say water fly away.
+
+Not just sea. Puddle too. Wet rock too. Wet fur of mammoth, after rain, dry in sun. Where wet go? Wet go up in sky. Plants also let water go up from leaves. Everything wet give a little water to sky.
+
+Now air-water high up. High up, air very cold. Brrr. Cold make air-water change. Air-water huddle together, like cavemen in cave when snow come. Many little water pieces hold hands. They make cloud. White cloud, gray cloud, soft like fur. Wise people say "condense." Caveman say water get together and make cloud.
+
+Cloud float. Wind push cloud over hills, over trees, over caves. Cloud get big. Cloud get fat with water. Cloud get dark and heavy. Too heavy to hold. Then cloud drop water. Rain! Drip drip drip! Sometimes cloud so cold, water turn to hard white stuff, snow, or little rocks of ice. Ice fall on head. Ow. Wise people say "precipitation." Caveman say sky cry.
+
+Rain fall on ground. Rain fall on mountain. Rain make little stream. Stream run down hill, fast, splash splash. Little stream meet other stream. They make river. River run to the sea. Some rain go into ground, deep, and feed roots of tree and drink for plant. Some snow sit on mountain for long time, then melt in spring and run down too.
+
+So water come back to sea. Back where story start. Then big hot light come again. Sun warm water. Water go up again. Round and round. Never stop. Same water drink by mammoth long ago, maybe water now in your cup. Think about that. Is strange.
+
+Water cycle is why we have rain for berries. Water cycle is why river is full of fish. Water cycle is why we not thirsty. Caveman say thank you, Sun. Thank you, Cloud. Thank you, Rain.
+
+Now Ugh go hunt. Water story finished.
+
+=== prompt_id: essa-20-stu ===
+Should Companies Track Employees Online?
+
+Many companies use software to watch what their employees do on the internet while they are at work. I believe companies should be allowed to do this, but only if they follow clear rules.
+
+Companies have good reasons to monitor. They need to protect private information, like customer data, from hackers and from mistakes. They also pay workers to do a job, so they want to make sure that time is not wasted on games or social media.
+
+However, workers have rights too. If a company reads every message and tracks every click, employees may feel nervous and stop trusting their boss. That can make them work worse, not better. Personal information should also stay private.
+
+The best solution is a balance. Companies should tell employees what they are tracking and why. They should only watch work accounts and work computers. If both sides are honest and respectful, monitoring can keep a company safe without taking away people's privacy.
+
+=== prompt_id: news-0021 ===
+**Young Survivor Loses Mother in Crash as Doctor Speaks of Children's Resilience**
+
+Lily was too young to understand why her mother did not come home.
+
+The 25-year-old woman, Lynn Jennifer Groesbeck, died in the crash that left her daughter hurt and her family grieving. Lily survived, and relatives and medical staff are now focused on helping her through the days and weeks that follow.
+
+Groesbeck was 25. Those who knew her described a young mother whose life revolved around her daughter. Her death leaves a family with an enormous gap and a small child who will grow up with questions about what happened.
+
+Authorities have released few details about the circumstances of the crash, and investigators are continuing to examine what caused it. Officials said further information would be released once their work is complete.
+
+Doctors who care for children who have survived serious accidents say the road ahead is hard but not hopeless. They say young patients often recover in ways that surprise even the specialists treating them.
+
+"Children are very resilient ... sometimes we don't realize how much they actually can withstand," said one doctor familiar with the case.
+
+That resilience, the doctor explained, has limits, and it depends heavily on the support children receive after a traumatic event. Physical wounds are only part of the picture. Children who lose a parent may need counseling, stable routines and the reassurance that they are safe and loved. Experts say that familiar faces, consistent caregivers and honest, age-appropriate answers can make a significant difference in how a child copes with loss.
+
+Child psychologists add that grief in young children often appears differently than in adults. A child may seem fine one day and become withdrawn or upset the next. They may ask the same questions repeatedly, or return to behaviors they had outgrown. This is normal, specialists say, and families are encouraged to be patient.
+
+Relatives have asked for privacy as they plan for Groesbeck's funeral and for Lily's care. Friends and neighbors have begun offering meals, childcare and other support.
+
+For Lily's family, the focus now is on the long process of healing. They are leaning on one another, on the doctors treating her, and on the idea that, with care, a very young child can find a way through an unimaginable loss.
+
+=== prompt_id: abst-0131 ===
+We compute the strange quark helicity distribution in the proton using chiral effective theory. Polarized deep inelastic scattering data have long suggested a sizable, negative strange quark contribution to the proton spin, while semi-inclusive measurements point toward a much smaller value, so the question remains unsettled. We study the contribution of the pion-baryon and kaon-hyperon fluctuations of the nucleon, in which a strange quark and antiquark are produced through the kaon cloud. Using the chiral effective Lagrangian with octet and decuplet intermediate states, we calculate the leading nonanalytic contributions to the strange helicity and their dependence on the ultraviolet regulator. We find that the kaon-loop contribution is small and slightly negative, and that its x dependence is concentrated at low momentum fractions. Our results are compared with recent global QCD analyses and lattice calculations.
+
+=== prompt_id: stor-0310 ===
+The devil's office smelled like burnt coffee and old paperwork, which Daniel had not expected.
+
+"Sit," said the devil. He looked like a tired accountant in a gray cardigan. "Résumé?"
+
+"I'm sorry, I thought this was an interview for a different position," Daniel said. He was a mid-level compliance officer from Dayton. He had been told, in a vague email, that there was an "opportunity."
+
+"It is. Mine." The devil slid a folder across the desk. "Six thousand years. I'm tired. The lake of fire needs maintenance, the demons are unionizing, and humanity has gotten so inventive I barely do anything anymore. You people hardly need the help."
+
+Daniel opened the folder. Inside were headshots of seven men, each stamped REJECTED in red.
+
+"What was wrong with them?"
+
+"Too eager." The devil sighed. "The first one cackled during the interview. Another asked if he'd get a throne. A third wanted to *rule*. None of them understood that the job is mostly paperwork."
+
+"Paperwork?"
+
+"Souls. Intake, categorization, appeals. You'd be shocked how many appeals." The devil rubbed his eyes. "Everybody thinks I tempt them. Mostly I just file."
+
+Daniel thought about his own desk, his own stack of forms, the manager who had once said, without irony, that rules were what separated people from chaos.
+
+"What's the salary?"
+
+"Eternal."
+
+"And benefits?"
+
+"You get a corner office, and unlimited dental, since it turns out hell is hard on teeth." The devil leaned forward. "And you may reject anyone you like. That's the secret perk. Nobody ever tells you that part."
+
+"Reject?" Daniel said slowly. "Like, deny entry?"
+
+"To the worst of them. The ones who really deserve to be in the wrong place." The devil looked almost sad. "For six thousand years I've been the only one who could say no. It gets lonely."
+
+Daniel looked at the folder again. He thought about every person who'd ever cut a corner, lied on a form, or smiled while stealing, and the way he had always had to approve their paperwork anyway.
+
+"I have one question," he said.
+
+"Yes?"
+
+"Is there a handbook?"
+
+The devil smiled for the first time, and for a moment he looked relieved.
+
+"Oh," he said, "you are going to be *terrifying.*"
+
+=== prompt_id: gene-0490 ===
+One note before the list: Mariya Takeuchi debuted in 1978, but her biggest and most lasting hits came in the late 1970s through the 1980s and beyond, so this list covers her best-known work across that span. She is often grouped with the "city pop" genre.
+
+## Most Popular Songs
+
+### 1. "Plastic Love" (1984)
+This is her most famous song today. It appeared on the album *Variety*, which was arranged and produced largely by her husband, Tatsuro Yamashita. The song was largely forgotten for years, then went viral on YouTube around 2017 through an upload that has since collected tens of millions of views. It turned Takeuchi into an international name and became the unofficial anthem of the city pop revival. It has a groovy bassline, polished production and a bittersweet story of a woman trying to hide her loneliness behind a glamorous nightlife persona.
+
+### 2. "Mayonaka no Door ~ Stay With Me" (1979)
+This was her breakout hit in Japan and one of the signature songs of the era. The English subtitle is "Stay With Me," and the song is sometimes simply called that. It has a smoky, soulful mood, with a smooth melody and a strong vocal. It has also found a new audience overseas in recent years and is often recommended as a gateway to city pop.
+
+### 3. "September" (1979)
+Her first big hit, released early in her career. It is a lighter, more upbeat pop song about the end of summer, and it helped establish her as a rising young singer-songwriter. It remains a favorite among longtime fans.
+
+### 4. "Fushigi na Peach Pie" (1980)
+A cheerful, bright single that became widely known in Japan, partly because it was used in a commercial. It shows her sweeter, more playful pop side and became one of her best-loved songs from the early years.
+
+### 5. "Single Again" (1992)
+A very different sound from her earlier city pop style, this ballad was a major hit for her in the early 1990s and became one of her best-selling singles. It showed that she could succeed with a more emotional, adult-oriented sound and helped her remain popular long after the city pop era had faded.
+
+## Other Songs Worth Knowing
+Her album tracks and other singles from the 1980s also show her range, from uptempo pop to smoother, jazzier songs. If you are doing an assignment, the album *Variety* is the best single place to start, since it contains "Plastic Love" and several other songs that showcase the polished production of the period.
+
+## Tips for Your Assignment
+- **Be careful with dates.** Some sources list release years differently depending on whether they mean the original single, the album or a later re-release.
+- **Check the song titles.** Japanese titles are romanized in several ways, so spellings vary between sources.
+- **Verify the details.** I would double-check chart positions and exact release dates against a reliable source such as the Oricon charts or her official discography before citing them.
+- **Mention the revival.** The story of how "Plastic Love" found a global audience decades later is an interesting example of how the internet can bring older music back to life, and it would add a nice angle to your paper.
+
+=== prompt_id: essa-20-esl ===
+Should Companies Be Allowed to Track What Their Employees Do Online at Work?
+
+Today, many companies use special programs to see what their workers do on the internet. Some people think this is a good idea, but other people think it is not fair. I think companies can track their employees, but they must have some rules.
+
+First, I think tracking is useful for the safety of the company. Companies have a lot of important information, for example information about customers and money. If a worker open a bad website or send a secret file to another person, the company can have a big problem. With tracking programs, the company can find these problems fast. This is important because hackers are everywhere now, and one small mistake can cost a lot of money.
+
+Second, the company pays the workers for their time. If an employee spend many hours on social media or watching videos, he is not doing his job. The manager wants to know if the people are working. So tracking can help the company to see who need more help or more training. Sometimes it can also show that the workers have too much work, and the company can hire more people.
+
+However, there are some problems with tracking too. Many people feel nervous when somebody always watch them. If you think your boss is reading everything, you cannot relax, and it is difficult to work well. Some studies say that workers who are stressed are not so productive. Also, everyone have a private life. Maybe a person needs to check a message from the doctor or call his family during a break. This kind of information is personal, and the company should not see it.
+
+For this reason, I think there must be clear rules. The company should tell the workers before it starts tracking them. The workers should know what the company is looking at and why. Also, the company should track only work computers and work accounts, not personal phones. And the company must keep the information safe, so nobody can use it in a bad way.
+
+In my opinion, the best way is to find a balance. A company need to protect itself, but it also need to respect its workers. If the manager and the employees trust each other, the workplace will be better for everybody.
+
+In conclusion, companies should be allowed to track the online activity at work, but only with honesty and good rules. I believe this is fair for both sides.
+
+=== prompt_id: news-0022 ===
+**Zayn Malik Quits One Direction, Leaving Fans Heartbroken**
+
+LONDON -- Zayn Malik is leaving One Direction. The singer said he wants to live as a "normal 22-year-old," a decision that sent shockwaves through the band's enormous global fan base.
+
+Within minutes of the announcement, social media was flooded with messages from fans describing themselves as devastated. Many posted photos of concert tickets and videos of past performances. Others simply wrote that they could not stop crying. The band's name and Malik's quickly rose to the top of trending lists around the world.
+
+Malik, who rose to fame with the group after they formed on a television talent show, has been one of its best-known members. His departure leaves the band as a four-piece act at the height of its popularity.
+
+The singer said he needed a break from the pressures of constant touring, interviews and public attention. Few young people have faced the kind of scrutiny that comes with being in one of the world's biggest pop groups, and Malik's wish for an ordinary life has drawn sympathy even from those disappointed by the news.
+
+Fan reaction, while emotional, has also raised a question for parents: how should they respond when a child is deeply upset over something that seems distant from their daily life?
+
+Experts say the moment offers a useful opportunity. Psychologists who study childhood development say parents should take their children's feelings seriously instead of dismissing them. Fans may feel a genuine sense of loss, they say, and acknowledging that is the first step.
+
+From there, experts suggest, parents can talk through the experience and help children understand that disappointment is a normal part of life. Learning to cope with a setback, even one involving a favorite band, can build resilience that serves children well later.
+
+"It is a chance to teach them that it's okay to be sad, and that sadness passes," one child psychologist said.
+
+A statement from the band said the remaining members will continue. Fans have already begun asking what that will look like.
+
+=== prompt_id: abst-0132 ===
+Sun-like stars generally rotate about axes closely aligned with the orbital planes of their planets, and the Sun's spin axis is tilted by only about 6 degrees relative to the ecliptic. Yet a growing number of exoplanet systems, particularly those hosting hot Jupiters around stars of various ages, show large spin-orbit misalignments. The origin of this obliquity remains debated. Existing explanations include planet migration, magnetic interactions with the protoplanetary disk, and internal gravity waves, but none fully explains the observed distribution. Here we propose that stellar winds can tilt the spin axis of a Sun-like star. We model a star with a magnetized wind whose mass and angular-momentum loss is not perfectly symmetric about its rotation axis, for instance because of an inclined magnetic dipole, and compute the resulting torque on the stellar spin. We show that over the main-sequence lifetime the torque can produce a measurable drift in the spin-axis orientation, with a magnitude that depends on the wind strength, the magnetic geometry and the star's moment of inertia. Our results suggest that wind-driven tilting is a plausible but modest contributor to stellar obliquity, and identify the regimes where it could matter. We discuss observational tests, including statistical studies of spin-orbit angles in systems of differing ages and magnetic activity levels, that could confirm or rule out this mechanism.

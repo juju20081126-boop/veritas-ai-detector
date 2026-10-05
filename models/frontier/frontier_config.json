@@ -1,0 +1,8 @@
+{
+ "candidate": "h1h2h9",
+ "threshold": 0.9747,
+ "temperature": 1.0,
+ "max_len": 160,
+ "threshold_rule": "dev clean-human 1% FPR of frontier_onnx (n_dev_neg=1500, commit b6005f3)",
+ "score": "P(AI-generated) + P(AI-generated & AI-refined)"
+}

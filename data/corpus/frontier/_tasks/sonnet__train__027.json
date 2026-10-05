@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "abst-0169",
+  "instruction": "Draft the abstract (around 150 words) for the paper \"CyPhyHouse: A Programming, Simulation, and Deployment Toolchain for Heterogeneous Distributed Coordination\"."
+ },
+ {
+  "prompt_id": "stor-0345",
+  "instruction": "The final digit of pi has been discovered leading to profound events.\n\nWrite a short story of about 300 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0437",
+  "instruction": "Were the 12 Days of Christmas just a way of reconciling the Gregorian and Julian calendars both celebrating Christmas on their respective Dec. 25's, which are 12 Days apart? (answer in roughly 75 words)"
+ },
+ {
+  "prompt_id": "gene-0570",
+  "instruction": "Who is the winningest coach in Seattle Seahawks history? Answer in about 700 words."
+ },
+ {
+  "prompt_id": "news-0060",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- A boutique in Manhattan offers face workouts and massages.\n- Massage and movement may be detoxifying to your skin."
+ },
+ {
+  "prompt_id": "abst-0170",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"Normal extensions of KTB of codimension 3\"."
+ },
+ {
+  "prompt_id": "stor-0346",
+  "instruction": "I'm a college student and need help with an assignment. Write a 500-word story for this prompt: You've been knocked out cold by the schoolyard bully. When you wake up your ears are still ringing, but that sound is replaced by another -- you can hear the thoughts of your tormentor."
+ },
+ {
+  "prompt_id": "expl-0438",
+  "instruction": "I'm a college student and need help with an assignment. Operation Market Garden: Could the war really had been over by Christmas 1944 if it had suceeded? Could that have a significant effect on the shape of post-war Europe?\n\nExplain it in about 100 words."
+ },
+ {
+  "prompt_id": "gene-0571",
+  "instruction": "I'm a college student and need help with an assignment. In c++, what is the \"friend\" statement used for?"
+ },
+ {
+  "prompt_id": "news-0061",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 250 words based on these key points:\n- Barcelona extends lead over Real Madrid in Spanish league.\n- Champions League opponent Manchester City suffers shock defeat."
+ },
+ {
+  "prompt_id": "abst-0171",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 175 words for a research paper titled \"Decay of Activity Complexes, Formation of Unipolar Magnetic Regions and Coronal Holes in their Causal Relation\"."
+ },
+ {
+  "prompt_id": "stor-0347",
+  "instruction": "The protagonist is narrating his entire life... out loud.\n\nWrite a short story of about 300 words. Use a formal, professional tone."
+ }
+]

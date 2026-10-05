@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0009",
+  "instruction": "Write a news article of about 500 words based on these key points:\n- \"Come on, sweetie. Come on, sweetie,\" police officer implores rescued toddler.\n- Baby Lily was trapped in the car in the cold river for as long as 14 hours.\n- Lily's mother, Lynn Jennifer Groesbeck, died in the crash. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0119",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 175 words for a research paper titled \"Investigating The Algebraic Structure of Dihomotopy Types\"."
+ },
+ {
+  "prompt_id": "emai-0229",
+  "instruction": "Please draft a work email about: PIRA Presentations on the US and World Economy (around 225 words)."
+ },
+ {
+  "prompt_id": "stor-0299",
+  "instruction": "I'm a college student and need help with an assignment. Write a 400-word story for this prompt: Re-write the ending of How I Met Your Mother the way you wanted it to end."
+ },
+ {
+  "prompt_id": "expl-0399",
+  "instruction": "Explain like I really AM five: What the hell is Pokemon about, anyway?\n\nExplain it in about 150 words."
+ },
+ {
+  "prompt_id": "gene-0479",
+  "instruction": "I'm a college student and need help with an assignment. Who wrote The Picture of Dorian Grey in 1891"
+ },
+ {
+  "prompt_id": "news-0010",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Don McLean's \"American Pie\" lyrics auctioned for $1.2 million.\n- The song is dense with symbolism; McLean says lyrics, notes will reveal meaning.\n- \"Pie\" is McLean's biggest hit, was No. 1 in 1972."
+ },
+ {
+  "prompt_id": "abst-0120",
+  "instruction": "Draft the abstract (around 275 words) for the paper \"On Geometry of Interaction for Polarized Linear Logic\"."
+ },
+ {
+  "prompt_id": "emai-0230",
+  "instruction": "I'm a college student and need help with an assignment. Write an email with the subject line \"Learn Technical Analysis, Early Bird Special for Houston Class\". Aim for about 225 words."
+ },
+ {
+  "prompt_id": "stor-0300",
+  "instruction": "I'm a college student and need help with an assignment. Write a 400-word story for this prompt: Sunday Free Write: Leave A Story, Leave A Comment - Another Call for Moderators Edition"
+ },
+ {
+  "prompt_id": "expl-0400",
+  "instruction": "I'm a college student and need help with an assignment. Why do so many world mythologies associate the sky with heaven? (answer in roughly 125 words)"
+ },
+ {
+  "prompt_id": "gene-0480",
+  "instruction": "What does a drilling engineer do?"
+ }
+]

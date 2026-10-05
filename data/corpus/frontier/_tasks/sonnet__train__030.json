@@ -1,0 +1,26 @@
+[
+ {
+  "prompt_id": "gene-0581",
+  "instruction": "I just watched \"Rubber\" by Quentin Dupiex and think it's amazing and actually very deep. Write a IMDb review in the style of Deleuze. FRENCH PHILOSOPHY MODE ON. Answer in about 350 words."
+ },
+ {
+  "prompt_id": "gene-0582",
+  "instruction": "I'm a college student and need help with an assignment. What flavors of girl scout cookies are available?"
+ },
+ {
+  "prompt_id": "gene-0583",
+  "instruction": "I am building a speaker. What is a crossover? How do I design one? Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0584",
+  "instruction": "What is the best Florida Key (about 250 words)"
+ },
+ {
+  "prompt_id": "gene-0585",
+  "instruction": "What is the future of artificial intelligence, and how do you think it will impact society in the next 10, 20, or 50 years?"
+ },
+ {
+  "prompt_id": "gene-0586",
+  "instruction": "Write a rap song about darth vadet eating ice cream."
+ }
+]

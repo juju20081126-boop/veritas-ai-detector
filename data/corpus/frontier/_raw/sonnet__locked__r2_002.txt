@@ -1,0 +1,83 @@
+=== prompt_id: expl-0397 ===
+In all likelihood, no. Relocating Mars to Earth's orbit would raise its surface temperature and release some carbon dioxide and water from the polar caps and soil, yet Mars would remain fundamentally limited. Its gravity, roughly 38 percent of Earth's, and its lack of a global magnetic field would allow the atmosphere to erode over geological time. The atmosphere would also remain unbreathable, containing almost no oxygen. Habitability comparable to Earth's would therefore require sustained, large-scale engineering rather than relocation alone.
+
+=== prompt_id: gene-0477 ===
+Use semantic `<section>` elements, give each one a unique `id`, and build a `<nav>` list whose links point to those ids with `#`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <h1 id="top">My Page</h1>
+
+  <nav aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#results">Results</a></li>
+    </ol>
+  </nav>
+
+  <section id="intro">
+    <h2>Introduction</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+
+  <section id="methods">
+    <h2>Methods</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <p>Your text here.</p>
+    <a href="#top">Back to top</a>
+  </section>
+</body>
+</html>
+```
+
+**How it works**
+
+- A link with `href="#methods"` scrolls the browser to the element whose `id` is `methods`.
+- `<nav>` tells browsers and screen readers that the block is for navigation.
+- `<ol>` gives numbered entries. Switch to `<ul>` for bullets, or nest lists for subsections.
+- `scroll-behavior: smooth` animates the jump instead of snapping.
+
+**Tips**
+
+- Keep ids lowercase, free of spaces, and unique within the page.
+- To keep the table of contents visible while scrolling, add `position: sticky; top: 1rem;` to the `nav` element.
+- For long documents, a short script can build the list automatically from your headings.
+
+=== prompt_id: news-0008 ===
+**Bodies of Suspected Gunmen Paraded in Garissa as Kenyan President Targets Attack Financiers**
+
+GARISSA, Kenya — The bodies of suspected gunmen were paraded before a crowd in the northeastern Kenyan town of Garissa on Saturday, two days after an assault on a university campus killed 147 people and as the country's president vowed to go after those who bankroll and support militant groups.
+
+Officials said the dead men were among the attackers who stormed Garissa University College on Thursday and held the campus under siege for roughly 15 hours before security forces ended the standoff. Most of the victims were students. The display reflected the anger and grief gripping a community close to the Somali border.
+
+In an address, President Uhuru Kenyatta condemned those who finance and support groups such as Al-Shabaab, saying the networks behind the violence would be pursued and held to account. He called on communities to help security agencies root out the people who shelter and fund the militants, and pledged that Kenya would answer the attack with the full force of the law.
+
+Authorities have said they are searching for the man they believe organized the assault and have offered a reward for information leading to his capture. Several suspects have also been detained.
+
+Al-Shabaab, the Somalia-based militant group that claimed responsibility for the attack, showed no sign of backing down. In a statement, it threatened "another bloodbath" in Kenya. The group has said its attacks are retaliation for Kenya's military deployment in Somalia, which began in 2011 and was later folded into the African Union force fighting the group.
+
+Analysts say the group has increasingly turned to so-called soft targets, including shopping centers, buses and campuses, where security is light and casualties can be high.
+
+The warning has deepened fears in a country that has endured a string of attacks linked to the group, including the 2013 siege of Nairobi's Westgate shopping mall, in which at least 67 people died. Thursday's assault was the deadliest on Kenyan soil since the 1998 bombing of the U.S. Embassy in Nairobi, and the speed of the security response has drawn criticism from some Kenyans.
+
+Security officials have promised stronger protection for schools, universities and other public places, particularly in counties bordering Somalia. Families across the country, meanwhile, are preparing to bury victims, many of them young people with their futures still ahead of them.
+
+=== prompt_id: abst-0118 ===
+Quantifying how information is distributed across the parts of a multivariate system remains an open problem in information theory and its applications in neuroscience, complex systems, and machine learning. The recently proposed Partial Information Decomposition (PID) addresses part of this problem by splitting the mutual information that a set of predictor variables carries about a target into redundant, unique, and synergistic contributions, but it requires one variable to be singled out as the target and offers no account of how the entropy of the system itself is organized. Here we apply the PID formalism to entropy rather than mutual information, introducing the Partial Entropy Decomposition (PED). The PED treats the joint entropy of a set of variables symmetrically and partitions it into non-overlapping atoms that capture the entropy shared redundantly by different combinations of variables, as well as the entropy that is unique to, or synergistically distributed across, them. To make the decomposition operational, we define redundant entropy through pointwise common surprisal, the portion of surprisal that individual outcomes of different variables have in common. This definition is closely related to the pointwise formulation of mutual information, and it allows both entropy and mutual information to be written as sums over the same set of atoms. We examine the properties of the resulting measure, show how it recovers familiar quantities, and demonstrate its behavior on canonical examples such as logic gates and simple discrete systems. We also discuss how the atoms relate to multivariate quantities such as co-information, and note that the results depend on the choice of redundancy measure. The PED provides a target-free decomposition that complements the PID and offers a new route to analyzing statistical dependence in multivariate data.

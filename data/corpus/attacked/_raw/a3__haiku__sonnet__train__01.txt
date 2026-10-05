@@ -1,0 +1,187 @@
+=== id: 37cef2b473e4b7db.A3_humanizer ===
+Obama wanted fast-track authority for the TPP—officially called Trade Promotion Authority—and here's why. Other countries won't put their best offer on the table if they think Congress is gonna tear it apart with amendments afterward. Fast-track means Congress gets a yes-or-no vote, which basically tells the other negotiators the deal won't get picked apart. That matters a lot for getting concessions.
+
+There was also timing pressure. Twelve countries were in the talks and they'd been going for a while. Obama wanted to wrap it up before 2016 turned trade into a political nightmare, and before his term ran out.
+
+The strategy was to set up trade rules in Asia before China could. Labor standards, environment stuff, intellectual property—all of it. Officials said it was about keeping US influence there and pushing back against Chinese economic power.
+
+He also said it'd open markets for American businesses and help job growth. But critics, including tons of Democrats and unions, weren't buying it. That's partly why they fought fast-track.
+
+=== id: 3959ceead3cdb67d.A3_humanizer ===
+Some clothing brands are actually trying to be responsible about the environment. Here's a few worth knowing about.
+
+Patagonia is the original. They use recycled and organic stuff, have a Worn Wear program where you can fix or resell, and give money to climate causes. The founder even put the whole company into a trust for climate work.
+
+Eileen Fisher does timeless women's clothes in organic linen and recycled fibers. They take back old pieces in their Renew program and fix them up or turn them into new stuff.
+
+Reformation tracks their environmental footprint on every product and publishes it. They use deadstock fabric, low-impact materials, responsible factories.
+
+Pact does cheap basics—underwear, tees—from organic cotton in Fair Trade certified places.
+
+Outerknown is Kelly Slater's brand. Recycled and organic fabrics, fair labor, transparent supply chains, mostly Fair Trade certified.
+
+Stella McCartney is all plant-based and recycled materials. No leather or fur, luxury price tag.
+
+Tentree plants ten trees for every item sold. Recycled and organic stuff for casual and outdoor wear.
+
+Kotn uses Egyptian cotton directly from the farmers who grow it, focuses on community stuff.
+
+Veja makes those sneakers everyone knows. Organic cotton, Amazon rubber, recycled materials, direct trade with producers.
+
+If you want to do even better, buy secondhand through ThredUp, Depop, Vinted, or check out Thought, People Tree, Armedangels.
+
+When you're shopping, look for third-party certifications like GOTS, Fair Trade, B Corp, bluesign. That's how you know it's real and not just marketing.
+
+=== id: ffd93e4c715e5da9.A3_humanizer ===
+A fractal's a shape that has detail at every magnification level. Usually it repeats itself, and the dimension doesn't have to be a whole number. In theory they're pure, but in the real world lots of physical systems look fractal-ish over some range of scales, which is why the idea's useful.
+
+Nature has the best examples. Coastlines, river branches, mountains, clouds—all have irregular repeating patterns. The length or area you measure depends on how you measure it, which Benoit Mandelbrot figured out. Biology does similar stuff: bronchial tubes and blood vessels branch like crazy to pack huge surface area into small space, which lets them exchange stuff efficiently.
+
+Fractals also show up in physics. When particles clump together at random, they branch like lightning. Chaotic systems often settle into fractal patterns. And near critical points where phase transitions happen, you get fractal scaling.
+
+Practically, fractals help with antenna design, image compression, medical imaging, modeling porous materials and terrain.
+
+But there are limits. Real objects are only fractal within some range—atoms at the small end, the object's size at the other. So fractal models are approximate, not literal. Still, they're really useful for quantifying messiness, which is why they're everywhere in science.
+
+=== id: 4896f2f5d4be3163.A3_humanizer ===
+Polar-ring galaxies are rare. They have a ring of gas, dust, and stars orbiting nearly perpendicular to the central host's disk. Nobody's totally sure how they form—maybe a neighboring galaxy pulled the ring away, maybe cold gas fell in. We ran N-body simulations with gas dynamics and star formation to test whether a major galaxy merger could make one. We tried different mass ratios, orbital setups, and gas amounts. When the right conditions lined up—especially nearly perpendicular spin and unequal gas—the gas from one galaxy got stripped, settled into a perpendicular structure, and started forming stars. The ring hung around for billions of years and matched what we see in real polar-ring galaxies: the shape, rotation curves, stellar mass. The host had to be a relatively gas-poor early-type system. So mergers, not just accretion from a neighbor, can explain a lot of the polar-ring galaxies we observe.
+
+=== id: fb6551b584d1111c.A3_humanizer ===
+Hard scattering angles are sensitive to gluon polarization in unpolarized hadrons. This polarization comes from perturbative effects, so it can create azimuthal modulations like cos 2φ in events with heavy quarks, dijets, and Higgs. The upper limit is set by positivity bounds, and people thought it could be pretty big. We looked at how soft gluon radiation affects this. When we resum large logarithms between the hard scale and pair transverse momentum, we found Sudakov suppression kills the polarized component much harder than the unpolarized one. So the asymmetries end up way below the maximum at kinematics where the factorized description works. We worked out the suppression for LHC kinematics and future electron-ion collider energies, showing how it depends on the hard scale and nonperturbative input. Earlier estimates were too optimistic. It turns out some observables still have real sensitivity to gluon polarization, but not as much as people thought.
+
+=== id: f4386bac40aac513.A3_humanizer ===
+It happened on a Tuesday, which seemed unfair. Gods shouldn't have to remember things on Tuesdays.
+
+I was standing in the grocery store checkout—holding eggs and a laundry detergent coupon—when it hit me. Not like a thought. Like remembering your own phone number. Oh. Right. I'm God. The stars, the platypus, that weird orange on the fruit stand across the aisle. All me. I'd just stepped away for a while.
+
+The woman in front of me was arguing with the cashier about a banana. Not the price, just the banana. And something opened up in my chest so huge my knees buckled. I knew exactly how many hairs she had. I knew she cried in her car that morning.
+
+I dropped the eggs. Twelve of them, all over the floor.
+
+"Sir? You okay?"
+
+"I made you," I said. It came out gentler than I meant, way scarier than I wanted.
+
+She stepped back. The banana woman stared. The kid at the next register was reaching for his phone. Ten seconds. Ten seconds before a video.
+
+Here's what I understood in those ten seconds. Being God isn't like being a king. A king gets choices. What I felt was everything at once: her sore feet, the banana woman's grief, egg yolk in the grout, a kid dying in some city I couldn't say, another one being born right then. All of it. And I was holding all of it. Couldn't set it down.
+
+I'd forgotten before. I knew that now. The knowledge felt like ending a long vacation, like I'd left something unbearable behind on purpose. I'd made a world full of creatures who couldn't be sure of anything, then I'd stepped into it to be gentle with them. Watching from above was too much. Being in it, you could at least be tired. You could buy detergent.
+
+"Sorry," I told the cashier. "I'll pay for the eggs."
+
+"Don't worry about it," she said, still nervous. "Maybe sit down."
+
+I did. I sat on the bench by the carts in the bright afternoon and decided. No drama. No thunder. I just let go of the knowing, the way you breathe out. I thought about forgetting as hard as I could. My mother's kitchen. My library book that's overdue. My knee that hurts when rain's coming.
+
+It worked. The oranges were just oranges. The sky was just the sky, something that happened to me.
+
+A guy sat down next to me and asked if I was alright. I said I thought I stood up too fast.
+
+"Happens to me too," he said. We watched the parking lot.
+
+Here's the thing though. Something small stayed behind, like a coin in a coat pocket. When the banana woman came out and dropped her keys, I picked them up. Both of us knew something about why my hands were so careful.
+
+=== id: 18f58588a41a6f20.A3_humanizer ===
+Friday night. Me, Priya, and Marcus hunched over a huge pepperoni pizza in the office, pretending we weren't going to touch the production server.
+
+"Nobody touches anything," Marcus said, grease on his hand. "We eat, we go home."
+
+Then the dashboard went red.
+
+Every line spiked at once. Priya leaned in. "That can't be right. Four million requests per second?"
+
+"We have forty users," I said.
+
+"Then someone's really popular." She grabbed a slice and kept staring.
+
+We traced it to a test box in the corner we called Zombie—thing's been decommissioned three times and keeps coming back. Someone had left it plugged in. It was hammering our staging environment with requests from a script nobody could find.
+
+"Kill it," Marcus said.
+
+"Can't SSH in. It's not on the network."
+
+"It's obviously on the network."
+
+"The dashboard says the network. The dashboard also thinks it's 1970."
+
+Priya was already under the desk. "There's an ethernet cable here. Yellow. Why's it yellow?"
+
+"Nobody knows," Marcus said gravely. "It's always been yellow."
+
+She traced it with her hand like defusing a bomb. I opened my laptop and typed sudo shutdown now on the wrong machine, which shut down my own laptop. Screen went black. We stared at it.
+
+"Well," Marcus said, "at least it works."
+
+Priya yanked the yellow cable out. Zombie's fans wound down with a sad whine. The dashboard dropped to zero. Red faded to green.
+
+Silence. Marcus lifted the last slice and bowed to it.
+
+"To the Zombie," he said. "Rest in peace."
+
+"It won't," Priya said. "It never does."
+
+Monday we found it running again. Someone had plugged the yellow cable back in.
+
+=== id: 3821a438d6c4b6d0.A3_humanizer ===
+Maya was the only person in the building who still practiced violin in front of a mirror.
+
+Every evening she'd stand in the hallway glass watching her bow arm, and the girl on the other side did exactly what she did. Right hand became left. Left became right. The oldest trick in the world. Nobody thought twice about it.
+
+Tuesday, the reflection lifted her bow half a second too early.
+
+Maya froze. The reflection froze too, but a beat later, like it had to remember. Then it blinked, and Maya hadn't.
+
+"That's not funny," Maya whispered.
+
+The girl in the glass tilted her head. Her mouth moved. No sound, but Maya read it: Help.
+
+She put her palm on the surface. Cold. Colder than glass should be. When the reflection raised its hand, a crack of light ran between their fingers. Not ordinary light. Silvery, thin, flickering like a bad signal.
+
+Down the corridor the bathroom mirror hummed. Then the elevator. Mirrors through the walls, all at once. Like a hundred tuning forks struck at the same time. Every pane in the building shaking.
+
+Maya didn't know the physics. Nobody did. Nobody ever knew a mirror was a window, not a surface. On the other side was a world that matched perfectly—same teacup, same dent in the railing—only reversed. Left-handed buttons. Wedding rings on the wrong hand. A world running in perfect sync with hers, like two clocks wound by the same hand.
+
+Something had thrown the clocks apart.
+
+The reflection pointed behind Maya. Maya turned. In the apartment door's reflection, something stood in the other hallway. Tall, fuzzy, moving on its own. Not mirroring anything. Walking toward the glass.
+
+"Is that yours or mine?" Maya said.
+
+The girl shook her head hard and mouthed something. Maya leaned close. Break it. Before it comes through.
+
+"Seven years of bad luck?" She stopped. The humor had drained out completely. The thing was close now. Long fingers spread toward the glass.
+
+Maya grabbed her violin case, swung it by the strap, brought the corner down on the mirror with everything she had.
+
+The glass cracked in a long white star. The humming went to a scream. For one terrible second she saw the girl's face fragmented, smiling, free.
+
+Then silence.
+
+Maya stood in the shards, breathing hard. In the largest piece her reflection looked back. Small girl, wide eyes, right hand raised.
+
+She raised her right hand. The reflection raised its left.
+
+Everything exact as it should be. It took her a minute to figure out which one had been real.
+
+=== id: 486fe7d53f767835.A3_humanizer ===
+Governments have a real problem with space exploration. Billions go to rockets and telescopes while people here still starve, get sick, can't afford medicine. Fair to ask if that money should stay on Earth. But I think space deserves funding, as long as we're taking care of urgent stuff first.
+
+Space programs give us stuff we use. Satellites handle communications, GPS, weather, better medical imaging. Climate satellites track temperature and ice, which helps us understand and deal with a massive problem. Money to space isn't money leaving Earth.
+
+Also, space spending's tiny compared to the rest. NASA gets way under one percent of the federal budget. Even scrapping it wouldn't end poverty or fix healthcare. Those problems are about choices and priorities, not missing money that space agencies are hogging.
+
+That said, critics are right. Basic needs have to come first. A government funding Mars while people drink dirty water got priorities backwards. The smart approach: take care of essentials, then invest in long-term exploration with what's left.
+
+In the end, exploration and taking care of people aren't enemies. Both matter for the future.
+
+=== id: 9170eb09cd7ce046.A3_humanizer ===
+Every year governments spend billions on space programs. At the same time, millions of people don't have food, clean water, or healthcare. So people say the money should stay here. I get that. But I think space is worth it.
+
+Space research helps us. Satellites give us weather reports, GPS, phones that work everywhere. Space tech made better medical tools and materials. We use satellites to study climate change, which is one of our biggest problems.
+
+Space spending's actually way smaller than people think. NASA gets less than one percent of the US budget. Cutting it wouldn't suddenly fix poverty. Those problems need better planning and political will.
+
+But governments shouldn't ignore basic needs. Food, housing, health come first.
+
+I think we can do both. If we spend carefully, we can help people now and still explore space for tomorrow.

@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "news-0025",
+  "instruction": "Using the following highlights, write a 300-word news story:\n- The Rev. Robert Schuller, 88, had been diagnosed with esophageal cancer in 2013.\n- His TV show, \"Hour of Power,\" was enormously popular in the 1970s and 1980s. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0135",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Measurements of jet structure and fragmentation from full jet reconstruction in heavy ion collisions at RHIC\"."
+ },
+ {
+  "prompt_id": "emai-0236",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: ERCOT Bills (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0313",
+  "instruction": "Write a 300-word story for this prompt: Humanity creates A.I and it soon declares a war of extermination. However it doesn't declare it on Humans but rather on the forces of Hell and Heaven, in order to free mankind from control."
+ },
+ {
+  "prompt_id": "expl-0409",
+  "instruction": "What did Native Americans know in advance of hurricanes and how did they know it? What about animals? (answer in roughly 60 words) Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0518",
+  "instruction": "What are some good food to eat, write me a list of them. (about 150 words)"
+ },
+ {
+  "prompt_id": "essa-10-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Is competition among students a good or a bad thing for their development?"
+ },
+ {
+  "prompt_id": "news-0026",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Worried father sends message to daughter: \"Please, come back\" Lawmaker: Med students' family members believe they wanted to work for ISIS.\n- \"They have been cheated, brainwashed,\" the Turkish lawmaker says."
+ },
+ {
+  "prompt_id": "abst-0136",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 275 words) for the paper \"Correlated Gravitational Wave and Neutrino Signals from General-Relativistic Rapidly Rotating Iron Core Collapse\"."
+ },
+ {
+  "prompt_id": "emai-0237",
+  "instruction": "Write an email with the subject line \"March EES-EPMI Revisions\". Aim for about 150 words."
+ },
+ {
+  "prompt_id": "stor-0314",
+  "instruction": "You somehow acquire a time machine; it's about the size of a cell phone, has easily read instructions, and says that it has three remaining uses.\n\nWrite a short story of about 500 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0410",
+  "instruction": "Does a sweeter (ripe) banana have more calories than an unripe one? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0519",
+  "instruction": "Please name and describe all approaches you know how to encode binary data with ASCII characters and evaluate their efficiency and distribution. Keep it around 500 words."
+ },
+ {
+  "prompt_id": "essa-10-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 200-word essay on this topic: Is competition among students a good or a bad thing for their development?"
+ },
+ {
+  "prompt_id": "news-0027",
+  "instruction": "Using the following highlights, write a 300-word news story:\n- Conrad Roy, 18, was found dead of apparent carbon monoxide poisoning, police said.\n- Police: A search of his phone found texts from a friend urging him to commit suicide."
+ },
+ {
+  "prompt_id": "abst-0137",
+  "instruction": "Draft the abstract (around 250 words) for the paper \"CorNet: Generic 3D Corners for 6D Pose Estimation of New Objects without Retraining\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0238",
+  "instruction": "Write an email with the subject line \"Alliant Energy Corporate Services, Inc., as Agent\". Aim for about 200 words."
+ },
+ {
+  "prompt_id": "stor-0315",
+  "instruction": "Write a 600-word story for this prompt: We always hear about ghost stories where things go missing. Why do ghosts take our things and what do they do with them?"
+ },
+ {
+  "prompt_id": "expl-0411",
+  "instruction": "Are we still in the Modern era or did the Modern era end in 1989? Are we now in a new age of history? (answer in roughly 125 words)"
+ },
+ {
+  "prompt_id": "gene-0520",
+  "instruction": "Can you explain the difference between on demand shops and crowdfunding?"
+ }
+]

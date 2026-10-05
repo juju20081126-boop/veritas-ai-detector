@@ -155,6 +155,21 @@ def main():
         by_split[r["split"]].append(r)
     train, tlog = balance_train(by_split["train"], rng)
     dev, locked = by_split["dev"], by_split["locked"]
+    # cross-split near-duplicates (5-gram J >= 0.5, e.g. the same human text in two corpora): never drop a locked row;
+    # drop the train row if its twin is locked, otherwise drop the dev row
+    from scripts.common import dedup
+    docs = [(s, r["id"], r["text"]) for s, rs in (("train", train), ("dev", dev), ("locked", locked)) for r in rs]
+    drop = set()
+    for a, ia, b, ib, _ in dedup.cross_group_near_duplicates(docs, k=5, threshold=0.5):
+        if a == "locked":
+            drop.add((b, ib))
+        elif b == "locked":
+            drop.add((a, ia))
+        else:
+            drop.add(("dev", ia if a == "dev" else ib))
+    train = [r for r in train if ("train", r["id"]) not in drop]
+    dev = [r for r in dev if ("dev", r["id"]) not in drop]
+    print(f"dropped {len(drop)} train/dev rows that near-duplicate another split: {sorted(drop)[:5]}")
 
     def clean(rs):
         return [{k: r[k] for k in KEEP if k in r} for r in rs]

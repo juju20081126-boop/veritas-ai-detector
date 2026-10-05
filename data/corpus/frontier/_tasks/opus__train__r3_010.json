@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "essa-00-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Some people think universities should teach practical job skills, while others think theoretical knowledge matters more. Discuss both views and give your opinion."
+ },
+ {
+  "prompt_id": "news-0046",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 500 words):\n- Suspect dies after treatment for bullet wounds.\n- Sheriff says the suspect also had smoke bombs and Molotov cocktails.\n- Richard White allegedly stormed an airport security area with a machete."
+ },
+ {
+  "prompt_id": "abst-0156",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 125 words) for the paper \"Joint and double coboundaries of commuting contractions\"."
+ },
+ {
+  "prompt_id": "emai-0251",
+  "instruction": "I'm a college student and need help with an assignment. Write an email with the subject line \"Adding authorized traders to the ENA Authorized Trader List\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0332",
+  "instruction": "Unknown to us mirrors actually are just windows into an alternate dimension that is exactly the same except right and left are reversed. Until one day something throws the mirror dimension out of sync...\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0424",
+  "instruction": "How do we know that a 64,000 pixel black-and-white screen requires 8KB memory? (answer in roughly 75 words) Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0557",
+  "instruction": "Describe the process to making a great Texas style smoked brisket. Keep it around 700 words."
+ },
+ {
+  "prompt_id": "essa-02-pla",
+  "instruction": "Write an essay of about 200 words on the following topic: Should governments spend money on space exploration, or should that money be used to solve problems on Earth?"
+ },
+ {
+  "prompt_id": "news-0047",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 500 words based on these key points:\n- Here's a roundup of the week's trending pop-culture stories.\n- They include a new \"Star Wars\" trailer and an ill-advised, on-camera rant."
+ },
+ {
+  "prompt_id": "abst-0157",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"The Nematic Energy Scale and the Missing Electron Pocket in FeSe\"."
+ },
+ {
+  "prompt_id": "emai-0252",
+  "instruction": "Write an email with the subject line \"O&M/Capital Review with Stan\". Aim for about 100 words."
+ },
+ {
+  "prompt_id": "stor-0333",
+  "instruction": "Write a 500-word story for this prompt: In a world where everyone is suddenly blinded, those who were blind before rule"
+ },
+ {
+  "prompt_id": "expl-0425",
+  "instruction": "Why was Obama so adamant about fast tracking TPP trade bill? (answer in roughly 175 words)"
+ },
+ {
+  "prompt_id": "gene-0558",
+  "instruction": "How do plants communicate and coordinate their behaviour, and what is the evidence for this phenomenon?"
+ },
+ {
+  "prompt_id": "essa-02-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Should governments spend money on space exploration, or should that money be used to solve problems on Earth?"
+ },
+ {
+  "prompt_id": "news-0048",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- Some claim it's no coincidence that critics of Putin and his government have been killed or imprisoned.\n- But the Kremlin staunchly denies accusations that it's targeting political opponents."
+ },
+ {
+  "prompt_id": "abst-0158",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"The Observation of Jet Azimuthal Angular Decorrelation at FCC-ep\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0253",
+  "instruction": "Write an email with the subject line \"Dynegy Merger - Canadian Counsel\". Aim for about 75 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0334",
+  "instruction": "Write a 600-word story for this prompt: I could see it in their hooded glances and practiced smiles."
+ },
+ {
+  "prompt_id": "expl-0426",
+  "instruction": "How come I understand stuff better after not doing it for a while\n\nExplain it in about 150 words. Use a formal, professional tone."
+ }
+]

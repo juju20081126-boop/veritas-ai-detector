@@ -67,6 +67,8 @@ def verify():
                 continue
             txt = open(hits[0], encoding="utf-8").read()
             for mid in re.findall(r'"model":"([^"]+)"', txt):
+                if mid == "<synthetic>":   # harness-inserted messages (e.g. rate-limit errors), not model output
+                    continue
                 seen[a["alias"]][mid] += 1
             n += 1
     reg = registry.load()

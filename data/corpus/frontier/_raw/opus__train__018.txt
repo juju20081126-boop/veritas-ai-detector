@@ -1,0 +1,192 @@
+=== prompt_id: news-0041 ===
+**Gunmen Kill at Least 23 at Tunisia's Bardo Museum**
+
+TUNIS, Tunisia — At least 23 people were killed Wednesday when gunmen stormed the Bardo National Museum in the Tunisian capital, targeting one of the country's best-known cultural landmarks and the tourism industry on which its economy depends.
+
+Most of the dead were foreign visitors, several of whom had come ashore earlier that day from cruise ships docked in Tunis. Security forces ended a standoff inside the museum by killing two of the attackers, and dozens of people were treated for injuries. The Bardo, which houses one of the world's great collections of Roman mosaics, sits next to the national parliament.
+
+The attack has shaken a country often described as the one success story of the Arab Spring. Since the 2011 revolution that ousted President Zine El Abidine Ben Ali, Tunisia has adopted a new constitution and held free elections. Yet it has also become one of the largest sources of foreign fighters for extremist groups in Syria and Iraq, with an estimated 3,000 Tunisians believed to have joined them.
+
+For Mabrouka M'Barek, a former member of Tunisia's National Constituent Assembly, those two facts are closely linked. In her view, Tunisia has failed to "recruit" its own citizens into society, leaving many young people, particularly in the country's poorer interior regions, feeling they have no stake in the new democracy. When the state offers them no place, she argues, extremist groups are eager to offer one instead.
+
+Her argument shifts the focus beyond policing and toward unemployment, regional inequality and political exclusion, the same grievances that fueled the 2011 uprising.
+
+Tunisian leaders have vowed a forceful response, and investigators are working to identify who planned the assault. But as the nation mourns, many Tunisians are asking whether their young democracy can reach its next generation before the recruiters do.
+
+=== prompt_id: abst-0151 ===
+The two-dimensional electron system that forms at the interface between the band insulators LaAlO₃ and SrTiO₃ displays a remarkable variety of behavior, including gate-tunable superconductivity, signatures of magnetism, strong spin–orbit coupling and unusual magnetotransport. Whether these phenomena share a common microscopic origin has remained an open question. Here we present systematic magnetotransport measurements, performed as a function of gate-controlled carrier density, on a series of interfaces with different LaAlO₃ thicknesses and electron mobilities. In every sample we identify a critical density of approximately 1.7 × 10¹³ cm⁻², at which transport changes abruptly from single-carrier to multi-carrier behavior. This density is universal, independent of both layer thickness and mobility. The characteristics of the transition, together with its consistency with spectroscopic data, identify it as a Lifshitz transition at which electrons begin to occupy the heavier dxz/dyz bands in addition to the light dxy band. We further show that the same density marks the onset of strong spin–orbit interaction and anomalous magnetoresistance. These results point to orbital band filling as a unifying principle behind the emergent physics of this oxide interface.
+
+=== prompt_id: emai-0246 ===
+Subject: [EDIS] URGENT WEATHER MESSAGE [Urgent: Sacramento Valley]
+
+URGENT – WEATHER MESSAGE
+National Weather Service Sacramento CA
+3:47 AM PST
+
+...DENSE FOG ADVISORY IN EFFECT UNTIL 11 AM PST THIS MORNING...
+
+* WHAT: Visibility one quarter mile or less in dense fog.
+* WHERE: Sacramento Valley, including Redding, Red Bluff, Chico, Marysville, Woodland and Sacramento.
+* IMPACTS: Hazardous driving conditions on Interstate 5, Highway 99 and Interstate 80, especially during the morning commute.
+
+If driving, slow down, use low-beam headlights, and leave plenty of distance ahead of you.
+
+=== prompt_id: stor-0327 ===
+In my last life I was Gerald Pruitt, certified public accountant, and I died at my desk on April 14th, which is the least surprising way an accountant has ever gone.
+
+For sixty-eight years, I was agreeable. I laughed at my boss's golf stories. I told my sister-in-law her tuna casserole was "really something." I said "no, no, after you" to men who deserved to wait in the rain. Then I closed my eyes over a stack of tax returns and opened them in a hospital nursery, red-faced and furious and named Tyler, with every memory intact.
+
+It took me a while to appreciate what I'd been given. Not the knowledge. The immunity. Nobody holds a small child responsible for anything. It took five agonizing years to get my mouth working properly, and I have been making up for lost time ever since.
+
+At Aunt Denise's wedding, in that holy hush right before the vows, I tugged my mother's sleeve and asked, at a volume calibrated to reach the back pew, "Mommy, when they get divorced, who gets the boat?"
+
+At Grandpa Lou's funeral, the pastor invited anyone with a memory to come forward. I raised my hand. "Grandpa always said he didn't trust banks," I told the congregation, "so is the money still in the freezer, or did somebody already check?" Three of my uncles slipped out before the final hymn. Only two came back.
+
+When Dad had his regional manager over for pot roast, I waited until the man's mouth was full, then asked whether golden parachutes were only for the people who do the firing, and whether Daddy would get a parachute too or just the push.
+
+At the mall, I climbed onto Santa's lap and asked for a Roth IRA. "Mommy says it's too late for her," I explained, "but I've still got time for compound interest to work." Santa, who I'd estimate was sixty-one and renting, needed a moment.
+
+In Sunday school, Mrs. Abernathy asked what God wants from us. "Ten percent," I said. "But is that gross or net?"
+
+My parents have had me evaluated twice. The first psychologist called me gifted. The second asked, very carefully, whether anyone in the household worked in accounting.
+
+I know what you're thinking. With a CPA's brain in a six-year-old's body, I could be a prodigy. Morning television. College at eleven. Instead, I'm the kid who asked a pregnant stranger at Target whether she was planning to claim it as a dependent this year.
+
+But I've already lived the sensible life. It got me a corner office, a retirement party I didn't survive long enough to attend, and a coronary in the middle of tax season.
+
+Tonight, Mom tucked me in and asked, in the voice of a woman at the very end of her rope, where I learn these things. I gave her my roundest, most innocent eyes.
+
+"Mommy," I whispered, "what's a midlife crisis, and why does Daddy's new car have one?"
+
+=== prompt_id: expl-0419 ===
+Both, really. The Romans borrowed openly from Greece, and they knew it: Horace wrote that "captive Greece took her savage conqueror captive." But they also contributed plenty that was genuinely their own:
+
+- **Law:** A systematic legal tradition with professional jurists and concepts of contracts, property, and citizens' rights that still underpins civil law across Europe and Latin America.
+- **Engineering:** Concrete construction that made vast vaults and domes like the Pantheon possible, plus aqueducts, sewers, and a road network spanning the Mediterranean.
+- **Governance:** Running a multiethnic empire for centuries while gradually extending citizenship to conquered peoples.
+- **Literature and art:** Verse satire, which Quintilian proudly called "wholly ours," and a distinctive tradition of unflinchingly realistic portrait busts.
+
+Besides, Greek culture itself drew heavily on Egypt and the Near East. Borrowing and adapting is how civilizations normally develop.
+
+=== prompt_id: gene-0552 ===
+A fractal is a geometric object that displays self-similarity, meaning that its parts resemble the whole at different scales of magnification, and whose complexity is measured by a fractional, or non-integer, dimension. Although fractals began as abstract constructions in pure mathematics, Benoit Mandelbrot argued in *The Fractal Geometry of Nature* (1982) that they describe many natural forms more faithfully than the smooth figures of Euclidean geometry. Clouds, as he observed, are not spheres, and mountains are not cones.
+
+Coastlines offer the classic illustration. Because a coastline is irregular at every scale, its measured length increases as the measuring unit becomes smaller, a result known as the coastline paradox. Fractal dimension provides a more meaningful description than length alone; the west coast of Great Britain, for example, has a dimension of approximately 1.25.
+
+Living systems frequently adopt fractal architectures because such structures maximize surface area or coverage within a limited volume. The branching of the human airways and blood vessels, like that of trees and root systems, enables the efficient exchange and distribution of gases, fluids, and nutrients.
+
+Fractal patterns also emerge from physical processes, as seen in lightning discharges, mineral dendrites, river networks shaped by erosion, turbulent flow, and the strange attractors that characterize chaotic systems such as atmospheric convection.
+
+It should be noted, however, that physical fractals are approximations. Their self-similarity is typically statistical rather than exact and holds only across a limited range of scales. Even so, the concept has considerable practical value in antenna design, materials science, and computer graphics.
+
+=== prompt_id: news-0042 ===
+# Richard III Reburied in Leicester as Cumberbatch Reads Tribute
+
+Five centuries after he fell at the Battle of Bosworth, King Richard III was finally laid to rest Thursday at Leicester Cathedral, in a service that blended medieval pageantry with modern celebrity.
+
+The last Plantagenet king was killed in 1485 and buried hastily in the church of Leicester's Greyfriars friary. Over the centuries the site was built over and forgotten. Then, in 2012, archaeologists sensationally rediscovered his remains beneath a city council car park, a find later confirmed by DNA testing against descendants of his sister.
+
+On Thursday, 530 years after his death, the king's oak coffin was lowered into its grave inside the cathedral. Among those taking part was actor Benedict Cumberbatch, a distant cousin of Richard, who read a poem written for the occasion by Poet Laureate Carol Ann Duffy.
+
+Philippa Langley, the historian whose campaign launched the search for the grave, said the discovery had prompted researchers to rethink the king. For centuries, Richard's reputation has been shaped largely by Tudor chroniclers and by Shakespeare, who portrayed him as a hunchbacked tyrant who murdered his young nephews, the "Princes in the Tower," to seize the crown.
+
+Analysis of the skeleton showed that Richard had severe scoliosis but no withered arm, and that he suffered a fatal blow to the skull, grim evidence of his violent final moments on the battlefield.
+
+For Leicester, the ceremony closes an extraordinary chapter. For historians, the argument over who Richard really was appears far from settled.
+
+=== prompt_id: abst-0152 ===
+Convolutional neural networks owe much of their success on images to the regular grid structure and translation symmetry of the plane, neither of which exists on curved surfaces. A common workaround maps a surface to a planar domain and applies a standard CNN, but existing surface-to-image representations either introduce large area distortion or require several images to cover the whole shape. We propose a new representation for sphere-type surfaces based on general covering maps. Rather than relying on a toric cover with a fixed set of cone points, our construction lets a flat torus wrap around the surface several times, so that every region appears with low distortion somewhere in a single image. Because this image is seamless and periodic, convolution with circular padding is well defined, and off-the-shelf architectures apply with minimal modification. Predictions from the multiple copies of each surface point are then aggregated back onto the mesh. Experiments on shape segmentation and classification benchmarks show that the method matches or exceeds competing approaches while remaining simple and efficient.
+
+=== prompt_id: emai-0247 ===
+Subject: Annual Meeting 2002
+
+Dear Members,
+
+On behalf of the Board of Directors, I am pleased to invite you to the 2002 Annual Meeting of the Lakeshore Small Business Alliance. The meeting will be held on Thursday, April 18, 2002, at the Riverside Conference Center, 400 Main Street. Registration and a continental breakfast will begin at 8:00 a.m., and the program will start promptly at 9:00 a.m.
+
+This year's agenda includes:
+
+- A review of the Alliance's 2001 financial results
+- Election of three members to the Board of Directors
+- A keynote address on the regional economic outlook
+- Presentation of the Member of the Year award
+
+Lunch will be provided, and we expect to adjourn by 2:00 p.m.
+
+Please RSVP by Friday, April 5, by replying to this email or calling our office at (608) 555-0142. If you are unable to attend, a proxy form for the board election is attached.
+
+We look forward to seeing you there.
+
+Sincerely,
+
+Margaret Ellis
+Secretary, Lakeshore Small Business Alliance
+
+=== prompt_id: stor-0328 ===
+**Halcyon**
+
+They called it Halcyon, and for nineteen days it was the best thing that had ever happened to the world.
+
+On the twentieth day, the first recipients didn't wake up. By the end of the month, the ones who hadn't died had started screaming, and not at random. In the last week anyone was still broadcasting, the anchors made a point of it: the afflicted screamed at windows, at spoons, at the black glass of switched-off phones. At anything that could hold a reflection.
+
+I got my dose the first morning, in a folding chair in a high school gym. The nurse gave me a sticker shaped like a yellow sun. I remember thinking I was lucky.
+
+I still think so, mostly. I haven't died. I haven't screamed. For six weeks I've walked through a silent city, stepping around broken glass, telling myself that whatever took everyone else simply missed me, the way lightning misses most people.
+
+But I've been careful. I shave by feel. I taped a towel over the bathroom mirror the day my neighbor put her head through hers.
+
+This morning, I pulled the towel down.
+
+My face was there. Thinner, unshaven, eyes bloodshot from bad sleep, but mine. I almost laughed. I lifted a hand to touch the stubble on my jaw, and the man in the mirror lifted his.
+
+A fraction of a second late.
+
+I went still. He went still too, a heartbeat after me, and we studied each other for a long time. That was when I understood what the others had seen. Not a monster. Nothing so simple. Just patience: the calm, attentive look of something that had spent six weeks practicing being me.
+
+Slowly, I lowered my hand.
+
+He didn't.
+
+=== prompt_id: expl-0420 ===
+Mostly it's a matter of terminology. "Drone" is a broad term for any uncrewed aircraft, and it usually implies some autonomy, such as GPS position hold, return-to-home, or preprogrammed flight paths. An RC quadcopter is specifically a four-rotor craft flown manually by radio control. Many consumer quadcopters are both. In the US, the FAA treats them the same way, regulating by weight and purpose rather than by name.
+
+=== prompt_id: gene-0553 ===
+A standard chessboard has **64** squares if you count only the individual light and dark squares. If you count every square that can be traced on the board, including larger squares made up of smaller ones, the answer is **204**.
+
+## Counting squares of every size
+
+In addition to the 1 × 1 squares, the 8 × 8 grid contains 2 × 2 squares, 3 × 3 squares, and so on, up to the entire board, which is itself one 8 × 8 square. The key is to count how many positions each size can occupy.
+
+Take a 2 × 2 square. Its top-left corner can sit in any of the first 7 columns and any of the first 7 rows, so there are 7 × 7 = 49 of them. In general, a k × k square fits in (9 − k)² positions:
+
+| Square size | How many |
+|---|---|
+| 1 × 1 | 8² = 64 |
+| 2 × 2 | 7² = 49 |
+| 3 × 3 | 6² = 36 |
+| 4 × 4 | 5² = 25 |
+| 5 × 5 | 4² = 16 |
+| 6 × 6 | 3² = 9 |
+| 7 × 7 | 2² = 4 |
+| 8 × 8 | 1² = 1 |
+| **Total** | **204** |
+
+## The general formula
+
+The total is the sum of the first eight perfect squares, and there's a well-known formula for the sum of the first n squares:
+
+1² + 2² + 3² + ... + n² = n(n + 1)(2n + 1) / 6
+
+With n = 8, this gives (8 × 9 × 17) / 6 = 1,224 / 6 = 204, matching the table. The formula works for any square grid. A 3 × 3 tic-tac-toe board, for example, has 9 + 4 + 1 = 14 squares.
+
+## Going further: rectangles
+
+The puzzle is sometimes extended to rectangles. Every rectangle on the board is defined by picking two of the 9 horizontal grid lines and two of the 9 vertical grid lines. There are C(9, 2) = 36 ways to choose each pair, so the board contains 36 × 36 = **1,296** rectangles, 204 of which are squares.
+
+## Summary
+
+- **64** individual squares
+- **204** squares of all sizes
+- **1,296** rectangles of all sizes, squares included
+
+The question is a classic precisely because most people stop at 64. For a complete answer, say which interpretation you're using and show the sum that leads to 204.

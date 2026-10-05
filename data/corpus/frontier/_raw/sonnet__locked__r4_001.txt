@@ -1,0 +1,269 @@
+=== prompt_id: essa-01-esl ===
+I disagree with this idea. I think social media does more good than harm for teenagers, but only if they use it in a smart way.
+
+First, social media helps teenagers stay close to their friends and family. For example, my cousin lives in another country, and we talk every week on video chat. Without social media, we maybe never talk so much. Also, many teenagers who feel shy at school can find friends online who have the same hobbies. This can make them feel less alone.
+
+Second, social media is a good place to learn things. I watch videos about English, cooking, and even math. Some teachers also put homework and news in online groups, so students can ask questions easily. Teenagers can also show their art, music, or writing and get comments from other people. This give them confidence.
+
+Of course, there are some problems. Some teenagers spend too many hours on their phones and sleep too little. Others compare themselves with people on the internet and feel bad about their body or their life. Bullying online is also a serious problem.
+
+However, I believe the problem is not the social media itself, but how we use it. If parents and teachers talk with teenagers about safe habits, for example a time limit every day, the harm can be smaller. In my opinion, social media is like a tool. It can help us a lot when we use it carefully.
+
+=== prompt_id: news-0009 ===
+**Officer's Plea Heard as Toddler Is Pulled From Car Submerged in Frigid River**
+
+"Come on, sweetie. Come on, sweetie."
+
+Those were the words a police officer repeated softly as he worked to coax a frightened toddler to safety after she was found strapped in a car that had plunged into a cold river. The child, identified as Lily, had been trapped inside the vehicle for as long as 14 hours before help arrived, authorities said.
+
+Lily's mother, Lynn Jennifer Groesbeck, was killed in the crash. Investigators have said the car left the roadway and came to rest in the water, where it remained out of sight of passing motorists through the night and into the following day.
+
+The rescue was captured on audio and video recorded by responding officers, and the footage has since drawn widespread attention. In it, the officer can be heard speaking gently to the child as she cries, urging her to hold on and to trust him as he reaches into the wrecked vehicle. His tone is calm and patient, even as the conditions around him are plainly difficult.
+
+Emergency personnel said the cold temperature of the river made the situation especially dangerous for so young a child. Medical experts note that infants and toddlers lose body heat far more quickly than adults, and prolonged exposure to cold water or damp, frigid air can lead to hypothermia within hours. That Lily survived such a lengthy ordeal, authorities said, is remarkable.
+
+Once she was freed from the car, Lily was wrapped in blankets and taken to a hospital for evaluation and treatment. Officials said she was alert and responsive, and she was reported to be in stable condition. Doctors continued to monitor her for the effects of cold exposure and for any injuries sustained in the crash.
+
+Police officials praised the responding officers for their professionalism and compassion. A spokesperson for the department said the rescue demonstrated the often unseen human side of police work, noting that officers are frequently the first people to meet families on the worst days of their lives.
+
+The circumstances that led to the crash remain under investigation. Authorities have not released a cause, and it was not immediately clear how long passersby had been near the scene before the vehicle was discovered. Investigators are reviewing the roadway, weather conditions and the vehicle itself as part of their inquiry.
+
+Friends and relatives of Groesbeck described her as a devoted mother. Community members have begun organizing support for the family, including donations and offers of help, as Lily begins what will likely be a long recovery, both physical and emotional.
+
+Authorities said they would release additional information as the investigation continues.
+
+=== prompt_id: abst-0119 ===
+We investigate the algebraic structure underlying dihomotopy theory, a branch of directed algebraic topology motivated by the study of concurrent systems, in which spaces carry a notion of time-directed paths and homotopies between them. Classical homotopy types are modeled by well-understood algebraic invariants, such as simplicial groups and crossed complexes, but analogous descriptions for dihomotopy types have remained elusive because directed equivalences are not symmetric. Working in the framework of flows and their associated cubical and globular models, we construct a family of algebraic objects that capture the directed analogue of higher-dimensional path composition. We show that these objects form a category equipped with a natural weak equivalence structure, and we prove that the resulting homotopy category is equivalent to the localization of flows at dihomotopy equivalences. As a consequence, dihomotopy types admit a presentation by purely algebraic data, which allows several invariants to be computed directly. We illustrate the approach with examples drawn from simple concurrent programs, including the "Swiss flag" and the dining philosophers configuration, and compare the invariants obtained with those from existing methods. Finally, we discuss limitations of the construction and outline open questions concerning its extension to non-cubical models.
+
+=== prompt_id: emai-0228 ===
+Subject: Updated United Way Report
+
+Hi team,
+
+I've attached the updated United Way report, which now includes the final fourth-quarter figures and the revised campaign totals. Please review the donor participation numbers on page 3, since those changed the most from the earlier draft.
+
+If you spot any errors or have edits, send them to me by end of day Thursday so we can submit the report on schedule.
+
+Thanks,
+Dana
+
+=== prompt_id: stor-0298 ===
+It is my privilege to address you this evening, as one of the last of the Guardian Bears to retire from active service. I have been asked to recount the night of the Harrowgate Incident, and I shall do so with the accuracy it deserves.
+
+My assignment, in those days, was a boy named Thomas Whitlock, aged six, who slept in a narrow room at the top of a house on Pell Street. I had been with him since his first birthday. I was brown, somewhat worn at the left ear, and possessed of one glass eye and one button. Such imperfections never hindered my duties.
+
+Every bear understands the fundamental rule: the monsters beneath the bed cannot be defeated, only deterred. They fear the quiet vigilance of a stuffed animal, and they fear it for reasons nobody has fully explained. We hold the line. That is all.
+
+On the night in question, the boy's mother turned out the lamp at half past eight. By nine, I heard the first sound, a dry scraping along the floorboards, the unmistakable signature of claws. A younger bear might have panicked. I did not. I settled my weight against the pillow and fixed my good eye upon the dark gap at the bed's edge.
+
+Presently, something enormous exhaled beneath the mattress. The springs shivered. Thomas stirred and whispered, "Bear?" I did not answer, as protocol forbids it, but I leaned a fraction closer to his cheek, and he fell quiet again.
+
+Then the creature made its error. A long grey finger emerged from the shadow and curled around the bedsheet. I had been trained for exactly this. I did not move, but I let my stillness become absolute, the particular stillness only a bear can produce, which says that nothing here is afraid of you and nothing here will leave.
+
+The finger hesitated. It withdrew. There followed a long silence, and then the scraping retreated across the floor, down the stairs, and out into the night.
+
+By dawn, Thomas was sleeping peacefully, one hand resting upon my worn ear. He never learned what had occurred. That is also the rule.
+
+I have long since retired to a shelf beside a window, and Thomas is a grown man with a daughter of his own. Last winter, I noticed a new bear in her arms. Our eyes met briefly, and I was satisfied. The line, I observed, is in good hands.
+
+=== prompt_id: expl-0399 ===
+Okay, so Pokemon is a world where kids grow up and get to go on an adventure with little animal friends called Pokemon. Some look like mice, some look like turtles, some look like fire-breathing lizards. Nobody thinks it's weird. It's just normal there.
+
+When you turn ten, you get your very first Pokemon from a nice professor. Then you travel from town to town. You catch more Pokemon by throwing a special ball at them, kind of like a really cool game of catch. You also train them, which means you play and practice together until they get stronger.
+
+Then comes the fun part. You and your Pokemon battle other kids and their Pokemon. Nobody gets badly hurt, it's more like a very serious game of tag. If you win, you get a shiny badge. Collect enough badges and you can go to a big contest to try to become the Champion.
+
+The name of the game is "Gotta catch 'em all," because there are hundreds and hundreds of different Pokemon to find.
+
+So really, Pokemon is about making friends, trying hard, and never giving up.
+
+=== prompt_id: gene-0479 ===
+*The Picture of Dorian Gray* (spelled "Gray," not "Grey") was written by **Oscar Wilde**, the Irish writer and playwright.
+
+A note on the date: the story first appeared in July 1890 in *Lippincott's Monthly Magazine*. Wilde then revised and expanded it, adding several chapters and a preface, and published it as a full-length novel in **1891**. That is the version most people read today.
+
+=== prompt_id: essa-09-pla ===
+I prefer to spend my holidays traveling abroad, and there are a few reasons why.
+
+First, traveling lets me experience new cultures. When I visit another country, I try local food, hear a different language, and see how people live their daily lives. These experiences teach me far more than any textbook could. Last summer, for example, I spent a week in Japan, and I still remember how polite and helpful everyone was.
+
+Second, a trip abroad is a real break from routine. At home, it is easy to fall back into the same habits, like checking emails or doing chores. When I am in a new place, I feel more relaxed and curious, and I come back with fresh energy.
+
+Of course, staying at home has advantages. It is cheaper, more comfortable, and less tiring. Some holidays, especially after a busy year, are best spent resting in familiar surroundings.
+
+Even so, I believe the benefits of travel are greater. It broadens my mind, creates lasting memories, and helps me understand the world better. For these reasons, I would choose to go abroad whenever I have the chance.
+
+=== prompt_id: news-0010 ===
+**Handwritten "American Pie" Lyrics Sell for $1.2 Million at Auction**
+
+NEW YORK -- The original handwritten lyrics to Don McLean's "American Pie" have sold at auction for $1.2 million, a price that underscores the enduring pull of one of the best-known songs in American music.
+
+The manuscript, which includes drafts, notes and revisions, offers a rare look at how the singer-songwriter shaped the eight-and-a-half-minute ballad. The song was released in 1971 and reached No. 1 in 1972, and it remains McLean's biggest hit.
+
+Few pop songs have inspired as much debate. Its verses are crowded with symbolism, from a jester and a king to a "day the music died," widely understood to refer to the 1959 plane crash that killed Buddy Holly, Ritchie Valens and J.P. "The Big Bopper" Richardson. For decades, fans and critics have argued over what the rest of the imagery means.
+
+McLean has long declined to offer a full explanation. But he has said the lyrics and notes being sold will reveal the song's meaning to whoever studies them closely.
+
+"Basically, they will see what it's about," he has said of the material, though he has stopped short of spelling it out himself.
+
+Auction officials said interest in the lot was strong, with several bidders competing for the manuscript. They described it as a significant piece of music and cultural history, given the song's popularity across generations and its place in the national memory.
+
+Scholars of popular music say the sale reflects a growing market for artifacts tied to well-known songwriters. Handwritten lyric sheets, they note, can show a creative process that finished recordings conceal, including lines that were crossed out, rewritten or abandoned.
+
+The identity of the buyer was not disclosed. Whether the new owner will share the manuscript with the public, or help settle the long-running puzzle of the song's meaning, remains to be seen.
+
+=== prompt_id: abst-0120 ===
+Girard's geometry of interaction (GoI) provides a dynamic, algebraic account of cut elimination in linear logic, in which proofs are interpreted as operators and normalization is expressed through the execution of a feedback loop between them. While the original construction was developed for the multiplicative-exponential fragment, its extension to richer systems has proved delicate, especially when one wishes to keep a clear connection with the structure of proofs. In this paper we study the geometry of interaction for polarized linear logic (LLP), a variant in which formulas are separated into positive and negative classes and structural rules are restricted accordingly. This discipline makes LLP a natural target language for translating call-by-value and call-by-name lambda calculi, and so a GoI for it also sheds light on the execution of functional programs. We define an interpretation of LLP proofs as partial isometries on a Hilbert space of token configurations, and we show that the execution formula converges exactly when the proof normalizes. A central role is played by the polarity restriction, which allows us to treat the exponential modalities by means of a simple duplication mechanism rather than the full machinery of boxes and their auxiliary ports. We prove soundness of the interpretation with respect to cut elimination, and we establish adequacy for the polarized fragment by relating our semantics to a token machine. Finally, we describe how the construction accounts for a standard continuation-passing translation, and we discuss possible connections with game semantics and with the implementation of efficient abstract machines.
+
+=== prompt_id: emai-0229 ===
+Subject: PIRA Presentations on the US and World Economy
+
+Dear colleagues,
+
+I'm writing to share details about the upcoming PIRA presentations on the US and World Economy, which I think will be valuable for everyone involved in our planning and forecasting work.
+
+The sessions will cover the current outlook for US growth, inflation, and interest rates, followed by a broader look at global trends, including conditions in Europe and Asia and the implications for commodity demand. The presenters will leave time for questions at the end of each segment, so please come prepared with anything you would like to discuss.
+
+I'd encourage the commercial, trading, and strategy teams in particular to attend, since the views presented may inform our assumptions for the next budget cycle. If you cannot join live, I will circulate the slides and a recording afterward.
+
+Please let me know by Friday if you plan to attend so that I can confirm the room and dial-in details. If there are specific topics you would like raised with the presenters, send them my way ahead of time and I will pass them along.
+
+Thank you, and I look forward to seeing many of you there.
+
+Best regards,
+Michael
+
+=== prompt_id: stor-0299 ===
+Here's an alternate ending that keeps the heart of the show.
+
+Ted stood on the platform at Farhampton station, rain tapping the roof, and watched the 3:15 pull in. He had told the story to his kids for nine years of their lives, and finally, he'd understood what it was really about.
+
+"Dad," Penny said, arms crossed, "you spent the whole time talking about Aunt Robin. You know that, right?"
+
+"I do," said Ted. "But hold on."
+
+He turned his head. On the opposite platform stood a woman holding a yellow umbrella, with a bass case leaning against her leg. She was soaked, and she was laughing at something on her phone.
+
+Years earlier, Ted had thought the story would end at a wedding. Then it ended with Tracy at a rainy station, the very first time he heard her voice asking whose umbrella it was. Seven months of dating her, he'd decided, was worth more than all the planning he'd done before.
+
+In this version, Tracy lived. The doctors found the illness early, and she had six more years, then twelve, then twenty. Robin got her globe-trotting career, and the group watched her on TV with the same pride they always had. She and Barney stayed married, because he loved her and finally knew how to say so.
+
+Ted never needed the blue French horn. He kept it on the shelf, a reminder of a man who thought love meant one big gesture.
+
+"Dad?" Luke said.
+
+"Sorry, kids." He grinned. "I was just thinking about the best day of my life."
+
+The woman across the tracks looked up and waved.
+
+Ted waved back, and for the first time, the story felt finished.
+
+=== prompt_id: expl-0400 ===
+Many ancient cultures placed their gods or the afterlife in the sky for a mix of practical and psychological reasons. The sky is the one place people can see but never touch. It is vast, distant, and unchanging in ways the ground is not, which makes it a natural symbol of the eternal and the divine. Celestial bodies like the sun, moon, and stars move in regular patterns, which suggested order and purpose, qualities people attributed to powerful beings.
+
+The sky is also tied to survival. Rain, lightning, and sunlight all come from above, and farming societies depended on them, so it made sense to see whoever controlled those forces as living there. Finally, height itself carries meaning across languages and cultures: "up" tends to mean good, powerful, or pure, while "down" suggests the opposite. Placing heaven overhead fit that intuition.
+
+=== prompt_id: gene-0480 ===
+A drilling engineer plans and oversees the process of drilling wells, most commonly for oil and gas, but also for geothermal energy, water, and carbon storage projects. Their goal is to reach the target underground formation safely, on budget, and with as little environmental impact as possible.
+
+**Typical responsibilities**
+- **Well design:** Choosing the well's path, depth, and casing and cementing programs, and deciding which drilling fluids ("mud") and bits to use.
+- **Planning and budgeting:** Estimating time and costs, preparing the Authorization for Expenditure (AFE), and scheduling equipment and contractors.
+- **Risk management:** Anticipating hazards such as high pressures, unstable rock, lost circulation, and stuck pipe, and designing plans to prevent blowouts.
+- **Operations support:** Monitoring drilling in real time, working with the rig crew and service companies, and adjusting the plan when conditions change.
+- **Analysis and improvement:** Reviewing performance data after each well to cut cost and time on future ones.
+- **Compliance:** Making sure operations meet safety and environmental regulations.
+
+**Work environment**
+Some time is spent in an office doing design and analysis, and some in the field at rig sites, onshore or offshore. Schedules can involve long rotations and remote locations.
+
+**Background**
+Most drilling engineers have a degree in petroleum, mechanical, or civil engineering, or a related field. They work with geologists, geophysicists, and production engineers, so communication skills matter as much as technical ones.
+
+=== prompt_id: essa-09-stu ===
+When school lets out and a holiday finally arrives, I always have the same question: should I stay home or go somewhere far away? For me, the answer is easy. I would rather travel abroad, even though staying home has its own charms.
+
+My main reason is that traveling teaches me things school can't. When my family visited Thailand two years ago, I tried foods I had never heard of, bargained at a night market with the few Thai words I'd learned, and watched a monk blessing a crowd at a temple. I learned more about geography and culture in ten days than I had in a whole semester of class. Seeing another place in person makes it feel real in a way that a textbook never does.
+
+Another reason is that travel pushes me out of my comfort zone. At home, everything is familiar. I know the streets, the shops, and the people. Abroad, I have to read maps, ask strangers for help, and solve small problems on my own, like missing a bus. Those moments can be stressful, but they make me more confident and independent.
+
+That said, I understand why many people prefer holidays at home. It's cheaper, there is no jet lag, and you can sleep in your own bed. After a stressful exam season, I sometimes dream of doing nothing but watching movies and eating my mom's cooking. A quiet holiday can be a perfectly good way to recharge.
+
+Still, if I had to choose, I would pick adventure over comfort. Travel gives me memories, perspective, and a bigger view of the world. Those are things I will carry with me long after the holiday ends.
+
+=== prompt_id: news-0012 ===
+**FBI: Philadelphia Woman Used Social Media to Plan Trip to Join ISIS**
+
+PHILADELPHIA -- A 30-year-old woman was arrested on charges that she tried to travel overseas to join the terrorist group ISIS, federal authorities said, citing a trail of messages she allegedly posted on social media.
+
+The FBI says Keonna Thomas sent a series of online messages that expressed support for the militant organization and a desire to take part in its fight. According to the complaint, those messages formed the basis of the investigation that led to her arrest.
+
+Thomas is accused of attempting to provide material support to a foreign terrorist organization, a federal offense that carries a lengthy prison sentence upon conviction. Prosecutors say the case centers on her alleged efforts to leave the United States and reach territory controlled by the group.
+
+Court documents describe how investigators followed her online activity over a period of time. Authorities say the posts and private exchanges reveal not only her views but also steps she took to arrange travel. Officials did not release every detail, saying parts of the investigation are ongoing.
+
+Thomas is one of three women facing federal terror charges this week, a development that underscores how the government is pursuing cases tied to ISIS and similar groups. Two other women face separate charges in a different case. Federal officials have said that social media has become one of the primary ways extremist groups recruit supporters, including people living in the United States.
+
+"We are committed to disrupting these threats before they can cause harm," a Justice Department official said, noting that investigators rely heavily on public tips and on monitoring of online platforms.
+
+Counterterrorism experts say recruitment through social media has changed the nature of the threat. Unlike earlier eras, when would-be recruits needed to make personal contact with a group, a person can now be drawn in through online conversations that begin with a single post. That makes early detection harder, but it also leaves a digital record that investigators can later use.
+
+Thomas appeared in federal court, where a judge advised her of the charges against her. She has not entered a plea. A defense attorney did not immediately comment on the allegations.
+
+As with any criminal case, a criminal complaint contains allegations only. Thomas is presumed innocent unless and until she is proven guilty in a court of law.
+
+=== prompt_id: abst-0122 ===
+Moduli stabilisation remains one of the central problems in constructing realistic string compactifications. Fluxes provide a powerful mechanism for fixing the scalar moduli, but the resulting potentials are often difficult to analyse systematically. In this paper, we study flux compactifications using the algebraic structure of the gauged supergravities that describe them in four dimensions. We show that the flux-induced gaugings can be organised into a closed algebra whose Jacobi-type identities encode the Bianchi identities and tadpole conditions. This allows us to rewrite the scalar potential in terms of group-theoretic data and to examine its critical points without specifying a particular internal geometry. Using this approach, we derive a set of no-go theorems showing that, for broad classes of flux backgrounds, stable de Sitter vacua cannot arise at tree level. We also identify the minimal ingredients, such as non-geometric fluxes or additional sources, that are required to evade these constraints. Finally, we discuss examples in toroidal orientifold models and comment on the implications for model building.
+
+=== prompt_id: emai-0230 ===
+Subject: Learn Technical Analysis, Early Bird Special for Houston Class
+
+Hi there,
+
+Are you tired of guessing which way the market is headed? This spring, we're bringing our popular Technical Analysis course to Houston, and you can reserve your seat now at a special early bird price.
+
+Technical analysis is the practice of reading price charts and trading volume to understand market behavior and spot potential opportunities. Over this hands-on course, you'll learn how to:
+
+- Read candlestick charts and identify common patterns
+- Use trend lines, support, and resistance levels
+- Apply moving averages, RSI, and MACD indicators
+- Manage risk with position sizing and stop-loss strategies
+- Build a simple, repeatable trading plan
+
+Our instructor has more than fifteen years of experience in the markets and keeps class sizes small, so you'll get personal feedback and plenty of time for questions. No prior experience is needed. Beginners are welcome, and experienced traders will pick up new tools to sharpen their approach.
+
+**Class details**
+- Location: Downtown Houston (full address sent upon registration)
+- Duration: Two full days with lunch included
+- Early bird price: 20% off through the end of this month
+
+Seats are limited, and early bird pricing ends soon. Reply to this email or visit our website to register today and take the first step toward more confident decisions.
+
+We hope to see you in Houston.
+
+Best regards,
+The Training Team
+
+=== prompt_id: stor-0300 ===
+The sign-up sheet had one name on it: mine.
+
+I stared at the screen. Three weeks ago, the Sunday Free Write thread had been a lively place, with dozens of strangers trading stories, jokes, and kind comments. Now the moderators had quit one by one, citing jobs, babies, burnout, and the usual. The last one left a note that said, simply, "Someone take the wheel."
+
+So I did, mostly because nobody else would.
+
+My first Sunday, I posted the prompt at eight in the morning and waited. By noon, there were two replies. One was a haiku about a toaster. The other was a four-sentence horror story that made me check the lock on my front door. I responded to both. I responded to everything, in fact, because it felt like leaving a light on in an empty house.
+
+By the second Sunday there were eleven stories. By the fifth there were forty. People came back. A retired welder named Gus posted chapter after chapter of a western about a talking horse. A girl who signed herself only "Moth" wrote tiny, strange fables I read three times each. Someone wrote a story about a lighthouse and then someone else wrote the lighthouse keeper's sequel, and the thread became a kind of living thing, growing in every direction at once.
+
+I didn't write much myself. That wasn't my job. My job was to say, "I loved this line," and "Welcome," and "Don't delete that, it's good." It sounds small. It wasn't.
+
+One Sunday, Gus posted something different. No horse. Just a short piece about his wife, who had died the previous spring, and how he'd never learned to make her coffee the way she liked it. Underneath, forty-three people left comments. Some shared recipes. Some just wrote, "I'm here."
+
+I read every one, and then I read them again.
+
+The thread still goes up every Sunday morning. We have six moderators now, and a waiting list. Last week I posted the prompt, closed my laptop, and went for a walk, knowing that when I came back, there would be stories waiting for me. Strangers, I've learned, will build a whole world if you just leave the door open.
+
+=== prompt_id: expl-0401 ===
+A small dose of melatonin often works better because melatonin is a timing signal, not a sedative. Your body naturally releases tiny amounts in the evening to tell your brain that night is coming. A low dose, typically 0.3 to 1 mg, mimics that natural signal and nudges your internal clock without overwhelming it.
+
+Large doses can backfire. Very high levels may linger into the morning, causing grogginess, and they can overstimulate melatonin receptors, which may blunt the response over time. Excess melatonin can also shift your sleep rhythm in the wrong direction if taken at the wrong time. Many supplements contain far more than the body actually needs, so less is frequently more.

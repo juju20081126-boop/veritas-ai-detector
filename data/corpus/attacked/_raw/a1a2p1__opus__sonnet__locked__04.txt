@@ -1,0 +1,315 @@
+=== id: c90fe67233e8a046.A2p1 ===
+A loaf's flavor, texture and appearance can all be altered with a wide range of extras.
+
+**Grains and seeds:** For crunch and extra nutrients, try sunflower, pumpkin, sesame, flax, poppy or chia seeds. Body comes from rolled oats, cracked wheat or cooked quinoa.
+
+**Flavor:** Rosemary, thyme and oregano are good herb choices, and roasted garlic, caramelized onion, cheese, olives and sun-dried tomatoes work just as well. For heat, add black pepper or jalapeño.
+
+**Sweet additions:** Breakfast loaves pair nicely with raisins, cranberries, chopped dates, walnuts, cinnamon, honey or molasses.
+
+**Texture and richness:** Adding milk, butter, olive oil, an egg or yogurt gives a softer crumb. Bread stays moist when you include potato flakes or mashed potato.
+
+**Other flours:** Depth comes from rye, whole wheat or spelt, while a spoonful of malt powder helps the crust brown better.
+
+To spread dry add-ins evenly, work them in toward the end of kneading.
+
+=== id: 43e81f4bcae34bf5.A2p1 ===
+In my view, joining an exchange programme at school or university is an excellent idea. The main advantage is that students get to experience another culture first-hand. Learning about a country from a textbook cannot compare with actually living there, tasting the local food and watching how people go about their everyday lives. Experiences like this can make us more open-minded and less fearful of what is different.
+
+Another benefit is better language skills. If you must ask for directions or order lunch in a foreign language every day, you will learn far more quickly than you would in a classroom. Studying abroad also develops independence, since students have to deal with problems by themselves, whether that means handling money or making new friends.
+
+Naturally, exchanges have some drawbacks. They can cost a lot, and some students may get homesick or find it hard to adapt to an unfamiliar school system. Still, I think these challenges make people stronger.
+
+To conclude, the advantages of exchange programmes, including cultural understanding, language learning and personal development, clearly outweigh the risks. In my opinion, any student given the chance should take it.
+
+=== id: 84304b364b25bc42.A2p1 ===
+**Abstract**
+
+The force and torque that acoustic radiation from a sound field exerts on a small particle are usually explained in terms of energy and pressure. In this work we demonstrate that, when the particle is much smaller than the wavelength, these quantities can be used instead as direct measures of the field's canonical momentum density and spin angular momentum density. By modeling the particle's scattering response in the dipole approximation, we obtain expressions in which the force splits into a part proportional to the curl-free canonical momentum density and a part proportional to the curl-spin density, while the torque is linked to the spin density of the acoustic field. Applying this formalism to representative fields such as standing waves, evanescent waves and vortex beams, we find that it explains transverse forces and spin-dependent effects that conventional descriptions miss. Our findings offer a unified physical picture of acoustic momentum and spin and point to experimental ways of measuring both with small probe particles.
+
+=== id: 6a8bfa02e6172eee.A2p1 ===
+Below is the case as its proponents would present it, along with a significant caveat.
+
+**The argument:** According to our senses, the ground beneath us is flat and still. No motion is felt, water looks level, and the horizon appears perfectly straight. Flat-earth thinking insists that such direct observations should outrank abstract theory. In its view, modern geophysics depends on a single mistaken premise: that gravity is a universal force of attraction drawing matter toward a center and molding planets into spheres. If that premise is swapped for the notion that "down" is just a built-in direction in which dense matter comes to rest, the reasoning continues, then a motionless, disc-shaped Earth under a turning dome of stars emerges naturally, with Earth at the center of creation. Phenomena like the sun's apparent movement and the unmoving ground would then have direct explanations, with no need for rotation or orbit.
+
+**The caveat:** The evidence defeats this argument. Ships vanish over the horizon hull first, the shadow cast during lunar eclipses is round, the constellations visible change with latitude, and data from satellites, GPS and spaceflight fit only a spherical, rotating Earth that orbits the sun.
+
+=== id: 176209ef61ff6183.A2p1 ===
+Should Companies Be Allowed to Track Their Employees' Online Activity?
+
+Employers have sound reasons for wanting to see what goes on across their networks, and workers have equally sound reasons for wanting a measure of privacy. In my view, companies should be permitted to monitor online activity in the workplace, but only inside well-defined boundaries.
+
+Security is where the argument for monitoring begins. Customer records, financial information and trade secrets all sit on company networks, and one employee who clicks a harmful link or copies files to a personal account can put everything at risk. Monitoring software lets companies spot such problems before they grow. Because employers also carry legal responsibility for what occurs on their systems, from harassment to data leaks, they need a means of uncovering misconduct. Lastly, a company is paying for working time, so it is fair for it to confirm that this time goes toward work.
+
+Even so, tracking without limits does genuine damage. Being watched all the time leaves people anxious and mistrustful, and studies indicate that stressed workers tend to be less productive rather than more. Monitoring can also intrude on personal matters such as private messages, health-related searches or union organizing, all of which employees ought to be able to keep private. And without restrictions, information gathered for security reasons may end up serving completely different ends.
+
+Regulated monitoring is the best solution. Before any tracking starts, companies should explain in writing exactly what will be monitored and for what reason. They should limit monitoring to work accounts and devices instead of personal ones, gather only the data they need, and keep it securely. Wherever they can, they should look for risk patterns instead of reading every single message.
+
+With such protections in place, monitoring can serve both the company and its staff. Without them, the workplace becomes somewhere no one feels trusted.
+
+=== id: 2a332597379558d9.A2p1 ===
+Although I understand why lots of people enjoy going abroad, I would rather spend my holidays at home.
+
+To begin with, being at home is more relaxing for me. Travelling means I have to worry about many things, such as tickets, hotels and the weather, and I am already tired before the trip begins. At home I can sleep late, eat the food my mother cooks and watch films in my pajamas. In my opinion, this is the best way to rest after school or work.
+
+Also, staying home costs less. Plane tickets and hotels are very expensive, especially during the holiday season. When I don't travel, I can spend that money on other things, like a new phone or a good dinner with friends. I also get the chance to visit places in my own city that I am too busy to see the rest of the year. Sometimes I discover a little cafe or a really beautiful park.
+
+On the other hand, travelling has its advantages too. Going abroad lets you see new places, learn about different cultures, taste new food and practise another language. Last year my cousin visited Japan, and she said it was the most exciting trip she ever had. I think that is great, and perhaps one day I will do the same.
+
+To sum up, I enjoy holidays at home because they are peaceful, comfortable and cheap. Still, I would like to travel abroad when I have more money and free time. I believe the best holiday is whichever one makes you happy and relaxed.
+
+=== id: dd2b5ef8f325fb5c.A2p1 ===
+Subject: Verbal confirmation for direct trades
+
+Hi all,
+
+I want to raise a process issue that surfaced during last week's review. A number of our direct trades were agreed by phone, and on a few occasions the only confirmation was in someone's memory or a brief chat message. This has caused confusion at least twice, so I'd like us to tighten our approach.
+
+The problem is straightforward. When a trade is agreed by voice between two parties, nothing records what was actually said unless we make that record ourselves. Should the counterparty later recall the price, quantity or settlement date differently, we have very little evidence to rely on. That leaves the desk open to disputes and operational costs and, even worse, to compliance questions.
+
+From Monday, please take the following steps for each direct trade agreed verbally:
+
+- **Use the recorded line.** Wherever possible, agree direct trades on a recorded line. If you're on your mobile or in a meeting, ring back on the recorded line to confirm.
+- **Read back the key terms.** Repeat the instrument, side, quantity, price, trade date and settlement date to the counterparty, and wait until they confirm.
+- **Send written confirmation within 30 minutes.** Once the call ends, send the counterparty a brief email or chat message restating the terms, with the operations inbox in copy.
+- **Log the trade immediately.** Before turning to anything else, enter the trade in the blotter and note that it was agreed verbally.
+
+If something is unclear or the counterparty disputes any term, let me know right away instead of holding it until end of day.
+
+I realise this adds a few minutes per trade, but the time saved by avoiding errors will be much greater. If it would be useful, I'm glad to go through the process on a short call, and I'll circulate a one-page checklist tomorrow.
+
+Thanks for your support on this.
+
+Best,
+Karen
+
+=== id: 6fd470826c0978ee.A2p1 ===
+Because melatonin acts as a timing cue rather than a sedative, a small dose is often more effective. Each evening your body releases tiny amounts of it to let your brain know night is approaching. A low dose, usually between 0.3 and 1 mg, imitates that natural cue and gently adjusts your internal clock without flooding it.
+
+Taking large doses can have the opposite effect. Very high levels can persist into the morning and leave you groggy, and they may overstimulate melatonin receptors, possibly dulling the response over time. Too much melatonin taken at the wrong time can also push your sleep rhythm the wrong way. Since many supplements hold far more than the body really requires, less is often more.
+
+=== id: eb17f9edfe269157.A2p1 ===
+Although cuteness is a matter of taste, certain animals reliably end up at the top of people's lists.
+
+**Baby animals in general** usually come out ahead because of their large eyes, round faces and clumsy movements. Puppies, kittens and ducklings all count.
+
+A handful of wild species are especially notable:
+
+- **Red pandas** sport fluffy reddish-brown fur, a ringed tail and a round face with mask-like markings.
+- **Sea otters** hold hands while sleeping so they don't drift away from each other, and they float on their backs, cracking shells on their bellies.
+- **Quokkas**, small marsupials native to Western Australia, look as if they are always smiling.
+- **Baby elephants** totter about on chunky legs and stumble over their own trunks.
+- **Fennec foxes** combine huge ears with tiny bodies.
+- **Pygmy hedgehogs** roll up into prickly balls small enough to sit in your palm.
+- **Axolotls** have a loyal fan base thanks to their feathery gills and constant grin.
+- **Penguin chicks** waddle clumsily in coats of fluffy gray down.
+
+Scientists call the response these creatures provoke the "baby schema" effect, which explains how traits such as large eyes and rounded heads activate our nurturing instincts.
+
+=== id: b2711343a99411ad.A2p1 ===
+Subject: ISDA for Clark County PUD #1
+
+Hi [Name],
+
+Following up on the ISDA Master Agreement with Clark County PUD #1: attached are our proposed draft and Schedule, which contain the public-entity representations and the Washington governing-law language that their counsel will probably expect. Since the PUD is a public body, we also need to confirm there is documentation of its authority to enter into swaps, preferably a board resolution.
+
+Would you be able to look over the credit support terms and termination events and get your comments to me by Friday? When your redlines come in, I'll send a consolidated version to their team and arrange a call to work through any outstanding points.
+
+Thanks,
+[Your Name]
+
+=== id: ca826d260367dc69.A2p1 ===
+Usually, the free product itself is not the source of the money. Most of Firefox's income comes from search companies, chiefly Google, which pays for the position of default search engine. Google makes Chrome because the more people browse, the more they use Google's search and advertising. Likewise, Microsoft's Edge and Apple's Safari nudge users toward the companies' own services and ecosystems.
+
+Linux follows a different model. It isn't owned by any one company, but firms like Red Hat and SUSE make money selling support, security updates and enterprise tools built around it. At the same time, large companies such as Google, Intel and IBM employ engineers to improve the kernel, since their own servers and devices rely on it and splitting development costs saves them money. Foundations and donations cover some of what is left.
+
+=== id: 9ff9ceb0a6f4d916.A2p1 ===
+In the era before typewriters became widespread in the late 1800s, looking for work was very different from the process we are familiar with now. Résumés were not standard, and hiring relied largely on personal connections, reputation and handwritten correspondence.
+
+## How people heard about openings
+
+**Word of mouth and social networks.** Most positions were filled through relatives, neighbors, fellow churchgoers and tradespeople. A farmer could learn from a friend that the blacksmith wanted a helper, or a merchant might ask family members if they knew of a capable clerk. Reputation counted for a great deal, since in small communities everyone's character and work habits were common knowledge.
+
+**Apprenticeships and guilds.** In skilled trades, the normal path was an apprenticeship. Parents or guardians frequently arranged a place directly with a master craftsman, sometimes for a fee. In European towns, guilds decided who was allowed into a trade, so learning about openings depended on having links to the guild system.
+
+**Public notices.** Employers in towns and cities put up handbills or notices on doors, in markets and at inns. Newspapers, which became widespread in the 1700s, printed advertisements; colonial American papers, for instance, published notices looking for servants, tutors, clerks and laborers. Hiring fairs, held in parts of England and other places, brought workers and employers together in public. Laborers stood in the town square, sometimes holding a tool or emblem of their trade, to signal the kind of work they could do.
+
+## How people applied
+
+**Letters of introduction and recommendation.** Applicants for clerical, professional or domestic posts frequently depended on a recommendation letter from a respected figure such as a minister, a past employer or a local official. Such a letter served much like a modern reference and could carry more weight than anything the applicant said.
+
+**Handwritten letters of application.** Educated candidates wrote their own letters by hand, usually in a formal, courteous style, setting out their qualifications and asking to be considered. Handwriting mattered: since a clerk's work required neat, readable script, the letter doubled as a sample of the applicant's work.
+
+**In-person visits.** In many trades and manual occupations, applying simply meant turning up. Someone would visit a workshop, farm or shop, talk to the owner and perhaps show their skills right there.
+
+## Why it worked this way
+
+With no mass communication and low literacy in many areas, trust was the chief currency. Employers wanted workers someone could vouch for, so patronage and personal ties mattered more than formal qualifications. Written records did exist, but they reinforced relationships rather than taking their place.
+
+For your assignment, contrasting this with modern hiring, in which résumés and online job postings are the norm, could help show how technology transformed the process.
+
+=== id: 0f86512ed4429bfc.A2p1 ===
+Single-use plastics are a constant presence in everyday life. Plastic bags, straws, bottles and cutlery are used for just a few minutes before being thrown out, yet they do not simply vanish. In my opinion, governments should prohibit single-use plastic products, since the damage they do is far greater than the convenience they offer.
+
+The first argument concerns harm to the environment. Plastic needs hundreds of years to decompose, and in the meantime it collects in oceans, rivers and landfills. Sea turtles confuse plastic bags with jellyfish, and seabirds give fragments of plastic to their chicks as food. Gradually, plastic breaks down into tiny microplastics, which have now been detected in drinking water, food and even human blood. This endangers people as well as wildlife.
+
+The second argument is that recycling by itself is insufficient. Many believe that dropping plastic into a recycling bin takes care of the issue, yet only around nine percent of all the plastic ever produced has been recycled. When the system itself is broken, governments cannot rely on individuals to solve the problem. A ban makes the message clear and forces companies to develop better alternatives.
+
+Some argue that a ban would increase costs for both businesses and consumers. This concern is reasonable. Nevertheless, many countries have already brought in bans and handled the transition well. Reusable bags, paper straws and refillable containers are now widespread, and they often get cheaper as more people adopt them.
+
+To conclude, a ban on single-use plastics is both practical and necessary. It safeguards the environment, drives innovation and demonstrates that society takes seriously its duty to future generations.
+
+=== id: 76355fd681504691.A2p1 ===
+Precise figures are difficult to establish, but most of them did return in the end. According to historians' estimates, about 150,000 people emigrated from France between 1789 and the mid-1790s, and nobles made up only a minority of them; many were clergy, soldiers and commoners.
+
+Napoleon did permit them to come back, doing so gradually. Once the Consulate came to power in 1799, he struck thousands of names off the émigré list. In 1802 he granted a general amnesty, though with some exceptions, and tens of thousands returned on condition that they swore allegiance to the new regime. He wanted to make use of their expertise and to heal divisions. Many recovered their confiscated property, but only if it had not already been sold, and since most national lands had been, returning émigrés were often poorer than before. Some nobles went on to serve in his administration and at his court. A core of hardline royalists stayed abroad until the Bourbon Restoration of 1814-1815.
+
+=== id: 7015b9054b53a2a9.A2p1 ===
+**Subject: Bread Pudding Recipe for Friday's Potluck**
+
+Hi all,
+
+A few of you requested the recipe for the bread pudding I made for last month's team lunch, so here it is. It's simple to prepare and great for feeding a crowd.
+
+**Ingredients**
+- 6 cups day-old bread, cut into cubes (brioche or French bread is ideal)
+- 2 cups whole milk
+- 1 cup heavy cream
+- 3 eggs
+- 3/4 cup sugar
+- 2 tsp vanilla extract
+- 1 tsp cinnamon
+- 1/2 cup raisins (optional)
+- 3 tbsp butter, melted
+
+**Instructions**
+1. Heat the oven to 350°F (175°C) and grease a 9x13 baking dish with butter.
+2. In a bowl, whisk together the milk, cream, eggs, sugar, vanilla and cinnamon.
+3. Spread the bread and raisins in the dish and pour the mixture over them. Leave it to soak for 15 minutes.
+4. Drizzle the melted butter on top and bake for 40 to 45 minutes, until the top is golden and the center has set.
+5. Serve it warm, preferably with a bit of caramel or vanilla sauce.
+
+Because it reheats nicely, you can prepare it the evening before. If anyone has dietary restrictions, I'd be glad to recommend substitutions.
+
+Tell me how yours comes out!
+
+Best,
+Marcus
+
+=== id: 47a6b7386c65ac60.A2p1 ===
+# Chakras and Spiritual Growth
+
+Within the traditions that gave rise to the concept, chakras are not an optional extra to spiritual practice; they are a map of the practice itself. The term is Sanskrit for "wheel" or "disc." It shows up in Hindu and Buddhist tantric texts, in yogic philosophy and in later esoteric writings, and it refers to energy centers running along the spine, typically seven in today's popular version. Each center is linked to some aspect of human experience, and the premise is that working with them helps a person grow more whole, more aware and more peaceful.
+
+## The seven centers and what they represent
+
+- **Root (Muladhara):** Situated at the base of the spine, it is connected with safety, survival, belonging and groundedness. Growth at this level means developing stability so that fear stops driving your choices.
+- **Sacral (Svadhisthana):** Found in the lower abdomen, it is associated with pleasure, creativity and emotional flow. Growth here means having a healthy relationship with feeling and desire.
+- **Solar plexus (Manipura):** Sitting in the upper abdomen, it concerns willpower, confidence and a sense of self. Growth here involves acting purposefully without slipping into ego.
+- **Heart (Anahata):** In the middle of the chest, it is linked to love, compassion and forgiveness. Many traditions regard it as the bridge connecting the "lower" and "higher" centers.
+- **Throat (Vishuddha):** It concerns truthful expression and communication. Growth here means speaking and living according to your values.
+- **Third eye (Ajna):** Positioned between the eyebrows, it is associated with intuition, insight and clear perception.
+- **Crown (Sahasrara):** Located at the top of the head, it relates to transcendence, a feeling of oneness and connection to something greater than the self.
+
+## How chakras are used as a path
+
+The core notion is that spiritual development happens not in a single great leap but gradually, as you notice where you are stuck and then work on it. Someone struggling with anxiety and trust might be told by a practitioner that their root is unsettled; someone who has trouble voicing what they truly think might be directed to the throat. The chakra system supplies a vocabulary for examining oneself, transforming a vague sense that "something is off" into a more precise question to investigate.
+
+Chakra-related practices include meditation and visualization, breathwork (pranayama), mantra and sound, particular yoga postures, and at times color or crystals. In a typical meditation you might settle your attention on a single center, picture it as a spinning light, and notice any sensations or emotions that surface. The goal, over time, is to shift from reactivity toward balance.
+
+Classical yoga and tantra aim higher, at the awakening of kundalini, a dormant energy thought to rest at the base of the spine. As this energy climbs through the centers, it is said to dissolve limiting patterns until awareness arrives at the crown and the feeling of separateness falls away. That is the most ambitious form of the idea; most people now use a milder version, treating it as a framework for personal and emotional reflection.
+
+## Where the benefit really comes from
+
+Honesty about the evidence is useful here. Nothing in science supports chakras as literal energy structures in the body, and researchers have not found them anatomically. The practices, however, do have research behind them: meditation, slow breathing and mindful movement have measurable effects on stress, attention and emotional regulation. Many people find that the chakra framework lends these practices structure and meaning, and that structure is what keeps them returning.
+
+The part chakras play in spiritual growth is therefore partly practical and partly symbolic. They provide:
+
+1. **A map for self-reflection.** The seven themes of security, creativity, confidence, love, expression, insight and meaning cover a great deal of territory.
+2. **A reason to stay consistent.** Moving through the centers creates a feeling of progress, which helps sustain a regular practice.
+3. **A shared language.** Teachers and students can discuss inner experience using common terms.
+4. **A holistic view.** The system sees body, emotion and spirit as linked rather than separate.
+
+## A few cautions
+
+Working with chakras is no replacement for medical or psychological treatment. For anyone facing depression, trauma or physical illness, "unblocking a chakra" cannot stand in for professional help. Bear in mind, too, that the modern seven-chakra model with its rainbow colors is mostly a twentieth-century Western creation; older traditions list different numbers of centers with different meanings. People generally benefit more from holding the framework lightly, as a tool rather than literal truth.
+
+Seen this way, chakras can offer a helpful lens. They encourage you to slow down, attend to your inner life and take seriously the notion that growth involves the whole person.
+
+=== id: d52530656e1ba1c7.A2p1 ===
+Tunka-Rex is an array of radio antennas designed to detect air showers produced by high-energy cosmic rays. Built as an extension of Tunka-133, an array of non-imaging air-Cherenkov detectors located in Siberia's Tunka Valley near Lake Baikal, it records radio emission from air showers in the 30–80 MHz frequency band. Since the radio signal comes mostly from the shower's electromagnetic component, suffers only weak atmospheric attenuation and can be measured with a duty cycle close to 100%, radio detection offers an appealing and comparatively low-cost complement to established techniques. Tunka-Rex is triggered by Tunka-133, which independently derives the energy and the depth of shower maximum from the Cherenkov light of the same events. This allows the two methods to be cross-calibrated and makes it possible to assess how accurately radio measurements can reconstruct these key shower parameters. Special emphasis is placed on energies above 10¹⁷ eV, where the transition from galactic to extragalactic cosmic rays is expected to occur. In this contribution, we present the array's layout and hardware, covering the antennas, the analog signal chain and the data acquisition system, which uses the same infrastructure as Tunka-133. We also explain the calibration procedures and summarize the status of the experiment's first stage and its initial measurements.
+
+=== id: 0e742474f34b7a7f.A2p1 ===
+# The Flat Earth Society
+
+The Flat Earth Society is an organization that advocates the view that the Earth is a flat disc and not a sphere. Although the idea itself long predates it, the society is the most widely known group linked to modern flat-earth thought.
+
+## Origins
+
+The society's roots lie with Samuel Birley Rowbotham, an English author who in the mid-1800s claimed, on the basis of experiments he carried out along a canal known as the Bedford Level, that the Earth was not curved. His followers expanded on these ideas, among them Lady Elizabeth Blount, who established the Universal Zetetic Society in 1893. Samuel Shenton founded the modern Flat Earth Society in England in 1956. Following Shenton's death in 1971, leadership passed to Charles K. Johnson in California, who headed it for decades until a fire wiped out its records and he died in 2001. In the 2000s the society was revived as a website and online community.
+
+## What members believe
+
+In most versions of the model, the Earth is a disc with the North Pole in the middle and Antarctica forming a wall of ice around its rim. The sun and moon are described as fairly small bodies that circle above the disc. Members generally maintain that photos taken from space are fake or distorted, that governments and space agencies are part of a cover-up, and that phenomena such as ships vanishing hull-first beyond the horizon can be explained in other ways, for example by perspective or atmospheric effects.
+
+## Scientific consensus
+
+A vast body of evidence supports the Earth's spherical shape. This includes the fact that different constellations can be seen from different latitudes, the curved shadow Earth throws on the moon in a lunar eclipse, time zones, circumnavigation by sea and air, satellite observations, and direct measurements by surveyors dating back to Eratosthenes, who calculated Earth's circumference over two thousand years ago. No credible scientific body disputes this.
+
+## Modern profile
+
+During the 2010s the society attracted more attention as flat-earth material spread widely across social media and video sites. Conferences have taken place, and a number of celebrities and athletes have openly voiced sympathy for the idea. Researchers studying conspiracy beliefs frequently point out that flat-earth views attract people who distrust institutions, and that the movement concerns skepticism toward authority as much as geography.
+
+Some observers have long questioned whether the society is wholly serious. Whatever the case, its members maintain that they are sincere, and the organization is still active today.
+
+=== id: d523eea7166e637c.A2p1 ===
+# Gunmen Storm Kenyan University; Agency Reports 147 Dead
+
+GARISSA, Kenya — A Kenyan agency said 147 people were killed when gunmen stormed Garissa University College in the country's northeast, as authorities announced that preparations were being made to evacuate students and others from the campus.
+
+According to witnesses and survivors, students were woken by explosions and gunfire as the attackers entered the school in the early morning hours. Many recounted scenes of panic, with students hiding in dormitories and attempting to escape the grounds.
+
+Reports suggested that the attackers singled out Christians while letting Muslims go. These accounts, provided by people who escaped, could not be verified independently. If true, they would indicate that the gunmen chose their victims based on religion.
+
+The Kenyan agency put the death toll at 147, although officials warned that the figure might change as events unfolded and further information was gathered from the scene. It was not immediately known how many people had been wounded or how many were still inside the campus.
+
+Authorities said arrangements were under way to move students and others out of the university. Security forces were sent to the area, and the response concentrated on securing the campus and bringing people to safety.
+
+Garissa lies in a region close to the Somali border that has suffered a number of attacks in recent years, violence Kenyan officials have attributed to militants based in Somalia. Initial reports of the assault did not name any group, and officials did not immediately say who was behind it.
+
+The attack stirred fear among students' families, many of whom gathered to await word about their relatives. Local hospitals were reportedly treating the injured.
+
+Government officials were expected to provide more updates as the operation went on. The attack is likely to reignite debate about security in northeastern Kenya and about the government's capacity to protect schools and other public spaces.
+
+=== id: 3250748c6e938dee.A2p1 ===
+After the funeral, the first thing Marguerite did was eat an entire sleeve of the good crackers while standing at the counter, because there was no one around to tell her that didn't count as dinner.
+
+Next she opened her laptop and reread her brother's email. It was four lines long. *Mom's house sells next month. Thought you should know. No need to come. Hope you're doing okay.* He had signed off with only an initial, as though she were a client.
+
+She was fifty-three, and by her own reckoning people had been forgetting her for roughly eleven months. First her husband had gone, quietly, in a slow fade; then came the layoff; then the friends who quit calling, as if grief could be caught. At some point in the middle of it all, she had begun doing the math on the pills in the cabinet. Not seriously. Only math.
+
+Tonight the math was louder.
+
+She opened the cabinet and stared at the orange bottles for a long while. Then her eyes went to the fridge, where a magnet pinned up a postcard from her sister-in-law Delia, who had announced at the funeral, loudly and with everyone listening, *Well, Marguerite always did take things hard.*
+
+*Always did take things hard.* As though she were some fussy houseplant.
+
+Marguerite shut the cabinet.
+
+She was not feeling better, and she wanted that understood, by herself and by the empty kitchen. Nothing had lifted. The grief lay in her chest like a stone in a river, the water simply flowing on around it. But beneath the stone, something small, mean and stubborn had stirred awake.
+
+If she were gone, Delia would tell the story at Thanksgiving with a sorrowful little tilt of the head. *Poor Marguerite. We should have seen.* She would gracefully make it about herself. Her brother would sell the house and feel a tidy, administrative kind of sadness.
+
+No.
+
+Marguerite fetched a pen. On the back of the postcard, beneath Delia's loopy handwriting, she wrote: *Day one.* She added the date. Then, after a pause, she wrote: *Out of spite.*
+
+It was not a lovely reason, and she knew it. Better and gentler reasons existed, the sort therapists print on posters. Perhaps she would find one of those someday.
+
+But spite had gotten her up off the couch, and spite had made her put the pills away, and spite, she thought as she took the last cracker, might just carry her to the doctor on Monday.
+
+She would see the doctor. She would pick up when her cousin called. She would plant tomatoes in the spring, if only so she could invite the whole family to watch her enjoy them.
+
+She would stay alive, entirely on purpose, in the most annoying way she could manage.
+
+And someday, she thought, she might even forget why she had started.

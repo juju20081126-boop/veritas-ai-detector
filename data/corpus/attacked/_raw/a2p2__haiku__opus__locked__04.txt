@@ -1,0 +1,412 @@
+=== id: 6f06ed5ebd609d24.A2p2 ===
+Among the hardest ethical dilemmas in contemporary science stands the question of whether animals serve a proper purpose in research. On one hand, proponents argue that animal studies have been essential to nearly all major advances in medicine, including vaccines and cancer treatments, and that computer models and laboratory cultures still cannot fully address questions about complex living systems. The human cost of abandoning such research would likely be substantial.
+
+Yet critics raise a compelling counterpoint: animals experience pain and fear, and it is unclear that benefits to another species outweigh their suffering. Furthermore, results obtained in animals frequently fail to transfer to human medicine.
+
+A reasonable position lies between these extremes. Animal research can be justified when it addresses genuine scientific needs, when no viable alternative exists, and when animal distress is minimized as much as possible. The widely recognized "Three Rs"—Replacement, Reduction, and Refinement—capture this balance. Continued investment in alternatives from society will gradually decrease the number of animals needed for research altogether.
+
+=== id: a8b391c7c188a6a3.A2p2 ===
+In tabletop roleplaying games like Dungeons & Dragons and in numerous online multiplayer games, the cleric functions as a standard support role. This happens because clerics handle responsibilities few other character classes can fulfill.
+
+**What makes clerics essential to groups**
+
+- **Mending wounds.** Clerics restore health during battles and afterward, enabling front-line fighters and other melee combatants to sustain themselves through extended combat.
+- **Curing afflictions.** Clerics eliminate poisoning, illness, and hexes, and at higher levels can restore the dead to life.
+- **Team enhancements.** Spells like Bless or Shield of Faith boost accuracy and defenses for the entire party.
+- **Fighting the undead.** Clerics can repel or destroy undead foes, removing a major source of danger in certain locations.
+- **Combat capability.** Many clerics wear protective gear and participate in direct melee combat, freeing them from always remaining at the rear.
+
+**What changes without one**
+
+Parties can manage without a cleric, but face real constraints:
+
+- Potions become the main healing resource, and supplies dwindle while costing coin.
+- Fatigue forces more frequent breaks, potentially allowing foes to regroup or causing time-sensitive objectives to fail.
+- Alternative sources of healing—druids, bards, or paladins—may fill the gap partially.
+- Character death becomes more frequent and potentially permanent without resurrection abilities.
+- Teams must adopt more cautious tactics, relying on stealth and negotiation to avoid direct combat.
+
+In modern games, a cleric remains a valuable safety mechanism rather than an absolute requirement. The removal forces higher consequences per failure and adds difficulty for groups seeking that added challenge.
+
+=== id: d70309f175ede0a2.A2p2 ===
+**DEEPLY SORRY**
+
+*Genre:* Comedy
+*Starring:* Jim Carrey
+*Tone:* *Liar Liar* meets *The Mask*, with *The Truman Show*'s humanity
+
+---
+
+**Logline**
+
+The world's most accomplished professional apologizer, hired by the wealthy to accept blame for scandals, discovers he has never truly apologized for anything he actually did. He has one week to learn how, or he loses the person who believed in him most.
+
+---
+
+**Synopsis**
+
+**Walt Fennimore** (Jim Carrey) has a gift: nobody delivers an apology like Walt. He can shed tears instantly, collapse to the ground in convincing remorse, and deliver a public apology so moving that the original scandal disappears from memory.
+
+A decade back, Walt was a struggling theater performer. He auditioned reading a politician's apology at a press conference, the footage went viral, and Walt reinvented himself. Now **Mea Culpa Inc.** employs him full-time, renting him out to stars, executives, and social media personalities. A singer offends a nation? Walt appears as her "spiritual counselor" and confesses to writing the offensive post. A billionaire's driverless lawnmower causes mayhem? Walt is the engineer who misconfigured it. He has endured public firings, humiliations, and dramatic exits from buildings more than four hundred times. He buys coffee at the same shop as the paparazzi.
+
+Walt enjoys wealth, noise, and shamelessness in equal measure. But underneath lives a man who is profoundly isolated.
+
+Only his ex-wife, **Nora**, can see through his act. She works as a music teacher in public schools. Their daughter, **Pip**, age twelve, has inherited Walt's love of performance. Walt misses recitals, forgets celebrations, and covers each letdown with a brilliant theatrical apology that rings hollow. Nora has lost faith. By week's end she departs for Toronto with Pip.
+
+---
+
+**The Hook**
+
+Walt lands his biggest opportunity yet. **Chase Dunmore**, a cocky tech executive, caused a city-wide blackout and pays Walt a seven-figure sum to take the blame. But Pip was playing in her school orchestra at the venue when the lights went out. She was stuck in an elevator for hours. Walt cannot confess to harming his own child.
+
+Then something strange happens. After an encounter with a cryptic old custodian at the site, Walt finds that **he physically cannot apologize for things he did not do**. Every attempt causes his face to contort, his limbs to seize, and his words to dissolve into unintelligible sounds. On live broadcast as he attempts Chase's apology, Walt finds himself performing an uncontrollable series of movements across a table like strange dance.
+
+This becomes the movie's comic engine. It allows Carrey to unleash the physical extremes that made *Ace Ventura* and *Liar Liar* classics, while emotional depth keeps the story grounded.
+
+---
+
+**Act Two**
+
+Walt's reputation collapses. Every person he has ever apologized for comes forward with new crises. A replacement apologizer is found. Chase launches a campaign to make Walt the scapegoat.
+
+In desperation Walt realizes the curse only permits apologies for acts he actually committed. He sets out to apologize sincerely to those he has wronged: Nora, Pip, his estranged brother, an old theater friend he sabotaged, and a barista he has tipped one penny to for years. Every apology grows harder and funnier as Walt grapples with genuine honesty for the first time. In one memorable scene he must apologize at a child's birthday party he once wrecked while costumed as a hot dog, and does so in the same costume.
+
+Gradually, the man who faked all emotions learns to feel real ones.
+
+---
+
+**Act Three**
+
+Nora's departure arrives tomorrow and Chase's escape seems certain, so Walt uses his talents one final time in service of truth. He infiltrates Chase's televised "Accountability Forum" with an elaborate, chaotic display. It forces Chase into a public confession before Walt vanishes, leaving the mogul helpless as the curse takes hold of him too. It is contagious.
+
+Walt rushes to Pip's rescheduled recital, slips in late, and does something radical: he simply sits and listens without making a display.
+
+Afterward he offers Nora and Pip a brief, unscripted apology. Nora does not return to him immediately, but the move is delayed. In the closing scene Walt starts a business called **Sorry School**, training people to say sorry with real meaning. On opening day his sole student is Chase Dunmore.
+
+---
+
+**Why This Works for Carrey**
+
+*Deeply Sorry* gives Carrey a lead who is a walking cartoon and a broken soul simultaneously—the exact formula that powered his finest performances. The idea is inherently high-concept, every scene produces comedy, and the physical bits are made for marketing. But it also speaks to internet-age guilt and reckoning. This would make it timely rather than nostalgic, and could position Carrey where he belongs: anchoring an intelligent summer comedy.
+
+=== id: 789d22327b982a38.A2p2 ===
+When test material is limited in duration, speaker recognition systems face significant challenges because i-vectors derived from brief speech show substantial variability and prove unreliable. We propose a method to enhance short-utterance i-vectors by making them resemble representations from extended utterances using a conditional generative adversarial network. The generator network accepts the short-utterance i-vector and produces matching long-utterance i-vector representations, while the discriminator distinguishes generated vectors from authentic ones. Speaker information is maintained through a blend of reconstruction loss, speaker discrimination constraints, and the adversarial goal. We evaluated this on the NIST Speaker Recognition Evaluation dataset with segments of varying durations. Results consistently improved error rates compared to standard PLDA, with the most significant gains for the shortest segments.
+
+=== id: 953e01e3548389de.A2p2 ===
+We investigate a class of semi-linear elliptic boundary value problems in which the nonlinear term depends on a spatially heterogeneous coefficient. These equations arise naturally in population biology, reaction-diffusion systems, and heat transport phenomena. Because these systems typically lack analytical solutions and standard Newton methods require costly computation of Jacobian matrices, we propose a linearization strategy that reduces the nonlinear problem to a sequence of linear elliptic equations. Each iteration solves a linear system whose coefficients depend only on the preceding iterate, with stabilization guided by the nonlinearity's Lipschitz constant. Under reasonable conditions on the coefficient function and domain data, we demonstrate that the method is well-posed, converges strongly to the unique weak solution in the H¹ norm, and achieves a priori error estimates indicating geometric convergence. Finite element tests validate the theory and demonstrate method efficiency.
+
+=== id: 52068400c8845def.A2p2 ===
+This pattern is remarkably widespread, and it says more about how your brain balances immediate desires against long-term interests than about your grasp of sleep science.
+
+**1. "Reclaiming the evening"**
+When days overflow with demands (work, classes, family, everyone's expectations), the night may be the sole time that feels genuinely yours. Staying up becomes a method of reclaiming freedom, even if you are not enjoying whatever you are doing. Going to sleep feels like surrendering control back to outside forces.
+
+**2. Now beats later**
+Watching another episode or scrolling delivers instant gratification. Sleep deprivation is "future you"'s problem—someone distant and abstract. Information that something is bad for you rarely overwhelms a reward you experience immediately.
+
+**3. Exhaustion weakens willpower**
+Each hour that passes, you grow more drained, and resisting temptation becomes harder. The precise moment when controlling your behavior is most crucial is exactly when you lack the capacity to do it.
+
+**4. Digital platforms are engineered to addict**
+Autoplay, infinite scrolling, and notifications remove natural stopping places. Your apps never say "you've had enough."
+
+**5. Your sleep schedule may be genuinely delayed**
+Some individuals naturally hit their sleepy window much later in the evening. Evening screen exposure can push this timing even further.
+
+**6. Avoidance through distraction**
+Lying in bed often brings anxious thoughts to the surface. Staying occupied pushes those thoughts away.
+
+**What actually works**
+
+- Protect some genuine leisure time before bed, so the evening does not need to compensate.
+- Use a "start winding down" alarm a half hour to an hour before sleep, alongside your morning alarm.
+- Store your phone outside your bedroom, or at minimum across the room from your bed.
+- Make your bedtime experience pleasant (reading, bathing, listening to music) so you approach it rather than resist it.
+- Maintain a regular wake time, including weekends; this gradually shifts your sleep onset earlier.
+
+If the habit persists despite these tactics, or if you lie awake unable to sleep, talk to a healthcare professional about sleep disorders or circadian misalignment.
+
+=== id: 486b1f93f62b4daa.A2p2 ===
+The first thing I did upon taking office was issue an executive order mandating that every federal worker take a thirty-minute rest period at 2 p.m.
+
+Here is how it happened. I became president entirely by chance. It started as a joke on a fishing message board—a write-in candidacy—and before anyone realized, I had won thirty-one states. A week into the role I learned that briefings happen at 6:30 a.m. and no one would let me skip them. Escape seemed my only option, and impeachment was the quickest exit I could see.
+
+For two weeks after the nap order took effect, the Labor Department reported that federal worker output jumped eighteen percent. Work injuries dropped. Five hundred of the largest companies voluntarily adopted the policy. My popularity climbed ten points.
+
+That was not going to work. I needed something more aggressive.
+
+I listed Air Force One for sale online, advertised as "large aircraft, runs well, missiles partially removed." A billionaire in tech purchased it for 1.3 billion and volunteered to cover all upkeep. Analysts called it the most efficient government asset sale ever recorded. A TV panel asked, "Is He a Genius?"
+
+Running out of time, I skipped the big speech to Congress and instead broadcast myself reading every piece of legislation Congress had submitted to me, slowly and without emotion, pausing each time I reached something unclear. The broadcast lasted eleven hours. Sixty million watched. Three senators quit after I got to page 840 of the farm bill and wondered aloud why a golf course was receiving subsidies.
+
+For a final gambit, I dispatched my mother to broker a trade pact with China. She had no political background, only forty years leading the church fundraiser. She returned with tariff reductions, a panda contract, and a scallion pancake method she has since perfected.
+
+Last week the House committee responsible for impeachment finally convened. I watched with hope.
+
+They voted unanimously to propose a constitutional amendment giving me a second term.
+
+I plan to take a nap.
+
+=== id: da7a299909a0c69d.A2p2 ===
+**Nigerians Vote in Tight Presidential Race Amid Uncertainty Over Results**
+
+LAGOS, Nigeria — On Saturday, millions of Nigerian voters lined up to choose between President Goodluck Jonathan, the sitting president, and Muhammadu Buhari, a retired general who previously held power through military rule. Political analysts consider this one of the closest contests since Nigeria transitioned to democracy in 1999.
+
+Jonathan, from the long-dominant People's Democratic Party (PDP), faces Buhari, a former major general now leading the All Progressives Congress (APC), a coalition formed in 2013. Since the end of military government, this marks the first election in which an opposition challenger appears to have a realistic shot at removing an incumbent president.
+
+Many voting locations experienced delays as poll workers managed new digital identification systems designed to minimize electoral fraud. Jonathan himself could not be verified through a digital reader at his home polling place in Bayelsa and received manual accreditation instead. The Independent National Electoral Commission (INEC) extended polling into Monday in certain regions that experienced system failures.
+
+The original ballot date of Feb. 14 was moved back six weeks after military leadership expressed security concerns in the northeast, where the Boko Haram insurgency has persisted for six years, killing many and displacing over one million inhabitants.
+
+The principal campaign focus has been security. Buhari, who governed Nigeria briefly following a 1980s military takeover, has positioned himself as an effective executive who can eliminate the militants and eradicate systemic corruption. Jonathan supporters highlight military successes against Boko Haram under his administration and growth in the economy, though declining petroleum values have compressed public budgets and weakened the national currency.
+
+The matchup reflects Nigeria's persistent geographic and faith-based separations. Buhari practices Islam and gains backing predominantly from the Islamic north, while Jonathan, who is Christian, has greater support in the south, especially among oil and gas regions.
+
+These dividing lines have prompted concerns that a defeated side might challenge the outcome's legitimacy. About 800 people died in northern riots following the 2011 vote, according to Human Rights Watch, when Jonathan defeated Buhari.
+
+In early January, Jonathan and Buhari inscribed a pact in the federal capital committing to nonviolent campaigns and accepting results, though tensions persist. Some militants operating in oil regions have indicated disturbances should Jonathan lose, and some Buhari adherents claim they will question any results perceived as unfair.
+
+International delegations, including those from the African Union and European Union, monitor the voting process, and many nations have urged Nigerians toward peaceful conduct.
+
+Results will be tallied by state, then transmitted to the federal capital for publication, with final tallies expected within several days, INEC's chief Attahiru Jega indicated.
+
+A winning candidate must receive a basic majority of national ballots and capture no less than one-quarter of votes across two-thirds of the nation's 36 states plus the capital district.
+
+=== id: 00113485b7059f2e.A2p2 ===
+Subject: Issues with EBS Configuration
+
+Hello [Name],
+
+During a review of our AWS environment last week, I discovered several problems with how we configure our EBS (Elastic Block Store) resources. While no single issue poses an immediate crisis, together they represent significant cost waste and security vulnerability, so I wanted to flag them prior to our next infrastructure planning session.
+
+**Idle volumes without attached instances.** [number] volumes show a status of "available," indicating they are not attached to any active instances. These appear to be remnants from instance terminations during our infrastructure migration earlier this year. We continue paying for the storage—approximately [$X] monthly.
+
+**Volumes without encryption enabled.** Some production volumes lack encryption at rest, particularly those powering our database infrastructure. This conflicts with our data security standards and would likely be cited in any compliance audit.
+
+**Accumulated snapshots with no retention rules.** We lack automated snapshot management policies, so certain snapshots date back more than two years. Many originate from instances that no longer exist.
+
+**Legacy volume type selection.** The majority still run gp2. Moving to gp3 would cut per-gigabyte expenses by around 20% and allow scaling performance separately from capacity. The transition requires zero downtime.
+
+Recommended actions:
+
+- Determine who manages the unattached volumes, create backup snapshots, and remove unneeded ones
+- Make EBS encryption mandatory for new volumes and migrate existing unencrypted volumes
+- Set up Amazon Data Lifecycle Manager to manage snapshot preservation automatically
+- Migrate from gp2 to gp3 incrementally, beginning with non-critical infrastructure
+
+I can have a full assessment and cost modeling prepared before Thursday's session. If any of these volumes exist for documented operational reasons I am unaware of, please advise so I can reflect those facts.
+
+Best regards,
+[Your Name]
+
+=== id: 73c5b95b2fac1316.A2p2 ===
+**The Wall at Okafor's**
+
+Every Sunday morning, the brick wall adjacent to Okafor's Laundromat hosted a collection of stories.
+
+How it began remains unclear. One week, a single notecard was pinned to the board near the entrance, containing a brief tale about a kitten who believed herself to be a beacon. The following week held eleven. By summer's close, the board covered the building's entire side, and people traveled from distant neighborhoods to read.
+
+A strip of plywood above displayed a single rule, painted clearly: LEAVE A STORY, LEAVE A COMMENT.
+
+Notes attached below each card offered feedback. Usually these were warm. *Lovely ending. Who's the woman in blue? Write more about the kitten.*
+
+But some comments were harsh, and that is when Mrs. Okafor appeared.
+
+Mrs. Okafor had run the laundromat for thirty-one years. Every Sunday evening she walked along the board with a coffee container, removing mean-spirited notes, flyers, and cards that were just phone numbers. She reattached any cards the wind had knocked loose. She covered the board with a tarp before rain. Yet she never contributed a story herself.
+
+Theo had pinned stories starting in spring, never putting his name on them, always using green paper so he could locate them. Fifteen years old, he kept his authorship a secret from everyone. He read every reply on his cards twice—once quickly, then slowly and carefully.
+
+In fall, a fresh card appeared at the top, in Mrs. Okafor's deliberate capitals.
+
+MY KNEES HURT AND THE WALL IS EXPANDING. I NEED SOMEONE TO HELP. IF YOU CARE ABOUT THIS PLACE, COME INSIDE AND TALK TO ME.
+
+Sticky notes crowded the space below within hours. *Mrs. O, you're wonderful! Thank you for everything. This should totally continue.*
+
+No one arrived inside the shop.
+
+The next Sunday, Theo stood studying Mrs. Okafor's card for a long moment. Then he extracted a green notecard, wrote two words, and fastened it below.
+
+*I will.*
+
+As the door swung inward, the machines hummed, and Mrs. Okafor already extended another empty container toward him.
+
+"How'd you know?" he said.
+
+"Who do you suppose," she replied, "has been protecting your stories from the rain since April?"
+
+=== id: 8d405536c2395a80.A2p2 ===
+Subject: ISDA Agreement for Clark County PUD #1
+
+Hi Sara,
+
+The enclosed is an updated draft of the ISDA Master Agreement and Schedule for Clark County PUD #1. It incorporates the revisions their attorneys requested during our previous conversation, including the modified termination scenarios and a $10 million threshold for cross-default. It also has the customary governmental certifications, since the PUD needs to assert it has authority to participate in these arrangements.
+
+Before forwarding to them, would you review the collateral thresholds in the Credit Support Annex? I would like to send them the draft by Friday.
+
+Thanks,
+Mark
+
+=== id: f75a6ec34c87be14.A2p2 ===
+**Form 22-B**
+
+Good morning, Madam Chair and Committee members. I am Eleanor Whitcombe, and I have come to request Form 22-B, Application for the Exercise of Lifetime Termination Eligibility. I have brought all three required copies, each signed and formally witnessed.
+
+I have reviewed the guidance carefully. Section 4 mandates I demonstrate severe, ongoing harm, the absence of any legal resolution, and realistic confidence that the person I name will perpetrate additional harm. I shall address each component individually.
+
+Concerning harm: fourteen months ago my son, Thomas, was terminated using an approved allowance. The person who acted had worked alongside him for just six weeks. She provided as justification: Thomas had "destroyed her future" by telling their employer about her falsifying workplace safety inspections.
+
+Concerning remedy: I have submitted three challenges. Each was rejected on the grounds that authorized terminations are permanent and cannot be reconsidered.
+
+Concerning continued harm: since that event, the individual I am naming has approved forty-one additional terminations, with nine of them concerning employees who had reported wrongdoing.
+
+That person is Councillor Martin Hale, sitting second to your right.
+
+I note the Councillor appears unwell.
+
+I call to the Committee's attention Rule 9, which says any member named in such an application must withdraw at once. I also point out that Councillor Brand is absent due to sickness. If Councillor Hale withdraws, the Committee falls to four members. Per Rule 12, should a minimum of five members not be present, any pending petition is deemed authorized when we adjourn.
+
+I have checked the time. We adjourn in five minutes.
+
+I have nothing more to say, Madam Chair. I can wait.
+
+=== id: fcabef5576282c3e.A2p2 ===
+As the deconfinement temperature rises above the phase boundary, color screening is predicted to disassociate heavy-quark bound states, making charmonium a valuable indicator of properties in the quark-gluon medium produced during relativistic heavy-ion reactions. This work examines the behavior of the J/ψ, χc, and ψ′ within the medium at energies exceeding Tc. A non-relativistic potential formalism employs temperature-dependent heavy-quark binding potential obtained from lattice QCD, from which we determine binding strength, size, and dissolution temperatures of each state. The resulting spectrum functions are compared with lattice-computed correlators. The findings indicate that excited resonances dissolve near the transition, whereas the J/ψ can remain bound to approximately 1.5–2 Tc, depending on the potential selected. We discuss ramifications for cascade breakdown and charmonium recreation in heavy-ion reactions.
+
+=== id: 2c804a2a4a3cf37c.A2p2 ===
+This investigation concerns transport across a bosonic Josephson junction, consisting of a Bose-Einstein condensate in a double-well setup, where a single-mode optical cavity field promotes movement between the wells. In the two-mode framework, we create an effective Hamiltonian in which tunneling strength depends on cavity photon count, yielding a system coupling atoms nonlinearly to radiation. We examine the evolution of occupation difference and inter-well phase using both classical and quantum formulations. The cavity field acts as an adaptable parameter allowing transition from Josephson oscillation to macroscopic self-trapping. The nonlinearity provided by the cavity field also creates bistable behavior and transforms periodical oscillations and restoration dynamics. Light exiting the cavity functions as a non-destructive measurement of tunneling behavior in the atomic system.
+
+=== id: 17a80bf10b6f215c.A2p2 ===
+We examine the capacity of a q-ary deletion channel. In this setup each character from an alphabet having q symbols gets removed with independent chance d, leaving the receiver with the remaining characters in their original sequence, but with no knowledge of original placements. While the binary deletion channel has been extensively researched, the q-ary version remains largely unexplored, and a precise closed-form formula does not exist for any non-trivial removal probability. We derive a fresh upper limit on q-ary deletion channel capacity valid for all q ≥ 2. Our method provides the receiver additional knowledge about the deletion occurrence, converting the original channel to a memoryless one whose capacity can be found numerically via the Blahut–Arimoto algorithm. Exploiting the succession structure of non-binary alphabets provides a stronger reduction than straightforward extensions of binary results. For every removal probability, our bound surpasses the trivial erasure bound of (1 − d) log q, with maximum benefit for small q and high removal rates. As q becomes large, the difference decreases to match established asymptotics. Figures for different q demonstrate substantial enhancement beyond prior published limits.
+
+=== id: 66537b2be5e8d2d7.A2p2 ===
+**The Wrong Century**
+
+Mara Okafor's final memory came at the moment the lab apparatus counted down to nothing and someone called out about an electrical fault. The next thing she understood was the odor of wet grass, wood burning, and something far worse—later she learned it was animal pens.
+
+She got to her feet in a muddy area. Somewhere a bell from the church rang. Behind rocks, two young males in rough fabric stared at her, and one crossed himself.
+
+Her wrist device had stopped responding. Her mobile showed disconnected. She looked once more, which accomplished nothing, and began laughing, since crying was the only other option.
+
+From the tower design and the boys' speech, she guessed England, sometime in the 1300s. One semester of that history in university was all she had, and mostly what remained was knowing that sickness killed people easily in her own time.
+
+Her initial discovery: knowledge is worthless unless you can justify its source. She advised the town official to boil their water, and he reacted with shock. She stopped explaining and merely demonstrated where all could observe. She prepared ale the village method, because that meant boiling. She washed her hands so often the baker's wife began calling her "the cleaner lady," without kindness.
+
+Her second understanding arrived gradually: patience is essential. A written note took hunting for someone who could read. Creating flame cost her thirty minutes and three burns until old Agnes, the grandmother offering her shelter, showed her flint and prepared fungus. Mara had previously assisted in designing quantum machinery. Now an illiterate woman was her instructor, and was the superior one.
+
+Nothing streamed or refreshed, with nothing to occupy silence. Darkness arrived early, and people sat together talking. They exchanged tales, performed songs, and discussed weather and new taxes. Mara realized she could recall more of her grandmother's traditional songs than she expected, and performed them by the fire. Young ones loved them.
+
+She made missteps. She reset a broken bone too firmly and came near being called a sorcerer. The baker rescued her by testifying he observed her praying at religious services. Following that she presented each concept as something "my family's people did," letting others claim credit.
+
+By high summer her hands had calluses. She could anticipate storms from air sensation and bird behavior. She understood which herbs Agnes used for fever and which were without effect.
+
+One autumn day a strange glow showed at the field's edge where she first woke, and her dead device awakened. *Retrieval possible: 90 seconds.*
+
+Mara remained in Agnes's door for a time. Then she moved toward the light, carrying a pouch of dried herbs with no explanation.
+
+=== id: 68b5fe66b98f907f.A2p2 ===
+The interviews were failing miserably.
+
+First applicant, a private equity investor named Bradley, used twenty minutes describing his intention to "amplify suffering" and "revolutionize the torture marketplace." The Devil circled *no* emphatically on his notes.
+
+Second candidate, a former autocrat, showed more interest in retirement benefits. Third applicant had once forwarded a message to an entire company population of forty thousand. The Devil acknowledged the potential but determined he lacked effectiveness.
+
+"They want the flames," he complained to Asmodeus, his aide of nine millennia, when the dictator departed. "The tools. The noise. Not one understands that the flames weren't the point."
+
+"Then what was, sir?"
+
+The Devil held his head. Weariness had gripped him since the medieval period. "Deliberation. Actual agony is patient. It is soundless. It crushes you methodically with one sensible obstacle at a time, until you lose sight of what you desired."
+
+Asmodeus reviewed his document. "There's an additional prospect. Not scheduled. She let herself in."
+
+"A woman?"
+
+"The advertisement specified 'man,' sir. She's raised a written objection."
+
+The woman entered in beige and a lanyard. No one invited her to a chair, and she sat anyway, drew out a manila file, and put a page on the surface.
+
+"You have to finish this before we continue," she announced. "Black ink only. Red gets dismissed."
+
+The Devil examined the page. It extended eleven sections. The fourth demanded every residence across all times. The seventh sent him to the ninth, and the ninth back to the seventh.
+
+"And your existing role," he said carefully, "consists of what?"
+
+"Office of Motor Vehicles. Window seven. Twenty-one years." She glanced at her watch. "You should grab a number."
+
+He took one. It read 847. A screen that was not previously visible activated: NOW SERVING 11.
+
+For the first time in millennia, the Devil trembled. He glanced at Asmodeus, nodding with surprise.
+
+"When's your start date?" the Devil inquired.
+
+She kept looking at her papers. "Your request is incomplete," she said. "Return Thursday."
+
+=== id: 6abd4a8760fb511f.A2p2 ===
+Maritime or underwater archaeology applies land excavation techniques to the ocean environment, though the working circumstances—poor sight, rough currents, freezing temperatures, water stress, and severely restricted bottom time—impose sharp constraints on investigations. However, these same circumstances help preserve organic matter like wooden ship components, cordage, textiles, and food leftovers that rarely remain on land. Developing as an organized science starting in the 1960s, the field has assembled sophisticated methodology for identifying, measuring, gathering, and restoring submerged artifacts.
+
+## Locating Sites
+
+Exploration typically commences through document review. Ship transaction histories, payment records, old maps, and tales from pearl harvesters and divers typically narrow the hunt zone; such laborers were first to uncover the Antikythera wreck and the Bronze Age wreck near Uluburun, off Turkey's southern shore. Systematic searching relies primarily on long-distance detection technology:
+
+- **Sonar with directional scanning** builds precise acoustic pictures of sea bottom revealing boat shapes, rock accumulations, and broken cargo.
+- **Array echosounders** produce high-accuracy depth information for constructing three-dimensional seafloor representations.
+- **Lower-frequency acoustic probing** transmits energy passing through sediment to expose hidden features beneath ocean floor.
+- **Magnetic detection equipment** identifies steel items including anchors, naval weapons, and connecting hardware.
+- **Airborne laser bathymetry and orbital pictures** can map shallow seas with clarity across vast distances.
+
+Spots identified this way undergo direct inspection through divers or mechanical submarines.
+
+## Entering the Work Zone
+
+In relatively shallow areas, around 50 meters maximum, researchers can operate on the bottom themselves via SCUBA or supplied-air methods. Gas mixtures and closed-circuit apparatus allow deeper work and lengthier sessions, but add expense, logistical difficulty, and physiological hazard. Past these bounds, robotic machinery becomes mandatory. Tethered vehicles (ROVs) connect to surface support and include recording gear, illumination, and articulated limbs for precise object handling. Program-guided submarines (AUVs) execute survey designs independently and accumulate sound and picture information over vast zones with no real-time guidance. The Black Sea Maritime Heritage Initiative, for example, employed this equipment to register numerous wrecks resting in deep, oxygen-limited surroundings, such as a roughly 2,400-year-old Hellenic trading vessel showing remarkable preservation.
+
+## Careful Registration and Photography
+
+Since retrieval inevitably breaks preservation, meticulous documentation underlies every rigorous study underwater. Time-tested approaches involve distance measurement from reference marks, geometric positioning from fixed sites, and measured grid frameworks, plus pencil sketches on plastic sheets. Contemporary methods have expanded and frequently supplanted these conventions. Stereoscopic imagery, also termed digital modeling, merges myriads of aligned exposures into exact 3D representations allowing assessment; positional information systems supply exact site data; and acoustic scanners document surface characteristics with clarity. Resulting information is capable of being analyzed following fieldwork and enables broad accessibility to submerged locations through digital viewing.
+
+## Removing Sediment and Taking Objects
+
+When removing materials is justified, suction devices or aquatic suction systems clear ground like submerged cleaning equipment, with extracted matter run across sieves for tiny objects. Fragile layers are exposed by running water across them by hand. Hauling devices raise weighty items, and occasionally ground cover is constructed to excavate in dry conditions, as with La Salle's *La Belle* in Texas during the 1990s. Infrequently complete hulls have been raised, notoriously the Swedish *Vasa* in 1961 and King Henry's *Mary Rose* in 1982.
+
+## Investigation and Analysis
+
+Specialists employ several approaches to analyzed materials. Ring counting can establish dates of ship timber and identify tree sources, and atomic dating works on additional organics. Metal and pottery origins are identified through isotopic and compositional work, while breakdown products and inherited genetics can identify what jars contained. Transparent scanning and digital picture examination reveal hidden items inside oxidized accumulations, particularly helpful for decoding the Antikythera Apparatus.
+
+## Restoration and Care
+
+Objects saturated in saltwater rapidly degrade upon contact with environment, so restoration happens right away. Items stay submerged and have salts extracted. Waterlogged timber is typically treated with polyglycol and either ice-dried or air-dried gradually; the *Vasa* received polyglycol for seventeen decades, and *Mary Rose* hull care lasted over thirty years. Steel and copper compounds are generally treated through electrochemical methods.
+
+## Protection Without Removal
+
+The 2001 UNESCO Underwater Cultural Preservation Treaty makes in-situ protection the initial action prior to removal. Therefore, contemporary investigations emphasize non-invasive examination, protective covering with packed earth or synthetic textiles, continuous examination of environmental changes and breakdown, and regulated visitation via submerged heritage paths. These safeguards counter continuous threats like robbery, industrial ocean collection, and thermally-driven penetrating organism dispersal.
+
+Collectively, these approaches reflect a shift in the subject, moving beyond retrieval as the end goal toward precise archiving, academic comprehension, and permanent responsible supervision of submerged inheritance.
+
+=== id: 773ebfd0a572a93a.A2p2 ===
+**Nigerians Vote in Competitive Presidential Election With Concerns About Disputed Outcome**
+
+LAGOS, Nigeria — On Saturday, vast numbers of Nigerian people waited in line at electoral locations to decide between President Goodluck Jonathan, now holding the presidency, and Muhammadu Buhari, a military officer who held previous power through a coup. Commentators term it possibly the most closely matched presidential election since civilian governance started in 1999.
+
+Jonathan, representing the historically controlling People's Democratic Party (PDP), runs against Buhari, a former main general directing the All Progressives Congress (APC), a grouping of opposition factions established in 2013. For the first instance after military governance, an opposition contender appears to have reasonable odds of unseating an occupying president.
+
+At many voting stations progress was slow as administrators grappled with new digital fingerprint systems intended to restrict electoral manipulation. At his home location in his residence area of Bayelsa, Jonathan failed digital verification and underwent manual accreditation. The Independent National Electoral Commission (INEC) kept balloting available until the following day at locations that encountered technology difficulties.
+
+The vote was previously scheduled for Feb. 14 yet was delayed forty-two days following military commanders expressed worries about order preservation in the northern region, where the Boko Haram insurgent organization has battled for six years, killing numerous residents and creating over a million refugees.
+
+The main campaign subject has been public order. Buhari, who administered briefly subsequent to a military coup in the 1980s, presents himself as an effective administrator equipped to fight militants and abolish graft. Supporters of Jonathan reference recent combat gains versus Boko Haram throughout his tenure and expansion in commerce, though reducing petroleum revenues have strained financial resources and reduced currency strength.
+
+The contest also embodies Nigeria's persistent ethnic and faith distinctions. Buhari is a follower of Islam and receives assistance primarily in the Islamic-majority zones, whereas Jonathan, an adherent of Christianity, commands greater backing in the southern zones, particularly in resource-rich areas.
+
+These distinctions have prompted apprehension that the defeated party might challenge the election's legitimacy. Following the 2011 contest, which Jonathan defeated Buhari, clashes in Islamic areas claimed around 800 lives, as documented by Human Rights Monitor.
+
+In the month of January, Jonathan and Buhari affixed their names to a document in the national headquarters committing to peaceful campaigns and honoring outcomes, yet significant strain continues. Several militants in resource areas have signaled disorder should Jonathan win, plus certain Buhari partisans have vowed to challenge any returns they consider false.
+
+Worldwide monitors, incorporating delegations from the Pan-African Commission plus the European organization, view the elections, plus worldwide leaders have requested peaceful participation.
+
+Results shall be aggregated per province, subsequently dispatched to the capital for announcement, concluding within several days, in line with INEC's administration.
+
+A prevailing nominee must obtain a simple majority across the entire nation and obtain at least one-quarter of votes across two-thirds of the nation's 36 administrative areas and the federal center.
+
+=== id: 1435a7e1f49341a2.A2p2 ===
+Earth's rotation does not directly impact flight duration. Since the air envelope spins together with the world, a plane moves through wind already going at roughly equivalent velocity as the surface below. Consequently, an eastbound flight receives no speed advantage from the rotating Earth, nor does a westbound flight incur a disadvantage.
+
+Rotation does exert an indirect influence, though. The rotational deflection force, combined with the thermal contrast between the equator and the poles, generates fast-moving air currents in the upper layers. In temperate regions, flights heading east can harness these robust tail winds, whereas flights heading west battle against them. Hence a flight from New York to London generally needs one hour less than the journey back.

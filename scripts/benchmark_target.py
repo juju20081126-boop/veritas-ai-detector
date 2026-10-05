@@ -31,6 +31,15 @@ def get_dir_size_mb(path: str) -> float:
     return total_bytes / (1024 * 1024)
 
 
+def runtime_assets_mb(mode: str) -> float:
+    """Size of the files the runtime engine actually loads in this mode (not training checkpoints or the FP32 export)."""
+    base = MODELS_DIR if mode == "shipped" else os.path.join(MODELS_DIR, "frontier")
+    files = [os.path.join(base, "student_model_int8.onnx")]
+    files += [os.path.join(base, "meta_classifier.json")] if mode == "shipped" else [os.path.join(base, "frontier_config.json")]
+    size = sum(os.path.getsize(f) for f in files if os.path.exists(f))
+    return size / (1024 * 1024) + get_dir_size_mb(os.path.join(base, "tokenizer"))
+
+
 def generate_benchmark_prose(target_words: int) -> str:
     """Generates synthetic multi-sentence passage matching target word count."""
     sentence_bank = [
@@ -54,19 +63,19 @@ def generate_benchmark_prose(target_words: int) -> str:
     return " ".join(words[:target_words])
 
 
-def run_target_benchmark(runs_per_tier: int = 3):
+def run_target_benchmark(runs_per_tier: int = 3, mode: str = "shipped"):
     print("=" * 76)
     print("  \033[1;36mVERITAS AI — SIMULATED LOW-END TARGET HARDWARE BENCHMARK\033[0m")
     print("  \033[90mConstraints: 2 CPU Threads | <= 1.5 GB Peak RAM | <= 500 MB Disk | <= 15s Latency\033[0m")
     print("=" * 76)
 
     # 1. Disk Size Audit
-    models_size_mb = get_dir_size_mb(MODELS_DIR) if os.path.exists(MODELS_DIR) else 0.0
+    models_size_mb = runtime_assets_mb(mode)
     disk_target_mb = 500.0
     disk_passed = models_size_mb <= disk_target_mb
 
     print(f"\n[Disk Footprint Audit]")
-    print(f"  Model & Runtime Directory: {MODELS_DIR}")
+    print(f"  Detector mode:             {mode} (runtime-loaded files only)")
     print(f"  Total Asset Size on Disk:  {models_size_mb:.2f} MB")
     print(f"  Disk Target Threshold:     <= {disk_target_mb:.0f} MB")
     print(f"  Status:                    [\033[1;32mPASS\033[0m]" if disk_passed else f"  Status: [\033[1;31mFAIL\033[0m]")
@@ -81,7 +90,7 @@ def run_target_benchmark(runs_per_tier: int = 3):
     from backend.runtime_engine import QuillBotDetectorEngine
     print("\n[Engine Initialization]")
     t_init_start = time.time()
-    engine = QuillBotDetectorEngine(threads=2)
+    engine = QuillBotDetectorEngine(threads=2, mode=mode)
     t_init_end = time.time()
     ram_after_init_mb = process.memory_info().rss / (1024 * 1024)
     init_duration = t_init_end - t_init_start
@@ -152,6 +161,7 @@ def run_target_benchmark(runs_per_tier: int = 3):
 
     report = {
         "timestamp": time.time(),
+        "detector_mode": mode,
         "hardware_simulation": {
             "intra_op_threads": 2,
             "inter_op_threads": 1,
@@ -170,7 +180,9 @@ def run_target_benchmark(runs_per_tier: int = 3):
         "tier_benchmarks": tier_results
     }
 
-    report_path = os.path.join(os.path.dirname(MODELS_DIR), "benchmark_target_results.json")
+    name = "benchmark_target_results.json" if mode == "shipped" else f"benchmark_target_results_{mode}.json"
+    report_path = os.path.join(os.path.dirname(MODELS_DIR), "data", "eval", "results", name)
+    os.makedirs(os.path.dirname(report_path), exist_ok=True)
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
     print(f"\n[Report] Saved detailed benchmark report -> {report_path}\n")
@@ -181,5 +193,6 @@ def run_target_benchmark(runs_per_tier: int = 3):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Simulate target hardware and measure latency & RAM.")
     parser.add_argument("--runs", type=int, default=3, help="Benchmark repetitions per word tier")
+    parser.add_argument("--mode", choices=["shipped", "frontier"], default="shipped", help="Detector mode to benchmark")
     args = parser.parse_args()
-    run_target_benchmark(runs_per_tier=args.runs)
+    run_target_benchmark(runs_per_tier=args.runs, mode=args.mode)

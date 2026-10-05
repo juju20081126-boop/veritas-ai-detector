@@ -1,0 +1,434 @@
+=== id: 96121c65b27cc5b7.A2p1 ===
+Because color screening above the deconfinement transition is expected to weaken or break up bound charm-anticharm pairs, charmonium is a sensitive probe of the quark-gluon plasma created in relativistic heavy-ion collisions. This study examines how the J/ψ, χc and ψ′ behave inside the medium at temperatures higher than the critical temperature Tc. We use a nonrelativistic potential model whose temperature-dependent heavy-quark potential is fixed by lattice QCD free-energy data, and from it we calculate the binding energy, radius and dissociation temperature of every state. The spectral functions that result are then set against lattice correlator calculations. Our results show that the excited states dissolve near the transition, while the J/ψ can remain bound up to about 1.5–2 Tc, a range that hinges on which potential is adopted. We also discuss what this means for sequential suppression and for charmonium regeneration in heavy-ion experiments.
+
+=== id: b139bddbe1dcb5ad.A2p1 ===
+This paper explores tunneling in a bosonic Josephson junction, built from a Bose–Einstein condensate held in a double-well potential, where a single-mode optical cavity field assists the tunneling between the wells. Working in a two-mode approximation, we obtain an effective Hamiltonian in which the tunneling amplitude is set by the number of photons inside the cavity, which gives a nonlinear system of coupled atoms and light. We follow how the population imbalance and the relative phase between the wells evolve, using both a mean-field description and a fully quantum one. The cavity field turns out to act as a tunable control parameter able to switch the system between Josephson oscillations and macroscopic quantum self-trapping. The nonlinearity that the cavity introduces also produces bistability and alters the collapse-and-revival dynamics. In addition, the light transmitted through the cavity serves as a nondestructive probe of how the atoms tunnel.
+
+=== id: 6f4f5a329050cae7.A2p1 ===
+Our subject is the capacity of the q-ary deletion channel. Here every symbol from an alphabet of size q is removed independently with probability d, and the receiver sees the symbols that remain, in order, with no information about where they originally sat. The binary version of this channel has received a great deal of attention, but far less is understood about the non-binary case, and for no nontrivial deletion probability is there a closed-form capacity expression. We present a new upper bound on the capacity of the q-ary deletion channel that holds for any q ≥ 2. The method relies on giving the receiver genie-aided side information about the deletion process, so that the original channel becomes a memoryless one whose capacity can be evaluated numerically with the Blahut–Arimoto algorithm. We demonstrate that exploiting the run structure of non-binary input sequences yields a tighter reduction than simply extending the existing binary arguments. For every deletion probability, the resulting bound is strictly better than the trivial erasure-channel bound of (1 − d) log q, and the improvement is greatest for small alphabets and high deletion rates. The difference between our bound and the erasure bound also shrinks to zero as q increases, which matches known asymptotic results. Numerical results for a number of alphabet sizes show how much we improve on previously published bounds.
+
+=== id: d068384228bd0ce8.A2p1 ===
+**The Wrong Century**
+
+Mara Okafor's last memory was of the lab countdown hitting zero and somebody shouting about a voltage spike. What she became aware of next was the smell of damp straw, woodsmoke and something far worse, which she would later find out was a pigsty.
+
+She pushed herself upright in a muddy field. Somewhere a church bell rang. Behind a stone wall, two boys in coarse wool tunics gaped at her, and one of them made the sign of the cross.
+
+Her wrist display had gone dark. Her phone showed no signal. She looked again, which accomplished nothing, and then she burst out laughing, since the only other option was to scream.
+
+The shape of the church tower and the words the boys yelled as they fled suggested England to her, sometime in the 1300s. She had taken exactly one semester on the period in college, and what she mostly recalled was that people died of ailments that were simple to treat in her own day.
+
+Her first lesson came within a week: knowledge does no good if you cannot account for where it came from. She told the village reeve to boil the drinking water, and he stared as though she had proposed baptizing the well. So she quit explaining and just did it where everyone could see. She brewed thin ale the way the villagers did, because brewing meant boiling too. She scrubbed her hands so often that the baker's wife began calling her "the clean woman," and not kindly.
+
+The second lesson was slower to arrive: everything takes time. A letter meant hunting down someone who could read. Starting a fire cost her twenty minutes and three burned fingers, until old Agnes, the widow who had reluctantly given her a roof, showed her how to use flint and dry fungus. Mara had once helped design parts of a quantum relay. Now a woman who could not write her own name was teaching her, and Agnes was the better teacher.
+
+Nothing streamed, nothing scrolled, and there was nothing to fill the quiet. Evenings were long and dark, so people talked. They swapped stories, sang, and quarreled over the weather and the lord's new taxes. Mara realized she could recall more of her grandmother's old songs than she ever had back in her own century, and she started singing them by the fire. The children adored them.
+
+She got things wrong. Once she set a broken arm with too much confidence and nearly got herself accused of witchcraft. The miller saved her by testifying that he had watched her pray at Mass. After that she presented every useful idea as something "my mother's people did," and let others claim the credit if they wished.
+
+By midsummer her palms were callused. She could sense coming rain from the ache in the air and the flight of the swallows. She knew which herbs Agnes used against fever and which were only for show.
+
+One autumn evening a strange shimmer opened at the edge of the field where she had first woken, and her dead wrist display blinked back to life. *Retrieval window: 90 seconds.*
+
+Mara stood in the doorway of Agnes's cottage for a long while. Then she stepped inside, kissed the old woman on the forehead, and walked toward the light, holding a pouch of dried yarrow that she had no plan to explain to anyone back home.
+
+=== id: 2c965089dc3e4f22.A2p1 ===
+The interviews were not going well.
+
+Candidate one, a hedge fund manager called Bradley, took twenty minutes to describe how he would "scale suffering" and "disrupt the afterlife vertical." The Devil scribbled *no* on his legal pad and underlined it twice.
+
+Candidate two, a former dictator, mostly wanted to ask about the dental plan. Candidate three had once replied-all to a company email sent to forty thousand people. The Devil admired the impulse but felt he lacked follow-through.
+
+"They all want the fire," he said to Asmodeus, his assistant of nine thousand years, once the dictator had left. "The pitchforks. The screaming. Not one of them understands that the fire was never the point."
+
+"Then what was, sir?"
+
+The Devil rubbed his horns. He was weary, and had been since about the Renaissance. "Patience. True torment is patient. It is quiet. It grinds you down with one small, reasonable-sounding obstacle after another, until you forget you ever wanted anything."
+
+Asmodeus consulted the clipboard. "There's one more applicant. She wasn't on the list. She, er, let herself in."
+
+"She?"
+
+"The posting did say 'man,' sir. She has submitted a written objection."
+
+The woman who walked in had on a beige cardigan and a lanyard. Nobody invited her to sit, and she sat anyway, opened a manila folder, and pushed a form across the desk.
+
+"You'll need to fill this out before we start," she said. "Black ink. Not blue. Blue gets rejected."
+
+The Devil studied the form. It ran eleven pages. Section 4 wanted every prior address, including any from before the universe was created. Section 7 sent him to Section 9, and Section 9 sent him back to Section 7.
+
+"And your present occupation," he said slowly, "is what?"
+
+"Department of Motor Vehicles. Window six. Twenty-two years." She checked her watch. "You should take a number."
+
+He took one. It was 847. On the wall, a small screen that had not been there a moment earlier flickered on: NOW SERVING 12.
+
+For the first time in four thousand years, the Devil felt a chill run down his spine. He glanced at Asmodeus, who nodded with wide eyes.
+
+"When could you start?" the Devil asked.
+
+She kept her eyes on the folder. "Your application is incomplete," she said. "Come back Tuesday."
+
+=== id: f4a3fc2dace08526.A2p1 ===
+Underwater archaeology, sometimes called maritime or nautical archaeology when it concentrates on ships and seafaring, takes the methods of land-based fieldwork into a setting that is punishing for both people and equipment. Poor visibility, powerful currents, cold, pressure and very limited time on the bottom all restrict what researchers can achieve. At the same time, these conditions can preserve organic materials, including hull timbers, rope, textiles and food remains, that rarely last on land. Since becoming a scientific discipline in the 1960s, the field has built up a refined toolkit for finding, recording, recovering and conserving submerged cultural heritage.
+
+## Locating Sites
+
+Research usually starts in the archives. Shipping records, insurance claims, old charts, and accounts from fishermen or sponge divers often shrink the search area; sponge divers were the first to find both the Antikythera wreck and the Late Bronze Age wreck at Uluburun, off the southern coast of Turkey. After that, systematic survey depends mainly on remote sensing:
+
+- **Side-scan sonar** creates detailed acoustic images of the seafloor that show hull outlines, ballast mounds and scattered cargo.
+- **Multibeam echosounders** collect high-resolution bathymetric data, from which three-dimensional terrain models can be built.
+- **Sub-bottom profilers** send out lower-frequency acoustic pulses that pass through sediment and reveal structures buried under the seabed.
+- **Marine magnetometers** pick up the magnetic anomalies caused by iron objects such as anchors, cannon and fastenings.
+- **Airborne LiDAR bathymetry and satellite imagery** can chart shallow, clear coastal waters over very large areas.
+
+Targets flagged by these surveys are then checked by eye, using either divers or remotely operated vehicles.
+
+## Accessing the Site
+
+In fairly shallow water, typically under about 50 meters, archaeologists can work on the seabed themselves with SCUBA or surface-supplied air. Mixed-gas diving and closed-circuit rebreathers allow greater depth and longer work periods, though they bring higher cost, more complexity and greater physiological risk. Below those limits, robotic systems become essential. Remotely operated vehicles (ROVs) are connected by a tether to a surface ship and carry high-definition cameras, lights and manipulator arms able to recover objects delicately. Autonomous underwater vehicles (AUVs) follow pre-programmed survey patterns and gather sonar and photographic data over wide areas without constant human control. The Black Sea Maritime Archaeology Project, for instance, used this technology to document dozens of wrecks lying in deep, oxygen-poor water, including a roughly 2,400-year-old Greek merchant ship that is almost perfectly preserved.
+
+## Recording and Documentation
+
+Since excavation inevitably destroys context, careful recording is the foundation of all scientific work underwater. Conventional methods include baseline-offset measurement, trilateration from fixed control points, and rigid grid frames, with divers sketching on waterproof drafting film. Digital methods have increasingly added to these techniques and often replaced them. Photogrammetry, also known as structure-from-motion, merges thousands of overlapping photographs into accurate 3D models that can be measured; acoustic positioning systems give individual finds geographic coordinates; and underwater laser scanners record fine surface detail. The data that result can be analyzed long after the fieldwork ends and let the public explore sites virtually.
+
+## Excavation and Recovery
+
+When excavation is justified, sediment is cleared with airlifts or water dredges, which work like underwater vacuum cleaners, and the removed material is run through sieves to catch small finds. Delicate deposits are exposed by fanning the water over them by hand. Lifting bags raise heavy objects, and in shallow water a cofferdam can be built around a site so it can be dug dry, which is what happened with La Salle's ship *La Belle* in Texas in the 1990s. Occasionally whole hulls have been lifted, most famously the Swedish warship *Vasa* in 1961 and Henry VIII's warship *Mary Rose* in 1982.
+
+## Scientific Analysis
+
+Laboratories apply many techniques to the recovered material. Dendrochronology can date ship timbers and show where the trees were cut, and radiocarbon dating is used on other organic remains. Lead-isotope and elemental analyses help identify where metals and ceramics came from, while analysis of organic residues and ancient DNA can reveal what amphorae once held. X-ray radiography and computed tomography expose objects concealed inside corrosion concretions, and tomography in particular transformed scholars' understanding of the Antikythera Mechanism.
+
+## Conservation
+
+Artifacts soaked in seawater decay quickly once they meet the air, so conservation starts the moment they are raised. Objects are kept wet and desalinated to draw out soluble salts. Waterlogged wood is usually strengthened with polyethylene glycol (PEG) and then freeze-dried or dried slowly in air; *Vasa* was sprayed with PEG for seventeen years, and conserving the *Mary Rose* hull took more than thirty. Iron and copper alloys are often stabilized by electrolytic reduction.
+
+## Preservation In Situ
+
+The 2001 UNESCO Convention on the Protection of the Underwater Cultural Heritage makes preservation in situ the first option to consider before any intervention. As a result, many projects now stress non-intrusive survey, protective reburial under sandbags or geotextiles, long-term monitoring of sediment movement and corrosion, and managed public access by way of underwater heritage trails. These steps address ongoing threats such as looting, commercial trawling and the climate-driven spread of wood-boring organisms.
+
+Together, these methods reflect a wider shift in the discipline, away from treating recovery as a goal in itself and toward careful documentation, scientific interpretation and the long-term stewardship of submerged heritage.
+
+=== id: fa7bb7a47f6328d0.A2p1 ===
+**Nigerians Vote in Tight Presidential Race Amid Fears Over Disputed Result**
+
+LAGOS, Nigeria — On Saturday, millions of Nigerians queued at polling stations to choose between President Goodluck Jonathan, the incumbent, and Muhammadu Buhari, a former military ruler, in a contest analysts describe as potentially the tightest since civilian rule returned in 1999.
+
+Jonathan represents the People's Democratic Party (PDP), which has long dominated Nigerian politics. Buhari, a retired major general, heads the All Progressives Congress (APC), a coalition of opposition parties founded in 2013. This is the first time since military rule ended that an opposition candidate has been widely regarded as having a genuine chance of unseating a sitting president.
+
+In many places voting began slowly, as election officials wrestled with new biometric card readers meant to reduce fraud. At his own polling unit in his home state of Bayelsa, Jonathan could not be verified by a card reader and was accredited by hand. The Independent National Electoral Commission (INEC) kept voting open into Sunday in some areas that suffered technical problems.
+
+The election was first set for Feb. 14 but was delayed by six weeks after security chiefs said they could not ensure safety in the northeast. There, the Islamist militant group Boko Haram has fought a six-year insurgency that has killed thousands and uprooted over a million people.
+
+Security has been the dominant theme of the campaign. Buhari, who briefly ruled Nigeria after a coup in the 1980s, has cast himself as a disciplined leader who can beat the insurgents and root out corruption. Jonathan's backers cite recent military gains against Boko Haram and economic growth under his administration, although lower oil prices have squeezed government revenue and weakened the naira.
+
+The contest also mirrors Nigeria's longstanding regional and religious divides. Buhari is a Muslim and draws much of his backing from the largely Muslim north, whereas Jonathan, a Christian, is strongest in the south, including the oil-producing Niger Delta.
+
+These divisions have raised fears that the losing camp may not accept the outcome. According to Human Rights Watch, rioting in parts of the north after the 2011 election, which Jonathan won against Buhari, left about 800 people dead.
+
+Both candidates signed an accord in Abuja in January promising to campaign peacefully and honor the result, yet tension remains high. Some militants in the Niger Delta have cautioned that there could be unrest if Jonathan loses, and some Buhari supporters have pledged to resist any result they regard as rigged.
+
+International observers, among them teams from the African Union and the European Union, are watching the vote, and world leaders have called on Nigerians to keep the process peaceful.
+
+INEC chairman Attahiru Jega has said that results will be collated at the state level and then announced in Abuja, with official figures due in the next few days.
+
+An outright win requires a simple majority of votes nationwide plus at least 25 percent of the vote in two-thirds of Nigeria's 36 states and the Federal Capital Territory.
+
+=== id: adcc8a7af923b507.A2p1 ===
+The rotation of the Earth has no direct bearing on how long a flight takes. Because the atmosphere turns with the planet, an aircraft flies through air that is already moving at about the same speed as the ground beneath it. So an eastbound plane gets no boost from the Earth "turning beneath it," and a westbound plane suffers no penalty.
+
+Rotation does matter indirectly, though. The Coriolis effect produced by the Earth's spin, combined with the temperature difference between the equator and the poles, helps create the jet streams, which are fast west-to-east rivers of air high in the atmosphere. In the mid-latitudes, eastbound flights can ride these tailwinds, while westbound flights have to push against them. That is why a New York to London flight usually takes about an hour less than the trip back.
+
+=== id: b3ac1233d9c1631a.A2p1 ===
+## Overview
+
+Arctic Silver and Thermal Grizzly go about thermal interface materials in different ways. Arctic Silver is an American company best known for Arctic Silver 5, a silver-filled compound that has been around for a long time. Thermal Grizzly, a German company, sells a broader performance-focused lineup that runs from ordinary pastes to liquid metal. Keep in mind that Arctic Silver is not the same company as **ARCTIC**, which makes the MX series, although people frequently mix the two up.
+
+## Thermal Conductivity
+
+| Product | Type | Manufacturer-rated conductivity | Electrically conductive |
+|---|---|---|---|
+| Arctic Silver 5 | Silver-filled paste | Not officially stated in W/m·K (third-party figures of roughly 8–9 W/m·K are commonly cited) | No (slightly capacitive) |
+| Arctic Silver Céramique 2 | Ceramic paste | Not officially stated in W/m·K | No |
+| Thermal Grizzly Aeronaut | Paste | 8.5 W/m·K | No |
+| Thermal Grizzly Hydronaut | Paste | 11.8 W/m·K | No |
+| Thermal Grizzly Kryonaut | Paste | 12.5 W/m·K | No |
+| Thermal Grizzly Kryonaut Extreme | Paste | 14.2 W/m·K | No |
+| Thermal Grizzly Conductonaut | Liquid metal | 73 W/m·K | **Yes** |
+
+There is no shared standard for how manufacturers measure conductivity, so the published numbers cannot be compared directly. Independent tests generally find that top non-metallic pastes land within a few degrees Celsius of each other. Liquid metal is the obvious exception, and where it is suitable it can deliver much lower temperatures.
+
+## Curing Time
+
+- **Arctic Silver 5:** The manufacturer specifies a break-in period of about 200 hours of normal thermal cycling, during which temperatures can drop by a few degrees. Early readings may therefore understate how well it will eventually perform.
+- **Thermal Grizzly pastes (Kryonaut, Hydronaut, Aeronaut):** These have no meaningful curing period. Right after installation they run at or close to peak performance, which suits benchmarking and short overclocking sessions.
+- **Conductonaut:** It has no curing period either. Liquid metal can, however, be absorbed by or react with some metals over time, so it is wise to check it now and then.
+
+## Application Method
+
+- **Arctic Silver 5** is fairly thick. Depending on the layout of the processor die, the manufacturer advises a line or a small dot, followed by even mounting pressure. Since it is slightly capacitive, you should still keep it away from exposed circuitry.
+- **Kryonaut and Hydronaut** spread easily and work with the dot, line or spread method. Kryonaut's lower viscosity also makes it handy for spreading by hand.
+- **Kryonaut Extreme** is thicker, which makes it a better match for large, flat surfaces and for the demanding contact conditions of extreme overclocking.
+- **Conductonaut** has to go on in a very thin layer, using the included applicator or swab. It conducts electricity and reacts with aluminum, so nearby surface-mount components should be protected (with conformal coating or Kapton tape, for example), and it should never be used with aluminum heatsink bases.
+
+## Choosing for Specific Use Cases
+
+**High-end overclocking:** For ambient and sub-ambient overclocking, Kryonaut or Kryonaut Extreme is usually the favorite, since neither needs curing and both cope well with high heat flux. Be aware that Kryonaut reportedly breaks down faster under sustained high temperatures, particularly on GPUs. On a system used every day, choose a paste that resists pump-out or plan to reapply it periodically.
+
+**Low-profile coolers:** Compact coolers generally apply less mounting pressure and have less thermal headroom. A non-conductive paste that spreads easily, such as Hydronaut or Kryonaut, gives a thin bond line even under limited pressure. Arctic Silver 5 is also a sensible, budget-friendly pick as long as the user can live with its break-in period.
+
+**Delidded CPUs:** Conductonaut is the established choice between the die and the integrated heat spreader, where its high conductivity makes the biggest difference. Between the heat spreader and the cooler, a conventional paste like Kryonaut is normally recommended to reduce risk. Users should make sure the IHS and cooler surfaces are copper or nickel-plated copper, and should expect some staining.
+
+## Summary
+
+For ordinary builds where price and durability count, Arctic Silver 5 is still a reliable choice. For peak performance from the start and for enthusiast uses, Thermal Grizzly's range is more flexible. Liquid metal is best left to experienced users working with delidded or direct-die setups.
+
+=== id: c53d8163a65f392e.A2p1 ===
+In 2012 an investor rejected Jia Jiang's startup idea, and the sting was so sharp that he almost gave up on becoming an entrepreneur. He chose a different path: he would get used to hearing "no."
+
+Jiang had moved from China to the United States as a teenager. He set himself a challenge of making one request every day for 100 days that he expected to be turned down, and filming every attempt.
+
+The requests were odd on purpose. He asked a stranger for a $100 loan. He asked a burger restaurant for a "burger refill." He asked if he could play soccer in a stranger's backyard.
+
+On day three he went into a Krispy Kreme and asked for doughnuts joined together like the Olympic rings. To his amazement, the employee actually made them. The video quickly spread online, collecting millions of views, and "100 Days of Rejection" abruptly found a worldwide audience.
+
+A project that started as personal therapy became an unexpected career. Jiang published a book, "Rejection Proof," gave a widely watched TED talk, and now speaks to audiences about conquering fear.
+
+The experiment took him well beyond his comfort zone, but it showed him that rejection itself seldom hurts as much as people expect. Jiang concluded that the real obstacle is the fear of rejection, the dread of hearing "no" that stops many people from asking in the first place.
+
+He also learned something else along the way: when he did ask, people said "yes" much more often than he had predicted.
+
+=== id: b054a1cbc69e75c8.A2p1 ===
+**'American Pie' Lyrics Fetch $1.2 Million at Auction**
+
+NEW YORK — Don McLean's original manuscript for "American Pie," among the most picked-over songs in American popular music, sold on Tuesday at Christie's in New York for $1.2 million.
+
+The 16-page manuscript contains McLean's handwritten and typed lyric drafts as well as his working notes. An unidentified buyer acquired it.
+
+For over four decades, fans and critics have argued about what the song's dense, symbol-filled verses mean. They include a jester, a king and queen, a marching band and the well-known line about "the day the music died," a phrase widely taken to refer to the 1959 plane crash that killed Buddy Holly, Ritchie Valens and J.P. "The Big Bopper" Richardson.
+
+McLean has mostly refused to explain the song line by line, though he has said that anyone willing to study the lyrics and notes being sold would find its meaning. In general terms, he has described it as a reflection on an America he thought was heading in the wrong direction as the optimism of the 1950s turned into the turmoil of the 1960s.
+
+The eight-and-a-half-minute ballad came out in 1971 and is McLean's biggest hit. It hit No. 1 on the Billboard Hot 100 in January 1972, staying there four weeks, and it is still a staple of classic rock radio.
+
+The sale is among the highest prices ever paid at auction for song lyrics.
+
+=== id: 7ce0153b4e7a243b.A2p1 ===
+Should Companies Track Employees Online?
+
+Most people agree that a company is entitled to guard its own computers. Still, I think any tracking should be limited and open.
+
+There are sound reasons for companies to monitor some online activity. Hackers frequently break into businesses by way of employees who click bad links or visit unsafe websites. Monitoring helps spot these problems early and protects customer information. It can also prevent people from spending work time on things that are plainly inappropriate.
+
+At the same time, excessive tracking harms workers. When every click and keystroke is logged, employees can feel distrusted, which may leave them stressed and less motivated. Workers also deserve a measure of privacy, even on the job.
+
+My view is that companies should be allowed to track online activity only for safety and security, and that they must tell employees precisely what is being monitored. This way, businesses are protected and workers are treated respectfully.
+
+=== id: dbf728e3a829b34f.A2p1 ===
+Should Companies Watch What Workers Do Online?
+
+These days nearly every job involves computers and the internet. Because of that, many companies want to know what their employees do online during working hours. Some people think this is normal, while others think it is unfair. My opinion is that companies may track certain things, but they should not watch everything.
+
+To begin with, I can see why companies want to check. They pay workers to do their jobs, not to watch videos or shop online all day. If an employee spends three hours on social media, the boss loses money. There is also a serious internet safety problem. Sometimes a worker opens a bad email, and a virus gets into the computer. Hackers can then steal important customer information. So a company needs some control in order to protect itself.
+
+On the other hand, too much tracking is not good. A friend of mine works in an office where the company takes a picture of her screen every ten minutes. She told me she feels nervous all the time, as if someone is always standing behind her. She cannot relax, and she said she actually works more slowly because of the stress. I believe people need a bit of trust to do good work. When the boss checks every little thing, workers feel like children or criminals.
+
+Privacy matters for everyone as well. A person sometimes needs to read a message from the doctor or from their child's school during work. That information is private, and the boss should not read it. If the company sees everything, it can learn things about employees that are none of its business, such as health problems or family troubles.
+
+So what is the best answer? I believe there should be clear rules. The company should tell workers in advance what it will check and why. For instance, it can block dangerous websites and scan for viruses, which is fair. But it should not read personal messages or record every key that workers press. And the information should be used only for security, not to punish people over small things like a five-minute break.
+
+In conclusion, companies have some good reasons to track online activity, especially for safety, but they must be honest and not go too far. A good workplace needs both security and trust. If the company respects its workers, the workers will respect the company too and work harder.
+
+=== id: 46ce2fbaa2bdad59.A2p1 ===
+Subject: Verbal confirmation for direct trades
+
+Hi everyone,
+
+Starting [date], every direct trade must be confirmed verbally before it is booked. By direct trades we mean those done bilaterally with a counterparty, not through a broker or an electronic platform.
+
+Over the last few months we've run into several disputes about price and volume on direct deals. In each one, a short confirmation call would have caught the problem. Brokered and electronic trades come with an independent record of the terms, but direct trades do not, so getting the details right is entirely up to us.
+
+From now on, please do the following:
+
+1. Phone the counterparty on a recorded line to confirm the terms right after execution, and never later than 30 minutes after the trade.
+2. Read back every key term: counterparty, buy/sell, product, volume, price, delivery point or settlement terms, and start and end dates.
+3. Write the name of the person you spoke to and the time of the call on the deal ticket.
+4. If any term does not match, do not book the trade yet, and escalate immediately to [Name] in middle office.
+
+This step comes on top of the written confirmation process and does not replace it. The confirmations group will keep sending written confirms as usual.
+
+I realize this adds a minute or two to each deal. That is still much less time than we have spent untangling disputes afterward, and it protects us as well as our counterparties.
+
+If you have questions or spot practical problems with the process, please send them to me by [date] so we can resolve them before it starts.
+
+Thank you,
+[Your Name]
+
+=== id: 6796aac5a5d6c5ae.A2p1 ===
+**Zayn Malik Quits One Direction, Leaving Fans Heartbroken**
+
+Zayn Malik is leaving One Direction, explaining that he wants to live as "a normal 22-year-old" away from the constant glare of one of the biggest boy bands in the world.
+
+In the announcement, posted Wednesday on the band's official Facebook page, it was confirmed that the other four members, Harry Styles, Niall Horan, Liam Payne and Louis Tomlinson, will carry on as a foursome and finish their current world tour.
+
+"My life with One Direction has been more than I could ever have imagined," Malik said in the statement. "But, after five years, I feel like now is the right time for me to leave the band."
+
+The news triggered a flood of grief online. Within hours, hashtags declaring devotion to the singer were trending around the world, and fans uploaded videos of themselves crying. Some said they had skipped school or work to come to terms with it. Malik had already pulled out of the tour several days earlier, citing stress.
+
+Many parents may be inclined to write off the reaction as melodrama, but child psychologists say it deserves to be taken seriously and put to good use.
+
+"For many young fans, this is the first time they've experienced loss over something they've invested in emotionally," one family therapist said. "The feeling is real, and it's a safe chance for parents to talk about how we cope when things change."
+
+Experts advise parents to listen instead of mocking, to acknowledge their child's sadness, and to gently point out that disappointment fades. Learning to recover from small heartbreaks, they say, builds the resilience children will need for larger ones later in life.
+
+=== id: 531ab92443c64111.A2p1 ===
+# Asia's Richest Man Builds a $193 Million Monastery — Complete With Bulletproof VIP Rooms
+
+HONG KONG — By mid-April, a opulent Buddhist monastery funded by Asia's richest man, Li Ka-shing, will welcome the public, giving visitors a close look at one of the biggest statues of the Goddess of Mercy ever made and, for a select few, rooms shielded by bulletproof glass.
+
+Tsz Shan Monastery, whose name roughly means "Mountain of Compassion," stands on a green hillside in Tai Po, in Hong Kong's New Territories. After years of planning and construction, the complex cost about HK$1.5 billion, or $193 million, which the tycoon's charitable foundation paid for.
+
+A gleaming white bronze statue of Guan Yin, the bodhisattva of compassion venerated throughout East Asia, rises above the grounds. Standing 76 meters (about 250 feet) tall, it is thought to be the second-tallest Guan Yin statue in the world, behind only a 108-meter figure in Sanya, on China's southern island province of Hainan.
+
+The monastery's more earthly features have attracted just as much notice. Its VIP rooms are said to have bulletproof windows, something more typical of embassies than of places for meditation. The precaution may reflect the prominent guests the monastery expects, along with the security worries that come from being linked to one of the world's richest men.
+
+Li, 86, created an empire covering ports, property, telecommunications and retail, and his fortune is estimated at over $30 billion. He is also among Hong Kong's best-known philanthropists and has famously called his foundation his "third son," promising it a third of his assets.
+
+Admission is free, but visitors cannot just show up. Entry will go through an online booking system, with daily numbers capped to preserve the calm of the grounds. Organizers say they want Tsz Shan to stay a place for reflection and the study of Buddhism instead of becoming another stop on the city's crowded tourist trail.
+
+That would distinguish it from Hong Kong's best-known Buddhist landmark, the 34-meter Tian Tan Buddha on Lantau Island, which attracts busloads of sightseers daily.
+
+Whether a monastery with a 76-meter goddess and bulletproof glass can stay off the tourist map is still an open question. For now, anyone who wants to see Guan Yin up close will have to book in advance.
+
+=== id: 24947dbdf42344d5.A2p1 ===
+1. **Smash it on toast.** Spread mashed avocado over toasted sourdough, then add flaky salt, chili flakes, a squeeze of lemon, and, if you like, a fried or jammy egg.
+
+2. **Make guacamole.** Mash it together with lime juice, diced onion, cilantro, jalapeño and salt. Stir in chopped tomato right before serving.
+
+3. **Blend it into a smoothie.** Half an avocado blended with banana, spinach, and milk or yogurt gives you a thick, creamy smoothie that keeps you full for longer.
+
+4. **Turn it into a pasta sauce.** Blend avocado with garlic, basil, lemon juice, olive oil and a splash of pasta water to make a quick sauce that needs no cooking.
+
+5. **Bake it into chocolate mousse.** Blend avocado with cocoa powder, maple syrup or honey, vanilla and a pinch of salt, then chill. The avocado taste vanishes, leaving a rich, silky dessert.
+
+=== id: 99464951ac37d9bc.A2p1 ===
+A quick note before the list: Mariya Takeuchi made her debut in 1978, so she does belong to the late-70s scene, but most of her best-known songs date from the 1980s onward. Her career has run for more than forty years, and her signature sound is at the heart of what is now called "city pop." The songs below span her entire career, and the 1970s material is labeled so you can concentrate on it if your assignment calls for that.
+
+## Late 1970s – Early 1980s (RCA years)
+
+**"Modotte Oide, Watashi no Jikan" (1978)**
+This was her debut single, a light, polished pop song that introduced her as a college-aged singer with a clear, warm voice. It isn't her biggest hit, but it matters as the beginning of her career.
+
+**"September" (1979)**
+One of her signature early songs, written by Takao Kisugi with lyrics by Takashi Matsumoto. It's a bittersweet song about a relationship fading as summer gives way to autumn. It brought her wide recognition and is still a fan favorite.
+
+**"Watashi no Heart wa Stop Motion" (1979)**
+This upbeat single was used in a cosmetics commercial, which helped make her a household name. It shows the bright, idol-like side of her early image.
+
+**"Fushigi na Peach Pie" (1980)**
+This is probably her biggest hit from the RCA era. It was also linked to a cosmetics campaign, and it's playful and catchy, with a sunny pop arrangement. If you need a single song to stand for her earliest fame, it's a strong pick.
+
+**"Sweetest Music" (1980)**
+Taken from the album *Miss M*, which was partly recorded in Los Angeles with American session musicians. The song shows how closely her sound was tied to West Coast AOR at that time.
+
+## Mid-1980s (after her marriage to Tatsuro Yamashita)
+
+She married the musician and producer Tatsuro Yamashita in 1982, stepped away from performing, and came back as a songwriter who wrote most of her own material. Yamashita produced and arranged much of her later work.
+
+**"Plastic Love" (1984)**
+From the album *Variety*. It is now her most famous song around the world. It did only modestly well when it came out, but around 2017 an unofficial YouTube upload went viral, and the song became the face of the global city pop revival. Its funky bassline, disco-tinged groove and lonely lyrics about a woman who hides her heartbreak in nightlife have been covered and remixed endlessly.
+
+**"Mou Ichido" (1984)**
+Another single from *Variety*, this mid-tempo ballad displayed her growing strength as a songwriter.
+
+**"Genki wo Dashite" (1984 / 1987)**
+She first wrote it for the actress and singer Hiroko Yakushimaru, then recorded her own version for the album *Request* (1987). It's a gentle, encouraging song that tells a friend to cheer up after a breakup, and in Japan it is one of her most beloved tracks.
+
+## Late 1980s – 1990s
+
+**"Single Again" (1989)**
+A dramatic ballad about meeting a former lover after both people's lives have changed. It served as a TV drama theme and became one of her biggest commercial hits.
+
+**"Kokuhaku" (1990)**
+Another ballad tied to a drama, emotionally heavy and very popular, which carried on her success with mature love songs.
+
+**"Junai Rhapsody" (1994)**
+A major hit that appeared on the compilation *Impressions*, which sold several million copies and ranks among the best-selling albums in Japanese history.
+
+**"Camouflage" (1998)**
+Used as a TV drama theme, this song reached the top of the Oricon charts and proved she was still commercially strong two decades after her debut.
+
+## 2000s and Later
+
+**"Inochi no Uta" (2008 / 2012)**
+Originally written under a pen name for an NHK drama, this song about gratitude for life later became widely known through her own recording and is often sung at ceremonies in Japan.
+
+**Recent albums**
+*Denim* (2007), *Trad* (2014) and *Precious Days* (2024) show that she has kept putting out new material, even though she rarely tours.
+
+## Suggestions for Your Assignment
+
+- If your focus is strictly the 1970s, use "Modotte Oide, Watashi no Jikan," "September" and "Watashi no Heart wa Stop Motion," and mention "Fushigi na Peach Pie" as the 1980 high point of that period.
+- If your focus is her overall popularity, "Plastic Love," "Single Again" and "Genki wo Dashite" are essential.
+- If your focus is cultural impact, "Plastic Love" is the key case study, because its rediscovery online is a good example of how the internet revived interest in older Japanese pop among international audiences.
+
+Since release years and chart details sometimes differ from source to source, it's worth checking specific dates against an official discography or the Oricon database before you cite them.
+
+=== id: a43dae2648d4d246.A2p1 ===
+**Serena Williams' Longtime Hitting Partner Joins Azarenka's Camp**
+
+Serena Williams and Sascha Bajin have split. For eight years Bajin was the hitting partner who helped get the world No. 1 ready for some of the biggest matches of her career.
+
+He has now turned up in the camp of Victoria Azarenka, the former world No. 1 from Belarus and one of Williams' most persistent rivals on the WTA Tour.
+
+The break seems to have come before the season began. Bajin was missing from Melbourne this year when Williams won the Australian Open, her 19th Grand Slam singles title. The victory put her ahead of Chris Evert and Martina Navratilova on the all-time list and three short of Steffi Graf's Open Era record of 22.
+
+Neither Williams nor Bajin has said publicly why he moved. Hitting partners seldom get noticed outside the locker room, yet they do a great deal behind the scenes: they imitate opponents' patterns in practice, put up with hours of drills, and often act as a sounding board during long stretches on the road.
+
+For Azarenka, signing him is a coup. Her coach, Wim Fissette, said he was delighted to bring Bajin onto the team, and he praised his experience at the sport's highest level and his knowledge of what it takes to win major titles.
+
+Azarenka, a two-time Australian Open champion, is climbing back toward the top of the rankings after an injury-hit 2014. Fissette, who earlier coached Kim Clijsters and Simona Halep, joined her late last year.
+
+Bajin's knowledge of Williams' game could come in handy if the two meet again. Azarenka has lost most of their matches, including two US Open finals.
+
+=== id: a86510a81ec4f923.A2p1 ===
+Dr. Peter Albright broke the news the way some men hand out parking tickets: crisply, and with a faint suggestion that he was doing her a favor.
+
+"Six months," he said. "Maybe less. I'd put your affairs in order, Mrs. Kowalczyk."
+
+Edna Kowalczyk was eighty-one. She had buried a husband, two dogs and a forty-year attachment to menthol cigarettes. She glanced down at Dr. Albright's loafers, which had tassels, and decided on the spot that she would not give him the satisfaction.
+
+"I'll see you in six months," she said.
+
+"I hope so," he answered, already reaching for the next chart.
+
+At home she wrote a list. It wasn't a list of affairs to be put in order. Its title was THINGS ALBRIGHT WILL HAVE TO HEAR ABOUT, and item one was *Walk to the mailbox without the cane.*
+
+That took three weeks. Her hip complained the whole time, and she told it, out loud, that it could take its complaints to Dr. Albright.
+
+Item two was the county fair, where she meant to enter her rhubarb pie for the first time since 1997. Item three was learning the tablet her granddaughter had given her, since she had heard that you could post reviews of doctors on the internet.
+
+At the six-month appointment, Dr. Albright frowned at her bloodwork for a very long time.
+
+"Well," he said. "This is unusual."
+
+"Second place," Edna said. "For the pie. The woman who won is married to one of the judges. I'm appealing."
+
+He had no idea how to respond to that, so he told her to return in three months.
+
+She returned in three months, and again three months after that. Her granddaughter, Talia, began driving her to the appointments because she wanted to watch. Edna would sit ramrod straight on the crinkly paper, Dr. Albright would examine her numbers as if they had insulted him personally, and Talia would bite the inside of her cheek to keep from laughing.
+
+"What's your secret?" a nurse once asked her in the hallway.
+
+"Pettiness," Edna said. "Wildly underrated."
+
+That wasn't the full story. There was also the pie, which won first place the next year, once the judge's wife retired. There was the tablet, where she found out that Talia had been posting photos of her with captions like *my grandma is undefeated*. There was the spring she planted tomatoes she had no business expecting to eat, and ate them anyway, warm from the vine, with a little salt.
+
+But spite was what had pulled her out of the chair that first morning, and Edna believed in giving credit where it was due.
+
+Four years after the six-month prognosis, Dr. Albright announced that he was retiring. Edna sent a card. Inside, in careful cursive, she wrote: *Congratulations. I'll be here when you get back.*
+
+Talia asked if that was a little mean.
+
+"Sweetheart," Edna said, cutting her a slice of pie, "it's a lot mean. That's the whole point."

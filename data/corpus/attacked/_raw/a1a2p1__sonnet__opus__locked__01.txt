@@ -1,0 +1,385 @@
+=== id: fd8fdc518f5f4ffc.A1_heavy ===
+Live streaming, recorded gameplay and cloud gaming services have made mobile gaming one of the most rapidly expanding types of video content. Gaming footage nonetheless looks quite different from natural video. It is rendered synthetically, frequently includes crisp edges, text overlays and fast motion, and is watched on small screens with high resolution. Because most existing video quality assessment (VQA) models were designed around camera-captured material, they may be unable to predict how players actually perceive distortions here. We set out to close this gap by building a new mobile gaming video database. Its source sequences come from a varied selection of popular game genres, and each one is processed with several codecs, resolutions and bitrates. We ran a large subjective study on mobile devices, which produced mean opinion scores for all sequences. When we tested well-known full-reference and no-reference VQA algorithms against those scores, we found considerable shortcomings. In addition, we propose an objective quality model designed for gaming content, whose correlation with human judgments reaches the state of the art. The database will be released to the public.
+
+=== id: a6b87976745a8dae.A1_light ===
+The approach is straightforward: assign every section a unique `id`, then put a list of links at the top that target those ids using `href="#id"`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gardening Guide</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    nav { background: #f2f2f2; padding: 1rem 1.5rem; }
+    section { margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Gardening Guide</h1>
+
+  <nav>
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#soil">Preparing the Soil</a></li>
+      <li><a href="#planting">Planting</a></li>
+      <li><a href="#watering">Watering</a></li>
+    </ol>
+  </nav>
+
+  <section id="soil">
+    <h2>Preparing the Soil</h2>
+    <p>Your content here.</p>
+  </section>
+
+  <section id="planting">
+    <h2>Planting</h2>
+    <p>Your content here.</p>
+  </section>
+
+  <section id="watering">
+    <h2>Watering</h2>
+    <p>Your content here.</p>
+    <p><a href="#top">Back to top</a></p>
+  </section>
+</body>
+</html>
+```
+
+**Why it works**
+
+- **`id` attributes** make each section a target for links. Keep them unique, lowercase, and without spaces (`getting-started`, not `Getting Started`).
+- **Fragment links** such as `href="#planting"` take the reader to the element with that id and change the URL, so a specific section can be bookmarked or shared.
+- **`<nav>` and `<section>`** are semantic elements that help screen readers and search engines make sense of the page's structure.
+- **`scroll-behavior: smooth`** animates the jump rather than snapping to the spot.
+- **`href="#top"`** is a special case that scrolls to the top of the page, even when no element is named `top`.
+
+**Optional improvements**
+
+- Place the `nav` in a sidebar with `position: sticky; top: 1rem;` so the table of contents stays in view while readers scroll.
+- Put another `<ol>` inside a list item to show subsections.
+- For long pages, a short JavaScript loop over every `h2` can build the list for you.
+
+=== id: 24947dbdf42344d5.A1_medium ===
+1. **Mash it onto toast.** Spread smashed avocado over toasted sourdough, then finish with flaky salt, chili flakes, a squeeze of lemon, and, if you like, a fried or jammy egg.
+
+2. **Whip up guacamole.** Mash the avocado together with lime juice, diced onion, cilantro, jalapeño, and salt. Stir in chopped tomato right before you serve it.
+
+3. **Put it in a smoothie.** Blend half an avocado with banana, spinach, and either milk or yogurt for a thick, creamy drink that fills you up for longer.
+
+4. **Use it as a pasta sauce.** A quick sauce that needs no cooking comes from blending avocado with garlic, basil, lemon juice, olive oil, and a little pasta water.
+
+5. **Make chocolate mousse.** Blend avocado with cocoa powder, maple syrup or honey, vanilla, and a pinch of salt, and chill the mixture. You won't taste the avocado at all, just a rich, silky dessert.
+
+=== id: 75c9cdd941655906.A1_heavy ===
+I agree that social media does more harm than good for teenagers, though not because it is evil by nature. At the moment, its costs for this age group simply exceed its benefits.
+
+Mental health makes the most compelling case. Endless feeds, notifications, and public metrics such as likes and follower counts are all designed to hold attention for as long as possible. Adolescents are still forming their sense of who they are, and these features make their self-worth into a public scoreboard. Anxiety and depression have risen among teens, especially girls, in step with the spread of smartphones, and the match is close enough that many researchers no longer see it as coincidence.
+
+Sleep and concentration also take a hit. Having a phone in the bedroom encourages scrolling late into the night, and the habit of hopping between apps makes it harder to build the sustained focus needed for homework and serious reading.
+
+Supporters name real advantages: keeping in touch with friends, giving isolated or marginalized young people a supportive community, and a place to share creative work. These are genuine benefits. Still, most of them are available through less manipulative tools like group chats or moderated forums, which lack the comparison-driven design of the big platforms.
+
+In the end, the fault lies less with teenagers' choices than with products that are built to exploit developing brains. Until that changes, the harm outweighs the good.
+
+=== id: 2904e80efa45083b.A1_light ===
+Holidays: At Home or Abroad?
+
+Many people have different opinions about holidays. Some like to stay at home and relax, while others want to travel to another country. Personally, I prefer to travel abroad, and I will explain why.
+
+First, travelling abroad lets me learn many new things. Every country have its own culture, food and history. For example, two years ago I went to Japan with my family. I was very surprised because the streets were so clean and people was very polite. I also ate real sushi and ramen, and it was much more delicious than in my country. I cannot get this kind of experience if I stay at home.
+
+Second, travelling abroad helps me practise English. In my country I only use English in class. But when I travel, I need to speak English in the hotel, in the restaurant and at the airport. Sometimes I make mistakes, but people are usually kind and they understand me. After the trip, I feel more confident about speaking.
+
+Of course, staying at home also has some good points. It is cheaper and you don't need to worry about the plane or the luggage. You can sleep a lot and spend time with your friends. Sometimes I like this too, especially when I am very tired after exams.
+
+Still, I think holidays are a special time and we should use them to do something different. Travelling abroad gives me memories that I will keep for all my life. That is why I prefer to travel abroad instead of staying at home.
+
+=== id: a5d925a8044fd45c.A1_medium ===
+Diamond can hold data through atomic-scale flaws in its crystal lattice, above all nitrogen-vacancy (NV) centers, where a nitrogen atom lies next to an empty spot that a carbon atom would normally fill. Such defects can take on different electrical charge states, and carefully tuned laser pulses are able to flip the defects in a small, chosen region from one state to the other. Each charge state gives off different fluorescence when lit, so a weak reading laser can tell whether a particular site stands for a 0 or a 1. By focusing the laser at varying depths, information can be written in several layers, which makes three-dimensional storage possible. Since diamond is remarkably stable, data left in the dark can last for a very long time.
+
+=== id: 76ce99629c8b77b0.A1_heavy ===
+# Chenoweth and Cumming Named Hosts of 2015 Tonys
+
+NEW YORK — The 69th annual Tony Awards will be hosted by Kristin Chenoweth and Alan Cumming, two of Broadway's best-known performers. CBS will broadcast the ceremony live at 8 p.m. on June 7 from Radio City Music Hall.
+
+Both hosts are Tony winners with careers across stage, film and television. Ms. Chenoweth took home her Tony in 1999 for playing Sally Brown in "You're a Good Man, Charlie Brown," and later originated the part of Glinda in the musical "Wicked." This season she is a nominee herself, up for best actress in a musical for the revival of "On the Twentieth Century."
+
+Mr. Cumming won the 1998 Tony for best actor in a musical as the Emcee in "Cabaret," a part he played again in the show's latest Broadway revival. On television, viewers know him as the political operative Eli Gold on the CBS drama "The Good Wife."
+
+The two take over from Hugh Jackman, who hosted the previous year's ceremony.
+
+One of the night's most watched categories is best play, where four very different productions, from sharp contemporary drama to sweeping historical epic, are in contention.
+
+Simon Stephens's adaptation of Mark Haddon's best-selling novel, "The Curious Incident of the Dog in the Night-Time," follows a 15-year-old mathematical prodigy determined to find out who killed a neighbor's dog. It came to Broadway from London's National Theatre.
+
+Ayad Akhtar's "Disgraced," winner of the 2013 Pulitzer Prize for Drama, looks at identity, faith and ambition through a Manhattan dinner party that blows up.
+
+Robert Askins's dark comedy "Hand to God" focuses on a timid teenager in a Texas church puppet ministry, whose sock puppet seems to acquire a menacing personality of its own.
+
+"Wolf Hall Parts One & Two" is the Royal Shakespeare Company's two-part staging, adapted by Mike Poulton from Hilary Mantel's novels "Wolf Hall" and "Bring Up the Bodies." It traces Thomas Cromwell's rise to power at the court of Henry VIII.
+
+Two of the nominees are acclaimed British imports and two are new American works.
+
+Among the musicals, "Fun Home" and "An American in Paris" lead all productions with 12 nominations each, which sets up a close contest for best musical.
+
+As in past years, the broadcast is expected to include performances from nominated musicals, giving a national television audience a taste of shows many viewers may never get to see in person. The telecast is also a major marketing opportunity for producers, since a strong night at the Tonys can greatly increase ticket sales.
+
+The American Theatre Wing and The Broadway League present the Tony Awards each year to honor excellence in productions that opened on Broadway during the previous season. More than 800 voters from throughout the theater industry choose the winners.
+
+=== id: b139bddbe1dcb5ad.A1_light ===
+We study the tunneling dynamics of a bosonic Josephson junction, implemented as a Bose–Einstein condensate trapped in a double-well potential, where tunneling between the wells is assisted by a single-mode optical cavity field. In a two-mode approximation, we obtain an effective Hamiltonian in which the tunneling amplitude depends on the number of photons in the cavity, resulting in a coupled nonlinear atom–light system. With both mean-field and full quantum approaches, we examine how the population imbalance and the relative phase between the wells evolve. We find that the cavity field acts as a tunable control parameter capable of driving transitions between Josephson oscillations and macroscopic quantum self-trapping, and that the nonlinearity induced by the cavity produces bistable behavior and altered collapse-and-revival dynamics. In addition, the light transmitted through the cavity serves as a nondestructive probe of the atomic tunneling dynamics.
+
+=== id: 4930e5db3fdd2a5e.A1_medium ===
+**Exchange Programmes: A Trip Worth Taking**
+
+In most cases, joining a school or university exchange programme is a great idea. Its biggest advantage is personal growth. Spending time in another country takes students out of their comfort zone. Without their families nearby, they must handle money, make new friends and deal with everyday problems, and this quickly builds independence and confidence.
+
+Exchanges also boost language skills much faster than classes at home do. Ordering a meal, asking the way or taking part in a group project in a foreign language teaches you because you have no choice. Students also return with a broader outlook and a deeper grasp of other cultures, something that employers and universities appreciate.
+
+There are downsides. Exchanges can cost a lot, homesickness is genuine, and some credits may not carry over. Even so, scholarships and careful planning can resolve most of these issues. For students prepared to adjust, an exchange is an investment that keeps paying off throughout life.
+
+=== id: 7c6c6b8067f8d9d0.A1_heavy ===
+**Three Carriers, One Tour: Sailors Face Rare Rotation**
+
+An unusual rotation will send roughly 1,200 U.S. Navy sailors to three different aircraft carriers during one tour of duty, and each of the ships is named for an American president.
+
+The Navy refers to the plan as a "three-hull swap." The USS George Washington, USS Ronald Reagan and USS Theodore Roosevelt, all Nimitz-class carriers, are exchanging home ports as part of a fleet reshuffling that has been planned for a long time.
+
+Based in Yokosuka, Japan, since 2008, the George Washington is bound for Virginia, where it will undergo a scheduled midlife refueling and overhaul that will take it out of service for several years. The Ronald Reagan, now home-ported in San Diego, will take its place as the Navy's forward-deployed carrier in Japan. The Theodore Roosevelt, meanwhile, will move its home port from Norfolk, Virginia, to San Diego.
+
+For the sailors, that adds up to a journey covering much of the globe: from Japan, around South America to Virginia, and then west again to San Diego.
+
+The carriers must take the long way around the southern tip of South America because Nimitz-class ships are too wide for the Panama Canal.
+
+Organizing the move is a major logistical task. People and equipment have to be moved between the three ships, and many sailors' families will have to relocate as the carriers' home ports change.
+
+The assignment is unusual for the crews as well. Sailors typically spend an assignment on one ship, so serving on three carriers in a single tour, through waters that American carriers rarely enter, is an experience few in the Navy will ever have.
+
+=== id: 37d1c501ae2b5942.A1_light ===
+Model predictive control (MPC) provides a natural framework for handling constraints, but how well it works depends on an accurate dynamics model and on optimizers that can cope with nonconvex, nonsmooth costs. This paper introduces a safe learning-based MPC scheme that pairs a learned dynamics model with gradient-free trajectory optimization based on the cross-entropy method (CEM). The system dynamics are modeled by a probabilistic neural network ensemble that captures epistemic uncertainty. To guarantee constraint satisfaction while learning, sampled control sequences are checked against a safe set built from uncertainty-aware reachability bounds, and unsafe samples are thrown out before the CEM sampling distribution is updated. We give conditions under which recursive feasibility is maintained. Simulations on a cart-pole system and an autonomous vehicle path-tracking task show that the method performs comparably to gradient-based learning MPC while considerably reducing constraint violations.
+
+=== id: 14dc0ddb502dcecd.A1_medium ===
+Their income comes indirectly: the product costs nothing, but something connected to it does.
+
+With browsers, that something is typically search. Each time you type in the address bar, the default search engine serves you ads, so search companies pay to hold that default position. Google pays Mozilla hundreds of millions of dollars every year to be Firefox's default, and that payment makes up most of Mozilla's revenue. Chrome mostly exists to send people toward Google's own search and advertising, while Microsoft uses Edge to push Bing and its other services.
+
+Linux follows a different model. The code costs nothing, but firms like Red Hat and Canonical sell businesses support contracts, guaranteed security updates, certification and consulting. At the same time, large companies such as Intel, IBM and Google employ engineers to improve Linux, since their servers, cloud platforms and Android phones depend on it.
+
+=== id: f883aa1daa4ab01a.A1_heavy ===
+Nearly every student deals with stress at some point, and it has several common sources. Academic pressure is a big one: exams, homework and the fear of poor grades can leave students feeling that their efforts are never enough. Sleep loss is another, as many students stay up late to finish assignments or scroll on their phones. Social pressure plays a part too, since students worry about fitting in and measure themselves against others on social media.
+
+Fortunately, there are ways to ease it. Students can manage their time better with a planner and by splitting large assignments into smaller pieces. Enough sleep and regular exercise help both mood and concentration. Schools can contribute by spacing out test dates and providing counseling services, and parents can help by praising effort rather than looking only at grades.
+
+No one can eliminate stress entirely, but healthy habits and good support let students cope with it in a healthy way.
+
+=== id: 52f6117e32ff3405.A1_light ===
+Tidal locking just means that the Moon always shows the same face to Earth. It does not mean that face is protected from space.
+
+Earth makes for a very small shield. Seen from the Moon, it spans roughly two degrees and blocks less than 0.01% of the sky. Meteoroids come in from all directions, so the two hemispheres are struck at almost the same rate.
+
+The near side doesn't point toward one fixed spot in space either. As the Moon orbits Earth, that face sweeps through every direction over the course of a month, so no region stays permanently "behind" Earth.
+
+Nor is the far side dark. It receives just as much sunlight as the near side; we just can't see it from here.
+
+The far side does appear more heavily cratered, but the reason is that ancient lava flows on the near side covered many older craters, creating the smooth, dark maria.
+
+=== id: a86510a81ec4f923.A1_medium ===
+Dr. Peter Albright gave her the news the way certain men hand over a parking ticket: crisply, and with a slight air of having done her a favor.
+
+"Six months," he said. "Maybe fewer. I'd put your affairs in order, Mrs. Kowalczyk."
+
+Edna Kowalczyk was eighty-one years old. She had outlived a husband, two dogs, and a forty-year habit of menthol cigarettes. Her eyes fell on Dr. Albright's loafers, which sported tassels, and she resolved on the spot not to give him the satisfaction.
+
+"I'll see you in six months," she told him.
+
+"I hope so," he said, already picking up the next chart.
+
+At home she wrote a list. It wasn't a list of affairs to settle. Its title was THINGS ALBRIGHT WILL HAVE TO HEAR ABOUT, and the first entry read *Walk to the mailbox without the cane.*
+
+That took her three weeks. Her hip grumbled throughout, and she informed it, out loud, that it was welcome to take its grievances to Dr. Albright.
+
+Entry two was the county fair, where she planned to enter her rhubarb pie for the first time since 1997. Entry three was figuring out the tablet her granddaughter had given her, because she'd heard that people could post reviews of doctors online.
+
+When the six-month appointment came, Dr. Albright scowled at her bloodwork for a very long while.
+
+"Well," he said. "This is unusual."
+
+"Second place," said Edna. "For the pie. The winner is married to one of the judges. I'm appealing."
+
+He had no idea how to answer that, so he told her to return in three months.
+
+She did, and then again three months after that. Her granddaughter Talia began driving her to the appointments because she wanted to see them. Edna would sit ramrod straight on the crinkly paper, Dr. Albright would examine her numbers as if they had insulted him personally, and Talia would bite the inside of her cheek to hold in her laughter.
+
+"What's your secret?" a nurse asked her once in the hall.
+
+"Pettiness," said Edna. "Wildly underrated."
+
+That wasn't the full story. There was the pie as well, which won first place the next year, once the judge's wife had retired. There was the tablet, where she found out Talia had been posting photos of her with captions such as *my grandma is undefeated*. There was the spring she planted tomatoes she had no business expecting to eat, and ate them anyway, warm off the vine, with a bit of salt.
+
+Still, spite was what got her out of the chair that first morning, and Edna believed in crediting what deserved credit.
+
+Four years after the six-month prognosis, Dr. Albright said he was retiring. Edna mailed him a card. Inside, in neat cursive, she wrote: *Congratulations. I'll be here when you get back.*
+
+Talia wondered whether that was a bit mean.
+
+"Sweetheart," Edna said as she cut her a slice of pie, "it's very mean. That's the entire point."
+
+=== id: 684b3d77468402dc.A1_heavy ===
+Winter activities in cold climates tend to sort into a handful of groups.
+
+**Indoor pastimes**
+- Visiting museums, theaters, and indoor sports facilities
+- Reading, crafts, and board games
+- Spending time with friends and family over hot drinks and comfort food
+
+**Snow sports**
+- Snowmobiling
+- Sledding and tobogganing
+- Cross-country skiing and snowshoeing
+- Downhill skiing and snowboarding
+
+**Ice-based activities**
+- Skating at rinks or on frozen ponds
+- Ice hockey and curling
+- Ice fishing, frequently done from small shelters set up on frozen lakes
+
+**Casual outdoor fun**
+- Snowball fights
+- Making snowmen and snow forts
+- Wildlife spotting and hiking in winter
+
+**Cultural traditions**
+- Winter festivals like the Winter Carnival in Quebec City or the Harbin Ice and Snow Festival in China
+- Saunas followed by a cold plunge, particularly popular in Finland and elsewhere in the Nordic countries
+
+Several of these started out as necessities, not pastimes. Skis and snowshoes, for instance, were first practical tools for getting around and hunting in deep snow.
+
+=== id: 7e3e30fc13b1f662.A1_light ===
+Contemporary dance is a style of concert dance that arose in the middle of the 20th century. It blends elements of modern dance, ballet, jazz, and at times non-Western and street styles. Instead of following a single fixed technique, it stresses versatility, experimentation, and personal expression.
+
+**Origins**
+
+It developed out of the modern dance pioneers, including Martha Graham, Doris Humphrey, and José Limón, who turned away from the strict rules of classical ballet. In the 1940s and '50s, Merce Cunningham went further by separating movement from music and narrative, treating dance as something that could stand on its own. Later choreographers such as Pina Bausch, Trisha Brown, William Forsythe, and Crystal Pite continued to widen what dance could be.
+
+**Key characteristics**
+
+- **Floor work:** Dancers often roll, slide, and travel along the floor rather than remaining upright.
+- **Use of gravity and weight:** Movement may involve falling, releasing, and recovering, and tends to be fluid and grounded instead of lifted and light as in ballet.
+- **Contrasts:** Choreography shifts between stillness and speed, tension and release, control and abandon.
+- **Breath and the torso:** Movement frequently begins in the spine or core, using contractions, spirals, and curves.
+- **Improvisation:** Many works are built partly from material that dancers improvise.
+- **Freedom from conventions:** Bare feet are common, the music can be classical, electronic, pop, or missing entirely, and pieces needn't tell a linear story.
+- **Emotional expression:** Works often explore feelings, relationships, or social themes in abstract ways.
+
+**Common techniques**
+
+Dancers commonly train in release technique, Graham and Limón technique, Cunningham technique, contact improvisation, and Gaga (created by Ohad Naharin). Most also study ballet to develop strength and control.
+
+**Where to see it**
+
+Contemporary dance can be found in professional companies, dance competitions, music videos, theater, and TV shows such as *So You Think You Can Dance*, where its lyrical, emotional style gained wide popularity.
+
+In short, contemporary dance is less about a strict set of steps and more about discovering how the body can move and communicate.
+
+=== id: 5ffd2ca82413af54.A1_medium ===
+"All work and no play makes Jack a dull boy" is a traditional English proverb, first printed in James Howell's *Proverbs* in 1659. Its message is plain: a life made up only of labor wears people out and leaves them less interesting, less creative and less happy.
+
+Several solid reasons explain why the saying rings true:
+
+**Rest renews the mind.** Concentration is limited. Working without pauses brings on mental fatigue, which damages focus, memory and decision-making. Time off lets the brain recover and return sharper.
+
+**Play feeds creativity.** Plenty of insights show up when you aren't forcing them, for instance on a walk, in a game or in the shower. Play invites experimentation and loose thinking, which are difficult to reach under constant pressure.
+
+**Variety makes people interesting.** Hobbies, friendships, travel and fun give a person stories, viewpoints and passions beyond the job. Someone who only works has little else to discuss, and that is the "dull" in the proverb.
+
+**Burnout is genuine.** Chronic overwork is tied to stress, exhaustion, bad sleep, health problems and, ironically, reduced productivity. Play isn't wasted time. It helps keep people capable of working at all.
+
+**Relationships take time.** Social play builds the bonds that support well-being.
+
+A lesser-known later addition offers a counterweight: "All play and no work makes Jack a mere toy." The real lesson is balance. Work provides purpose and structure, while play keeps life rich, healthy and human.
+
+The line is also well known for its chilling appearance in *The Shining*, where it is typed over and over, showing how badly things can go when balance is lost.
+
+=== id: 99464951ac37d9bc.A1_heavy ===
+First, a short caveat: Mariya Takeuchi made her debut in 1978, so she is part of the late-70s scene, but the majority of her best-known songs date from the 1980s onward. Her career spans more than forty years, and her trademark sound lies at the heart of what people now call "city pop." The list below follows her whole career, and the 1970s songs are labeled so you can concentrate on them if your assignment demands it.
+
+## Suggestions for Your Assignment
+
+- If you are covering strictly the 1970s, use "Modotte Oide, Watashi no Jikan," "September," and "Watashi no Heart wa Stop Motion," and cite "Fushigi na Peach Pie" as the 1980 high point of that era.
+- If you are covering her overall popularity, "Plastic Love," "Single Again," and "Genki wo Dashite" are indispensable.
+- If you are covering cultural impact, "Plastic Love" is the key case study, because its rediscovery online shows how the internet renewed international interest in older Japanese pop.
+
+Release years and chart details sometimes differ between sources, so check specific dates against an official discography or the Oricon database before you cite them.
+
+## Late 1970s – Early 1980s (RCA years)
+
+**"Modotte Oide, Watashi no Jikan" (1978)**
+This was her debut single, a light, polished pop song that presented her as a college-aged singer with a clear, warm voice. It wasn't her biggest hit, but it matters as the beginning of her career.
+
+**"September" (1979)**
+Written by Takao Kisugi with lyrics by Takashi Matsumoto, this is one of her signature early songs. A bittersweet number about a relationship fading as summer gives way to autumn, it brought her wide recognition and is still a fan favorite.
+
+**"Watashi no Heart wa Stop Motion" (1979)**
+This upbeat single was featured in a cosmetics commercial, which helped make her a household name. It reveals the bright, idol-adjacent side of her early image.
+
+**"Fushigi na Peach Pie" (1980)**
+Likely her biggest hit of the RCA era, it was also linked to a cosmetics campaign. The song is playful and catchy, with a sunny pop arrangement, and it is a strong pick if you need a single song to stand for her earliest fame.
+
+**"Sweetest Music" (1980)**
+This track comes from the album *Miss M*, which was partly recorded in Los Angeles with American session musicians. It shows how closely her sound was tied to West Coast AOR at that point.
+
+## Mid-1980s (after her marriage to Tatsuro Yamashita)
+
+She married musician and producer Tatsuro Yamashita in 1982 and stepped away from performing, then came back as a songwriter who wrote most of her own material. Yamashita produced and arranged much of her later work.
+
+**"Plastic Love" (1984)**
+From the album *Variety*, this is now her most famous song around the world. It did only modestly when it came out, but an unofficial YouTube upload went viral around 2017, and the song became the face of the global city pop revival. Its funky bassline, disco-tinged groove and lonely lyrics about a woman who hides her heartbreak in nightlife have been covered and remixed endlessly.
+
+**"Mou Ichido" (1984)**
+Also from *Variety*, this mid-tempo ballad demonstrated her growing strength as a songwriter.
+
+**"Genki wo Dashite" (1984 / 1987)**
+She first wrote it for the actress-singer Hiroko Yakushimaru, then recorded her own version for the album *Request* (1987). This gentle, encouraging song tells a friend to cheer up after a breakup, and it is among her best-loved tracks in Japan.
+
+## Late 1980s – 1990s
+
+**"Single Again" (1989)**
+A dramatic ballad about meeting a former lover after both lives have changed. It served as a TV drama theme and became one of her biggest commercial hits.
+
+**"Kokuhaku" (1990)**
+Another ballad tied to a drama, emotionally heavy and hugely popular, which carried on her success with mature love songs.
+
+**"Junai Rhapsody" (1994)**
+A major hit included on the compilation *Impressions*, which sold several million copies and ranks among the best-selling albums in Japanese history.
+
+**"Camouflage" (1998)**
+Used as the theme of a TV drama, this song reached the top of the Oricon charts and proved she was still commercially strong two decades after her debut.
+
+## 2000s and Later
+
+**"Inochi no Uta" (2008 / 2012)**
+Originally written under a pen name for an NHK drama, this song about gratitude for life later became widely known through her own recording and is often sung at ceremonies in Japan.
+
+**Recent albums**
+*Denim* (2007), *Trad* (2014) and *Precious Days* (2024) show that she has continued to release new material, even though she seldom tours.
+
+=== id: 105e64618e4d1db4.A1_light ===
+**Free Speech Attorney Slams Ruling That Denied The Slants a Trademark**
+
+First Amendment attorney Marc Randazza is sharply criticizing a federal appeals court's refusal to allow an Asian-American band to trademark its own name. He says the decision weakens free speech and reflects a culture that has become too quick to take offense.
+
+The U.S. Court of Appeals for the Federal Circuit upheld the Patent and Trademark Office's denial of registration to The Slants, a dance-rock band from Portland, Oregon, founded by Simon Tam. The trademark office rejected the application under a provision of federal trademark law that prohibits marks that "may disparage" people, finding that the name was likely to offend people of Asian descent.
+
+Tam has said the band picked the name on purpose, to reclaim a slur long directed at Asian-Americans and turn it into a badge of pride.
+
+Randazza contends that the court made the wrong call. In his view, trademarks are commercial speech, and the First Amendment protects commercial speech. He believes the government may regulate trademarks that are confusing or deceptive, but should not deny protection to a name merely because some people find it insulting.
+
+The result carries an obvious irony: a band of Asian-American musicians has been told that it cannot register the word it uses to describe itself because that word offends Asian-Americans.
+
+Randazza described the ruling as a symptom of our easily offended times, when discomfort is increasingly treated as grounds for limiting expression.
+
+The case recalls the dispute over the Washington Redskins, whose trademark registrations the trademark office canceled in 2014 on similar grounds.
+
+The fight may not be finished. In a separate opinion, one member of the three-judge panel suggested that the court should revisit its long-standing precedent holding that denying a trademark does not raise First Amendment concerns.

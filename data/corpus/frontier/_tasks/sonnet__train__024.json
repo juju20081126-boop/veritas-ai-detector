@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0053",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- The Bardo Museum attackers wore suicide vests, Tunisia's President tells CNN.\n- Police shot them before they could detonate the vests, Beji Caid Essebsi says.\n- Essebsi says 15 people have been arrested over the deadly attack."
+ },
+ {
+  "prompt_id": "abst-0163",
+  "instruction": "Draft the abstract (around 100 words) for the paper \"Topological regularization with information filtering networks\"."
+ },
+ {
+  "prompt_id": "emai-0258",
+  "instruction": "Please draft a work email about: Enjoy the Holidays of 2001 (around 100 words)."
+ },
+ {
+  "prompt_id": "stor-0339",
+  "instruction": "I'm a college student and need help with an assignment. \"You may have one wish granted. \"\" I want all my debts cleared.\" \"How much do you owe? \"\" You misunderstand. My debts are not monetary.\"\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0431",
+  "instruction": "How did those guys get stuck in the cave in Thailand in the first place?\n\nExplain it in about 75 words."
+ },
+ {
+  "prompt_id": "gene-0564",
+  "instruction": "Explain how to pour tap water into a glass, but make it sound unnecessarily complex and cumbersome."
+ },
+ {
+  "prompt_id": "news-0054",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 400 words based on these key points:\n- Heavy fog is complicating efforts; the search is expected to resume Thursday.\n- Four air crew members, seven Marines were on board the helicopter.\n- The service members have not been identified."
+ },
+ {
+  "prompt_id": "abst-0164",
+  "instruction": "Draft the abstract (around 200 words) for the paper \"Information-Theoretic Approach to Efficient Adaptive Path Planning for Mobile Robotic Environmental Sensing\"."
+ },
+ {
+  "prompt_id": "emai-0259",
+  "instruction": "Write an email with the subject line \"Euro Option 11-2-01.xls\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0340",
+  "instruction": "Write a 400-word story for this prompt: The secret to immorality is killing a newborn child. What is the world like?"
+ },
+ {
+  "prompt_id": "expl-0432",
+  "instruction": "Was Attila really a great military leader?\n\nExplain it in about 100 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0565",
+  "instruction": "Could you explain to me how nerves transfer information between different neurons? Answer in about 500 words."
+ }
+]

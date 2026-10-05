@@ -1,0 +1,204 @@
+{
+  "_note": "Written by scripts/corpus/*. check_integrity.py G1 rejects rows whose source is not registered here.",
+  "generators": {
+    "claude-opus-5-5": {
+      "kind": "frontier",
+      "vendor": "anthropic",
+      "family": "claude-5",
+      "api_id": "claude-opus-5-5",
+      "access_paths": [
+        "claude-code-subagent:opus"
+      ],
+      "verified_model_id": "claude-opus-5-5",
+      "verification": "message.model in 110 assistant messages of 82 subagent transcripts (all equal)"
+    },
+    "claude-sonnet-5-5": {
+      "kind": "frontier",
+      "vendor": "anthropic",
+      "family": "claude-5",
+      "api_id": "claude-sonnet-5-5",
+      "access_paths": [
+        "claude-code-subagent:sonnet"
+      ],
+      "verified_model_id": "claude-sonnet-5-5",
+      "verification": "message.model in 127 assistant messages of 82 subagent transcripts (all equal)"
+    },
+    "gpt-6-astra": {
+      "kind": "frontier",
+      "vendor": "openai",
+      "family": "openai-2026",
+      "api_id": "openai/gpt-6-astra (OpenRouter slug; verify)",
+      "released": "2026-09-03",
+      "access_paths": [
+        "api:openrouter",
+        "api:openai",
+        "user_paste:chatgpt"
+      ],
+      "verified_model_id": null,
+      "verification": "no access yet (no API key set in this environment)"
+    },
+    "claude-haiku-4-5": {
+      "kind": "tool",
+      "vendor": "anthropic",
+      "family": "claude-4",
+      "api_id": "claude-haiku-4-5-20251001",
+      "access_paths": [
+        "claude-code-subagent:haiku"
+      ],
+      "verified_model_id": "claude-haiku-4-5-20251001",
+      "verification": "message.model in 146 assistant messages of 82 subagent transcripts (all equal)",
+      "note": "used as paraphraser/humanizer (attack tool) and optionally as extra generator"
+    }
+  },
+  "human_corpora": {
+    "cnn_dailymail": {
+      "hf_repo": "abisee/cnn_dailymail",
+      "revision": "96df5e686b",
+      "verified_human": false,
+      "license": "apache-2.0 (dataset); article text (c) CNN",
+      "published_before": "2017-01-01",
+      "domain": "news",
+      "registered": "2026-10-01"
+    },
+    "arxiv-abstracts-2021": {
+      "hf_repo": "gfissore/arxiv-abstracts-2021",
+      "revision": "e4c5fbd4de",
+      "verified_human": false,
+      "license": "cc0-1.0",
+      "published_before": "2021-12-31",
+      "domain": "academic",
+      "registered": "2026-10-01"
+    },
+    "aeslc": {
+      "hf_repo": "Yale-LILY/aeslc",
+      "revision": "2305f2e63b",
+      "verified_human": false,
+      "license": "unknown (Enron corpus)",
+      "published_before": "2019-01-01",
+      "domain": "email",
+      "registered": "2026-10-01"
+    },
+    "writingprompts": {
+      "hf_repo": "euclaise/writingprompts",
+      "revision": "35f0aa3594",
+      "verified_human": false,
+      "license": "mit (dataset); stories (c) Reddit authors",
+      "published_before": "2018-12-31",
+      "domain": "creative",
+      "registered": "2026-10-01"
+    },
+    "eli5": {
+      "hf_repo": "sentence-transformers/eli5",
+      "revision": "6e3b20a7a4",
+      "verified_human": false,
+      "license": "unknown (Reddit ELI5 answers)",
+      "published_before": "2019-12-31",
+      "domain": "explain",
+      "registered": "2026-10-01"
+    },
+    "oasst1-prompts": {
+      "hf_repo": "OpenAssistant/oasst1",
+      "revision": "fdf72ae082",
+      "license": "apache-2.0",
+      "published_before": "2023-04-12",
+      "note": "prompts only; not used as human text",
+      "registered": "2026-10-01"
+    },
+    "dolly15k-prompts": {
+      "hf_repo": "databricks/databricks-dolly-15k",
+      "revision": "bdd27f4d94",
+      "license": "cc-by-sa-3.0",
+      "published_before": "2023-04-12",
+      "note": "prompts only; not used as human text",
+      "registered": "2026-10-01"
+    },
+    "wi_locness": {
+      "hf_repo": null,
+      "url": "https://www.cl.cam.ac.uk/research/nl/bea2019st/data/wi+locness_v2.1.bea19.tar.gz",
+      "revision": "d5cbf68cda",
+      "sha256_archive": "d5cbf68cda3da0c3af69dd672614d07287bfe996b87da0c75051d5349d76c666",
+      "license": "non-commercial research use only (BEA 2019 shared task page: 'All corpora are subject to similar licences and may only be used for non-commercial purposes')",
+      "published_before": "2019-08-01",
+      "verified_human": true,
+      "domain": "student_essay",
+      "note": "ESL = W&I levels A/B/C (non-native learners); LOCNESS (N) = native university students",
+      "registered": "2026-10-01"
+    },
+    "raid-human": {
+      "hf_repo": "liamdugan/raid",
+      "revision": "865cac7418",
+      "license": "mit",
+      "verified_human": true,
+      "published_before": "2022-11-30",
+      "verification": "per RAID paper (human texts from pre-ChatGPT corpora); not independently verified",
+      "registered": "2026-10-01"
+    },
+    "mage-human": {
+      "hf_repo": "yaful/MAGE",
+      "revision": "342663f0a2",
+      "license": "apache-2.0",
+      "verified_human": true,
+      "published_before": "2022-11-30",
+      "verification": "sources: CMV, Yelp, XSum, TLDR, ELI5, WritingPrompts, SciGen, CNN, IMDB (all pre-ChatGPT)",
+      "registered": "2026-10-01"
+    },
+    "hc3-human": {
+      "hf_repo": "Hello-SimpleAI/HC3",
+      "revision": "4d0ff18143",
+      "license": "cc-by-sa-4.0",
+      "verified_human": true,
+      "published_before": "2022-11-30",
+      "verification": "human answers from Reddit ELI5, FiQA, MedDialog, WikiQA, open_qa (collected Dec 2022)",
+      "registered": "2026-10-01"
+    }
+  },
+  "public_ai_corpora": {
+    "raid": {
+      "hf_repo": "liamdugan/raid",
+      "revision": "865cac7418",
+      "license": "mit",
+      "generators": [
+        "chatgpt",
+        "cohere",
+        "cohere-chat",
+        "gpt2",
+        "gpt3",
+        "gpt4",
+        "llama-chat",
+        "mistral",
+        "mistral-chat",
+        "mpt",
+        "mpt-chat"
+      ],
+      "attacks": [
+        "alternative_spelling",
+        "article_deletion",
+        "homoglyph",
+        "insert_paragraphs",
+        "none",
+        "number",
+        "paraphrase",
+        "perplexity_misspelling",
+        "synonym",
+        "upper_lower",
+        "whitespace",
+        "zero_width_space"
+      ],
+      "note": "sampled from the converted partial-train shards (domains: abstracts, books, news, poetry)",
+      "registered": "2026-10-01"
+    },
+    "mage": {
+      "hf_repo": "yaful/MAGE",
+      "revision": "342663f0a2",
+      "license": "apache-2.0",
+      "note": "train sample + OOD GPT-4 / paraphrased sets (dev only)",
+      "registered": "2026-10-01"
+    },
+    "hc3": {
+      "hf_repo": "Hello-SimpleAI/HC3",
+      "revision": "4d0ff18143",
+      "license": "cc-by-sa-4.0",
+      "registered": "2026-10-01"
+    }
+  }
+}

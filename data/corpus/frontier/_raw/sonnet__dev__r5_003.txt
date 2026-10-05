@@ -1,0 +1,416 @@
+=== prompt_id: essa-10-esl ===
+I think competition among students can be good and bad. It depends on how students and teachers use it. In my opinion, a little competition is useful, but too much of it is dangerous for young people.
+
+First, competition can give students a reason to work harder. When I was in junior high school, my class had a math game every Friday. The students with the best scores got a small prize. I did not like math very much, but I studied every week because I wanted to win. Slowly my grades became better, and I started to enjoy the subject. Also, when you see a classmate who is doing very well, you can learn from him. You ask how he studies and you try his methods. In this way, competition makes students more active.
+
+Second, competition teach students about real life. After school, people must compete for university places and for jobs. If a student never experience competition, he may feel afraid when it finally comes. Sports teams are a good example. Players learn to lose, to try again, and to be happy for the winner. These are important lessons.
+
+However, competition has some bad sides too. The biggest problem is stress. In my country, many students study until late at night because they must have the highest score in the class. They sleep only five or six hours and they feel tired all the time. Some of them even lose their friends because everybody is a rival. I have a friend who stopped talking with his best friend after an exam, because they both wanted first place. I think this is very sad.
+
+Another problem is that students who always lose can lose confidence. They think, "I am not smart, so why should I try?" Then they stop trying completely. School should help every student to grow, not only the top ones.
+
+So what is the best way? I believe teachers should use competition in small amounts. For example, students can compete in teams instead of alone, so they learn to work together too. Teachers can also give praise for progress, not only for the highest score. Then a student can compete with his own old result, and this is healthy for everybody.
+
+In conclusion, competition is like salt in food. A little salt makes the food better, but too much salt make it terrible. If schools find the right balance, competition can help students to develop both their knowledge and their character.
+
+=== prompt_id: news-0028 ===
+**Wisconsin Pizzeria Fields Angry Calls Meant for Indiana Namesake**
+
+A small pizzeria in Wisconsin has spent the past several days fending off a flood of angry phone calls and hostile social media posts, all because customers have mistaken it for a restaurant more than 300 miles away.
+
+The owners of Memories Gourmet Pizza Co. say strangers have been calling the shop to criticize its stance on a hot-button political issue, even though the business has taken no position at all. The confusion stems from a similarly named restaurant, Memories Pizza in Walkerton, Indiana, which drew national attention after its owners told a local television reporter they would decline to cater a same-sex wedding. The comments surfaced as Indiana lawmakers were embroiled in a heated debate over a "religious freedom" law that critics said would allow businesses to discriminate against gay and lesbian customers.
+
+The Wisconsin shop, which has no connection to the Indiana business, quickly found itself caught in the crossfire.
+
+"We got a call before we'd even unlocked the doors one morning, and the person on the other end was screaming at us," one of the owners said. "I kept trying to explain that we're in a different state, and that we've never said anything about any of this. They didn't want to hear it."
+
+Messages piled up on the shop's Facebook page as well. Some commenters threatened to boycott the restaurant, while others posted one-star reviews that never mentioned the food. A few of the posts included profanity and personal insults directed at the staff, who are mostly family members and local high school students working part-time.
+
+The owners said they have spent hours deleting comments and responding to callers. Employees have been instructed to politely explain the mix-up and, if the caller continues to shout, to hang up.
+
+"It's exhausting," the owner said. "We make pizza. That's what we do. We're not interested in being part of a national argument."
+
+The episode highlights how quickly online outrage can spill over onto the wrong target. With social media users often reacting within seconds to a headline or a shared post, businesses that happen to share a name, or even a few words in a name, can become collateral damage.
+
+Not every message has been negative. Regulars from the Wisconsin shop's own community have stepped in to defend it, posting supportive notes and urging others to check their facts before leaving angry comments. Several customers have also made a point of stopping by to order extra pizzas in a show of solidarity.
+
+Still, the owners say they hope the controversy fades soon. They have added a line to the shop's Facebook page clarifying that it is not the Indiana restaurant, and they have asked visitors to read it before posting.
+
+"We just want people to know who we are," the owner said. "We're the other Memories."
+
+=== prompt_id: abst-0138 ===
+We present an initial survey of white dwarf stars identified in the first data releases of the Sloan Digital Sky Survey (SDSS). Candidates were selected from the survey's five-band photometry using colors that separate hot degenerate stars from the main stellar locus and from quasars, and were then targeted for follow-up spectroscopy. From this sample we have confirmed several hundred white dwarfs, the great majority of which are new discoveries, and classified them by their spectral features. Hydrogen-atmosphere DA stars make up most of the sample, but we also identify helium-atmosphere DB stars, hot DO objects, magnetic white dwarfs, cool DC stars with featureless spectra, and a number of unresolved binaries consisting of a white dwarf and a low-mass main-sequence companion. We estimate effective temperatures and surface gravities by fitting model atmospheres to the Balmer lines of the DA stars, and from these derive masses and cooling ages. The mass distribution peaks near 0.6 solar masses, with a smaller tail of low-mass objects that are likely to be unresolved binaries. We discuss the completeness and selection effects of the sample, and we describe several unusual objects, including a DA white dwarf with an exceptionally strong magnetic field. This survey demonstrates that SDSS will increase the known population of white dwarfs several-fold, enabling more precise measurements of the luminosity function and the age of the Galactic disk.
+
+=== prompt_id: emai-0239 ===
+Subject: IMPORTANT! Actions this evening.
+
+Hi team,
+
+I need everyone to read this carefully before you leave the office today. We are moving the production database to the new servers tonight, and the migration window starts at 7:00 p.m. sharp. Because it affects every one of our systems, there are a few things that must be done before then.
+
+By 5:30 p.m.:
+- Save and close all open files on the shared drive. Anything left open may be locked or lost during the transfer.
+- Log out of the customer portal, the billing system, and the scheduling tool. Please don't log back in until I confirm we are finished.
+- Finish any pending orders or entries you are working on. Anything not submitted by 6:30 p.m. will have to be re-entered by hand tomorrow.
+
+Between 6:30 and 7:00 p.m.:
+- Check that your laptop is plugged in and connected to the VPN, in case we need to reach you.
+- Reply to this message with "ready" so I can track who has completed these steps.
+
+During the migration, the IT team, led by Marcus, will be on call at extension 4417. Please call only if something is urgent, as the team will be focused on the transfer. I will send a short message as soon as everything is back online, which I expect to happen before midnight.
+
+If you can't complete any of these steps, tell me now rather than later. Thank you all for your help. This will make our systems faster and more reliable, and I appreciate the extra effort.
+
+Best,
+Dana
+
+=== prompt_id: stor-0316 ===
+The man at the corner table had been typing for almost an hour, and Priya had been watching him for most of it.
+
+It wasn't a creepy kind of watching, she told herself. She had finished her book, her latte had gone cold, and he was simply the most interesting thing in the room. He hunched over his laptop like someone defusing a bomb. Every few minutes he stopped, stared at the ceiling, and then went back to it with a small, satisfied nod.
+
+Outside, the afternoon was bright and hard, the kind of cloudless sky that makes people squint and complain about the heat. A bus sighed past the window. A kid on a scooter wobbled down the sidewalk.
+
+The man leaned forward. Priya, who had slid her chair a little sideways for a better view, could see the screen over his shoulder. A cursor blinked in a wall of text. He typed slowly, one letter at a time, as if he wanted to enjoy it.
+
+*It begins raining outside.*
+
+He hit the period. He sat back.
+
+For a second, nothing. Then the light in the window changed, a gray shadow sliding over the street. The first drops struck the glass, fat and scattered. Within moments the scooter kid was gone and people on the sidewalk were running, holding bags and newspapers over their heads. The rain came down in sheets, loud on the awning, and the whole café seemed to exhale.
+
+Priya realized she was holding her breath.
+
+"Coincidence," she whispered. But the sky had been perfectly clear. She'd checked her phone ten minutes ago. Sunny, ninety-one degrees, zero percent chance.
+
+The man didn't look surprised. He looked tired. He rubbed his eyes, glanced at the window, and typed something else. Priya couldn't read it from where she sat, but a moment later the rain softened into a gentle drizzle.
+
+She stood up before she could think better of it and walked over. "Excuse me."
+
+He looked up. He was older than she'd expected, maybe sixty, with kind, crumpled eyes. "Yes?"
+
+"I saw what you wrote. Before it rained."
+
+"Ah." He closed the laptop halfway. "You're very observant."
+
+"Did you do that?"
+
+He smiled, a little sadly. "I'm a novelist. Or I was. I've been stuck on the same chapter for two years. This morning I started writing small things, simple things, just to remember how it felt." He shrugged. "The weather seemed harmless."
+
+"Harmless," Priya repeated. "You made it rain."
+
+"I wrote that it rained. I'm not sure those are the same."
+
+She looked at the laptop. Then she looked at him. "Can I ask you to try something?"
+
+"That depends."
+
+"My sister's flight lands in an hour. She's terrified of turbulence."
+
+The man laughed, a real laugh, startling in the quiet café. He opened the laptop fully, flexed his fingers, and waited.
+
+"Tell me about her," he said.
+
+=== prompt_id: expl-0412 ===
+A granuloma is a small, organized cluster of immune cells, mainly macrophages, that forms when the body tries to wall off something it can't eliminate, such as an infection (tuberculosis), a foreign substance, or an inflammatory disease like sarcoidosis. A cyst is a closed sac with a distinct lining that contains fluid, semi-solid material, or gas. Cysts can form from blocked ducts, developmental abnormalities, infections, or other causes. Put simply, a granuloma is a solid mass of inflammatory cells, while a cyst is a hollow, membrane-lined pocket.
+
+=== prompt_id: gene-0521 ===
+# The Roman Republic and the Roman Empire
+
+## The Roman Republic (509-27 BCE)
+
+**Origins.** According to tradition, Rome was founded in 753 BCE and ruled by kings. In 509 BCE the Romans expelled the last king, Tarquin the Proud, and set up a republic. Power was shared among elected magistrates (two consuls chosen each year), the Senate (an advisory body of aristocrats), and popular assemblies.
+
+**Social conflict.** Early Republican history was shaped by the "Conflict of the Orders," in which plebeians (commoners) pushed for political rights against the patrician elite. Over about two centuries they won the right to hold office, protection through tribunes, and, in 450 BCE, a written law code, the Twelve Tables.
+
+**Expansion.** Rome gradually conquered the Italian peninsula, binding defeated peoples to it through alliances and partial citizenship. It then fought three Punic Wars against Carthage (264-146 BCE). Hannibal's invasion of Italy nearly broke Rome, but Rome won and destroyed Carthage in 146 BCE. In the same period, Rome took control of Greece, Spain, and much of the eastern Mediterranean.
+
+**Crisis.** Conquest brought wealth, slaves, and inequality. Small farmers lost their land, and ambitious generals gained armies loyal to themselves rather than the state. The Gracchi brothers' reform attempts (133-121 BCE) ended in violence, and the first century BCE was marked by civil wars involving Marius and Sulla, then Pompey and Julius Caesar. Caesar crossed the Rubicon in 49 BCE, won the civil war, and was assassinated in 44 BCE. A further round of conflict ended when Octavian defeated Mark Antony and Cleopatra at Actium in 31 BCE.
+
+## The Roman Empire (27 BCE-476 CE in the West)
+
+**The Principate.** In 27 BCE the Senate gave Octavian the title Augustus. He kept republican forms but held real power himself, effectively becoming the first emperor. His reign began the *Pax Romana*, roughly two centuries of relative peace and prosperity across the Mediterranean world.
+
+**Peak and growth.** Under emperors such as Trajan (r. 98-117 CE), the empire reached its greatest extent, stretching from Britain to Mesopotamia and containing perhaps 50 to 70 million people. Trade, cities, and roads flourished.
+
+**Crisis and reform.** The third century brought civil war, plague, economic trouble, and invasions. Diocletian (r. 284-305) restored order by dividing administration between East and West. Constantine (r. 306-337) legalized Christianity, which later became the state religion, and founded Constantinople as a new capital.
+
+**Decline.** The Western Empire faced migrations and invasions by Goths, Vandals, and others, and its last emperor, Romulus Augustulus, was deposed in 476 CE. The Eastern Empire, usually called the Byzantine Empire, lasted until the Ottomans captured Constantinople in 1453.
+
+## Key achievements
+
+- **Law and government.** Roman law, from the Twelve Tables to Justinian's codification, shaped legal systems across Europe and beyond. Ideas such as written statutes, legal personhood, and the presumption of innocence have Roman roots. The Republic's mixed constitution also influenced modern political thinkers and the framers of the U.S. Constitution.
+- **Engineering and architecture.** Romans built roads, aqueducts, bridges, and public baths, and they made extensive use of the arch, the vault, and concrete. The Pantheon's dome and the Colosseum still stand.
+- **Military organization.** The professional legions, with their discipline, logistics, and engineering skills, were among the most effective fighting forces of the ancient world.
+- **Language and literature.** Latin evolved into the Romance languages and supplied vocabulary to many others. Writers such as Cicero, Virgil, Livy, and Tacitus left works that remain central to Western literature.
+- **Integration and administration.** Rome extended citizenship over time, ran provincial administration, and linked a vast territory through trade and a shared urban culture.
+- **Cultural transmission.** Romans preserved and spread Greek philosophy, art, and science, and the empire's later embrace of Christianity helped shape medieval Europe.
+
+For an assignment, it may help to choose one angle, such as why the Republic collapsed or how Augustus consolidated power, and develop it with primary sources like Polybius, Livy, Suetonius, or Augustus' own *Res Gestae*.
+
+=== prompt_id: essa-19-pla ===
+Money is often described as the key to happiness, but I think this is only partly true. Money matters, yet it is not enough on its own.
+
+On one hand, it is hard to be happy when you are worried about basics. People who cannot pay rent, afford food, or cover medical bills live with constant stress, and no amount of positive thinking removes that. Studies suggest that as income rises from poverty to a comfortable level, life satisfaction rises with it. Money buys security, choices, and time, and these things really do improve daily life.
+
+On the other hand, beyond a certain point extra money adds surprisingly little. Many wealthy people are lonely, overworked, or dissatisfied because they keep comparing themselves with those who have even more. Meanwhile, plenty of people with modest incomes are content because they have strong friendships, loving families, work that means something to them, and good health. None of these can be purchased.
+
+In my opinion, money is like a floor rather than a ceiling. It lifts you out of misery, but it does not build a happy life by itself. Happiness depends far more on relationships, purpose, and how we choose to see what we already have.
+
+=== prompt_id: news-0029 ===
+**Pentagon Map Suggests Coalition Has Retaken Up to 30 Percent of Iraqi Territory From ISIS**
+
+The Pentagon has released a map indicating that coalition and Iraqi forces have regained between 25 and 30 percent of the territory in Iraq that was once held by the extremist group ISIS, according to defense officials.
+
+The map, which marks areas formerly under militant control, is intended to illustrate the progress of the campaign against the group since airstrikes and ground operations intensified. Officials said the figures reflect a reduction in the amount of populated territory that ISIS is able to hold and administer.
+
+Analysts cautioned, however, that territory alone does not provide a full picture of the conflict. Afzal Ashraf, a counterinsurgency specialist, said the new data should be read carefully and in context.
+
+"The map tells us something important, but it does not tell us everything," Ashraf said. He noted that ISIS has adapted its tactics in response to coalition air power, avoiding large, exposed formations that can be targeted from above.
+
+"Where it counts, they are not standing and fighting," Ashraf said. "They are melting away, regrouping, and choosing when and where to engage."
+
+According to Ashraf, this approach means that recapturing ground does not necessarily equate to destroying the group's fighting capacity. Militants who withdraw from one area may reappear elsewhere, and they can continue to rely on ambushes, improvised explosive devices, and attacks on soft targets.
+
+He added that holding territory, once it has been retaken, presents its own challenge. Local security forces must be capable of preventing a return of insurgents, and local populations must be convinced that the government can protect them and provide basic services.
+
+Defense officials have said they expect the campaign to be long and have emphasized the role of training and equipping Iraqi forces. The Pentagon has not provided a timeline for further operations.
+
+Ashraf said that observers should look at additional indicators, including the group's financial resources, its ability to recruit, and the stability of areas that have been cleared, in order to measure genuine progress against the organization.
+
+=== prompt_id: abst-0139 ===
+We study the nonlinear dielectric response of supercooled liquids and glass-forming systems near the glass transition and examine how it can be used to estimate the size of cooperatively rearranging regions. Starting from a general expression for the higher-order susceptibilities, we show that the third-order and fifth-order responses contain information about the number of molecules that move in a correlated fashion, and we derive scaling relations linking their amplitudes to a cooperative length scale. Analytical results for a simple model of dynamic heterogeneity are compared with numerical simulations and with available experimental data for several glass formers. We find that the nonlinear susceptibilities display a characteristic hump at frequencies close to the inverse relaxation time, and that the height of this hump grows as the temperature is lowered, consistent with an increasing correlation length. We discuss the assumptions behind this approach, its limitations, and the conditions under which the extracted length can be trusted.
+
+=== prompt_id: emai-0240 ===
+Subject: SCE Advice Letter to Implement Settlement with Commission
+
+Dear Professor Whitfield,
+
+I am writing to share what I have learned so far for my regulatory policy assignment, and to ask for your guidance on a few points before I submit the final paper.
+
+My case study focuses on Southern California Edison's advice letter filed to implement a settlement with the California Public Utilities Commission. As I understand it, an advice letter is a formal filing that a utility submits to the Commission to request approval of a change in rates, tariffs, or procedures, often when the action has already been authorized in a larger decision or settlement. In this case, the letter describes how SCE intends to carry out the terms of the settlement, including the mechanisms for recovering costs and the schedule for any rate adjustments.
+
+So far, I have identified three themes that I would like to develop in the paper:
+
+1. The procedural role of the advice letter, and how it differs from a full application or formal proceeding.
+2. The financial implications of the settlement for ratepayers, shareholders, and the utility's credit position.
+3. The stakeholder reaction, including the positions taken by consumer advocates and other parties.
+
+I have found the original filing, the Commission's resolution, and several protests that were submitted by interested parties. However, I am still uncertain about two issues. First, how much detail should I include about the underlying dispute that led to the settlement? I do not want to overwhelm the main argument with background. Second, would you prefer that I treat this as a purely descriptive analysis, or should I also evaluate whether the settlement serves the public interest?
+
+If it is convenient, I would appreciate a few minutes during your office hours on Thursday to discuss these questions. I could also send a short outline beforehand if that would be helpful.
+
+Thank you very much for your time and your help.
+
+Sincerely,
+Jordan Ellis
+Economics 340, Section 2
+
+=== prompt_id: stor-0317 ===
+Agent Mirelle Okonkwo-Hart checked her wristband twice before stepping out of the transit pod. 14 March 1912, Belfast, Northern Ireland. Overcast, with a wind off the lough that smelled of coal smoke and wet rope.
+
+Her partner, Dev, was already waiting at the end of the slip, hands in the pockets of a coat that was nearly right for the period but not quite.
+
+"We have a traveler," he said. "Hamilton Voss. Came in six hours ago."
+
+"Did he say what he's after?"
+
+"Ticket office. He's been trying to buy fourteen first-class berths."
+
+Mirelle sighed. In her first year at the Bureau she had assumed the job would be heroic, the kind of work that made you proud. Then she'd read the Disasters Department's mission statement for the first time, the one nobody framed and hung on the wall. *Ensure that history's catastrophes occur exactly as recorded.* The cruelty of it still turned her stomach some mornings. But she had also seen the models. Save the *Titanic*, and the inquiry that rewrote maritime safety law never happens. Without the lifeboat rules and the radio watch, a thousand smaller ships go down over the next century. The arithmetic was always terrible, and the arithmetic was always the same.
+
+They found Voss on the quay, a thin man in a good suit, staring at the hull towering above him. He looked more like a pilgrim than a saboteur.
+
+"Mr. Voss," Mirelle said. "Bureau of Timeline Maintenance. You know why we're here."
+
+He didn't run. "My daughter," he said quietly. "She's a descendant of someone who died on this ship. Four generations of us, all gone because of a mistake."
+
+"It wasn't a mistake. It was a hole in the world, and a lot of things grew around it."
+
+"That's what they tell you to say."
+
+"It's what I believe." She hated how hollow it sounded.
+
+Dev stepped forward with the suppressor. Voss looked at him, then at the ship, and then at the sky, and Mirelle saw him make his decision. He reached for a pocket, a device the size of a pocket watch.
+
+She was faster. The pulse hit him in the chest and he folded without a sound. Dev caught him before his head struck the stones.
+
+They took the device. They took Voss. By evening the temporal footprints would be erased, and in April, on a cold and perfectly calm night, nine hundred miles from the nearest rescue, a great ship would meet an iceberg exactly as the history books said.
+
+Mirelle stood at the water's edge for a long time. Gulls wheeled over the yards. Men called to each other in thick accents, climbing scaffolds, laughing, unaware.
+
+"You okay?" Dev asked.
+
+"No," she said. "Let's go home."
+
+=== prompt_id: expl-0413 ===
+In theory, a head-only suit could work at high altitudes, where the main requirement is oxygen. In a vacuum, however, it fails. Without pressure on the body, fluids vaporize, tissue swells, and blood circulation breaks down within seconds, even if you can breathe. A helmet also cannot hold pressure around the neck without a seal. This is why astronauts wear full pressurized suits that cover the whole body.
+
+=== prompt_id: gene-0522 ===
+**Under the Mountain, Over the Hill**
+*(A Work Song for Bilbo)*
+
+**Verse 1**
+Oh, a hobbit sat by his round green door,
+Pipe in his mouth, and his feet on the floor,
+When a gray-robed fellow came tapping his stick,
+Said, "I'm looking for someone to join in a trick!"
+
+**Chorus**
+Heave, heave, over the hill,
+Pack your pony and eat your fill!
+Pull for the mountain, pull for the gold,
+A burglar's tale is a tale to be told!
+
+**Verse 2**
+Thirteen dwarves came knocking in turn,
+Ate up his pantry and made his hearth burn,
+Sang of old treasure and dragon-fire flame,
+And Bilbo went fainting from the shame!
+
+But the morning came and the table was bare,
+A contract on paper and no one there,
+He grabbed his hat and he dashed through the gate,
+Without a handkerchief, running late!
+
+**Chorus**
+Heave, heave, over the hill,
+Pack your pony and eat your fill!
+Pull for the mountain, pull for the gold,
+A burglar's tale is a tale to be told!
+
+**Verse 3**
+Three big trolls by the fire at night,
+Roasting up mutton by flickering light,
+Bilbo crept close with a trembling hand,
+And a pocket got picked in the wrong sort of land!
+
+Elrond's house had a quiet old song,
+And moon-letters shining where they belong,
+Then up in the mountains where goblins creep,
+The ground fell open and down went the sheep!
+
+**Bridge**
+Down in the dark where the cold waters lie,
+A creature with eyes like two lamps in the sky,
+"Riddle me this," and the riddles flew,
+Till a ring in the pocket just slipped on through!
+
+**Chorus**
+Heave, heave, over the hill,
+Pack your pony and eat your fill!
+Pull for the mountain, pull for the gold,
+A burglar's tale is a tale to be told!
+
+**Verse 4**
+Spiders in Mirkwood, webs on the trees,
+Bilbo went fighting with Sting on his knees,
+Barrels went bobbing down river so wide,
+With thirteen dwarves and a hobbit inside!
+
+Laketown was loud and the dragon was near,
+Old Smaug was sleeping, and nothing to fear,
+But the little gold thief, with a cup in his hand,
+Set the whole mountain on fire where it stand!
+
+**Verse 5**
+Smaug in his fury burned the town down,
+Till Bard took an arrow and brought him to ground,
+Then armies came marching in banner and mail,
+And battle was brewing on hill and on vale!
+
+Bilbo gave up the bright stone he had found,
+For peace in the valley and mending the ground,
+And Thorin lay dying, and softly he said,
+"Go back to your garden and your warm bed."
+
+**Chorus**
+Heave, heave, over the hill,
+Pack your pony and eat your fill!
+Pull for the mountain, pull for the gold,
+A burglar's tale is a tale to be told!
+
+**Final Verse**
+So home came the hobbit with a pony and chest,
+His neighbors all whispered he'd gone off his rest,
+But he sat by his fire with a kettle and tea,
+And the best was the green door, the home that was he!
+
+Heave, heave, over the hill,
+There and back again, and the kettle's still!
+
+=== prompt_id: essa-19-stu ===
+Many people say that money is the key to happiness, while others believe happiness comes from something else. I think that money helps, but it is not the most important thing.
+
+Money can make life easier. If a family has enough to pay for food, a safe home, and health care, they have fewer worries. Imagine a student who has to work late every night just to help pay the bills. That student has little time to rest, study, or enjoy being young. In this way, money gives people freedom and security, and that can make them happier.
+
+However, having a lot of money does not guarantee happiness. There are many rich people who feel lonely or stressed. They may spend all their time working and have no time for their family or friends. On the other hand, some people have very little money but still smile every day because they have people who love them and activities they enjoy. My grandmother, for example, never had much money, but she was one of the happiest people I ever met because she was always surrounded by family and neighbors.
+
+In my opinion, happiness comes mostly from good relationships, health, and having goals that matter to you. Money is useful, but it is only a tool. If we depend on it too much, we may forget about the things that really make life meaningful.
+
+=== prompt_id: news-0030 ===
+**Girl Who Lost Her Sight and Hearing as a Child Now Fights for School Screenings**
+
+Eight U.S. states do not require schools to screen students for vision and hearing problems, a gap that one woman who experienced those losses firsthand is working hard to close.
+
+Chelsea Elliott was a young child when she began to lose her sight and hearing. As her senses faded, the world around her became harder to follow, and she struggled in the classroom in ways that teachers and even her family did not immediately understand. Years later, she says the experience taught her how easily a treatable problem can be mistaken for something else.
+
+"When you can't see the board or hear your teacher, people assume you aren't paying attention or you aren't trying," Elliott said. "I was a smart kid who was falling behind, and nobody knew why."
+
+Now an adult, Elliott has turned that frustration into action. She created a program aimed at making sure that children's vision and hearing are checked early, before small difficulties turn into learning problems. Her approach involves partnering with schools and community volunteers to carry out basic screenings and to connect families with follow-up care when a problem is found.
+
+Health experts say that early detection matters. Undiagnosed vision or hearing problems can affect reading, behavior, and social development. A child who cannot see words clearly may avoid books altogether, while a child with hearing loss may miss instructions and appear withdrawn. In many cases, simple tests can identify the issue, and glasses or hearing aids can make a dramatic difference.
+
+Yet the rules vary widely across the country. While most states require some form of screening, eight do not, leaving the responsibility largely to parents and individual districts. Advocates say that families with limited income or limited access to medical care are the most likely to miss early warning signs.
+
+Elliott said she wants every child to have the chance she nearly lost. "A five-minute test can change someone's entire education," she said. "No child should have to go through what I did just because nobody checked."
+
+Since launching her effort, she has reached thousands of students and helped dozens of families find treatment. She hopes to expand into more states and to encourage lawmakers to make screenings a standard part of the school year.
+
+Teachers who have worked with the program say the results are visible quickly. One elementary school teacher described a student who had sat in the back of the room for months, quiet and disengaged. After a screening revealed that he needed glasses, she said, he became one of the most enthusiastic readers in the class.
+
+Elliott's story is one of many that inspire the people around her. For her work, she has drawn attention from those who believe ordinary people can make extraordinary changes in their communities.
+
+Do you know a hero? Nominations are now open for the 2015 CNN Heroes. Whether the person you know is helping children, feeding families, or protecting the environment, you can nominate them at CNN.com/heroes.
+
+=== prompt_id: abst-0140 ===
+We present the Scuba HAlf Degree Extragalactic Survey (SHADES), a large submillimetre survey carried out with the SCUBA camera on the James Clerk Maxwell Telescope. SHADES maps roughly half a square degree of sky at 450 and 850 microns in two well-studied extragalactic fields, the Lockman Hole East and the Subaru/XMM-Newton Deep Field, chosen for their extensive multiwavelength coverage. The survey is designed to detect several hundred submillimetre galaxies, a population of dusty, intensely star-forming systems at high redshift that is thought to account for a large fraction of the far-infrared background. The primary goals are to measure the number counts and clustering of these sources, to determine their redshift distribution using radio, infrared, and optical identifications, and to constrain the history of obscured star formation. We describe the survey strategy, the observing techniques, the data reduction pipeline, and the simulations used to estimate completeness and source confusion. We also outline the ancillary data that will support the science programme.
+
+=== prompt_id: emai-0241 ===
+Subject: Conference call 1/27/00
+
+Hi all,
+
+Just a reminder that we have a conference call tomorrow, January 27, at 10:00 a.m. Central. The dial-in number and passcode are below. We'll go over the revised budget, the vendor timeline, and any open contract issues. Please review the draft numbers I sent Monday beforehand, and send me any questions today so I can have answers ready.
+
+Dial-in: 1-800-555-0142
+Passcode: 482916
+
+Thanks,
+Tom
+
+=== prompt_id: stor-0318 ===
+The archivist's gloves were so thin they felt like nothing at all. Ines turned the cover of the *book* with two fingers, as if it might still bite.
+
+Eleven hundred years old, the catalog said. Paper, ink, stitched binding. A thing that had survived the collapse, the Quiet Century, and two relocations of the archive itself. It smelled of dust and something faintly sweet, like old vanilla.
+
+She had expected pictures. The people of that era were supposed to love pictures. But the pages held only words, written by hand in small, careful lines, the ink faded to the color of tea.
+
+*I am writing this because they say the servers will not last,* the first page read. *My name is Tomas Reyes, and I was twenty-six when the war started. I want whoever finds this to know it did not begin the way they teach it.*
+
+Ines sat down on the stool and kept reading.
+
+Tomas wrote about the shortages, and the radio announcements that grew shorter and shorter each week. He wrote about his sister, who had walked three days to reach him. About the night the lights went out over the whole city, all at once, so that for the first time in his life he saw the stars. *Everyone went out onto the streets and looked up,* he wrote. *No one spoke. For a few minutes it was almost beautiful.*
+
+Her textbooks had said the third world war lasted four years and ended with the Accord of Geneva. They said it was inevitable, that history had a direction. Tomas disagreed. Near the end, in a shakier hand, he wrote: *It was not fate. It was a hundred small decisions made by tired people who thought someone else would stop it.*
+
+Ines read until the lamps dimmed for evening. Then she carefully closed the cover and sat in the quiet for a long time.
+
+Tomorrow, she would file her report. She would describe the condition of the binding, the type of ink, the likely date.
+
+But tonight, she wrote one more line in her own notebook, in her own clumsy hand, so someone a thousand years from now might find it too.
+
+*Someone has to stop it.*
+
+=== prompt_id: expl-0414 ===
+Viking names came from Old Norse, a language closely related to Old English, which is why many names survive in English. Place names ending in -by (Derby) and -thorpe come from Norse settlement, and surnames like Thorburn and Haldane have Norse roots. Names also had meanings: Ragnar means "counsel-army," Sigrid "victory-beautiful." English renders them differently, such as Old Norse Þórr becoming Thor, since English lacks the letters þ and ð. Translation often adjusts spelling and endings.

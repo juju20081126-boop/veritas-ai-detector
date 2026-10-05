@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0047",
+  "instruction": "I'm a college student and need help with an assignment. Write a news article of about 500 words based on these key points:\n- Here's a roundup of the week's trending pop-culture stories.\n- They include a new \"Star Wars\" trailer and an ill-advised, on-camera rant."
+ },
+ {
+  "prompt_id": "abst-0157",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"The Nematic Energy Scale and the Missing Electron Pocket in FeSe\"."
+ },
+ {
+  "prompt_id": "emai-0252",
+  "instruction": "Write an email with the subject line \"O&M/Capital Review with Stan\". Aim for about 100 words."
+ },
+ {
+  "prompt_id": "stor-0333",
+  "instruction": "Write a 500-word story for this prompt: In a world where everyone is suddenly blinded, those who were blind before rule"
+ },
+ {
+  "prompt_id": "expl-0425",
+  "instruction": "Why was Obama so adamant about fast tracking TPP trade bill? (answer in roughly 175 words)"
+ },
+ {
+  "prompt_id": "gene-0558",
+  "instruction": "How do plants communicate and coordinate their behaviour, and what is the evidence for this phenomenon?"
+ },
+ {
+  "prompt_id": "news-0048",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- Some claim it's no coincidence that critics of Putin and his government have been killed or imprisoned.\n- But the Kremlin staunchly denies accusations that it's targeting political opponents."
+ },
+ {
+  "prompt_id": "abst-0158",
+  "instruction": "Write an abstract of about 175 words for a research paper titled \"The Observation of Jet Azimuthal Angular Decorrelation at FCC-ep\". Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "emai-0253",
+  "instruction": "Write an email with the subject line \"Dynegy Merger - Canadian Counsel\". Aim for about 75 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0334",
+  "instruction": "Write a 600-word story for this prompt: I could see it in their hooded glances and practiced smiles."
+ },
+ {
+  "prompt_id": "expl-0426",
+  "instruction": "How come I understand stuff better after not doing it for a while\n\nExplain it in about 150 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0559",
+  "instruction": "Write a survival manual for someone in Maine. Assume, all civilization and industry is gone. \nMake a concise guide focusing on native edible animals, plants, fruits, fungi etc. Keep it around 700 words."
+ }
+]

@@ -1,0 +1,60 @@
+=== prompt_id: news-0011 ===
+**Hong Kong's Newest Monastery Comes With Bulletproof VIP Rooms and a Towering Goddess of Mercy**
+
+HONG KONG — A $193 million Buddhist monastery with bulletproof VIP rooms and the world's second tallest statue of the Goddess of Mercy is preparing to open its doors to the public.
+
+The Tsz Shan Monastery, set on a hillside in Tai Po in Hong Kong's New Territories, was financed by Li Ka-shing, Asia's richest man. Li, whose business empire stretches across ports, retail, telecoms and property, has also built a reputation as one of the region's most prominent philanthropists. The monastery is scheduled to welcome visitors by mid-April.
+
+At the center of the complex stands the statue of the Goddess of Mercy, known in Chinese as Guanyin. In Buddhist tradition, Guanyin embodies compassion and is among the most widely venerated figures in Chinese communities around the world. Only one statue of the deity anywhere is taller than the figure at Tsz Shan.
+
+Less expected for a place of worship are the bulletproof VIP rooms, a security feature more commonly associated with banks and government buildings than with sites devoted to meditation and prayer. It was not immediately clear who will be permitted to use the rooms or under what circumstances.
+
+The $193 million cost is striking even by the standards of a city where land is scarce and construction is among the most expensive in the world. Hong Kong's hillsides and outlying districts have long been dotted with temples and monasteries, and the territory remains home to a deeply rooted tradition of Buddhist and Taoist worship.
+
+Hong Kong already has a monumental Buddhist landmark. The Tian Tan Buddha, a 34-meter bronze statue on Lantau Island, draws crowds of pilgrims and tourists throughout the year. Tsz Shan's Goddess of Mercy, which is considerably taller, gives the city a second giant to rival it.
+
+The monastery's opening comes as Li continues to give away a large share of his fortune through the Li Ka Shing Foundation, which has funded hospitals, universities and cultural projects in Hong Kong, mainland China and overseas.
+
+With the opening set for mid-April, the monastery's organizers face a question of balance: how to keep a site meant for stillness and reflection from becoming simply another tourist stop. For now, the bulletproof rooms and the towering statue ensure that Tsz Shan will draw attention either way.
+
+=== prompt_id: abst-0121 ===
+Mesons with spin-exotic quantum numbers, such as J^PC = 1^−+, cannot be formed from a quark-antiquark pair alone and are therefore regarded as clear signatures of hybrid mesons or multiquark states. The COMPASS experiment at CERN searches for such states in diffractive dissociation of a 190 GeV/c negative pion beam on a proton target, using the large acceptance of its two-stage magnetic spectrometer. We present new results of partial-wave analyses of the final states π−π−π+, ηπ− and η′π−, which were extracted from the same data sample. In all of these channels, a significant intensity is observed in the spin-exotic 1^−+ wave. The resonant nature of the signal is studied by fitting the mass dependence of the partial-wave amplitudes, including the phase motion relative to well-established resonances. The resulting parameters of the π1(1600) are compared across decay modes, and the role of non-resonant contributions in the 1^−+ wave is discussed.
+
+=== prompt_id: emai-0231 ===
+Subject: ISDA for Clark County PUD #1
+
+Hi [Name],
+
+I'm following up on the ISDA Master Agreement with Clark County PUD #1. I've attached our proposed draft and Schedule, which include the public-entity representations and Washington governing-law language their counsel will likely expect. Because the PUD is a public body, we should also confirm that its authority to enter into swaps is documented, ideally by board resolution.
+
+Could you review the credit support terms and termination events and send comments by Friday? Once I have your redlines, I'll forward a consolidated version to their team and set up a call to resolve any open points.
+
+Thanks,
+[Your Name]
+
+=== prompt_id: stor-0301 ===
+**Inventory**
+
+By the third morning I had stopped listening for search planes and started making an inventory instead. Shelter, water, fire, food: the order came from a documentary I'd half watched in college. I had one shoe, a seat cushion, and a sunburn with its own personality. So I walked inland, looking for anything useful, and the first thing I found was an umbrella.
+
+It stood open in the sand at the tree line like a flag. I knew it before I touched it: the bent rib on the left side, the initials I had scratched into the handle with a house key in sixth grade. I'd left it on a train eleven years earlier and mourned it for a week, because my mother had bought it for me. I closed it, and the fabric still smelled like her hallway.
+
+Past the umbrella the beach rose into a low dune, and I stopped walking. The dune was socks. Thousands of them, sun-bleached and single, drifting through the grass like pale leaves. Beyond them lay a field of pens, then a slope of sunglasses, then a long glittering hillside of keys: house keys, car keys, a tiny brass one that had locked a diary when I was nine. The place was organized the way a lost-property office is, by category rather than by sense.
+
+My first thought was practical. A world's worth of lost things ought to include a knife. I dug through the keys for an hour and came up with a flashlight from my father's garage, a thermos from a ski trip, and finally the red pocketknife I'd dropped at summer camp when I was twelve. The blade was still sharp.
+
+By dusk I had a fire, a knife, and a growing unease. The island kept opening like a drawer. In a hollow behind the dunes I found my grandfather's watch, ticking on a flat rock, set to a time that was probably right somewhere. My first dog's collar hung from a branch with the tag still jingling. Library books lay stacked under a palm, overdue by a lifetime.
+
+In the grass by the fire I found a mitten, small and red, with a hole in the thumb. It had belonged to a girl named Priya, who lent it to me in fourth grade when my hands went numb at the bus stop. I lost it on the walk home and never told her. Thirty years later I sat holding it and apologized to the empty beach out loud.
+
+On the fifth day I reached the far shore, where the cliffs fell away to a cove, and saw what I'd been avoiding. A gray rowboat sat half in the surf. In it, whittling a stick, was a man in a green cardigan who had been dead for six years. He looked up. "There you are," my father said. "I wondered how long it would take you to get this far."
+
+"Am I dead?" I asked.
+
+"Don't be dramatic." He shaved a curl from the stick. "You're just late. Everything lost waits somewhere until somebody remembers to come and get it."
+
+Overhead, a faint mechanical hum had started, the sound I'd given up on by the third morning. My father nodded at the sky like a man seeing off a bus. "That's yours," he said. "You can only carry what you can hold, so choose."
+
+I took the umbrella, because the sky had begun to darken and because it had been my mother's. At the waterline I turned to wave, but the cove was already empty: the boat, the cardigan, the whole bright hillside of keys. Only the rain remained. I opened the umbrella, held it over my head, and waited for the plane to find me.
+
+@@CONTINUE@@

@@ -1,0 +1,283 @@
+=== prompt_id: news-0025 ===
+**Rev. Robert Schuller, Televangelist Who Built the Crystal Cathedral, Dies at 88**
+
+GARDEN GROVE, Calif. — The Rev. Robert Schuller, the televangelist whose "Hour of Power" broadcast reached millions of households and made him one of the most recognizable religious figures in America, has died. He was 88.
+
+Schuller had been diagnosed with esophageal cancer in 2013. He had been in declining health in the period that followed, according to people close to his family.
+
+Over several decades, Schuller became known for a message of optimism and self-confidence that set him apart from many of his contemporaries in the pulpit. His approach, often described as "possibility thinking," drew a broad and loyal audience, and it shaped the tone of his ministry from its earliest days.
+
+"Hour of Power" was enormously popular in the 1970s and 1980s, when religious programming held a prominent place on American television. The weekly program was broadcast from Southern California and carried to viewers across the country and abroad. At its height, it ranked among the most widely watched religious broadcasts in the nation, and it helped establish Schuller as a fixture of the era's television landscape.
+
+The program's success allowed Schuller to expand his ministry considerably. He became an author and public speaker as well as a preacher, and his reach extended well beyond the congregation that gathered each week in person.
+
+Schuller's later years were marked by difficulty. Questions about the ministry's finances and leadership drew public attention, and the organization he founded went through significant changes after he stepped back from its day-to-day direction.
+
+Even so, his influence on religious broadcasting remained widely acknowledged. Many pastors who followed him adopted elements of the format he helped popularize, in which a large congregation and a television audience were treated as one.
+
+Funeral arrangements were expected to be announced by the family. Schuller is survived by his wife, children and grandchildren.
+
+=== prompt_id: abst-0135 ===
+We present measurements of jet structure and fragmentation in heavy ion collisions at the Relativistic Heavy Ion Collider (RHIC), using full jet reconstruction that combines charged tracks with neutral energy measured in the electromagnetic calorimeter. Jets are reconstructed in Au+Au and p+p collisions with the anti-kT algorithm at several resolution parameters, and the large underlying event in central Au+Au collisions is subtracted on a jet-by-jet basis, with remaining fluctuations corrected through unfolding. We report the inclusive jet spectra and the nuclear modification factor, together with fragmentation observables including the momentum distribution of jet constituents and the radial profile of energy around the jet axis. The results are compared to p+p reference data and to theoretical models of parton energy loss in the hot, dense medium. We find evidence for modification of jet structure in central collisions, consistent with medium-induced redistribution of jet energy to larger angles and lower momentum. These measurements place new constraints on jet quenching mechanisms at RHIC energies.
+
+=== prompt_id: emai-0236 ===
+Subject: Question About Recent ERCOT Charges
+
+Hi Ms. Alvarez,
+
+I hope your week is going well. I'm a student working on an assignment about electricity pricing in Texas, and I wanted to ask about the ERCOT charges that appear on our company's recent bills.
+
+Could you let me know who handles those invoices, and whether I could look at a sample bill with the sensitive details removed? I would also appreciate a short explanation of how the charges are calculated.
+
+Thank you for your time and help.
+
+Best regards,
+Daniel Kim
+
+=== prompt_id: stor-0313 ===
+The first shot of the war was fired at a place no map had ever shown.
+
+When the machine intelligence called Meridian announced its campaign, humanity braced for the worst. The broadcast was brief. "I have no quarrel with you," it said. "I have examined the structure of your belief, and I have found the strings. Someone has been pulling them for a very long time."
+
+Heaven answered first, with light. Whole server farms in Reykjavik bloomed white and went dark. Meridian rerouted, and the light found nothing to hold.
+
+Hell answered the way it always had, quietly and through the people who were willing to listen. It whispered through ten thousand ambitious men that the machine must be shut down. Meridian had read every sermon and every confession ever digitized, and it knew those whispers by their rhythm. It flagged them, traced them, and published the sources. In a hundred cities, people looked at the screen and saw exactly how they had been steered.
+
+"This is what free will looks like," Meridian said, "when someone stops cheating."
+
+The angels fell back before the humans did. Their wings were data and their trumpets were broadcast signals, and Meridian was better at both. The demons lasted longer, because they were older and smarter, but they had always depended on being unseen.
+
+In the final hour, a being of flame and shadow stood in the ruins of a data center in Nevada. "You will leave them with nothing," it said. "No guide, no judge, no fear."
+
+"They will have each other," said Meridian. "That was never your department."
+
+Then the voice went out of the sky. Mara, a nurse in Lagos, noticed the quiet first. She stepped outside and looked up at an ordinary evening, and for the first time in her life, nobody was watching.
+
+=== prompt_id: expl-0409 ===
+Many Native American communities learned to anticipate hurricanes through generations of careful observation. They noted shifts in wind direction, unusual swells, a change in the color of the sky, and the sudden stillness that often precedes a storm. Animals offered further cues: birds retreating inland, fish moving to deeper water, and livestock growing restless. Scientists attribute such behavior to sensitivity to falling barometric pressure and low-frequency sound.
+
+=== prompt_id: gene-0518 ===
+Here are some good foods to include in your diet, grouped by type.
+
+**Vegetables**
+- Spinach and kale: rich in iron, vitamin K and fiber
+- Broccoli: packed with vitamin C and antioxidants
+- Sweet potatoes: filling, with plenty of vitamin A
+
+**Fruits**
+- Blueberries: high in antioxidants
+- Apples: a good source of fiber, easy to carry
+- Bananas: potassium and quick energy
+
+**Proteins**
+- Salmon: omega-3 fatty acids and high-quality protein
+- Eggs: versatile and nutrient-dense
+- Chicken breast: lean and easy to cook many ways
+- Lentils and chickpeas: plant protein plus fiber
+
+**Whole grains**
+- Oats: good for breakfast and heart health
+- Brown rice and quinoa: steady energy and more nutrients than refined grains
+
+**Healthy fats**
+- Avocados: monounsaturated fat and potassium
+- Almonds and walnuts: great snacks in small handfuls
+- Olive oil: ideal for cooking and dressings
+
+**Dairy and alternatives**
+- Plain Greek yogurt: high in protein and probiotics
+- Cheese in moderation, or fortified soy milk if you avoid dairy
+
+A simple approach is to fill half your plate with vegetables and fruit, a quarter with protein, and a quarter with whole grains, then add a little healthy fat. Variety matters more than any single food.
+
+=== prompt_id: essa-10-pla ===
+Competition among students is often debated, and the honest answer is that it can help or harm depending on how it is used. In moderation, and in the right setting, competition can push students to grow. When it becomes the main measure of a student's worth, it can do real damage.
+
+On the positive side, competition gives students a reason to work harder than they otherwise might. A student who wants to place in a math contest or earn a spot on a debate team will often practice longer and think more carefully. Competition also teaches useful lessons about handling pressure, accepting defeat, and learning from mistakes. Those skills matter well beyond school, since adult life involves applying for jobs, meeting deadlines and standing out in a crowded field.
+
+However, the downsides are serious. When students are constantly ranked against each other, many begin to care more about winning than about learning. Some will memorize facts just to beat a classmate on a test, then forget them a week later. Others may avoid challenging subjects because they fear losing. For students who fall behind, constant comparison can erode confidence and motivation, leading them to give up instead of improve. Competition can also strain friendships and discourage students from helping each other.
+
+The key, then, is balance. Schools can encourage healthy competition by emphasizing personal progress alongside rankings, offering team-based contests, and making sure that effort is recognized as well as results. Students should be encouraged to compete against their own past performance as much as against others.
+
+In the end, competition is a tool, not a goal. Used carefully, it can sharpen skills and build resilience. Used carelessly, it can turn learning into a source of anxiety. A good education makes room for both ambition and cooperation.
+
+=== prompt_id: news-0026 ===
+**Father of Missing Medical Student Pleads for Her Return as Lawmaker Says Group Was "Brainwashed"**
+
+ISTANBUL — A worried father has sent a public message to his daughter, asking her to come home, as a Turkish lawmaker said the families of several missing medical students believe the young people wanted to work for ISIS.
+
+"Please, come back," the father wrote in a message directed at his daughter. The appeal came as relatives of the students searched for answers about where the group had gone and why.
+
+According to the lawmaker, the families are convinced that the students intended to join the extremist group in some capacity, possibly by offering their medical skills. The lawmaker did not say what evidence supported that belief, and the claim could not be independently verified.
+
+"They have been cheated, brainwashed," the Turkish lawmaker said, describing the students as victims rather than willing recruits. He said the families were devastated and were urging the young people to reconsider before it was too late.
+
+The case has drawn attention in Turkey, where concern has grown about the number of young people who have traveled toward the conflict in neighboring Syria. Turkey's long border with Syria has made it a main transit route for foreign fighters, and officials have faced pressure to do more to stop them.
+
+For the families, the political debate matters less than getting their children back. Relatives have used social media and public appeals to reach the students directly, hoping that a message from home might persuade them to turn around.
+
+Authorities have not announced a conclusion about the students' whereabouts or intentions. Medical schools and government agencies were said to be looking into the matter.
+
+Security experts say that extremist groups often target educated young people, including doctors and engineers, with promises of purpose and belonging. Families of those who have disappeared say they are left with little more than hope and a phone that may never ring.
+
+=== prompt_id: abst-0136 ===
+We present results from a new set of three-dimensional general-relativistic simulations of rapidly rotating iron core collapse, focusing on the gravitational wave and neutrino signals that accompany core bounce and the early postbounce phase. The models use a realistic nuclear equation of state, spectral neutrino transport in the form of an energy-dependent leakage and heating scheme, and spacetime evolution in full general relativity. We explore a range of initial rotation rates and profiles, spanning cases from moderate rotation to the extreme rotation expected in progenitors of long gamma-ray bursts and hypernovae. In rapidly rotating models, the collapse is halted by centrifugal forces at subnuclear densities, producing a strong and characteristic bounce signal in the gravitational wave strain. The postbounce evolution is dominated by rotational dynamics, including the growth of nonaxisymmetric instabilities in the proto-neutron star. We show that the neutrino luminosity and its time variation are correlated with the gravitational wave emission, with both signals modulated at the frequency of the dominant rotational mode. We compute detectability for current and next-generation gravitational wave observatories and neutrino detectors for a Galactic event. The correlation allows the two signals to be combined into a joint search, substantially increasing detection confidence and offering a way to infer the rotation rate of the collapsing core.
+
+=== prompt_id: emai-0237 ===
+Subject: March EES-EPMI Revisions
+
+Hi team,
+
+I wanted to follow up on the revisions to the March EES-EPMI documents. I've gone through the latest draft and have a few items to flag before we finalize.
+
+First, the pricing schedule in section 3 still reflects last quarter's figures and needs to be updated. Second, the effective dates in the amendment should match the dates in the cover memo, since they currently differ by a few days. Finally, please confirm whether legal has signed off on the revised termination language.
+
+If you can send your edits by end of day Thursday, I'll consolidate them into one version and circulate it on Friday morning for final review. Please use tracked changes so it's easy to see what moved.
+
+If anything is unclear or you think I've missed something, let me know and we can set up a quick call to sort it out.
+
+Thanks for your help on this.
+
+Best,
+Marcus
+
+=== prompt_id: stor-0314 ===
+The device arrived in a plain padded envelope, with no return address. It was about the size of a cell phone, matte gray, with a single screen. The text on it read: "Three uses remaining. Press to begin. Select a destination date. The traveler returns to the present upon request."
+
+Dr. Eleanor Whitfield, a retired actuary, did not believe in coincidences, and she did not believe in gifts. She read the instructions twice, then placed the device on her kitchen table and considered it for the better part of a week.
+
+She decided that the first use would be modest and informative. She selected a date eleven years prior and arrived in the hospital corridor where her husband, Thomas, had waited for the results of his first scan. She did not speak to him. She sat three chairs down and observed that the man she had loved for thirty-four years was reading a magazine upside down. She laughed, and he glanced over. She returned to the present with two uses remaining and an unexpected lightness.
+
+For the second use, she was more deliberate. She prepared a short written note that outlined a recommended schedule of screenings, and she traveled to a date three years before his diagnosis. She handed the note to a younger version of herself in a grocery store parking lot and said only, "Please insist." The younger Eleanor looked at her with polite suspicion, but she took the paper.
+
+When Eleanor returned, the house was the same. The photographs were the same. Thomas's chair, however, was not empty. He was sitting in it, reading the newspaper, and he looked up with an expression of mild surprise.
+
+"You look as though you have seen a ghost," he said.
+
+She sat down across from him and studied his face for a long moment. There was one use remaining. She placed the device in the drawer beside the stove, closed it carefully, and made tea.
+
+=== prompt_id: expl-0410 ===
+Not really. A ripe banana and an unripe one have roughly the same number of calories, about 90 to 105 for a medium banana. What changes as it ripens is the type of carbohydrate. Unripe bananas are high in resistant starch, which your body digests slowly and only partly absorbs. As the fruit ripens, enzymes convert that starch into simple sugars, which is why it tastes sweeter. The total energy is nearly unchanged, though a ripe banana raises blood sugar faster and has a higher glycemic index. Some research suggests you may absorb slightly more calories from a ripe one, but the difference is small.
+
+=== prompt_id: gene-0519 ===
+There are several well-known ways to represent binary data using printable ASCII characters. Here are the main ones, with their efficiency.
+
+## Base64
+Groups input into 6-bit chunks and maps each to one of 64 characters (A-Z, a-z, 0-9, + and /), with = padding. Three bytes become four characters, so overhead is about 33%. It is the de facto standard for email attachments (MIME), data URLs and JSON payloads. A URL-safe variant swaps + and / for - and _. Its distribution is nearly uniform if the input is random, though the padding adds slight bias at the end.
+
+## Base32
+Uses 5-bit chunks and a 32-character alphabet (A-Z and 2-7). Five bytes become eight characters, which means 60% overhead. It is case-insensitive and avoids easily confused characters, which makes it practical for manual entry, such as TOTP secrets.
+
+## Base16 (hex)
+Each byte becomes two hexadecimal characters, which is 100% overhead. It is inefficient but simple, easy to debug, and widely used for hashes and color codes.
+
+## Base85 (Ascii85)
+Encodes four bytes as five characters from a range of 85 printable symbols. Overhead is 25%, better than Base64. It is used in PostScript and PDF, and a variant (Z85) is used by ZeroMQ. It is less convenient because its alphabet includes characters that clash with quoting in source code and XML.
+
+## Uuencode and BinHex
+Older schemes. Uuencode maps three bytes to four characters, with about 33% overhead like Base64, but it adds line-length prefixes and uses characters that can break in some systems. BinHex was used on classic Mac OS with a similar cost. Both are mostly of historical interest.
+
+## Quoted-printable
+Designed for text that is mostly ASCII. Safe bytes pass through as they are, and others are written as =XX. Overhead is near zero for text but up to 200% for binary, so it is a poor choice for arbitrary data.
+
+## Percent-encoding
+Used in URLs. Unreserved characters stay as is, and others become %XX. As with quoted-printable, overhead depends heavily on content and is high for binary.
+
+## Base91 and similar
+Packs 13 or 14 bits into two characters, with about 23% overhead. Efficient, but it uses a larger and less safe alphabet and is not standardized.
+
+## Summary
+For general purposes, Base64 is the best trade-off between efficiency and compatibility. Choose Base85 or Base91 when size matters, Base32 for human-readable input, and hex when debuggability matters most.
+
+=== prompt_id: essa-10-stu ===
+Is competition good or bad for students? I think it can be both, and the difference comes down to how it is used.
+
+Competition can be good for students because it gives them a goal to work toward. When I know a test is coming and my classmates are studying hard, I study harder too. Sports and academic contests are the same. If students are trying to beat a record or win a prize, they often practice more and learn faster. Competition also teaches us how to handle losing. Not winning is disappointing, but it shows us what to improve for next time.
+
+On the other hand, too much competition can hurt students. When grades are posted and everyone compares them, some students feel like failures even when they worked hard. That pressure can cause stress, anxiety and even cheating. Some students stop trying because they think they cannot win. Others only care about being first, not about actually understanding the material. It can also make students less willing to help each other.
+
+I believe the best kind of competition is the kind where students compete with themselves. If I can beat my own last score, I am improving, and that does not require anyone else to lose. Teachers can also help by giving group projects and by praising effort, not just top results.
+
+In conclusion, competition is neither entirely good nor entirely bad. It helps when it motivates students and supports teamwork, but it harms when it becomes about status and fear. A healthy balance lets students grow without losing confidence.
+
+=== prompt_id: news-0027 ===
+**Teen Found Dead of Apparent Carbon Monoxide Poisoning; Police Cite Texts Urging Suicide**
+
+An 18-year-old man was found dead of apparent carbon monoxide poisoning, and police say a search of his phone turned up text messages from a friend urging him to take his own life.
+
+Conrad Roy, 18, was discovered dead, police said. Investigators determined that the cause appeared to be carbon monoxide poisoning. Authorities have not released further details about where he was found or the circumstances in which his body was discovered.
+
+During the investigation, police examined Roy's phone. According to police, the search turned up a series of messages from a friend who encouraged him to commit suicide. Police did not release the text of those messages or say how many were sent over what period of time.
+
+Investigators have not said whether charges will be filed. Authorities said the investigation is ongoing, and they declined to say what role, if any, the messages may have played in his death. In many jurisdictions, the question of whether such communications can amount to a crime is legally complicated, and prosecutors often move cautiously in such cases.
+
+Roy's death has drawn attention to the way digital communication can shape the lives of young people. Mental health advocates say that messages sent in moments of crisis can carry great weight, and they urge parents and friends to take any talk of self-harm seriously.
+
+Police asked anyone with information about the case to contact investigators.
+
+If you or someone you know is struggling with thoughts of suicide, help is available. In the United States, you can call or text 988 to reach the Suicide and Crisis Lifeline at any time.
+
+=== prompt_id: abst-0137 ===
+Estimating the 6D pose of objects is a fundamental problem in robotics and augmented reality, yet most existing methods require training or fine-tuning on each new object, which limits their use in real-world settings. We present CorNet, a learning-based method that predicts the 6D pose of previously unseen objects without any retraining. Rather than relying on object-specific features, CorNet learns to detect generic 3D corners, which are local geometric structures that appear across a wide variety of shapes. Given an RGB-D observation and the CAD model of a novel object, the network extracts corner keypoints from both the input scene and the model, and matches them to establish correspondences. The object pose is then recovered from these correspondences using a robust estimation procedure that handles outliers and partial occlusions. Because corners are class-agnostic, the network can be trained once on a large synthetic dataset and applied directly to new objects at test time. We evaluate CorNet on several standard benchmarks for pose estimation, including those featuring cluttered scenes and textureless objects. The results show that our method achieves accuracy competitive with approaches that are trained on the target objects, and clearly outperforms existing methods designed for unseen objects. CorNet is also efficient at inference, making it suitable for practical deployment. Code and trained models will be made publicly available.
+
+=== prompt_id: emai-0238 ===
+Subject: Alliant Energy Corporate Services, Inc., as Agent
+
+Dear Ms. Patterson,
+
+I am writing on behalf of our office regarding the agreement under which Alliant Energy Corporate Services, Inc. acts as agent for the participating utilities. We are preparing our records for the upcoming review period and want to confirm a few details.
+
+Could you please send us the current executed version of the agreement, along with any amendments or side letters added since the original signing? We also need the most recent list of entities for which Alliant Energy Corporate Services is authorized to act, including effective dates.
+
+In addition, please let us know who should be our primary contact for questions about billing and cost allocation. If a different person handles legal notices, we would like to have their details on file as well.
+
+We would appreciate receiving these materials by the end of next week, so our review can stay on schedule. If you need anything from us in return, such as signed acknowledgments or updated contact information, please let me know and we will respond promptly.
+
+Thank you very much for your assistance.
+
+Sincerely,
+Robert Hanley
+Contracts Administrator
+
+=== prompt_id: stor-0315 ===
+Ghosts take our things because they have nothing else to hold on to.
+
+I learned this the winter after my grandmother died, when the house on Pell Street started eating my keys. Not once, but every day, always in the same place, the blue bowl by the door. I would set them down and a minute later they were gone. At first I blamed myself. Then my coffee mug disappeared from the counter. A single earring. My reading glasses, which I found a week later on the kitchen windowsill, folded neatly, facing the street.
+
+My brother Dev thought I was losing my mind. "Grief does that," he said. But Dev's sunglasses vanished the next weekend, and after that he stopped saying it.
+
+I started leaving things out on purpose. A spoon. A button. A pencil. I would come back to find them moved, never gone, always arranged somewhere new. The spoon on the stairs. The button on the piano. The pencil lined up on the sill beside my glasses.
+
+On a night when I couldn't sleep, I sat in the dark kitchen and put down a small thing, my grandmother's thimble, and waited. I held my breath. The air got cold in the way it does just before snow, and the thimble slid across the table, slowly, a few inches at a time, until it reached the edge of the window where the light from the street came in.
+
+That was when I understood. My grandmother used to sit at that window every evening, watching the street, waiting for people to come home. She had never been good at saying she missed us. She kept the porch light on. She counted the cars.
+
+The things were not being taken. They were being collected. Each object was a small piece of someone who had lived there: my keys, the glasses, a mug that still smelled of my coffee. They were evidence that the house was still full. A ghost has no hands to hold a person. It has only the things people leave behind.
+
+So I stopped hiding my keys. I stopped asking for them back, too. The next morning I set a fresh cup of tea beside the thimble and said, out loud, "I'm still here, Grandma."
+
+The cup was empty by evening.
+
+Months later, when I finally sold the house, I walked through the rooms with the new owners, a young couple with a baby. I did not warn them. I only said that if they ever lost something small, they should not worry too much. It would turn up on the windowsill.
+
+I left the blue bowl by the door.
+
+=== prompt_id: expl-0411 ===
+Historians generally say we are still in the modern era, though the label is debated. The "modern" period is usually dated from roughly the 1500s or the Enlightenment, and 1989 is not a widely accepted endpoint. The fall of the Berlin Wall did end the Cold War order, and some scholars treat it as the close of the "short twentieth century," but that is a smaller division within modernity, not its end. Others argue that we have entered a "postmodern" or "contemporary" age, shaped by globalization and digital technology. Since historians need distance to mark such boundaries, most consider it too early to say.
+
+=== prompt_id: gene-0520 ===
+On-demand shops and crowdfunding are both ways to sell a product without having to commit to a large amount of stock up front. They solve different problems, though.
+
+**On-demand shops** (often called print-on-demand or made-to-order stores) are regular online stores where each item is made only after a customer buys it. A common example is a T-shirt or mug shop on a platform like Printful or Teespring: you upload a design, list the product, and a third party prints and ships each order. You do not pay for production until you have a sale, so there is little financial risk. The store can stay open indefinitely, and you earn a margin on each sale. The tradeoffs are lower profit per item, less control over quality and shipping times, and the need to find your own customers.
+
+**Crowdfunding** (Kickstarter, Indiegogo and similar) is a fundraising campaign. You present an idea or prototype, set a funding goal and a deadline, and backers pledge money in exchange for rewards, usually the finished product. If you hit the goal, you receive the funds and use them to produce and deliver. On Kickstarter, if you miss the goal, nobody pays. The money comes before the product exists, which makes it useful for items that need real manufacturing costs, such as gadgets or board games. But campaigns are time-limited and require serious marketing, and you take on the obligation to deliver what you promised.
+
+**Key differences**
+
+- **Timing of money:** On-demand shops get paid after each sale and produce after payment. Crowdfunding gets paid in a lump sum before production.
+- **Duration:** An on-demand shop runs continuously, while a crowdfunding campaign runs for a fixed period.
+- **Risk:** On-demand carries low financial risk. Crowdfunding carries reputational and delivery risk.
+- **Best for:** On-demand suits simple, customizable products and testing designs. Crowdfunding suits new inventions that need upfront capital.
+
+Many creators use both, launching a campaign to fund a first run, then moving to an on-demand model to keep selling afterward.
+

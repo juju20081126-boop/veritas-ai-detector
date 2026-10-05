@@ -20,13 +20,16 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
 
 
-def export_student_to_onnx_int8(pytorch_weights_path: str = None):
-    os.makedirs(MODELS_DIR, exist_ok=True)
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"
+def export_student_to_onnx_int8(pytorch_weights_path: str = None, hf_dir: str = None, out_dir: str = None):
+    out_dir = out_dir or MODELS_DIR
+    os.makedirs(out_dir, exist_ok=True)
+    model_name = hf_dir or "sentence-transformers/all-MiniLM-L6-v2"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=4)
 
-    if pytorch_weights_path and os.path.exists(pytorch_weights_path):
+    if hf_dir:
+        print(f"[Export] Loaded trained candidate from {hf_dir}")
+    elif pytorch_weights_path and os.path.exists(pytorch_weights_path):
         print(f"[Export] Loading trained weights from {pytorch_weights_path}...")
         state_dict = torch.load(pytorch_weights_path, map_location="cpu")
         model.load_state_dict(state_dict)
@@ -35,8 +38,8 @@ def export_student_to_onnx_int8(pytorch_weights_path: str = None):
 
     model.eval()
 
-    fp32_onnx_path = os.path.join(MODELS_DIR, "student_model.onnx")
-    int8_onnx_path = os.path.join(MODELS_DIR, "student_model_int8.onnx")
+    fp32_onnx_path = os.path.join(out_dir, "student_model.onnx")
+    int8_onnx_path = os.path.join(out_dir, "student_model_int8.onnx")
 
     # Dummy inputs for tracing
     dummy_text = "This is an academic sentence to trace the computation graph for dynamic quantization."
@@ -86,7 +89,7 @@ def export_student_to_onnx_int8(pytorch_weights_path: str = None):
     print(f"         INT8 Size: {int8_size_mb:.2f} MB (Compression: {compression_pct:.1f}%)")
 
     # Save tokenizer files for pure offline execution
-    tok_dir = os.path.join(MODELS_DIR, "tokenizer")
+    tok_dir = os.path.join(out_dir, "tokenizer")
     tokenizer.save_pretrained(tok_dir)
     print(f"[Export] Tokenizer configuration saved to {tok_dir}")
 
@@ -111,5 +114,7 @@ def export_student_to_onnx_int8(pytorch_weights_path: str = None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Export student model to INT8 ONNX.")
     parser.add_argument("--weights", type=str, default=None, help="Path to PyTorch student weights .pt")
+    parser.add_argument("--hf-dir", type=str, default=None, help="Trained HF model directory (e.g. models/candidates/<name>)")
+    parser.add_argument("--out-dir", type=str, default=None, help="Output directory (default: models/, the shipped model)")
     args = parser.parse_args()
-    export_student_to_onnx_int8(args.weights)
+    export_student_to_onnx_int8(args.weights, args.hf_dir, args.out_dir)

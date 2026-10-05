@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "essa-23-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Online shopping is replacing traditional stores. Discuss the advantages and disadvantages."
+ },
+ {
+  "prompt_id": "essa-23-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Online shopping is replacing traditional stores. Discuss the advantages and disadvantages."
+ },
+ {
+  "prompt_id": "essa-23-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Online shopping is replacing traditional stores. Discuss the advantages and disadvantages."
+ },
+ {
+  "prompt_id": "essa-27-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Should everyone learn to cook at school? Give reasons for your view."
+ },
+ {
+  "prompt_id": "essa-27-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 200-word essay on this topic: Should everyone learn to cook at school? Give reasons for your view."
+ },
+ {
+  "prompt_id": "essa-27-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should everyone learn to cook at school? Give reasons for your view."
+ },
+ {
+  "prompt_id": "essa-28-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Does reading books still matter in the age of television and the Internet?"
+ },
+ {
+  "prompt_id": "essa-28-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Does reading books still matter in the age of television and the Internet?"
+ },
+ {
+  "prompt_id": "essa-28-esl",
+  "instruction": "Write a 300-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Does reading books still matter in the age of television and the Internet?"
+ },
+ {
+  "prompt_id": "essa-30-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Should professional athletes earn much more money than teachers and nurses?"
+ },
+ {
+  "prompt_id": "essa-30-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 250-word essay on this topic: Should professional athletes earn much more money than teachers and nurses?"
+ },
+ {
+  "prompt_id": "essa-30-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should professional athletes earn much more money than teachers and nurses?"
+ },
+ {
+  "prompt_id": "essa-31-pla",
+  "instruction": "Write an essay of about 250 words on the following topic: What role should parents play in choosing their children's career?"
+ },
+ {
+  "prompt_id": "essa-31-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: What role should parents play in choosing their children's career?"
+ },
+ {
+  "prompt_id": "essa-31-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: What role should parents play in choosing their children's career?"
+ },
+ {
+  "prompt_id": "essa-32-pla",
+  "instruction": "Write an essay of about 200 words on the following topic: Is volunteering a good way for teenagers to learn about the world?"
+ },
+ {
+  "prompt_id": "essa-32-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Is volunteering a good way for teenagers to learn about the world?"
+ },
+ {
+  "prompt_id": "essa-32-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is volunteering a good way for teenagers to learn about the world?"
+ },
+ {
+  "prompt_id": "essa-33-pla",
+  "instruction": "Write an essay of about 400 words on the following topic: Some people think zoos should be closed. Others say they protect endangered species. Discuss both views."
+ },
+ {
+  "prompt_id": "essa-33-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 400-word essay on this topic: Some people think zoos should be closed. Others say they protect endangered species. Discuss both views."
+ }
+]

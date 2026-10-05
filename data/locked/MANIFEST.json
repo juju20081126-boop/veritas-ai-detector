@@ -1,0 +1,18 @@
+{
+ "created": "2026-10-04T12:51:01+00:00",
+ "seed": 20261010,
+ "untested": [
+  "gpt-6-astra"
+ ],
+ "files": {
+  "locked_ai.jsonl.gz": {
+   "sha256": "d46dd13ad5d437ce4dc921efdc5c8ddbee5af9a18430aed713abb07dde099aeb",
+   "n": 1075
+  },
+  "locked_human.jsonl.gz": {
+   "sha256": "6b58915ccfc7b87fbd2a57ccff2168f5a7d9b3e9aed0abf1e48f1c52c84e2eba",
+   "n": 1341
+  }
+ },
+ "note": "locked_human.jsonl.gz contains third-party text (W&I+LOCNESS is non-commercial) and is not tracked by git"
+}

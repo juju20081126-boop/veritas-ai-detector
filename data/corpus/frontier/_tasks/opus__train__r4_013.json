@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "stor-0340",
+  "instruction": "Write a 400-word story for this prompt: The secret to immorality is killing a newborn child. What is the world like?"
+ },
+ {
+  "prompt_id": "expl-0432",
+  "instruction": "Was Attila really a great military leader?\n\nExplain it in about 100 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0565",
+  "instruction": "Could you explain to me how nerves transfer information between different neurons? Answer in about 500 words."
+ },
+ {
+  "prompt_id": "essa-04-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is it better to live in a big city or in a small town? Give reasons for your answer."
+ },
+ {
+  "prompt_id": "news-0055",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- \"It looks like there's been a little war zone around here\" National Weather Service:  There are preliminary reports of 7 tornadoes.\n- \"It looks like there's been a little war zone around here,\" Oklahoma resident says."
+ },
+ {
+  "prompt_id": "abst-0165",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 175 words) for the paper \"Cooperation in public goods games: stay, but not for too long\"."
+ },
+ {
+  "prompt_id": "emai-0260",
+  "instruction": "I'm a college student and need help with an assignment. Please draft a work email about: Great Lakes Chemical Corp. (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0341",
+  "instruction": "I'm a college student and need help with an assignment. Five teenage friends make a video-message for themselves to playback when they are older. Now they are in there 30's and they all reunite to watch that video.\n\nWrite a short story of about 300 words."
+ },
+ {
+  "prompt_id": "expl-0433",
+  "instruction": "How does China raise money under a communist tax system?\n\nExplain it in about 100 words."
+ },
+ {
+  "prompt_id": "gene-0566",
+  "instruction": "I'm a college student and need help with an assignment. How do meteorologists predict what the wind speed will be?"
+ },
+ {
+  "prompt_id": "essa-05-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Some people believe that children should start learning a foreign language in primary school. To what extent do you agree?"
+ },
+ {
+  "prompt_id": "news-0056",
+  "instruction": "Using the following highlights, write a 250-word news story:\n- Opposition leader Boris Nemtsov was shot dead while walking near Kremlin with girlfriend.\n- Vladimir Putin: Russia should be safe from \"disgrace and tragedies\" like Nemtsov's killing.\n- Russian President criticizes \"extremists\" for use of \"illegal street protests\" and social media."
+ },
+ {
+  "prompt_id": "abst-0166",
+  "instruction": "Write an abstract of about 125 words for a research paper titled \"Polynomial identity rings as rings of functions, II\"."
+ },
+ {
+  "prompt_id": "emai-0261",
+  "instruction": "Write an email with the subject line \"commodity logic request\". Aim for about 150 words."
+ },
+ {
+  "prompt_id": "stor-0342",
+  "instruction": "Write a 500-word story for this prompt: End a story with, \"Oh well, at least the dog was fine. \" Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0434",
+  "instruction": "How did the Romans justify slavery, especially of other Romans, for example debtors? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0567",
+  "instruction": "I want to develop OKRs for my team at work. What process should I use? Keep it around 350 words."
+ },
+ {
+  "prompt_id": "essa-05-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 300-word essay on this topic: Some people believe that children should start learning a foreign language in primary school. To what extent do you agree?"
+ },
+ {
+  "prompt_id": "news-0057",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- The shot officer underwent surgery and is expected to make full recovery, police say.\n- Incident began when police got report that Walmart employee was attacked, statement says.\n- Police:  Nine suspects, believed to be from the same family, \"immediately\" began attacking them."
+ },
+ {
+  "prompt_id": "abst-0167",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Structural and magnetic properties of hexagonal perovskites La1.2Sr2.7MO7+d (M=Ru,Ir)\"."
+ }
+]

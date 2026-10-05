@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "gene-0496",
+  "instruction": "What medicinal plants should I grow in my Mid-Atlantic garden? Keep it around 150 words."
+ },
+ {
+  "prompt_id": "essa-20-pla",
+  "instruction": "Write an essay of about 250 words on the following topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "gene-0497",
+  "instruction": "What is the history of the Masters Golf Tournament Answer in about 250 words."
+ },
+ {
+  "prompt_id": "essa-20-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 150-word essay on this topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "gene-0498",
+  "instruction": "Think of different ways to make friends Keep it around 250 words."
+ },
+ {
+  "prompt_id": "essa-20-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should companies be allowed to track what their employees do online at work?"
+ },
+ {
+  "prompt_id": "gene-0499",
+  "instruction": "Give me 5 ways to use a ripe avocado"
+ },
+ {
+  "prompt_id": "essa-24-pla",
+  "instruction": "Write an essay of about 150 words on the following topic: Should governments ban single-use plastic products? Explain your position."
+ },
+ {
+  "prompt_id": "gene-0500",
+  "instruction": "What are the key differences in thermal conductivity, curing time, and application method between thermal compounds from Arctic Silver and Thermal Grizzly, and how can users decide which brand and model to choose for their specific needs, such as high-end overclocking, low-profile coolers, or delidded CPUs? Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "essa-24-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 250-word essay on this topic: Should governments ban single-use plastic products? Explain your position."
+ },
+ {
+  "prompt_id": "gene-0501",
+  "instruction": "If Mermaids were real would they lay eggs? Explain your reasoning. Answer in about 500 words."
+ },
+ {
+  "prompt_id": "essa-24-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Should governments ban single-use plastic products? Explain your position."
+ },
+ {
+  "prompt_id": "gene-0502",
+  "instruction": "give me a sort answer what is the Israeli–Palestinian conflict about? Answer in about 250 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "essa-25-pla",
+  "instruction": "Write an essay of about 300 words on the following topic: Some people think young people today have less respect for older generations. Do you agree?"
+ },
+ {
+  "prompt_id": "gene-0503",
+  "instruction": "How did cavemen eat anything without brushing their teeth? Did they not decay and fall out? Keep it around 700 words."
+ },
+ {
+  "prompt_id": "essa-25-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 400-word essay on this topic: Some people think young people today have less respect for older generations. Do you agree?"
+ },
+ {
+  "prompt_id": "gene-0504",
+  "instruction": "Can you explain how solar panels work? Go in depth about their mechanisms of action. (about 250 words)"
+ },
+ {
+  "prompt_id": "essa-25-esl",
+  "instruction": "Write a 150-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Some people think young people today have less respect for older generations. Do you agree?"
+ },
+ {
+  "prompt_id": "gene-0505",
+  "instruction": "What is contemporary style of dance?"
+ },
+ {
+  "prompt_id": "essa-34-pla",
+  "instruction": "Write an essay of about 400 words on the following topic: Is it a good idea to take part in school or university exchange programmes?"
+ }
+]

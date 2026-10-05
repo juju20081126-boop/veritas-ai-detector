@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0003",
+  "instruction": "Turn these bullet points into a news article (roughly 300 words):\n- Marc Randazza: Court upholds a trademark denial for Asian-American band The Slants on the grounds that name was disparaging.\n- He says court is wrong: Trademarks are commercial speech, protected by First Amendment. Ruling a sign or our easily offended times."
+ },
+ {
+  "prompt_id": "abst-0113",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 225 words for a research paper titled \"Tunka-Rex: a Radio Antenna Array for the Tunka Experiment (ARENA 2012)\"."
+ },
+ {
+  "prompt_id": "emai-0223",
+  "instruction": "Please draft a work email about: [Fwd: Meserve Production] (around 75 words). Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0293",
+  "instruction": "Write a 300-word story for this prompt: Everyone is allowed to kill one person in their life. However, you have to fill out a form explaining why this person deserves to be killed and the committee can deny/approve your request as per the rules. You are presenting your form today. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "expl-0393",
+  "instruction": "How do companies that make free products like web browsers and linux version stay afloat?\n\nExplain it in about 125 words."
+ },
+ {
+  "prompt_id": "gene-0473",
+  "instruction": "Why to people lift their trucks? Answer in about 350 words."
+ },
+ {
+  "prompt_id": "news-0004",
+  "instruction": "I'm a college student and need help with an assignment. Turn these bullet points into a news article (roughly 250 words):\n- An Amnesty International report calls for attacks on women's rights activists in Afghanistan to be investigated.\n- The report examines the persecution of activists not only by the Taliban and tribal warlords, but also by government officials.\n- Some activists continue their work despite their lives being at risk."
+ },
+ {
+  "prompt_id": "abst-0114",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"Subjective and Objective Quality Assessment of Mobile Gaming Video\"."
+ },
+ {
+  "prompt_id": "emai-0224",
+  "instruction": "Write an email with the subject line \"Daily EOL Summary 1/4\". Aim for about 75 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "stor-0294",
+  "instruction": "Write a 500-word story for this prompt: Civilization has fallen, but brave treasure hunters have heard the legend of Ft. Knox. The automated defenses, however, are still online."
+ },
+ {
+  "prompt_id": "expl-0394",
+  "instruction": "I'm a college student and need help with an assignment. Why can we cross our eyes left to right, but not up and down? (answer in roughly 75 words)"
+ },
+ {
+  "prompt_id": "gene-0474",
+  "instruction": "Were masks effective in stopping the spread of Covid 19? Use a formal, professional tone."
+ }
+]

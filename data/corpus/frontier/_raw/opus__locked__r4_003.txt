@@ -1,0 +1,362 @@
+=== prompt_id: gene-0496 ===
+The Mid-Atlantic's hot summers, cold winters, and decent rainfall support a wide range of medicinal plants. Good options include:
+
+- **Echinacea (purple coneflower):** A native perennial that handles heat and drought and draws pollinators. The roots and flowers are used in immune-support teas.
+- **Lemon balm:** Easy to grow and calming in tea. It spreads, so give it a container or a corner of the bed.
+- **Calendula:** A cheerful annual whose petals go into skin salves. It does best in the cooler parts of spring and fall.
+- **Peppermint:** Good for digestion and very hardy. Plant it in a pot or it will take over.
+- **Yarrow:** Native and tough, and traditionally used on minor wounds.
+- **Elderberry:** A native shrub. Its cooked berries make a popular syrup.
+- **Chamomile:** Self-seeds readily and makes a relaxing tea.
+- **Holy basil (tulsi):** Grow it as an annual in summer heat.
+
+Most of these want full sun and well-drained soil. Your clay may need some compost worked in. Check with a doctor before using any herb medicinally.
+
+=== prompt_id: essa-20-pla ===
+**Watching the Workplace: Where Monitoring Should Stop**
+
+Employers have real reasons to care about what happens on their networks. Company computers hold sensitive data, and one careless click on a phishing link can expose thousands of customer records. Firms can also be held legally responsible when employees use work systems to harass colleagues or download illegal material. Given those risks, some monitoring of workplace internet use is reasonable. The real question is how much.
+
+Limited, transparent tracking is defensible. Security software that scans for malware, flags large data transfers, or blocks dangerous sites protects both the company and its workers. If employees are told clearly what is monitored and why, they can make informed choices, for example keeping personal banking off a work laptop.
+
+Problems start when monitoring becomes total and secret. Keystroke loggers, constant screenshots, and webcam checks treat adults like suspects. They also tend to backfire. Research on workplace surveillance suggests that heavily monitored employees feel less trusted, report more stress, and sometimes put more effort into gaming the metrics than into doing good work. There is also a creeping problem: data gathered "for security" can end up being used to judge how often someone takes breaks or which news sites they read.
+
+The sensible answer is a middle path. Companies should be allowed to monitor work devices and networks for specific, legitimate purposes, with written policies, proportionate methods, and strict limits on who can see the data. Tracking that protects the organization is fair. Tracking that simply feeds an employer's curiosity is not.
+
+=== prompt_id: gene-0497 ===
+The Masters began as the vision of Bobby Jones, the greatest amateur golfer of his era. After winning the Grand Slam in 1930, Jones retired from competition. With investment banker Clifford Roberts, he set out to build a championship course in Augusta, Georgia, on the site of a former plant nursery called Fruitland. Jones and the Scottish architect Alister MacKenzie designed Augusta National Golf Club, which opened in 1933.
+
+The first tournament, held in March 1934, was called the Augusta National Invitation Tournament, and Horton Smith won it. Roberts had pushed for the name "Masters" from the start, but Jones considered it presumptuous. The name was officially adopted in 1939. In 1935, Gene Sarazen holed a 4-wood for a double eagle on the 15th hole, a shot that helped make the young event famous.
+
+The tournament was not played from 1943 to 1945 because of World War II, and cattle and turkeys were raised on the grounds. The green jacket, first worn by members, was awarded to the champion for the first time in 1949, when Sam Snead won. CBS began televising the event in 1956, and Arnold Palmer's four victories helped turn it into a national spectacle.
+
+The Masters also has a complicated history around inclusion. Lee Elder became the first Black golfer to play in it in 1975, and the club admitted its first female members in 2012. Highlights since then include Jack Nicklaus's sixth win at age 46 in 1986, Tiger Woods's record-setting 12-stroke victory in 1997, and Woods's emotional comeback win in 2019.
+
+=== prompt_id: essa-20-stu ===
+Should Companies Track Employees Online?
+
+Most people would agree that a company has the right to protect its own computers. However, I believe tracking should be limited and honest.
+
+Companies do have good reasons to watch some online activity. Hackers often get into businesses through employees who open bad links or visit unsafe websites. Monitoring helps catch these problems early and keeps customer information safe. It can also stop people from using work time for things that are clearly inappropriate.
+
+On the other hand, too much tracking hurts workers. If every click and keystroke is recorded, employees may feel like they are not trusted, and this can make them stressed and less motivated. Workers also deserve some privacy, even at work.
+
+In my opinion, companies should be allowed to track online activity only for safety and security, and they must tell employees exactly what is being watched. That way, businesses stay protected and workers are treated with respect.
+
+=== prompt_id: gene-0498 ===
+Making friends as an adult (or at any age) mostly comes down to putting yourself in the same place as the same people over and over. Here are some approaches worth trying:
+
+**Join something that meets regularly.** A weekly running club, choir, pickup soccer game, or trivia team gives you repeated contact. That repetition is what turns strangers into friends.
+
+**Take a class.** Pottery, improv, a language, or rock climbing all work. You get a built-in conversation topic, and everyone else is new too.
+
+**Volunteer.** Working side by side at a food bank, animal shelter, or community garden builds connection quickly, and the people there already share your values.
+
+**Say yes more often.** Go to the coworker's barbecue or the neighbor's birthday party, even when you'd rather stay home.
+
+**Be the one who invites.** Lots of people are waiting for someone else to make the first move. Suggest coffee, a walk, or a game night. A few people will say no, but more will say yes than you expect.
+
+**Reconnect with old friends.** A quick "Saw this and thought of you" text to a former classmate or old coworker can bring a friendship back.
+
+**Use apps built for friendship.** Bumble BFF, Meetup, and local Discord servers can connect you with people nearby who share your interests.
+
+**Follow up.** Most potential friendships end after one good conversation because nobody reaches out again. Send the message.
+
+**Be curious.** Ask questions, remember details, and bring them up later. People feel valued when you remember what matters to them.
+
+Be patient. Close friendships often take months of steady contact to form.
+
+=== prompt_id: essa-20-esl ===
+Should Companies Watch What Workers Do Online?
+
+Today almost every job use computers and the internet. Because of this, many companies want to know what their workers are doing online during work time. Some people think this is normal, but other people think it is not fair. In my opinion, companies can track some things, but they should not watch everything.
+
+First, I understand why companies want to check. The company pays the workers to do their job, not to watch videos or shopping online all day. If a worker spend three hours on social media, the boss is losing money. Also, there is a big problem with safety on the internet. Sometimes a worker clicks on a bad email and a virus come into the computer. Then hackers can steal important information about customers. So the company need some control to protect itself.
+
+But on the other side, too much tracking is not good. I have a friend who work in an office where the company take pictures of the screen every ten minutes. She told me she feel nervous all the time, like somebody is always behind her. She cannot relax, and she said she actually work slower because of the stress. I think people need a little bit of trust to do a good job. When the boss checks every small thing, workers feel like children or like criminals.
+
+Also, privacy is important for everybody. Sometimes a person needs to check a message from the doctor or from their child's school during work. This is private information, and the boss should not read it. If the company see everything, they can learn things about workers that is not their business, for example about health or family problems.
+
+So what is the best answer? I think there must be clear rules. The company should tell workers before what they will check and why. For example, they can block dangerous websites and check for viruses, this is fair. But they should not read personal messages or record every key the workers press. And the information should be only for security, not for punish people for small things like a five-minute break.
+
+In conclusion, companies have some good reasons to track online activity, especially for safety. But they must be honest and not go too far. A good workplace needs both security and trust. If the company respect the workers, the workers will also respect the company and work harder.
+
+=== prompt_id: gene-0499 ===
+1. **Smash it on toast.** Spread mashed avocado on toasted sourdough and top it with flaky salt, chili flakes, a squeeze of lemon, and a fried or jammy egg if you want.
+
+2. **Make guacamole.** Mash it with lime juice, diced onion, cilantro, jalapeño, and salt. Fold in chopped tomato just before serving.
+
+3. **Blend it into a smoothie.** Half an avocado with banana, spinach, and milk or yogurt makes a thick, creamy smoothie that keeps you full longer.
+
+4. **Turn it into a pasta sauce.** Blend avocado with garlic, basil, lemon juice, olive oil, and a splash of pasta water for a quick no-cook sauce.
+
+5. **Bake it into chocolate mousse.** Blend avocado with cocoa powder, maple syrup or honey, vanilla, and a pinch of salt, then chill it. The avocado flavor disappears and you're left with a rich, silky dessert.
+
+=== prompt_id: essa-24-pla ===
+**Banning Single-Use Plastics: A Necessary Step**
+
+Governments should ban most single-use plastic products. Items like plastic bags, straws, cutlery, and takeaway containers are used for minutes but can last for centuries. Only a small fraction of plastic is ever recycled. The rest piles up in landfills, gets burned, or washes into rivers and oceans, where it harms wildlife and breaks down into microplastics that now turn up in drinking water and human blood.
+
+Voluntary efforts have not been enough, because convenience usually wins. Bans work: after countries such as Kenya and Rwanda prohibited plastic bags, litter dropped sharply and reusable alternatives quickly became normal.
+
+A ban should be designed carefully, though. Exemptions are needed for medical supplies and for people with disabilities who rely on items such as bendable straws. Governments should also phase bans in gradually so businesses can adapt. With those safeguards, banning single-use plastics is a practical and overdue policy.
+
+=== prompt_id: gene-0500 ===
+## Overview
+
+Arctic Silver and Thermal Grizzly take different approaches to thermal interface materials. Arctic Silver, an American manufacturer, is best known for Arctic Silver 5, a long-established silver-filled compound. Thermal Grizzly, based in Germany, offers a wider performance-oriented range, from conventional pastes to liquid metal. Note that Arctic Silver is a separate company from **ARCTIC** (maker of the MX series), and the two are often confused.
+
+## Thermal Conductivity
+
+| Product | Type | Manufacturer-rated conductivity | Electrically conductive |
+|---|---|---|---|
+| Arctic Silver 5 | Silver-filled paste | Not officially stated in W/m·K (third-party figures of roughly 8–9 W/m·K are commonly cited) | No (slightly capacitive) |
+| Arctic Silver Céramique 2 | Ceramic paste | Not officially stated in W/m·K | No |
+| Thermal Grizzly Aeronaut | Paste | 8.5 W/m·K | No |
+| Thermal Grizzly Hydronaut | Paste | 11.8 W/m·K | No |
+| Thermal Grizzly Kryonaut | Paste | 12.5 W/m·K | No |
+| Thermal Grizzly Kryonaut Extreme | Paste | 14.2 W/m·K | No |
+| Thermal Grizzly Conductonaut | Liquid metal | 73 W/m·K | **Yes** |
+
+Manufacturers do not measure conductivity under a common standard, so published figures are not directly comparable. Independent testing generally shows that premium non-metallic pastes perform within a few degrees Celsius of one another. Liquid metal is the clear exception and can offer substantially lower temperatures where it is appropriate.
+
+## Curing Time
+
+- **Arctic Silver 5:** The manufacturer specifies a break-in period of roughly 200 hours under normal thermal cycling, during which temperatures may fall by a few degrees. Initial measurements may therefore understate its eventual performance.
+- **Thermal Grizzly pastes (Kryonaut, Hydronaut, Aeronaut):** No meaningful curing period. They perform at or near their peak right after installation, which helps with benchmarking and with short-term overclocking sessions.
+- **Conductonaut:** No curing period. However, liquid metal can be absorbed into or react with some metals over time, so occasional inspection is advisable.
+
+## Application Method
+
+- **Arctic Silver 5** has a relatively thick consistency. The manufacturer recommends a line or small dot, depending on the processor's die layout, followed by even mounting pressure. Because it is slightly capacitive, contact with exposed circuitry should still be avoided.
+- **Kryonaut and Hydronaut** spread easily and suit the dot, line, or spread method. Kryonaut's lower viscosity also makes it convenient for manual spreading.
+- **Kryonaut Extreme** is thicker and better suited to large, flat surfaces and to the demanding contact conditions of extreme overclocking.
+- **Conductonaut** must be applied in a very thin layer with the supplied applicator or swab. It is electrically conductive and reacts with aluminum, so nearby surface-mount components should be insulated (for example, with conformal coating or Kapton tape), and it must never be used with aluminum heatsink bases.
+
+## Choosing for Specific Use Cases
+
+**High-end overclocking:** Kryonaut or Kryonaut Extreme is generally preferred for ambient and sub-ambient overclocking because neither needs curing and both perform well under high heat flux. Note that Kryonaut is reported to degrade faster at sustained high temperatures, especially on GPUs. For a daily-use system, a pump-out-resistant paste or a periodic reapplication schedule is advisable.
+
+**Low-profile coolers:** Compact coolers typically provide lower mounting pressure and have less thermal headroom. An easily spreadable, non-conductive paste such as Hydronaut or Kryonaut ensures a thin bond line under limited pressure. Arctic Silver 5 is also a reasonable, economical choice if the user accepts its break-in period.
+
+**Delidded CPUs:** Conductonaut is the established choice between the die and the integrated heat spreader, where its high conductivity delivers the greatest improvement. Between the heat spreader and the cooler, a conventional paste such as Kryonaut is usually recommended to limit risk. Users should confirm that the IHS and cooler surfaces are copper or nickel-plated copper, and should expect some staining.
+
+## Summary
+
+For general builds where cost and longevity matter, Arctic Silver 5 remains a dependable option. For immediate peak performance and enthusiast applications, Thermal Grizzly's range offers more flexibility. Liquid metal should be reserved for experienced users working with delidded or direct-die configurations.
+
+=== prompt_id: essa-24-stu ===
+Why Governments Should Ban Single-Use Plastics
+
+Every day, people throw away millions of plastic bags, straws, cups, and food containers after using them only once. Plastic doesn't disappear, though. It can stay in the environment for hundreds of years. Because of this, I believe governments should ban single-use plastic products.
+
+The biggest reason is the damage plastic does to nature. Huge amounts of plastic end up in the ocean every year. Sea turtles mistake plastic bags for jellyfish, and seabirds feed bits of plastic to their chicks. Over time, plastic breaks into tiny pieces called microplastics, which scientists have found in fish, in salt, and even inside the human body. We don't fully know how harmful this is yet, but it is clearly not healthy.
+
+Some people say recycling is the answer, but most plastic never actually gets recycled. Much of it is too cheap or too mixed with other materials to be worth processing. Asking people to change their habits voluntarily hasn't worked well either, because plastic is so convenient. A ban forces a real change.
+
+Critics argue that bans hurt businesses and make life harder for customers. That's partly true at first, but people adjust quickly. Many places that banned plastic bags saw shoppers start bringing reusable bags within a few months. Paper straws, metal cutlery, and compostable containers are also becoming cheaper as more companies make them.
+
+A ban should still allow exceptions, such as for hospitals or people with disabilities who need certain plastic items. Overall, though, banning single-use plastics is one of the simplest ways governments can protect the planet for future generations.
+
+=== prompt_id: gene-0501 ===
+It's a fun question, because a mermaid is a biological contradiction: the upper half of a mammal attached to the lower half of a fish. Answering it means deciding which half "wins" when it comes to reproduction. I'd argue that if mermaids were real, they would most likely give birth to live young rather than lay eggs. Here's the reasoning.
+
+**The case for eggs**
+
+The fish half suggests eggs. Most bony fish reproduce by spawning: females release large numbers of eggs into the water, and males fertilize them externally. That strategy works in the ocean because water keeps eggs from drying out, and producing thousands of eggs makes up for the fact that most get eaten. If mermaids were basically fish with human faces, spawning would make sense.
+
+Plenty of animals with complex bodies lay eggs, too. Sharks, rays, and even a few mammals (the platypus and echidnas) are egg-layers. So eggs aren't automatically a sign of a "primitive" creature.
+
+**The case for live birth**
+
+The human half, though, points the other way, and I think more strongly. Mermaids are almost always depicted with mammalian traits: breasts, hair, a large brain, and human-like intelligence and social behavior. Breasts in particular are a defining mammalian feature, because mammary glands exist to feed young with milk. An animal that nurses its babies is very likely to give birth to live, relatively developed offspring and then care for them.
+
+The real world gives us a strong model: marine mammals. Whales, dolphins, seals, and manatees all evolved from land mammals that returned to the sea, and none of them went back to laying eggs. Dolphins give birth underwater, tail first, and the calf swims to the surface for its first breath. Mothers nurse their calves for months or years. If mermaids descended from humans or human-like ancestors that adapted to the ocean, you'd expect the same pattern. Mammals lost the ability to lay eggs millions of years ago, and evolution rarely re-invents a complicated trait it has abandoned.
+
+Intelligence matters as well. Big-brained animals usually follow a "few offspring, lots of care" strategy. Human babies need years of teaching to survive, and a mermaid child would presumably need to learn to hunt, navigate, and communicate. That kind of investment fits live birth and nursing much better than leaving a clutch of eggs on a reef.
+
+**What about a middle ground?**
+
+Some sharks are *ovoviviparous*: the eggs hatch inside the mother's body and the young are born live. A mermaid could, in theory, do something similar, but that's mostly a fish solution. For a creature with a mammalian upper body and a placenta-based ancestry, true live birth is the simpler explanation.
+
+**Conclusion**
+
+Folklore is all over the place on this. Some stories have mermaids laying eggs, and others give them babies. Biologically, though, the most consistent answer is that a real mermaid would behave like a dolphin with arms: giving birth to one baby at a time in the water, nursing it, and raising it within a social group. The fishy tail is mainly a swimming adaptation. The rest of the body tells us they're mammals at heart.
+
+=== prompt_id: essa-24-esl ===
+Should Governments Ban Single-Use Plastic?
+
+I think governments should ban single-use plastic products like bags, straws and cups. These things we use only one time, but they stay on the earth for very long time.
+
+In my city, I often see plastic bags on the street and in the river. It make the place look dirty. Also, plastic is very dangerous for animals. Fish and birds eat small pieces of plastic and they can die. Later, people eat the fish, so the plastic come back to us.
+
+Some people say a ban is not convenient. It is true that bringing your own bag is a little difficult in the beginning. But after some time, it become a habit. My family now always keep cloth bags in the car.
+
+Of course, maybe some special plastic is still necessary, for example in hospital. But for normal things, we can use paper, glass or metal. So I believe a ban is a good idea for our future.
+
+=== prompt_id: gene-0502 ===
+The Israeli–Palestinian conflict is a long-standing dispute between Israelis and Palestinians over land, sovereignty, security, and national identity in the territory between the Jordan River and the Mediterranean Sea.
+
+**Origins.** In the late nineteenth and early twentieth centuries, Jewish nationalism (Zionism) and Arab Palestinian nationalism both developed claims to the same land, which was then under Ottoman and later British rule. Jewish immigration grew, and tensions with the Arab population increased. In 1947 the United Nations proposed partitioning the territory into Jewish and Arab states. Jewish leaders accepted the plan, and Arab leaders rejected it.
+
+**1948 and after.** Israel declared independence in 1948, and a war followed with neighboring Arab states. Roughly 700,000 Palestinians fled or were expelled, an event Palestinians call the *Nakba* ("catastrophe"). In the 1967 war, Israel captured the West Bank, East Jerusalem, and the Gaza Strip, among other territories.
+
+**Core issues.** The central disputes include:
+- **Borders** and the possible creation of a Palestinian state
+- **Israeli settlements** in the West Bank
+- **The status of Jerusalem**, which both peoples claim as a capital
+- **Palestinian refugees** and their descendants
+- **Security** for Israelis, who face rocket fire and attacks, and for Palestinians, who live under military occupation and restrictions
+
+**Recent developments.** Peace efforts, most notably the Oslo Accords of the 1990s, have not produced a final settlement. The Hamas-led attack on Israel on October 7, 2023, and the war in Gaza that followed caused severe loss of life and a major humanitarian crisis. The conflict remains unresolved.
+
+=== prompt_id: essa-25-pla ===
+**Respect Across Generations: A Change in Form, Not in Substance**
+
+Complaints that "young people have no respect" are older than most of the people making them. Similar grumbles show up in ancient Greek texts, Victorian newspapers, and countless dinner-table conversations ever since. That long record alone should make us cautious. I do not agree that young people today have less respect for older generations, although I do think the ways respect is shown have changed.
+
+Some of the evidence people point to is real. Fewer young people use formal titles, stand when an elder enters the room, or defer to authority without asking questions. Online, teenagers sometimes dismiss older people's views with a quick "OK, boomer." Taken alone, these behaviors can look like contempt.
+
+A closer look tells a different story. Formal manners have relaxed across all of society, not just among the young: adults call their doctors by first name and wear jeans to the office. Questioning authority is also something schools now actively teach, as critical thinking. A student who challenges a teacher's argument respectfully is not being rude. They are doing what they were trained to do.
+
+Meanwhile, many young people show respect in quieter, practical ways. They help grandparents set up video calls, care for aging relatives, volunteer in care homes, and seek out older mentors at work. Surveys in many countries show that young adults still value their families highly and often feel responsible for their parents in old age.
+
+Where tension does exist, it often comes from real disagreements, about climate change, housing costs, or social values, rather than from a lack of respect. Arguing with someone over policy is not the same as looking down on them.
+
+In short, today's young people may be less formal and more willing to speak up, but that is different from being disrespectful. Respect has moved away from ritual and toward relationship. Older generations may find it more meaningful to look at how young people actually treat the elders in their lives than at how they address them.
+
+=== prompt_id: gene-0503 ===
+It's a reasonable thing to wonder, since we're told constantly that skipping a night of brushing is a step toward disaster. But prehistoric people generally had surprisingly few cavities. Their teeth did face other serious problems, and some people did lose teeth. Here's what was actually going on.
+
+## Cavities are mostly a diet problem
+
+Tooth decay happens when certain bacteria in your mouth, especially *Streptococcus mutans*, feed on sugars and refined starches and produce acid. That acid dissolves tooth enamel over time. Brushing helps mainly by clearing away food and the sticky bacterial film (plaque) before it can do much damage.
+
+Most of the Paleolithic diet simply didn't give those bacteria much to eat. Hunter-gatherers ate meat, fish, wild plants, roots, nuts, seeds, and seasonal fruit. Wild fruit was far less sweet than modern cultivated varieties, and there was no table sugar, white flour, soda, or candy. With little fuel for acid-producing bacteria, cavities were rare in many populations.
+
+That changed with farming. When people started relying on grains like wheat, barley, and later maize about 10,000 years ago, rates of tooth decay rose noticeably in the skeletal record. Another big jump came after refined sugar became widely available in the last few centuries. Studies of ancient dental tartar have even tracked shifts in oral bacteria: the microbes linked to decay became much more common after the move to agriculture and again after industrial food processing.
+
+There are exceptions that prove the rule. At Taforalt in Morocco, about 15,000 years ago, hunter-gatherers ate lots of starchy acorns and pine nuts, and their teeth were riddled with cavities, as bad as many modern populations. The problem was the diet, not the absence of toothpaste.
+
+## Tough food acted like a natural cleaner
+
+Prehistoric food was coarse, fibrous, and often gritty from stone grinding tools and sand. Chewing it took a lot of work, which produced plenty of saliva. Saliva neutralizes acids and helps rebuild enamel. Fibrous foods also scrubbed tooth surfaces a little.
+
+The downside was **heavy tooth wear**. Many ancient skulls have teeth ground nearly flat. Wear severe enough to expose the pulp could lead to infection, so grit caused its own kind of damage even where cavities didn't.
+
+## They weren't totally without dental care
+
+Early humans did more for their teeth than you'd think:
+
+- **Toothpicks:** Grooves worn between teeth show that our ancestors, including Neanderthals, used sticks, bones, or grass stems to pick at their teeth, possibly for more than a million years.
+- **Chewing sticks:** Many traditional cultures chew twigs from certain trees, which fray into a brush-like tip, and some of those plants have antibacterial properties. The practice is ancient, though it's hard to trace exactly how far back it goes.
+- **Early "dentistry":** A roughly 14,000-year-old tooth from Villabruna, Italy, shows signs that someone scraped out a cavity with a sharp stone tool. Teeth about 13,000 years old from another Italian site seem to have been filled with bitumen.
+
+## Teeth still had problems
+
+None of this means cavemen had perfect smiles. Skeletal remains show:
+
+- **Gum disease and tartar buildup**, which were fairly common, since tartar forms whether or not you eat sugar
+- **Abscesses** from worn or cracked teeth
+- **Tooth loss**, especially in older individuals
+- **Chipped and broken teeth** from biting hard objects or using teeth as tools
+
+One striking example comes from Dmanisi, Georgia, about 1.8 million years ago. Researchers found the skull of an early human who had lost nearly all of their teeth and survived for years afterward, possibly with help from others to eat soft food.
+
+## Shorter lives played a role too
+
+Average life expectancy in prehistory was low, but that number is dragged down by high infant mortality. Adults who survived childhood often lived into their 50s or 60s. Even so, fewer people reached the advanced ages when dental problems pile up, so teeth generally had fewer decades to break down.
+
+## The bottom line
+
+Cavemen mostly didn't need toothbrushes for the reasons we do, because their food didn't feed decay-causing bacteria. Their teeth were worn down by grit, affected by gum disease, and sometimes lost, but widespread cavities are largely a product of farming and, above all, sugar. The modern mouth faces a diet our teeth never evolved to handle, which is why we have to brush.
+
+=== prompt_id: essa-25-stu ===
+Do Young People Respect Their Elders Less Today?
+
+It's common to hear adults say that "kids these days" don't respect older people. My grandmother says it, and I've heard teachers say it too. I can see why some people believe this, but I don't fully agree. I think young people still respect older generations. We just show it differently, and sometimes the generations misunderstand each other.
+
+People who believe respect is declining usually point to manners. Teenagers today might not say "sir" or "ma'am," they might keep looking at their phones when an adult is talking, and they may argue with parents or teachers instead of quietly obeying. On social media, jokes like "OK, boomer" can make it seem like young people dismiss everything older people say. I'll admit some of this behavior is genuinely rude, and my generation could do better at things like putting our phones away during conversations.
+
+However, I think much of what looks like disrespect is really a change in culture. Society as a whole has become more casual. My parents call their bosses by their first names, something their own parents would never have done. Also, schools today encourage us to ask questions and think for ourselves. When a student politely disagrees with a teacher, it can come across as disrespect, but often it just means the student is engaged and thinking critically.
+
+Young people also show respect in ways that are easy to miss. Many teenagers I know help their grandparents with technology, like setting up a new phone or showing them how to video call relatives. Others help care for older family members or volunteer at senior centers. In my own family, I take my grandfather to his weekly checkers club because he can't drive anymore. Those actions show real respect, even if they don't look like the old-fashioned kind.
+
+Respect also has to go both ways. Teenagers are more likely to respect adults who listen to them and take their opinions seriously. When older people dismiss young people as lazy or entitled, it creates a cycle where neither side feels respected.
+
+In conclusion, I don't believe young people today have less respect for older generations. The way we show respect has changed, becoming less formal and more personal, but it is still there. If both generations spend more time understanding each other instead of complaining, they will see that respect never really disappeared.
+
+=== prompt_id: gene-0504 ===
+Solar panels turn sunlight into electricity through the **photovoltaic effect**, which takes place in semiconductor material, usually silicon.
+
+**1. The semiconductor structure**
+Each solar cell is made of two layers of silicon that have been "doped" with other elements. The top layer is doped with phosphorus, which adds extra electrons, making it **n-type** (negative). The bottom layer is doped with boron, which creates "holes" where electrons are missing, making it **p-type** (positive). Where the two layers meet, a **p-n junction** forms. Electrons near the boundary diffuse across to fill holes, which leaves behind a region with a built-in electric field.
+
+**2. Absorbing photons**
+Sunlight is made of photons. When a photon carrying enough energy (more than silicon's band gap of about 1.1 electron-volts) strikes the cell, it knocks an electron loose from its atom. This creates an **electron-hole pair**.
+
+**3. Separating charges**
+The electric field at the p-n junction acts like a one-way slope. It pushes freed electrons toward the n-side and holes toward the p-side. Without that field, the electrons would simply recombine with holes and release their energy as heat.
+
+**4. Producing current**
+Thin metal contacts on the front and back of the cell collect the separated charges. Connecting them to an external circuit lets electrons flow through it, which produces **direct current (DC)**. Cells are wired together into panels to raise voltage and power.
+
+**5. Conversion for use**
+An **inverter** converts DC into alternating current (AC) for homes and the grid.
+
+Most commercial panels convert about 18–23% of incoming sunlight into electricity. The rest is lost as heat or reflection, or because photons carry too little or too much energy.
+
+=== prompt_id: essa-25-esl ===
+Do Young People Have Less Respect for Old People?
+
+Many people say that young people today don't respect older generation. I partly agree with this idea, but not completely.
+
+It is true that some young people are not polite. For example, on the bus I sometimes see teenagers who don't give their seat to old people. Also, many young people look at their phone when grandparents are talking to them. This is not nice.
+
+But I think most young people still respect old people, only in a different way. In my family, I teach my grandmother how to use her smartphone, and she is very happy. My friends also help their grandparents with shopping. We are maybe less formal than before, but we still care.
+
+In conclusion, I think young people respect older generations, but the way to show it have changed. Both sides should try to understand each other more.
+
+=== prompt_id: gene-0505 ===
+Contemporary dance is a concert dance style that emerged in the mid-20th century. It combines elements of modern dance, ballet, jazz, and sometimes non-Western and street styles. Rather than following one fixed technique, it emphasizes versatility, experimentation, and personal expression.
+
+**Where it came from**
+
+It grew out of modern dance pioneers such as Martha Graham, Doris Humphrey, and José Limón, who rejected the rigid rules of classical ballet. Merce Cunningham pushed things further in the 1940s and '50s by separating movement from music and story, treating dance as something that could exist on its own terms. Later choreographers, including Pina Bausch, Trisha Brown, William Forsythe, and Crystal Pite, kept expanding what dance could be.
+
+**Key characteristics**
+
+- **Floor work:** Dancers often roll, slide, and move through the floor instead of staying upright.
+- **Use of gravity and weight:** Movements may involve falling, releasing, and recovering, and are often fluid and grounded rather than lifted and light like ballet.
+- **Contrasts:** Choreography moves between stillness and speed, tension and release, control and abandon.
+- **Breath and the torso:** Motion often starts from the spine or core, with contractions, spirals, and curves.
+- **Improvisation:** Many pieces are built partly from dancers' improvised material.
+- **Freedom from conventions:** Bare feet are common, music may be classical, electronic, pop, or absent altogether, and works don't need to tell a linear story.
+- **Emotional expression:** Pieces frequently explore feelings, relationships, or social themes in abstract ways.
+
+**Common techniques**
+
+Dancers often train in release technique, Graham and Limón technique, Cunningham technique, contact improvisation, and Gaga (developed by Ohad Naharin). Most also take ballet to build strength and control.
+
+**Where you'll see it**
+
+Contemporary dance appears in professional companies, dance competitions, music videos, theater, and TV shows like *So You Think You Can Dance*, where its lyrical, emotional style became widely popular.
+
+In short, contemporary dance is less about a strict set of steps and more about exploring how the body can move and communicate.
+
+=== prompt_id: essa-34-pla ===
+**Crossing Borders to Learn: The Value of Exchange Programmes**
+
+Every year, thousands of students pack a suitcase and spend a term or a year studying in another country. For some, it becomes the most formative period of their education. For others, it is an expensive, lonely disruption. Weighing both sides, I believe that taking part in a school or university exchange programme is a good idea for most students, provided they prepare carefully.
+
+The clearest benefit is language learning. Classroom study builds a foundation, but nothing matches the pressure and opportunity of daily life in another language: ordering food, sorting out a bank account, or joining a seminar debate. Exchange students often come home speaking more fluently and confidently than years of lessons could have made them.
+
+Exchanges also build personal independence. Living far from family forces students to manage money, solve problems, and cope with setbacks on their own. A missed train or a confusing visa form becomes a small lesson in resilience. Many students say they return more mature and more sure of what they want from their studies.
+
+Cultural understanding may be the most lasting benefit. Sharing a kitchen with flatmates from different countries or experiencing another education system challenges assumptions that people rarely notice they hold. In an increasingly connected world, that kind of open-mindedness is valuable both personally and professionally. Employers often see international experience as evidence of adaptability and communication skills.
+
+There are drawbacks. Exchanges can be costly, and not every family can afford travel, accommodation, and living expenses abroad, even with scholarships. Some students struggle with homesickness or culture shock, which can affect their mental health and grades. Differences between education systems can also complicate credit transfer, sometimes delaying graduation.
+
+These problems are real, but most can be managed. Universities and schools increasingly offer grants, pre-departure orientation, and mentoring for students abroad. Choosing a programme with strong support services and checking credit recognition in advance can prevent many difficulties. Short-term exchanges of a few weeks also offer a more affordable option for students who cannot commit to a full year.
+
+In conclusion, exchange programmes offer benefits that are hard to gain any other way: real language skills, independence, and a broader view of the world. They are not right for everyone at every moment, and the cost barrier deserves attention from institutions and governments. For students who can take part and who prepare thoughtfully, though, an exchange is an investment that pays off long after they return home.

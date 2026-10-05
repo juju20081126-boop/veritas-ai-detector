@@ -1,0 +1,158 @@
+=== id: 432a541240b08e41.A3_humanizer ===
+So basically, Israelis and Palestinians have been fighting over the same piece of land for a really long time. Both sides claim the territory between the Jordan River and the Mediterranean—that's Israel, the West Bank, East Jerusalem, and Gaza. It's complicated because both groups have deep roots there and strong national identities.
+
+It started back in the late 1800s and early 1900s when Jewish nationalism, called Zionism, encouraged Jews to move to what was then Ottoman and later British-controlled Palestine. At the same time, Arab nationalism was growing among the local Arab population. In 1947, the UN proposed splitting the territory into Jewish and Arab states. Jewish leaders said yes, but Arab leaders said no. Then in 1948 Israel became a state, and around 700,000 Palestinians fled or got pushed out—Palestinians call this the Nakba.
+
+The core problems are still there. Israel's occupied the West Bank and East Jerusalem since 1967 and built settlements, which most countries say violates international law. Israel disagrees. Then there's Jerusalem—both sides want it as their capital, plus it matters religiously to Judaism, Islam, and Christianity. Palestinians want the right to return home, but Israel sees that as a threat to its Jewish majority. And there's the whole security thing: Israel says it's dealing with militant attacks, while Palestinians talk about occupation and military operations.
+
+Peace talks happened, like the Oslo Accords in the 1990s, but nothing stuck. Hamas runs Gaza, the Palestinian Authority controls parts of the West Bank, and fighting keeps breaking out. Still one of the most contentious issues globally.
+
+=== id: 0b056fd7712d01d7.A3_humanizer ===
+So in Pokemon, kids grow up and go on adventures with these creatures called Pokemon. Some look like mice, some like turtles, some are fire-breathing dragons. Nobody thinks it's weird—it's just normal.
+
+When you turn ten you get your first Pokemon from this professor, and then you travel around town to town. You catch more Pokemon by throwing special balls at them, which is basically a game of catch, but way cooler. You train them together until they get stronger.
+
+Then comes the fun part—you and your Pokemon battle other kids. Nobody really gets hurt, it's more like a serious version of tag. Win enough of these battles and you get badges. Collect enough badges and you can enter a big tournament to try becoming Champion.
+
+The whole thing's called "Gotta catch 'em all" because there are hundreds of different Pokemon out there.
+
+So yeah, Pokemon is about making friends, trying your best, and never giving up.
+
+=== id: 56ea6ea513ccea21.A3_humanizer ===
+We looked at how a logotropic dark fluid behaves cosmologically—basically a way to describe dark matter and dark energy together where pressure depends on the density, with a power law added in. Using dynamical system analysis, we turned the Friedmann equations into a system we could actually work with, found the critical points, and checked their stability and what they mean for the universe.
+
+What we found is that with the right parameters, the system has a saddle point for the matter-dominated era and a stable attractor at late times with accelerated expansion. That matches what we see—different cosmic epochs in sequence. The power-law index changes how the attractor works and how we get there, which gives us a way to tell it apart from standard ΛCDM.
+
+So this extended logotropic model seems viable and could be tested against observations.
+
+=== id: 85173ad85c349e70.A3_humanizer ===
+PARIS — Evidence from the flight data suggests someone in the cockpit deliberately made that plane descend. The airline's CEO said they're shocked—they can't believe one of their own pilots caused this.
+
+The transponder and recovered cockpit voice recorder indicate the descent was manually entered into the autopilot, not a technical failure. The Airbus A320, a budget carrier Germanwings plane, was carrying 150 people when it went down in a remote mountainous area over the Alps, flying from Barcelona to Dusseldorf.
+
+Prosecutors say the co-pilot was alone in the cockpit—the captain had stepped out and then couldn't get back in. The audio apparently captured the captain pounding on the door while the altitude dropped.
+
+"We are speechless that one of our co-pilots deliberately crashed this aircraft," said Lufthansa's CEO Carsten Spohr. Germanwings is owned by Lufthansa. He said the company had no warning before the flight, and everyone's in shock.
+
+Investigators don't understand why he'd do it. No terrorist threat, no indication of problems on board. They're going through his background and medical history trying to figure it out.
+
+This has raised questions about cockpit security rules. After 9/11, they tightened up to keep people out, but maybe that made it too hard for the captain to get back in. Airlines are probably going to review whether they need a second person in the cockpit at all times.
+
+Families of the victims from multiple countries are getting support at airports. Recovery teams are still working on the steep terrain, and identifying remains will take weeks.
+
+=== id: 73afed1df5157cff.A3_humanizer ===
+"All work and no play makes Jack a dull boy"—it's basically a warning that if you only work and never rest, you become boring and less effective.
+
+The idea is that play and rest aren't the opposite of being productive. They're actually part of what makes productivity possible. Work constantly and you wear yourself out. You can't focus, creativity disappears, stress builds up. Time off for hobbies, friends, and relaxation resets your brain, so the work you do after actually tends to be better.
+
+Why dull? Well, dull works two ways. Jack becomes uninteresting because work is all he talks about. But also his mind gets blunt, like a blade that's lost its edge. Doing the same thing over and over without variety just wears you down.
+
+Modern research backs this up. Studies on burnout show people who never take breaks have less motivation and make more mistakes. Rest lets your brain consolidate memories and make connections—that's why good ideas show up in the shower or on a walk. Play also helps mental health, relationships, and problem-solving.
+
+The phrase got famous when Stephen King used it in *The Shining*. Jack Torrance types it over and over on pages and pages, and in Kubrick's film version it's creepy—like obsession and isolation, which is exactly what the proverb warns against.
+
+So the point is balance. Work matters, but a life without any enjoyment is worse and you're less effective anyway. Take time to rest and play, and you'll usually work better.
+
+=== id: 2641a65df01c0a6a.A3_humanizer ===
+First thing I noticed was smoke, which seemed unfair since I didn't have a nose anymore.
+
+Second thing—I was standing on black sand looking at a small burning boat drifting across this iron-colored sea. My body was in it, wearing my favorite flannel shirt. Danny was back on the real beach somewhere, lighter in his hand, probably crying.
+
+"I told you to do it, but I didn't think you actually would," I said to nobody.
+
+"YOU," said this huge voice like a rockslide, "ARE SOME KIND OF FOOL."
+
+I turned. The guy was seven feet tall in a bearskin, braided beard down to his waist, holding an axe. He looked like he'd found a stranger in his chair.
+
+"Hi. I'm Steve."
+
+"I am Ragnar Ulfsson of the Hall of the Fallen. And you, Steve, have insulted my people."
+
+"I don't think I did."
+
+"You set yourself on fire in a rowboat. In a LAKE." He pointed at the horizon. "That is not a funeral. That is a campfire with poor planning. The gods saw it. They laughed. Do you know how long since the gods laughed? It was awkward for all of us."
+
+"It was in my will," I said. "Section nine. I thought it was cool."
+
+"COOL," Ragnar said like other people say *plague*. Then he sighed, and the smoke moved. He reached behind him for something that hadn't been there a second ago and tossed it.
+
+I caught it by panic more than skill. A sword, but not a good one. Chipped edge, handle wrapped in what looked like a shoelace.
+
+"What's this for?"
+
+"Everyone in the afterlife earns their seat at the feast," he said. "The dead of honor fight at dawn, feast at night. You'll fight too. Since you messed up the rite, you start at the bottom."
+
+"I sold insurance for thirty-one years," I said. "I've never hit anybody."
+
+"Then it will be," said Ragnar almost kindly, "a very long afterlife."
+
+Horns started sounding above us. Thousands of shapes rose on the ridge, shouting, banging shields, grinning. I looked down at the shoelace handle and thought about Danny on that beach doing exactly what I asked.
+
+I gripped the sword and decided to be a little brave for once.
+
+"Fine," I said. "But my next funeral? Quiet one in a library."
+
+Ragnar laughed so hard the sea shook.
+
+=== id: 9de23cc80bc29588.A3_humanizer ===
+HONG KONG — A new $193 million Buddhist monastery with bulletproof VIP rooms and a massive statue of the Goddess of Mercy is about to open to the public.
+
+The Tsz Shan Monastery sits on a hillside in Tai Po, and it was funded by Li Ka-shing, one of Asia's richest people. His business empire covers ports, retail, telecoms, real estate—you name it. He's also known for giving a lot of money away. The monastery should open mid-April.
+
+The centerpiece is this huge statue of Guanyin, the Goddess of Mercy. In Buddhism, she represents compassion and is hugely venerated across Chinese communities worldwide. Only one statue of her anywhere is taller.
+
+The bulletproof VIP rooms are... unexpected for a place of worship. Those are usually for banks and government buildings. Not totally clear who gets to use them or why.
+
+The $193 million price tag is massive even for Hong Kong, where land costs a fortune and construction is super expensive. The city's had temples and monasteries scattered on hillsides for ages though, with deep Buddhist and Taoist traditions.
+
+Hong Kong already has the Tian Tan Buddha, this 34-meter bronze statue on Lantau Island that gets tons of visitors. This new Goddess of Mercy is taller, so the city's got a second giant now.
+
+Li's also been giving away a bunch through his foundation—hospitals, universities, cultural projects across Hong Kong, mainland China, and overseas.
+
+So the question is: how do you keep a place meant for peace and quiet from just becoming another tourist spot? Either way, those bulletproof rooms and the massive statue mean it's going to get attention.
+
+=== id: a16e92840412fb4c.A3_humanizer ===
+Subject: Quick note about today's jokes
+
+Hey team,
+
+Hope you're doing okay. I wanted to share the jokes going around today—thought some of you might get a kick out of them, especially if you're here late.
+
+So these jokes are pretty much "not bad if you're still working at midnight." They're lighthearted, nothing too heavy, and probably best appreciated by people grinding through the evening or wrapping up a long project. They won't become classics or anything, but they give you a quick mental break from whatever you're doing.
+
+I also just want to remind everyone that taking short breaks when you're slammed actually helps. Research shows that brief moments to relax and laugh can boost morale, strengthen how people work together, and help you refocus. A few minutes of goofing around when deadlines are tight makes a real difference.
+
+If you're working late tonight, thanks for being here. Your effort shows and we appreciate it. Feel free to take some flex time tomorrow to recover.
+
+Share the jokes with people who'd enjoy them—just keep it work-appropriate. And if you've got favorite jokes that fit, send them over and I can pass them along next time.
+
+Thanks for all your hard work and good humor.
+
+Daniel Whitmore
+Operations Manager
+
+=== id: effe6b503d04ecbf.A3_humanizer ===
+We ran adaptive mesh refinement simulations to create synthetic Sunyaev-Zel'dovich effect survey data. Used a hydrodynamic code with adaptive refinement to follow galaxy cluster formation in a large volume, then built a light cone by stacking simulation outputs along the line of sight. We computed thermal SZE signal from the gas properties—temperature and density—for each cluster, which got us mock SZE maps, cluster catalogs, and number counts as a function of redshift and signal strength. This lets us test cluster-finding methods and quantify selection effects for current and upcoming millimeter-wave experiments, plus see how sensitive cluster counts are to the cosmological parameters.
+
+=== id: 4b7136930762541f.A3_humanizer ===
+Ted stood on the platform at Farhampton station, rain hitting the roof, watching the 3:15 come in. He'd told the story to his kids for nine years, and he finally got what it was really about.
+
+"Dad," Penny said, arms crossed, "you basically spent nine years talking about Aunt Robin."
+
+"Yeah, I know," Ted said. "But wait."
+
+He turned. On the opposite platform was a woman with a yellow umbrella and a bass case. She was soaked and laughing at something on her phone.
+
+Years back, Ted thought the story would end at a wedding. Then it ended with Tracy at a rainy station—the first time he heard her voice asking whose umbrella it was. Seven months with her beat all the planning he'd done before.
+
+In this version Tracy didn't die. The doctors caught it early. She got six more years, then twelve, then twenty. Robin got her globe-trotting job and the group watched her on TV proud as hell. She and Barney stayed married because he loved her and finally knew how to say it.
+
+Ted didn't need the blue French horn. He kept it on a shelf, reminder of a guy who thought love meant one big gesture.
+
+"Dad?" Luke said.
+
+"Sorry, kids." He smiled. "Just thinking about the best day of my life."
+
+The woman across the tracks looked up and waved.
+
+Ted waved back. For the first time, the story felt done.

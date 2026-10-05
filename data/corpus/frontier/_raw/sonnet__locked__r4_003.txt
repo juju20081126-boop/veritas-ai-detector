@@ -1,0 +1,363 @@
+=== prompt_id: expl-0404 ===
+You're right, and the pattern is common. Several names recur across Europe and Western Asia because the same peoples, or similar-sounding words, spread over wide areas.
+
+- **Galatia** is the closest parallel. Celtic Galatians migrated into central Anatolia in the 3rd century BCE, and their name comes from the same root as Gaul.
+- **Gaul** itself covered both modern France and northern Italy (Cisalpine Gaul).
+- **Iberia** also names a kingdom in the Caucasus, roughly modern Georgia. The link to the Spanish Iberia is probably a coincidence or a Greek naming habit, not a shared people.
+- **Albania** was an ancient Caucasus kingdom, and **Albion** is an old name for Britain.
+- **Galicia** in Poland and Ukraine likely comes from Halych, so it is a separate origin that merely sounds alike.
+- **Wales, Wallonia, and Wallachia** all come from a Germanic word for "foreigner," which was applied to Celts and Romans.
+
+Be careful to separate true shared origins from coincidences.
+
+=== prompt_id: gene-0484 ===
+# The Flat Earth Society
+
+The Flat Earth Society is an organization that promotes the belief that the Earth is a flat disc rather than a sphere. It is the best-known group associated with modern flat-earth thinking, though the idea itself is far older than the society.
+
+## Origins
+
+The society traces back to Samuel Birley Rowbotham, an English writer who in the mid-1800s argued, based on experiments he performed along a canal called the Bedford Level, that the Earth had no curvature. His ideas were later developed by followers such as Lady Elizabeth Blount, who founded the Universal Zetetic Society in 1893. The modern Flat Earth Society was founded in 1956 by Samuel Shenton in England. After Shenton died in 1971, the group was led by Charles K. Johnson in California, who ran it for decades until a fire destroyed its records and he died in 2001. The society was relaunched as a website and online community in the 2000s.
+
+## What members believe
+
+Most versions of the model describe the Earth as a disc with the North Pole at the center and Antarctica forming an ice wall around the outer edge. The sun and moon are said to be relatively small and to circle above the disc. Members typically claim that photographs from space are faked or distorted, that governments and space agencies are involved in a cover-up, and that observations like ships disappearing hull-first over the horizon have alternative explanations such as perspective or atmospheric effects.
+
+## Scientific consensus
+
+The spherical shape of the Earth is supported by an enormous body of evidence. Examples include the way different constellations are visible at different latitudes, the curved shadow the Earth casts on the moon during lunar eclipses, time zones, circumnavigation by air and sea, satellite observations, and direct measurements by surveyors going back to Eratosthenes, who estimated Earth's circumference more than two thousand years ago. No credible scientific institution disputes this.
+
+## Modern profile
+
+The society gained more attention in the 2010s as flat-earth content spread widely on social media and video platforms. Conferences have been held, and some celebrities and athletes have publicly expressed sympathy for the idea. Researchers who study conspiracy beliefs often note that flat-earth views appeal to people who distrust institutions, and that the movement is as much about skepticism of authority as about geography.
+
+Some observers have long wondered whether the society is entirely serious. Regardless, its members insist they are sincere, and the organization continues to operate today.
+
+=== prompt_id: essa-16-esl ===
+Stress is a big problem for many students today. I think there are some main causes. First, students have too much homework and many exams. Sometimes they must study until midnight, so they do not sleep enough. Second, many students feel pressure from their parents and teachers. They want to get good grades and enter a good university, and this make them very nervous. Third, some students compare themselves with other people. When they see friends who are more successful, they feel bad about themselves.
+
+However, there are many ways to reduce stress. Students should make a study plan, so they don't leave all the work to the last minute. Also, doing exercise, like running or playing basketball, can help the body and mind relax. It is important to sleep at least seven hours every night. Finally, students should talk to friends, family, or a teacher when they have problems. Nobody have to carry everything alone. If we take care of ourselves, school life can be happier.
+
+=== prompt_id: news-0016 ===
+# Palmer Says He Understands Why Woods Is Staying Away From Bay Hill
+
+**ORLANDO, Fla.** — Arnold Palmer says he does not hold it against Tiger Woods that the world's most famous golfer will not be teeing it up at the tournament that carries Palmer's name.
+
+Palmer, the 85-year-old king of golf and host of the Arnold Palmer Invitational, said this week that he understands the reasoning behind Woods' decision to skip the event at Bay Hill. Woods has been a fixture there for most of his career and has won the tournament more times than any other player, but he has been dealing with a game that has not held together, and he is trying to use his time carefully.
+
+"I know what he's going through," Palmer said. "A player has to do what he thinks is best for his game, and I respect that. I'd love to have him here, and the fans would too, but I understand."
+
+Woods is struggling to be ready for next month's Masters at Augusta National, where he has won four green jackets. The question of whether he can sharpen his game in time has hung over his preparations for weeks. His recent appearances have been marked by errant tee shots, uncertain short-game play and a visible lack of rhythm, a stark contrast to the dominant form that carried him to 14 major championships.
+
+For Woods, the calendar is working against him. With the Masters only weeks away, every day away from competition is a calculated risk. Players who miss tournaments before a major lose the chance to work through problems under pressure, but Woods and his team appear to have decided that practice at home, away from the cameras and the scoring, is the better route.
+
+Palmer, who has been close to Woods for years and has often offered him advice, said that he was not worried that the younger man would let the decision linger.
+
+"He's a competitor. He's going to figure out how to get ready," Palmer said. "He always has."
+
+The absence will be felt in Orlando. Woods is one of the biggest draws in the sport, and his presence at Bay Hill has long meant bigger galleries, higher television ratings and extra buzz around the property. Tournament officials had hoped to see him at least take a look at the course before moving on to Augusta, but they have said they respect that the decision belongs to Woods.
+
+Palmer's reaction is typical of a man who has spent decades treating other golfers with generosity. He has been a mentor to several generations of players, and he has frequently said that the game is bigger than any one tournament or any one name.
+
+Still, he made it clear that he hopes to see Woods back on the course soon, and in better form.
+
+"The Masters is a special place for him, and for all of us," Palmer said. "I hope he gets it going. Golf needs Tiger playing well."
+
+For now, the focus shifts to the rest of the field at Bay Hill, where the contenders will try to claim a victory in Palmer's honor. Woods, meanwhile, will continue his preparations in private, with one goal in sight: arriving at Augusta in shape to compete.
+
+Whether that work will pay off remains to be seen. What is clear is that the sport will be watching closely, and that its elder statesman is firmly in his corner.
+
+=== prompt_id: abst-0126 ===
+**Abstract**
+
+Speaker verification with short utterances remains challenging because limited speech duration yields unreliable i-vector estimates and degrades recognition accuracy. This paper proposes a transformation method that uses conditional generative adversarial networks (cGANs) to map i-vectors extracted from short utterances toward the distribution of those obtained from long utterances. The generator is conditioned on the short-utterance i-vector and trained adversarially against a discriminator, while an additional regression objective preserves speaker-discriminative information. The transformed i-vectors are subsequently scored using a standard probabilistic linear discriminant analysis back-end. Experiments on the NIST SRE corpora under multiple utterance durations demonstrate consistent reductions in equal error rate relative to the baseline system and to conventional compensation techniques. The results indicate that conditional adversarial learning is an effective approach for improving verification performance under short-duration conditions.
+
+=== prompt_id: emai-0235 ===
+Subject: The Morning Market Call - Thursday September 6th, 2001.
+
+Good morning,
+
+Stocks head into Thursday on shaky footing after yesterday's session, as a fresh round of earnings warnings kept technology shares under pressure and investors stayed cautious about the economic outlook. Futures are pointing to a soft open.
+
+What we are watching today:
+
+- Weekly jobless claims at 8:30 a.m. Another rise would reinforce fears about the labor market.
+- The revised second-quarter productivity numbers.
+- Comments from Fed officials following the Beige Book, which described a slow economy.
+- Treasury yields, which have drifted lower as traders bet on further rate cuts.
+
+With Friday's employment report on deck, expect volume to stay light and moves to be driven by headlines. We'd stay selective and keep an eye on risk.
+
+More at midday.
+
+Regards,
+The Trading Desk
+
+=== prompt_id: stor-0305 ===
+The first judge who sentenced Elias Marrow to life in prison had been dead for a hundred and ninety years by the time Elias finished counting the bricks in his cell for the eleventh time.
+
+He had not meant to be sentenced at all. He had meant to be forgotten. But in 1823, a magistrate in a damp northern town had hanged him for theft, and he had come back from the rope with a cough and an unpleasant headache. They tried again. Then they tried drowning. Eventually a clerk, a tidy man with ink on his sleeves, suggested the obvious: if the man could not be killed, he could at least be kept.
+
+"Life," the judge had said, with more irony than he knew. "Let the sentence be served in full."
+
+So Elias served it. At first he counted days, like everyone does. Then years. Then he gave up on numbers and started noticing the prison itself, how it changed around him. Candles became gas lamps. Gas lamps became bulbs. The guards' coats changed color. Their language drifted, and he learned the new words the way a man learns a river's moods.
+
+Over time the prisoners learned something about him too. They called him the Old Man, though he looked about forty. New arrivals asked him the same questions: how long, how do you stand it, what's it like?
+
+"It's like waiting for a train," he'd say, "except you've lost the timetable and the station keeps being rebuilt."
+
+In the second century of his sentence, a young warden named Priya Ramanathan started visiting his cell with a clipboard and a stubborn expression. She was writing a report. She read the old records, compared signatures, and finally sat down across from him.
+
+"The court that sentenced you doesn't exist," she said. "The country has changed its laws four times. Technically, there's no legal basis for you to be here."
+
+Elias laughed, a dry sound he had not made in decades. "That's very kind. But I've been here so long that I wouldn't know where to go."
+
+She came back the next week with a map. And the week after that, with a coat.
+
+On the morning they opened the gate, there was fog, and the road beyond looked unfinished. The other prisoners lined the windows. He had expected to feel like a man escaping. Instead he felt like a man changing jobs.
+
+"What will you do?" Priya asked.
+
+Elias looked at the horizon, then at his hands, which had never aged and had never been free.
+
+"Something slow," he said. "I have the time."
+
+He stepped over the line where the wall's shadow ended. It was only a few inches of stone, but it took him a very long moment to cross.
+
+=== prompt_id: expl-0405 ===
+Most did eventually return, though precise numbers are hard to pin down. Historians estimate that roughly 150,000 people left France as émigrés between 1789 and the mid-1790s, and only a minority of those were nobles. Many were clergy, soldiers, and commoners.
+
+Napoleon did allow returns, and he did it in stages. After the Consulate took power in 1799, he removed thousands of names from the list of émigrés. In 1802 he issued a general amnesty, with some exceptions, and tens of thousands came back, provided they swore loyalty to the new regime. He wanted their expertise and wanted to heal divisions. Many got their lost property back only if it had not already been sold. Most national lands had been, so returnees often returned poorer. Some nobles later served in his administration and court. A group of hardline royalists remained abroad until the Bourbon Restoration in 1814-1815.
+
+=== prompt_id: gene-0485 ===
+You're describing the Monty Hall problem, which is usually told with a car and two goats rather than just goats. Here's the setup and why switching wins more often.
+
+**The setup**
+
+There are three closed doors. Behind one is a car, and behind the other two are goats. You choose a door, say Door 1. The host, who knows what is behind every door, then opens one of the other two doors to reveal a goat. He always opens a door that hides a goat and that you did not pick. He then offers you a choice: stay with your door or switch to the remaining closed one.
+
+Most people think the odds are now 50/50, since two doors remain. That feels natural, but it isn't correct. Switching wins two-thirds of the time, and staying wins only one-third.
+
+**The key idea**
+
+When you first pick, you have a 1 in 3 chance of having the car. That means there's a 2 in 3 chance that the car is behind one of the other two doors. Nothing the host does changes the odds on your original door, because he was always going to open a goat door no matter what you picked. His action doesn't tell you anything about your own door.
+
+But the full 2/3 probability for "the car is somewhere else" doesn't disappear. It gets concentrated onto the one other door that remains closed. So that door now carries a 2/3 chance.
+
+**Walking through the cases**
+
+Suppose you always pick Door 1, and consider the three equally likely situations:
+
+1. **The car is behind Door 1.** The host opens either Door 2 or Door 3. If you switch, you lose.
+2. **The car is behind Door 2.** The host must open Door 3. If you switch to Door 2, you win.
+3. **The car is behind Door 3.** The host must open Door 2. If you switch to Door 3, you win.
+
+Switching wins in two of the three cases. Staying wins in only one.
+
+**A way to make it intuitive**
+
+Imagine 100 doors. You pick one, and the host opens 98 doors, all of them goats, leaving your door and one other. Would you still think it was 50/50? Your door had a 1 in 100 chance at the start, and the host has essentially pointed to the one door out of the remaining 99 that is most likely to hold the car. Switching clearly makes sense there, and the three-door version works the same way, just with less dramatic numbers.
+
+**The important condition**
+
+The result depends on the host's behavior. He must know where the car is, and he must always open a goat door and offer the switch. If he opened a door at random and it just happened to be a goat, the odds would indeed be 50/50. The solution relies on the host's knowledge, which is what turns his action into useful information.
+
+The puzzle became famous in 1990 when Marilyn vos Savant published the correct answer in a magazine column, and she received thousands of letters, many from people with advanced degrees, insisting that she was wrong. If you're still not convinced, try the experiment with three cards and a friend. After thirty or so rounds, the pattern becomes hard to ignore.
+
+=== prompt_id: essa-17-pla ===
+The use of animals in scientific research is one of the most debated ethical questions in modern science. On one side, animal studies have contributed to major medical advances, including vaccines, insulin, and organ transplantation. Without them, many diseases that are now treatable might still be fatal. Researchers argue that when the goal is saving human lives, limited animal testing is justified.
+
+On the other side, animals are capable of pain and fear, and critics argue that causing suffering for human benefit is morally difficult to defend. Moreover, animal models do not always predict human outcomes, which weakens some of the claimed benefits.
+
+In my view, animal research can be ethical only under strict conditions. It should be used when no alternative exists, kept to the minimum necessary, and designed to reduce suffering. The "three Rs" of replacement, reduction, and refinement offer a practical guide. As technologies such as organ-on-a-chip systems and computer modeling improve, we should work toward a future where animal testing is rare. Until then, careful regulation and transparency are essential.
+
+=== prompt_id: news-0017 ===
+# Nigeria Votes in Tight Presidential Race Amid Fears Over Results
+
+**ABUJA, Nigeria** — Millions of Nigerians cast ballots on Saturday in a presidential election that is widely seen as the most competitive in the country's modern history, with incumbent President Goodluck Jonathan facing off against retired general Muhammadu Buhari.
+
+The vote could be the closest since Nigeria returned to democracy in 1999 after decades of military rule. Africa's most populous nation and largest economy has seen elections dominated by a single party since then, but this contest has produced a strong challenge from an opposition coalition, and analysts say the outcome is too close to call.
+
+Jonathan, who comes from the Christian south, has been in office since 2010, when he took over after the death of President Umaru Yar'Adua, and was elected in his own right in 2011. His supporters point to economic growth and infrastructure investment. Critics say his government has been slow to tackle corruption and has failed to contain the Islamist insurgency waged by Boko Haram in the northeast.
+
+Buhari, a Muslim from the north, ruled Nigeria as a military leader in the 1980s. He has campaigned as a reformer who would crack down on corruption and restore security, presenting himself as a disciplined alternative. Opponents, however, have raised concerns about his past as a military ruler and about his human rights record in that era.
+
+Voters lined up early in many parts of the country, some waiting for hours at polling stations. Election officials said that new biometric card readers, introduced to reduce fraud, caused delays in some places, and in several areas voting was extended or rescheduled. Security forces were deployed in large numbers, especially in the northeast, where militant attacks have made access to polling places difficult.
+
+Perhaps the biggest concern is what comes after the polls close. Many Nigerians and outside observers fear that the losing side may not accept the results. Following the 2011 election, which Jonathan won, riots broke out in northern cities and hundreds of people were killed. Memories of that violence have left many residents anxious, and some people in the capital and in major cities have stocked up on food or left for their home regions.
+
+Both candidates and their parties signed a pledge to accept a peaceful outcome and to urge their supporters to remain calm. International leaders, including the United States and the United Nations, have called on all sides to respect the process and to settle disputes in the courts rather than on the streets.
+
+"We want a peaceful election, whoever wins," said one voter who waited in line in Abuja. "We have seen what happens when people feel cheated. We cannot go back there."
+
+Electoral officials said results are expected to be announced over the coming days. Observers from the African Union and other bodies are monitoring the count, and the credibility of that process will be crucial to whether the result is accepted.
+
+For now, the country holds its breath. A narrow margin in either direction could test the strength of Nigeria's democracy, which has endured for more than fifteen years but has never faced a more serious trial.
+
+=== prompt_id: abst-0127 ===
+**Abstract**
+
+We investigate the behavior of charmonium systems in a deconfined medium, with particular attention to the temperature dependence of bound-state properties above the critical temperature. Using a potential-model framework combined with finite-temperature lattice input, we compute spectral functions and screening masses for the J/psi and its excited states. Our results indicate that the excited states dissolve close to the deconfinement transition, whereas the ground state persists as a resonance to considerably higher temperatures before melting. We further examine the sensitivity of these conclusions to the choice of the heavy-quark potential, finding that the dissociation pattern is robust to reasonable variations. The implications for quarkonium suppression as a signature of quark-gluon plasma formation in heavy-ion collisions are discussed.
+
+=== prompt_id: stor-0306 ===
+The bell over the door jangled, and a half-orc in dented plate armor clanked into Gruntle's Loans & Curios, dragging a sack that left a wet trail across the floor.
+
+"Morning, Brakka," said Odalys, not looking up from the ledger. She was the shop's owner, a gnome with spectacles thick enough to start fires. "That better not be what I think it is."
+
+"It's loot!" Brakka dropped the sack. Something inside squelched. "Dragon's tooth. Fresh."
+
+Odalys finally looked. She pulled the tooth out with two fingers, tapped it against the counter, then sniffed it. "This is a horse's tooth. A big horse. Possibly a very sad one."
+
+"It was a dragon."
+
+"It was a Clydesdale. Ten coppers."
+
+"Ten? I fought for this!"
+
+"You fought a Clydesdale." But she sighed and added, "Fine. Twelve, because you've never lied to me about the little things."
+
+Brakka squinted. "That's a compliment, right?"
+
+Before it could be settled, the bell rang again. A slim elf in a velvet cloak slid in and set a small ring on the counter, the way a magician sets down a card. "Ring of Boundless Fortune. I'm told it's cursed, but only mildly."
+
+Odalys put on a second pair of glasses over her first pair. She turned the ring, watched the stone glow, and watched her own hand begin to itch. "Mildly?"
+
+"You may experience a streak of bad luck. Brief."
+
+"How brief?"
+
+"Weeks. Possibly seasons."
+
+"Forty gold."
+
+"It's worth four hundred!"
+
+"It's worth four hundred to someone who hates me," Odalys said. "Which, to be fair, is a long list. Sixty. And you will tell nobody I bought it."
+
+The elf considered. He glanced at the door, behind which, apparently, someone angry was waiting. "Sixty-five, and I'll leave through the back."
+
+"Deal."
+
+They shook on it. Odalys dropped the ring into a lead-lined drawer marked DO NOT, and the drawer rattled in disagreement.
+
+Brakka, still lingering with twelve coppers in hand, cleared her throat. "Uh. Odalys? Can I buy something back?"
+
+"The tooth?"
+
+"No. The sword you bought off me last week. The one that sings."
+
+Odalys slowly lowered her pen. From the back room came a faint melody, a mournful ballad about someone's lost love. It had not stopped for six days.
+
+"Brakka," she said, "I'll sell it back for exactly what I paid you. And if you tell anyone, I'll put the singing sword in your bedroll."
+
+Brakka grinned and slapped down five gold. "You're a hard woman."
+
+"I'm a pawnbroker," said Odalys, and began to polish the counter. "It's the same thing, but with receipts."
+
+=== prompt_id: expl-0406 ===
+No. A long chain of gears can't carry a signal faster than light, and in practice it is far slower than electricity or light in a wire or fiber.
+
+The reason is that gears are not perfectly rigid. When you push on the first gear, that push travels through the chain as a wave of compression moving from tooth to tooth, and each gear has to deform slightly and push on the next. That wave moves at about the speed of sound in the material, which for steel is around 5,000 meters per second. Light travels at roughly 300,000,000 meters per second, so the gears are tens of thousands of times slower.
+
+The same limit applies to a long, stiff rod. If you could push a one-light-year rod from one end, the other end would not move instantly. The push would arrive after many years, because the information moves at the speed of sound in the rod.
+
+On top of that, gears add backlash, friction, and slack, so real systems are even slower. Relativity also says nothing can carry information faster than light, no matter how it is built.
+
+=== prompt_id: gene-0486 ===
+Clerics (or healers, in many games) show up in so many parties because they solve one of the most basic problems in adventuring: staying alive long enough to finish the job. Their usefulness comes down to a few things.
+
+**What they do**
+
+A cleric's main role is restoring hit points, which means that damage doesn't permanently pile up. They also tend to remove conditions like poison, paralysis, and curses, revive fallen allies, and add buffs that make the group tougher or more accurate. Many are sturdy enough to wear heavy armor and fight in melee, so they do not simply sit in the back.
+
+**Why games lean on them**
+
+Game designers build encounters on the assumption that the party has a way to recover. If healing exists, designers can make fights more dangerous and dramatic, since a player who nearly dies can be fixed afterward. That structure is part of what is sometimes called the "holy trinity" of tank, damage dealer, and healer. Each role covers a different weakness, and the healer is what lets the tank take hits for longer.
+
+**What happens without one**
+
+A party without a cleric has to find other solutions, and the game becomes slower and more cautious.
+
+- **Resting becomes mandatory.** Without healing spells, the group must stop and rest after almost every fight, which eats up time and resources, and in some games it carries risks of its own.
+- **Potions replace spells.** Healing potions are a decent substitute, but they cost money and need to be rationed.
+- **Mistakes become permanent.** A single bad fight can leave the party crippled, and a dead character may stay dead.
+- **Tactics change.** Players avoid unnecessary combat, rely heavily on stealth, ambushes, and ranged attacks, and treat every hit as precious.
+
+Many groups do manage without a dedicated healer by using bards, druids, or potions, and some players enjoy the extra tension. Still, the cleric remains popular because the role makes the game forgiving and keeps the whole party in the fight.
+
+=== prompt_id: essa-17-stu ===
+**Is It Ethical to Use Animals in Scientific Research?**
+
+Every time we take a medicine, there is a good chance it was first tested on an animal. This fact makes the question of animal research hard to ignore. Is it right to use animals to help humans? I believe the answer is yes, but only if strict rules are followed and alternatives are used whenever possible.
+
+The main argument in favor of animal research is the benefit to human health. Many of the greatest medical achievements, such as the polio vaccine, insulin for diabetes, and heart surgery techniques, were developed with the help of animal studies. Because animals share many biological features with humans, scientists can see how a new treatment might affect a living body in a way that cells in a dish cannot show. Millions of people are alive today because of this work.
+
+However, the opponents have strong points as well. Animals can feel pain, fear, and distress, just like we can. Many people think it is wrong to make a living creature suffer, especially when it cannot give permission. In addition, animals are not the same as humans, so a drug that works on a mouse sometimes fails in people. This means some animal suffering may not lead to useful results.
+
+Because of these concerns, I think the best approach is to follow the idea of the "three Rs": replace animals with other methods when possible, reduce the number of animals used, and refine experiments to cause less pain. Scientists today can use computer models and lab-grown tissues for some tests, and these should be expanded. Governments should also require ethics committees to review every experiment.
+
+In conclusion, using animals in research can be justified when it is necessary to save lives, but it should never be done carelessly. If scientists treat animals with respect and keep searching for better options, we can protect both human health and our moral values.
+
+=== prompt_id: news-0018 ===
+# Researchers Find Traces of Ancient Double Asteroid Strike Buried Beneath Australia
+
+Scientists have uncovered evidence that two fragments of an asteroid slammed into Australia many millions of years ago, leaving scars hidden deep within the continent's crust.
+
+The discovery was made when researchers were looking at rock samples from a remote part of central Australia and came across features they did not expect. Deep underground, they found signs of intense shock, including altered rocks and disturbed layers that are typically produced only by enormous impacts. Further study suggested the damage was not caused by a single object but by two pieces of the same asteroid that fell to Earth in close succession.
+
+The team said the find was something of an accident. They had not set out to locate an impact site. Instead, they were examining the geology of the region when the unusual pattern appeared, pointing to something much bigger than ordinary geological processes.
+
+"It was not what we were looking for," one of the researchers said. "But once we saw the evidence, it became clear that something huge had happened here."
+
+The asteroid is thought to have broken apart before reaching the surface, a process that can happen when a large body passes through the atmosphere or is torn by gravity. The two pieces then struck the ground close to one another, releasing a tremendous amount of energy. The force would have thrown huge amounts of rock and dust into the air and wiped out life across a wide area.
+
+Over the following millions of years, erosion and other geological activity buried the evidence. Today the impact zone no longer appears as a crater at the surface. Only drilling and careful analysis of the deep crust revealed that it was ever there.
+
+The finding adds to the growing list of known impact sites across the planet and shows how many may remain hidden. Scientists say that Earth has been struck many times throughout its history, but most of the traces have been erased by weathering, plate movements, and the growth of vegetation and oceans.
+
+Researchers say the discovery could improve understanding of how often large objects hit the Earth and how such events affect the planet's climate and life. Impacts of this type have been linked to major extinction events, and studying older examples helps experts judge the risks from objects that might approach in the future.
+
+The team now plans to carry out more detailed work on the site, including mapping the extent of the damage and dating the rocks more precisely. They hope to learn how large the asteroid was before it split and how the collision shaped the surrounding landscape.
+
+For now, the hidden crater remains a reminder of how violent the Earth's history has been, and of how much of that story is still waiting to be found beneath our feet.
+
+=== prompt_id: abst-0128 ===
+**Abstract**
+
+We present a review of recent measurements of proton structure functions at the HERA electron-proton collider and the extraction of parton distribution functions (PDFs) from these data. The inclusive neutral and charged current deep inelastic scattering cross sections measured by the H1 and ZEUS experiments cover a wide kinematic range in the Bjorken variable x and the negative squared four-momentum transfer Q^2. The combination of both datasets yields a consistent set with significantly reduced systematic uncertainties. These data are analyzed within the framework of perturbative QCD using DGLAP evolution, and the resulting PDFs are presented together with their experimental, model, and parameterization uncertainties. The contributions of heavy-flavor measurements and jet production to the constraint of the gluon distribution are also discussed, along with implications for predictions at the Large Hadron Collider.
+
+=== prompt_id: stor-0307 ===
+**The Woman in Blue**
+
+The first time Daniel Whitmore noticed the woman, he was six years old, standing on a pier in Lisbon with a melting ice cream and a sunburned nose. She was seated on a bench some distance away, wearing a dress of deep cobalt blue, reading a book. She looked up only once. Daniel waved. She did not wave back, but she smiled, and then she was gone into the crowd.
+
+He thought nothing of it until the following summer, in a mountain village in Switzerland. There she was again, on a balcony of the guesthouse across the street, in a blue coat despite the heat. He told his mother. She laughed and said that many people wear blue.
+
+The years passed, and the sightings continued. A blue scarf at the edge of a market in Marrakesh. A blue umbrella at a train station in Kyoto. A figure in a blue silk shawl at the back of a church in Florence. She never approached, and she never seemed to age. Daniel kept a notebook, at first as a game, then with something closer to obsession. By fifteen, he had recorded nine sightings across nine countries. His father suggested, kindly but firmly, that he might be seeing what he wished to see.
+
+Daniel considered this possibility seriously. He was a rational boy, and he accepted that the mind seeks patterns. Yet the details troubled him. The shade of blue never varied. The woman's expression, calm and faintly amused, never changed. And she always seemed to be looking directly at him.
+
+On the evening of his eighteenth birthday, his parents hosted a dinner at a restaurant overlooking the harbor in Genoa, where the family was vacationing once more. Daniel was distracted, scanning the room out of habit. When the dessert arrived, his mother tapped her glass.
+
+"There is someone we would like you to meet," she said. "We should have done so long ago."
+
+A door opened at the far end of the room. The woman in blue walked toward the table, now older than he had imagined, perhaps sixty, with silver hair and the same composed expression. Daniel rose to his feet, unable to speak.
+
+"This is Margaret Ellison," his father said. "She was your grandmother's closest friend. Before your grandmother passed away, she made us promise that you would be introduced to Margaret when you came of age."
+
+Margaret extended her hand. "I apologize for the secrecy," she said. "Your grandmother wished me to watch over you from a distance as you grew. She believed that a child should discover the world for himself, but that he should never be entirely alone in it."
+
+"You followed us for twelve years," Daniel said at last.
+
+"I traveled," Margaret replied. "You happened to be going to the same places. I was careful never to interfere."
+
+Daniel looked at his parents, who were smiling with evident relief, and then at the woman who had been a quiet constant in his childhood. He felt, strangely, neither anger nor surprise, but a sense of gratitude he could not yet articulate.
+
+"Then I should thank you," he said, and pulled out the chair beside him.
+
+Margaret sat down, and for the first time, the woman in blue spoke to him as one speaks to a friend.
+
+=== prompt_id: expl-0407 ===
+Because light only looks like it travels in straight lines when it interacts with large objects and detectors. In quantum terms, light doesn't follow one path. It explores all possible paths, and each path carries a phase. For most situations, paths that stray from the straight line have phases that vary rapidly and cancel each other out. Only paths near the straight line add up constructively, so the beam appears straight. This is the idea behind Feynman's path integral formulation.
+
+With a double slit, the opening is so small, comparable to the wavelength, that the cancellation fails. Many more paths survive, and they add up in a pattern that produces the bright and dark fringes. A wide opening restores straight-line behavior, and the beam spreads far less. Straight-line propagation is simply the large-scale limit of wave behavior.

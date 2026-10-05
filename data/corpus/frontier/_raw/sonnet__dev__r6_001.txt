@@ -1,0 +1,354 @@
+=== prompt_id: gene-0528 ===
+That strip is a security thread, and it's one of the oldest anti-counterfeiting features in US currency. It's a thin plastic ribbon woven into the paper itself while the paper is still being made, so it sits inside the note rather than on top of it. You can't see it well in normal light, but hold the bill up to a window or a lamp and it shows as a solid line, because it blocks or transmits light differently from the surrounding paper. On a $20 it runs vertically, to the left of the portrait, and has tiny printing on it that reads "USA TWENTY" along with a small flag.
+
+The reason it works is simple. Counterfeiters usually start with ordinary paper and try to imitate the look of the ink. A thread that's embedded in the paper during manufacture can't be faked with a printer or a copier. To fake it, you'd have to make the paper from scratch with the thread already inside, which is far harder and more expensive than printing a convincing picture. Some counterfeiters try to print a fake line on the surface, but when you hold the note to the light, a printed line looks flat and smudged, and it doesn't appear as a distinct strip that's visible from both sides.
+
+The thread has another trick. Under an ultraviolet lamp, the $20 thread glows green. Each denomination has its own color, which is why a bleached $5 that's been reprinted as a $100 gets caught. Someone who washes a small bill and prints a larger number on it would still have the wrong glow, and the printed text on the thread wouldn't match the new denomination either.
+
+The thread's position also differs by denomination. On a $20 it sits in one specific place, and bills in other denominations have it in different spots. This is another small detail that makes quick checks possible. Cashiers, bank tellers and the machines that count and verify cash all use it.
+
+The US has used security threads in its notes since 1990. Newer designs added extra features, like color-shifting ink, watermarks and microprinting, but the thread is still a basic first test. If you're ever unsure about a bill, hold it to the light and check that the thread is there, in the right place, and says the right words. It takes two seconds.
+
+=== prompt_id: essa-22-stu ===
+Friendship Quality or Friendship Quantity?
+
+People often say that the number of friends you have shows how successful you are socially. I disagree. I think having a few close friends is better than having many casual ones, because close friends give you real support, honesty, and trust.
+
+A close friend knows you well. When I had a hard week before my exams, the person who helped me most wasn't someone I only said hello to in the hallway. It was a friend who noticed I was stressed, sat with me at lunch, and listened without trying to fix everything. Casual friends are fun, but they usually don't know when something is wrong.
+
+Casual friends do have value, though. They introduce you to new groups, new ideas, and new opportunities, and they make school more enjoyable. A big circle can make you feel included. The problem is that spending time on many relationships leaves little energy for any single one, and those friendships often stay shallow.
+
+In the end, a few close friends give you something that a large crowd cannot: people you can rely on when things get difficult. I would still stay friendly with everyone, but I would put my time and effort into the few who really matter.
+
+=== prompt_id: gene-0529 ===
+Waking up fresh mostly comes down to what you do in the 24 hours before, not what happens when the alarm goes off. A few things make the biggest difference.
+
+**Keep a consistent schedule.** Going to bed and waking up at about the same time every day, even on weekends, trains your body clock. This is probably the single most effective habit. If your wake time shifts by two or three hours on weekends, you give yourself a kind of mini jet lag every Monday.
+
+**Get enough sleep.** Most adults need seven to nine hours. Work backward from your wake-up time to figure out when you actually need to be asleep, and be honest about how long it takes you to fall asleep.
+
+**Wind down properly.** Dim the lights an hour before bed, put your phone away or at least switch off notifications, and avoid heavy meals, alcohol, and caffeine in the late afternoon and evening. A cool, dark, quiet room helps a lot.
+
+**Wake up in light.** Light is the strongest signal telling your brain it's morning. Open the curtains right away, or step outside for a few minutes. If you wake before sunrise, a bright lamp or a sunrise-simulating alarm can help.
+
+**Don't hit snooze.** Fragmented sleep after the first alarm is low quality and often makes grogginess worse. Put the alarm across the room so you have to get up, or set it for the time you really need to wake.
+
+**Move and hydrate.** A glass of water and a bit of movement, such as stretching or a short walk, get your blood flowing. Eating a reasonable breakfast can help too, though it matters less than the rest.
+
+Be patient with yourself. If you change your habits, it can take a week or two to feel the difference. If you sleep enough and still feel exhausted every morning, it's worth talking to a doctor, since conditions like sleep apnea or thyroid problems can cause it.
+
+=== prompt_id: essa-22-esl ===
+I think it is better to have a few close friends. Many people like to have a lot of friends, but I think good friends are more important than many friends.
+
+First, close friends understand you. When I have a problem, I can tell them everything and they do not laugh at me. They give me good advice and they help me when I am sad. Casual friends are nice, but I don't talk to them about my real feelings.
+
+Second, a close friendship need time. If you have too many friends, you can not spend enough time with each of them. I have three close friends and we meet every weekend, play basketball or just talk. This make our friendship very strong.
+
+But casual friends are also useful. They can help you meet new people and they make school more fun. I like to say hello to many people in my class.
+
+In conclusion, I believe a few close friends are better than many casual friends, because they are always there for you. Good friends is something very special in life.
+
+=== prompt_id: gene-0530 ===
+The ostrich, gentle reader, is a creature of such singular and ungainly construction that one might suppose Nature, having grown weary near the close of her labours, assembled it from the spare parts of other animals. It stands taller than any man, upon two legs of prodigious length and sinew, each ending in a foot of only two toes, and these it uses for striding across the dusty African plains at a speed that would put the swiftest racehorse to the blush. Upon its towering neck sits a small and foolish-looking head, with a large and solemn eye that regards the world with an expression of perpetual surprise, as though it were forever being introduced to some novelty it had not quite expected. Its wings, being a vast ornament of feathers, are quite useless for flight, and serve instead as a rudder in its flight upon the ground, or as a splendid fan in the courtship of its mate. It is, in short, the largest of all birds, and the most earthbound; a feathered monument to the proposition that a thing need not rise above the world to be remarkable in it. And as for the unfortunate legend that it buries its head in the sand at the approach of danger, that is a calumny, and nothing more: the creature merely lowers its head to the ground, and, if pressed, will deliver a kick of such force as to give a lion a lesson in humility.
+
+=== prompt_id: essa-26-pla ===
+Is a Gap Year a Good Idea?
+
+Every year, thousands of students finish school and face a choice: go straight to university, or take a year to work, travel, or volunteer first. The idea of a gap year divides opinion. Some see it as a waste of time that makes it harder to return to studying. Others see it as a chance to grow up before the pressures of university begin. On balance, a gap year can be a very good idea, provided it is used well.
+
+The strongest argument in its favour is maturity. Many eighteen-year-olds choose a degree because of family expectations or because their friends are applying for the same course. A year spent working in a job, living abroad, or doing community service gives them a better sense of what they enjoy and what they are good at. Students who return after a gap year often have clearer goals and are more motivated, because they have chosen to be there. Some studies suggest they even achieve slightly higher grades than those who went directly.
+
+A gap year also teaches practical skills that classrooms rarely cover. Managing a budget, dealing with customers, learning a language in a foreign country, or coordinating a project with strangers all build independence and confidence. Employers and universities tend to value these experiences, because they show initiative and responsibility.
+
+However, there are real risks. A gap year can be expensive, and not every family can afford to fund a year of travel. Some students lose the habit of studying, or find that their friends have moved on without them. Others never go back. A year without a plan can easily turn into a year of doing very little.
+
+The answer therefore depends on how the time is spent. A gap year with clear goals, such as saving money, gaining work experience, or learning a skill, is likely to be valuable. A year of drifting is not. Universities that allow deferred entry make the choice safer, since the student still has a place waiting.
+
+In conclusion, a gap year is neither a guaranteed benefit nor a mistake. For students who are unsure of their direction or burned out after years of exams, it can be a worthwhile pause. For those who are certain of their path and ready to continue, going straight to university is perfectly reasonable. What matters is making a deliberate choice.
+
+=== prompt_id: gene-0531 ===
+# What Is the Best Skill in Judo?
+
+There is no single answer that every judoka would agree on, and that is part of what makes the question interesting. Still, if I had to pick, I would argue that the best skill in judo is **kuzushi**, the art of breaking your opponent's balance. Techniques come and go, but kuzushi is the thing that makes all of them work. Below I explain why, and then look at some strong competing candidates.
+
+## Why Kuzushi Comes First
+
+Judo was founded by Jigoro Kano in 1882 on the principle of "maximum efficiency, minimum effort." Kano observed that a person who is off balance can be thrown with very little force, while a person who is firmly balanced can resist even a much stronger attacker. Kuzushi is the application of that idea. Before you attempt any throw, you pull, push, or move your opponent so that their weight is no longer over their feet.
+
+Kano described this in terms of three stages: kuzushi (breaking balance), tsukuri (fitting in, or positioning your body for the technique), and kake (the execution of the throw). Many beginners focus on kake, because that is the dramatic part. Experienced players spend most of their effort on the first two stages. A throw that is started without kuzushi usually fails, or it succeeds only through brute strength, which defeats the point of judo.
+
+Kuzushi also applies beyond throwing. In newaza, or groundwork, you disrupt your opponent's posture and base before applying a pin or submission. In grip fighting, the whole contest is about who can control the other's balance first. So it is a skill that runs through the entire sport rather than belonging to one technique.
+
+## Strong Alternatives
+
+**Grip fighting (kumi kata).** At high levels of competition, many matches are decided by grips. A fighter who gets the dominant grip can attack freely, while one who cannot is forced into defence. Some coaches say that whoever wins the grip fight wins the match, and the rules changes of recent years have made this even more important.
+
+**Seoi nage.** This shoulder throw is probably the most widely used technique in competitive judo. It is versatile, works for both tall and short athletes, and can be adapted into many variations. If you ask which single throw to learn first, many instructors will say this one.
+
+**Uchi mata.** The inner thigh throw is a favourite of elite players, because it is powerful and can be linked into other attacks. It requires good timing, flexibility, and excellent balance of your own.
+
+**Ukemi (breakfalls).** It may seem strange to count falling as a skill, but ukemi is arguably the foundation of the whole art. A judoka who can fall safely can train hard, take risks, and avoid injury. Without it, nobody could practice throws at full speed, so every other skill depends on it.
+
+**Newaza.** Ground fighting is where many matches end, and a strong groundwork specialist can beat a better thrower by getting the fight to the mat and holding or submitting the opponent.
+
+## How to Decide
+
+Which skill is "best" depends on what you want from judo. For competition, grip fighting and a strong signature throw matter a great deal. For self-defence, breakfalls and balance-breaking are probably the most valuable. For personal development, the principle of using your opponent's energy rather than fighting against it is the lesson that stays with people long after they have stopped competing.
+
+## Conclusion
+
+I would choose kuzushi as the best skill because it is the foundation of every throw, pin, and transition, and because it reflects the core philosophy of judo. Without it, technique becomes a contest of strength. With it, a smaller player can handle a bigger one. Ukemi and grip fighting are close behind, and a well-rounded judoka needs all of them. If you are writing about this, a good approach would be to present kuzushi as your thesis and use the other skills as counterpoints that show how they depend on it.
+
+=== prompt_id: essa-26-stu ===
+Should Students Take a Gap Year?
+
+After finishing high school, many students feel pressure to go straight to university. But I believe a gap year can be a good idea if students plan it carefully.
+
+One big benefit is that it helps students figure out what they want. Many of my classmates are choosing a major just because it sounds respectable or because their parents suggested it. A year of working or volunteering could show them what they actually enjoy. Students who take that time often come back more focused and motivated.
+
+A gap year also teaches real-life skills. Working a job, saving money, or traveling alone helps you become more independent and responsible. These are things you cannot learn from a textbook, and universities and employers like to see them.
+
+On the other hand, a gap year has risks. It can cost a lot of money, and some students may get out of the habit of studying. If a student has no plan, the year might just be wasted watching videos and sleeping late.
+
+Overall, I think a gap year is a good idea for students who have clear goals, like earning money, learning a skill, or gaining experience. For students who already know what they want, going straight to university is fine. The important thing is to make a choice on purpose.
+
+=== prompt_id: gene-0532 ===
+Determining whether one is a good person is not a matter of applying a single test. It is better understood as an ongoing assessment of character and conduct, measured against consistent standards. The following considerations may be helpful.
+
+**Consistency between values and actions.** A good person's behavior aligns with the principles they profess. Stating a commitment to honesty or fairness is easy; the more meaningful evidence is how one acts when it is inconvenient, costly, or unobserved.
+
+**Treatment of others.** Consider how you treat those who cannot benefit you, such as service staff, junior colleagues, or strangers. Respect, patience, and basic courtesy toward people without power or status are reliable indicators of character.
+
+**Accountability.** No one behaves well at all times. What distinguishes a good person is the willingness to acknowledge errors, make amends where possible, and change behavior accordingly, rather than deflecting blame or rationalizing harm.
+
+**Capacity for empathy.** A good person makes a genuine effort to understand how their decisions affect others, and weighs those effects when making choices, even where no rule requires it.
+
+**Reputation among those who know you well.** Feedback from trusted colleagues, friends, and family members offers a useful external check. People are often poor judges of their own moral standing, and sincere, critical feedback can reveal blind spots.
+
+**Concern about the question itself.** Those who regularly reflect on whether they are acting rightly are generally less likely to cause serious harm than those who are certain of their own virtue. Moral self-examination is itself a sign of ethical seriousness.
+
+It is also worth noting that moral philosophers differ on what "good" means. Consequentialists emphasize outcomes, deontologists emphasize duties and rules, and virtue ethicists focus on character traits developed over time. Each framework provides a partial perspective, and a thoughtful person may draw on all three.
+
+In practice, goodness is best regarded as a direction rather than a fixed state. The goal is not to arrive at a final verdict but to maintain a sustained commitment to honesty, fairness, and care for others, and to correct course when one falls short.
+
+=== prompt_id: essa-26-esl ===
+Nowadays, many students ask themselves if they should take a gap year before university. A gap year is one year when students do not study, but they work, travel or do other things. I think it can be a good idea, but it depends on the student.
+
+The first good point is that a gap year helps students to know themselves better. After high school, many young people don't know what they want to study. They only choose a subject because their parents say so or because it is popular. If they spend one year to work or travel, they can think about their future more carefully. I have a cousin who took a gap year, and when he started university he was much more serious than before.
+
+The second good point is learning life skills. When you work, you learn how to talk with customers, how to use your time and how to save money. If you travel to another country, you can learn about different culture and practise a new language. These experiences make students more independent and confident. Also, they are good for a job application in the future.
+
+However, there are some problems too. A gap year can be expensive, and not every family have enough money for it. Another problem is that some students become lazy. They stay at home, play games and forget how to study. After one year, it can be difficult to go back to the classroom. Some students even decide that they don't want to go to university anymore.
+
+In my opinion, a gap year is good when the student has a clear plan. For example, they can find a job, learn a skill or do volunteer work. If they only sleep and do nothing, the year is wasted. Students should also talk with their parents and teachers before they decide.
+
+To sum up, a gap year has advantages and disadvantages. It can help students to grow up and to choose the right subject, but it also costs money and time. I think students should think carefully and make a plan before they take a gap year.
+
+=== prompt_id: gene-0533 ===
+Human cognition evolved gradually over several million years, shaped by pressures such as walking upright, tool use, living in larger social groups, and the demands of finding food and cooperating. Brain size roughly tripled in the hominin line, and the expansion appears linked to social complexity, language, and the ability to plan and learn from others. Around 50,000 to 100,000 years ago, symbolic thought, art, and more sophisticated tools became widespread.
+
+Evolution supplied the basic capacities, but culture determines how they are used. Language, education, religion, economic systems, and family structure all shape what people pay attention to and value. For example, research suggests that people from individualist societies tend to reason analytically and focus on individuals, while those from collectivist societies often think more holistically and focus on relationships. Environment, diet, technology, and even writing systems influence development too. Genes and culture interact continuously, so behavior is rarely explained by either alone.
+
+=== prompt_id: essa-29-pla ===
+Artificial Intelligence and the Future of Work: Threat or Opportunity?
+
+Few technologies have generated as much excitement and anxiety as artificial intelligence. Predictions about its effect on employment range from mass unemployment to a new age of prosperity. Over the next twenty years, AI will certainly eliminate many existing jobs, but whether it becomes a threat or an opportunity will depend less on the technology itself than on the choices societies make in response.
+
+The case for concern is real. Unlike earlier waves of automation, which mostly replaced physical labour, modern AI systems can write, translate, analyse data, draw, and write code. This puts at risk a range of white-collar roles that were once considered safe, including customer service, paralegal work, bookkeeping, and some forms of design and journalism. Economists at institutions such as Goldman Sachs and the World Economic Forum have estimated that hundreds of millions of jobs worldwide could be affected. For the people in those roles, the disruption is not abstract. A middle-aged worker whose skills have lost value cannot easily retrain, and the benefits of new technology often flow to a small group of owners and highly skilled specialists rather than to the broad population.
+
+However, history suggests that technology rarely produces permanent mass unemployment. The introduction of the steam engine, electricity, and computers all destroyed particular occupations, yet each created new industries that were hard to imagine beforehand. Few people in 1990 predicted that "social media manager" or "app developer" would become careers. AI may follow a similar pattern, automating routine tasks while increasing demand for roles that require judgment, creativity, and human contact. It could also raise productivity, lower the cost of goods and services, and make expert help in medicine, law, and education available to people who cannot afford it today.
+
+The key question is how the transition is managed. If governments and companies do nothing, the gains may be concentrated and displaced workers left behind. If they invest in retraining, strengthen social safety nets, and give workers a voice in how technology is introduced, the benefits can be shared more widely. Education systems will also need to change, placing less emphasis on memorizing information that machines can retrieve and more on critical thinking, adaptability, and collaboration.
+
+In conclusion, AI is both a threat and an opportunity, and the balance between the two is not predetermined. The technology will make some skills obsolete and others more valuable. The danger lies in treating the outcome as inevitable. With careful planning, AI could free people from tedious work and expand what society can achieve. Without it, the same technology could deepen inequality. The next twenty years will test whether we are prepared to choose the better path.
+
+=== prompt_id: gene-0534 ===
+Here is a clean template for an academic article using the standard `article` class. Save it as `main.tex` and compile with `pdflatex` (and `bibtex` if you use a bibliography).
+
+```latex
+\documentclass[12pt, a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\onehalfspacing
+
+% ---------- Title ----------
+\title{Your Article Title Goes Here}
+\author{
+  First Author\thanks{Department, University. Email: first@example.edu} \and
+  Second Author\thanks{Department, University. Email: second@example.edu}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Write a concise summary of your research question, methods, main results,
+and conclusions in roughly 150 to 250 words.
+
+\bigskip
+\noindent\textbf{Keywords:} keyword one, keyword two, keyword three
+\end{abstract}
+
+\section{Introduction}
+Introduce the topic, explain why it matters, review the key literature
+briefly, and state your research question or hypothesis \citep{example2020}.
+
+\section{Methods}
+Describe your data, materials, and procedures in enough detail for
+someone else to reproduce your work.
+
+\subsection{Data}
+Describe your data sources here.
+
+\section{Results}
+Present your findings. Equations can be written like this:
+\begin{equation}
+  y = \beta_0 + \beta_1 x + \varepsilon
+  \label{eq:model}
+\end{equation}
+and referenced as Equation~\ref{eq:model}.
+
+\begin{table}[h]
+  \centering
+  \caption{Example table.}
+  \label{tab:example}
+  \begin{tabular}{lcc}
+    \toprule
+    Group & Mean & SD \\
+    \midrule
+    A & 3.2 & 0.5 \\
+    B & 4.1 & 0.7 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  % \includegraphics[width=0.7\textwidth]{figure.png}
+  \caption{Example figure caption.}
+  \label{fig:example}
+\end{figure}
+
+\section{Discussion}
+Interpret your results, discuss limitations, and compare with prior work.
+
+\section{Conclusion}
+Summarize the main contributions and suggest future work.
+
+\section*{Acknowledgments}
+Thank funders and contributors here.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
+```
+
+You will also need a `references.bib` file, for example:
+
+```bibtex
+@article{example2020,
+  author  = {Smith, John and Lee, Ann},
+  title   = {An Example Paper},
+  journal = {Journal of Examples},
+  year    = {2020},
+  volume  = {12},
+  pages   = {1--20}
+}
+```
+
+Compile in this order: `pdflatex main`, `bibtex main`, `pdflatex main`, `pdflatex main`. If your instructor or journal supplies its own class file (such as `IEEEtran` or `elsarticle`), swap out the `\documentclass` line and follow their formatting guidelines.
+
+=== prompt_id: essa-29-stu ===
+Artificial Intelligence and Jobs: Threat or Opportunity?
+
+Artificial intelligence is changing the world faster than most people expected. A few years ago, AI seemed like something from science fiction. Today, students use it to help with homework and companies use it to write emails, answer customer questions, and even create images. Many experts believe AI will take a large number of jobs in the next twenty years. I think this is both a threat and an opportunity, but with the right choices it can be more of an opportunity.
+
+First, it is true that AI is a threat to some workers. Jobs that involve repeating the same tasks, like data entry, basic customer service, and some kinds of bookkeeping, can be done by software at lower cost. Unlike old machines that replaced factory workers, AI can now do some office work too. That means even people with college degrees could lose their jobs. For a worker in their forties or fifties, learning a whole new career is hard and stressful, so the fear is real.
+
+However, history shows that new technology also creates new jobs. When computers became common, many typing and filing jobs disappeared, but millions of new jobs appeared in software, design, and technology support. Nobody in 1995 could have guessed that being a YouTuber or an app developer would be a career. AI will probably do the same. It may handle boring tasks so that people can focus on work that needs creativity, empathy, and judgment, such as teaching, nursing, and leadership.
+
+AI can also help society in other ways. It can make products cheaper, help doctors find diseases earlier, and give students in poor areas access to personal tutoring. If those benefits are shared widely, many people could be better off than they are now.
+
+Still, this will not happen automatically. Governments and companies need to help workers who lose their jobs by paying for retraining and supporting them while they learn new skills. Schools also need to change. Instead of just memorizing facts, which AI can find in seconds, students should learn to think critically, solve problems, and work with others. They should also learn how to use AI tools well, because workers who can use AI will probably do better than those who ignore it.
+
+In conclusion, AI is not simply good or bad. It will end some jobs and begin new ones, and the result depends on how we prepare. If we ignore the problem, many people may suffer. If we plan carefully, AI could make work more interesting and life easier. As a student, I think the best thing I can do is stay curious, keep learning, and develop skills that machines cannot easily copy.
+
+=== prompt_id: gene-0535 ===
+The Scheveningen (1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6) is a flexible Sicilian setup where Black keeps a compact pawn structure with pawns on d6 and e6 and delays committing the pieces. White has several well-established plans, and which one you choose usually depends on your style.
+
+**The English Attack (Be3, f3, Qd2, O-O-O, g4).** Currently the most popular and dangerous approach. White castles queenside and launches a pawn storm with g4-g5 against Black's kingside. Black typically counters with ...a6, ...b5, and ...Bb7 or ...Nbd7, aiming for queenside play and central breaks like ...d5. The race is sharp, so knowledge of theory matters.
+
+**The Classical setup (Be2, O-O, f4, Kh1, Be3, Qe1 or Qd2).** White castles short and builds up slowly, with f4 and sometimes a4, preparing e5 or a kingside attack. This is a more strategic approach and gives White a solid position, although Black has plenty of counterplay.
+
+**The Keres Attack (g4).** After 6.g4, White immediately threatens g5 to drive away the f6 knight. This was Paul Keres's invention and remains a serious weapon. Black usually replies with ...h6 or ...Nc6 and aims to strike back with ...d5 or ...Nxd4 followed by ...e5.
+
+**The Sozin Attack (Bc4 and Be3).** White develops the bishop actively to c4, often followed by castling kingside or queenside depending on Black's setup. It can lead to sharp positions where Black has to be careful about the pressure against e6.
+
+**The Fischer plan (Bc4 with Qe2, 0-0-0).** Not a different line so much as a variation of the above, but Fischer's handling of it, with Black's king getting pressured on the d-file, is a classic model.
+
+**The Maroczy-style and quiet setups (Be2, a4, and Be3).** White restricts Black's queenside expansion by playing a4 to stop ...b5, then plays slowly with f4 and Bf3 or Qd2 and O-O-O, aiming for a small, steady advantage.
+
+Some general ideas run through all of these lines. White usually wants to exploit the extra space in the center, keep the d4 knight well placed, watch for sacrifices on e6 or the pawn break e4-e5, and aim at the weaknesses on d6 and e6. Black, meanwhile, aims for ...d5 to equalize, queenside expansion with ...b5, and counterattack against White's king if White castles long.
+
+If you want to get started, the English Attack is great for aggressive players, while the Classical system with Be2 suits people who prefer a more solid, strategic game.
+
+=== prompt_id: essa-29-esl ===
+Today many people talk about artificial intelligence, or AI. Some people say it will take a lot of jobs in the next twenty years. I think AI is a threat and also an opportunity, but I think it is more a chance for us if we are ready.
+
+First, I want to talk about the threat. AI can do many tasks that people do now. For example, it can answer questions from customers, write simple reports and check numbers. Companies like this because AI does not need a salary and it does not get tired. So some workers can lose their job. This is a big problem for older people, because it is difficult for them to learn new skills. My uncle works in an office and he is worried about this. He told me that his company already use a computer program for some of his work.
+
+On the other hand, AI can give us new opportunities. In the past, when new machines came, some jobs disappeared but many new jobs started. For example, now we have jobs like website designer, game developer and online teacher. Twenty years ago these jobs were not so common. I think AI will create new kinds of jobs too. People will need to build AI, to control it and to fix it.
+
+Also, AI can make our life easier. If AI does the boring and repeat work, people can have more time for creative work. Doctors can use AI to find sickness early. Students can use it to learn English or other subjects. This can be very helpful for people who do not have money for a private teacher.
+
+But we must prepare for this change. The government should help people who lose their job. They can pay for new courses so people can learn new skills. Schools must teach students how to think, how to solve problems and how to use technology. I think it's important that students learn to work together with AI and not be afraid of it.
+
+In conclusion, AI will change many jobs in the next twenty years. It is a threat for people who do not change, but it is a good opportunity for people who learn new things. I believe the future can be good if we plan carefully. For me, I will study hard and try to learn about technology, so I can be ready for the new world of work.
+
+=== prompt_id: gene-0536 ===
+A man walks into a bar and orders a drink. The bartender slides it over and says, "That'll be five dollars."
+
+The man looks at it, then at his wallet, and says, "I'll pay you tomorrow."
+
+The bartender points to a sign above the register: "In God we trust. All others pay cash."
+
+The next day, the man walks back in. The bartender squints at him and says, "Hang on, I'm not serving you until you pay for yesterday."
+
+The man shrugs. "Well, that's the thing. Yesterday I said I'd pay you tomorrow, and today it's today, so technically I'm just on time."
+
+=== prompt_id: gene-0537 ===
+Many sports are played with a round ball. Here are some of the most popular, grouped by type.
+
+**Team sports with a round ball**
+- **Soccer (football):** the world's most popular sport, played with a spherical ball that is moved mainly with the feet.
+- **Basketball:** players shoot the ball through a hoop and dribble with their hands.
+- **Volleyball:** two teams hit the ball over a net, trying to make it land on the opponent's side.
+- **Handball:** players pass and throw the ball and try to score in a goal.
+- **Water polo:** played in a pool, with players throwing the ball into a goal while treading water.
+- **Netball:** similar to basketball, but players can't dribble or run with the ball.
+- **Baseball and softball:** a pitcher throws a ball to a batter, who tries to hit it and run around the bases.
+- **Cricket:** a bat-and-ball game with a hard leather ball, popular in countries such as India, England, and Australia.
+- **Field hockey and lacrosse** use a ball too, though players hit or carry it with a stick.
+
+**Racquet and individual sports**
+- **Tennis:** a felt-covered ball is hit across a net with a racquet.
+- **Table tennis:** a small, light ball is played on a table.
+- **Badminton** uses a shuttlecock, so it doesn't count, but **squash** and **racquetball** do use balls.
+- **Golf:** players hit a small ball into holes using clubs, with the fewest strokes winning.
+- **Bowling** and **bocce:** players roll balls toward pins or a target ball.
+- **Billiards, pool, and snooker:** cue sports played with balls on a table.
+
+Rugby and American football use oval balls, so they're not on this list.

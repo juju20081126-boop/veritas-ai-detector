@@ -1,0 +1,82 @@
+[
+ {
+  "prompt_id": "essa-10-esl",
+  "instruction": "Write a 400-word essay on this topic as if you were an intermediate English learner (CEFR B1): use simple vocabulary and sentence structures, and let a few small grammar mistakes slip in naturally. Topic: Is competition among students a good or a bad thing for their development?"
+ },
+ {
+  "prompt_id": "news-0028",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- A Wisconsin pizzeria is harassed by people confusing it with one in Indiana.\n- Owners of Memories Gourmet Pizza Co. have gotten angry calls, Facebook posts.\n- Memories Pizza of Walkerton, Indiana, made headlines amid \"religious freedom\" debate."
+ },
+ {
+  "prompt_id": "abst-0138",
+  "instruction": "Draft the abstract (around 225 words) for the paper \"An Initial Survey of White Dwarfs in the Sloan Digital Sky Survey\"."
+ },
+ {
+  "prompt_id": "emai-0239",
+  "instruction": "Write an email with the subject line \"IMPORTANT! Actions this evening.\". Aim for about 225 words."
+ },
+ {
+  "prompt_id": "stor-0316",
+  "instruction": "Write a 600-word story for this prompt: You're sitting in a coffee shop watching a man type on his computer. He types the words, \"It begins raining outside \", and it instantly starts raining."
+ },
+ {
+  "prompt_id": "expl-0412",
+  "instruction": "I'm a college student and need help with an assignment. What's the difference between a granuloma and a cyst? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0521",
+  "instruction": "I'm a college student and need help with an assignment. What is the history of the Roman Republic and the Roman Empire and what were their key achievements?"
+ },
+ {
+  "prompt_id": "essa-19-pla",
+  "instruction": "Write an essay of about 200 words on the following topic: Some people say money is the key to happiness; others disagree. What is your opinion?"
+ },
+ {
+  "prompt_id": "news-0029",
+  "instruction": "Turn these bullet points into a news article (roughly 250 words):\n- Pentagon releases map showing coalition forces have taken back 25-30% of Iraq territory from ISIS.\n- Counterinsurgency specialist Afzal Ashraf on what new data tells us about fight.\n- Ashraf: Where it counts (ISIS is) not standing and fighting. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "abst-0139",
+  "instruction": "Draft the abstract (around 125 words) for the paper \"Nonlinear susceptibilities and the measurement of a cooperative length\"."
+ },
+ {
+  "prompt_id": "emai-0240",
+  "instruction": "I'm a college student and need help with an assignment. Write an email with the subject line \"SCE Advice Letter to Implement Settlement with Commission\". Aim for about 325 words."
+ },
+ {
+  "prompt_id": "stor-0317",
+  "instruction": "In 2160, time travel is widespread. You work in the Bureau of Timeline Maintenance in the Disasters Department, traveling back in time to thwart the efforts of travelers who threaten to alter the future as you know it. You work to ensure that the worst travesties in history actually occur.\n\nWrite a short story of about 600 words."
+ },
+ {
+  "prompt_id": "expl-0413",
+  "instruction": "Theoretically, Is it possible to wear a space suit that only covers your head and proves oxygen? Or is the entire suit necessary?\n\nExplain it in about 75 words."
+ },
+ {
+  "prompt_id": "gene-0522",
+  "instruction": "Can you write me the lyrics to a song about Bilbo's experiences in The Hobbit in the style of a work song? Please avoid referencing the song with the same name as the genre of music. Keep it around 500 words."
+ },
+ {
+  "prompt_id": "essa-19-stu",
+  "instruction": "I'm a high school student and I have to write an essay. Please write a 200-word essay on this topic: Some people say money is the key to happiness; others disagree. What is your opinion?"
+ },
+ {
+  "prompt_id": "news-0030",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- Eight U.S. states don't require vision and hearing screenings in schools.\n- After going partially blind and deaf as a child, Chelsea Elliott created a solution.\n- Do you know a hero? Nominations are open for 2015 CNN Heroes."
+ },
+ {
+  "prompt_id": "abst-0140",
+  "instruction": "I'm a college student and need help with an assignment. Write an abstract of about 125 words for a research paper titled \"SHADES: The Scuba HAlf Degree Extragalactic Survey\"."
+ },
+ {
+  "prompt_id": "emai-0241",
+  "instruction": "Write an email with the subject line \"Conference call 1/27/00\". Aim for about 75 words."
+ },
+ {
+  "prompt_id": "stor-0318",
+  "instruction": "I'm a college student and need help with an assignment. The year is 3184, inside an ancient artifact, what the people of the time called a \"book \", is written a historical account of the 3rd world war.\n\nWrite a short story of about 300 words."
+ },
+ {
+  "prompt_id": "expl-0414",
+  "instruction": "Viking Names, the English Language, and their Translation.\n\nExplain it in about 75 words."
+ }
+]

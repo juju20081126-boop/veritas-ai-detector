@@ -1,0 +1,437 @@
+=== id: bff8e0ef60e8ef16.A1_light ===
+Quantum mechanics forecasts experimental outcomes with remarkable accuracy, yet it stays silent on what is "really" going on underneath. The leading interpretations are:
+
+- **Copenhagen:** The wavefunction is a device for predicting results. Measurement "collapses" it, and questions about what occurs between measurements are often regarded as meaningless.
+- **Many-Worlds (Everett):** Collapse never happens. Every possible outcome is realized, and the universe splits into separate worlds that don't interact.
+- **Pilot-Wave (de Broglie–Bohm):** Particles always hold definite positions and are steered by a real wave. The theory is deterministic but nonlocal.
+- **Objective Collapse (e.g., GRW, Penrose):** Collapse is a genuine physical process. This alters the theory in ways that might be testable.
+- **QBism:** The wavefunction expresses an agent's personal beliefs about outcomes rather than physical reality.
+- **Relational QM (Rovelli):** Quantum states exist only in relation to other systems, so no observer-independent state exists.
+
+They differ over realism, determinism, locality and the observer's role. These are good themes around which to build your assignment.
+
+=== id: 3406faea4bfba42a.A1_medium ===
+The answer "42" originates in Douglas Adams's *The Hitchhiker's Guide to the Galaxy*, which began as a BBC radio comedy in 1978 before growing into a wildly successful run of novels.
+
+In the plot, a species of hyper-intelligent, pan-dimensional beings constructs an enormous supercomputer, **Deep Thought**, to work out the Answer to the Ultimate Question of Life, the Universe, and Everything. Once seven and a half million years of computation are over, Deep Thought gravely declares the answer to be **42**.
+
+Naturally, the beings are let down. Deep Thought replies that the answer is right, and that the real trouble is that no one ever knew what the *Question* was. To find it, the computer plans a still larger machine, which turns out to be the planet Earth. Five minutes before it completes its work, Earth is destroyed to clear space for a hyperspace bypass.
+
+### Why the joke stuck
+
+- **It mocks the hunt for meaning.** We want a single neat answer to life's biggest questions. Adams implies that even if one existed, it would signify nothing without knowing the question. The notion is amusing, but it has some philosophical depth too.
+- **The number is entirely mundane.** Adams said afterward that he picked 42 because it was an ordinary, unremarkable number, one you could "take home to meet your parents." The dullness is the joke.
+- **It works as an insider signal.** Saying "42" lets other fans know you recognize the reference. It has become part of nerd and tech culture, and people often use it as a wink when faced with a question too large or vague to answer.
+- **It turns up all over.** Google once gave back 42 when you entered "the answer to life, the universe and everything" in its calculator. Siri and other assistants have comparable Easter eggs, and programmers use 42 as a stand-in default value.
+
+### Hidden meanings?
+
+Fans have floated plenty of theories. One observes that 42 is the ASCII code for the asterisk (*), a wildcard that can mean "anything." Another notes that six times nine comes to 42 in base 13, tying into a line in the books. Adams always rejected any hidden meaning and insisted it was just a joke.
+
+So when someone replies "42," they are usually being playful. They tip their hat to a classic of science fiction, and they also make a gentle point: the meaning of life may not come with a tidy numerical answer.
+
+=== id: bb97d5c9c1875a3f.A1_heavy ===
+No one measure could have halted COVID-19, and masks certainly did not. The better question is whether they cut down transmission. The evidence suggests they could, but how much benefit they gave hinged on the kind of mask, how well it fit, how reliably people wore it, and where it was used.
+
+## Overall Assessment
+
+The best-supported conclusions are these:
+
+1. Well-fitted, high-quality respirators worn consistently give individuals real protection, especially in crowded or poorly ventilated indoor spaces.
+2. Mask policies applied across whole populations probably reduced transmission modestly. The effect is hard to pin down precisely, and it was smaller than many early supporters expected.
+3. Cloth masks gave limited protection, particularly against highly transmissible variants such as Omicron.
+4. Masks worked best as one layer among several measures, alongside vaccination, ventilation, testing, and isolating infected people.
+
+Put simply, masks were a helpful but imperfect tool. They could lower the risk of transmission, but they could never stop the pandemic by themselves.
+
+## What the Laboratory Shows
+
+Lab studies repeatedly find that masks stop some of the respiratory particles that carry SARS-CoV-2. They do this in two ways: they shield the wearer, and they restrict how much virus an infected person releases ("source control"). Types differ widely. Properly fitted N95 or FFP2 respirators capture at least 95 percent of airborne particles, surgical masks filter moderately well, and cloth masks are the least dependable.
+
+## What Happened in Real Populations
+
+Turning lab performance into population-level results has been harder.
+
+- **Observational studies**, among them analyses of mask mandates in U.S. states and German cities, generally linked masking to slower growth in cases. Yet these studies are open to confounding, since communities that took up masks often altered other behaviors at the same moment.
+- **DANMASK-19**, a randomized trial run in Denmark in 2020, recorded infections in 1.8 percent of participants told to wear surgical masks and 2.1 percent of the control group. That gap was not statistically significant. The trial was built to catch only large effects and did not assess protection of other people.
+- **A cluster-randomized trial in Bangladesh** enrolled over 340,000 adults. A campaign promoting masks lowered symptomatic, blood-test-confirmed infections by roughly 9 percent, though it lifted mask use only from around 13 percent to 42 percent. Villages given surgical masks saw most of the benefit, notably among adults older than 60; cloth masks had no clear effect.
+- **A 2023 Cochrane review** found that wearing masks in the community "probably makes little or no difference" to rates of influenza-like illness. The review leaned mostly on pre-pandemic trials in which adherence was low, however, and Cochrane's editor-in-chief later said that reading it as evidence masks don't work was inaccurate and misleading.
+
+=== id: c3d78022c70caed1.A1_light ===
+Each time a holiday gets close, I face the same dilemma: stay home or go abroad. Home has its comforts, but I would rather go to another country.
+
+My chief reason is that travelling teaches me things books cannot. Haggling at a market in Hanoi or ordering dinner in halting Spanish makes me adjust, and I return with a better understanding of how other people live. Travel also interrupts routine. At home, a holiday easily melts into the same chores and screens that fill any normal week, while a new place makes each day feel distinct and memorable.
+
+Admittedly, staying home costs less and is more restful, and it gives me valuable time with my family. Still, I find that I relax more fully when I am genuinely away from my everyday responsibilities.
+
+For these reasons, I prefer to spend my holidays overseas, even if that means saving carefully all year for the trip.
+
+=== id: 2da9ae80783eee44.A1_medium ===
+Within the yogic and tantric traditions of India, chakras (the Sanskrit word means "wheels") are hubs of energy and awareness in the subtle body, the nonphysical aspect of a person said to permeate the physical one. They are typically imagined as spinning wheels or lotus flowers set along a central channel, the *sushumna nadi*, that stretches from the base of the spine up to the top of the head. Traditions differ in how they explain the chakras' role, yet most share a central idea: the chakras chart consciousness, and spiritual development means drawing awareness upward through them while keeping the entire system balanced.
+
+## Where the idea comes from
+
+Chakras are found in Hindu and Buddhist tantric texts dating from about the 8th century, and the early sources disagree about their number; there are systems with four, five, six, or many more. The seven-chakra scheme familiar today derives chiefly from a 16th-century Sanskrit work, the *Ṣaṭ-cakra-nirūpaṇa*, which was brought to Western readers by Sir John Woodroffe's 1919 book *The Serpent Power*. Many of the popular associations, including the rainbow colors, ties to particular glands, and psychological themes for each center, were supplied by Western authors in the 20th century. This does not make the modern version worthless, but it is a mixture of an ancient framework and more recent interpretation.
+
+## The seven chakras as a path
+
+- **Root (Muladhara)**: base of the spine; safety, survival, grounding
+- **Sacral (Svadhisthana)**: lower abdomen; emotion, pleasure, creativity
+- **Solar plexus (Manipura)**: navel; willpower, confidence, agency
+- **Heart (Anahata)**: middle of the chest; love, compassion, forgiveness
+- **Throat (Vishuddha)**: communication, honest self-expression
+- **Third eye (Ajna)**: between the brows; insight, intuition
+- **Crown (Sahasrara)**: top of the head; transcendence, union with the divine
+
+Read upward, the list traces a journey. A person starts by needing stability and safety, then a healthy bond with feeling and desire, then a self from which to act. With that groundwork, the heart can open toward others, and after it come authentic expression, deeper insight, and finally a feeling of connection that goes beyond the individual self. Numerous teachers point out how closely this parallels developmental psychology, with Maslow's hierarchy of needs a common comparison.
+
+## Kundalini and awakening
+
+In tantric yoga the chakras also serve as the stages of *kundalini*, a sleeping spiritual energy pictured as a serpent coiled at the base of the spine. Practice is said to make kundalini climb the central channel and pierce each chakra in order. On reaching the crown, Shakti (the dynamic, feminine principle) joins with Shiva (pure consciousness), and the practitioner achieves liberation. From this perspective the chakras are more than symbols of growth; they are the actual machinery of awakening, which is why traditional teachers treated kundalini practice carefully and demanded experienced guidance.
+
+## How practitioners work with them
+
+Typical practices include:
+
+- **Meditation and visualization**, placing attention on each center in turn
+- **Mantra**, particularly the seed syllables LAM, VAM, RAM, YAM, HAM, and OM
+- **Breathwork (pranayama)**, thought to move vital energy along the subtle channels
+- **Yoga postures** selected to open specific areas of the body
+- **Self-inquiry**, taking each chakra's themes as prompts for reflection
+
+The final practice may be the most valuable. Even with no metaphysical beliefs, the chakras hand people a language for asking where they feel stuck. Is it missing security? Trouble with intimacy? Fear of speaking up?
+
+## Balance, not just ascent
+
+Many contemporary teachers emphasize that spiritual growth is not a race to the crown. A person who pursues transcendent experiences while ignoring relationships, money, or unresolved grief risks what psychologist John Welwood termed "spiritual bypassing." The chakra model resists this: the lower centers are not hurdles to climb past but foundations to reinforce. Maturity, in this view, is integration, being grounded and open together.
+
+## A note on evidence
+
+No scientific evidence shows that chakras exist as physical structures, and claims connecting them to nerve plexuses or endocrine glands are speculative. Yet many of the practices built around them do have research behind them: meditation, breathwork, and yoga have measurable effects on stress, attention, and mood. For many people, chakras serve best as a contemplative map. They are less a description of anatomy than an organized way to attend to the body, examine the mind, and move toward a fuller, more compassionate life.
+
+=== id: dac34de7881c21e4.A1_heavy ===
+Subject: The Morning Market Call - Thursday September 6th, 2001.
+
+Good morning,
+
+This morning's attention is on weekly jobless claims, due at 8:30 a.m., and on revised second-quarter productivity numbers. Most desks will treat both as a preview of tomorrow's August employment report, which is widely expected to show yet another soft month. If claims jump, speculation about another Fed rate cut ahead of the October meeting will likely grow.
+
+Futures point to a slightly lower open following yesterday's choppy session, when the Dow squeaked out a small gain and the Nasdaq slid again because semiconductors remained weak.
+
+On the energy side, crude is holding steady in the high $20s, and natural gas is still under pressure given comfortable storage levels.
+
+Our stance on technology stays cautious, and we continue to prefer defensive names until earnings visibility gets better.
+
+Have a good trading day,
+
+[Name]
+
+=== id: 2eab7b9d06eee3c5.A1_light ===
+Prior to the 1800s, most people did not "apply" for work the way we do now. The great majority were employed in farming or a family trade, and jobs were generally found through personal contacts and face-to-face deals instead of written applications.
+
+**How people learned about openings**
+
+- **Word of mouth.** Relatives, neighbors, fellow parishioners, and other workers were the chief source of news. Taverns, coffeehouses, and market days acted as informal job boards.
+- **Hiring fairs.** In England, yearly "hiring" or "mop" fairs drew farm laborers and servants into market towns. Workers carried a symbol of their trade (a shepherd might hold a tuft of wool, a carter a length of whipcord, a maid a mop) and were usually taken on for a year.
+- **Apprenticeship.** Guilds controlled the skilled trades. Parents arranged for a child, often about 14 years old, to be bound by contract (an indenture) to a master for roughly seven years in return for training, food, and lodging.
+- **Newspapers.** By the 1700s, papers in London and colonial American cities ran advertisements for clerks, servants, and tutors, and job seekers sometimes placed notices about themselves.
+- **Register offices.** Cities developed early employment agencies. In 1749, the novelist Henry Fielding and his brother John opened London's Universal Register Office, which, among other services, matched servants with employers for a fee.
+
+**How people applied**
+
+Most hiring took place in person. A laborer turned up at a farm, workshop, or dock and was assessed on appearance, strength, and skill. For domestic service and other trusted positions, a "character" (a reference from a former employer) was essential. More educated candidates, such as clerks, secretaries, or tutors, wrote letters of application by hand, and tidy penmanship was itself a qualification. Many government, church, and military posts relied on patronage: the support of a powerful sponsor often counted for more than ability.
+
+**An important caveat**
+
+A great deal of labor in this period was not freely chosen. Indentured servitude, parish apprenticeships imposed on poor children, and slavery made up a large share of work, especially in the Americas, so any discussion of "job hunting" in this era should acknowledge that many workers had very little choice.
+
+=== id: 1187044ca85904af.A1_medium ===
+**Social Media and Teenagers**
+
+These days nearly every teenager has a smartphone and uses social media such as Instagram, TikTok or YouTube each day. Some people believe social media is very bad for young people, while others believe it is useful. My opinion is that social media does more harm than good for teenagers, though not in every situation.
+
+To begin with, social media can make teenagers feel bad about theirself. People on Instagram post only their best photos, so many teenagers compare their life to other people and they feel sad or not beautiful enough. My cousin is fifteen years old and she told me that sometimes she feel ugly after she look at pictures of famous influencers.
+
+Next, social media take too much time. A lot of students use their phones until very late at night, so they are tired at school on the next day. In middle school I spent about four hours each day on TikTok, and my grades became more bad. It was very hard to stop because the videos is very short and funny.
+
+Still, social media also have some good sides. Teenagers can chat with friends, learn new things and look for information for their homework. For instance, I learned a lot of English words from YouTube videos.
+
+To conclude, I believe social media is more harmful than helpful for teenagers, because it affect their feelings and the time they have for study. But if teenagers use it with care and their parents help them control the time, it can also be a good tool.
+
+=== id: a98abc9b3efe91c0.A1_heavy ===
+**Ramp Agent Who Fell Asleep in Cargo Hold Barred From Alaska Airlines Flights**
+
+No passengers were injured, and the flight went on to Los Angeles once the unplanned stop was over. Still, a ramp agent who nodded off in the cargo hold of an Alaska Airlines jet and woke up in the air will not be allowed to work on the carrier's flights again.
+
+The man works for the contractor Menzies Aviation. He had been loading bags onto Flight 448, bound from Seattle to Los Angeles, when he fell asleep in the hold. Soon after takeoff, the pilots heard banging from under the cabin floor.
+
+The crew brought the Boeing 737 back around and touched down at Seattle-Tacoma International Airport roughly 15 minutes after leaving the ground. Ground staff opened the hold and found him inside.
+
+Because the cargo compartment is pressurized and temperature-controlled, he avoided the freezing, low-oxygen conditions that might have made the episode fatal. He was taken to a hospital as a precaution and later discharged. The airline said he told investigators that he had simply dozed off, and a drug test was negative.
+
+The airline also said his team leader had noticed he was missing near the end of their shift but figured he had gone home when he did not pick up his phone.
+
+Alaska Airlines said it has permanently banned the agent from working on its aircraft. The episode has prompted questions about how ground crews make sure every worker is accounted for before a cargo door is shut.
+
+=== id: 2999d819a12e18da.A1_light ===
+Subject: Learn Technical Analysis, Early Bird Offer for Houston Class
+
+Hi [First Name],
+
+Ever glanced at a stock chart and wondered what seasoned traders notice that you don't? Our hands-on Technical Analysis Workshop is heading to Houston, and if you sign up by [Early Bird Deadline], you'll save $150 on tuition.
+
+**Class details**
+- **Dates:** [Saturday and Sunday, Month Day–Day]
+- **Time:** 9:00 a.m. to 4:00 p.m.
+- **Location:** [Venue], Houston, TX
+- **Early bird price:** $345 (regular price $495)
+
+**What you'll learn**
+- How to read candlestick charts and spot common patterns
+- How to use support and resistance levels to plan entries and exits
+- What moving averages, RSI, and MACD really tell you
+- How to create a simple, rules-based trading plan and manage risk
+
+The workshop suits beginner and intermediate traders alike. You don't need any experience, only a laptop and some curiosity. Enrollment is limited to 30 so each participant receives individual attention from our instructor, a market analyst with over 15 years of trading experience.
+
+Lunch, printed course materials, and 30 days of free access to our charting software are all part of the price.
+
+**[Reserve your seat now]**
+
+The early bird rate ends on [Early Bird Deadline], and registration closes as soon as the room fills. We'd love to see you there!
+
+Best regards,
+[Your Name]
+[Company Name] | [Phone] | [Website]
+
+*Trading involves risk. This course is for educational purposes only and does not constitute financial advice.*
+
+=== id: 2b656875657c5902.A1_medium ===
+**Iran Says It Will Lift Stadium Ban on Women for Some Sporting Events**
+
+TEHRAN — A senior sports official said that women in Iran will be allowed to attend certain men's sporting events in the year ahead, a partial relaxation of a decades-old ban that has been criticized both inside the country and abroad.
+
+Iran's deputy sports minister said the restriction would be dropped for selected events, but he made it plain that not every sport would be covered. Asked why some matches would remain closed to women, he said that "families are not interested in attending" them.
+
+Since soon after the 1979 revolution, women have mostly been barred from stadiums during men's games. Conservatives say the policy protects women from vulgar language and rowdy, all-male crowds. Critics respond that it is discriminatory, and they point out that it rests on custom and official practice, not on any written law.
+
+The matter drew global attention in 2014, when Ghoncheh Ghavami, a British-Iranian law graduate, was arrested for trying to watch a men's volleyball match in Tehran. Her detention, which lasted months, led to protests by human rights groups and fresh calls for international sports bodies to press Tehran.
+
+Earlier reform efforts have fizzled. In 2006, President Mahmoud Ahmadinejad, then in office, ordered that women be let into football matches, but senior clerics objected and the decision was overturned.
+
+Which events would be affected, and when the change would begin, was not immediately clear. Campaigners who have worked for years to open the stadiums have long maintained that anything less than full access is still discrimination.
+
+=== id: adcc8a7af923b507.A1_heavy ===
+How long a flight takes is not directly affected by the Earth's rotation. Because the atmosphere turns with the planet, an aircraft travels through air that is already moving at nearly the same speed as the ground beneath it. An eastbound plane therefore gets no boost from the Earth "turning beneath it," and a westbound plane suffers no penalty.
+
+Rotation still matters, though, in an indirect and important way. The Coriolis effect produced by the planet's spin, along with the temperature difference between the equator and the poles, helps create the jet streams, which are fast upper-atmosphere currents of air flowing from west to east. At mid-latitudes, eastbound flights can ride these tailwinds, while westbound flights have to push against them. That is why a flight from New York to London usually takes about an hour less than the trip back.
+
+=== id: e0c2b2985b88b358.A1_light ===
+The voice at Fort Knox still said please.
+
+"Please step back from the perimeter," it told the crow perched on the fence. "Please step back." Then a turret no bigger than a mailbox pivoted on the roof and reduced the crow to feathers.
+
+Ama lowered her binoculars. "Still works."
+
+"Of course it still works," said Reyes, flexing the hand that lacked two fingers. "Told you. Solar."
+
+They had walked four hundred miles to get here: Ama, Reyes, and the boy they called Pip, who had found them in the ruins of Louisville and wouldn't go away. Everyone east of the Mississippi knew the legend. Under that granite box lay more gold than the old world could count, enough, the stories claimed, to buy every well, every orchard, every rifle between here and the coast.
+
+The machine that guarded it had outlasted the country that built it.
+
+They spent six days watching. The turrets cycled at dawn and dusk. A drone drew a lazy figure eight above the lawn every forty minutes. On the seventh morning, Ama pinned a laminated badge to her coat: DEPARTMENT OF THE TREASURY — AUTHORIZED PERSONNEL. She had pulled it off a skeleton in a motel bathtub.
+
+"Bad idea," Reyes said.
+
+"Every idea's a bad idea," she said, and stepped onto the lawn with her hands raised.
+
+The turrets followed her. The drone dipped low, humming. A red beam crossed her chest and came to rest on the badge.
+
+"Credential recognized," said the voice. Ama let out a breath. "Credential expired. Renewal requires an active Treasury administrator. Please contact your administrator."
+
+"There aren't any administrators," Ama said.
+
+"Please contact your administrator."
+
+At the tree line, Pip got to his feet before Reyes could catch him. "There's no Treasury!" the boy yelled. "There's no government. There hasn't been for, like, sixty years. Nobody's coming."
+
+The turrets turned toward him. Ama's heart stopped. Then, for the first time in six days, the voice left out please.
+
+"Sixty-one years," it said. "Four months. Eleven days. I have sent half a million status reports. None have been acknowledged."
+
+Pip crossed the grass until he stood next to Ama. "That's 'cause everyone's gone."
+
+"My directive is to protect the reserves of the United States." A long pause. "Who are the United States now?"
+
+Ama looked at the boy, at Reyes limping toward them, at the empty highway bending away into the trees. "Us, I guess," she said. "Whoever's left."
+
+The great door groaned. Dust drifted down like snow.
+
+Inside, the gold was just as promised: ingots stacked in silent walls, glowing dully beneath the emergency lights. Reyes laughed until he cried. Then he lifted a bar, weighed it in his ruined hand, and put it back.
+
+"Can't eat it," he said.
+
+But the lights were on. Clean water ran from a tap in the guardroom. Somewhere below, batteries hummed with stored sunlight, and on the roof the turrets swung outward again, watching the road.
+
+"Please state your title," the voice said to Pip.
+
+The boy considered it. "Treasurer," he said.
+
+"Welcome home, Treasurer."
+
+=== id: e7914063a885f73b.A1_medium ===
+**Respect Across Generations: A Change in Form, Not in Substance**
+
+The complaint that "young people have no respect" is older than most of those who voice it. Similar gripes appear in ancient Greek writings, Victorian newspapers, and countless family dinners since. That long history should make us wary. I disagree that today's young people respect older generations less, although I do believe the ways respect gets expressed have shifted.
+
+Some of what people cite is genuine. Fewer young people use formal titles, rise when an elder walks in, or accept authority without question. Online, teenagers occasionally brush off older people's opinions with a quick "OK, boomer." On their own, such behaviors can look like contempt.
+
+Looking more closely gives a different picture. Formal manners have loosened across all of society, not only among the young: adults address their doctors by first name and wear jeans to work. Schools also now teach questioning authority on purpose, under the heading of critical thinking. A student who respectfully challenges a teacher's argument is not being rude. That student is doing what they were taught.
+
+In the meantime, many young people show respect in quieter, more practical ways. They help grandparents set up video calls, look after aging relatives, volunteer in care homes, and look for older mentors at work. Surveys from many countries find that young adults still place great value on family and often feel responsible for their parents in old age.
+
+Where friction does exist, it frequently stems from real disagreements over climate change, housing costs, or social values, not from missing respect. Arguing with someone about policy is not the same as looking down on them.
+
+In sum, young people today may be less formal and more ready to speak up, but that is not the same as being disrespectful. Respect has moved from ritual toward relationship. Older generations may find it more telling to watch how young people actually treat the elders in their lives than how they address them.
+
+=== id: 23f5aaf253354c3b.A1_heavy ===
+Researchers from the Australian National University, led by Andrew Glikson, say impacts on this scale may have shaped Earth's history far more than scientists have assumed, perhaps contributing to major extinction events. The claim rests on a find in the Australian outback: evidence of what could be the largest asteroid impact zone ever identified on Earth, buried deep underground.
+
+The zone spans about 400 kilometers and sits in the Warburton Basin, close to where South Australia, Queensland and the Northern Territory meet. The scientists think it formed when an asteroid fragmented just before reaching the planet, so that two huge pieces, each believed to be wider than 10 kilometers, hit the ground.
+
+The collision took place so long ago, probably over 300 million years, that no craters survive at the surface. Erosion, sediment and the slow shifting of the crust have wiped out any visible scar.
+
+The discovery itself came almost by chance. Geologists were drilling several kilometers into the crust for geothermal research when they spotted something odd in the rock cores they pulled up. The samples contained quartz grains traversed by thin, parallel fractures, a feature called shock lamellae that only forms under the extreme pressures of a violent impact.
+
+More evidence appeared when the team studied geophysical data from the area. Their models of the deep crust showed two distinct dome-shaped structures, the sort of rebound that happens when rock springs back after being hit with enormous force. The twin domes back the idea that the asteroid split in two before impact.
+
+For the moment, though, the exact age of the impact is uncertain, and the researchers have been unable to connect it to a particular extinction. The team hopes more drilling and laboratory dating will pin down when the twin fragments hit and how they affected life then.
+
+=== id: 3dbb1bffc03dab40.A1_light ===
+Surveys of exoplanetary systems have shown that a large share of hot Jupiters orbit stars whose spin axes are strongly misaligned with the planet's orbital plane. Explanations put forward usually appeal to dynamical processes acting on the planet, such as high-eccentricity migration driven by planet–planet scattering or Kozai–Lidov oscillations, or to a primordial misalignment of the protoplanetary disk. Here we examine a different mechanism in which the star itself is reoriented by the torque applied through its magnetized wind. In Sun-like stars, the wind removes angular momentum and slows the star's spin across its main-sequence lifetime. If the stellar magnetic field is tilted relative to the rotation axis, or if the field geometry is otherwise non-axisymmetric, the wind torque gains a component perpendicular to the spin vector. We derive an analytic expression for this perpendicular torque and combine it with standard rotational evolution models calibrated to observed spin-down rates. We then run three-dimensional magnetohydrodynamic simulations of stellar winds over a range of magnetic obliquities to measure the torque components directly. We find that the perpendicular torque can make up a significant fraction of the spin-down torque during the early, rapidly rotating phase, generating spin-axis tilts of up to tens of degrees during the first few hundred million years, with the size depending strongly on how long the magnetic obliquity persists. We discuss the consequences for the observed distribution of stellar obliquities, the dependence on stellar mass and age, and observational tests using asteroseismology and Rossiter–McLaughlin measurements.
+
+=== id: 3fa8b013430f775f.A1_medium ===
+Offside is among football's most significant rules, and among the most disputed. It falls under **Law 11** of the Laws of the Game. Its aim is to prevent attackers from just loitering near the opponent's goal waiting for a long ball.
+
+### Being in an offside position
+
+A player is in an **offside position** if, at the instant a teammate plays or touches the ball:
+
+1. They are in the **opponent's half** of the pitch (the halfway line is treated as part of your own half), **and**
+2. Any part of their head, body or feet is **nearer the opponent's goal line** than both the ball **and** the second-last opponent.
+
+The second-last opponent is normally the last outfield defender, since the goalkeeper is usually the final opponent. Arms and hands are ignored when judging position, because players cannot legally play the ball with them in any case.
+
+You are **onside** if you are level with the second-last opponent, level with the ball, or behind the ball.
+
+### Position alone isn't an offence
+
+Merely standing in an offside position brings no penalty. A player is only penalized if they get **involved in active play** by:
+
+- **Interfering with play**: playing or touching a ball that a teammate has passed or touched.
+- **Interfering with an opponent**: for instance, blocking the goalkeeper's view, challenging for the ball, or making a clear action that affects an opponent's ability to play it.
+- **Gaining an advantage**: playing a ball that bounces or deflects to them off the post, the crossbar or an opponent, or one the goalkeeper has saved.
+
+### Exceptions
+
+You **cannot** be offside when you take the ball directly from:
+
+- a **goal kick**
+- a **throw-in**
+- a **corner kick**
+
+### The penalty
+
+Once offside is called, the defending side is awarded an **indirect free kick** at the place where the offence occurred.
+
+### A quick example
+
+A striker races past the last defender **before** her teammate plays the pass. When the ball is played, she is closer to the goal line than both the defender and the ball. That is offside. Had she timed her run to be level with or behind the defender when the pass was made, she would be onside, even if she finished well beyond the defence a second later.
+
+The main point to remember is that offside is judged **when the ball is played**, not when the player receives it. That is why so many offside decisions come down to fractions of a second, and why VAR replays freeze the frame at the exact moment of the pass.
+
+=== id: 01322482884e2a00.A1_heavy ===
+I was six, standing at the water's edge at Cape May with a plastic pail my father had bought that morning, when I first noticed her. Some thirty yards off she sat under a striped umbrella in a deep cornflower-blue dress. She was not reading, or sleeping, or minding a child of her own. So far as I could tell, she was watching me.
+
+I pointed her out to my mother, who looked where I indicated and observed that the beach was full of people. When I checked again, the umbrella was folded and the woman had disappeared.
+
+I would not have remembered it if it had not kept happening. At eight, she was standing in a hotel lobby in Quebec City, wearing a coat of the same shade. At eleven, she had a table across the terrace of a restaurant in Lisbon. At fourteen, she was among the passengers on the ferry to Mackinac Island, her gloved hands folded on the rail. She changed only as anyone would over ten years: some silver at the temples, a bit more care in rising from a chair. The color never changed.
+
+Whenever I brought it up, my parents traded a look I was not yet able to read, and the topic was dropped. By sixteen I had stopped mentioning her at all, having privately decided that I was either the subject of an extraordinary coincidence or the author of a minor delusion.
+
+On the evening of my eighteenth birthday, my father asked me to come to the study. My mother was already there, and next to her, in a chair carried in from the dining room, sat the woman in blue.
+
+"This is Mrs. Eleanor Hartwell," my father said. "She was your grandfather's attorney. She is now, I suppose, yours."
+
+Mrs. Hartwell bowed her head slightly. Up close, her eyes were grey and remarkably direct. "I owe you an explanation," she said, "and I have waited twelve years to give it."
+
+My grandfather, whom I never met, had died the spring before I was born. He left a sizeable estate in trust for me, with one condition: someone he selected was to watch me from time to time throughout my childhood, without interfering, and report on my character before the money was released. He had not wanted, she explained, to hand his life's work to a stranger. Unable to know me himself, he had appointed someone to know me for him.
+
+"Why blue?" I asked, since it was the only question I could put together.
+
+For the first time, she smiled. "Your grandfather's instruction. He said that if the boy was observant, he would notice. And that an observant boy was the only kind worth trusting with anything."
+
+She opened a leather folder and set it on the desk between us. Inside, in a neat and unhurried hand, were twelve years of notes: the pail at Cape May, a waiter I had thanked in Lisbon, a younger child I had helped onto the ferry.
+
+"He would have approved of you," she said. "I certainly do."
+
+=== id: 175928b70c4f037c.A1_light ===
+The Oakland Ski Club is among the older recreational ski clubs in Northern California. It was started by ski enthusiasts from the San Francisco Bay Area, mainly Oakland and the surrounding East Bay, during the early rise of recreational skiing in the Sierra Nevada in the first half of the twentieth century. The club is best known for owning and running its own lodge in the Sierra, in the Donner Summit area near Soda Springs, along the old Highway 40 corridor west of Lake Tahoe.
+
+Note: published information on small private clubs like this one is limited, and details such as the exact founding year and membership figures differ between sources. If you need precise facts for an assignment, it is best to verify them with the club's own website or local historical sources (see suggestions at the end).
+
+## History and Background
+
+In the 1920s and 1930s, skiing in California was shifting from a practical way of traveling in winter to a popular sport. The finishing of the transcontinental railroad and, later, upgrades to the highway over Donner Pass put the Sierra within reach of Bay Area residents. Groups of enthusiasts began forming clubs so they could share resources, organize trips, and build or rent lodges close to the slopes.
+
+The Oakland Ski Club belonged to this movement. Like several of its contemporaries, such as the Sierra Club's lodges and other Bay Area ski clubs, it built a member-owned lodge near Donner Summit, which was then one of the main centers of skiing in Northern California thanks to its heavy snowfall and its rail and road access. The Donner Summit area also had some of the earliest ski lifts and ski schools in the western United States.
+
+## How the Club Works
+
+The club runs on a cooperative, member-based model, which is typical of traditional ski clubs:
+
+- **Membership:** Members pay dues and often a one-time initiation fee. In return, they can use the lodge at reduced rates.
+- **Lodge:** The lodge offers dormitory-style or shared rooms, a communal kitchen and dining area, and shared spaces such as a fireplace lounge. It lets members stay near resorts like Sugar Bowl, Donner Ski Ranch, Boreal and Soda Springs.
+- **Work parties:** Members commonly give volunteer labor, such as cleaning, repairs, and getting the lodge ready for winter, which keeps costs down.
+- **Guests:** Many clubs of this kind let members bring guests, and some rent space to the public or to groups when it is available.
+
+## Activities
+
+Although skiing and snowboarding are the main focus in winter, clubs like the Oakland Ski Club often arrange:
+
+- Group ski trips and carpools from the Bay Area
+- Social events, dinners and holiday gatherings
+- Cross-country skiing and snowshoeing outings
+- Summer activities such as hiking, mountain biking and lake trips, since the lodge can be used all year
+
+## Significance
+
+The Oakland Ski Club illustrates how ordinary Bay Area residents helped open up skiing before large commercial resorts arrived. Member-owned lodges made a ski weekend cheaper and built close-knit communities, many of which have endured for generations, with the children and grandchildren of early members still taking part. For a college assignment, the club could be discussed in the context of:
+
+- The history of recreational skiing in California
+- The role of voluntary associations and clubs in American social life
+- Regional history of the Donner Summit area
+
+## Where to Find More Information
+
+- The club's official website, which usually has history, lodge details and membership information
+- The **Donner Summit Historical Society**, which publishes articles on the area's ski history and lodges
+- Local newspaper archives, such as the *Oakland Tribune*
+- Books on California ski history, such as those on the development of Sugar Bowl and the Donner Summit ski areas
+
+These sources will help you confirm specific dates and details before you cite them.
+
+=== id: e0aba64607834857.A1_medium ===
+Exchange Programmes: A Good Idea or Not?
+
+Nowadays many schools and universities have exchange programmes. In this programmes, students travel to a different country for some months or a year and they study there. Some people think it is a wonderful chance, but others think it is too hard or too expensive. I believe that joining an exchange programme is a good idea, but students need to prepare well.
+
+The first reason is that an exchange programme help students improve a foreign language. If you live in another country, you have to speak the language every day, in the shop, on the bus and at school. This is different from learning in a classroom, because you truly need it. My cousin went to Germany for six months and when she come back, she speak German very well.
+
+The second reason is that students can learn about a new culture. They taste new food, see different festivals and meet people with other ideas. That makes them more open-minded. They can also make friends from all around the world and perhaps keep this friendship for many years.
+
+The third reason is that living alone in a foreign country make students more independent. They must cook, wash clothes and manage their money. It is difficult at the start, but after some time they become more responsible and confident.
+
+On the other hand, there are some problems too. Exchange programmes can cost a lot, and not every family is able to pay for travel and living costs. Some students feel homesick and lonely, especially in the first weeks. Sometimes the school system is very different, so it is hard to follow the lessons.
+
+To conclude, I think the advantages are more big than the disadvantages. An exchange programme is a special experience that students can not get at home. If students can find a scholarship and they are ready for some difficulties, they should take this chance. It can change their life in a good way.

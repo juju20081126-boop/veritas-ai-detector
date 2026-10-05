@@ -1,0 +1,50 @@
+[
+ {
+  "prompt_id": "news-0011",
+  "instruction": "Using the following highlights, write a 400-word news story:\n- Hong Kong's newest monastery features bulletproof VIP rooms and the world's second tallest Goddess of Mercy statue.\n- The $193M monastery is funded by Asia's richest man, Li Ka-shing.\n- The monastery will be open to public by mid April."
+ },
+ {
+  "prompt_id": "abst-0121",
+  "instruction": "Write an abstract of about 150 words for a research paper titled \"New results on the search for spin-exotic mesons with COMPASS\"."
+ },
+ {
+  "prompt_id": "emai-0231",
+  "instruction": "Write an email with the subject line \"ISDA for Clark County PUD #1\". Aim for about 100 words."
+ },
+ {
+  "prompt_id": "stor-0301",
+  "instruction": "Write a 600-word story for this prompt: You are stranded on a deserted island. As you scout around for survival items, you discover everything you ever lost is on the island."
+ },
+ {
+  "prompt_id": "expl-0401",
+  "instruction": "Why does taking a small amount of melatonin work better than taking a large amount? (answer in roughly 100 words)"
+ },
+ {
+  "prompt_id": "gene-0481",
+  "instruction": "What is the role of chakras in spiritual growth? Answer in about 700 words."
+ },
+ {
+  "prompt_id": "news-0012",
+  "instruction": "Turn these bullet points into a news article (roughly 500 words):\n- The FBI cites social media messages sent by Keonna Thomas, 30.\n- She's accused of trying to travel overseas to join ISIS.\n- Thomas is one of three women facing federal terror charges this week."
+ },
+ {
+  "prompt_id": "abst-0122",
+  "instruction": "I'm a college student and need help with an assignment. Draft the abstract (around 150 words) for the paper \"Flux moduli stabilisation, Supergravity algebras and no-go theorems\"."
+ },
+ {
+  "prompt_id": "emai-0232",
+  "instruction": "Please draft a work email about: Online Trading (around 75 words)."
+ },
+ {
+  "prompt_id": "stor-0302",
+  "instruction": "Your son did as your will said and gave you a viking funeral because you thought it sounds cool. Beyond, a viking ghost yells at you for doing so and tosses you a weapon. Good Luck, Steve. It's going to be a long afterlife.\n\nWrite a short story of about 500 words."
+ },
+ {
+  "prompt_id": "expl-0402",
+  "instruction": "How are we able to store data in diamonds?\n\nExplain it in about 100 words. Use a formal, professional tone."
+ },
+ {
+  "prompt_id": "gene-0482",
+  "instruction": "I'm a college student and need help with an assignment. How did people apply to jobs before the 1800s before the wide availability of typewriters? How did people hear about job openings in those days? (about 350 words)"
+ }
+]
