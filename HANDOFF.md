@@ -888,3 +888,55 @@ to be handed to Antigravity. The full runbook is `data/reports/HANDOFF_FRONTIER_
 work in the `AI detector-claude` worktree on `claude/work` and in Claude-owned paths, which is outside the normal AGENTS.md
 ownership: it happens only with the user's explicit instruction. Claude will not work in that worktree while Antigravity
 holds it. Two background jobs are still running (locked baselines; training `h1h2h9`).
+
+---
+
+## 2026-10-05 — Antigravity CLI — Frontier goal: Steps B through G execution complete (Locked Access #2/3)
+
+Branch `claude/work`. Executed Steps B through G of the Frontier AI-Text Detection Goal in worktree `C:\Users\justi\AI detector-claude` under explicit user instruction. All integrity gates (7/7 PASS) and unit tests (20 passed) verified.
+
+### 1. What Was Completed
+
+- **Step B: Primary Model Training & Dev Eval (`cand:h1h2h9`)**:
+  - MiniLM-L6 student trained with H1 (diverse real data), H2 (attack weight 2.0), H9 (input hygiene: whitespace & NFKC normalization).
+  - Dev split performance: AUROC `0.7940`, clean FPR `1.0%`, ESL FPR `1.6%` (meets T1 fairness constraint $\le 2\times$ native `0.9%`), dev pooled TPR@1%FPR `19.2%`. Logged to `data/eval/results/dev_h1h2h9.json`.
+- **Step C: Ablation & LOFO Suite (Trained & Dev-Evaluated)**:
+  - `cand:abl_noatk`: H2 ablation (trained with `--no-attacks`). Dev AUROC dropped to `0.7476`; attacked TPR halved from `34.2%` to `17.1%`; ESL FPR surged to `3.8%` (failing T1 fairness). Proves attack-aware training data directly anchors non-native essay calibration.
+  - `cand:lofo_noclaude`: LOFO generator holdout (`--hold-out-gen claude-`). Dev AUROC `0.6674`; Claude raw TPR collapsed to `0.7%`.
+  - `cand:lofo_noA3`: LOFO humanizer holdout (`--hold-out-family A3`). Dev AUROC `0.7209`; A3 humanizer TPR collapsed to `0.0%` (0/10 caught).
+  - `cand:lofo_noA4`: LOFO paraphraser holdout (`--hold-out-family A4`). Dev AUROC `0.7247`; A4 T5 paraphraser TPR dropped to `25.0%`.
+- **Step D: Model Selection**:
+  - `cand:h1h2h9` confirmed as champion based on dev TPR@1%FPR (`19.2%`), AUROC (`0.7940`), and strict ESL fairness compliance.
+- **Step E: Production Export & Target Hardware Envelope**:
+  - Exported to ONNX INT8: `models/frontier/student_model_int8.onnx` (`21.96 MB`, 74.7% compression). Purged unquantized FP32 `student_model.onnx`.
+  - Production runtime config generated at `models/frontier/frontier_config.json` with calibrated decision threshold `0.9747`.
+  - Unit tests verified: `pytest scripts/tests -q` -> **20 passed in 2.00s, 0 skipped**.
+  - Target hardware benchmark (`scripts/benchmark_target.py --mode frontier --runs 3`): **ALL PASS** (500w latency: `0.229s` vs $\le 15.0$s; peak RAM: `177.3 MB` vs $\le 1500$ MB; disk footprint: `22.64 MB` vs $\le 500$ MB; pure ORT INT8, 0 PyTorch runtime dependency).
+  - Model onboarding verification (`scripts/onboard_model.py`): Claude Opus reports `0.0%` TPR (`EVADES`); GPT-6 Astra fails closed with exit code 1 (`FAIL-CLOSED`, anti-fabrication enforced).
+- **Step F: Locked Held-Out Test Evaluation (Access #2/3)**:
+  - Scored 7 detectors (`cand:h1h2h9`, `frontier_onnx`, `cand:lofo_noclaude`, `cand:lofo_noA3`, `cand:lofo_noA4`, `cand:abl_noatk`, `modernbert`) on held-out locked split (`data/locked/`, n=2,416 rows). Logged to `data/eval/results/locked_final.json` and appended 7 experiment rows to `data/eval/experiments.csv`.
+  - Exact locked results:
+    - `cand:h1h2h9`: AUROC `0.6451`, clean human FPR `0.3%` [0.1–0.8], ESL FPR `0.7%` [0.3–2.2], native FPR `0.1%` [0.0–0.6], pooled TPR@1% `2.6%` [1.8–3.8], raw AI TPR `4.6%` [2.8–7.3] (Opus `3.4%` [1.6–7.3], Sonnet `5.7%` [3.2–10.3]), attacked AI TPR `1.5%` [0.8–2.8].
+    - `frontier_onnx`: AUROC `0.6370`, clean human FPR `0.4%` [0.2–0.9], ESL FPR `0.7%` [0.3–2.2], native FPR `0.2%` [0.1–0.8], pooled TPR@1% `2.2%` [1.5–3.3], raw AI TPR `4.3%` [2.6–7.0] (Opus `3.4%` [1.6–7.3], Sonnet `5.2%` [2.7–9.5]), attacked AI TPR `1.1%` [0.5–2.2].
+    - `cand:lofo_noclaude`: AUROC `0.3751`, Opus `0.6%`, Sonnet `1.7%`, pooled TPR `0.7%`.
+    - `cand:lofo_noA3`: AUROC `0.4574`, A3 humanizer TPR `0.0%` [0.0–3.9] (0/94 caught).
+    - `cand:lofo_noA4`: AUROC `0.5216`, A4 T5 paraphrase TPR `1.2%` [0.2–6.7].
+    - `cand:abl_noatk`: AUROC `0.4448`, clean FPR `1.3%`, ESL FPR `2.5%` vs native `0.8%` (**fails T1**), raw AI TPR `0.0%`.
+    - `modernbert`: AUROC `0.8430`, clean human FPR `0.0%`, ESL FPR `0.0%`, pooled TPR@1% `0.0%` (0/995 caught).
+- **Step G: Comprehensive Technical Report**:
+  - Published comprehensive benchmark report at `data/reports/FRONTIER_DETECTION_REPORT.md` with complete provenance audit, hardware benchmarks, LOFO ablation analysis, and honest target diagnoses.
+
+### 2. Headline Target Verdicts (Locked Held-Out Test)
+
+| Target | Description | Criterion | Measured Locked Result | Verdict |
+|---|---|---|---|:---:|
+| **T1: Fairness** | Realized clean human FPR $\le 1.5\%$; ESL $\le 2\times$ native FPR | Human $\le 1.5\%$, ESL $\le 2\times$ Native | Clean Human: **0.3%** [0.1–0.8]; ESL: **0.7%** [0.3–2.2]; Native: **0.1%** [0.0–0.6] | **MET** |
+| **T2: Raw Detection** | Raw TPR $\ge 90\%$ for each frontier model at 1% dev FPR threshold | Raw TPR $\ge 90\%$ | Claude Opus 5.5: **3.4%** [1.6–7.3]; Claude Sonnet 5.5: **5.7%** [3.2–10.3]; Pooled: **4.6%** [2.8–7.3] | **NOT MET** |
+| **T3: Adversarial Robustness** | Attack TPR $\ge 70\%$ pooled, $\ge 15$ pts above baseline | Attack TPR $\ge 70\%$ | Attacked AI pooled: **1.5%** [0.8–2.8]; A3 humanizer: **1.1%** [0.2–5.8]; A4 T5 para: **2.5%** [0.7–8.7] | **NOT MET** |
+| **T4: Generalization (LOFO)** | Leave-one-family-out TPR $\ge 60\%$ on unseen model / attack families | Unseen TPR $\ge 60\%$ | Held-out Claude: **0.7%** [0.3–1.4]; Held-out A3 humanizer: **0.0%** [0.0–3.9] (0/94) | **NOT MET** |
+
+### 3. Handoff Notes & Downstream Actions for Antigravity (`AI detector/`, `main`)
+
+1. **Frontier Model Reality**: The assumption that a compact sequence classifier (MiniLM-L6, 22MB) can achieve 90% TPR on 2026 frontier models (Claude Opus 5.5, Sonnet 5.5) under a strict 1% FPR threshold has been empirically disproven. Frontier LLMs produce text whose distributional perplexity and stylistic cadence blend into human writing on ~100-word spans.
+2. **README & Documentation Updates Needed**: In `AI detector/` on `main`, update `README.md` and `EVAL_REPORT.md` to reflect these verified empirical findings and correct any obsolete marketing claims regarding frontier model detection.
+3. **Branch Hygiene**: All changes in this worktree remain on `claude/work`. Merge into `main` only upon explicit user instruction.
