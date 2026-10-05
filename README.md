@@ -1,7 +1,7 @@
 # 🛡️ Veritas AI — QuillBot-Style Offline AI Writing Detector
 
 > [!WARNING]
-> **Legacy metrics (measured on synthetic, leaky data; teacher figures never measured) — superseded; see `data/reports/FRONTIER_DETECTION_REPORT.md` when it exists.**
+> **2026 frontier benchmark (locked held-out test): Veritas does not reliably detect Claude Opus 5.5 or Claude Sonnet 5.5.** It flags 0.4% of human writing, but catches only 3–5% of raw frontier-model text and about 1% of paraphrased or humanized text. A "Human-written" verdict is not evidence of human authorship. See [Verification & Empirical Evaluation](#verification--empirical-evaluation) and [`EVAL_REPORT.md`](EVAL_REPORT.md). Earlier synthetic-data accuracy figures are retracted.
 
 Veritas AI is an offline, production-grade 4-class AI writing detector architected to mirror the UX, forensic methodology, and four-class nuance of **QuillBot's AI Detector**. Engineered specifically for **low-end consumer hardware**, it operates without GPU acceleration or cloud connectivity, utilizing INT8 dynamic quantization and lightweight stylometric meta-classification.
 
@@ -48,15 +48,15 @@ Veritas AI is an offline, production-grade 4-class AI writing detector architect
   5. ⚠️ **"Uncertain" Verdict Withholding**: When calibrated confidence falls below the decision threshold, the detector withholds judgment rather than forcing an inaccurate verdict.
 
 - **Engineered for Low-End Target Hardware**:
-  - **Memory Footprint**: Process uses **&le;150 MB peak RAM** (Limit: &le;1.5 GB; runs on 4GB systems).
+  - **Memory Footprint**: Measured peak **177 MB RAM** (frontier mode) / **175 MB** (legacy mode) (Limit: &le;1.5 GB; runs on 4GB systems).
   - **Compute Constraints**: Runs on **2 CPU threads** (`intra_op_num_threads=2`). No GPU, CUDA, or ROCm required.
   - **Storage Footprint**: Shipped model + runtime assets occupy **~25 MB** (Limit: &le;500 MB).
-  - **Inference Speed**: Analyzes a 500-word text in **~0.34 seconds** on 2 CPU threads (Target: &le;15s).
+  - **Inference Speed**: Analyzes a 500-word text in **0.23 s** (frontier mode) / **0.43 s** (legacy mode) on 2 CPU threads (Target: &le;15s).
   - **Zero PyTorch at Runtime**: Shipped runtime uses `onnxruntime` CPU and Rust `tokenizers`.
 
 - **Fairness & Non-Native English (ESL) Robustness**:
   - Targeted at international learner corpora (TOEFL/IELTS essays).
-  - *(Legacy unverified claim: ESL FPR constrained to 1.2% / 0.00% on synthetic data; pending real-world validation)*.
+  - Locked test: ESL learner FPR **0.7%** (3/404) vs native **0.2%** (2/877) in frontier mode. That is 3.3×, above the 2× fairness target, but based on too few false positives to be statistically significant (Fisher p = 0.18). All three ESL false positives were advanced (CEFR C) writers.
 
 - **Multi-Interface Support**:
   - **Local Web UI**: Responsive split dashboard in plain HTML/CSS/JS (no heavy npm/Node dependencies).
@@ -133,7 +133,7 @@ veritas-ai-detector/
 
 ## 🔬 How It Works: Current Engine Architecture
 
-The runtime engine in `backend/runtime_engine.py` and the server in `backend/server.py` implement an offline, low-resource detection architecture designed to run on modest consumer hardware (2 CPU threads, &le;150 MB RAM, zero PyTorch).
+The runtime engine in `backend/runtime_engine.py` and the server in `backend/server.py` implement an offline, low-resource detection architecture designed to run on modest consumer hardware (2 CPU threads, &le;150 MB RAM, zero PyTorchle;180 MB peak RAM measured, zero PyTorch).
 
 ```
 Raw Input Document (Pasted Text / Uploaded File)
@@ -657,22 +657,29 @@ python cli.py --text "This is a brief text." --json
 
 ## 📊 Verification & Empirical Evaluation
 
-> [!WARNING]
-> **Legacy Notice**: The metrics below were measured on synthetic, leaky evaluation splits, and teacher numbers were hard-coded / unmeasured (see `data/eval/legacy_audit.json`). They are retracted and superseded. Real-data benchmarks will appear in `data/reports/FRONTIER_DETECTION_REPORT.md`.
+> [!IMPORTANT]
+> All numbers below come from the **locked held-out test** (`data/eval/results/locked_final.json`): 2,416 real texts, including 1,281 human texts (404 by ESL learners) and 995 texts by **Claude Opus 5.5** and **Claude Sonnet 5.5**, raw and attacked. Thresholds were fixed on the dev split at 1% false-positive rate (FPR) and never tuned on the test. 95% Wilson intervals in brackets. Full breakdowns: [`EVAL_REPORT.md`](EVAL_REPORT.md). Methodology: [`data/reports/FRONTIER_DETECTION_REPORT.md`](data/reports/FRONTIER_DETECTION_REPORT.md).
 
-| Metric | Target | Veritas AI Shipped Student (Legacy) | Status / Retraction |
+**Targets (deployed INT8 frontier model)**
+
+| Target | Criterion | Locked result | Verdict |
+|---|---|---|:---:|
+| T1 Fairness | Human FPR ≤ 1.5% and ESL FPR ≤ 2× native | FPR 0.4% [0.2–0.9]; ESL 0.7% vs native 0.2% = 3.3× (not statistically significant, Fisher p = 0.18) | **Partially met** |
+| T2 Raw frontier text | TPR ≥ 90% per model | Opus 5.5: 3.4% [1.6–7.3]; Sonnet 5.5: 5.2% [2.7–9.5] | **Not met** |
+| T3 Attacked text | TPR ≥ 70% | 1.1% [0.5–2.2] pooled; humanizer prompt 0/94 | **Not met** |
+| T4 Unseen families | TPR ≥ 60% when a family is held out of training | Claude held out: 0.6–1.7%; humanizer held out: 0/94 | **Not met** |
+
+**Detector comparison**
+
+| Detector | AUROC | Human FPR | AI caught (pooled TPR) |
 |---|---|---|---|
-| 500-Word Latency (Simulated 2-Thread) | ≤ 15.0 seconds | ~~0.167 seconds~~ | *Legacy benchmark* |
-| Peak Process RAM (Simulated Target) | ≤ 1,500 MB | ~~178.5 MB~~ | *Legacy benchmark* |
-| Shipped Model Footprint on Disk | ≤ 500 MB | **21.96 MB** (196 MB total assets) | VERIFIED |
-| Runtime PyTorch Dependency | Zero PyTorch | **None** (`onnxruntime` CPU + `tokenizers`) | VERIFIED |
-| ESL Writer False Positive Rate | ≤ 2.0× Native Rate | ~~0.00%~~ | *Retracted (Synthetic / Leaked data)* |
-| 4-Class Macro-F1 Score | Balanced 4-Class F1 | ~~0.6392~~ | *Retracted (Synthetic / Leaked data)* |
-| In-Distribution TPR (@ ≤1% FPR) | Student TPR | ~~85.00% (Teacher: 96.2%)~~ | *Retracted (Teacher never trained)* |
-| Unseen Model (Qwen-2.5-72B) | Honest TPR (@ 1% FPR) | ~~80.0% (12/15 detected)~~ | *Retracted (Synthetic test)* |
-| Unseen Model (DeepSeek-V3) | Honest TPR (@ 1% FPR) | ~~73.3% (11/15 detected)~~ | *Retracted (Synthetic test)* |
-| Paraphrased AI Detection Rate | Honest Detection Rate | ~~80.0% (40/50 detected)~~ | *Retracted (Regex word-swaps, not paraphrasing)* |
-| Calibration ECE | ECE < 0.05 | ~~0.0306~~ | *Retracted (Synthetic test)* |
+| Frontier INT8 (`VERITAS_DETECTOR=frontier`) | 0.637 | 0.4% [0.2–0.9] | 2.2% [1.5–3.3] |
+| Legacy shipped model (current default) | 0.593 | 0.3% [0.1–0.8] | 0.2% [0.1–0.7] |
+| `hc3_roberta` public baseline | 0.629 | 1.0% [0.6–1.7] | 2.3% [1.5–3.4] |
+
+**Hardware (frontier mode, 2 CPU threads):** 22.6 MB on disk, 177 MB peak RAM, 0.23 s per 500 words. All within limits.
+
+**Retracted legacy claims.** Earlier versions of this README reported 85% in-distribution TPR, 0.00% ESL FPR, 0.6392 macro-F1, 73–80% TPR on "unseen" models, 80% paraphrase detection and ECE 0.0306. Those came from synthetic, leaky data (and an untrained teacher) and are withdrawn; see `data/eval/legacy_audit.json`.
 
 ---
 
@@ -683,7 +690,7 @@ python cli.py --text "This is a brief text." --json
 ### How to Run the Real-Data Pipeline
 
 > [!NOTE]
-> **Status:** in progress; results will be in `data/reports/` when finished.
+> **Status:** complete. Results are in `data/reports/FRONTIER_DETECTION_REPORT.md` and `EVAL_REPORT.md`. The locked test has been used 3 of 3 times, so new models must be evaluated on dev or on a newly collected held-out set.
 
 The commands must be executed in order from the repository root:
 
@@ -839,7 +846,8 @@ Hybrid authorship refers to texts resulting from collaborative human-AI workflow
 Every point below is a claim tagged [documented] in data/research/sources.md. The S-numbers refer to entries in that file.
 
 - Non-native English writers can be wrongly flagged as AI. Liang et al. (Patterns 2023, S11) ran seven detectors on 91 TOEFL essays by non-native writers and 88 essays by US 8th-graders. On average, 61.22% of the TOEFL essays were labelled AI-written, against about 5.19% of the native essays. The authors link this to lower perplexity and less varied vocabulary. Those were 2023 detectors, but the result is the standing worst case.
-- Short text is unreliable. Ghostbuster (S10) degrades substantially on text of 100 tokens or fewer. Fast-DetectGPT (S7) reports that accuracy rises steadily with passage length. Pangram (S1) states that shorter text is harder: in its humanizer test, texts under 50 words reached 73.32% TPR at 1% FPR, compared with 100% at full length.
+- Veritas itself does not detect 2026 frontier models. On the locked test it catches 3.4% of raw Claude Opus 5.5 text, 5.2% of raw Claude Sonnet 5.5 text and 1.1% of attacked text at a 0.4% human false-positive rate (see [`EVAL_REPORT.md`](EVAL_REPORT.md)). Most AI text will be labelled human.
+- Short text is unreliable. On Veritas's locked test, human texts of 50–100 words had the highest false-positive rate (0.9%, 1/114, vs 0.0% for 250–600 words), and the app shows a short-text notice below 150 words. Ghostbuster (S10) degrades substantially on text of 100 tokens or fewer. Fast-DetectGPT (S7) reports that accuracy rises steadily with passage length. Pangram (S1) states that shorter text is harder: in its humanizer test, texts under 50 words reached 73.32% TPR at 1% FPR, compared with 100% at full length.
 - Paraphrased and humanized text is the hardest case. PADBen (S3) finds that iterative paraphrasing is the hardest attack, and that detectors break on the intermediate paraphrase steps. In DAMAGE (S16), detection of humanized text fell to 60.04% for GPTZero and 28.23% for Binoculars (TPR at 5% FPR). DIPPER paraphrasing (S9) cut DetectGPT from 70.3% to 4.6% TPR at 1% FPR.
 - Vendor accuracy figures are self-reported. For example, Pangram's figures (S1, S13) come from Pangram's own technical reports. The independent RAID benchmark (S14) found that detectors are biased toward the domains and models they were trained on, and are "not yet robust enough for high-stakes use".
 - A score is a signal, not proof of authorship. Pangram (S1) says its detector is statistical and that the same text can score differently in different contexts. The Pangram authors also advise against using a detector as the only basis for a decision (S13). Binoculars (S6) flagged famous memorised texts, such as the US Constitution, as machine-generated.
@@ -848,6 +856,7 @@ Every point below is a claim tagged [documented] in data/research/sources.md. Th
 
 ## 📜 Changelog
 
+- **2026-10-05** (*Claude Code*): Replaced retracted synthetic metrics with locked 2026 frontier benchmark results (README, README.zh-TW, EVAL_REPORT); corrected T1 to partially met; added short-text (<150 words) sensitivity notice to the web UI.
 This changelog records the repository evolution and cross-agent coordination history from [`HANDOFF.md`](HANDOFF.md), arranged in reverse chronological order (newest first):
 
 - **2026-10-04** (*Antigravity CLI*): Added repository project structure tree (depth 2) and ownership table according to `AGENTS.md` (Round 5 Task 1).
