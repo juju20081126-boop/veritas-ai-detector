@@ -47,6 +47,7 @@ audit_*.py
 # Large raw model weights (keep INT8 quantized model and metadata only)
 models/*.pt
 models/student_model.onnx
+models/candidates/
 *.onnx.tmp*
 benchmark_target_results.json
 *.zip

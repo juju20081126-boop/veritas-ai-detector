@@ -1,0 +1,17 @@
+{
+  "candidate": "zerogpt_distilled",
+  "teacher": "zerogpt_deepanalyse",
+  "temperature": 1.0,
+  "max_len": 160,
+  "threshold": 0.7101,
+  "threshold_rule": "p99_dev_clean_human",
+  "dev_fpr_clean_human": 0.01,
+  "dev_fpr_esl": 0.0109,
+  "dev_fpr_native": 0.0100,
+  "dev_claude_opus_tpr": 0.1039,
+  "dev_claude_sonnet_tpr": 0.1538,
+  "dev_claude_sonnet_a3_tpr": 0.3000,
+  "export_format": "ONNX_INT8_DYNAMIC",
+  "compression_ratio": "74.7%",
+  "disk_size_mb": 21.96
+}
