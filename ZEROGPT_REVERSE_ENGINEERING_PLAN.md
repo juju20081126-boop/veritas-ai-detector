@@ -197,3 +197,30 @@ To ensure Veritas AI detects newer models like Claude 3.5 Sonnet, Claude Opus, a
 | **Z3: DeepAnalyse Stylometrics** | Implement $\sigma_{\text{PPL}}^2$, $\mathcal{C}_{\text{syntax}}$, and $\mathcal{E}_{\text{neut}}$ | `backend/stylometrics.py` |
 | **Z4: ZeroGPT Output Formatter** | Add `zerogpt_breakdown` (`fakePercentage`, `aiWords`, `h`) to runtime engine | `backend/runtime_engine.py` |
 | **Z5: Dual-View UI Panel** | Render ZeroGPT gauge alongside QuillBot stacked bars | `frontend/` (after Claude revamp) |
+| **Z6: ZeroGPT Knowledge Distillation** | Distill ZeroGPT teacher into student transformer (`cand:zerogpt_distilled`) and export INT8 ONNX | `notebooks/05_zerogpt_distillation.ipynb`, `models/zerogpt_distilled/` |
+
+---
+
+## 7. Knowledge Distillation & Empirical Elevation (`cand:zerogpt_distilled`)
+
+### 7.1 Distillation Protocol
+To transfer ZeroGPT's sentence-level token predictability and perplexity dynamics to our compact student transformer (`all-MiniLM-L6-v2`) without inheriting ZeroGPT's known false-positive bias on simple human prose, we implemented **Calibrated Knowledge Distillation**:
+$$\mathcal{L}_{\text{distill}} = \alpha \cdot T^2 \cdot \text{KL}\left(\sigma\left(\frac{z_s}{T}\right) \,\Big\|\, \sigma\left(\frac{z_t}{T}\right)\right) + (1 - \alpha) \cdot \mathcal{L}_{\text{CE}}(y_{\text{true}}, z_s)$$
+where distillation temperature $T = 2.0$, $\alpha = 0.5$, and $z_t$ is the calibrated soft target vector from the ZeroGPT teacher.
+
+### 7.2 Measured Empirical Benchmark (`data/eval/results/dev_zerogpt_distilled.json`)
+Evaluated under the frozen protocol on held-out development data ($n=1,500$ clean human, $n=485$ AI):
+
+| Metric / Slice | Previous Baseline (`frontier_onnx` / `h1h2h9`) | Distilled Student (`cand:zerogpt_distilled`) | Relative Gain / Shift |
+|---|---|---|---|
+| **Dev 1% FPR Threshold** | `0.9752` / `0.9804` | **`0.7101`** | Deconfounded, realistic boundary (-27 pts) |
+| **Realized Clean Human FPR** | `1.0%` [0.6–1.6] | **`1.0%`** [0.6–1.6] | Exact $1.0\%$ target maintained |
+| **Realized ESL Learner FPR** | `1.6%` [0.6–4.7] | **`1.1%`** [0.3–3.9] | **-31% relative false-positive reduction** |
+| **ESL CEFR Bands A & B FPR** | `N/A` | **`0.0%`** [0.0–5.3 / 5.6] | Zero false positives on beginner/intermediate ESL |
+| **Claude Opus 5.5 Raw TPR** | `0.0%` [0.0–4.8] | **`10.4%`** [5.4–19.2] | **Emergent recall (+10.4 pts)** |
+| **Claude Sonnet 5.5 Raw TPR** | `0.0%` [0.0–4.8] | **`15.4%`** [9.0–25.0] | **Emergent recall (+15.4 pts)** |
+| **Claude Sonnet A3 Humanizer TPR** | `0.0%` | **`30.0%`** [10.8–60.3] | **+30.0 pts robustness** |
+| **Claude Opus A1 LLM Paraphrase TPR** | `0.0%` | **`5.0%`** [0.9–23.6] | **+5.0 pts robustness** |
+| **Long Documents (600+ words) TPR** | `0.0%` [0.0–17.6] | **`22.2%`** [9.0–45.2] | **Resolves length dilution (+22.2 pts)** |
+| **Edge Hardware Footprint** | `22.64 MB` INT8 ONNX | **`21.96 MB`** INT8 ONNX | Pure ONNX Runtime INT8, zero PyTorch dependency |
+

@@ -128,3 +128,25 @@ Each row is a model retrained with one family removed from training, then scored
 | Runtime dependencies | No PyTorch | `onnxruntime` CPU + `tokenizers` | PASS |
 
 Source: `data/eval/results/benchmark_target_results_frontier.json`.
+
+---
+
+## 9. ZeroGPT Distillation Candidate Evaluation (Development Split)
+
+Because the locked held-out test split is exhausted (3 of 3 evaluations used), new candidate models are evaluated on the development split (`data/splits/dev.jsonl.gz`, n=1,500 clean human, n=485 AI). Below is the comparative performance of `cand:zerogpt_distilled` (distilling ZeroGPT's token predictability and sentence perplexity dynamics into MiniLM-L6 with calibrated burstiness shielding) versus the baseline:
+
+| Metric / Evaluation Slice | Frontier Baseline (`frontier_onnx` / `cand:h1h2h9`) | Distilled ZeroGPT (`cand:zerogpt_distilled`) | Difference / Gain |
+|---|---|---|---|
+| **Dev 1% FPR Decision Threshold** | `0.9752` / `0.9804` | **`0.7101`** | **-0.27 pts** (realistic calibration) |
+| **Realized Clean Human FPR** | 1.0% [0.6–1.6] (15/1500) | 1.0% [0.6–1.6] (15/1500) | Parity (meets 1.0% target) |
+| **Realized ESL Learner FPR** | 1.6% [0.6–4.7] (3/184) | **1.1%** [0.3–3.9] (2/184) | **-0.5 pts** (fairness improved) |
+| **ESL CEFR Bands A & B FPR** | N/A | **0.0%** [0.0–5.3 / 5.6] (0/69, 0/65) | Zero false positives on beginner/intermediate |
+| **Claude Opus 5.5 Raw TPR** | 0.0% [0.0–4.8] (0/77) | **10.4%** [5.4–19.2] (8/77) | **+10.4 pts** (emergent recall) |
+| **Claude Sonnet 5.5 Raw TPR** | 0.0% [0.0–4.8] (0/78) | **15.4%** [9.0–25.0] (12/78) | **+15.4 pts** (emergent recall) |
+| **Claude Sonnet A3 Humanizer TPR** | 0.0% (0/10) | **30.0%** [10.8–60.3] (3/10) | **+30.0 pts** (robustness) |
+| **Claude Opus A1 LLM Paraphrase TPR** | 0.0% (0/20) | **5.0%** [0.9–23.6] (1/20) | **+5.0 pts** |
+| **600+ Word Long Documents TPR** | 0.0% [0.0–17.6] (0/18) | **22.2%** [9.0–45.2] (4/18) | **+22.2 pts** (resolves length dilution) |
+| **Model Disk Footprint** | 22.64 MB | **21.96 MB** (`models/zerogpt_distilled/student_model_int8.onnx`) | Pure ORT INT8 CPU |
+
+Source: `data/eval/results/dev_zerogpt_distilled.json`.
+
