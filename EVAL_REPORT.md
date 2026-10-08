@@ -150,3 +150,17 @@ Because the locked held-out test split is exhausted (3 of 3 evaluations used), n
 
 Source: `data/eval/results/dev_zerogpt_distilled.json`.
 
+---
+
+## 10. Multi-Teacher Distillation Candidate Evaluation (Development Split)
+
+To surpass the single-teacher ZeroGPT performance, Veritas AI deployed a **Multi-Teacher Knowledge Distillation Framework** (`notebooks/multi_teacher_distillation.py`). This architecture fuses:
+1. **ZeroGPT Teacher**: Token-level predictability dynamics and inter-sentence burstiness variance shielding $\sigma^2_{\text{PPL}}$.
+2. **QuillBot Behavioral Teacher**: Granular 4-class taxonomy probability allocations across pure AI, attacked/humanized AI, and AI-polished human drafts.
+3. **Sequence Ensemble Teacher**: Deep contextual transformer representations from `Hello-SimpleAI/chatgpt-detector-roberta` and `rasbt/ai-text-detector-modernbert`.
+
+Student model (`sentence-transformers/all-MiniLM-L6-v2`) is optimized via Hinton KD loss across a 9-configuration hyperparameter search grid ($T \in \{1.5, 2.0, 2.5\}$, $\alpha \in \{0.4, 0.5, 0.6\}$) and quantized to dynamic INT8 ONNX (`models/multi_teacher_distilled/student_model_int8.onnx`, 21.96 MB).
+
+Evaluation on held-out development split (`data/splits/dev.jsonl.gz`, n=1,500 clean human, n=485 AI) executed via `scripts/eval_frontier.py --split dev --detectors cand:multi_teacher_distilled --neg-cap 1500 --public-cap 300 --threads 6`.
+
+
