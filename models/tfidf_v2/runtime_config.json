@@ -1,0 +1,10 @@
+{
+ "candidate": "tfidf_v2",
+ "threshold": 0.5,
+ "decision_threshold": -2.3768268114776134,
+ "threshold_rule": "tfidf: dev clean-human 1% FPR of the exported model's decision value (n_dev_neg=1823, commit 6e75d32); ai_score = sigmoid(decision - decision_threshold)",
+ "score": "sigmoid(decision - decision_threshold)",
+ "C": 10.0,
+ "n_train_claude": 230,
+ "n_train_human": 7876
+}
