@@ -531,6 +531,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     $("telemetryLatency").textContent = summary.elapsed_seconds != null ? `${Number(summary.elapsed_seconds).toFixed(2)} s` : "—";
+    if ($("telemetryDetector")) {
+      const d = data.detector || {};
+      $("telemetryDetector").textContent = d.model ? `${d.model} (${d.mode || "frontier"})` : "Frontier INT8";
+    }
 
     // Document
     renderHeatmapSpans(sentences);
