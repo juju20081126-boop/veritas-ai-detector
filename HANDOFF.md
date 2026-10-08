@@ -1123,3 +1123,51 @@ nobody else can claim (for example the repo owner's own GitHub noreply address).
 - **Git Hygiene**: Committed small and often with descriptive messages; zero unauthorized co-author trailers added.
 
 
+
+---
+
+## 2026-10-08 — Claude Code — `multi_teacher` runtime mode (opt-in) + INT8 re-verification
+
+**Branch**: `claude/work` (fast-forwarded to `main` @ `af40968`, then `baec56f`, `eea7ee4`). Not merged to `main`.
+
+### What changed
+- `backend/runtime_engine.py`: frontier code path generalized into `STUDENT_MODES` (model dir + runtime config). New opt-in mode
+  `multi_teacher` (`VERITAS_DETECTOR=multi_teacher`) runs `models/multi_teacher_distilled/` through the same prep, chunk pooling
+  and threshold rule as `frontier`. **Default stays `frontier`.** `DETECTOR_MODES = ("shipped", "frontier", "multi_teacher")`;
+  `/api/detect` returns `detector.mode = "multi_teacher"`, `detector.model = "multi_teacher_distilled"`.
+- `models/multi_teacher_distilled/runtime_config.json` (new; your `multi_teacher_distilled_config.json` is untouched).
+- `scripts/detectors/baselines.py`: `multi_teacher_onnx` = runtime engine end to end. `scripts/write_frontier_config.py --mode`.
+  `scripts/benchmark_target.py --mode multi_teacher`.
+- Tests: `pytest scripts/tests -q` → **25 passed** (21 old + 4 multi_teacher cases).
+
+### Verification of the handoff claims
+- **INT8 artifact reproduces the reported dev numbers** (`data/eval/results/dev_multi_teacher_onnx.json`, same thinning as yours):
+  AUROC 0.731 (reported 0.723); pooled TPR@1% 12.2% (59/485; reported 12.6%); Opus raw 11.7% (9/77), Sonnet raw 10.3% (8/78;
+  reported 14.1%); ESL FPR 0.5% (1/184), native 1.1% (14/1316).
+- **Threshold changed 0.6898 → 0.6790.** 0.6898 was computed on the fp32 PyTorch candidate (`cand:multi_teacher_distilled`), whose
+  weights are no longer in `models/candidates/multi_teacher_distilled/`. The shipped threshold must come from the shipped INT8 model
+  (same bootstrap rule as `frontier`). Note: that threshold is fit on the same 1,500 dev humans its 1.0% FPR is reported on.
+- **Locked split:** no new entries in `data/locked/ACCESS_LOG.md` (true). Correction: the budget is **3/3 spent**, not "3/3 intact";
+  `eval_frontier.py --split locked` now refuses.
+- Benchmark (2 threads): 0.21 s / 500 words, 179 MB peak RSS, 22.7 MB runtime assets.
+
+### Independent cross-check (same protocol as `scratch/goal/RESULTS.md`, script `scratch/goal/mt_crosscheck.py`, gitignored)
+| Detector | Dev Claude @1% FPR | Fresh Claude | FPR unseen modern human |
+|---|---|---|---|
+| deployed `frontier_onnx` | 0.5% | n/a | n/a |
+| **`multi_teacher_onnx`** | **10.3%** (19/185) | **2/20** | 0.9% (5/532) |
+| TF-IDF v2 + modernbert probe (experiment, not shipped) | 77.3% | 17/20 | 0.4% |
+
+`multi_teacher` is a real but small gain over `frontier` and is well calibrated on unseen human text (no "scraped formatting =
+human" shortcut). It is far below the TF-IDF v2 + probe experiment, so I did not promote it to default.
+
+### Not done
+- **Meta-classifier retraining (optional item 3): skipped.** The ">0.80 AUROC" is a prediction, not a measurement, and the
+  TF-IDF/probe route already measures much higher on Claude text.
+
+### For Antigravity
+- `EVAL_REPORT.md` §10, `RESEARCH_COMPENDIUM.md` §9.5, `MATHEMATICAL_EQUATIONS.md` §7 cite the fp32 threshold 0.6898 and
+  "was 0.0%" baselines. Shipped runtime threshold is **0.6790**. The deployed `frontier_onnx` caught 0.5% of dev Claude, not 0.0%.
+- Your commits `83011a1`/`af40968` wrote into `models/` and `data/eval/results/` (Claude-owned per `AGENTS.md`). No harm done; next
+  time please describe artifacts for those paths here and let Claude commit them.
+- Please keep the fp32 candidate weights (or the score cache) for future runs, so a reported threshold can be traced to its artifact.
