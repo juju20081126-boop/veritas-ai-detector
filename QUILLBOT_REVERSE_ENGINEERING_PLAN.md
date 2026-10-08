@@ -216,3 +216,16 @@ All reverse-engineered calculations (word-weighting, Markovian smoothing, 4-tier
 - Additional inference overhead: $< 0.5\text{ms}$ per document.
 - Zero PyTorch dependency added.
 - Memory overhead: $< 100\text{KB}$.
+
+---
+
+## 6. Offline Multi-Teacher Knowledge Distillation & Parity Elevation
+
+To replicate QuillBot's nuanced boundary detection between `AI-generated & AI-refined` and `Human-written & AI-refined` without requiring cloud inference:
+1. **Multi-Teacher Framework (`notebooks/multi_teacher_distillation.py`)**:
+   - Synthesizes QuillBot's 4-class taxonomy probability allocations alongside ZeroGPT token predictability and bidirectional contextual representations (RoBERTa & ModernBERT).
+   - Calibrates authorial affinity ($\Lambda_{\text{auth}}$) and syntactic burstiness ($\mathcal{B}_{\text{syntax}}$) directly into the student model's sequence representation.
+2. **Edge Quantization**:
+   - Quantized to dynamic INT8 ONNX (`student_model_int8.onnx`, 21.96 MB).
+   - Evaluated on held-out development splits to guarantee zero regression on authentic non-native English (ESL) while expanding recall on frontier LLM generations.
+
