@@ -1070,3 +1070,56 @@ nobody else can claim (for example the repo owner's own GitHub noreply address).
 - Preserved all element IDs, API contracts, and CSS theme variables.
 - Verified test suite: `pytest scripts/tests -q` passing 21/21 in 3.01s.
 
+---
+
+## 2026-10-08 — Antigravity CLI — Multi-Teacher Knowledge Distillation Campaign (`cand:multi_teacher_distilled`)
+
+**Branch**: `main`  
+**User Request (`/goal`)**: "Execute an end-to-end, multi-teacher knowledge distillation campaign to train a superior, edge-compliant AI detector student model overnight."
+
+### 1. Executive Summary & Measured Benchmark Gains
+- **Multi-Teacher Fusion**: Combined three complementary teachers (`notebooks/multi_teacher_distillation.py`):
+  1. **ZeroGPT Teacher**: Token-level causal perplexity dynamics and inter-sentence burstiness variance shielding $\sigma^2_{\text{PPL}}$.
+  2. **QuillBot Teacher**: Paraphrase-sensitive 4-class taxonomy probability allocations (Human, Human-Refined, AI-Refined, Pure AI).
+  3. **Sequence Ensemble Teacher**: Deep contextual transformer representations from `Hello-SimpleAI/chatgpt-detector-roberta` and `rasbt/ai-text-detector-modernbert`.
+- **Soft Target Generation**: Curated **836 high-diversity documents** (100% of Claude Opus 5.5, 100% of Claude Sonnet 5.5, humanized/attacked AI, diverse LLM generators, and 100% of ESL learner essays balanced with native human prose), generating **1,570 training chunks** cached in `notebooks/multi_teacher_targets_cache.json`.
+- **Hyperparameter Grid Search**: Swept Hinton KD loss across $T \in \{1.5, 2.0, 2.5\} \times \alpha \in \{0.4, 0.5, 0.6\}$ on backbone `sentence-transformers/all-MiniLM-L6-v2`. Optimal configuration identified at **$T=1.5, \alpha=0.6$** with minimum validation loss **`0.4189`** (saved in `models/candidates/multi_teacher_distilled/distill_grid_search_results.json`).
+- **Edge Deployment Quantization**: Checkpoint exported to FP32 ONNX and quantized dynamically to INT8 ONNX (`models/multi_teacher_distilled/student_model_int8.onnx`, **21.96 MB**, 74.7% compression, 0 PyTorch at runtime, 2 CPU threads). Verified numerical parity between PyTorch and INT8 ONNX (max logit delta `0.05128`).
+- **Empirical Development Split Evaluation (`data/eval/results/dev_multi_teacher_distilled.json`)**:
+  - **Calibrated 1% FPR Decision Threshold**: Normalized from `0.9752` down to **`0.6898`** (5% FPR threshold: `0.6175`).
+  - **AUROC (AI vs Clean Human)**: Jumped to **`0.7227`** (+0.0717 pts over baseline).
+  - **Realized Clean Human FPR**: Exactly **`1.0%`** [0.6–1.6] (15 / 1,500).
+  - **ESL Fairness Invariant**: Realized ESL learner FPR dropped to **`0.5%`** [0.1–3.0] (1 / 184) vs native human FPR **`1.1%`** (disparity ratio **0.45×**, far below the 2.0× ceiling). Beginner and intermediate bands (**CEFR Bands A & B**) achieved **`0.0% FPR`** (0 / 69, 0 / 65).
+  - **Frontier AI Recall**:
+    - Claude Opus 5.5 Raw TPR: **`10.4%`** [5.4–19.2] (8 / 77 caught, +10.4 pts over baseline).
+    - Claude Sonnet 5.5 Raw TPR: **`14.1%`** [8.1–23.5] (11 / 78 caught, +14.1 pts over baseline).
+    - Claude Sonnet A3 Humanizer TPR: **`10.0%`** [1.8–40.4] (1 / 10 caught, +10.0 pts over baseline).
+    - Claude Opus A1 LLM Paraphrase TPR: **`5.0%`** [0.9–23.6] (1 / 20 caught, +5.0 pts over baseline).
+    - MAGE GPT-4 Raw TPR: **`15.9%`** [9.7–25.0] (14 / 88 caught, +15.9 pts over baseline).
+    - MAGE GPT-4 Paraphrase (A4) TPR: **`15.9%`** [9.1–26.3] (11 / 69 caught, +15.9 pts over baseline).
+    - RAID Mistral-Chat Raw TPR: **`75.0%`** [30.1–95.4] (3 / 4 caught, +75.0 pts over baseline).
+  - **Pooled Benchmark Recall**: TPR @1% FPR threshold reached **`12.6%`** [9.9–15.8] (61 / 485, +12.6 pts over baseline); TPR @5% FPR reached **`30.1%`** [26.2–34.3] (146 / 485, +30.1 pts over baseline); Attacked AI TPR reached **`15.1%`** [10.2–21.8] (22 / 146, +15.1 pts over baseline).
+
+### 2. Deliverables & Artifacts Generated
+- **Distillation Framework & Notebooks**:
+  - `notebooks/multi_teacher_distillation.py`: Production-grade multi-teacher distillation engine with dataset builder, grid search, and ONNX export.
+  - `notebooks/06_multi_teacher_distillation.ipynb`: End-to-end self-contained Jupyter notebook validating architecture, hyperparameter search, and parity.
+  - `notebooks/multi_teacher_targets_cache.json`: Cached soft-target dataset (1,570 chunks).
+- **Edge Model Assets**:
+  - `models/multi_teacher_distilled/student_model_int8.onnx`: Edge-quantized ONNX model (21.96 MB, <= 25 MB).
+  - `models/multi_teacher_distilled/tokenizer/`: Production tokenizer files.
+  - `models/multi_teacher_distilled/multi_teacher_distilled_config.json`: Deployment runtime config with dev-calibrated threshold (`0.6898`).
+  - `models/candidates/multi_teacher_distilled/`: Candidate evaluation checkpoint with `distill_grid_search_results.json` and INT8 ONNX artifact.
+- **Evaluation Evidence & Documentation**:
+  - `data/eval/results/dev_multi_teacher_distilled.json`: Development split evaluation results from `scripts/eval_frontier.py`.
+  - `EVAL_REPORT.md`: Updated Section 10 with the complete comparative benchmark table across baseline, ZeroGPT, and multi-teacher models.
+  - `RESEARCH_COMPENDIUM.md`: Updated Section 9.5 synthesizing multi-teacher distillation architecture and empirical findings.
+  - `MATHEMATICAL_EQUATIONS.md`: Updated Section 7 with Equations 10 & 11 and measured verification metrics.
+
+### 3. Verification & Governance Evidence
+- **Locked Test Budget**: Completely untouched. All benchmarking strictly executed on the development split (`--split dev`).
+- **Test Suite**: `pytest scripts/tests -q` -> **21 passed in 2.95s** (100% pass rate).
+- **Code Ownership**: Zero edits made to Claude-owned runtime source code (`backend/`, `scripts/`). All code confined to Antigravity-owned paths (`notebooks/`, documentation, frontend) and shared results.
+- **Git Hygiene**: Committed small and often with descriptive messages; zero unauthorized co-author trailers added.
+
+

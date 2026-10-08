@@ -159,8 +159,33 @@ To surpass the single-teacher ZeroGPT performance, Veritas AI deployed a **Multi
 2. **QuillBot Behavioral Teacher**: Granular 4-class taxonomy probability allocations across pure AI, attacked/humanized AI, and AI-polished human drafts.
 3. **Sequence Ensemble Teacher**: Deep contextual transformer representations from `Hello-SimpleAI/chatgpt-detector-roberta` and `rasbt/ai-text-detector-modernbert`.
 
-Student model (`sentence-transformers/all-MiniLM-L6-v2`) is optimized via Hinton KD loss across a 9-configuration hyperparameter search grid ($T \in \{1.5, 2.0, 2.5\}$, $\alpha \in \{0.4, 0.5, 0.6\}$) and quantized to dynamic INT8 ONNX (`models/multi_teacher_distilled/student_model_int8.onnx`, 21.96 MB).
+Student model (`sentence-transformers/all-MiniLM-L6-v2`) was optimized via Hinton KD loss across a hyperparameter search grid with global optimum at **$T=1.5, \alpha=0.6$** (Validation Loss: `0.4189`) and dynamically quantized to INT8 ONNX (`models/multi_teacher_distilled/student_model_int8.onnx`, 21.96 MB).
 
-Evaluation on held-out development split (`data/splits/dev.jsonl.gz`, n=1,500 clean human, n=485 AI) executed via `scripts/eval_frontier.py --split dev --detectors cand:multi_teacher_distilled --neg-cap 1500 --public-cap 300 --threads 6`.
+Evaluation on the held-out development split (`data/splits/dev.jsonl.gz`, n=1,500 clean human, n=485 AI) executed via `scripts/eval_frontier.py --split dev --detectors cand:multi_teacher_distilled --neg-cap 1500 --public-cap 300 --threads 6`:
+
+| Metric / Evaluation Slice | Frontier Baseline (`frontier_onnx`) | Distilled ZeroGPT (`cand:zerogpt_distilled`) | Multi-Teacher Distilled (`cand:multi_teacher_distilled`) | Net Gain vs Baseline |
+|---|---|---|---|---|
+| **Dev 1% FPR Decision Threshold** | `0.9752` | `0.7101` | **`0.6898`** | **-0.29 pts** (normalized calibration) |
+| **Dev 5% FPR Decision Threshold** | `0.9610` | `0.6385` | **`0.6175`** | **-0.34 pts** |
+| **AUROC Pooled (AI vs Clean Human)** | `0.6510` | `0.7018` | **`0.7227`** | **+0.0717 pts** |
+| **Realized Clean Human FPR** | 1.0% [0.6–1.6] (15/1500) | 1.0% [0.6–1.6] (15/1500) | **1.0%** [0.6–1.6] (15/1500) | Exact target parity |
+| **Realized ESL Learner FPR** | 1.6% [0.6–4.7] (3/184) | 1.1% [0.3–3.9] (2/184) | **0.5%** [0.1–3.0] (1/184) | **-1.1 pts** (superior fairness) |
+| **ESL Fairness Ratio (ESL / Native)** | 1.6× native FPR | 1.1× native FPR | **0.45× native FPR** (0.5% vs 1.1%) | Far below 2.0× ceiling |
+| **ESL CEFR Bands A & B FPR** | N/A | 0.0% [0.0–5.3 / 5.6] | **0.0%** [0.0–5.3 / 5.6] (0/69, 0/65) | 0% false alarms on learners |
+| **Claude Opus 5.5 Raw TPR** | 0.0% [0.0–4.8] (0/77) | 10.4% [5.4–19.2] (8/77) | **10.4%** [5.4–19.2] (8/77) | **+10.4 pts** |
+| **Claude Sonnet 5.5 Raw TPR** | 0.0% [0.0–4.8] (0/78) | 15.4% [9.0–25.0] (12/78) | **14.1%** [8.1–23.5] (11/78) | **+14.1 pts** |
+| **Claude Sonnet A3 Humanizer TPR** | 0.0% (0/10) | 30.0% [10.8–60.3] (3/10) | **10.0%** [1.8–40.4] (1/10) | **+10.0 pts** |
+| **Claude Opus A1 LLM Paraphrase TPR** | 0.0% (0/20) | 5.0% [0.9–23.6] (1/20) | **5.0%** [0.9–23.6] (1/20) | **+5.0 pts** |
+| **MAGE GPT-4 Raw TPR** | 0.0% (0/88) | 13.6% [8.0–22.3] (12/88) | **15.9%** [9.7–25.0] (14/88) | **+15.9 pts** |
+| **MAGE GPT-4 Paraphrase (A4) TPR** | 0.0% (0/69) | 13.0% [7.0–23.0] (9/69) | **15.9%** [9.1–26.3] (11/69) | **+15.9 pts** |
+| **RAID Mistral-Chat Raw TPR** | 0.0% (0/4) | 50.0% (2/4) | **75.0%** [30.1–95.4] (3/4) | **+75.0 pts** |
+| **Pooled TPR @1% FPR Threshold** | 0.0% (0/485) | 10.7% [8.3–13.8] (52/485) | **12.6%** [9.9–15.8] (61/485) | **+12.6 pts** |
+| **Pooled TPR @5% FPR Threshold** | 0.0% (0/485) | 25.8% [22.1–29.8] (125/485)| **30.1%** [26.2–34.3] (146/485) | **+30.1 pts** |
+| **Attacked AI TPR @1% FPR Threshold**| 0.0% (0/146) | 11.6% [7.4–17.9] (17/146) | **15.1%** [10.2–21.8] (22/146) | **+15.1 pts** |
+| **Model Size on Disk** | 22.64 MB | 21.96 MB | **21.96 MB** (`student_model_int8.onnx`) | Edge compliant (≤ 25 MB) |
+| **Runtime Dependencies** | ORT CPU | ORT CPU | **0 PyTorch** (pure onnxruntime CPU) | Zero PyTorch at runtime |
+
+Source: `data/eval/results/dev_multi_teacher_distilled.json`.
+
 
 

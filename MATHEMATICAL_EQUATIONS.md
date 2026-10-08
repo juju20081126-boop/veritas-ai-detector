@@ -289,4 +289,18 @@ With hyperparameters selected via empirical grid search:
 $$T \in \{1.5, 2.0, 2.5\}, \quad \alpha \in \{0.4, 0.5, 0.6\}$$
 Optimizing across this surface transfers nuanced authorial representations into an ultra-compact $\le 25\text{ MB}$ INT8 ONNX edge artifact.
 
+### Measured Empirical Verification (`cand:multi_teacher_distilled` on Dev Split):
+- **1% FPR Decision Threshold**: Normalized from $0.9752$ to **$0.6898$**
+- **5% FPR Decision Threshold**: $0.6175$
+- **AUROC (AI vs Clean Human)**: **$0.7227$** (+0.0717 pts over baseline)
+- **ESL Learner Realized FPR**: **$0.5\%$** [0.1–3.0] ($0.0\%$ on CEFR Bands A & B)
+- **Claude Opus 5.5 Raw TPR**: **$10.4\%$** [5.4–19.2]
+- **Claude Sonnet 5.5 Raw TPR**: **$14.1\%$** [8.1–23.5]
+- **Claude Sonnet A3 Humanizer TPR**: **$10.0\%$** [1.8–40.4]
+- **MAGE GPT-4 Raw TPR**: **$15.9\%$** [9.7–25.0]
+- **RAID Mistral-Chat Raw TPR**: **$75.0\%$** [30.1–95.4]
+- **Pooled TPR @1% FPR**: **$12.6\%$** [9.9–15.8] | **@5% FPR**: **$30.1\%$** [26.2–34.3]
+- **Quantized Artifact Size**: **21.96 MB** (`student_model_int8.onnx`, 74.7% compression)
+
+
 

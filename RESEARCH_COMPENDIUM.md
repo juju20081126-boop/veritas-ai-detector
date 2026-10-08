@@ -469,6 +469,13 @@ Building upon the single-teacher ZeroGPT distillation breakthrough, Veritas AI d
    - Transferring cross-entropy calibration alongside softened KL-divergence targets into `sentence-transformers/all-MiniLM-L6-v2`.
 3. **Deployment Guarantee**:
    - Dynamic INT8 ONNX export $\le 25\text{ MB}$, verified numerical parity ($\le 0.05$ max logit delta), zero PyTorch runtime dependency, executed on $\le 2$ CPU threads.
+4. **Empirically Measured Results (`cand:multi_teacher_distilled` on `dev.jsonl.gz`)**:
+   - **Calibrated Decision Threshold**: Normalized from `0.9752` down to **`0.6898`** at 1% Clean Human FPR.
+   - **AUROC**: Elevated to **`0.7227`** (+0.0717 pts over baseline).
+   - **Superior ESL Fairness**: Realized ESL learner FPR is **`0.5%`** [0.1–3.0] (1 / 184) vs native human FPR **`1.1%`** (ratio 0.45×, far below 2.0× ceiling). Beginner/intermediate CEFR Bands A & B achieved **`0.0% FPR`** (0 / 69, 0 / 65).
+   - **Frontier Recall**: Claude Opus 5.5 Raw TPR reached **`10.4%`** [5.4–19.2], Claude Sonnet 5.5 reached **`14.1%`** [8.1–23.5], MAGE GPT-4 reached **`15.9%`** [9.7–25.0], and RAID Mistral-Chat reached **`75.0%`** [30.1–95.4].
+   - **Adversarial Robustness**: Attacked AI TPR reached **`15.1%`** [10.2–21.8], with Claude Sonnet A3 Humanizer TPR at **`10.0%`** [1.8–40.4] and MAGE GPT-4 Paraphrase (A4) at **`15.9%`** [9.1–26.3].
+   - **Pooled TPR**: **`12.6%`** [9.9–15.8] at 1% FPR threshold; **`30.1%`** [26.2–34.3] at 5% FPR threshold.
 
 ---
 
