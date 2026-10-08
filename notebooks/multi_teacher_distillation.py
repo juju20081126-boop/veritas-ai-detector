@@ -36,6 +36,11 @@ random.seed(SEED)
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(line_buffering=True)
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(line_buffering=True)
+
 
 def prep(text: str) -> str:
     t = textnorm.strip_markdown(textnorm.normalize_text(text))
@@ -259,7 +264,7 @@ def build_multi_teacher_training_set(
         seq_scores.extend(pipeline.seq_teacher.score_batch(sub_batch, max_len=160))
 
     # 4. Synthesize targets with ZeroGPT perplexity & burstiness
-    print("[Dataset] Computing ZeroGPT token predictability and fusing multi-teacher targets...")
+    print("[Dataset] Computing ZeroGPT token predictability and fusing multi-teacher targets...", flush=True)
     items = []
     t0 = time.time()
     for idx, (doc, s_prob) in enumerate(zip(all_docs, seq_scores)):
@@ -269,8 +274,12 @@ def build_multi_teacher_training_set(
         gen_id = str(doc.get("generator_id", ""))
         atk_id = str(doc.get("attack_id", "none"))
 
-        # ZeroGPT scoring
-        zg_res = pipeline.zerogpt_teacher.score_document(doc["text"], ground_truth_label=doc["label"])
+        # Chunk document into training units
+        cs = sentence_chunks(clean_text, max_words=100)
+        eval_passage = " ".join(cs[:2]) if len(cs) >= 2 else clean_text
+
+        # ZeroGPT scoring on evaluated passage
+        zg_res = pipeline.zerogpt_teacher.score_document(eval_passage, ground_truth_label=doc["label"])
         zg_fake = zg_res["fakePercentage"]
 
         # Fused 4-class target
@@ -284,8 +293,6 @@ def build_multi_teacher_training_set(
             zg_fake_pct=zg_fake
         )
 
-        # Chunk document into training units
-        cs = sentence_chunks(clean_text, max_words=100)
         for c in cs[:2]:  # Up to 2 ~100-word chunks per document
             items.append({
                 "text": c,
@@ -295,16 +302,20 @@ def build_multi_teacher_training_set(
                 "generator_id": gen_id
             })
 
-        if (idx + 1) % 150 == 0:
-            print(f"  Processed {idx + 1}/{len(all_docs)} docs ({time.time() - t0:.1f}s)...")
+        if (idx + 1) % 50 == 0:
+            print(f"  Processed {idx + 1}/{len(all_docs)} docs ({time.time() - t0:.1f}s)...", flush=True)
+            if cache_path:
+                os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+                with open(cache_path, "w", encoding="utf-8") as f:
+                    json.dump(items, f, indent=2)
 
-    print(f"[Dataset] Generated {len(items)} training chunks with multi-teacher soft targets.")
+    print(f"[Dataset] Generated {len(items)} training chunks with multi-teacher soft targets.", flush=True)
 
     if cache_path:
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
         with open(cache_path, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2)
-        print(f"[Dataset] Cached dataset successfully saved to: {cache_path}")
+        print(f"[Dataset] Cached dataset successfully saved to: {cache_path}", flush=True)
 
     return items
 
@@ -506,7 +517,8 @@ def export_and_verify_onnx(hf_candidate_dir: str, production_dir: str) -> str:
             "logits": {0: "batch_size"}
         },
         opset_version=18,
-        do_constant_folding=True
+        do_constant_folding=True,
+        dynamo=False
     )
 
     onnx_proto = onnx.load(fp32_path)
@@ -534,6 +546,7 @@ def export_and_verify_onnx(hf_candidate_dir: str, production_dir: str) -> str:
 
     # Save tokenizer for offline runtime
     tokenizer.save_pretrained(production_dir)
+    tokenizer.save_pretrained(os.path.join(production_dir, "tokenizer"))
     # Also copy INT8 ONNX to candidate directory for evaluation wrapper
     shutil_cand_int8 = os.path.join(hf_candidate_dir, "student_model_int8.onnx")
     import shutil
@@ -574,8 +587,8 @@ if __name__ == "__main__":
         pipeline=pipeline,
         train_rows=train_rows,
         cache_path=cache_path,
-        n_ai_samples=600,
-        n_human_samples=500
+        n_ai_samples=400,
+        n_human_samples=400
     )
 
     # Step 2: Hyperparameter grid search & student training
