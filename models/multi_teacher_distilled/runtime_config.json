@@ -1,0 +1,8 @@
+{
+ "candidate": "multi_teacher_distilled",
+ "threshold": 0.679,
+ "temperature": 1.0,
+ "max_len": 160,
+ "threshold_rule": "dev clean-human 1% FPR of multi_teacher_onnx (n_dev_neg=1500, commit baec56f)",
+ "score": "P(AI-generated) + P(AI-generated & AI-refined)"
+}

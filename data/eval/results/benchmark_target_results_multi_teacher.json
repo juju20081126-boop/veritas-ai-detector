@@ -1,0 +1,53 @@
+{
+  "timestamp": 1791446579.8576124,
+  "detector_mode": "multi_teacher",
+  "hardware_simulation": {
+    "intra_op_threads": 2,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "provider": "CPUExecutionProvider"
+  },
+  "disk_footprint_mb": 22.67,
+  "disk_target_mb": 500.0,
+  "disk_passed": true,
+  "overall_peak_ram_mb": 178.8,
+  "ram_target_mb": 1500.0,
+  "ram_passed": true,
+  "p500_mean_latency_sec": 0.213,
+  "p500_target_latency_sec": 15.0,
+  "latency_passed": true,
+  "tier_benchmarks": [
+    {
+      "word_count": 80,
+      "sentence_count": 6,
+      "mean_latency_sec": 0.037,
+      "std_latency_sec": 0.002,
+      "peak_ram_mb": 95.3,
+      "compliance": "PASS"
+    },
+    {
+      "word_count": 500,
+      "sentence_count": 36,
+      "mean_latency_sec": 0.213,
+      "std_latency_sec": 0.002,
+      "peak_ram_mb": 124.4,
+      "compliance": "PASS"
+    },
+    {
+      "word_count": 1000,
+      "sentence_count": 72,
+      "mean_latency_sec": 0.404,
+      "std_latency_sec": 0.002,
+      "peak_ram_mb": 157.4,
+      "compliance": "PASS"
+    },
+    {
+      "word_count": 2000,
+      "sentence_count": 143,
+      "mean_latency_sec": 1.437,
+      "std_latency_sec": 0.069,
+      "peak_ram_mb": 178.8,
+      "compliance": "PASS"
+    }
+  ]
+}
