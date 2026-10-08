@@ -16,6 +16,7 @@ import psutil
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from backend.runtime_engine import DETECTOR_MODES, STUDENT_MODES  # noqa: E402
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models")
 
@@ -33,9 +34,8 @@ def get_dir_size_mb(path: str) -> float:
 
 def runtime_assets_mb(mode: str) -> float:
     """Size of the files the runtime engine actually loads in this mode (not training checkpoints or the FP32 export)."""
-    base = MODELS_DIR if mode == "shipped" else os.path.join(MODELS_DIR, "frontier")
-    files = [os.path.join(base, "student_model_int8.onnx")]
-    files += [os.path.join(base, "meta_classifier.json")] if mode == "shipped" else [os.path.join(base, "frontier_config.json")]
+    base, cfg_name = (MODELS_DIR, "meta_classifier.json") if mode == "shipped" else STUDENT_MODES[mode]
+    files = [os.path.join(base, "student_model_int8.onnx"), os.path.join(base, cfg_name)]
     size = sum(os.path.getsize(f) for f in files if os.path.exists(f))
     return size / (1024 * 1024) + get_dir_size_mb(os.path.join(base, "tokenizer"))
 
@@ -193,6 +193,6 @@ def run_target_benchmark(runs_per_tier: int = 3, mode: str = "shipped"):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Simulate target hardware and measure latency & RAM.")
     parser.add_argument("--runs", type=int, default=3, help="Benchmark repetitions per word tier")
-    parser.add_argument("--mode", choices=["shipped", "frontier"], default="shipped", help="Detector mode to benchmark")
+    parser.add_argument("--mode", choices=list(DETECTOR_MODES), default="shipped", help="Detector mode to benchmark")
     args = parser.parse_args()
     run_target_benchmark(runs_per_tier=args.runs, mode=args.mode)

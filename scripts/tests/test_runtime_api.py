@@ -21,6 +21,7 @@ SUMMARY_KEYS = {"verdict", "verdict_description", "badge", "is_uncertain", "conf
                 "quillbot_headline_class", "quillbot_ai_pct", "quillbot_human_pct", "word_count", "character_count",
                 "sentence_count", "length_warning", "elapsed_seconds"}
 HAS_FRONTIER = os.path.exists(os.path.join(runtime_engine.FRONTIER_DIR, "frontier_config.json"))
+STUDENT_MODES = [m for m, (d, cfg) in runtime_engine.STUDENT_MODES.items() if os.path.exists(os.path.join(d, cfg))]
 
 
 def _check_schema(r):
@@ -52,23 +53,37 @@ def test_unknown_mode_rejected():
         runtime_engine.QuillBotDetectorEngine(threads=1, mode="magic")
 
 
-@pytest.mark.skipif(not HAS_FRONTIER, reason="models/frontier not exported yet")
-def test_frontier_schema_and_threshold_rule():
-    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="frontier")
+def test_multi_teacher_mode_registered():
+    assert "multi_teacher" in runtime_engine.DETECTOR_MODES
+    assert set(runtime_engine.STUDENT_MODES) <= set(runtime_engine.DETECTOR_MODES)
+
+
+@pytest.mark.parametrize("mode", STUDENT_MODES)
+def test_student_schema_and_threshold_rule(mode):
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode=mode)
     r = e.analyze_text(TEXT)
     _check_schema(r)
     d = r["detector"]
-    assert d["mode"] == "frontier" and d["threshold"] is not None
+    assert d["mode"] == mode and d["threshold"] is not None
+    assert d["threshold"] == round(float(e.student_config["threshold"]), 4)
     p = r["calibrated_probabilities"]
     assert abs(p["AI-generated"] + p["AI-generated & AI-refined"] - d["ai_score"]) < 1e-3
     is_ai_verdict = r["summary"]["verdict"] in ("AI-generated", "AI-generated & AI-refined")
     assert is_ai_verdict == (d["ai_score"] >= d["threshold"])
 
 
-@pytest.mark.skipif(not HAS_FRONTIER, reason="models/frontier not exported yet")
-def test_frontier_ignores_obfuscation():
-    """Zero-width characters and homoglyphs (attack A7) must not move the frontier score."""
-    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="frontier")
+@pytest.mark.skipif("multi_teacher" not in STUDENT_MODES, reason="models/multi_teacher_distilled runtime config not written yet")
+def test_multi_teacher_reports_its_own_model():
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="multi_teacher")
+    d = e.analyze_text(TEXT)["detector"]
+    assert d["model"] == "multi_teacher_distilled"
+    assert "multi_teacher" in d["threshold_rule"]
+
+
+@pytest.mark.parametrize("mode", STUDENT_MODES)
+def test_student_ignores_obfuscation(mode):
+    """Zero-width characters and homoglyphs (attack A7) must not move a student model's score."""
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode=mode)
     attacked = TEXT.replace("e", "е", 7).replace(" ", " ​", 9)
     assert abs(e.analyze_text(TEXT)["detector"]["ai_score"] - e.analyze_text(attacked)["detector"]["ai_score"]) < 1e-3
 

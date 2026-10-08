@@ -44,8 +44,16 @@ META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 # data/reports/FRONTIER_DETECTION_REPORT.md) is the default since v2.0.0. The legacy model is still available with
 # VERITAS_DETECTOR=shipped or QuillBotDetectorEngine(mode="shipped"). The response schema is identical in both modes, plus a
 # "detector" block. Frontier mode decides AI vs human with the dev-calibrated threshold stored in frontier_config.json.
+# multi_teacher (opt-in, VERITAS_DETECTOR=multi_teacher) is Antigravity's multi-teacher distilled MiniLM student
+# (notebooks/multi_teacher_distillation.py); it shares the frontier decision rule and reads runtime_config.json, whose threshold
+# is the INT8 model's own dev clean-human 1%-FPR threshold (scripts/write_frontier_config.py --mode multi_teacher).
 FRONTIER_DIR = os.path.join(MODELS_DIR, "frontier")
-DETECTOR_MODES = ("shipped", "frontier")
+MULTI_TEACHER_DIR = os.path.join(MODELS_DIR, "multi_teacher_distilled")
+STUDENT_MODES = {  # mode -> (model dir, runtime config file name)
+    "frontier": (FRONTIER_DIR, "frontier_config.json"),
+    "multi_teacher": (MULTI_TEACHER_DIR, "runtime_config.json"),
+}
+DETECTOR_MODES = ("shipped",) + tuple(STUDENT_MODES)
 
 CLASS_NAMES = [
     "Human-written",
@@ -118,15 +126,16 @@ class QuillBotDetectorEngine:
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
 
         onnx_path, tokenizer_path = ONNX_MODEL_PATH, TOKENIZER_PATH
-        self.frontier_config: Dict[str, Any] = {}
-        if self.mode == "frontier":
-            onnx_path = os.path.join(FRONTIER_DIR, "student_model_int8.onnx")
-            tokenizer_path = os.path.join(FRONTIER_DIR, "tokenizer", "tokenizer.json")
-            cfg_path = os.path.join(FRONTIER_DIR, "frontier_config.json")
+        self.student_config: Dict[str, Any] = {}
+        if self.mode in STUDENT_MODES:
+            model_dir, cfg_name = STUDENT_MODES[self.mode]
+            onnx_path = os.path.join(model_dir, "student_model_int8.onnx")
+            tokenizer_path = os.path.join(model_dir, "tokenizer", "tokenizer.json")
+            cfg_path = os.path.join(model_dir, cfg_name)
             if not os.path.exists(cfg_path):
-                raise FileNotFoundError(f"Frontier detector config not found at {cfg_path}. Export the frontier model first.")
+                raise FileNotFoundError(f"{self.mode} detector config not found at {cfg_path}. Export the {self.mode} model first.")
             with open(cfg_path, "r", encoding="utf-8") as f:
-                self.frontier_config = json.load(f)
+                self.student_config = json.load(f)
 
         if not os.path.exists(onnx_path):
             raise FileNotFoundError(
@@ -325,14 +334,14 @@ class QuillBotDetectorEngine:
         feat_vec, stylometrics = self._extract_stylometrics_vec(text, sentences)
 
         # 2. Document-level neural inference (hierarchical chunk pooling)
-        frontier = self.mode == "frontier"
-        if frontier:
+        student = self.mode in STUDENT_MODES
+        if student:
             # Same preprocessing, chunking and pooling as training/evaluation; no meta-classifier or guardrail (both were fit on the
             # retired synthetic data), plain temperature softmax.
-            max_len = int(self.frontier_config.get("max_len", 160))
+            max_len = int(self.student_config.get("max_len", 160))
             chunks = self._sentence_chunks(self._frontier_prep(text))
             chunk_logits = self._run_onnx_inference(chunks, max_length=max_len, batch_size=16)
-            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.frontier_config.get("temperature", 1.0)))
+            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.student_config.get("temperature", 1.0)))
             exp_d = np.exp(doc_logits - np.max(doc_logits))
             calibrated_probs = exp_d / np.sum(exp_d)
         else:
@@ -351,7 +360,7 @@ class QuillBotDetectorEngine:
 
         # 3. Verdict Determination & Uncertainty Gating
         # 3. Sentence-by-sentence Inference & Highlights (QuillBot Alignment)
-        sent_inputs = [self._frontier_prep(s) or s for s in sentences] if frontier else sentences
+        sent_inputs = [self._frontier_prep(s) or s for s in sentences] if student else sentences
         sent_logits = self._run_onnx_inference(sent_inputs, max_length=128, batch_size=16)
         S = len(sentences)
 
@@ -420,8 +429,8 @@ class QuillBotDetectorEngine:
         top_prob = float(calibrated_probs[top_idx])
 
         ai_score = float(calibrated_probs[2] + calibrated_probs[3])
-        threshold = float(self.frontier_config.get("threshold", 0.5))
-        if frontier:
+        threshold = float(self.student_config.get("threshold", 0.5))
+        if student:
             # The evaluated decision rule: AI iff P(AI-generated) + P(AI-generated & AI-refined) >= the dev 1%-FPR threshold.
             is_uncertain = False
             if ai_score >= threshold:
@@ -546,10 +555,10 @@ class QuillBotDetectorEngine:
             "sentences": sentence_analyses,
             "detector": {
                 "mode": self.mode,
-                "model": self.frontier_config.get("candidate", "shipped") if frontier else "shipped",
+                "model": self.student_config.get("candidate", "shipped") if student else "shipped",
                 "ai_score": round(ai_score, 4),
-                "threshold": round(threshold, 4) if frontier else None,
-                "threshold_rule": self.frontier_config.get("threshold_rule") if frontier else None,
+                "threshold": round(threshold, 4) if student else None,
+                "threshold_rule": self.student_config.get("threshold_rule") if student else None,
             },
             "stylometrics": stylometrics,
             "mathematical_equations": stylometrics.get("mathematical_equations", {}) if stylometrics else {}
