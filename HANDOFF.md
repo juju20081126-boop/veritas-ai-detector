@@ -1054,3 +1054,19 @@ nobody else can claim (for example the repo owner's own GitHub noreply address).
 - **Notebook Validation**: `05_zerogpt_distillation.ipynb` validated against `nbformat` v4.
 - **Code Ownership**: Zero modifications to Claude-owned runtime code (`backend/`, `scripts/`). All work completed in Antigravity-owned paths (`notebooks/`, documentation) and shared result files.
 - **Git Commit Trailers**: No external or unverified co-author trailers added.
+
+---
+
+## 2026-10-08 — Antigravity CLI — Frontend Traditional Chinese Telemetry & Writing Signals Localization
+
+**Branch**: `main`  
+**Commit**: `213b850`  
+**Owned Paths Modified**: `frontend/app.js`, `frontend/i18n.js`
+
+### What Changed:
+- Extended the i18n dictionary (`frontend/i18n.js`) with localized keys for active detector model telemetry (`tel_detector`) in both English (`"Active detector"`) and Traditional Chinese (`"使用中檢測模型"`).
+- Wired all writing signals labels (`sig_burstiness`, `sig_richness`, `sig_discourse`, `sig_binoculars`, `sig_affinity`, `sig_grade`, `sig_wps`, `sig_contractions`) and telemetry labels (`tel_time`, `tel_memory`, `tel_runtime`, `tel_threads`, `tel_size`, `tel_detector`, `tel_network`) into `applyLanguage()` in `frontend/app.js`.
+- Now switching language between English and Traditional Chinese seamlessly translates the entire writing signals and engine telemetry panels without reload or API disruption.
+- Preserved all element IDs, API contracts, and CSS theme variables.
+- Verified test suite: `pytest scripts/tests -q` passing 21/21 in 3.01s.
+
