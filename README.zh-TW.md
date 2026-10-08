@@ -103,7 +103,8 @@ veritas-ai-detector/
 │   ├── 02_student_distillation_and_onnx_export.ipynb
 │   ├── 03_gpu_finetune.ipynb
 │   ├── 04_results_figures.ipynb
-│   └── 05_zerogpt_distillation.ipynb
+│   ├── 05_zerogpt_distillation.ipynb
+│   └── 06_multi_teacher_distillation.ipynb
 ├── samples/                   # 具完整來源證明之評估文章與參照範例文本
 │   ├── algorithmic_commons_essay.md
 │   ├── real_samples.py        # 具備明確來源記錄之真實前沿生成文本

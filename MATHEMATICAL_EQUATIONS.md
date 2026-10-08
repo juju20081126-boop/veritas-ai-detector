@@ -265,3 +265,28 @@ Where $\mathcal{H} = \{s \in \mathcal{S} \mid p_{\text{AI}}(s) \ge \tau_{\text{s
 - **600+ Word Long Document TPR**: Elevated from $0.0\%$ to **$22.2\%$** [9.0–45.2]
 - **ESL Learner Fairness**: $1.1\%$ [0.3–3.9] realized FPR ($0.0\%$ on CEFR Bands A & B)
 
+---
+
+## 7. Multi-Teacher Ensemble Knowledge Distillation Formulations
+
+### Equation 10: Fused Multi-Teacher Probability Distribution ($\mathbf{q}_{\text{fused}}$)
+To harness complementary signals from disparate detection paradigms—causal language model predictability (ZeroGPT), 4-class paraphrase-sensitive taxonomy (QuillBot), and bidirectional contextual transformer representations (RoBERTa & ModernBERT)—we formulate the fused teacher probability vector $\mathbf{q}_{\text{fused}} \in \Delta^3$:
+
+$$\mathbf{q}_{\text{fused}}(x) = \sum_{k=1}^K w_k(x) \cdot \mathbf{p}_k(x)$$
+
+Where:
+- $\mathbf{p}_{\text{ZeroGPT}}(x)$ supplies token-level predictability and inter-sentence burstiness variance shielding $\sigma^2_{\text{PPL}}$.
+- $\mathbf{p}_{\text{SeqEns}}(x) = \frac{1}{2}\left[\sigma\left(\mathbf{z}_{\text{RoBERTa}}(x)\right) + \sigma\left(\mathbf{z}_{\text{ModernBERT}}(x)\right)\right]$ supplies sequence-level contextual attention posteriors.
+- $\mathbf{p}_{\text{QuillBot}}(x)$ maps the 4-class taxonomy over hybrid refinement and paraphrase modes.
+- Adaptive gating weights $w_k(x)$ dynamically downweight causal perplexity on narrative/ESL human prose while upweighting contextual transformers on frontier LLMs (Claude Opus/Sonnet 5.5).
+
+### Equation 11: Multi-Teacher Distillation Objective ($\mathcal{L}_{\text{multi-distill}}$)
+The student transformer (`sentence-transformers/all-MiniLM-L6-v2`) minimizes a composite loss over temperature-scaled soft KL divergence and hard ground-truth cross-entropy:
+
+$$\mathcal{L}_{\text{multi-distill}} = \alpha \cdot T^2 \cdot \mathcal{D}_{\text{KL}}\left(\sigma\left(\frac{\mathbf{z}_s}{T}\right) \;\Big\|\; \sigma\left(\frac{\mathbf{q}_{\text{fused}}}{T}\right)\right) + (1 - \alpha) \cdot \mathcal{L}_{\text{CE}}(\mathbf{z}_s, y_{\text{true}})$$
+
+With hyperparameters selected via empirical grid search:
+$$T \in \{1.5, 2.0, 2.5\}, \quad \alpha \in \{0.4, 0.5, 0.6\}$$
+Optimizing across this surface transfers nuanced authorial representations into an ultra-compact $\le 25\text{ MB}$ INT8 ONNX edge artifact.
+
+

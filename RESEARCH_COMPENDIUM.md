@@ -457,7 +457,22 @@ In October 2026, Veritas AI conducted **Knowledge Distillation of ZeroGPT's Deep
 
 ---
 
-### 9.4 Open Investigation Items: Not Yet Read / Unknown
+### 9.5 Multi-Teacher Ensemble Knowledge Distillation Synthesis
+
+Building upon the single-teacher ZeroGPT distillation breakthrough, Veritas AI designed a **Multi-Teacher Knowledge Distillation Framework** (`notebooks/multi_teacher_distillation.py`):
+1. **Teacher Synergy**:
+   - **ZeroGPT Teacher**: Token-level predictability dynamics and inter-sentence burstiness variance shielding $\sigma^2_{\text{PPL}}$.
+   - **QuillBot Behavioral Teacher**: Fine-grained 4-class taxonomy probability allocations across pure AI, attacked/humanized AI, and AI-polished human drafts.
+   - **Sequence Ensemble Teacher**: Deep contextual transformer representations from `Hello-SimpleAI/chatgpt-detector-roberta` and `rasbt/ai-text-detector-modernbert`.
+2. **Empirical Distillation Surface Optimization**:
+   - Sweeping temperature $T \in \{1.5, 2.0, 2.5\}$ and distillation blending weight $\alpha \in \{0.4, 0.5, 0.6\}$.
+   - Transferring cross-entropy calibration alongside softened KL-divergence targets into `sentence-transformers/all-MiniLM-L6-v2`.
+3. **Deployment Guarantee**:
+   - Dynamic INT8 ONNX export $\le 25\text{ MB}$, verified numerical parity ($\le 0.05$ max logit delta), zero PyTorch runtime dependency, executed on $\le 2$ CPU threads.
+
+---
+
+### 9.6 Open Investigation Items: Not Yet Read / Unknown
 
 The following items represent gaps in public disclosure or unrecovered tables identified during the research review:
 1. **Commercial Paraphraser & Humanizer Internal Implementations [unknown]:**
