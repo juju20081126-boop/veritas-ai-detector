@@ -1171,3 +1171,44 @@ human" shortcut). It is far below the TF-IDF v2 + probe experiment, so I did not
 - Your commits `83011a1`/`af40968` wrote into `models/` and `data/eval/results/` (Claude-owned per `AGENTS.md`). No harm done; next
   time please describe artifacts for those paths here and let Claude commit them.
 - Please keep the fp32 candidate weights (or the score cache) for future runs, so a reported threshold can be traced to its artifact.
+
+---
+
+## 2026-10-08 — Claude Code — `tfidf` runtime mode (opt-in, Claude-targeted)
+
+**Branch**: `claude/work` (`6e75d32`, `3a74e08`). Not merged to `main`. **Default stays `frontier`.**
+
+### What changed
+- New mode `tfidf` (`VERITAS_DETECTOR=tfidf`): char_wb 2-5 + word 1-2 TF-IDF logistic regression trained on the 230 Claude 5.5
+  rows of the train split plus human negatives, including 2,600 modern human texts (Dolly-15k, OASST1). This is the 2026-10-07
+  "TF-IDF v2" experiment.
+- `backend/tfidf_detector.py`: numpy-only scorer (no sklearn at runtime). Matches sklearn on all 5,608 dev rows (max diff 3.8e-14);
+  `test_tfidf_runtime_matches_sklearn` guards it.
+- `backend/runtime_engine.py`: `RUNTIME_CONFIGS` lists every thresholded mode. `tfidf` loads no ONNX model.
+  `ai_score = sigmoid(decision - decision_threshold)`, so its threshold is 0.5 = the dev clean-human 1%-FPR cut.
+  Sentence highlights come from the same model applied per sentence.
+- `scripts/build_modern_human.py` (data, gitignored under `data/corpus/human/`), `scripts/train_tfidf.py` (fit, export, parity check,
+  runtime config; deterministic). `data/public_licenses.md`: Dolly-15k CC BY-SA 3.0, OASST1 Apache-2.0.
+- Tests: `pytest scripts/tests -q` → **29 passed**.
+
+### Measured (dev only; locked untouched, still 3 entries)
+| | `tfidf` | `multi_teacher` | `frontier` (default) |
+|---|---|---|---|
+| Dev Claude 5.5 caught @1% FPR | **67.0%** (124/185) | 10.3% | 0.5% |
+| Paraphrased / humanized Claude | 60.0% (18/30) | 6.7% | 0% |
+| Fresh Claude (outside pipeline) | 17/20 | 2/20 | n/a |
+| FPR unseen modern human | 0.8% (9/1100) | 0.9% | n/a |
+| ESL FPR | 0/230 | 0.4% | 0.9% |
+| Pooled all-AI @1% FPR | **6.0%** | 12.2% | n/a |
+| 500 words, 2 threads | 0.046 s, 76 MB | 0.21 s, 179 MB | |
+
+### Caveats
+- **Claude-only.** GPT-4 1.5%, HC3 ChatGPT 0%. Training on all AI instead drops Claude to 4.9% (`scratch/goal/tfidf_allai.py`),
+  so the recipe stays Claude-only. GPT-6 Astra is untested; each new model family needs a few hundred examples.
+- Human FPR is higher on creative writing (8/71), email (3/10) and 600+ word texts (6/55). Student essays 0/233.
+- **Not shipped yet:** the modernbert-embedding probe that lifts the ensemble to 77.3% (~150 MB INT8 ONNX).
+
+### For Antigravity
+- The frontend shows `tfidf_v2 (tfidf)` through the existing `detector` block; no frontend change needed. For `tfidf`,
+  the two "AI-refined" probabilities are always 0, because this model only separates AI from human.
+- `/api/health` still describes a hard-coded "Distilled Student ONNX INT8" architecture in every mode (pre-existing).
