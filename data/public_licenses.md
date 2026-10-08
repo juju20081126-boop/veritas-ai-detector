@@ -53,3 +53,19 @@ This document verifies and tracks the licensing and terms of use for publicly do
 - **Source**: International Corpus of Learner English (ICLE), International Corpus of Network of Asian Learners of English (ICNALE), ETS TOEFL11 Public Sample
 - **License**: Research Evaluation / Academic Non-Commercial Use
 - **Permitted Use**: False-positive benchmark assessment to measure and eliminate algorithmic bias against non-native speakers of English.
+
+---
+
+### 7. Databricks Dolly-15k (modern human negatives for the `tfidf` detector)
+- **Source**: Databricks, 2023, Hugging Face Datasets `databricks/databricks-dolly-15k` (responses written by Databricks employees)
+- **License**: **Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0)**
+- **Use here**: 2,000 responses as extra human training negatives and 800 as a held-out false-positive set
+  (`scripts/build_modern_human.py`). The texts are rebuilt locally and not committed. `models/tfidf_v2/` contains n-gram
+  statistics derived from them.
+
+---
+
+### 8. OpenAssistant OASST1 (modern human negatives for the `tfidf` detector)
+- **Source**: Köpf et al., 2023 ("OpenAssistant Conversations"), Hugging Face Datasets `OpenAssistant/oasst1` (English prompter messages)
+- **License**: **Apache License 2.0**
+- **Use here**: 600 messages as extra human training negatives and 300 as a held-out false-positive set. Rebuilt locally, not committed.

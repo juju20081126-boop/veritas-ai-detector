@@ -16,7 +16,7 @@ import psutil
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from backend.runtime_engine import DETECTOR_MODES, STUDENT_MODES  # noqa: E402
+from backend.runtime_engine import DETECTOR_MODES, RUNTIME_CONFIGS, STUDENT_MODES, TFIDF_DIR  # noqa: E402
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models")
 
@@ -34,6 +34,8 @@ def get_dir_size_mb(path: str) -> float:
 
 def runtime_assets_mb(mode: str) -> float:
     """Size of the files the runtime engine actually loads in this mode (not training checkpoints or the FP32 export)."""
+    if mode == "tfidf":
+        return sum(os.path.getsize(f) for f in (os.path.join(TFIDF_DIR, "tfidf_model.json.gz"), RUNTIME_CONFIGS[mode])) / (1024 * 1024)
     base, cfg_name = (MODELS_DIR, "meta_classifier.json") if mode == "shipped" else STUDENT_MODES[mode]
     files = [os.path.join(base, "student_model_int8.onnx"), os.path.join(base, cfg_name)]
     size = sum(os.path.getsize(f) for f in files if os.path.exists(f))

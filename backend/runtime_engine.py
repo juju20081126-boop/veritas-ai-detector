@@ -47,13 +47,21 @@ META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 # multi_teacher (opt-in, VERITAS_DETECTOR=multi_teacher) is Antigravity's multi-teacher distilled MiniLM student
 # (notebooks/multi_teacher_distillation.py); it shares the frontier decision rule and reads runtime_config.json, whose threshold
 # is the INT8 model's own dev clean-human 1%-FPR threshold (scripts/write_frontier_config.py --mode multi_teacher).
+# tfidf (opt-in, VERITAS_DETECTOR=tfidf) is a char+word n-gram logistic regression trained on Claude 5.5 text and modern human
+# negatives (scripts/train_tfidf.py), scored with numpy only (backend/tfidf_detector.py). It has no ONNX model; its ai_score is
+# sigmoid(decision - decision_threshold), so its threshold is 0.5 = the dev clean-human 1%-FPR cut. Its sentence highlights come
+# from the same model applied to each sentence.
 FRONTIER_DIR = os.path.join(MODELS_DIR, "frontier")
 MULTI_TEACHER_DIR = os.path.join(MODELS_DIR, "multi_teacher_distilled")
-STUDENT_MODES = {  # mode -> (model dir, runtime config file name)
+TFIDF_DIR = os.path.join(MODELS_DIR, "tfidf_v2")
+STUDENT_MODES = {  # ONNX student modes: mode -> (model dir, runtime config file name)
     "frontier": (FRONTIER_DIR, "frontier_config.json"),
     "multi_teacher": (MULTI_TEACHER_DIR, "runtime_config.json"),
 }
-DETECTOR_MODES = ("shipped",) + tuple(STUDENT_MODES)
+# Every mode except "shipped" decides AI vs human with the dev-calibrated "threshold" in its runtime config.
+RUNTIME_CONFIGS = {m: os.path.join(d, cfg) for m, (d, cfg) in STUDENT_MODES.items()}
+RUNTIME_CONFIGS["tfidf"] = os.path.join(TFIDF_DIR, "runtime_config.json")
+DETECTOR_MODES = ("shipped",) + tuple(RUNTIME_CONFIGS)
 
 CLASS_NAMES = [
     "Human-written",
@@ -118,6 +126,22 @@ class QuillBotDetectorEngine:
             raise ValueError(f"Unknown detector mode {self.mode!r}; expected one of {DETECTOR_MODES}.")
         print(f"[RuntimeEngine] Initializing Offline QuillBot-behavior Student Engine (mode={self.mode}, threads={threads})...")
 
+        self.runtime_config: Dict[str, Any] = {}
+        if self.mode in RUNTIME_CONFIGS:
+            cfg_path = RUNTIME_CONFIGS[self.mode]
+            if not os.path.exists(cfg_path):
+                raise FileNotFoundError(f"{self.mode} detector config not found at {cfg_path}. Export the {self.mode} model first.")
+            with open(cfg_path, "r", encoding="utf-8") as f:
+                self.runtime_config = json.load(f)
+
+        self.tfidf = None
+        if self.mode == "tfidf":
+            from backend.tfidf_detector import TfidfDetector
+            self.tfidf = TfidfDetector(os.path.join(TFIDF_DIR, "tfidf_model.json.gz"))
+            self.session, self.tokenizer, self.meta_config = None, None, {}
+            print("[RuntimeEngine] TF-IDF n-gram engine armed (numpy only).")
+            return
+
         # 1. Initialize ONNX Runtime Session with target hardware thread caps
         sess_options = ort.SessionOptions()
         sess_options.intra_op_num_threads = threads
@@ -126,16 +150,10 @@ class QuillBotDetectorEngine:
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
 
         onnx_path, tokenizer_path = ONNX_MODEL_PATH, TOKENIZER_PATH
-        self.student_config: Dict[str, Any] = {}
         if self.mode in STUDENT_MODES:
-            model_dir, cfg_name = STUDENT_MODES[self.mode]
+            model_dir = STUDENT_MODES[self.mode][0]
             onnx_path = os.path.join(model_dir, "student_model_int8.onnx")
             tokenizer_path = os.path.join(model_dir, "tokenizer", "tokenizer.json")
-            cfg_path = os.path.join(model_dir, cfg_name)
-            if not os.path.exists(cfg_path):
-                raise FileNotFoundError(f"{self.mode} detector config not found at {cfg_path}. Export the {self.mode} model first.")
-            with open(cfg_path, "r", encoding="utf-8") as f:
-                self.student_config = json.load(f)
 
         if not os.path.exists(onnx_path):
             raise FileNotFoundError(
@@ -177,6 +195,14 @@ class QuillBotDetectorEngine:
     def _frontier_prep(text: str) -> str:
         """Input hygiene identical to training (scripts/train_detector.py prep): NFKC, zero-width/homoglyph folding, no markdown, one line."""
         return " ".join(strip_markdown(normalize_text(text)).split())
+
+    def _tfidf_probs(self, texts: List[str], eps: float = 0.0) -> np.ndarray:
+        """(n, 4) class probabilities from the TF-IDF model: P(AI-generated) = sigmoid(decision - decision_threshold), the rest
+        Human-written. The two "refined" classes get eps (0 for the document; a tiny floor for sentences, whose probabilities are
+        log-transformed into logits)."""
+        z = self.tfidf.decision(texts) - float(self.runtime_config["decision_threshold"])
+        p = 0.5 * (1.0 + np.tanh(z / 2.0))
+        return np.stack([1.0 - p, np.full_like(p, eps), np.full_like(p, eps), p], axis=1)
 
     @staticmethod
     def _sentence_chunks(text: str, max_words: int = 100) -> List[str]:
@@ -335,13 +361,16 @@ class QuillBotDetectorEngine:
 
         # 2. Document-level neural inference (hierarchical chunk pooling)
         student = self.mode in STUDENT_MODES
-        if student:
+        thresholded = self.mode in RUNTIME_CONFIGS
+        if self.mode == "tfidf":
+            calibrated_probs = self._tfidf_probs([self._frontier_prep(text)])[0]
+        elif student:
             # Same preprocessing, chunking and pooling as training/evaluation; no meta-classifier or guardrail (both were fit on the
             # retired synthetic data), plain temperature softmax.
-            max_len = int(self.student_config.get("max_len", 160))
+            max_len = int(self.runtime_config.get("max_len", 160))
             chunks = self._sentence_chunks(self._frontier_prep(text))
             chunk_logits = self._run_onnx_inference(chunks, max_length=max_len, batch_size=16)
-            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.student_config.get("temperature", 1.0)))
+            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.runtime_config.get("temperature", 1.0)))
             exp_d = np.exp(doc_logits - np.max(doc_logits))
             calibrated_probs = exp_d / np.sum(exp_d)
         else:
@@ -360,8 +389,11 @@ class QuillBotDetectorEngine:
 
         # 3. Verdict Determination & Uncertainty Gating
         # 3. Sentence-by-sentence Inference & Highlights (QuillBot Alignment)
-        sent_inputs = [self._frontier_prep(s) or s for s in sentences] if student else sentences
-        sent_logits = self._run_onnx_inference(sent_inputs, max_length=128, batch_size=16)
+        sent_inputs = [self._frontier_prep(s) or s for s in sentences] if thresholded else sentences
+        if self.mode == "tfidf":
+            sent_logits = np.log(np.maximum(self._tfidf_probs(sent_inputs, eps=1e-9), 1e-9))
+        else:
+            sent_logits = self._run_onnx_inference(sent_inputs, max_length=128, batch_size=16)
         S = len(sentences)
 
         # Raw sentence softmax probabilities
@@ -429,8 +461,8 @@ class QuillBotDetectorEngine:
         top_prob = float(calibrated_probs[top_idx])
 
         ai_score = float(calibrated_probs[2] + calibrated_probs[3])
-        threshold = float(self.student_config.get("threshold", 0.5))
-        if student:
+        threshold = float(self.runtime_config.get("threshold", 0.5))
+        if thresholded:
             # The evaluated decision rule: AI iff P(AI-generated) + P(AI-generated & AI-refined) >= the dev 1%-FPR threshold.
             is_uncertain = False
             if ai_score >= threshold:
@@ -555,10 +587,10 @@ class QuillBotDetectorEngine:
             "sentences": sentence_analyses,
             "detector": {
                 "mode": self.mode,
-                "model": self.student_config.get("candidate", "shipped") if student else "shipped",
+                "model": self.runtime_config.get("candidate", "shipped") if thresholded else "shipped",
                 "ai_score": round(ai_score, 4),
-                "threshold": round(threshold, 4) if student else None,
-                "threshold_rule": self.student_config.get("threshold_rule") if student else None,
+                "threshold": round(threshold, 4) if thresholded else None,
+                "threshold_rule": self.runtime_config.get("threshold_rule") if thresholded else None,
             },
             "stylometrics": stylometrics,
             "mathematical_equations": stylometrics.get("mathematical_equations", {}) if stylometrics else {}

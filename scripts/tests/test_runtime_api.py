@@ -1,6 +1,7 @@
 """Runtime engine: backward-compatible response schema in both detector modes, the frontier decision rule, input hygiene,
 and fail-closed onboarding. Frontier tests are skipped until models/frontier/ has been exported."""
 
+import math
 import os
 import subprocess
 import sys
@@ -21,7 +22,8 @@ SUMMARY_KEYS = {"verdict", "verdict_description", "badge", "is_uncertain", "conf
                 "quillbot_headline_class", "quillbot_ai_pct", "quillbot_human_pct", "word_count", "character_count",
                 "sentence_count", "length_warning", "elapsed_seconds"}
 HAS_FRONTIER = os.path.exists(os.path.join(runtime_engine.FRONTIER_DIR, "frontier_config.json"))
-STUDENT_MODES = [m for m, (d, cfg) in runtime_engine.STUDENT_MODES.items() if os.path.exists(os.path.join(d, cfg))]
+# Modes that decide with a dev-calibrated threshold, limited to those whose runtime config has been written.
+THRESHOLD_MODES = [m for m, cfg in runtime_engine.RUNTIME_CONFIGS.items() if os.path.exists(cfg)]
 
 
 def _check_schema(r):
@@ -53,26 +55,26 @@ def test_unknown_mode_rejected():
         runtime_engine.QuillBotDetectorEngine(threads=1, mode="magic")
 
 
-def test_multi_teacher_mode_registered():
-    assert "multi_teacher" in runtime_engine.DETECTOR_MODES
-    assert set(runtime_engine.STUDENT_MODES) <= set(runtime_engine.DETECTOR_MODES)
+def test_threshold_modes_registered():
+    assert {"frontier", "multi_teacher", "tfidf"} <= set(runtime_engine.DETECTOR_MODES)
+    assert set(runtime_engine.RUNTIME_CONFIGS) == set(runtime_engine.DETECTOR_MODES) - {"shipped"}
 
 
-@pytest.mark.parametrize("mode", STUDENT_MODES)
-def test_student_schema_and_threshold_rule(mode):
+@pytest.mark.parametrize("mode", THRESHOLD_MODES)
+def test_threshold_mode_schema_and_rule(mode):
     e = runtime_engine.QuillBotDetectorEngine(threads=1, mode=mode)
     r = e.analyze_text(TEXT)
     _check_schema(r)
     d = r["detector"]
     assert d["mode"] == mode and d["threshold"] is not None
-    assert d["threshold"] == round(float(e.student_config["threshold"]), 4)
+    assert d["threshold"] == round(float(e.runtime_config["threshold"]), 4)
     p = r["calibrated_probabilities"]
     assert abs(p["AI-generated"] + p["AI-generated & AI-refined"] - d["ai_score"]) < 1e-3
     is_ai_verdict = r["summary"]["verdict"] in ("AI-generated", "AI-generated & AI-refined")
     assert is_ai_verdict == (d["ai_score"] >= d["threshold"])
 
 
-@pytest.mark.skipif("multi_teacher" not in STUDENT_MODES, reason="models/multi_teacher_distilled runtime config not written yet")
+@pytest.mark.skipif("multi_teacher" not in THRESHOLD_MODES, reason="models/multi_teacher_distilled runtime config not written yet")
 def test_multi_teacher_reports_its_own_model():
     e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="multi_teacher")
     d = e.analyze_text(TEXT)["detector"]
@@ -80,9 +82,41 @@ def test_multi_teacher_reports_its_own_model():
     assert "multi_teacher" in d["threshold_rule"]
 
 
-@pytest.mark.parametrize("mode", STUDENT_MODES)
-def test_student_ignores_obfuscation(mode):
-    """Zero-width characters and homoglyphs (attack A7) must not move a student model's score."""
+@pytest.mark.skipif("tfidf" not in THRESHOLD_MODES, reason="models/tfidf_v2 not trained yet (scripts/train_tfidf.py)")
+def test_tfidf_score_is_relative_to_its_decision_threshold():
+    """tfidf ai_score = sigmoid(decision - decision_threshold), so 0.5 is exactly the dev clean-human 1%-FPR cut."""
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="tfidf")
+    d = e.analyze_text(TEXT)["detector"]
+    assert d["model"] == "tfidf_v2" and d["threshold"] == 0.5
+    dec = float(e.tfidf.decision([e._frontier_prep(TEXT)])[0])
+    expected = 1.0 / (1.0 + math.exp(-(dec - float(e.runtime_config["decision_threshold"]))))
+    assert abs(d["ai_score"] - expected) < 1e-3
+
+
+def test_tfidf_runtime_matches_sklearn(tmp_path):
+    """The numpy-only TF-IDF scorer reproduces sklearn's TfidfVectorizer + LogisticRegression decision_function."""
+    pytest.importorskip("sklearn")
+    from backend.tfidf_detector import TfidfDetector
+    from scripts.train_tfidf import export_model, fit_model
+    texts = ["The committee met on Tuesday.  It  discussed the budget!", "Honestly, I can't believe it's already October...",
+             "Furthermore, it is important to note that robust frameworks matter.", "lol idk, maybe? we'll see tmrw",
+             "In conclusion, these findings underscore a pivotal shift.", "My grandmother's recipe uses café-style milk.",
+             "Overall, the results highlight key considerations.", "We drove to the lake and the dog jumped in again"] * 3
+    labels = [0, 0, 1, 0, 1, 0, 1, 0] * 3
+    model = fit_model(texts, labels, char_min_df=1, word_min_df=1)
+    path = str(tmp_path / "m.json.gz")
+    export_model(model, path)
+    probe = ["Robust frameworks underscore the budget.", "naïve  café\nnewline\ttab", "", "?!", "It's important; it's pivotal."]
+    vc, vw, lr = model
+    from scipy.sparse import hstack
+    want = lr.decision_function(hstack([vc.transform(probe), vw.transform(probe)]).tocsr())
+    got = TfidfDetector(path).decision(probe)
+    assert max(abs(a - b) for a, b in zip(got, want)) < 1e-6
+
+
+@pytest.mark.parametrize("mode", THRESHOLD_MODES)
+def test_threshold_mode_ignores_obfuscation(mode):
+    """Zero-width characters and homoglyphs (attack A7) must not move the score."""
     e = runtime_engine.QuillBotDetectorEngine(threads=1, mode=mode)
     attacked = TEXT.replace("e", "е", 7).replace(" ", " ​", 9)
     assert abs(e.analyze_text(TEXT)["detector"]["ai_score"] - e.analyze_text(attacked)["detector"]["ai_score"]) < 1e-3

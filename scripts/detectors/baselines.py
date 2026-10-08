@@ -23,11 +23,12 @@ sys.path.insert(0, REPO)
 class ShippedDetector:
     """The runtime engine end to end. mode="shipped" is the pre-change baseline; mode="frontier" (detector name `frontier_onnx`)
     is the exported INT8 frontier model as deployed, used to check that the shipped artefact matches the PyTorch candidate;
-    mode="multi_teacher" (`multi_teacher_onnx`) is the INT8 multi-teacher distilled student as deployed."""
+    mode="multi_teacher" (`multi_teacher_onnx`) is the INT8 multi-teacher distilled student as deployed; mode="tfidf"
+    (`tfidf_runtime`) is the numpy TF-IDF n-gram model as deployed."""
 
     def __init__(self, threads=2, mode="shipped"):
         from backend.runtime_engine import QuillBotDetectorEngine
-        self.name = "shipped" if mode == "shipped" else f"{mode}_onnx"
+        self.name = {"shipped": "shipped", "tfidf": "tfidf_runtime"}.get(mode, f"{mode}_onnx")
         self.engine = QuillBotDetectorEngine(threads=threads, mode=mode)
 
     def score(self, texts):
@@ -163,6 +164,8 @@ def get_detector(name, threads=6):
         return ShippedDetector(threads=2, mode="frontier")
     if name == "multi_teacher_onnx":
         return ShippedDetector(threads=2, mode="multi_teacher")
+    if name == "tfidf_runtime":
+        return ShippedDetector(threads=2, mode="tfidf")
     if name == "hc3_roberta":
         return HFSeqClassifier("hc3_roberta", "Hello-SimpleAI/chatgpt-detector-roberta", ai_index=1, threads=threads)
     if name == "openai_roberta":
