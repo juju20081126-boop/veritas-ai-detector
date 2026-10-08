@@ -969,8 +969,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const mathH4 = document.querySelector("#flaggedWords h4");
     if (mathH4) mathH4.textContent = t("flagged_words_title");
 
+    const sigDts = document.querySelectorAll("#mathEquationsAccordion dl.metrics dt");
+    if (sigDts.length >= 8) {
+      sigDts[0].innerHTML = `${t("sig_burstiness")} <small>${t("sig_burstiness_sub")}</small>`;
+      sigDts[1].innerHTML = `${t("sig_richness")} <small>${t("sig_richness_sub")}</small>`;
+      sigDts[2].innerHTML = `${t("sig_discourse")} <small>${t("sig_discourse_sub")}</small>`;
+      sigDts[3].innerHTML = `${t("sig_binoculars")} <small>${t("sig_binoculars_sub")}</small>`;
+      sigDts[4].innerHTML = `${t("sig_affinity")} <small>${t("sig_affinity_sub")}</small>`;
+      sigDts[5].innerHTML = `${t("sig_grade")} <small>${t("sig_grade_sub")}</small>`;
+      sigDts[6].textContent = t("sig_wps");
+      sigDts[7].innerHTML = `${t("sig_contractions")} <small>${t("sig_contractions_sub")}</small>`;
+    }
+
     const telemSumSpan = document.querySelector("#telemetryAccordion summary span");
     if (telemSumSpan) telemSumSpan.textContent = t("engine_info_title");
+
+    const telemDts = document.querySelectorAll("#telemetryAccordion dl.metrics dt");
+    if (telemDts.length >= 7) {
+      telemDts[0].textContent = t("tel_time");
+      telemDts[1].textContent = t("tel_memory");
+      telemDts[2].textContent = t("tel_runtime");
+      telemDts[3].textContent = t("tel_threads");
+      telemDts[4].textContent = t("tel_size");
+      telemDts[5].textContent = t("tel_detector");
+      telemDts[6].textContent = t("tel_network");
+    }
+
+    const telemDivs = document.querySelectorAll("#telemetryAccordion dl.metrics div");
+    if (telemDivs.length >= 7) {
+      const ddRuntime = telemDivs[2].querySelector("dd");
+      if (ddRuntime) ddRuntime.textContent = t("tel_runtime_val");
+      const ddNetwork = telemDivs[6].querySelector("dd");
+      if (ddNetwork) ddNetwork.textContent = t("tel_network_val");
+    }
 
     const copyBtnLabel = btnCopyReport ? btnCopyReport.querySelector(".btn-label") : null;
     if (copyBtnLabel) copyBtnLabel.textContent = t("btn_copy_summary");

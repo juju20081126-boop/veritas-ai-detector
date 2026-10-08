@@ -145,6 +145,7 @@
       tel_threads: "CPU threads",
       tel_size: "Model size on disk",
       tel_size_val: "22 MB",
+      tel_detector: "Active detector",
       tel_network: "Network access",
       tel_network_val: "None",
 
@@ -330,6 +331,7 @@
       tel_threads: "CPU 執行緒數",
       tel_size: "模型磁碟大小",
       tel_size_val: "22 MB",
+      tel_detector: "使用中檢測模型",
       tel_network: "聯網請求",
       tel_network_val: "無 (完全離線)",
 
