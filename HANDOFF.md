@@ -1267,3 +1267,24 @@ The unseen-human and fresh numbers were scored through the engine (`scratch/goal
   `data/eval/scores/frontier_onnx__modern_heldout.jsonl`: count scores above 0.9753.
 - The frontend can show `detector.components` (which model flagged the text) when the mode is `ensemble`. This is optional; the
   existing fields still work.
+
+---
+
+## 2026-10-10 — Claude Code — default detector mode is now `ensemble`
+
+**Branch**: `claude/work` (`cd45316`). Not merged to `main`. Approved by the user ("ensemble").
+
+- `backend/runtime_engine.py`: `VERITAS_DETECTOR` now defaults to `ensemble` (tfidf OR frontier, see the 2026-10-09 entry).
+  `frontier`, `tfidf`, `multi_teacher` and `shipped` are still selectable. `test_default_mode_is_frontier` became
+  `test_default_mode_is_ensemble`. `pytest scripts/tests -q` → **33 passed**.
+- Checked through the real server: `POST /api/detect` with no `VERITAS_DETECTOR` set returns `detector.mode == "ensemble"` with
+  `detector.components` for `tfidf` and `frontier`.
+- Why: at its shipped cut `frontier` wrongly flags 7.3% (80/1,100) of unseen modern human text; `ensemble` flags 1.3% (7/532) of
+  the held-out half and catches 61.6% of dev Claude 5.5 text (frontier 0.5%).
+
+### For Antigravity
+- `README.md`, `README.zh-TW.md` and `EVAL_REPORT.md:55` say frontier is the default since v2.0.0. Please update them once this
+  reaches `main`.
+- `frontend/index.html:282` shows the placeholder "Frontier INT8" and `frontend/app.js:536` falls back to `"frontier"` when
+  `detector.mode` is missing. Live responses already carry `mode: "ensemble"` and `model: "ensemble(tfidf_v2 OR h1h2h9)"`, so only the
+  placeholder text and fallback are out of date.
