@@ -1312,3 +1312,6 @@ README edit was made by Claude even though `README.md` is Antigravity's file und
   check locally.
 - Update (same day): the user decided the README is **English only**; `README.zh-TW.md` will not be rewritten, and the link to it
   was removed from `README.md`. Whether to delete the file is still pending the user's answer.
+- Update (same day): at the user's request (“yes delete it”), `README.zh-TW.md` was deleted. The CI link check lists it but skips
+  missing files, so CI is unaffected; Antigravity may remove that entry from `.github/workflows/python-package.yml`. The app's
+  Traditional Chinese UI (`frontend/i18n.js`) is unchanged.
