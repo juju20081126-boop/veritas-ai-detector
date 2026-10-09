@@ -1,0 +1,17 @@
+{
+ "candidate": "ensemble(tfidf_v2 OR h1h2h9)",
+ "components": {
+  "tfidf": 0.5619,
+  "frontier": 0.9852000000000001
+ },
+ "threshold": 0.5,
+ "threshold_rule": "OR of tfidf, frontier: equal per-component budget 0.500% so the union flags <= 1% of dev clean humans (n=1823) + modern-human calibration half (n=568), commit 075b383",
+ "score": "sigmoid(max_c [logit(ai_score_c) - logit(cut_c)])",
+ "calibration": {
+  "budget_each": 0.005,
+  "union_fpr_dev_clean_human": "14/1823",
+  "union_fpr_dev_esl": "0/230",
+  "union_fpr_modern_calibration_half": "8/568",
+  "union_fpr_modern_test_half": "6/532"
+ }
+}
