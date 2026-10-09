@@ -1212,3 +1212,58 @@ human" shortcut). It is far below the TF-IDF v2 + probe experiment, so I did not
 - The frontend shows `tfidf_v2 (tfidf)` through the existing `detector` block; no frontend change needed. For `tfidf`,
   the two "AI-refined" probabilities are always 0, because this model only separates AI from human.
 - `/api/health` still describes a hard-coded "Distilled Student ONNX INT8" architecture in every mode (pre-existing).
+
+---
+
+## 2026-10-09 — Claude Code — `ensemble` runtime mode (opt-in) + frontier false-positive finding
+
+**Branch**: `claude/work` (`075b383`, 7b0a2d8). Not merged to `main`. **Default stays `frontier`.**
+
+### Finding: the default `frontier` mode over-flags modern human writing
+- Scored through the engine at its shipped cut (0.9753, dev clean-human 1% FPR), `frontier` wrongly flags **7.3% (80/1,100)** of
+  the unseen modern human set (`data/corpus/human/modern_human_heldout.jsonl`: Dolly-15k answers 6.8%, OASST1 prompts 8.7%; most
+  topics are affected). On the same texts `tfidf` flags 0.8% and `multi_teacher` 1.2%.
+- Dev and locked human text comes from the same scraped corpora as training, so frontier's 1% dev / 0.4% locked FPR does not
+  transfer to clean modern writing. This is the same shortcut TF-IDF had before modern human negatives were added.
+
+### What changed
+- New mode `ensemble` (`VERITAS_DETECTOR=ensemble`): runs the modes listed in `models/ensemble/runtime_config.json` (`tfidf`,
+  `frontier`) and flags a text when **either** reaches its own cut. `ai_score = sigmoid(max_c logit(s_c) - logit(t_c))`, so the
+  threshold is 0.5. The `detector` block gains `components: {mode: {model, ai_score, threshold, flagged}}` in this mode only.
+- `scripts/write_ensemble_config.py`: equal per-component false-positive budget, chosen so the union flags <= 1% of dev clean
+  humans **plus** the calibration half of the modern human set (sha1(id) even). The test half is never used for the cut. Cuts:
+  tfidf 0.5619, frontier 0.9852. Refuses stale score caches.
+- `backend/runtime_engine.py`: per-mode inference moved into `_doc_probs` / `_sentence_logits`. Output for
+  shipped/frontier/multi_teacher/tfidf is identical before and after (8 fixed texts, full response minus timing).
+- `scripts/eval_frontier.py --threshold T`: report rates at a fixed runtime cut, not the dev 1% one.
+- Tests: `pytest scripts/tests -q` → **33 passed**.
+
+### Measured (dev + unseen sets; locked untouched, still 3 entries)
+| | `ensemble` (new) | `tfidf` | `frontier` (default) |
+|---|---|---|---|
+| Dev Claude 5.5 caught | 61.6% (114/185) | **67.0%** (124/185) | 0.5% (1/185) |
+| Paraphrased / humanized Claude | 56.7% (17/30) | 60.0% (18/30) | 0% |
+| Fresh Claude (outside pipeline) | 16/20 | 17/20 | 0/20 |
+| Pooled dev AI (all generators) | 20.7% (605/2927) | 6.0% (176/2927) | **28.8%** (844/2927) |
+| GPT-4 (MAGE, raw + A4) | 11.4% (174/1525) | 1.4% (22/1525) | 20.0% (305/1525) |
+| FPR dev clean human | 0.8% (14/1823) | 1.0% (18/1823) | 1.0% (18/1823) |
+| FPR unseen modern human | 1.3% (7/532, test half) | **0.8%** (9/1100) | **7.3%** (80/1100) |
+| FPR ESL | **0/230** | **0/230** | 0.9% (2/230) |
+| FPR attacked-human controls | 2.6% (22/858) | 0.8% (7/858) | 5.7% (49/858) |
+| 500 words, 2 threads | 0.17 s, 200 MB, 25 MB disk | 0.05 s, 76 MB, 2.3 MB | 0.23 s, 177 MB, 23 MB (earlier run) |
+
+Engine results: `data/eval/results/dev_ensemble_runtime.json` (`eval_frontier.py --threshold 0.5`) and
+`benchmark_target_results_ensemble.json`. The frontier dev columns come from the full-dev score cache at its shipped cut (0.9753).
+The unseen-human and fresh numbers were scored through the engine (`scratch/goal/ens_engine_check.py`, `ensemble_probe2.py`).
+
+### Caveats
+- The frontier half of the ensemble was calibrated on Dolly/OASST-style text. Other modern genres may differ.
+- Engine verdicts use `ai_score >= threshold`; eval scripts flag `score > threshold` on 4-decimal scores. A text sitting exactly at
+  a cut can differ (1 of 552 held-out texts here). This applies to every thresholded mode and is pre-existing.
+
+### For Antigravity
+- `EVAL_REPORT.md:4` and `README.md` give frontier's human FPR as 0.4% (locked) / 1% (dev). Please qualify this: on unseen modern
+  human text it is 7.3% (80/1,100). Reproduce it from the score cache that `scripts/write_ensemble_config.py` writes,
+  `data/eval/scores/frontier_onnx__modern_heldout.jsonl`: count scores above 0.9753.
+- The frontend can show `detector.components` (which model flagged the text) when the mode is `ensemble`. This is optional; the
+  existing fields still work.
