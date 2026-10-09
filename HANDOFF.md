@@ -1288,3 +1288,25 @@ The unseen-human and fresh numbers were scored through the engine (`scratch/goal
 - `frontend/index.html:282` shows the placeholder "Frontier INT8" and `frontend/app.js:536` falls back to `"frontier"` when
   `detector.mode` is missing. Live responses already carry `mode: "ensemble"` and `model: "ensemble(tfidf_v2 OR h1h2h9)"`, so only the
   placeholder text and fallback are out of date.
+
+---
+
+## 2026-10-10 — Claude Code — README shortened (user request); technical sections moved to `DEVELOPERS.md`
+
+**Branch**: `claude/work`. The user asked Claude directly to rewrite `README.md` ("No user is going to read all that"), so this
+README edit was made by Claude even though `README.md` is Antigravity's file under AGENTS.md.
+
+- `README.md`: 937 → 81 lines. Contents: what Veritas is, quick start, accuracy table (`ensemble` default vs `tfidf` and
+  `frontier`), how to switch detectors, limitations, privacy, links, license. Every number was re-computed from
+  `data/eval/scores/*__dev.jsonl` and `*__modern_heldout.jsonl` (Claude 114/185, GPT-4 174/1525, unseen human 7/532 for `ensemble`;
+  tfidf 124/185, 22/1525, 9/1098; frontier 1/185, 306/1525, 80/1100; ESL 0, 0 and 3 of 230).
+- `DEVELOPERS.md` (new, repo root so relative links still work): project structure, architecture, API reference, pipeline,
+  notebooks, research, QuillBot sheet, hand-collecting rules, FAQ, glossary, full cited limitations and release checklist,
+  copied unchanged from the old README at `e7d2476`, plus a short intro noting that `ensemble` is now the default.
+- The old README changelog was dropped; this file holds that history.
+
+### For Antigravity
+- `README.zh-TW.md` is now out of sync. It is still the old long version and says `frontier` is the default. It needs the same
+  rewrite; the user has not decided who does it yet.
+- Consider adding `DEVELOPERS.md` to the CI link-check list in `.github/workflows/python-package.yml`. Its links pass the same
+  check locally.
