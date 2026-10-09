@@ -56,7 +56,7 @@ def test_unknown_mode_rejected():
 
 
 def test_threshold_modes_registered():
-    assert {"frontier", "multi_teacher", "tfidf"} <= set(runtime_engine.DETECTOR_MODES)
+    assert {"frontier", "multi_teacher", "tfidf", "ensemble"} <= set(runtime_engine.DETECTOR_MODES)
     assert set(runtime_engine.RUNTIME_CONFIGS) == set(runtime_engine.DETECTOR_MODES) - {"shipped"}
 
 
@@ -112,6 +112,42 @@ def test_tfidf_runtime_matches_sklearn(tmp_path):
     want = lr.decision_function(hstack([vc.transform(probe), vw.transform(probe)]).tocsr())
     got = TfidfDetector(path).decision(probe)
     assert max(abs(a - b) for a, b in zip(got, want)) < 1e-6
+
+
+def test_ensemble_or_rule():
+    """Ensemble AI score >= 0.5 exactly when some component reaches its cut; outputs are distributions, monotone in each input."""
+    import numpy as np
+    e = runtime_engine.QuillBotDetectorEngine.__new__(runtime_engine.QuillBotDetectorEngine)
+    e.runtime_config = {"components": {"a": 0.6, "b": 0.98}}
+    rng = np.random.default_rng(0)
+    P = rng.dirichlet(np.ones(4), size=(2, 500))
+    # rows: a exactly at its cut | no AI mass anywhere | a below, b exactly at its cut | a all AI
+    P[0, :4] = [[0.4, 0, 0, 0.6], [1, 0, 0, 0], [0.5, 0, 0, 0.5], [0, 0, 0, 1]]
+    P[1, :4] = [[0.98, 0.02, 0, 0], [1, 0, 0, 0], [0.02, 0, 0, 0.98], [1, 0, 0, 0]]
+    out = e._ensemble_probs(P)
+    assert np.all(out >= 0) and np.allclose(out.sum(1), 1.0)
+    ai = out[:, 2] + out[:, 3]
+    reached = ((P[..., 2] + P[..., 3]) >= np.array([0.6, 0.98])[:, None]).any(0)
+    assert np.array_equal(ai >= 0.5 - 1e-9, reached)
+    assert abs(ai[0] - 0.5) < 1e-9 and ai[1] < 0.5 and abs(ai[2] - 0.5) < 1e-6 and ai[3] > 0.99
+    bumped = P.copy()
+    bumped[1, :, 3] += 0.05
+    bumped[1] /= bumped[1].sum(-1, keepdims=True)
+    assert np.all(e._ensemble_probs(bumped)[:, 2:].sum(1) >= ai - 1e-12)
+
+
+@pytest.mark.skipif("ensemble" not in THRESHOLD_MODES, reason="models/ensemble not written yet (scripts/write_ensemble_config.py)")
+def test_ensemble_reports_components_and_follows_them():
+    e = runtime_engine.QuillBotDetectorEngine(threads=1, mode="ensemble")
+    solo = {m: runtime_engine.QuillBotDetectorEngine(threads=1, mode=m) for m in e.runtime_config["components"]}
+    human = "We drove up to the lake on Saturday, and of course the dog jumped straight in before we'd even parked. " * 3
+    for text in (TEXT, human):
+        d = e.analyze_text(text)["detector"]
+        assert d["threshold"] == 0.5 and list(d["components"]) == list(e.runtime_config["components"])
+        for m, c in d["components"].items():
+            assert abs(c["ai_score"] - solo[m].analyze_text(text)["detector"]["ai_score"]) < 1e-4
+            assert c["threshold"] == round(float(e.runtime_config["components"][m]), 4)
+        assert (d["ai_score"] >= 0.5) == any(c["flagged"] for c in d["components"].values())
 
 
 @pytest.mark.parametrize("mode", THRESHOLD_MODES)

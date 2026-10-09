@@ -120,15 +120,16 @@ def fmt(c):
     return "   n/a" if c["n"] == 0 else f"{100 * c['rate']:5.1f}% [{100 * c['lo']:4.1f}-{100 * c['hi']:5.1f}] n={c['n']}"
 
 
-def evaluate(det_name, split, rows, sc, dev_neg_scores):
-    t1 = metrics.threshold_at_fpr(dev_neg_scores, 0.01)
+def evaluate(det_name, split, rows, sc, dev_neg_scores, fixed_threshold=None):
+    t_dev = metrics.threshold_at_fpr(dev_neg_scores, 0.01)
+    t1 = t_dev if fixed_threshold is None else fixed_threshold
     t5 = metrics.threshold_at_fpr(dev_neg_scores, 0.05)
     pos = [r for r in rows if is_pos(r) and r["id"] in sc]
     neg = [r for r in rows if is_clean_neg(r) and r["id"] in sc]
     att_neg = [r for r in rows if r["label"] == "human" and r["origin"] == "human" and r["attack_id"] != "none" and r["id"] in sc]
     hyb = [r for r in rows if r["origin"] == "hybrid" and r["id"] in sc]
-    res = {"detector": det_name, "split": split, "threshold_1pct_fpr_dev": t1, "threshold_5pct_fpr_dev": t5,
-           "n_dev_neg": len(dev_neg_scores)}
+    res = {"detector": det_name, "split": split, "threshold_1pct_fpr_dev": t_dev, "threshold_5pct_fpr_dev": t5,
+           "n_dev_neg": len(dev_neg_scores), "threshold_used": t1}
     res["auroc_pooled"] = metrics.auroc([sc[r["id"]] for r in pos], [sc[r["id"]] for r in neg])
     res["fpr_clean_human"] = cell(sc, neg, t1)
     res["fpr_clean_human_at5"] = cell(sc, neg, t5)
@@ -160,7 +161,9 @@ def _group(rows, keyf):
 
 
 def print_report(res):
-    print(f"\n=== {res['detector']} on {res['split']}  (threshold from dev clean-human 1% FPR = {res['threshold_1pct_fpr_dev']:.4f}, n_dev_neg={res['n_dev_neg']})")
+    t = res.get("threshold_used", res["threshold_1pct_fpr_dev"])
+    src = "dev clean-human 1% FPR" if t == res["threshold_1pct_fpr_dev"] else f"--threshold; dev 1%-FPR cut is {res['threshold_1pct_fpr_dev']:.4f}"
+    print(f"\n=== {res['detector']} on {res['split']}  (threshold {t:.4f} from {src}, n_dev_neg={res['n_dev_neg']})")
     print(f"  AUROC pooled (AI vs clean human): {res['auroc_pooled']:.4f}")
     print(f"  realized FPR clean human : {fmt(res['fpr_clean_human'])}   | ESL: {fmt(res['fpr_esl'])}   | native: {fmt(res['fpr_native'])}")
     print(f"  FPR attacked-human controls: {fmt(res['fpr_attacked_human'])}")
@@ -185,7 +188,12 @@ def main():
     ap.add_argument("--neg-cap", type=int, default=0, help="DEV only: cap the number of clean-human negatives (slow detectors)")
     ap.add_argument("--public-cap", type=int, default=0, help="DEV only: cap the number of public-corpus AI rows (slow detectors)")
     ap.add_argument("--model-hash", default=None, help="identifier recorded in the locked access log")
+    ap.add_argument("--threshold", type=float, default=None,
+                    help="report rates at this fixed cut instead of the dev 1%% FPR one, for a runtime cut calibrated on more than "
+                         "dev (e.g. the ensemble's 0.5); single detector only")
     args = ap.parse_args()
+    if args.threshold is not None and len(args.detectors) != 1:
+        sys.exit("--threshold applies to a single detector")
 
     if args.split == "locked":
         used = locked_accesses()
@@ -207,7 +215,7 @@ def main():
             sc = cached_scores(name, "dev", rows, fac, args.max_new)
         else:
             sc = cached_scores(name, "locked", rows, fac, args.max_new)
-        res = evaluate(name, args.split, rows, sc, dev_neg_scores)
+        res = evaluate(name, args.split, rows, sc, dev_neg_scores, args.threshold)
         res["commit"] = os.popen(f'git -C "{REPO}" rev-parse --short HEAD').read().strip()
         print_report(res)
         results.append(res)

@@ -51,9 +51,13 @@ META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 # negatives (scripts/train_tfidf.py), scored with numpy only (backend/tfidf_detector.py). It has no ONNX model; its ai_score is
 # sigmoid(decision - decision_threshold), so its threshold is 0.5 = the dev clean-human 1%-FPR cut. Its sentence highlights come
 # from the same model applied to each sentence.
+# ensemble (opt-in, VERITAS_DETECTOR=ensemble) runs the modes listed in models/ensemble/runtime_config.json "components" (each
+# with its own cut) and flags a text when ANY of them reaches its cut (OR rule, see _ensemble_probs). The cuts share one
+# false-positive budget so the union stays at 1% (scripts/write_ensemble_config.py). It has no model files of its own.
 FRONTIER_DIR = os.path.join(MODELS_DIR, "frontier")
 MULTI_TEACHER_DIR = os.path.join(MODELS_DIR, "multi_teacher_distilled")
 TFIDF_DIR = os.path.join(MODELS_DIR, "tfidf_v2")
+ENSEMBLE_DIR = os.path.join(MODELS_DIR, "ensemble")
 STUDENT_MODES = {  # ONNX student modes: mode -> (model dir, runtime config file name)
     "frontier": (FRONTIER_DIR, "frontier_config.json"),
     "multi_teacher": (MULTI_TEACHER_DIR, "runtime_config.json"),
@@ -61,6 +65,7 @@ STUDENT_MODES = {  # ONNX student modes: mode -> (model dir, runtime config file
 # Every mode except "shipped" decides AI vs human with the dev-calibrated "threshold" in its runtime config.
 RUNTIME_CONFIGS = {m: os.path.join(d, cfg) for m, (d, cfg) in STUDENT_MODES.items()}
 RUNTIME_CONFIGS["tfidf"] = os.path.join(TFIDF_DIR, "runtime_config.json")
+RUNTIME_CONFIGS["ensemble"] = os.path.join(ENSEMBLE_DIR, "runtime_config.json")
 DETECTOR_MODES = ("shipped",) + tuple(RUNTIME_CONFIGS)
 
 CLASS_NAMES = [
@@ -135,6 +140,16 @@ class QuillBotDetectorEngine:
                 self.runtime_config = json.load(f)
 
         self.tfidf = None
+        self.parts: Dict[str, "QuillBotDetectorEngine"] = {}
+        if self.mode == "ensemble":
+            for m in self.runtime_config["components"]:
+                if m not in RUNTIME_CONFIGS or m == "ensemble":
+                    raise ValueError(f"ensemble component {m!r} must be a single-model threshold mode")
+                self.parts[m] = QuillBotDetectorEngine(threads=threads, mode=m)
+            self.session, self.tokenizer, self.meta_config = None, None, {}
+            print(f"[RuntimeEngine] Ensemble engine armed (flags if any of: {', '.join(self.parts)}).")
+            return
+
         if self.mode == "tfidf":
             from backend.tfidf_detector import TfidfDetector
             self.tfidf = TfidfDetector(os.path.join(TFIDF_DIR, "tfidf_model.json.gz"))
@@ -203,6 +218,55 @@ class QuillBotDetectorEngine:
         z = self.tfidf.decision(texts) - float(self.runtime_config["decision_threshold"])
         p = 0.5 * (1.0 + np.tanh(z / 2.0))
         return np.stack([1.0 - p, np.full_like(p, eps), np.full_like(p, eps), p], axis=1)
+
+    @staticmethod
+    def _softmax(logits: np.ndarray) -> np.ndarray:
+        e = np.exp(logits - np.max(logits, axis=-1, keepdims=True))
+        return e / np.sum(e, axis=-1, keepdims=True)
+
+    def _ensemble_probs(self, P: np.ndarray) -> np.ndarray:
+        """OR rule over the component detectors. P: (n_components, n, 4) class probabilities, in runtime_config["components"] order.
+        Each component's AI score s_c = P(AI-generated) + P(AI-generated & AI-refined) is put on a common scale relative to its own
+        cut t_c, z_c = logit(s_c) - logit(t_c). The ensemble AI score is sigmoid(max_c z_c), so it is >= 0.5 exactly when at least
+        one component reaches its cut. The split inside the human and AI halves comes from the component with the largest z_c."""
+        cuts = np.array([float(t) for t in self.runtime_config["components"].values()])
+        s = np.clip(P[..., 2] + P[..., 3], 1e-6, 1.0 - 1e-6)
+        z = np.log(s / (1.0 - s)) - np.log(cuts / (1.0 - cuts))[:, None]
+        best, idx = np.argmax(z, axis=0), np.arange(P.shape[1])
+        p = 0.5 * (1.0 + np.tanh(z[best, idx] / 2.0))[:, None]
+        Q = P[best, idx]
+
+        def split(x, default):
+            tot = np.sum(x, axis=1, keepdims=True)
+            return np.where(tot > 0, x / np.where(tot > 0, tot, 1.0), default)
+        return np.concatenate([split(Q[:, :2], [1.0, 0.0]) * (1.0 - p), split(Q[:, 2:], [0.0, 1.0]) * p], axis=1)
+
+    def _doc_probs(self, text: str, feat_vec: np.ndarray, stylometrics: Dict[str, Any]) -> np.ndarray:
+        """Document-level class probabilities of a single-model mode."""
+        if self.mode == "tfidf":
+            return self._tfidf_probs([self._frontier_prep(text)])[0]
+        if self.mode in STUDENT_MODES:
+            # Same preprocessing, chunking and pooling as training/evaluation; no meta-classifier or guardrail (both were fit on the
+            # retired synthetic data), plain temperature softmax.
+            max_len = int(self.runtime_config.get("max_len", 160))
+            chunks = self._sentence_chunks(self._frontier_prep(text))
+            chunk_logits = self._run_onnx_inference(chunks, max_length=max_len, batch_size=16)
+            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.runtime_config.get("temperature", 1.0)))
+            exp_d = np.exp(doc_logits - np.max(doc_logits))
+            return exp_d / np.sum(exp_d)
+        chunks = self._chunk_text(text, max_chunk_words=100)
+        chunk_logits = self._run_onnx_inference(chunks, max_length=256, batch_size=16)
+        doc_logits = np.mean(chunk_logits, axis=0, keepdims=True)
+        return self._apply_meta_classifier_and_calibration(doc_logits, feat_vec, stylometrics=stylometrics)
+
+    def _sentence_logits(self, sent_inputs: List[str]) -> np.ndarray:
+        """(S, 4) sentence logits; log-probabilities for the tfidf and ensemble modes, which have no logits of their own."""
+        if self.mode == "ensemble":
+            P = np.stack([self._softmax(e._sentence_logits(sent_inputs)) for e in self.parts.values()])
+            return np.log(np.maximum(self._ensemble_probs(P), 1e-9))
+        if self.mode == "tfidf":
+            return np.log(np.maximum(self._tfidf_probs(sent_inputs, eps=1e-9), 1e-9))
+        return self._run_onnx_inference(sent_inputs, max_length=128, batch_size=16)
 
     @staticmethod
     def _sentence_chunks(text: str, max_words: int = 100) -> List[str]:
@@ -359,25 +423,19 @@ class QuillBotDetectorEngine:
         # 1. Stylometric feature extraction
         feat_vec, stylometrics = self._extract_stylometrics_vec(text, sentences)
 
-        # 2. Document-level neural inference (hierarchical chunk pooling)
-        student = self.mode in STUDENT_MODES
+        # 2. Document-level inference (hierarchical chunk pooling for the ONNX modes)
         thresholded = self.mode in RUNTIME_CONFIGS
-        if self.mode == "tfidf":
-            calibrated_probs = self._tfidf_probs([self._frontier_prep(text)])[0]
-        elif student:
-            # Same preprocessing, chunking and pooling as training/evaluation; no meta-classifier or guardrail (both were fit on the
-            # retired synthetic data), plain temperature softmax.
-            max_len = int(self.runtime_config.get("max_len", 160))
-            chunks = self._sentence_chunks(self._frontier_prep(text))
-            chunk_logits = self._run_onnx_inference(chunks, max_length=max_len, batch_size=16)
-            doc_logits = np.mean(chunk_logits, axis=0) / max(0.1, float(self.runtime_config.get("temperature", 1.0)))
-            exp_d = np.exp(doc_logits - np.max(doc_logits))
-            calibrated_probs = exp_d / np.sum(exp_d)
+        components = None
+        if self.mode == "ensemble":
+            comp_probs = {m: e._doc_probs(text, feat_vec, stylometrics) for m, e in self.parts.items()}
+            calibrated_probs = self._ensemble_probs(np.stack(list(comp_probs.values()))[:, None, :])[0]
+            components = {}
+            for m, p in comp_probs.items():
+                cut, s_m = float(self.runtime_config["components"][m]), float(p[2] + p[3])
+                components[m] = {"model": self.parts[m].runtime_config.get("candidate", m), "ai_score": round(s_m, 4),
+                                 "threshold": round(cut, 4), "flagged": s_m >= cut}
         else:
-            chunks = self._chunk_text(text, max_chunk_words=100)
-            chunk_logits = self._run_onnx_inference(chunks, max_length=256, batch_size=16)
-            doc_logits = np.mean(chunk_logits, axis=0, keepdims=True)
-            calibrated_probs = self._apply_meta_classifier_and_calibration(doc_logits, feat_vec, stylometrics=stylometrics)
+            calibrated_probs = self._doc_probs(text, feat_vec, stylometrics)
 
         # Form probability dictionary
         prob_dict = {
@@ -390,10 +448,7 @@ class QuillBotDetectorEngine:
         # 3. Verdict Determination & Uncertainty Gating
         # 3. Sentence-by-sentence Inference & Highlights (QuillBot Alignment)
         sent_inputs = [self._frontier_prep(s) or s for s in sentences] if thresholded else sentences
-        if self.mode == "tfidf":
-            sent_logits = np.log(np.maximum(self._tfidf_probs(sent_inputs, eps=1e-9), 1e-9))
-        else:
-            sent_logits = self._run_onnx_inference(sent_inputs, max_length=128, batch_size=16)
+        sent_logits = self._sentence_logits(sent_inputs)
         S = len(sentences)
 
         # Raw sentence softmax probabilities
@@ -591,6 +646,7 @@ class QuillBotDetectorEngine:
                 "ai_score": round(ai_score, 4),
                 "threshold": round(threshold, 4) if thresholded else None,
                 "threshold_rule": self.runtime_config.get("threshold_rule") if thresholded else None,
+                **({"components": components} if components is not None else {}),
             },
             "stylometrics": stylometrics,
             "mathematical_equations": stylometrics.get("mathematical_equations", {}) if stylometrics else {}

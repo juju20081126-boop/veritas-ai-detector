@@ -34,6 +34,10 @@ def get_dir_size_mb(path: str) -> float:
 
 def runtime_assets_mb(mode: str) -> float:
     """Size of the files the runtime engine actually loads in this mode (not training checkpoints or the FP32 export)."""
+    if mode == "ensemble":
+        with open(RUNTIME_CONFIGS[mode], encoding="utf-8") as f:
+            components = json.load(f)["components"]
+        return sum(runtime_assets_mb(m) for m in components) + os.path.getsize(RUNTIME_CONFIGS[mode]) / (1024 * 1024)
     if mode == "tfidf":
         return sum(os.path.getsize(f) for f in (os.path.join(TFIDF_DIR, "tfidf_model.json.gz"), RUNTIME_CONFIGS[mode])) / (1024 * 1024)
     base, cfg_name = (MODELS_DIR, "meta_classifier.json") if mode == "shipped" else STUDENT_MODES[mode]
