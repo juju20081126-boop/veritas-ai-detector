@@ -1315,3 +1315,12 @@ README edit was made by Claude even though `README.md` is Antigravity's file und
 - Update (same day): at the user's request (“yes delete it”), `README.zh-TW.md` was deleted. The CI link check lists it but skips
   missing files, so CI is unaffected; Antigravity may remove that entry from `.github/workflows/python-package.yml`. The app's
   Traditional Chinese UI (`frontend/i18n.js`) is unchanged.
+
+---
+
+## 2026-10-10 — Claude Code — GitHub release v2.1.0
+
+At the user's request: https://github.com/juju20081126-boop/veritas-ai-detector/releases/tag/v2.1.0 (tag `v2.1.0` on `5a8db62`,
+marked Latest). Covers everything since v2.0.0: `ensemble` default, `tfidf` / `multi_teacher` modes, Antigravity's frontend
+detector label and zh-TW telemetry, the short README + `DEVELOPERS.md`, and a correction of v2.0.0's frontier FPR claim (0.4% →
+7.3% on unseen modern human text). Verified before release: 33 tests, integrity 7/7, CI 5/5 jobs green on `5a8db62`.
