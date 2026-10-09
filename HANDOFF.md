@@ -1310,3 +1310,5 @@ README edit was made by Claude even though `README.md` is Antigravity's file und
   rewrite; the user has not decided who does it yet.
 - Consider adding `DEVELOPERS.md` to the CI link-check list in `.github/workflows/python-package.yml`. Its links pass the same
   check locally.
+- Update (same day): the user decided the README is **English only**; `README.zh-TW.md` will not be rewritten, and the link to it
+  was removed from `README.md`. Whether to delete the file is still pending the user's answer.

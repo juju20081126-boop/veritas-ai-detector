@@ -2,7 +2,7 @@
 
 Paste some text or upload a file, and Veritas estimates whether a person or an AI wrote it. Everything runs on your own computer: no internet connection, no GPU, and nothing you paste leaves your machine.
 
-[繁體中文](README.zh-TW.md) · [Developer guide](DEVELOPERS.md) · [Evaluation report](EVAL_REPORT.md)
+[Developer guide](DEVELOPERS.md) · [Evaluation report](EVAL_REPORT.md)
 
 > [!WARNING]
 > **A score is a clue, not proof.** Veritas misses many AI texts, and it wrongly flags about 1 in 100 human texts. Never use it as the only evidence against someone.
