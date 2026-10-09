@@ -34,13 +34,13 @@ def _check_schema(r):
     assert r["sentences"] and {"text", "class_label", "probabilities", "reasons"} <= set(r["sentences"][0])
 
 
-def test_default_mode_is_frontier(monkeypatch):
+def test_default_mode_is_ensemble(monkeypatch):
     monkeypatch.delenv("VERITAS_DETECTOR", raising=False)
     e = runtime_engine.QuillBotDetectorEngine(threads=1)
-    assert e.mode == "frontier"
+    assert e.mode == "ensemble"
     r = e.analyze_text(TEXT)
     _check_schema(r)
-    assert r["detector"]["mode"] == "frontier"
+    assert r["detector"]["mode"] == "ensemble" and set(r["detector"]["components"]) == {"tfidf", "frontier"}
 
 
 def test_legacy_mode_still_available():

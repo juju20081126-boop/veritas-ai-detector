@@ -40,10 +40,11 @@ ONNX_MODEL_PATH = os.path.join(MODELS_DIR, "student_model_int8.onnx")
 TOKENIZER_PATH = os.path.join(MODELS_DIR, "tokenizer", "tokenizer.json")
 META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 
-# Frontier detector (trained on real Claude Opus/Sonnet 5.5 text and paraphrase attacks; see
-# data/reports/FRONTIER_DETECTION_REPORT.md) is the default since v2.0.0. The legacy model is still available with
-# VERITAS_DETECTOR=shipped or QuillBotDetectorEngine(mode="shipped"). The response schema is identical in both modes, plus a
-# "detector" block. Frontier mode decides AI vs human with the dev-calibrated threshold stored in frontier_config.json.
+# The default mode is ensemble (below) since 2026-10-09. Any mode can be picked with VERITAS_DETECTOR=<mode> or
+# QuillBotDetectorEngine(mode=...); the response schema is identical in all modes, plus a "detector" block.
+# frontier (trained on real Claude Opus/Sonnet 5.5 text and paraphrase attacks; see data/reports/FRONTIER_DETECTION_REPORT.md)
+# was the default from v2.0.0 until 2026-10-09; at its dev 1%-FPR cut it flags 7.3% of unseen modern human text. It decides AI vs
+# human with the dev-calibrated threshold stored in frontier_config.json. shipped is the legacy pre-v2.0.0 model.
 # multi_teacher (opt-in, VERITAS_DETECTOR=multi_teacher) is Antigravity's multi-teacher distilled MiniLM student
 # (notebooks/multi_teacher_distillation.py); it shares the frontier decision rule and reads runtime_config.json, whose threshold
 # is the INT8 model's own dev clean-human 1%-FPR threshold (scripts/write_frontier_config.py --mode multi_teacher).
@@ -51,7 +52,7 @@ META_CONFIG_PATH = os.path.join(MODELS_DIR, "meta_classifier.json")
 # negatives (scripts/train_tfidf.py), scored with numpy only (backend/tfidf_detector.py). It has no ONNX model; its ai_score is
 # sigmoid(decision - decision_threshold), so its threshold is 0.5 = the dev clean-human 1%-FPR cut. Its sentence highlights come
 # from the same model applied to each sentence.
-# ensemble (opt-in, VERITAS_DETECTOR=ensemble) runs the modes listed in models/ensemble/runtime_config.json "components" (each
+# ensemble (the default) runs the modes listed in models/ensemble/runtime_config.json "components" (each
 # with its own cut) and flags a text when ANY of them reaches its cut (OR rule, see _ensemble_probs). The cuts share one
 # false-positive budget so the union stays at 1% (scripts/write_ensemble_config.py). It has no model files of its own.
 FRONTIER_DIR = os.path.join(MODELS_DIR, "frontier")
@@ -126,7 +127,7 @@ class QuillBotDetectorEngine:
     _instance: Optional["QuillBotDetectorEngine"] = None
 
     def __init__(self, threads: int = 2, mode: Optional[str] = None):
-        self.mode = (mode or os.environ.get("VERITAS_DETECTOR", "frontier")).strip().lower()
+        self.mode = (mode or os.environ.get("VERITAS_DETECTOR", "ensemble")).strip().lower()
         if self.mode not in DETECTOR_MODES:
             raise ValueError(f"Unknown detector mode {self.mode!r}; expected one of {DETECTOR_MODES}.")
         print(f"[RuntimeEngine] Initializing Offline QuillBot-behavior Student Engine (mode={self.mode}, threads={threads})...")
